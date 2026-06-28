@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "word": "candid",
+    "pos": "adj",
+    "definition": "frank and honest in expression",
+    "example": "a candid assessment of her chances",
+    "band": 1
+  },
+  {
+    "id": 2,
+    "word": "brisk",
+    "pos": "adj",
+    "definition": "quick and energetic",
+    "example": "a brisk walk before breakfast",
+    "band": 1
+  },
+  {
+    "id": 3,
+    "word": "vivid",
+    "pos": "adj",
+    "definition": "strikingly bright or sharply detailed",
+    "example": "a vivid memory of the storm",
+    "band": 1
+  },
+  {
+    "id": 4,
+    "word": "deter",
+    "pos": "v",
+    "definition": "to discourage from acting through doubt or fear",
+    "example": "high fences deter trespassers",
+    "band": 1
+  },
+  {
+    "id": 5,
+    "word": "blunt",
+    "pos": "adj",
+    "definition": "so direct as to seem rude",
+    "example": "a blunt refusal",
+    "band": 1
+  },
+  {
+    "id": 6,
+    "word": "quaint",
+    "pos": "adj",
+    "definition": "attractively old-fashioned",
+    "example": "a quaint seaside village",
+    "band": 1
+  },
+  {
+    "id": 7,
+    "word": "nimble",
+    "pos": "adj",
+    "definition": "quick and light in movement or thought",
+    "example": "nimble fingers on the keys",
+    "band": 1
+  },
+  {
+    "id": 8,
+    "word": "stark",
+    "pos": "adj",
+    "definition": "severe or bare; sharply clear",
+    "example": "a stark contrast between them",
+    "band": 1
+  },
+  {
+    "id": 9,
+    "word": "coax",
+    "pos": "v",
+    "definition": "to gently persuade",
+    "example": "she coaxed the cat out from under the bed",
+    "band": 1
+  },
+  {
+    "id": 10,
+    "word": "fret",
+    "pos": "v",
+    "definition": "to worry persistently",
+    "example": "he fretted over the deadline",
+    "band": 1
+  },
+  {
+    "id": 11,
+    "word": "jovial",
+    "pos": "adj",
+    "definition": "cheerful and good-humored",
+    "example": "a jovial host",
+    "band": 1
+  },
+  {
+    "id": 12,
+    "word": "meek",
+    "pos": "adj",
+    "definition": "quiet, gentle, and submissive",
+    "example": "too meek to object",
+    "band": 1
+  },
+  {
+    "id": 13,
+    "word": "sturdy",
+    "pos": "adj",
+    "definition": "strongly and solidly built",
+    "example": "a sturdy oak table",
+    "band": 1
+  },
+  {
+    "id": 14,
+    "word": "drab",
+    "pos": "adj",
+    "definition": "dull and lacking color or interest",
+    "example": "a drab little office",
+    "band": 1
+  },
+  {
+    "id": 15,
+    "word": "lush",
+    "pos": "adj",
+    "definition": "growing thickly and abundantly",
+    "example": "lush green hillsides",
+    "band": 1
+  },
+  {
+    "id": 16,
+    "word": "prod",
+    "pos": "v",
+    "definition": "to prompt or urge into action",
+    "example": "prodded into apologizing",
+    "band": 1
+  },
+  {
+    "id": 17,
+    "word": "hardy",
+    "pos": "adj",
+    "definition": "able to endure difficult conditions",
+    "example": "a hardy alpine plant",
+    "band": 1
+  },
+  {
+    "id": 18,
+    "word": "adapt",
+    "pos": "v",
+    "definition": "to adjust to new conditions",
+    "example": "species adapt in order to survive",
+    "band": 1
+  },
+  {
+    "id": 19,
+    "word": "mimic",
+    "pos": "v",
+    "definition": "to imitate closely",
+    "example": "the parrot mimics human speech",
+    "band": 1
+  },
+  {
+    "id": 20,
+    "word": "brittle",
+    "pos": "adj",
+    "definition": "hard but easily broken",
+    "example": "the brittle old parchment",
+    "band": 1
+  },
+  {
+    "id": 21,
+    "word": "candor",
+    "pos": "n",
+    "definition": "the quality of being open and honest",
+    "example": "I appreciated her candor",
+    "band": 2
+  },
+  {
+    "id": 22,
+    "word": "prudent",
+    "pos": "adj",
+    "definition": "acting with care and foresight",
+    "example": "a prudent investment",
+    "band": 2
+  },
+  {
+    "id": 23,
+    "word": "placate",
+    "pos": "v",
+    "definition": "to calm or soothe someone's anger",
+    "example": "he placated the angry customer",
+    "band": 2
+  },
+  {
+    "id": 24,
+    "word": "frugal",
+    "pos": "adj",
+    "definition": "sparing and economical with resources",
+    "example": "a frugal lifestyle",
+    "band": 2
+  },
+  {
+    "id": 25,
+    "word": "lucid",
+    "pos": "adj",
+    "definition": "clear and easy to understand; clear-minded",
+    "example": "a lucid explanation",
+    "band": 2
+  },
+  {
+    "id": 26,
+    "word": "rampant",
+    "pos": "adj",
+    "definition": "spreading unchecked",
+    "example": "rampant inflation",
+    "band": 2
+  },
+  {
+    "id": 27,
+    "word": "tedious",
+    "pos": "adj",
+    "definition": "tiresomely long or dull",
+    "example": "a tedious lecture",
+    "band": 2
+  },
+  {
+    "id": 28,
+    "word": "wary",
+    "pos": "adj",
+    "definition": "cautious of possible danger",
+    "example": "wary of strangers",
+    "band": 2
+  },
+  {
+    "id": 29,
+    "word": "abstain",
+    "pos": "v",
+    "definition": "to choose not to do something",
+    "example": "abstain from voting",
+    "band": 2
+  },
+  {
+    "id": 30,
+    "word": "daunt",
+    "pos": "v",
+    "definition": "to discourage or intimidate",
+    "example": "undaunted by the challenge",
+    "band": 2
+  },
+  {
+    "id": 31,
+    "word": "fickle",
+    "pos": "adj",
+    "definition": "changing frequently, especially in loyalty",
+    "example": "fickle public opinion",
+    "band": 2
+  },
+  {
+    "id": 32,
+    "word": "mar",
+    "pos": "v",
+    "definition": "to spoil or damage",
+    "example": "the scandal marred his reputation",
+    "band": 2
+  },
+  {
+    "id": 33,
+    "word": "opaque",
+    "pos": "adj",
+    "definition": "not transparent; hard to understand",
+    "example": "opaque legal jargon",
+    "band": 2
+  },
+  {
+    "id": 34,
+    "word": "ponder",
+    "pos": "v",
+    "definition": "to think about carefully",
+    "example": "she pondered the offer",
+    "band": 2
+  },
+  {
+    "id": 35,
+    "word": "quell",
+    "pos": "v",
+    "definition": "to suppress or put an end to",
+    "example": "troops quelled the riot",
+    "band": 2
+  },
+  {
+    "id": 36,
+    "word": "rebuke",
+    "pos": "v",
+    "definition": "to express sharp disapproval of",
+    "example": "rebuked for arriving late",
+    "band": 2
+  },
+  {
+    "id": 37,
+    "word": "scoff",
+    "pos": "v",
+    "definition": "to speak about dismissively or mockingly",
+    "example": "they scoffed at the idea",
+    "band": 2
+  },
+  {
+    "id": 38,
+    "word": "sober",
+    "pos": "adj",
+    "definition": "serious and solemn; not intoxicated",
+    "example": "a sober warning",
+    "band": 2
+  },
+  {
+    "id": 39,
+    "word": "concede",
+    "pos": "v",
+    "definition": "to admit or yield",
+    "example": "he conceded the point",
+    "band": 2
+  },
+  {
+    "id": 40,
+    "word": "novel",
+    "pos": "adj",
+    "definition": "new and original",
+    "example": "a novel approach to the problem",
+    "band": 2
+  },
+  {
+    "id": 41,
+    "word": "austere",
+    "pos": "adj",
+    "definition": "severe or plain; strict in self-discipline",
+    "example": "an austere monastic life",
+    "band": 3
+  },
+  {
+    "id": 42,
+    "word": "belie",
+    "pos": "v",
+    "definition": "to give a false impression of; contradict",
+    "example": "her calm voice belied her fear",
+    "band": 3
+  },
+  {
+    "id": 43,
+    "word": "cogent",
+    "pos": "adj",
+    "definition": "clear, logical, and convincing",
+    "example": "a cogent argument",
+    "band": 3
+  },
+  {
+    "id": 44,
+    "word": "deference",
+    "pos": "n",
+    "definition": "respectful submission to another's judgment",
+    "example": "in deference to her elders",
+    "band": 3
+  },
+  {
+    "id": 45,
+    "word": "ephemeral",
+    "pos": "adj",
+    "definition": "lasting a very short time",
+    "example": "ephemeral internet fame",
+    "band": 3
+  },
+  {
+    "id": 46,
+    "word": "garrulous",
+    "pos": "adj",
+    "definition": "excessively talkative",
+    "example": "a garrulous old neighbor",
+    "band": 3
+  },
+  {
+    "id": 47,
+    "word": "impede",
+    "pos": "v",
+    "definition": "to obstruct or delay",
+    "example": "fallen debris impeded the rescue",
+    "band": 3
+  },
+  {
+    "id": 48,
+    "word": "laconic",
+    "pos": "adj",
+    "definition": "using very few words",
+    "example": "a laconic reply of 'fine'",
+    "band": 3
+  },
+  {
+    "id": 49,
+    "word": "mitigate",
+    "pos": "v",
+    "definition": "to make less severe",
+    "example": "measures to mitigate the damage",
+    "band": 3
+  },
+  {
+    "id": 50,
+    "word": "nuance",
+    "pos": "n",
+    "definition": "a subtle difference in meaning or tone",
+    "example": "the nuances of the language",
+    "band": 3
+  },
+  {
+    "id": 51,
+    "word": "ostensible",
+    "pos": "adj",
+    "definition": "apparent but not necessarily genuine",
+    "example": "the ostensible reason for his visit",
+    "band": 3
+  },
+  {
+    "id": 52,
+    "word": "placid",
+    "pos": "adj",
+    "definition": "calm and peaceful",
+    "example": "a placid mountain lake",
+    "band": 3
+  },
+  {
+    "id": 53,
+    "word": "prosaic",
+    "pos": "adj",
+    "definition": "dull and ordinary",
+    "example": "a prosaic explanation",
+    "band": 3
+  },
+  {
+    "id": 54,
+    "word": "rancor",
+    "pos": "n",
+    "definition": "bitter, long-lasting resentment",
+    "example": "she spoke without rancor",
+    "band": 3
+  },
+  {
+    "id": 55,
+    "word": "spurious",
+    "pos": "adj",
+    "definition": "false despite appearing genuine",
+    "example": "a spurious claim of authority",
+    "band": 3
+  },
+  {
+    "id": 56,
+    "word": "tenuous",
+    "pos": "adj",
+    "definition": "very weak or slight",
+    "example": "a tenuous connection to the case",
+    "band": 3
+  },
+  {
+    "id": 57,
+    "word": "venerate",
+    "pos": "v",
+    "definition": "to regard with deep respect",
+    "example": "venerated as a national hero",
+    "band": 3
+  },
+  {
+    "id": 58,
+    "word": "wane",
+    "pos": "v",
+    "definition": "to decrease in size or intensity",
+    "example": "his enthusiasm soon waned",
+    "band": 3
+  },
+  {
+    "id": 59,
+    "word": "zealous",
+    "pos": "adj",
+    "definition": "having great energy or passion",
+    "example": "a zealous reformer",
+    "band": 3
+  },
+  {
+    "id": 60,
+    "word": "cordial",
+    "pos": "adj",
+    "definition": "warm and friendly",
+    "example": "a cordial welcome",
+    "band": 3
+  },
+  {
+    "id": 61,
+    "word": "abrogate",
+    "pos": "v",
+    "definition": "to formally abolish or repeal",
+    "example": "to abrogate a treaty",
+    "band": 4
+  },
+  {
+    "id": 62,
+    "word": "capricious",
+    "pos": "adj",
+    "definition": "given to sudden changes of mood",
+    "example": "a capricious ruler",
+    "band": 4
+  },
+  {
+    "id": 63,
+    "word": "diffident",
+    "pos": "adj",
+    "definition": "shy and lacking self-confidence",
+    "example": "a diffident newcomer",
+    "band": 4
+  },
+  {
+    "id": 64,
+    "word": "ebullient",
+    "pos": "adj",
+    "definition": "cheerful and full of energy",
+    "example": "an ebullient host",
+    "band": 4
+  },
+  {
+    "id": 65,
+    "word": "fastidious",
+    "pos": "adj",
+    "definition": "attentive to detail; hard to please",
+    "example": "a fastidious editor",
+    "band": 4
+  },
+  {
+    "id": 66,
+    "word": "gregarious",
+    "pos": "adj",
+    "definition": "sociable; fond of company",
+    "example": "a gregarious personality",
+    "band": 4
+  },
+  {
+    "id": 67,
+    "word": "iconoclast",
+    "pos": "n",
+    "definition": "one who attacks cherished beliefs or institutions",
+    "example": "a political iconoclast",
+    "band": 4
+  },
+  {
+    "id": 68,
+    "word": "inchoate",
+    "pos": "adj",
+    "definition": "just begun and not fully formed",
+    "example": "an inchoate plan",
+    "band": 4
+  },
+  {
+    "id": 69,
+    "word": "munificent",
+    "pos": "adj",
+    "definition": "extremely generous",
+    "example": "a munificent donation",
+    "band": 4
+  },
+  {
+    "id": 70,
+    "word": "obfuscate",
+    "pos": "v",
+    "definition": "to deliberately make unclear",
+    "example": "to obfuscate the truth",
+    "band": 4
+  },
+  {
+    "id": 71,
+    "word": "pernicious",
+    "pos": "adj",
+    "definition": "harmful in a gradual, subtle way",
+    "example": "a pernicious habit",
+    "band": 4
+  },
+  {
+    "id": 72,
+    "word": "quixotic",
+    "pos": "adj",
+    "definition": "idealistic and impractical",
+    "example": "a quixotic crusade",
+    "band": 4
+  },
+  {
+    "id": 73,
+    "word": "recalcitrant",
+    "pos": "adj",
+    "definition": "stubbornly resistant to authority",
+    "example": "a recalcitrant student",
+    "band": 4
+  },
+  {
+    "id": 74,
+    "word": "sanguine",
+    "pos": "adj",
+    "definition": "optimistic, especially in a hard situation",
+    "example": "sanguine about the outcome",
+    "band": 4
+  },
+  {
+    "id": 75,
+    "word": "surfeit",
+    "pos": "n",
+    "definition": "an excessive amount",
+    "example": "a surfeit of information",
+    "band": 4
+  },
+  {
+    "id": 76,
+    "word": "taciturn",
+    "pos": "adj",
+    "definition": "reserved; saying little",
+    "example": "a taciturn farmer",
+    "band": 4
+  },
+  {
+    "id": 77,
+    "word": "truculent",
+    "pos": "adj",
+    "definition": "eager to argue or fight",
+    "example": "a truculent reply",
+    "band": 4
+  },
+  {
+    "id": 78,
+    "word": "ubiquitous",
+    "pos": "adj",
+    "definition": "present everywhere",
+    "example": "ubiquitous smartphones",
+    "band": 4
+  },
+  {
+    "id": 79,
+    "word": "vacillate",
+    "pos": "v",
+    "definition": "to waver between choices",
+    "example": "to vacillate over a decision",
+    "band": 4
+  },
+  {
+    "id": 80,
+    "word": "wanton",
+    "pos": "adj",
+    "definition": "deliberate and unprovoked; reckless",
+    "example": "wanton destruction",
+    "band": 4
+  },
+  {
+    "id": 81,
+    "word": "abstruse",
+    "pos": "adj",
+    "definition": "difficult to understand; obscure",
+    "example": "abstruse mathematics",
+    "band": 5
+  },
+  {
+    "id": 82,
+    "word": "captious",
+    "pos": "adj",
+    "definition": "tending to raise petty objections",
+    "example": "a captious critic",
+    "band": 5
+  },
+  {
+    "id": 83,
+    "word": "desultory",
+    "pos": "adj",
+    "definition": "lacking a plan or purpose; random",
+    "example": "a desultory conversation",
+    "band": 5
+  },
+  {
+    "id": 84,
+    "word": "ersatz",
+    "pos": "adj",
+    "definition": "being an inferior substitute",
+    "example": "ersatz coffee made from acorns",
+    "band": 5
+  },
+  {
+    "id": 85,
+    "word": "fulsome",
+    "pos": "adj",
+    "definition": "excessive and insincere, especially of praise",
+    "example": "fulsome flattery",
+    "band": 5
+  },
+  {
+    "id": 86,
+    "word": "grandiloquent",
+    "pos": "adj",
+    "definition": "pompous or extravagant in language",
+    "example": "a grandiloquent speech",
+    "band": 5
+  },
+  {
+    "id": 87,
+    "word": "hegemony",
+    "pos": "n",
+    "definition": "leadership or dominance, especially by one state",
+    "example": "regional hegemony",
+    "band": 5
+  },
+  {
+    "id": 88,
+    "word": "inveigle",
+    "pos": "v",
+    "definition": "to persuade by deception or flattery",
+    "example": "he inveigled his way in",
+    "band": 5
+  },
+  {
+    "id": 89,
+    "word": "jejune",
+    "pos": "adj",
+    "definition": "naive and simplistic; dull",
+    "example": "jejune political slogans",
+    "band": 5
+  },
+  {
+    "id": 90,
+    "word": "lugubrious",
+    "pos": "adj",
+    "definition": "looking or sounding mournful",
+    "example": "a lugubrious expression",
+    "band": 5
+  },
+  {
+    "id": 91,
+    "word": "mendacious",
+    "pos": "adj",
+    "definition": "untruthful; lying",
+    "example": "a mendacious witness",
+    "band": 5
+  },
+  {
+    "id": 92,
+    "word": "nugatory",
+    "pos": "adj",
+    "definition": "of little or no value",
+    "example": "a nugatory sum",
+    "band": 5
+  },
+  {
+    "id": 93,
+    "word": "obstreperous",
+    "pos": "adj",
+    "definition": "noisy and difficult to control",
+    "example": "obstreperous children",
+    "band": 5
+  },
+  {
+    "id": 94,
+    "word": "pellucid",
+    "pos": "adj",
+    "definition": "transparently clear in style or meaning",
+    "example": "pellucid prose",
+    "band": 5
+  },
+  {
+    "id": 95,
+    "word": "quotidian",
+    "pos": "adj",
+    "definition": "ordinary; everyday",
+    "example": "the quotidian routines of life",
+    "band": 5
+  },
+  {
+    "id": 96,
+    "word": "recondite",
+    "pos": "adj",
+    "definition": "little known; dealing with obscure subjects",
+    "example": "recondite scholarship",
+    "band": 5
+  },
+  {
+    "id": 97,
+    "word": "sycophant",
+    "pos": "n",
+    "definition": "a person who flatters to gain advantage",
+    "example": "surrounded by sycophants",
+    "band": 5
+  },
+  {
+    "id": 98,
+    "word": "turgid",
+    "pos": "adj",
+    "definition": "pompous and tediously overblown; swollen",
+    "example": "turgid academic prose",
+    "band": 5
+  },
+  {
+    "id": 99,
+    "word": "vituperative",
+    "pos": "adj",
+    "definition": "bitter and abusive",
+    "example": "a vituperative attack",
+    "band": 5
+  },
+  {
+    "id": 100,
+    "word": "perfidious",
+    "pos": "adj",
+    "definition": "deceitful and untrustworthy",
+    "example": "a perfidious ally",
+    "band": 5
+  }
+]
