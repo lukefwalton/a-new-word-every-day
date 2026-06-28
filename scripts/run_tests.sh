@@ -2,7 +2,14 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-xcodegen generate
+# Generate the same project you build locally: if project.local.yml exists, go
+# through the merge flow (team/bundle overrides) rather than a bare xcodegen,
+# so tests run against the same generated project as `scripts/generate.sh`.
+if [ -f project.local.yml ]; then
+  bash scripts/generate.sh
+else
+  xcodegen generate
+fi
 
 DEST='platform=iOS Simulator,name=iPhone 15'
 if ! xcrun simctl list devices available | grep -q "iPhone 15 ("; then
