@@ -60,3 +60,12 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Bundled OFL variable fonts are fetched via scripts/fetch_fonts.sh, not committed.
+WordOfTheDay/Resources/Fonts/*.ttf
+WordOfTheDay/Resources/Fonts/*.otf
+
+# XcodeGen output
+*.xcodeproj
+project.local.yml
+project.generated.yml

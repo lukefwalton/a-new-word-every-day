@@ -1,0 +1,28 @@
+# Copy to project.local.yml and fill in your Apple Developer Team ID.
+# Find it at developer.apple.com → Membership → Team ID (10 characters).
+# Then: bash scripts/generate.sh && open WordOfTheDay.xcodeproj
+#
+# If you don't own com.lukewalton.*, change bundleIdPrefix and bundle IDs below
+# to match App IDs you registered, and update the App Group in both
+# .entitlements files plus AppGroup.identifier in Swift (CI checks they match).
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: YOUR_TEAM_ID_HERE
+
+# Uncomment to use your own bundle prefix instead of com.lukewalton:
+# options:
+#   bundleIdPrefix: com.yourname
+# targets:
+#   WordOfTheDay:
+#     settings:
+#       base:
+#         PRODUCT_BUNDLE_IDENTIFIER: com.yourname.wordoftheday
+#   WordWidgetExtension:
+#     settings:
+#       base:
+#         PRODUCT_BUNDLE_IDENTIFIER: com.yourname.wordoftheday.widget
+#   WordOfTheDayTests:
+#     settings:
+#       base:
+#         PRODUCT_BUNDLE_IDENTIFIER: com.yourname.wordoftheday.tests

@@ -1,0 +1,43 @@
+Word of the Day
+Copyright Luke F. Walton.
+
+This product bundles or derives from the following third-party works. All are
+permissively licensed; none are copyleft or share-alike.
+
+--------------------------------------------------------------------------------
+Word definitions (larger corpus built via scripts/build_corpus.py)
+--------------------------------------------------------------------------------
+Princeton WordNet — WordNet License (BSD/MIT-style; attribution required).
+  WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.
+  https://wordnet.princeton.edu/license-and-commercial-use
+
+  (The bundled seed corpus in WordOfTheDay/Resources/words.json contains
+  definitions written originally for this project and carries no third-party
+  obligation. WordNet applies only if you scale the corpus with build_corpus.py.)
+
+--------------------------------------------------------------------------------
+Word difficulty / frequency ranking
+--------------------------------------------------------------------------------
+Peter Norvig — "Natural Language Corpus Data" frequency lists (count_1w.txt).
+  Licensed under the MIT License.
+  https://norvig.com/ngrams/
+
+--------------------------------------------------------------------------------
+Typefaces (bundled variable fonts, fetched by scripts/fetch_fonts.sh)
+--------------------------------------------------------------------------------
+Each is licensed under the SIL Open Font License, Version 1.1
+(see WordOfTheDay/Resources/Fonts/OFL.txt):
+
+  Fraunces  — © The Fraunces Project Authors (Undercase Type)
+  Literata  — © The Literata Project Authors
+  Inter     — © The Inter Project Authors (Rasmus Andersson)
+  Recursive — © The Recursive Project Authors (Arrow Type)
+
+--------------------------------------------------------------------------------
+Spaced repetition (the "someday practice" seam)
+--------------------------------------------------------------------------------
+The SM-2 scheduler in ReviewState.swift implements the published SM-2 algorithm.
+  Algorithm SM-2, (C) Copyright SuperMemo World, 1991.
+If in-app practice is built out, the intended scheduler is
+open-spaced-repetition/swift-fsrs (MIT). Anki's own AGPL code is never used; the
+Anki export is plain CSV that Anki imports natively.

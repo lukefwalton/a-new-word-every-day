@@ -391,8 +391,11 @@ word-of-the-day/
 
 ## Status & scope
 
-**This document is the first deliverable.** Per the agreed plan, no app code is
-written yet. Next step once this is approved: scaffold `project.yml`, the three
-design-system extension modules, the app/widget skeletons, and the corpus build
-script — a buildable foundation — then iterate toward a first vertical slice
-(Today + widget + swipe onboarding running in the simulator).
+**Implemented.** The full vertical slice is built: XcodeGen project, the three
+design-system extensions, the deterministic shared core, the app (onboarding +
+swipe deck + Today + Practice + Settings), the widget (all families + interactive
+star), the 100-word seed corpus + scale pipeline, App Store privacy manifests,
+CI, and a unit-test suite over the deterministic core. The codebase is described
+in `docs/learnings/001-architecture.md`. Remaining before submission: an app
+icon asset, and (optionally) running `scripts/fetch_fonts.sh` to bundle the OFL
+variable fonts — the app falls back to a system serif/sans without them.

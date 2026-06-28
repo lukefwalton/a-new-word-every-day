@@ -1,0 +1,123 @@
+# XcodeGen project definition for Word of the Day.
+# Generate the Xcode project with:  bash scripts/generate.sh
+# (install XcodeGen via `brew install xcodegen`). Set DEVELOPMENT_TEAM in
+# project.local.yml (copy from project.local.yml.example) or in Signing &
+# Capabilities after generate.
+#
+# The only entitlement is an App Group (group.com.lukewalton.wordoftheday) so the
+# app and the Home Screen widget share one tiny on-device UserDefaults store.
+# No network, no account, no analytics — everything stays on the phone.
+
+name: WordOfTheDay
+options:
+  bundleIdPrefix: com.lukewalton
+  projectFormat: xcode15_0
+  deploymentTarget:
+    iOS: "17.0"            # iOS 17 for interactive widgets (the in-widget star)
+  createIntermediateGroups: true
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGN_STYLE: Automatic
+
+# Vendored local Swift Package: the LFW design system (palette, onboarding kit)
+# extended here with variable-font, typography, and theming modules.
+packages:
+  LFWDesignSystem:
+    path: lfwdesignsystem
+
+targets:
+  WordOfTheDay:
+    type: application
+    platform: iOS
+    sources:
+      - path: WordOfTheDay/App
+      - path: WordOfTheDay/Onboarding
+      - path: WordOfTheDay/Features
+      - path: WordOfTheDay/Shared
+      - path: WordOfTheDay/Resources
+        buildPhase: resources    # words.json + bundled OFL fonts + OFL.txt
+    # App Group: app + widget share one container. Keep the identifier in sync
+    # with AppGroup.identifier in WordOfTheDay/Shared/AppGroup.swift —
+    # scripts/check_appgroup_sync.sh (and CI) enforce it.
+    entitlements:
+      path: WordOfTheDay/App/WordOfTheDay.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.lukewalton.wordoftheday
+    dependencies:
+      - target: WordWidgetExtension   # embed the widget into the app bundle
+      - package: LFWDesignSystem
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday
+        INFOPLIST_FILE: WordOfTheDay/App/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+
+  # Read-only Home Screen / Lock Screen widget. Shares the App Group store and the
+  # bundled corpus; recomputes today's word deterministically (no shared write).
+  WordWidgetExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: WordWidget
+      - path: WordOfTheDay/Shared
+      - path: WordOfTheDay/Resources
+        buildPhase: resources    # the widget bundles its own copy of words.json + fonts
+    entitlements:
+      path: WordWidget/WordWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.lukewalton.wordoftheday
+    info:
+      path: WordWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Word of the Day
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        UIAppFonts:
+          - Fraunces.ttf
+          - Literata.ttf
+          - Inter.ttf
+          - Recursive.ttf
+    dependencies:
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+      - package: LFWDesignSystem
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday.widget
+
+  WordOfTheDayTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: WordOfTheDayTests
+      # The seed corpus is loaded from the test bundle so corpus tests run
+      # against the real words.json without hosting into the app.
+      - path: WordOfTheDay/Resources
+        buildPhase: resources
+    dependencies:
+      - target: WordOfTheDay
+      - package: LFWDesignSystem   # tests import LFW types directly
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  WordOfTheDay:
+    build:
+      targets:
+        WordOfTheDay: all
+    test:
+      targets:
+        - WordOfTheDayTests
+    run:
+      config: Debug

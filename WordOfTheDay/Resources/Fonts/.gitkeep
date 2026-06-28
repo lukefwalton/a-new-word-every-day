@@ -1,0 +1,2 @@
+# Variable .ttf files are fetched here by scripts/fetch_fonts.sh and are
+# gitignored (binaries). OFL.txt (the license we must ship) lives one level up.
