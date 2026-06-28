@@ -17,7 +17,9 @@ struct WordWidgetView: View {
         if let word = entry.word {
             switch family {
             case .accessoryInline:
+                // Deep-link parity with the other families (tap → open this word).
                 Text("\(word.word) · \(word.partOfSpeechLabel)")
+                    .widgetURL(deepLink(word))
             case .accessoryRectangular:
                 accessoryRectangular(word)
             case .systemSmall:
