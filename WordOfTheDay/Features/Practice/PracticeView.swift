@@ -7,6 +7,7 @@ import LFWDesignSystem
 struct PracticeView: View {
     @EnvironmentObject private var model: AppModel
     @State private var exportURL: ExportFile?
+    @State private var exportFailed = false
 
     private var typeface: LFWTypeface { model.theme.typeface }
 
@@ -24,7 +25,11 @@ struct PracticeView: View {
                 if !model.starredWords.isEmpty {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            exportURL = makeExport()
+                            if let file = makeExport() {
+                                exportURL = file
+                            } else {
+                                exportFailed = true
+                            }
                         } label: {
                             Label("Export to Anki", systemImage: "square.and.arrow.up")
                         }
@@ -33,6 +38,11 @@ struct PracticeView: View {
             }
             .sheet(item: $exportURL) { file in
                 ShareSheet(url: file.url)
+            }
+            .alert("Couldn't create the export file", isPresented: $exportFailed) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text("Something went wrong writing the file. Please try again.")
             }
         }
     }

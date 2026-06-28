@@ -29,12 +29,23 @@ struct TodayView: View {
 
     private func content(_ word: Word) -> some View {
         VStack(alignment: .leading, spacing: 20) {
-            HStack {
+            HStack(spacing: 12) {
                 Text(model.focusedWordID == nil ? "WORD OF THE DAY" : "SAVED WORD")
                     .font(LFWTypography.font(.eyebrow, typeface: typeface))
                     .kerning(2)
                     .foregroundStyle(palette.accent)
                 Spacer()
+                // Viewing a saved word is transient: offer an explicit way back to
+                // the actual daily word rather than persisting the override.
+                if model.focusedWordID != nil {
+                    Button {
+                        model.focusedWordID = nil
+                    } label: {
+                        Label("Today", systemImage: "arrow.uturn.backward")
+                            .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
+                    }
+                    .tint(palette.accent)
+                }
                 starButton(word)
             }
 

@@ -22,6 +22,9 @@ struct SwipeDeck: View {
     @State private var remaining: [Word]
     @State private var answers: [Answer] = []
     @State private var drag: CGSize = .zero
+    /// True while the top card is flying off — input is locked so a fast second
+    /// tap/swipe can't record a duplicate answer for the same word.
+    @State private var isCommitting = false
 
     private let threshold: CGFloat = 110
 
@@ -49,7 +52,9 @@ struct SwipeDeck: View {
                 }
             }
             .frame(maxWidth: .infinity)
+            .allowsHitTesting(!isCommitting)
             controls
+                .disabled(isCommitting)
         }
         .padding(.horizontal, 24)
     }
@@ -116,6 +121,8 @@ struct SwipeDeck: View {
     }
 
     private func commit(_ word: Word, known: Bool) {
+        guard !isCommitting else { return }
+        isCommitting = true
         withAnimation(.easeOut(duration: 0.22)) {
             drag = CGSize(width: known ? 600 : -600, height: 0)
         }
@@ -123,6 +130,7 @@ struct SwipeDeck: View {
             remaining.removeAll { $0.id == word.id }
             answers.append(Answer(word: word, known: known))
             drag = .zero
+            isCommitting = false
             if remaining.isEmpty { onComplete(answers) }
         }
     }

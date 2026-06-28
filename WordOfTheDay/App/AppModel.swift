@@ -93,6 +93,9 @@ final class AppModel: ObservableObject {
 
     func mark(_ word: Word, known: Bool) {
         var marks = store.difficultyMarks
+        // Idempotent: only the *first* (or a changed) mark for a word nudges the
+        // band. Tapping the same answer repeatedly must not ratchet difficulty.
+        guard marks[word.id] != known else { return }
         marks[word.id] = known
         store.difficultyMarks = marks
         setBand(difficulty.adjusted(band: band, markedKnown: known, wordBand: word.band))

@@ -4,6 +4,7 @@ import LFWDesignSystem
 @main
 struct WordOfTheDayApp: App {
     @StateObject private var model = AppModel(service: DailyWordService(corpus: .load()))
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
         #if DEBUG
@@ -23,6 +24,11 @@ struct WordOfTheDayApp: App {
                 .tint(model.theme.colors.accent)
                 .preferredColorScheme(model.theme.palette.isDark ? .dark : .light)
                 .onOpenURL { model.handle(url: $0) }
+                // Re-read the shared store on foreground so the day's word rolls
+                // over at midnight and widget-side star changes show immediately.
+                .onChange(of: scenePhase) { _, phase in
+                    if phase == .active { model.refreshFromStore() }
+                }
         }
     }
 }

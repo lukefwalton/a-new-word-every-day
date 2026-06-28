@@ -69,6 +69,34 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(store.difficultyMarks[99], true)
     }
 
+    func test_mark_isIdempotent_repeatedSameTapDoesNotRatchetBand() {
+        let (model, _) = makeModel()
+        model.setBand(2)
+        let word = Fixtures.word(99, band: 2)
+        model.mark(word, known: true)   // 2 → 3
+        model.mark(word, known: true)   // no-op (same mark)
+        model.mark(word, known: true)   // no-op
+        XCTAssertEqual(model.band, 3, "repeated identical marks must not keep moving the band")
+    }
+
+    func test_mark_changedAnswer_stillNudges() {
+        let (model, _) = makeModel()
+        model.setBand(3)
+        let word = Fixtures.word(99, band: 3)
+        model.mark(word, known: true)    // first mark: 3 → 4
+        model.mark(word, known: false)   // a *changed* answer still takes effect
+        // The changed mark is persisted (not dropped by the idempotence guard).
+        XCTAssertEqual(model.store.difficultyMarks[99], false)
+    }
+
+    func test_refreshFromStore_picksUpExternalStarChange() {
+        let (model, store) = makeModel()
+        store.toggleStar(8)   // simulate a widget-side star while the app is warm
+        XCTAssertFalse(model.isStarred(8), "cache is stale until refresh")
+        model.refreshFromStore()
+        XCTAssertTrue(model.isStarred(8), "foreground refresh should surface widget changes")
+    }
+
     func test_deepLink_focusesWord() {
         let (model, _) = makeModel()
         model.handle(url: URL(string: "wordoftheday://word/4")!)

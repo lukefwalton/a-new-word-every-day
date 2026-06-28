@@ -31,7 +31,6 @@ The attribution this requires (WordNet + Norvig MIT) is already carried in
 NOTICE and the in-app Acknowledgements screen — keep it there if you scale up.
 """
 
-from __future__ import annotations
 import argparse
 import json
 import sys

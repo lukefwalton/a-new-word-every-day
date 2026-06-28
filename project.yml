@@ -64,10 +64,13 @@ targets:
     type: app-extension
     platform: iOS
     sources:
-      - path: WordWidget
+      - path: WordWidget        # carries the widget's own PrivacyInfo.xcprivacy
       - path: WordOfTheDay/Shared
       - path: WordOfTheDay/Resources
         buildPhase: resources    # the widget bundles its own copy of words.json + fonts
+        excludes:
+          - PrivacyInfo.xcprivacy   # the widget ships WordWidget/PrivacyInfo.xcprivacy instead
+          - Fonts/OFL.txt           # license text only needs to ship in the app bundle
     entitlements:
       path: WordWidget/WordWidget.entitlements
       properties:
