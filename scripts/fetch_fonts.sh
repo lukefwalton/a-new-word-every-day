@@ -25,6 +25,11 @@ FONTS=(
   "Recursive.ttf|https://github.com/arrowtype/recursive/raw/main/fonts/ArrowType-Recursive-1.085/Recursive_Desktop/Recursive_VF_1.085.ttf"
 )
 
+# NOTE: URLs point at each font's source branch (master/main), which can move.
+# For a reproducible setup, pin to a release asset or commit SHA and verify a
+# checksum. We fail non-zero on ANY download problem so a partial fetch can't
+# look successful.
+failed=0
 for entry in "${FONTS[@]}"; do
   name="${entry%%|*}"
   url="${entry#*|}"
@@ -33,8 +38,16 @@ for entry in "${FONTS[@]}"; do
     echo "  ✓ $DEST/$name"
   else
     echo "  ✗ failed — update the URL in scripts/fetch_fonts.sh (source repos move files)" >&2
+    rm -f "$DEST/$name"   # don't leave a truncated/partial file behind
+    failed=1
   fi
 done
+
+if [ "$failed" -ne 0 ]; then
+  echo "One or more fonts failed to download. The app still runs (system fallback)," >&2
+  echo "but fix the URLs above before relying on the bundled typefaces." >&2
+  exit 1
+fi
 
 cat <<'NOTE'
 

@@ -41,9 +41,18 @@ final class AppModel: ObservableObject {
 
     // MARK: Theme
 
-    func setTheme(_ config: LFWThemeConfig) {
+    /// Apply a theme. `reloadWidget` is false for continuous input (the accent
+    /// slider) so we don't hammer `reloadAllTimelines()` on every step — the
+    /// caller reloads once when the interaction ends via `reloadWidget()`.
+    func setTheme(_ config: LFWThemeConfig, reloadWidget: Bool = true) {
         theme = config
         store.theme = config
+        if reloadWidget { WidgetReloader.reload() }
+    }
+
+    /// Force a widget refresh for the current theme (used when a debounced
+    /// interaction, like the accent slider, finishes).
+    func reloadWidget() {
         WidgetReloader.reload()
     }
 

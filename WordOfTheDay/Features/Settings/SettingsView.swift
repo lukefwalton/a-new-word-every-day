@@ -79,10 +79,15 @@ struct SettingsView: View {
                         set: { newValue in
                             var theme = model.theme
                             theme.accentHueShift = newValue
-                            model.setTheme(theme)
+                            // Instant in-app preview every step; defer the widget
+                            // reload to the end of the drag (below).
+                            model.setTheme(theme, reloadWidget: false)
                         }
                     ),
-                    in: -180...180, step: 5
+                    in: -180...180, step: 5,
+                    onEditingChanged: { editing in
+                        if !editing { model.reloadWidget() }
+                    }
                 )
                 .tint(model.theme.colors.accent)
             }

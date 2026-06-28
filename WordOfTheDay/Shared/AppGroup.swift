@@ -10,9 +10,18 @@ import Foundation
 enum AppGroup {
     static let identifier = "group.com.lukewalton.wordoftheday"
 
-    /// Shared defaults suite. Falls back to `.standard` only if the App Group
-    /// isn't provisioned (e.g. a misconfigured fork), so the app still runs.
+    /// Shared defaults suite. A nil suite means the App Group isn't provisioned
+    /// for this target — falling back to `.standard` keeps the app alive, but the
+    /// app and widget would each get their *own* `.standard` and silently stop
+    /// sharing state. So make that misconfiguration loud rather than subtle.
     static var defaults: UserDefaults {
-        UserDefaults(suiteName: identifier) ?? .standard
+        if let suite = UserDefaults(suiteName: identifier) {
+            return suite
+        }
+        #if DEBUG
+        assertionFailure("App Group \(identifier) unavailable — app and widget will not share state. Check the entitlement and provisioning.")
+        #endif
+        NSLog("[WordOfTheDay] App Group %@ unavailable; using standard defaults. App and widget will NOT sync.", identifier)
+        return .standard
     }
 }

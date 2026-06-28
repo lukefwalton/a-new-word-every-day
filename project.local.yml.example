@@ -3,8 +3,11 @@
 # Then: bash scripts/generate.sh && open WordOfTheDay.xcodeproj
 #
 # If you don't own com.lukewalton.*, change bundleIdPrefix and bundle IDs below
-# to match App IDs you registered, and update the App Group in both
-# .entitlements files plus AppGroup.identifier in Swift (CI checks they match).
+# to match App IDs you registered. To use a different App Group, edit the
+# `com.apple.security.application-groups` values in project.yml (XcodeGen
+# generates the .entitlements from there) AND AppGroup.identifier in
+# WordOfTheDay/Shared/AppGroup.swift — scripts/check_appgroup_sync.sh reads the
+# checked-in project.yml, so keep those two in sync (it's the source of truth).
 
 settings:
   base:
