@@ -13,6 +13,12 @@ if grep -q 'YOUR_TEAM_ID_HERE' project.local.yml; then
   exit 1
 fi
 
+if ! python3 -c 'import yaml' 2>/dev/null; then
+  echo "This script merges project.yml with project.local.yml using PyYAML." >&2
+  echo "Install it first:  python3 -m pip install pyyaml" >&2
+  exit 1
+fi
+
 # Merge project.yml + project.local.yml for XcodeGen (local file is gitignored).
 python3 - <<'PY'
 import yaml

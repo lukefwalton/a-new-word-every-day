@@ -10,7 +10,10 @@ final class AppModel: ObservableObject {
     let store: SharedStore
     private let difficulty = DifficultyModel()
 
+    enum Tab: Hashable { case today, practice, settings }
+
     @Published var theme: LFWThemeConfig
+    @Published var selectedTab: Tab = .today
     @Published private(set) var band: Int
     @Published private(set) var onboardingComplete: Bool
     @Published private(set) var starredIDs: [Int]
@@ -103,10 +106,18 @@ final class AppModel: ObservableObject {
 
     // MARK: Deep links
 
+    /// Open a saved word on the Today tab. Sets the tab explicitly (not just the
+    /// focused id) so reselecting the *same* word still navigates — a value-only
+    /// `onChange` would miss an unchanged id.
+    func openWord(_ id: Int) {
+        focusedWordID = id
+        selectedTab = .today
+    }
+
     func handle(url: URL) {
         guard url.scheme == "wordoftheday" else { return }
         if url.host == "word", let id = Int(url.lastPathComponent) {
-            focusedWordID = id
+            openWord(id)
         }
     }
 }

@@ -97,10 +97,27 @@ final class AppModelTests: XCTestCase {
         XCTAssertTrue(model.isStarred(8), "foreground refresh should surface widget changes")
     }
 
+    func test_openWord_focusesAndSwitchesToTodayTab() {
+        let (model, _) = makeModel()
+        model.selectedTab = .practice
+        model.openWord(4)
+        XCTAssertEqual(model.focusedWordID, 4)
+        XCTAssertEqual(model.selectedTab, .today)
+    }
+
+    func test_reselectingSameWord_stillNavigatesToToday() {
+        let (model, _) = makeModel()
+        model.openWord(4)
+        model.selectedTab = .practice      // user goes back to Practice
+        model.openWord(4)                  // taps the *same* saved word again
+        XCTAssertEqual(model.selectedTab, .today, "same id must still route to Today")
+    }
+
     func test_deepLink_focusesWord() {
         let (model, _) = makeModel()
         model.handle(url: URL(string: "wordoftheday://word/4")!)
         XCTAssertEqual(model.focusedWordID, 4)
+        XCTAssertEqual(model.selectedTab, .today)
     }
 
     func test_deepLink_ignoresForeignScheme() {

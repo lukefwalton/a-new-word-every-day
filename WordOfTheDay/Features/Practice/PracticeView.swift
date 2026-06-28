@@ -51,7 +51,7 @@ struct PracticeView: View {
         List {
             ForEach(model.starredWords) { word in
                 Button {
-                    model.focusedWordID = word.id
+                    model.openWord(word.id)
                 } label: {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(word.word)

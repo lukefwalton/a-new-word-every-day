@@ -43,6 +43,7 @@ shape of the codebase.
 
 ```bash
 brew install xcodegen
+python3 -m pip install pyyaml                      # generate.sh merges YAML with PyYAML
 cp project.local.yml.example project.local.yml   # set DEVELOPMENT_TEAM
 bash scripts/fetch_fonts.sh                       # optional: OFL variable fonts
 bash scripts/generate.sh
