@@ -145,8 +145,12 @@ final class SharedStore {
         }
         set {
             let raw = Dictionary(uniqueKeysWithValues: newValue.map { (String($0.key), $0.value) })
-            if let data = try? JSONEncoder().encode(raw) {
-                defaults.set(data, forKey: Key.reviewStates)
+            do {
+                defaults.set(try JSONEncoder().encode(raw), forKey: Key.reviewStates)
+            } catch {
+                // A dropped write silently loses review progress otherwise — log it.
+                NSLog("[WordOfTheDay] reviewStates failed to encode (%d entries): %@",
+                      raw.count, String(describing: error))
             }
         }
     }

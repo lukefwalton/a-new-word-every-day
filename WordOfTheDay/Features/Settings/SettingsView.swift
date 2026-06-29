@@ -142,7 +142,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("The word list and its definitions were written for this app and are dedicated to the public domain (CC0) — free for anyone to use.")
                     Text("Typefaces — Fraunces, Literata, Inter, Recursive — are licensed under the SIL Open Font License 1.1.")
-                    Text("Review scheduling uses FSRS via swift-fsrs, licensed under the MIT License. It runs entirely on-device.")
+                    Text("Review scheduling uses the FSRS algorithm, ported from swift-fsrs (MIT License) and implemented on-device.")
                 }
                 .font(.footnote)
                 .foregroundStyle(palette.secondaryText)

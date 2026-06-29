@@ -29,13 +29,6 @@ settings:
 packages:
   LFWDesignSystem:
     path: lfwdesignsystem
-  # FSRS spaced-repetition engine (open-spaced-repetition/swift-fsrs, MIT). Pinned
-  # to an exact version and resolved at *build* time only — no runtime network, so
-  # the local-first/no-tracking doctrine holds. Linked into the app + tests only;
-  # the widget never links it (it surfaces no review state).
-  FSRS:
-    url: https://github.com/open-spaced-repetition/swift-fsrs
-    exactVersion: 5.0.0
 
 targets:
   WordOfTheDay:
@@ -59,7 +52,6 @@ targets:
     dependencies:
       - target: WordWidgetExtension   # embed the widget into the app bundle
       - package: LFWDesignSystem
-      - package: FSRS
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday
@@ -119,7 +111,6 @@ targets:
     dependencies:
       - target: WordOfTheDay
       - package: LFWDesignSystem   # tests import LFW types directly
-      - package: FSRS
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday.tests

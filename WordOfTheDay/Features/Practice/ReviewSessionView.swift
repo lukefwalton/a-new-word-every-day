@@ -1,19 +1,19 @@
 import SwiftUI
 import LFWDesignSystem
 
-/// A lightweight, opt-in study session over the words that are due now — the
-/// "Anki behind the widget", kept deliberately small: one card at a time, tap to
-/// reveal the definition, grade your recall with Again/Hard/Good/Easy, and FSRS
-/// schedules the next review. No decks, no editing. Reached from the Practice tab;
-/// the daily word and the widget stay the primary surface.
+/// A lightweight, opt-in study session over the words due now — the "Anki behind
+/// the widget", kept deliberately small: one card at a time, tap to reveal the
+/// definition, grade Again/Hard/Good/Easy, and FSRS schedules the next review. No
+/// decks, no editing. Reached from the Practice tab; the daily word + widget stay
+/// the primary surface.
 struct ReviewSessionView: View {
     @EnvironmentObject private var model: AppModel
     @Environment(\.dismiss) private var dismiss
 
-    /// The queue is snapshotted once on appear so grading a word (which reschedules
-    /// it out of "due") doesn't reshuffle the deck mid-session.
-    @State private var queue: [Word] = []
-    @State private var index = 0
+    /// Snapshotted once on appear so grading a word (which reschedules it out of
+    /// "due") doesn't reshuffle the deck mid-session. `ReviewQueue` re-queues a
+    /// failed card so it returns later in this same session.
+    @State private var queue = ReviewQueue([])
     @State private var revealed = false
 
     private var typeface: LFWTypeface { model.theme.typeface }
@@ -24,15 +24,15 @@ struct ReviewSessionView: View {
             LFWThemedBackground(config: model.theme)
             VStack(spacing: 0) {
                 header
-                if index < queue.count {
-                    card(queue[index])
+                if let word = queue.current {
+                    card(word)
                 } else {
                     finished
                 }
             }
             .padding(24)
         }
-        .onAppear { if queue.isEmpty { queue = model.dueWords() } }
+        .onAppear { if queue.words.isEmpty { queue = ReviewQueue(model.dueWords()) } }
     }
 
     private var header: some View {
@@ -44,8 +44,8 @@ struct ReviewSessionView: View {
             }
             .accessibilityLabel("Close study session")
             Spacer()
-            if index < queue.count {
-                Text("\(index + 1) of \(queue.count)")
+            if queue.current != nil {
+                Text("\(queue.position.current) of \(queue.position.total)")
                     .font(LFWTypography.font(.eyebrow, typeface: typeface))
                     .kerning(1.5)
                     .foregroundStyle(palette.secondaryText)
@@ -136,17 +136,12 @@ struct ReviewSessionView: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func reveal() {
-        revealed = true
-    }
+    private func reveal() { revealed = true }
 
     private func commit(_ grade: ReviewGrade, for word: Word) {
         model.grade(word, grade)
-        // "Study until caught up": a word you fail comes back later in this same
-        // session rather than vanishing until the next one (mirrors Anki relearning).
-        if grade == .again { queue.append(word) }
+        queue.advance(grade: grade)
         revealed = false
-        index += 1
     }
 }
 

@@ -55,7 +55,7 @@ struct PracticeView: View {
                 } message: {
                     Text("Something went wrong writing the file. Please try again.")
                 }
-                .fullScreenCover(isPresented: $studying) {
+                .fullScreenCover(isPresented: $studying, onDismiss: { model.recomputeDue() }) {
                     ReviewSessionView().environmentObject(model)
                 }
             }
