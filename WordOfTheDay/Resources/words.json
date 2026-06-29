@@ -84,7 +84,7 @@
     "word": "asset",
     "pos": "n",
     "definition": "a useful or valuable quality",
-    "example": "The Ruling would not, however, apply to an acquisition of assets for cash.",
+    "example": "Those qualities make Esther Marr a popular asset at the Salvation Army's Social Center at 1200 Larimer St. .",
     "band": 1
   },
   {
@@ -204,7 +204,7 @@
     "word": "cam",
     "pos": "n",
     "definition": "a rotating disk shaped to convert circular into linear motion",
-    "example": "Whence cam' st thou, worthy Thane?",
+    "example": "the spinning cam pushed the lever upward",
     "band": 1
   },
   {
@@ -362,9 +362,9 @@
   {
     "id": 46,
     "word": "cruise",
-    "pos": "v",
-    "definition": "drive around aimlessly but ostentatiously and at leisure",
-    "example": "She cruised the neighborhood in her new convertible",
+    "pos": "n",
+    "definition": "an ocean trip taken for pleasure",
+    "example": "a week-long cruise around the islands",
     "band": 1
   },
   {
@@ -378,9 +378,9 @@
   {
     "id": 48,
     "word": "curse",
-    "pos": "v",
-    "definition": "utter obscenities or profanities",
-    "example": "The drunken men were cursing loudly in the street",
+    "pos": "n",
+    "definition": "profane or obscene expression usually of surprise or anger",
+    "example": "There is no curse on you.",
     "band": 1
   },
   {
@@ -419,16 +419,16 @@
     "id": 53,
     "word": "dimensional",
     "pos": "adj",
-    "definition": "of or relating to dimensions",
-    "example": "These tests are not accelerated and must be repeated to evaluate dimensional changes after repeated launderings.",
+    "definition": "having dimension--the quality or character or stature proper to a person; - Norman Cousins",
+    "example": "never matures as a dimensional character; he is pasty, bland, faceless",
     "band": 1
   },
   {
     "id": 54,
     "word": "dip",
-    "pos": "v",
-    "definition": "immerse briefly into a liquid so as to wet, coat, or saturate",
-    "example": "dip the garment into the cleaning solution",
+    "pos": "n",
+    "definition": "a depression in an otherwise level surface",
+    "example": "there was a dip in the road",
     "band": 1
   },
   {
@@ -436,7 +436,7 @@
     "word": "dive",
     "pos": "n",
     "definition": "a cheap disreputable nightclub or dance hall",
-    "example": "Of all divers, thou hast dived the deepest.",
+    "example": "From that hour I clove to Queequeg like a barnacle; yea, till poor Queequeg took his last long dive.",
     "band": 1
   },
   {
@@ -546,9 +546,9 @@
   {
     "id": 69,
     "word": "facial",
-    "pos": "n",
-    "definition": "cranial nerve that supplies facial muscles",
-    "example": "she treated herself to a facial at the spa",
+    "pos": "adj",
+    "definition": "of or concerning the face",
+    "example": "a subtle facial expression of surprise",
     "band": 1
   },
   {
@@ -578,9 +578,9 @@
   {
     "id": 73,
     "word": "fold",
-    "pos": "v",
-    "definition": "bend or lay so that one part covers the other",
-    "example": "fold up the newspaper",
+    "pos": "n",
+    "definition": "an angular or rounded shape made by folding",
+    "example": "a fold in the napkin",
     "band": 1
   },
   {
@@ -588,7 +588,7 @@
     "word": "forgive",
     "pos": "v",
     "definition": "stop blaming or grant forgiveness",
-    "example": "She cannot forgive him for forgetting her birthday",
+    "example": "I forgave him his infidelity",
     "band": 1
   },
   {
@@ -652,7 +652,7 @@
     "word": "hack",
     "pos": "n",
     "definition": "one who works hard at boring tasks",
-    "example": "Payne hacked at their arms.",
+    "example": "Nor will the hack, the Jack-of-all-trades, still found in some of the smaller art schools, suffice.",
     "band": 1
   },
   {
@@ -660,7 +660,7 @@
     "word": "ham",
     "pos": "n",
     "definition": "meat cut from the thigh of a hog (usually smoked)",
-    "example": "Stick 4 or 5 cloves in each frank, ham fashion.",
+    "example": "He described the ham decorated with pineapple and cherries, cooling on the porch.",
     "band": 1
   },
   {
@@ -668,7 +668,7 @@
     "word": "hammer",
     "pos": "n",
     "definition": "the part of a gunlock that strikes the percussion cap when the trigger is pulled",
-    "example": "Take that hammer away, or look to yourself.'",
+    "example": "There, hammer that knot down, and we' ve done.",
     "band": 1
   },
   {
@@ -690,8 +690,8 @@
   {
     "id": 87,
     "word": "hint",
-    "pos": "v",
-    "definition": "drop a hint; intimate by a hint",
+    "pos": "n",
+    "definition": "an indirect suggestion",
     "example": "I will spare you the hint.",
     "band": 1
   },
@@ -724,7 +724,7 @@
     "word": "import",
     "pos": "n",
     "definition": "commodities (goods or services) bought from a foreign country",
-    "example": "Alas sweet Lady: what imports this Song?",
+    "example": "Both composers turn up on new imports from France.",
     "band": 1
   },
   {
@@ -820,7 +820,7 @@
     "word": "liability",
     "pos": "n",
     "definition": "the state of being legally obliged and responsible",
-    "example": "The accepted method of writing news has two major liabilities.",
+    "example": "The state has recently undertaken liability insurance for drivers of state cars.",
     "band": 1
   },
   {
@@ -868,15 +868,15 @@
     "word": "meantime",
     "pos": "n",
     "definition": "the time between one event, process, or period and another",
-    "example": "Meantime, there was a terrible tumult.",
+    "example": "In the meantime, Francisco went to the villa where his English friends resided.",
     "band": 1
   },
   {
     "id": 110,
     "word": "median",
-    "pos": "adj",
-    "definition": "relating to or constituting the middle value of an ordered set of values (or the average of the",
-    "example": "the median value of 17, 20, and 36 is 20",
+    "pos": "n",
+    "definition": "the value below which 50% of the cases fall",
+    "example": "the median of the dataset was twelve",
     "band": 1
   },
   {
@@ -940,7 +940,7 @@
     "word": "nerve",
     "pos": "n",
     "definition": "any bundle of nerve fibers running to various organs and tissues of the body",
-    "example": "That is what tries the nerves, abstraction combined with cruelty.",
+    "example": "I didn't even have the nerve to call her on the telephone.",
     "band": 1
   },
   {
@@ -996,7 +996,7 @@
     "word": "passionate",
     "pos": "adj",
     "definition": "having or expressing strong emotions",
-    "example": "O unspeakable passionate love.",
+    "example": "Proud and passionate city--mettlesome, mad, extravagant city!",
     "band": 1
   },
   {
@@ -1010,17 +1010,17 @@
   {
     "id": 127,
     "word": "peer",
-    "pos": "v",
-    "definition": "look searchingly",
-    "example": "We peered into the back of the shop to see whether a salesman was around",
+    "pos": "n",
+    "definition": "a person who is of equal standing with another in a group",
+    "example": "It is Mary of the magic face confronting the gloomy and grasping peers and the boorish moralities of Knox.",
     "band": 1
   },
   {
     "id": 128,
     "word": "pledge",
-    "pos": "v",
-    "definition": "promise solemnly and formally",
-    "example": "I pledge that I will honor my wife",
+    "pos": "n",
+    "definition": "a deposit of personal property as security for a debt",
+    "example": "his saxophone was in pledge",
     "band": 1
   },
   {
@@ -1164,7 +1164,7 @@
     "word": "rip",
     "pos": "v",
     "definition": "tear or be torn violently",
-    "example": "He felt it rip at the side of his jacket and a momentary sting under his left ribs.",
+    "example": "The curtain ripped from top to bottom",
     "band": 1
   },
   {
@@ -1300,7 +1300,7 @@
     "word": "snap",
     "pos": "v",
     "definition": "utter in an angry, sharp, or abrupt tone",
-    "example": "Why don' t you snap your oars, you rascals?",
+    "example": "The sales clerk snapped a reply at the angry customer",
     "band": 1
   },
   {
@@ -1322,17 +1322,17 @@
   {
     "id": 166,
     "word": "southwest",
-    "pos": "n",
-    "definition": "the compass point midway between south and west; at 225 degrees",
-    "example": "Sesame sticks, a snack dip, originated in the Southwest.",
+    "pos": "adj",
+    "definition": "coming from the southwest",
+    "example": "a warm southwest wind off the gulf",
     "band": 1
   },
   {
     "id": 167,
     "word": "span",
-    "pos": "v",
-    "definition": "to cover or extend over an area or time period; ,",
-    "example": "The parking lot spans 3 acres",
+    "pos": "n",
+    "definition": "the complete duration of something",
+    "example": "the job was finished in the span of an hour",
     "band": 1
   },
   {
@@ -1340,7 +1340,7 @@
     "word": "spectrum",
     "pos": "n",
     "definition": "an ordered array of the components of an emission or wave",
-    "example": "But it could also be looked at from the other end of the spectrum.",
+    "example": "Background spectra were obtained in all cases.",
     "band": 1
   },
   {
@@ -1348,7 +1348,7 @@
     "word": "stack",
     "pos": "n",
     "definition": "an orderly pile",
-    "example": "Supplies of sheet metal were neatly stacked in bins.",
+    "example": "He took the stack of mail and tossed it into the waste basket.",
     "band": 1
   },
   {
@@ -1458,9 +1458,9 @@
   {
     "id": 183,
     "word": "twist",
-    "pos": "v",
-    "definition": "to move in a twisting or contorted motion, (especially when struggling)",
-    "example": "I do not like crooked, twisted, blasted trees.",
+    "pos": "n",
+    "definition": "an unforeseen development",
+    "example": "He was a tall, spruce man, with a twist of black moustache and incomparable morning dress.",
     "band": 1
   },
   {
@@ -1484,7 +1484,7 @@
     "word": "upside",
     "pos": "n",
     "definition": "the highest or uppermost side of anything",
-    "example": "I gave my promise to the Secretary--you know him, man who smiles upside down.",
+    "example": "the crate landed with its upside facing the sky",
     "band": 1
   },
   {
@@ -1498,9 +1498,9 @@
   {
     "id": 188,
     "word": "venture",
-    "pos": "v",
-    "definition": "proceed somewhere despite the risk of possible dangers",
-    "example": "We ventured into the world of high-tech and bought a supercomputer",
+    "pos": "n",
+    "definition": "any venturesome undertaking especially one with an uncertain outcome",
+    "example": "But she did not venture to say it out loud.",
     "band": 1
   },
   {
@@ -1578,17 +1578,17 @@
   {
     "id": 198,
     "word": "yea",
-    "pos": "n",
-    "definition": "an affirmative",
-    "example": "The yeas have it",
+    "pos": "adv",
+    "definition": "not only so, but",
+    "example": "I therein do rejoice, yea, and will rejoice",
     "band": 1
   },
   {
     "id": 199,
     "word": "yield",
-    "pos": "v",
-    "definition": "be the cause or source of",
-    "example": "Interlink' d, food - yielding lands!",
+    "pos": "n",
+    "definition": "production of a certain amount",
+    "example": "Let us not slip th' occasion, whether scorn Or satiate fury yield it from our Foe.",
     "band": 1
   },
   {
@@ -1690,9 +1690,9 @@
   {
     "id": 212,
     "word": "attribute",
-    "pos": "v",
-    "definition": "attribute or credit to",
-    "example": "We attributed this quotation to Shakespeare",
+    "pos": "n",
+    "definition": "a construct whereby objects or individuals can be distinguished",
+    "example": "Strong shapes and attributes of strong shapes, masculine trades, sights and sounds.",
     "band": 2
   },
   {
@@ -1708,7 +1708,7 @@
     "word": "bark",
     "pos": "n",
     "definition": "tough protective covering of the woody stems and roots of trees and other woody plants",
-    "example": "The dog, now alarmed by the voices, began to bark outrageously.",
+    "example": "But he could do nothing except bark, and bite at the heels of the wicked men.",
     "band": 2
   },
   {
@@ -1764,7 +1764,7 @@
     "word": "bore",
     "pos": "v",
     "definition": "cause to be bored",
-    "example": "He was the first that euer bore Armes",
+    "example": "Ben bore this misfortune with good humour.",
     "band": 2
   },
   {
@@ -1836,7 +1836,7 @@
     "word": "chrome",
     "pos": "n",
     "definition": "another word for chromium when it is used in dyes or pigments",
-    "example": "A big car was approaching, its chrome teeth grinning.",
+    "example": "Two cars came over a crest, their chrome and glass flashing.",
     "band": 2
   },
   {
@@ -1874,8 +1874,8 @@
   {
     "id": 235,
     "word": "composite",
-    "pos": "n",
-    "definition": "a conceptual whole made up of complicated and related parts",
+    "pos": "adj",
+    "definition": "consisting of separate interconnected parts",
     "example": "Composite samples were collected at weekly intervals.",
     "band": 2
   },
@@ -2018,9 +2018,9 @@
   {
     "id": 253,
     "word": "dislike",
-    "pos": "v",
-    "definition": "have or feel a dislike or distaste for",
-    "example": "I really dislike this salesman",
+    "pos": "n",
+    "definition": "an inclination to withhold approval from some person or group",
+    "example": "But Jem looked at the stable - boy with dislike, and a sort of dread.",
     "band": 2
   },
   {
@@ -2074,9 +2074,9 @@
   {
     "id": 260,
     "word": "exile",
-    "pos": "v",
-    "definition": "expel from a country",
-    "example": "The poet was exiled because he signed a letter protesting the government's actions",
+    "pos": "n",
+    "definition": "a person who is voluntarily absent from home or country",
+    "example": "He was the official procurer for King Farouk, now in exile.",
     "band": 2
   },
   {
@@ -2322,9 +2322,9 @@
   {
     "id": 291,
     "word": "inland",
-    "pos": "adj",
-    "definition": "situated away from an area's coast or border",
-    "example": "You Thibet trader on the wide inland or bargaining in the shops of Lassa!",
+    "pos": "adv",
+    "definition": "towards or into the interior of a region",
+    "example": "the town is five miles inland",
     "band": 2
   },
   {
@@ -2378,9 +2378,9 @@
   {
     "id": 298,
     "word": "lame",
-    "pos": "n",
-    "definition": "a fabric interwoven with threads of metal",
-    "example": "she wore a gold lame dress",
+    "pos": "adj",
+    "definition": "pathetically lacking in force or effectiveness",
+    "example": "a lame argument",
     "band": 2
   },
   {
@@ -2460,7 +2460,7 @@
     "word": "mod",
     "pos": "n",
     "definition": "a British teenager or young adult in the 1960s; noted for their clothes consciousness and opposi",
-    "example": "He was giving Harriet information as to modes of agriculture, etc.",
+    "example": "a sharply dressed mod on a chrome scooter",
     "band": 2
   },
   {
@@ -2500,7 +2500,7 @@
     "word": "nickel",
     "pos": "n",
     "definition": "a hard malleable ductile silvery metallic element that is resistant to corrosion",
-    "example": "Michael realized that the image of God in nickel buttons was asking him how he had come there.",
+    "example": "With six in the group, the cost comes to just a nickel a day per person on the daily fee.",
     "band": 2
   },
   {
@@ -2514,9 +2514,9 @@
   {
     "id": 315,
     "word": "notch",
-    "pos": "v",
-    "definition": "cut or make a notch into",
-    "example": "notch the rope",
+    "pos": "n",
+    "definition": "a V-shaped indentation",
+    "example": "mandibular notch",
     "band": 2
   },
   {
@@ -2532,7 +2532,7 @@
     "word": "nursery",
     "pos": "n",
     "definition": "a child's room for a baby",
-    "example": "But the moon is a much simpler thing; a naked and nursery sort of thing.",
+    "example": "They might have been cherubs flying home to the casements of a sort of celestial nursery.",
     "band": 2
   },
   {
@@ -2658,9 +2658,9 @@
   {
     "id": 333,
     "word": "prompt",
-    "pos": "v",
-    "definition": "give an incentive for action",
-    "example": "Promptly at midnight, the little naked elves came in.",
+    "pos": "adj",
+    "definition": "according to schedule or without delay; on time",
+    "example": "the train is prompt",
     "band": 2
   },
   {
@@ -2706,9 +2706,9 @@
   {
     "id": 339,
     "word": "puzzle",
-    "pos": "v",
-    "definition": "be a mystery or bewildering to",
-    "example": "Yes, Sir, it was puzzling.",
+    "pos": "n",
+    "definition": "a particularly baffling problem that is said to have a correct solution",
+    "example": "he loved to solve chessmate puzzles",
     "band": 2
   },
   {
@@ -2908,7 +2908,7 @@
     "word": "sore",
     "pos": "adj",
     "definition": "hurting",
-    "example": "And Hezekiah wept sore.",
+    "example": "a sore knee after the long run",
     "band": 2
   },
   {
@@ -2924,7 +2924,7 @@
     "word": "spoil",
     "pos": "v",
     "definition": "make a mess of, destroy or ruin",
-    "example": "But join or ye spoil all.",
+    "example": "You have spoiled all, indeed.",
     "band": 2
   },
   {
@@ -2954,17 +2954,17 @@
   {
     "id": 370,
     "word": "sting",
-    "pos": "v",
-    "definition": "cause a sharp or stinging pain or discomfort",
-    "example": "O why sting me for a swift moment only?",
+    "pos": "n",
+    "definition": "a kind of pain; something as sudden and painful as being stung",
+    "example": "the sting of death",
     "band": 2
   },
   {
     "id": 371,
     "word": "stunt",
-    "pos": "n",
-    "definition": "a difficult or unusual or dangerous feat; usually done to gain attention",
-    "example": "the driver pulled off a daring stunt",
+    "pos": "v",
+    "definition": "check the growth or development of",
+    "example": "poor soil can stunt a plant's growth",
     "band": 2
   },
   {
@@ -2980,7 +2980,7 @@
     "word": "supposedly",
     "pos": "adv",
     "definition": "believed or reputed to be the case",
-    "example": "Leaving Cathy with them, Myra had gone out to the Coast for a supposedly brief visit",
+    "example": "But there is, nevertheless, always a subtle difference in the way in which supposedly similar opinions are held.",
     "band": 2
   },
   {
@@ -3058,9 +3058,9 @@
   {
     "id": 383,
     "word": "token",
-    "pos": "n",
-    "definition": "an individual instance of a type of symbol",
-    "example": "the word`error' contains three tokens of `r'",
+    "pos": "adj",
+    "definition": "insignificantly small; a matter of form only (`tokenish' is informal)",
+    "example": "a token gesture of resistance",
     "band": 2
   },
   {
@@ -3194,9 +3194,9 @@
   {
     "id": 400,
     "word": "yell",
-    "pos": "v",
-    "definition": "utter a sudden loud cry",
-    "example": "I yelled to her from the window but she couldn't hear me",
+    "pos": "n",
+    "definition": "a loud utterance; often in protest or opposition",
+    "example": "Then there was another yell.",
     "band": 2
   },
   {
@@ -3252,7 +3252,7 @@
     "word": "aide",
     "pos": "n",
     "definition": "an officer who acts as military assistant to a more senior officer",
-    "example": "Mrs. Ralph Taussig, for junior aides",
+    "example": "the general's aide delivered the orders",
     "band": 3
   },
   {
@@ -3330,9 +3330,9 @@
   {
     "id": 417,
     "word": "backstage",
-    "pos": "n",
-    "definition": "a stage area out of sight of the audience",
-    "example": "Backstage was tomblike by contrast.",
+    "pos": "adv",
+    "definition": "out of view of the public; behind the scenes",
+    "example": "Working backstage to gain political support for his proposal",
     "band": 3
   },
   {
@@ -3492,7 +3492,7 @@
     "word": "claw",
     "pos": "n",
     "definition": "sharp curved horny process on the toe of a bird or some mammals or reptiles",
-    "example": "He lay down and clawed at it with his hind feet.",
+    "example": "So in dreams, have I seen majestic Satan thrusting forth his tormented colossal claw from the flame Baltic of Hell.",
     "band": 3
   },
   {
@@ -3747,8 +3747,8 @@
     "id": 469,
     "word": "fertile",
     "pos": "adj",
-    "definition": "capable of reproducing",
-    "example": "It was a pleasant fertile spot, well wooded, and rich in pasture.",
+    "definition": "intellectually productive",
+    "example": "The place smelled strongly of rank, fertile earth, rotting wood and urine.",
     "band": 3
   },
   {
@@ -4252,7 +4252,7 @@
     "word": "perfume",
     "pos": "n",
     "definition": "a distinctive odor that is pleasant",
-    "example": "O glistening perfumed South!",
+    "example": "Thy wine doth purify the golden honey; thy perfume.",
     "band": 3
   },
   {
@@ -4380,7 +4380,7 @@
     "word": "reflective",
     "pos": "adj",
     "definition": "deeply or seriously thoughtful",
-    "example": "The young man with the round face looked down for a little while and smoked reflectively.",
+    "example": "Mr. Lyford gives voice to a temper that represents, we think, an achieved plateau of reflective thinking.",
     "band": 3
   },
   {
@@ -4484,7 +4484,7 @@
     "word": "shin",
     "pos": "n",
     "definition": "the front part of the human leg between the knee and the ankle",
-    "example": "Fanshaw' s eyes were shining, and he spoke triumphantly.",
+    "example": "he barked his shin on the table leg",
     "band": 3
   },
   {
@@ -4514,9 +4514,9 @@
   {
     "id": 565,
     "word": "slick",
-    "pos": "n",
-    "definition": "a slippery smoothness",
-    "example": "Sweat popped out over him and he felt the slick between his palm and the stick grip.",
+    "pos": "adj",
+    "definition": "made slick by e.g. ice or grease",
+    "example": "sidewalks slick with ice",
     "band": 3
   },
   {
@@ -4532,7 +4532,7 @@
     "word": "soy",
     "pos": "n",
     "definition": "a source of oil; used for forage and soil improvement and as food",
-    "example": "Miss Colman pours measures of whole wheat, oats, and soy beans and turns on the motor.",
+    "example": "tofu is pressed from soy",
     "band": 3
   },
   {
@@ -4546,8 +4546,8 @@
   {
     "id": 569,
     "word": "sponge",
-    "pos": "v",
-    "definition": "wipe with a sponge, so as to clean or moisten",
+    "pos": "n",
+    "definition": "a porous mass of interlacing fibers that forms the internal skeleton of various marine animals a",
     "example": "A second assistant mopped with two sponges.",
     "band": 3
   },
@@ -4594,8 +4594,8 @@
   {
     "id": 575,
     "word": "stud",
-    "pos": "v",
-    "definition": "scatter or intersperse like dots or studs",
+    "pos": "n",
+    "definition": "a man who is virile and sexually active",
     "example": "Green studs cost about $.65",
     "band": 3
   },
@@ -4620,7 +4620,7 @@
     "word": "takeover",
     "pos": "n",
     "definition": "a sudden and decisive change of government illegally or by force",
-    "example": "a hostile takeover of the rival firm",
+    "example": "the junta's takeover of the government",
     "band": 3
   },
   {
@@ -4642,9 +4642,9 @@
   {
     "id": 581,
     "word": "tilt",
-    "pos": "v",
-    "definition": "to incline or bend from a vertical position",
-    "example": "Run tilting at it, and you but run through it.",
+    "pos": "n",
+    "definition": "a contentious speech act; a dispute where there is strong disagreement",
+    "example": "This technique causes the system to respond only to low frequency acceleration components such as the platform tilt.",
     "band": 3
   },
   {
@@ -4780,15 +4780,15 @@
     "word": "whisky",
     "pos": "n",
     "definition": "a liquor made from fermented mash of grain",
-    "example": "If I don't get some whisky down him he might die.",
+    "example": "Here was stored $1,000,000 worth of bonded whisky.",
     "band": 3
   },
   {
     "id": 599,
     "word": "whisper",
-    "pos": "v",
-    "definition": "speak softly; in a low voice",
-    "example": "Alice whispered to the Gryphon.",
+    "pos": "n",
+    "definition": "speaking softly without vibration of the vocal cords",
+    "example": "It was so sweet and so loud that the whispers died quite away.",
     "band": 3
   },
   {
@@ -4882,9 +4882,9 @@
   {
     "id": 611,
     "word": "articulate",
-    "pos": "v",
-    "definition": "provide with a joint",
-    "example": "She meant him well, but was in no condition for articulate speech.",
+    "pos": "adj",
+    "definition": "expressing yourself easily or characterized by clear expressive language",
+    "example": "articulate speech",
     "band": 4
   },
   {
@@ -4996,7 +4996,7 @@
     "word": "bridal",
     "pos": "n",
     "definition": "archaic terms for a wedding or wedding feast",
-    "example": "We workers in woods make bridal - bedsteads and card - tables, as well as coffins and hearses.",
+    "example": "Obviously, the bridal pair has many adjustments to make to their new situation.",
     "band": 4
   },
   {
@@ -5146,17 +5146,17 @@
   {
     "id": 644,
     "word": "convertible",
-    "pos": "n",
-    "definition": "a car that has top that can be folded or removed",
-    "example": "The convertible debentures are convertible into common shares at $65 a share by June 1, 1966",
+    "pos": "adj",
+    "definition": "capable of being exchanged for or replaced by something of equal value",
+    "example": "convertible securities",
     "band": 4
   },
   {
     "id": 645,
     "word": "convict",
-    "pos": "v",
-    "definition": "find or declare guilty",
-    "example": "The man was convicted of fraud and sentenced",
+    "pos": "n",
+    "definition": "a person serving a sentence in a jail or prison",
+    "example": "Convict no more, nor shame, nor dole!",
     "band": 4
   },
   {
@@ -5180,7 +5180,7 @@
     "word": "cub",
     "pos": "n",
     "definition": "an awkward and inexperienced youth",
-    "example": "There are ice cubes in a container at the far end and in another by the office.",
+    "example": "After Thursday's open date, Solly plans to open with Larry Jackson against the Cubs here Friday night.",
     "band": 4
   },
   {
@@ -5212,7 +5212,7 @@
     "word": "derive",
     "pos": "v",
     "definition": "reason by deduction; establish by deduction",
-    "example": "If you don' t derive profits, no royalty is due.",
+    "example": "On the contrary, those motions derive their most appalling beauty from it.",
     "band": 4
   },
   {
@@ -5268,7 +5268,7 @@
     "word": "discriminatory",
     "pos": "adj",
     "definition": "being biased or having a belief or attitude formed beforehand",
-    "example": "The commission had issued an administrative order which was challenged as discriminatory against Negroes.",
+    "example": "a discriminatory hiring policy",
     "band": 4
   },
   {
@@ -5316,7 +5316,7 @@
     "word": "endeavour",
     "pos": "n",
     "definition": "a purposeful or industrious undertaking (especially one that requires effort or boldness)",
-    "example": "She endeavoured to be composed, and to be just.",
+    "example": "To understand, thoroughly understand her own heart, was the first endeavour.",
     "band": 4
   },
   {
@@ -5404,7 +5404,7 @@
     "word": "fingerprint",
     "pos": "n",
     "definition": "a print made by an impression of the ridges in the skin of a finger",
-    "example": "He is a fingerprint specialist.",
+    "example": "We took the matches--they were book matches and once they'd been touched might retain fingerprints--and the change.",
     "band": 4
   },
   {
@@ -5482,9 +5482,9 @@
   {
     "id": 686,
     "word": "haunt",
-    "pos": "v",
-    "definition": "follow stealthily or recur constantly and spontaneously to",
-    "example": "the ghost of her mother haunted her",
+    "pos": "n",
+    "definition": "a frequently visited place",
+    "example": "It was the haunt of writer Ambrose Bierce, who admired its redwoods.",
     "band": 4
   },
   {
@@ -5506,9 +5506,9 @@
   {
     "id": 689,
     "word": "hind",
-    "pos": "n",
-    "definition": "any of several mostly spotted fishes that resemble groupers",
-    "example": "Such a beautiful hind - quarter of pork!",
+    "pos": "adj",
+    "definition": "located at or near the back of an animal",
+    "example": "back (or hind) legs",
     "band": 4
   },
   {
@@ -5658,8 +5658,8 @@
   {
     "id": 708,
     "word": "limp",
-    "pos": "v",
-    "definition": "walk impeded by some physical limitation or injury",
+    "pos": "adj",
+    "definition": "not firm",
     "example": "She was limp and beaten from her loss",
     "band": 4
   },
@@ -5764,7 +5764,7 @@
     "word": "musk",
     "pos": "n",
     "definition": "an odorous glandular secretion from the male musk deer; used as a perfume fixative",
-    "example": "To hint to such musked mariners of oil, and bone, and blubber, were little short of audacity.",
+    "example": "And likewise call to mind that saying of Paracelsus about what it is that maketh the best musk.",
     "band": 4
   },
   {
@@ -5820,7 +5820,7 @@
     "word": "oyster",
     "pos": "n",
     "definition": "marine mollusks having a rough irregular shell; found on the sea bed mostly in coastal waters",
-    "example": "Patties, sir; oyster patties.",
+    "example": "Thus the image of God is that which makes a man a man and not an oyster",
     "band": 4
   },
   {
@@ -5884,7 +5884,7 @@
     "word": "pinnacle",
     "pos": "n",
     "definition": "a slender upright spire at the top of a buttress of tower",
-    "example": "You lofty and dazzling towers, pinnacled, red as roses, burnish' d with gold!",
+    "example": "a slender pinnacle topped each buttress",
     "band": 4
   },
   {
@@ -5970,9 +5970,9 @@
   {
     "id": 747,
     "word": "recess",
-    "pos": "v",
-    "definition": "put into a recess",
-    "example": "recess lights",
+    "pos": "n",
+    "definition": "a pause from doing something (as work)",
+    "example": "Recess base slightly to allow room for stopper.",
     "band": 4
   },
   {
@@ -6172,7 +6172,7 @@
     "word": "stash",
     "pos": "n",
     "definition": "a secret store of valuables or money",
-    "example": "I've got a little stashed for a rainy day, and I guess this is rainy enough.",
+    "example": "a stash of coins hidden under the floorboards",
     "band": 4
   },
   {
@@ -6300,7 +6300,7 @@
     "word": "upstream",
     "pos": "adv",
     "definition": "toward the source or against the current",
-    "example": "Thus, stealthily they advanced upstream",
+    "example": "the salmon fought their way upstream",
     "band": 4
   },
   {
@@ -6362,9 +6362,9 @@
   {
     "id": 796,
     "word": "wager",
-    "pos": "n",
-    "definition": "the act of gambling",
-    "example": "You will lose this wager, my Lord",
+    "pos": "v",
+    "definition": "stake on the outcome of an issue",
+    "example": "he wagered ten dollars on the race",
     "band": 4
   },
   {
@@ -6426,9 +6426,9 @@
   {
     "id": 804,
     "word": "affluent",
-    "pos": "n",
-    "definition": "an affluent person; a person who is financially well off",
-    "example": "the so-called emerging affluents",
+    "pos": "adj",
+    "definition": "having an abundant supply of money or possessions of value",
+    "example": "an affluent banker",
     "band": 5
   },
   {
@@ -6468,7 +6468,7 @@
     "word": "arithmetic",
     "pos": "n",
     "definition": "the branch of pure mathematics dealing with the theory of numerical calculations",
-    "example": "Their infinity was more like the empty infinity of arithmetic, something unthinkable, yet necessary to thought.",
+    "example": "All of these sub-tests involve reading except Arithmetic Computation.",
     "band": 5
   },
   {
@@ -6572,7 +6572,7 @@
     "word": "boar",
     "pos": "n",
     "definition": "old World wild swine having a narrow body and prominent tusks from which most domestic swine com",
-    "example": "To three bits of board.",
+    "example": "a wild boar crashed through the brush",
     "band": 5
   },
   {
@@ -6706,9 +6706,9 @@
   {
     "id": 839,
     "word": "conserve",
-    "pos": "n",
-    "definition": "fruit preserved by cooking with sugar",
-    "example": "Public sentiment for conserving our rich natural heritage is growing.",
+    "pos": "v",
+    "definition": "keep constant through physical or chemical reactions or evolutionary change",
+    "example": "Energy is conserved in this process",
     "band": 5
   },
   {
@@ -6746,9 +6746,9 @@
   {
     "id": 844,
     "word": "crease",
-    "pos": "v",
-    "definition": "make wrinkles or creases on a smooth surface; make a pressed, folded or wrinkled line in",
-    "example": "crease the paper like this to make a crane",
+    "pos": "n",
+    "definition": "an angular or rounded shape made by folding",
+    "example": "a crease in his trousers",
     "band": 5
   },
   {
@@ -6810,9 +6810,9 @@
   {
     "id": 852,
     "word": "disdain",
-    "pos": "v",
-    "definition": "look down on with disdain",
-    "example": "His companion disdained to reply.",
+    "pos": "n",
+    "definition": "lack of respect accompanied by a feeling of intense dislike",
+    "example": "Anne sighed and blushed and smiled, in pity and disdain, either at her friend or herself.",
     "band": 5
   },
   {
@@ -6892,7 +6892,7 @@
     "word": "ether",
     "pos": "n",
     "definition": "the fifth and highest element after air and earth and fire and water",
-    "example": "In what rapt ether sails the world, of which the weariest will never weary?",
+    "example": "the ancients believed the heavens were filled with ether",
     "band": 5
   },
   {
@@ -6972,7 +6972,7 @@
     "word": "foundry",
     "pos": "n",
     "definition": "factory where metal castings are produced",
-    "example": "Burn high your fires, foundry chimneys!",
+    "example": "molten iron glowed in the foundry",
     "band": 5
   },
   {
@@ -6980,7 +6980,7 @@
     "word": "fright",
     "pos": "n",
     "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a",
-    "example": "What, frighted with false fire",
+    "example": "And that yell was a yell of fright.",
     "band": 5
   },
   {
@@ -7044,7 +7044,7 @@
     "word": "hesitant",
     "pos": "adj",
     "definition": "lacking decisiveness of character; unable to act or decide quickly or firmly",
-    "example": "He seemed to find much food for thought in this; but his reply was very slow and hesitant.",
+    "example": "a hesitant knock at the door",
     "band": 5
   },
   {
@@ -7116,7 +7116,7 @@
     "word": "inflict",
     "pos": "v",
     "definition": "impose something unpleasant",
-    "example": "Supposing it possible that they are not engaged, what distress would not such an enquiry inflict!",
+    "example": "Their flight was delayed, Dunn said, when a boarding ramp inflicted some minor damage to the wing of the plane.",
     "band": 5
   },
   {
@@ -7186,9 +7186,9 @@
   {
     "id": 899,
     "word": "jab",
-    "pos": "v",
-    "definition": "poke or thrust abruptly",
-    "example": "Cobb unleashed a single powerful jab that sent Gyp reeling wildly and crashing down with a whining groan.",
+    "pos": "n",
+    "definition": "a sharp hand gesture (resembling a blow)",
+    "example": "he warned me with a jab with his finger",
     "band": 5
   },
   {
@@ -7250,9 +7250,9 @@
   {
     "id": 907,
     "word": "loom",
-    "pos": "v",
-    "definition": "come into view indistinctly, often threateningly",
-    "example": "Another air plane loomed into the sky",
+    "pos": "n",
+    "definition": "a textile machine for weaving yarn into a textile",
+    "example": "Compulsory retirement at sixty-five looms on our horizon.",
     "band": 5
   },
   {
@@ -7276,15 +7276,15 @@
     "word": "melancholy",
     "pos": "n",
     "definition": "a feeling of thoughtful sadness",
-    "example": "He was a melancholy spectacle.",
+    "example": "Nothing can be more melancholy than forced merriment.",
     "band": 5
   },
   {
     "id": 911,
     "word": "mellow",
-    "pos": "v",
-    "definition": "soften, make mellow",
-    "example": "Age and experience mellowed him over the years",
+    "pos": "adj",
+    "definition": "unhurried and relaxed",
+    "example": "a mellow conversation",
     "band": 5
   },
   {
@@ -7324,7 +7324,7 @@
     "word": "mischief",
     "pos": "n",
     "definition": "reckless or malicious behavior that causes discomfort or annoyance in others",
-    "example": "But they thought to do me mischief.",
+    "example": "Vanity working on a weak head, produces every sort of mischief.",
     "band": 5
   },
   {
@@ -7332,7 +7332,7 @@
     "word": "monstrous",
     "pos": "adj",
     "definition": "abnormally large",
-    "example": "Of the Monstrous Pictures of Whales.",
+    "example": "It is a monstrous thing, for which men die.",
     "band": 5
   },
   {
@@ -7340,7 +7340,7 @@
     "word": "moor",
     "pos": "n",
     "definition": "open land usually with peaty soil covered with heather and bracken and moss",
-    "example": "But by those clanking links, the vast corpse itself, not the ship, is to be moored.",
+    "example": "They've been there since the days of the Moors and the Saracens.",
     "band": 5
   },
   {
@@ -7458,9 +7458,9 @@
   {
     "id": 933,
     "word": "peep",
-    "pos": "v",
-    "definition": "look furtively",
-    "example": "He peeped at the woman through the window",
+    "pos": "n",
+    "definition": "the short weak cry of a young bird",
+    "example": "I' ll go up there at the very first peep of day to - morrow.",
     "band": 5
   },
   {
@@ -7482,9 +7482,9 @@
   {
     "id": 936,
     "word": "perpendicular",
-    "pos": "n",
-    "definition": "a straight line at right angles to another line",
-    "example": "Not eight inches of perpendicular rope were visible at the bows.",
+    "pos": "adj",
+    "definition": "intersecting at or forming right angles",
+    "example": "the axes are perpendicular to each other",
     "band": 5
   },
   {
@@ -7714,9 +7714,9 @@
   {
     "id": 965,
     "word": "slump",
-    "pos": "v",
-    "definition": "assume a drooping posture or carriage",
-    "example": "He let go of the shirt, and Jess slumped to the floor.",
+    "pos": "n",
+    "definition": "a noticeable deterioration in performance or quality",
+    "example": "the team went into a slump",
     "band": 5
   },
   {
@@ -7866,9 +7866,9 @@
   {
     "id": 984,
     "word": "treble",
-    "pos": "adj",
-    "definition": "having or denoting a high range",
-    "example": "the boy still had a fine treble voice",
+    "pos": "n",
+    "definition": "the pitch range of the highest female voice",
+    "example": "the boy sang the treble part in the choir",
     "band": 5
   },
   {
@@ -7956,7 +7956,7 @@
     "word": "vie",
     "pos": "v",
     "definition": "compete for something; engage in a contest; measure oneself against others",
-    "example": "The marine was alone, for they were impatient people and by now would have vied to knock him from the tree.",
+    "example": "In vying with him, Mr. D'Albert also seemed to be overdriving his tone.",
     "band": 5
   },
   {

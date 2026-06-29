@@ -3,7 +3,12 @@ name: Checks
 # Config guardrails that don't need Xcode. Validates that the App Group
 # identifier in project.yml matches the constant in Shared/AppGroup.swift, so the
 # app and the widget can never drift onto two different on-device stores, and that
-# the seed corpus is well-formed. Companion to ios-tests.yml.
+# the bundled corpus is well-formed. Companion to ios-tests.yml.
+#
+# Note: words.json is built offline by scripts/build_modern_corpus.py, which
+# needs wordfreq + NLTK corpora (large downloads) — too heavy to regenerate in
+# CI. So instead of a regenerate-and-diff check we validate the shipped file's
+# structure directly (the same invariants WordOfTheDayTests/CorpusTests asserts).
 
 on:
   pull_request:
@@ -18,8 +23,34 @@ jobs:
       - uses: actions/checkout@v4
       - name: App Group identifier sync (project.yml ↔ Swift)
         run: bash scripts/check_appgroup_sync.sh
-      - name: Seed corpus regenerates deterministically
+      - name: Corpus is well-formed (words.json)
         run: |
-          python3 scripts/seed_corpus.py
-          git diff --exit-code WordOfTheDay/Resources/words.json \
-            || (echo "::error::words.json is out of date — run scripts/seed_corpus.py and commit." && exit 1)
+          python3 - <<'PY'
+          import json, sys
+          words = json.load(open("WordOfTheDay/Resources/words.json"))
+          errors = []
+          if not isinstance(words, list) or not words:
+              sys.exit("::error::words.json must be a non-empty JSON array")
+          ids = [w["id"] for w in words]
+          if len(set(ids)) != len(ids):
+              errors.append("duplicate ids")
+          if not all(isinstance(i, int) and i > 0 for i in ids):
+              errors.append("ids must be positive integers")
+          valid_pos = {"n", "v", "adj", "adv"}
+          names = set()
+          for w in words:
+              tag = f"id={w.get('id')}"
+              if not str(w.get("word", "")).strip(): errors.append(f"{tag}: blank word")
+              if not str(w.get("definition", "")).strip(): errors.append(f"{tag}: blank definition")
+              if not str(w.get("example", "")).strip(): errors.append(f"{tag}: blank example")
+              if w.get("pos") not in valid_pos: errors.append(f"{tag}: bad pos {w.get('pos')!r}")
+              if w.get("band") not in (1, 2, 3, 4, 5): errors.append(f"{tag}: band out of range")
+              names.add(w.get("word"))
+          if len(names) != len(words):
+              errors.append("duplicate headwords")
+          if {w["band"] for w in words} != {1, 2, 3, 4, 5}:
+              errors.append("every difficulty band (1..5) must be represented")
+          if errors:
+              sys.exit("::error::words.json invalid:\n" + "\n".join(errors[:50]))
+          print(f"words.json OK — {len(words)} entries, bands 1..5 present")
+          PY

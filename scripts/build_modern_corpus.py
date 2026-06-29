@@ -31,7 +31,8 @@ LICENSING (read docs/prior-art-and-licensing.md before shipping):
 Setup (install yourself; intentionally not vendored):
     pip install nltk wordfreq
     python -c "import nltk; [nltk.download(p) for p in \
-        ('wordnet','omw-1.4','gutenberg','brown','punkt','punkt_tab')]"
+        ('wordnet','omw-1.4','gutenberg','brown','punkt','punkt_tab', \
+         'averaged_perceptron_tagger','averaged_perceptron_tagger_eng')]"
 
 Usage:
     python scripts/build_modern_corpus.py \
@@ -101,14 +102,28 @@ DROP_AFTER = set("chevy collins franklin morocco murphy nelson sierra pol grad l
                  "marc chapman phoenix whale kite".split())
 
 
-def variants(w: str) -> set:
-    """Surface inflections so example mining can match `walk` in `walked`."""
-    v = {w, w + "s", w + "es", w + "d", w + "ed", w + "ing", w + "ly"}
-    if w.endswith("e"):
-        v |= {w[:-1] + "ing", w + "d"}
-    if w.endswith("y"):
-        v |= {w[:-1] + "ies", w[:-1] + "ied"}
-    return v
+_LEMMA_CACHE = {}
+
+
+def token_lemmas(wn, token):
+    """Every WordNet base form of a surface token, plus the token itself.
+
+    Example mining matches a sentence to a headword by *lemma*: `walked` lemmatizes
+    to `walk` (a hit), but `board` lemmatizes only to `board` — never to `boar` —
+    so suffix collisions like boar/board or shin/shining can't sneak through.
+    """
+    tl = token.lower()
+    cached = _LEMMA_CACHE.get(tl)
+    if cached is not None:
+        return cached
+    lemmas = {tl}
+    if tl.isalpha():
+        for p in ("n", "v", "a", "r"):
+            m = wn.morphy(tl, p)
+            if m:
+                lemmas.add(m)
+    _LEMMA_CACHE[tl] = lemmas
+    return lemmas
 
 
 def clean_definition(d: str) -> str:
@@ -128,36 +143,58 @@ def clean_definition(d: str) -> str:
     return (d[0].lower() + d[1:]) if d else d
 
 
-_POS_ORDER = {"n": 0, "v": 1, "a": 2, "s": 2, "r": 3}
+_POS_ORDER = {"n": 0, "v": 1, "a": 2, "r": 3}
+_WN_POS = {"n": "n", "v": "v", "a": "a", "s": "a", "r": "r"}  # WordNet pos -> our 4
 
 
-def best_synset(wn, word):
-    """Pick the word's most useful sense: the dominant part of speech (by SemCor
-    frequency), then, within it, the most-frequent sense — preferring one that
-    ships an example sentence when frequencies tie (which they often do).
+def brown_dominant_pos(brown):
+    """word (lowercased) -> its most common part of speech in the Brown Corpus,
+    mapped to {n, v, a, r}. Empirical modern usage, used to choose a word's
+    sense when WordNet has no frequency signal."""
+    tag_to_pos = {"NN": "n", "VB": "v", "JJ": "a", "RB": "r"}
+    counts = {}
+    for word, tag in brown.tagged_words():
+        wl = word.lower()
+        if not wl.isalpha():
+            continue
+        pos = tag_to_pos.get(tag[:2])
+        if pos:
+            counts.setdefault(wl, {})
+            counts[wl][pos] = counts[wl].get(pos, 0) + 1
+    return {wl: max(c, key=c.get) for wl, c in counts.items()}
 
-    Choosing the dominant POS first avoids WordNet's noun-bias (so `interact`
-    stays a verb). Lemmas are matched case-sensitively so proper nouns
-    (capitalized in WordNet) are skipped. A few words whose WordNet primary
-    sense is simply the wrong homograph (tuna -> the cactus, metabolism ->
-    "metamorphosis") can't be resolved automatically and are dropped via the
-    MISSENSE list above.
+
+def best_synset(wn, word, dominant_pos=None):
+    """Pick the word's most useful sense: its dominant part of speech, then the
+    most-frequent sense within it (preferring one that ships an example).
+
+    The dominant POS comes from real usage in the Brown Corpus when available,
+    which fixes WordNet's noun-bias on words that have no SemCor counts — so
+    `conserve` and `import` come out as verbs and `facial` as an adjective,
+    instead of defaulting to the noun homograph. Falls back to SemCor counts,
+    then WordNet's POS order. Lemmas are matched case-sensitively so proper nouns
+    (capitalized in WordNet) are skipped. A few words whose WordNet primary sense
+    is still the wrong homograph (tuna -> the cactus) are dropped via MISSENSE.
     """
     syns = [s for s in wn.synsets(word) if any(l.name() == word for l in s.lemmas())]
     if not syns:
         return None
-    pos_count = {}
-    for s in syns:
-        p = s.pos()
-        for l in s.lemmas():
-            if l.name() == word:
-                pos_count[p] = pos_count.get(p, 0) + l.count()
-    best_pos = max(pos_count, key=lambda p: (pos_count[p], -_POS_ORDER.get(p, 9)))
+    available = {_WN_POS[s.pos()] for s in syns}
+
+    best_pos = dominant_pos if (dominant_pos in available) else None
+    if best_pos is None:
+        pos_count = {}
+        for s in syns:
+            for l in s.lemmas():
+                if l.name() == word:
+                    p = _WN_POS[s.pos()]
+                    pos_count[p] = pos_count.get(p, 0) + l.count()
+        best_pos = max(pos_count, key=lambda p: (pos_count[p], -_POS_ORDER.get(p, 9)))
 
     def lemma_count(s):
         return max(l.count() for l in s.lemmas() if l.name() == word)
 
-    cands = [s for s in syns if s.pos() == best_pos]
+    cands = [s for s in syns if _WN_POS[s.pos()] == best_pos]
     cands.sort(key=lambda s: (-lemma_count(s), 0 if s.examples() else 1))
     return cands[0]
 
@@ -175,18 +212,48 @@ def detokenize(det, sent):
     return det.detokenize(sent)
 
 
-def build_corpus_index(corpus, allvars, det, lo=5, hi=22, maxlen=118):
-    """word -> shortest clean sentence (from `corpus`) that uses it."""
+_OUR_TO_WN = {"n": "n", "v": "v", "adj": "a", "adv": "r"}
+_PENN_COARSE = {"NN": "n", "VB": "v", "JJ": "adj", "RB": "adv"}
+
+
+def build_corpus_index(corpus, word_pos, wn, nltk, det, lo=5, hi=22, maxlen=118):
+    """word -> shortest clean sentence (from `corpus`) that uses it *in its part
+    of speech*.
+
+    Matching is lemma- and POS-aware on two levels: a token must reduce to the
+    headword under the headword's own POS (so `dived`/`hacked` can't match the
+    nouns `dive`/`hack`), and the token must actually be tagged as that POS in
+    the sentence (so the bare verb `dive` in "dive deep" can't match the noun
+    either). Homograph collisions like boar/board never match at all.
+    """
+    by_pos = {"n": set(), "v": set(), "adj": set(), "adv": set()}
+    for w, p in word_pos.items():
+        by_pos[p].add(w)
     best = {}
     for sent in corpus.sents():
         n = len(sent)
         if n < lo or n > hi:
             continue
-        hits = set()
+        # Candidate (headword, surface token, pos) hits by lemma under each POS.
+        cand = []
         for t in sent:
-            w = allvars.get(t.lower())
-            if w:
-                hits.update(w)
+            tl = t.lower()
+            if not tl.isalpha():
+                continue
+            for our_pos, wn_pos in _OUR_TO_WN.items():
+                pool = by_pos[our_pos]
+                if not pool:
+                    continue
+                base = tl if tl in pool else wn.morphy(tl, wn_pos)
+                if base in pool:
+                    cand.append((base, tl, our_pos))
+        if not cand:
+            continue
+        # Confirm each candidate token is actually tagged as that POS here.
+        tok_tags = {}
+        for tok, tag in nltk.pos_tag(sent):
+            tok_tags.setdefault(tok.lower(), set()).add(_PENN_COARSE.get(tag[:2]))
+        hits = {base for base, tl, our_pos in cand if our_pos in tok_tags.get(tl, ())}
         if not hits:
             continue
         txt = detokenize(det, sent)
@@ -201,15 +268,20 @@ def build_corpus_index(corpus, allvars, det, lo=5, hi=22, maxlen=118):
     return best
 
 
-def wn_example_with_word(syn, word):
-    vs = variants(word)
+def example_uses_word(wn, sentence, word):
+    """True if `word` appears in `sentence` as a headword or inflection (by lemma)."""
+    return any(word in token_lemmas(wn, t) for t in re.findall(r"[A-Za-z']+", sentence))
+
+
+def wn_example_with_word(wn, syn, word):
     for ex in syn.examples():
-        if vs & set(re.findall(r"[a-zA-Z]+", ex.lower())):
+        if example_uses_word(wn, ex, word):
             return ex
     return None
 
 
 def main():
+    import nltk
     import wordfreq as wf
     from nltk.corpus import gutenberg, brown, wordnet as wn
     from nltk.tokenize.treebank import TreebankWordDetokenizer
@@ -226,6 +298,9 @@ def main():
     if args.supplement.exists():
         supplement = json.loads(args.supplement.read_text())
 
+    # Empirical dominant part of speech per word, from the Brown Corpus tags.
+    dom_pos = brown_dominant_pos(brown)
+
     # 1. Filtered candidate list, in descending modern-frequency order.
     candidates = []
     for w in wf.top_n_list("en", 80000):
@@ -233,7 +308,7 @@ def main():
             continue
         if w in BLOCK or reducible(wn, w):
             continue
-        s = best_synset(wn, w)
+        s = best_synset(wn, w, dom_pos.get(w))
         if s is None:
             continue
         candidates.append((w, wf.zipf_frequency(w, "en"), s))
@@ -257,15 +332,11 @@ def main():
             repl = next(spare)
             chosen.add(repl[0])
             selected[i] = repl
-    words = {w for w, _, _ in selected}
+    word_pos = {w: POS_MAP[s.pos()] for w, _, s in selected}
 
     # 3. Example indices over the public-domain / redistributable corpora.
-    allvars = {}
-    for w in words:
-        for v in variants(w):
-            allvars.setdefault(v, []).append(w)
-    gut = build_corpus_index(gutenberg, allvars, det, lo=5, hi=22)
-    brn = build_corpus_index(brown, allvars, det, lo=5, hi=24)
+    gut = build_corpus_index(gutenberg, word_pos, wn, nltk, det, lo=5, hi=22)
+    brn = build_corpus_index(brown, word_pos, wn, nltk, det, lo=5, hi=24)
 
     # 4. Assemble. Band by frequency quintile (rarer => higher band).
     selected.sort(key=lambda x: -x[1])
@@ -276,7 +347,7 @@ def main():
         pos = POS_MAP[s.pos()]
         if w in supplement:
             ex, tag = supplement[w], "supplement"
-        elif (e := wn_example_with_word(s, w)):
+        elif (e := wn_example_with_word(wn, s, w)):
             ex, tag = e, "wordnet"
         elif w in gut:
             ex, tag = gut[w], "gutenberg"
@@ -306,6 +377,14 @@ def main():
         missing = [r["word"] for r in rows if not r["example"]]
         print(f"\n{len(missing)} words still need an example — add them to "
               f"{args.supplement.name}:\n" + "\n".join(missing))
+
+    # Guard: every example must actually use its headword (lemma-aware). Catches
+    # bad supplement entries and any future matching regression.
+    mismatched = [r["word"] for r in out
+                  if r["example"] and not example_uses_word(wn, r["example"], r["word"])]
+    if mismatched:
+        print(f"\nWARNING: {len(mismatched)} examples do not contain their headword: "
+              + ", ".join(mismatched))
 
 
 if __name__ == "__main__":
