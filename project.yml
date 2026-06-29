@@ -35,7 +35,9 @@ packages:
   # the widget never links it (it surfaces no review state).
   FSRS:
     url: https://github.com/open-spaced-repetition/swift-fsrs
-    exactVersion: 5.0.0
+    # v5.0.0 tag accidentally shipped internal FSRS/FSRSDefaults APIs; pin to the
+    # access-level fix immediately after that tag (FSRS-5 semantics, public surface).
+    revision: f731c4bfc2b714237b2e05565fbbf542c4d34c6c
 
 targets:
   WordOfTheDay:
@@ -80,7 +82,6 @@ targets:
         buildPhase: resources    # the widget bundles its own copy of words.json + fonts
         excludes:
           - PrivacyInfo.xcprivacy   # the widget ships WordWidget/PrivacyInfo.xcprivacy instead
-          - Fonts/OFL.txt           # license text only needs to ship in the app bundle
     entitlements:
       path: WordWidget/WordWidget.entitlements
       properties:
@@ -92,6 +93,7 @@ targets:
         CFBundleDisplayName: Word of the Day
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
         UIAppFonts:
@@ -148,3 +150,7 @@ schemes:
         - WordOfTheDayUITests
     run:
       config: Debug
+    archive:
+      config: Release
+    profile:
+      config: Release

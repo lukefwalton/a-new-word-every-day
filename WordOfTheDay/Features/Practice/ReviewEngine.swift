@@ -19,7 +19,7 @@ struct ReviewEngine {
 
     /// A brand-new, never-reviewed card, due immediately.
     func newState(now: Date = Date()) -> ReviewState {
-        ReviewState(FSRSDefaults().createEmptyCard(now: now))
+        ReviewState(Card(due: now))
     }
 
     /// Advance a word's schedule for a grade. `nil` means the word has never been
@@ -28,7 +28,7 @@ struct ReviewEngine {
     /// throw is surfaced, never swallowed, and callers may treat it as a programmer
     /// error rather than a recoverable state.
     func grade(_ state: ReviewState?, _ grade: ReviewGrade, now: Date = Date()) throws -> ReviewState {
-        let card = state?.card ?? FSRSDefaults().createEmptyCard(now: now)
+        let card = state?.card ?? Card(due: now)
         let result = try fsrs.next(card: card, now: now, grade: grade.rating)
         return ReviewState(result.card)
     }

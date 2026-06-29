@@ -48,7 +48,7 @@ shape of the codebase.
 brew install xcodegen
 python3 -m pip install pyyaml                      # generate.sh merges YAML with PyYAML
 cp project.local.yml.example project.local.yml   # set DEVELOPMENT_TEAM
-bash scripts/fetch_fonts.sh                       # optional: OFL variable fonts
+bash scripts/fetch_fonts.sh                       # required for release (OFL variable fonts)
 bash scripts/generate.sh
 open WordOfTheDay.xcodeproj
 ```
@@ -56,7 +56,28 @@ open WordOfTheDay.xcodeproj
 Register the App Group (`group.com.lukewalton.wordoftheday`) for your team. For a
 fork, change `bundleIdPrefix` / bundle IDs in `project.local.yml` and the App
 Group in both `.entitlements` files plus `AppGroup.identifier` (CI checks they
-match). The app runs without the fonts — it falls back to a system serif/sans.
+match). Without bundled fonts the app falls back to system serif/sans.
+
+## App Store (free, no IAP)
+
+```bash
+cp project.local.yml.example project.local.yml   # or: bash scripts/setup_signing.sh
+bash scripts/release.sh                            # fonts + tests + Release archive
+```
+
+In App Store Connect:
+
+| Field | Value |
+|-------|--------|
+| **Price** | Free |
+| **Support URL** | https://github.com/lukefwalton/word-of-the-day/issues |
+| **Privacy Policy** | https://github.com/lukefwalton/word-of-the-day/blob/main/docs/privacy.md |
+| **App Privacy** | Data Not Collected |
+| **Export compliance** | No (ITSAppUsesNonExemptEncryption is false) |
+| **Screenshots** | Include the Home Screen widget — it's the product |
+
+Review notes: no login, no network, widget star works without opening the app.
+Register App Group on both app and widget App IDs in the Developer portal.
 
 ## Test
 

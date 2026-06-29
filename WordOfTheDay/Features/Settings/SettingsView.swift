@@ -133,16 +133,34 @@ struct SettingsView: View {
 
     // MARK: About
 
+    private var appVersion: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        return "\(version) (\(build))"
+    }
+
     private var aboutSection: some View {
         Section("About") {
+            HStack {
+                Text("Version")
+                Spacer()
+                Text(appVersion).foregroundStyle(palette.secondaryText)
+            }
             Label("Free. No account, no tracking, no analytics.", systemImage: "lock.fill")
                 .font(.footnote)
                 .foregroundStyle(palette.secondaryText)
+            Link(destination: AppLinks.support) {
+                Label("Support & feedback", systemImage: "lifepreserver")
+            }
+            Link(destination: AppLinks.privacy) {
+                Label("Privacy policy", systemImage: "hand.raised")
+            }
             DisclosureGroup("Acknowledgements") {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("The word list and its definitions were written for this app and are dedicated to the public domain (CC0) — free for anyone to use.")
                     Text("Typefaces — Fraunces, Literata, Inter, Recursive — are licensed under the SIL Open Font License 1.1.")
                     Text("Review scheduling uses FSRS via swift-fsrs, licensed under the MIT License. It runs entirely on-device.")
+                    Text("App source code is MIT licensed.")
                 }
                 .font(.footnote)
                 .foregroundStyle(palette.secondaryText)

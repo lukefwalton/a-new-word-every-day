@@ -24,11 +24,12 @@ starred words; a starred word with no saved schedule is a new card, due now.
   dependency.** "Anki" means FSRS, and a maintained native-Swift FSRS beats
   hand-rolling one. It's resolved at *build* time only — no runtime network, so the
   local-first/no-tracking doctrine holds; review data never leaves the device.
-- **Pinned with `exactVersion: 5.0.0` in `project.yml`, not a committed
+- **Pinned with a git `revision` in `project.yml`, not a committed
   `Package.resolved`.** The Xcode project is generated and `*.xcodeproj` is
-  gitignored, so the lockfile lives *inside* an ignored directory. The exact pin in
-  `project.yml` is the lock instead, and it's deterministic. (v5.0.0 is the latest
-  tag = FSRS-5; FSRS-6 is only on untagged `main`.) Its `Package.swift` declares
+  gitignored, so the lockfile lives *inside* an ignored directory. The revision pin
+  is the lock instead, and it's deterministic. (The v5.0.0 tag shipped internal
+  FSRS APIs; we pin to `f731c4b` — the public-access fix on FSRS-5 semantics.
+  FSRS-6 is on later `main`.) Its `Package.swift` declares
   `swift-tools-version: 6.0`, so CI runs on `macos-15` (Xcode 16) to resolve it —
   the app still compiles in Swift 5 language mode for iOS 17.
 
