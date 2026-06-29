@@ -306,9 +306,12 @@ attribution or share-alike obligations. The app source code stays MIT.
 
 Pipeline: edit `scripts/corpus_source.json` (a flat array of
 `{word, pos, definition, band}`); `scripts/build_corpus.py` validates it, sorts
-by `(band, word)`, and numbers the entries 1..N into `words.json`. No
-dependencies beyond the Python standard library. The app **never** fetches
-anything at runtime.
+by `(band, word)`, and gives each word a **stable id derived from the word
+itself** (a hash) into `words.json`. The id is deliberately *not* positional:
+persisted user state — starred words, difficulty marks — keys off `Word.id`, so
+editing or growing the corpus must never renumber existing words onto someone
+else's saved state. No dependencies beyond the Python standard library. The app
+**never** fetches anything at runtime.
 
 Difficulty bands are an editorial judgment of how rare/hard a word is — band 1
 is the most accessible advanced vocabulary, band 5 the rarest and most literary.

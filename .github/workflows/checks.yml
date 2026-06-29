@@ -36,8 +36,10 @@ jobs:
           if not isinstance(words, list) or len(words) < 1000:
               sys.exit(f"::error::words.json looks too small ({len(words) if isinstance(words, list) else 'n/a'}) — expected the full ~1000+ corpus; accidental content drop?")
           ids = [w["id"] for w in words]
-          if ids != list(range(1, len(words) + 1)):
-              errors.append("ids must be 1..N with no gaps or duplicates")
+          if not all(isinstance(i, int) and i > 0 for i in ids):
+              errors.append("ids must be positive integers")
+          if len(set(ids)) != len(ids):
+              errors.append("duplicate ids")
           valid_pos = {"n", "v", "adj", "adv"}
           names = set()
           for w in words:
