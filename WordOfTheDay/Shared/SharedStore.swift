@@ -129,12 +129,19 @@ final class SharedStore {
     /// widget shares the container but never reads this key.
     var reviewStates: [Int: ReviewState] {
         get {
-            guard let data = defaults.data(forKey: Key.reviewStates),
-                  let raw = try? JSONDecoder().decode([String: ReviewState].self, from: data)
-            else { return [:] }
-            return Dictionary(uniqueKeysWithValues: raw.compactMap { key, value in
-                Int(key).map { ($0, value) }
-            })
+            guard let data = defaults.data(forKey: Key.reviewStates) else { return [:] }
+            do {
+                let raw = try JSONDecoder().decode([String: ReviewState].self, from: data)
+                return Dictionary(uniqueKeysWithValues: raw.compactMap { key, value in
+                    Int(key).map { ($0, value) }
+                })
+            } catch {
+                // Don't silently wipe review progress on corruption — surface it so
+                // it's diagnosable. We still degrade to empty so the app keeps working.
+                NSLog("[WordOfTheDay] reviewStates failed to decode (%d bytes); treating as empty: %@",
+                      data.count, String(describing: error))
+                return [:]
+            }
         }
         set {
             let raw = Dictionary(uniqueKeysWithValues: newValue.map { (String($0.key), $0.value) })

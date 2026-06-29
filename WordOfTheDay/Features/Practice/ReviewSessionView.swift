@@ -142,6 +142,9 @@ struct ReviewSessionView: View {
 
     private func commit(_ grade: ReviewGrade, for word: Word) {
         model.grade(word, grade)
+        // "Study until caught up": a word you fail comes back later in this same
+        // session rather than vanishing until the next one (mirrors Anki relearning).
+        if grade == .again { queue.append(word) }
         revealed = false
         index += 1
     }

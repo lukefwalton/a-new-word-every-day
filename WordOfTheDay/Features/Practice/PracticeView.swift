@@ -28,6 +28,9 @@ struct PracticeView: View {
                     }
                 }
                 .navigationTitle("Practice")
+                // `dueCount` is time-based: cards can come due while the app stays
+                // resident, so refresh it whenever the Practice tab is shown.
+                .onAppear { model.recomputeDue() }
                 .toolbar {
                     if !model.starredWords.isEmpty {
                         ToolbarItem(placement: .topBarTrailing) {

@@ -28,7 +28,16 @@ starred words; a starred word with no saved schedule is a new card, due now.
   `Package.resolved`.** The Xcode project is generated and `*.xcodeproj` is
   gitignored, so the lockfile lives *inside* an ignored directory. The exact pin in
   `project.yml` is the lock instead, and it's deterministic. (v5.0.0 is the latest
-  tag = FSRS-5; FSRS-6 is only on untagged `main`.)
+  tag = FSRS-5; FSRS-6 is only on untagged `main`.) Its `Package.swift` declares
+  `swift-tools-version: 6.0`, so CI runs on `macos-15` (Xcode 16) to resolve it —
+  the app still compiles in Swift 5 language mode for iOS 17.
+
+## Session behaviour
+
+The study queue is snapshotted once when `ReviewSessionView` appears, but a word
+graded **Again** is re-appended to that queue so it returns later in the same
+session ("study until caught up"). `dueCount` is recomputed on Practice-tab
+appearance as well as on grade/star changes, since due-ness is time-based.
 - **Persistence is engine-agnostic.** `ReviewState` is our own type, not FSRS's
   `Card`, so swapping schedulers later is a one-file change in `ReviewEngine`, not a
   data migration — and the package import never reaches the **widget**, which links
