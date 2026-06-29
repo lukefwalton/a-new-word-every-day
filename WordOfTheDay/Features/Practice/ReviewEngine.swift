@@ -61,8 +61,12 @@ struct ReviewEngine {
             next.stability = grade == .again
                 ? Self.nextForgetStability(d: last.difficulty, s: last.stability, r: r)
                 : Self.nextRecallStability(d: last.difficulty, s: last.stability, r: r, grade: grade)
+            // A lapse is forgetting an already-learned card, so it counts only on a
+            // *subsequent* Again — never on a first review of a brand-new card.
+            if grade == .again { next.lapses += 1 }
         } else {
-            // First review: seed difficulty/stability from the grade alone.
+            // First review: seed difficulty/stability from the grade alone. Failing a
+            // never-learned card is not a lapse.
             next.elapsedDays = 0
             next.difficulty = Self.initDifficulty(g)
             next.stability = Self.initStability(grade)
@@ -72,8 +76,9 @@ struct ReviewEngine {
         let interval = nextInterval(stability: next.stability)
         next.scheduledDays = Double(interval)
         next.reps += 1
-        if grade == .again { next.lapses += 1 }
-        next.state = grade == .again ? 3 : 2      // relearning : review
+        // The long-term scheduler has no learning steps, so cards are always in the
+        // Review state (matches swift-fsrs's LongTermScheduler).
+        next.state = 2
         next.lastReview = now
         next.due = Self.add(days: interval, to: now)
         return next

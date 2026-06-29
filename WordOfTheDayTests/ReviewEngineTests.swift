@@ -37,8 +37,20 @@ final class ReviewEngineTests: XCTestCase {
         XCTAssertNotEqual(state.state, 0, "a reviewed card is no longer in the New state")
     }
 
-    func test_again_incrementsLapses() {
-        XCTAssertEqual(engine.grade(nil, .again, now: now).lapses, 1)
+    func test_firstReviewAgain_isNotALapse() {
+        // Failing a never-learned card keeps it in Review with no lapse recorded —
+        // a lapse means forgetting something already learned (matches swift-fsrs).
+        let state = engine.grade(nil, .again, now: now)
+        XCTAssertEqual(state.lapses, 0)
+        XCTAssertEqual(state.state, 2)
+    }
+
+    func test_subsequentAgain_countsAsLapse() {
+        let first = engine.grade(nil, .good, now: now)
+        let due = now.addingTimeInterval(first.scheduledDays * 86_400)
+        let lapsed = engine.grade(first, .again, now: due)
+        XCTAssertEqual(lapsed.lapses, 1)
+        XCTAssertEqual(lapsed.state, 2)
     }
 
     func test_successfulReviewOnDueCard_growsStability() {
