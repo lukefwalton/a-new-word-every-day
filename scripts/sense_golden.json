@@ -7,6 +7,14 @@
     "pos": "n",
     "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail"
   },
+  "bisexual": {
+    "pos": "adj",
+    "definition": "sexually attracted to both sexes"
+  },
+  "bridal": {
+    "pos": "adj",
+    "definition": "of or relating to a wedding"
+  },
   "counsel": {
     "pos": "n",
     "definition": "something that provides direction or advice as to a decision or course of action"
@@ -31,6 +39,10 @@
     "pos": "n",
     "definition": "respiratory organ of aquatic animals that breathe oxygen dissolved in water"
   },
+  "ginger": {
+    "pos": "n",
+    "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cooker"
+  },
   "graft": {
     "pos": "n",
     "definition": "the practice of offering something (usually money) in order to gain an illicit advantage"
@@ -38,6 +50,10 @@
   "hacker": {
     "pos": "n",
     "definition": "a programmer who breaks into computer systems in order to steal or change or destroy information"
+  },
+  "immune": {
+    "pos": "adj",
+    "definition": "not affected by a given influence"
   },
   "pedal": {
     "pos": "n",
@@ -62,5 +78,9 @@
   "thrift": {
     "pos": "n",
     "definition": "extreme care in spending money; reluctance to spend money unnecessarily"
+  },
+  "voucher": {
+    "pos": "n",
+    "definition": "a document that serves as evidence of some expenditure"
   }
 }

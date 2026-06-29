@@ -48,8 +48,12 @@ jobs:
               names.add(w.get("word"))
           if len(names) != len(words):
               errors.append("duplicate headwords")
-          if {w["band"] for w in words} != {1, 2, 3, 4, 5}:
+          from collections import Counter
+          band_counts = Counter(w["band"] for w in words)
+          if set(band_counts) != {1, 2, 3, 4, 5}:
               errors.append("every difficulty band (1..5) must be represented")
+          elif len(set(band_counts.values())) != 1:
+              errors.append(f"bands must be equal-sized; got {dict(sorted(band_counts.items()))}")
           if errors:
               sys.exit("::error::words.json invalid:\n" + "\n".join(errors[:50]))
           print(f"words.json OK — {len(words)} entries, bands 1..5 present")

@@ -706,8 +706,8 @@
   {
     "id": 89,
     "word": "immune",
-    "pos": "n",
-    "definition": "a person who is immune to a particular infection",
+    "pos": "adj",
+    "definition": "not affected by a given influence",
     "example": "the survivors were immune to the disease",
     "band": 1
   },
@@ -1772,7 +1772,7 @@
     "word": "breakthrough",
     "pos": "n",
     "definition": "a productive insight",
-    "example": "This will not only protect the work table, but also assure a clean breakthrough.",
+    "example": "a major breakthrough in cancer research",
     "band": 2
   },
   {
@@ -2203,8 +2203,8 @@
     "id": 276,
     "word": "ginger",
     "pos": "n",
-    "definition": "liveliness and energy",
-    "example": "But when Johnnie disguised the taste with ginger ale, I enjoyed it.",
+    "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cooker",
+    "example": "she grated fresh ginger into the soup",
     "band": 2
   },
   {
@@ -2332,7 +2332,7 @@
     "word": "insider",
     "pos": "n",
     "definition": "an officer of a corporation or others who have access to private information about the corporati",
-    "example": "A triangular opening faced towards the bows of the ship, so that the insider commanded a complete view forward.",
+    "example": "a corporate insider leaked the documents",
     "band": 2
   },
   {
@@ -3354,9 +3354,9 @@
   {
     "id": 420,
     "word": "bisexual",
-    "pos": "n",
-    "definition": "a person who is sexually attracted to both sexes",
-    "example": "she identifies as bisexual",
+    "pos": "adj",
+    "definition": "sexually attracted to both sexes",
+    "example": "she is openly bisexual",
     "band": 3
   },
   {
@@ -4420,7 +4420,7 @@
     "word": "retro",
     "pos": "n",
     "definition": "a fashion reminiscent of the past",
-    "example": "the diner's decor was charmingly retro",
+    "example": "her style is pure retro",
     "band": 3
   },
   {
@@ -4994,9 +4994,9 @@
   {
     "id": 625,
     "word": "bridal",
-    "pos": "n",
-    "definition": "archaic terms for a wedding or wedding feast",
-    "example": "Obviously, the bridal pair has many adjustments to make to their new situation.",
+    "pos": "adj",
+    "definition": "of or relating to a wedding",
+    "example": "a bridal gown of white lace",
     "band": 4
   },
   {
@@ -6355,8 +6355,8 @@
     "id": 795,
     "word": "voucher",
     "pos": "n",
-    "definition": "someone who vouches for another or for the correctness of a statement",
-    "example": "redeem the voucher at checkout",
+    "definition": "a document that serves as evidence of some expenditure",
+    "example": "redeem the voucher at the checkout",
     "band": 4
   },
   {
@@ -7868,7 +7868,7 @@
     "word": "treble",
     "pos": "n",
     "definition": "the pitch range of the highest female voice",
-    "example": "the boy sang the treble part in the choir",
+    "example": "the boy sang a clear, ringing treble",
     "band": 5
   },
   {
