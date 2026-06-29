@@ -11,7 +11,12 @@ from a real source, never invented:
         English frequencies). We walk the Zipf long tail, keep only real
         dictionary headwords, and split the result into five difficulty bands by
         frequency quintile (rarer => higher band).
-  * Definition + part of speech -> Princeton WordNet (most-frequent sense).
+  * Definition + part of speech -> Princeton WordNet. The dominant POS comes
+        from Brown Corpus tags (fixing WordNet's noun-bias); a small curated
+        scripts/sense_overrides.json pins the right sense for ambiguous words
+        whose WordNet default is the wrong homograph (hacker -> the programmer,
+        not the bad golfer). scripts/sense_golden.json snapshots those so CI
+        fails if a sense regresses.
   * Example sentence -> a real sentence in which the word (or an inflection)
         appears, preferring, in order:
             1. a curated supplement (examples_supplement.json) for modern words
@@ -164,7 +169,7 @@ def brown_dominant_pos(brown):
     return {wl: max(c, key=c.get) for wl, c in counts.items()}
 
 
-def best_synset(wn, word, dominant_pos=None):
+def best_synset(wn, word, dominant_pos=None, override=None):
     """Pick the word's most useful sense: its dominant part of speech, then the
     most-frequent sense within it (preferring one that ships an example).
 
@@ -173,9 +178,19 @@ def best_synset(wn, word, dominant_pos=None):
     `conserve` and `import` come out as verbs and `facial` as an adjective,
     instead of defaulting to the noun homograph. Falls back to SemCor counts,
     then WordNet's POS order. Lemmas are matched case-sensitively so proper nouns
-    (capitalized in WordNet) are skipped. A few words whose WordNet primary sense
-    is still the wrong homograph (tuna -> the cactus) are dropped via MISSENSE.
+    (capitalized in WordNet) are skipped.
+
+    `override` (a WordNet synset name like "aviation.n.02") forces a specific
+    sense for ambiguous words where WordNet's own ordering and SemCor counts pick
+    a meaning that isn't the common modern one (aviation -> military aircraft,
+    realise -> "earn cash"). Words whose every sense is wrong are dropped via
+    MISSENSE.
     """
+    if override:
+        syn = wn.synset(override)
+        assert any(l.name() == word for l in syn.lemmas()), \
+            f"override {override} has no lemma {word!r}"
+        return syn
     syns = [s for s in wn.synsets(word) if any(l.name() == word for l in s.lemmas())]
     if not syns:
         return None
@@ -213,7 +228,21 @@ def detokenize(det, sent):
 
 
 _OUR_TO_WN = {"n": "n", "v": "v", "adj": "a", "adv": "r"}
-_PENN_COARSE = {"NN": "n", "VB": "v", "JJ": "adj", "RB": "adv"}
+
+
+def coarse_pos(penn_tag):
+    """Penn Treebank tag -> our {n, v, adj, adv}, or None. Proper-noun tags
+    (NNP/NNPS) are deliberately excluded so a token like `Fiat` can't match the
+    common noun `fiat`."""
+    if penn_tag in ("NN", "NNS"):
+        return "n"
+    if penn_tag.startswith("VB"):
+        return "v"
+    if penn_tag.startswith("JJ"):
+        return "adj"
+    if penn_tag.startswith("RB"):
+        return "adv"
+    return None
 
 
 def build_corpus_index(corpus, word_pos, wn, nltk, det, lo=5, hi=22, maxlen=118):
@@ -252,7 +281,7 @@ def build_corpus_index(corpus, word_pos, wn, nltk, det, lo=5, hi=22, maxlen=118)
         # Confirm each candidate token is actually tagged as that POS here.
         tok_tags = {}
         for tok, tag in nltk.pos_tag(sent):
-            tok_tags.setdefault(tok.lower(), set()).add(_PENN_COARSE.get(tag[:2]))
+            tok_tags.setdefault(tok.lower(), set()).add(coarse_pos(tag))
         hits = {base for base, tl, our_pos in cand if our_pos in tok_tags.get(tl, ())}
         if not hits:
             continue
@@ -291,12 +320,17 @@ def main():
     ap.add_argument("--count", type=int, default=1000)
     ap.add_argument("--supplement", type=Path,
                     default=Path(__file__).with_name("examples_supplement.json"))
+    ap.add_argument("--sense-overrides", type=Path,
+                    default=Path(__file__).with_name("sense_overrides.json"))
     args = ap.parse_args()
 
     det = TreebankWordDetokenizer()
     supplement = {}
     if args.supplement.exists():
         supplement = json.loads(args.supplement.read_text())
+    sense_overrides = {}
+    if args.sense_overrides.exists():
+        sense_overrides = json.loads(args.sense_overrides.read_text())
 
     # Empirical dominant part of speech per word, from the Brown Corpus tags.
     dom_pos = brown_dominant_pos(brown)
@@ -308,7 +342,7 @@ def main():
             continue
         if w in BLOCK or reducible(wn, w):
             continue
-        s = best_synset(wn, w, dom_pos.get(w))
+        s = best_synset(wn, w, dom_pos.get(w), sense_overrides.get(w))
         if s is None:
             continue
         candidates.append((w, wf.zipf_frequency(w, "en"), s))

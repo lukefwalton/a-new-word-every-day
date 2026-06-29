@@ -54,3 +54,24 @@ jobs:
               sys.exit("::error::words.json invalid:\n" + "\n".join(errors[:50]))
           print(f"words.json OK — {len(words)} entries, bands 1..5 present")
           PY
+      - name: Sense regressions (golden senses for ambiguous words)
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          golden = json.load(open("scripts/sense_golden.json"))
+          by_word = {w["word"]: w for w in json.load(open("WordOfTheDay/Resources/words.json"))}
+          # Words whose WordNet sense was hand-corrected (e.g. hacker -> the
+          # programmer, not the bad golfer). If regeneration drifts back to the
+          # wrong sense, fail here. Update sense_golden.json deliberately when a
+          # definition is intentionally changed.
+          errors = []
+          for word, want in golden.items():
+              got = by_word.get(word)
+              if not got:
+                  errors.append(f"{word}: missing from corpus")
+              elif got["pos"] != want["pos"] or got["definition"] != want["definition"]:
+                  errors.append(f"{word}: sense drifted\n    want: {want['pos']} | {want['definition']}\n    got:  {got['pos']} | {got['definition']}")
+          if errors:
+              sys.exit("::error::sense regression:\n" + "\n".join(errors))
+          print(f"sense golden OK — {len(golden)} ambiguous words pinned")
+          PY

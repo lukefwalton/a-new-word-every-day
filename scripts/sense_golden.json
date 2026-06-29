@@ -1,0 +1,46 @@
+{
+  "aviation": {
+    "pos": "n",
+    "definition": "the operation of aircraft to provide transportation"
+  },
+  "beaver": {
+    "pos": "n",
+    "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail"
+  },
+  "cub": {
+    "pos": "n",
+    "definition": "the young of certain carnivorous mammals such as the bear or wolf or lion"
+  },
+  "dive": {
+    "pos": "n",
+    "definition": "a headlong plunge into water"
+  },
+  "expedition": {
+    "pos": "n",
+    "definition": "a journey organized for a particular purpose"
+  },
+  "gill": {
+    "pos": "n",
+    "definition": "respiratory organ of aquatic animals that breathe oxygen dissolved in water"
+  },
+  "hacker": {
+    "pos": "n",
+    "definition": "a programmer who breaks into computer systems in order to steal or change or destroy information"
+  },
+  "pedal": {
+    "pos": "n",
+    "definition": "a lever that is operated with the foot"
+  },
+  "realise": {
+    "pos": "v",
+    "definition": "perceive (an idea or situation) mentally"
+  },
+  "stud": {
+    "pos": "n",
+    "definition": "ornament consisting of a circular rounded protuberance (as on a vault or shield or belt)"
+  },
+  "thrift": {
+    "pos": "n",
+    "definition": "extreme care in spending money; reluctance to spend money unnecessarily"
+  }
+}

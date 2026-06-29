@@ -36,7 +36,7 @@
     "word": "alpha",
     "pos": "n",
     "definition": "the 1st letter of the Greek alphabet",
-    "example": "I am Alpha and Omega, the beginning and the end.",
+    "example": "alpha is the first letter of the Greek alphabet",
     "band": 1
   },
   {
@@ -99,7 +99,7 @@
     "id": 13,
     "word": "aviation",
     "pos": "n",
-    "definition": "the aggregation of a country's military aircraft",
+    "definition": "the operation of aircraft to provide transportation",
     "example": "she devoted her whole life to aviation",
     "band": 1
   },
@@ -435,8 +435,8 @@
     "id": 55,
     "word": "dive",
     "pos": "n",
-    "definition": "a cheap disreputable nightclub or dance hall",
-    "example": "From that hour I clove to Queequeg like a barnacle; yea, till poor Queequeg took his last long dive.",
+    "definition": "a headlong plunge into water",
+    "example": "a graceful dive from the high board",
     "band": 1
   },
   {
@@ -508,7 +508,7 @@
     "word": "emperor",
     "pos": "n",
     "definition": "the male ruler of an empire",
-    "example": "We remember the Roman Emperors.",
+    "example": "Your worm is your onely Emperor for diet.",
     "band": 1
   },
   {
@@ -539,8 +539,8 @@
     "id": 68,
     "word": "expedition",
     "pos": "n",
-    "definition": "a military campaign designed to achieve a specific objective in a foreign country",
-    "example": "No man: Th' expedition of my violent Loue Out - run the pawser, Reason.",
+    "definition": "a journey organized for a particular purpose",
+    "example": "an expedition set out for the South Pole",
     "band": 1
   },
   {
@@ -612,7 +612,7 @@
     "word": "goddess",
     "pos": "n",
     "definition": "a female deity",
-    "example": "Goddess humane, reach then, and freely taste!",
+    "example": "the temple was dedicated to a goddess",
     "band": 1
   },
   {
@@ -764,7 +764,7 @@
     "word": "inspector",
     "pos": "n",
     "definition": "a high ranking police officer",
-    "example": "Inspector Ratcliffe drew his brows together.",
+    "example": "The inspector nodded, doubting this.",
     "band": 1
   },
   {
@@ -1012,7 +1012,7 @@
     "word": "peer",
     "pos": "n",
     "definition": "a person who is of equal standing with another in a group",
-    "example": "It is Mary of the magic face confronting the gloomy and grasping peers and the boorish moralities of Knox.",
+    "example": "she felt judged by her peers",
     "band": 1
   },
   {
@@ -1115,8 +1115,8 @@
     "id": 140,
     "word": "realise",
     "pos": "v",
-    "definition": "earn on some commercial or business transaction; earn as salary or wages",
-    "example": "Very gradually and very vaguely he realised into what rich roads the carriage was carrying him.",
+    "definition": "perceive (an idea or situation) mentally",
+    "example": "he began to realise his mistake",
     "band": 1
   },
   {
@@ -1292,7 +1292,7 @@
     "word": "snake",
     "pos": "n",
     "definition": "limbless scaly elongate reptile; some are venomous",
-    "example": "So talked the spirited sly Snake; and Eve, Yet more amazed, unwary thus replied.",
+    "example": "Judge Black, the vegetarian black snake",
     "band": 1
   },
   {
@@ -1308,7 +1308,7 @@
     "word": "soap",
     "pos": "n",
     "definition": "a cleansing agent made from the salts of vegetable or animal fats",
-    "example": "Soap, neutral chip--fed. Spec. 566 or Aj.",
+    "example": "No soap or other cleaning agent was used that might bring in unwanted chemical reactions.",
     "band": 1
   },
   {
@@ -1556,7 +1556,7 @@
     "word": "witch",
     "pos": "n",
     "definition": "a female sorcerer or magician",
-    "example": "Enter the three Witches.",
+    "example": "Enter Hecat, and the other three Witches.",
     "band": 1
   },
   {
@@ -1708,7 +1708,7 @@
     "word": "bark",
     "pos": "n",
     "definition": "tough protective covering of the woody stems and roots of trees and other woody plants",
-    "example": "But he could do nothing except bark, and bite at the heels of the wicked men.",
+    "example": "moss grew on the rough bark of the oak",
     "band": 2
   },
   {
@@ -1764,7 +1764,7 @@
     "word": "bore",
     "pos": "v",
     "definition": "cause to be bored",
-    "example": "Ben bore this misfortune with good humour.",
+    "example": "the dull lecture began to bore everyone",
     "band": 2
   },
   {
@@ -1884,7 +1884,7 @@
     "word": "conquest",
     "pos": "n",
     "definition": "the act of conquering",
-    "example": "What Conquest brings he home?",
+    "example": "It is to me the cry of a herald announcing conquest.",
     "band": 2
   },
   {
@@ -2084,7 +2084,7 @@
     "word": "faction",
     "pos": "n",
     "definition": "a clique (often secret) that seeks power usually through intrigue",
-    "example": "Let' em enter: They are the Faction.",
+    "example": "The savages divided into two factions",
     "band": 2
   },
   {
@@ -2172,7 +2172,7 @@
     "word": "gasoline",
     "pos": "n",
     "definition": "a volatile flammable mixture of hydrocarbons (hexane and heptane and octane etc.) derived from p",
-    "example": "Gasoline and automobile tires were rationed commodities.",
+    "example": "Luckily, she was not completely aflame and would go down before the gasoline could erupt.",
     "band": 2
   },
   {
@@ -2188,7 +2188,7 @@
     "word": "geography",
     "pos": "n",
     "definition": "study of the earth's surface; includes people's responses to topography and climate and soil and",
-    "example": "However, the Multiplication Table doesn' t signify: let' s try Geography.",
+    "example": "Its boundaries had nothing to do with geography or ethnic groupings",
     "band": 2
   },
   {
@@ -2204,7 +2204,7 @@
     "word": "ginger",
     "pos": "n",
     "definition": "liveliness and energy",
-    "example": "Ginger!-- what the devil is ginger?-- sea - coal?",
+    "example": "But when Johnnie disguised the taste with ginger ale, I enjoyed it.",
     "band": 2
   },
   {
@@ -2268,7 +2268,7 @@
     "word": "homicide",
     "pos": "n",
     "definition": "the killing of a human being by another human being",
-    "example": "Hardly expected the head of County Homicide up for this murder.",
+    "example": "the detective worked the homicide beat",
     "band": 2
   },
   {
@@ -2412,7 +2412,7 @@
     "word": "livestock",
     "pos": "n",
     "definition": "any animals kept for use or profit",
-    "example": "Livestock must be tended every day, routinely.",
+    "example": "A pond may provide adequate water for livestock and garden.",
     "band": 2
   },
   {
@@ -2676,7 +2676,7 @@
     "word": "prosecutor",
     "pos": "n",
     "definition": "a government official who conducts criminal prosecutions on behalf of the state",
-    "example": "Prosecutor Baird immediately assumed he was hiding out there after the shooting and began preparing an indictment.",
+    "example": "the prosecutor cross-examined the witness",
     "band": 2
   },
   {
@@ -3339,8 +3339,8 @@
     "id": 418,
     "word": "beaver",
     "pos": "n",
-    "definition": "the soft brown fur of the beaver",
-    "example": "He now took off his hat--a new beaver hat--when I came nigh singing out with fresh surprise.",
+    "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail",
+    "example": "a beaver built a dam across the stream",
     "band": 3
   },
   {
@@ -3380,7 +3380,7 @@
     "word": "broadcaster",
     "pos": "n",
     "definition": "someone who broadcasts on radio or television",
-    "example": "The National Association of Broadcasters code specifically bars hard-liquor commercials.",
+    "example": "the broadcaster announced the result live",
     "band": 3
   },
   {
@@ -3732,7 +3732,7 @@
     "word": "fascism",
     "pos": "n",
     "definition": "a political theory advocating an authoritarian hierarchical government (as opposed to democracy",
-    "example": "Berto knew all about Fascism.",
+    "example": "the rise of fascism in the 1930s",
     "band": 3
   },
   {
@@ -3756,7 +3756,7 @@
     "word": "fiat",
     "pos": "n",
     "definition": "a legally binding command or decision entered on the court record (as if issued by a court or ju",
-    "example": "Fiat officials say they have had no strikes for more than six years.",
+    "example": "the king ruled by royal fiat",
     "band": 3
   },
   {
@@ -3835,7 +3835,7 @@
     "id": 480,
     "word": "gill",
     "pos": "n",
-    "definition": "a British imperial capacity unit (liquid or dry) equal to 5 fluid ounces or 142.066 cubic centim",
+    "definition": "respiratory organ of aquatic animals that breathe oxygen dissolved in water",
     "example": "the trout's gills opened and closed",
     "band": 3
   },
@@ -3851,8 +3851,8 @@
     "id": 482,
     "word": "hacker",
     "pos": "n",
-    "definition": "someone who plays golf poorly",
-    "example": "The idol of the hackers, of course, is Ray Ainsley, who achieved a 19 in the United States Open.",
+    "definition": "a programmer who breaks into computer systems in order to steal or change or destroy information",
+    "example": "a hacker breached the bank's servers",
     "band": 3
   },
   {
@@ -4236,15 +4236,15 @@
     "word": "peasant",
     "pos": "n",
     "definition": "a country person",
-    "example": "Pipe and Tabor, and Dance of Peasants.",
+    "example": "The peasant grunted an apology, and got down from his seat.",
     "band": 3
   },
   {
     "id": 531,
     "word": "pedal",
     "pos": "n",
-    "definition": "a sustained bass note",
-    "example": "The cars must have had their gas pedals pushed down to the floor boards.",
+    "definition": "a lever that is operated with the foot",
+    "example": "she pressed the brake pedal to the floor",
     "band": 3
   },
   {
@@ -4308,7 +4308,7 @@
     "word": "precinct",
     "pos": "n",
     "definition": "a district of a city or town marked out for administrative purposes",
-    "example": "Men from the Third Detective District, Eighteenth Precinct, had the longest, the most tedious, job.",
+    "example": "voters lined up at the local precinct",
     "band": 3
   },
   {
@@ -4348,7 +4348,7 @@
     "word": "rabbi",
     "pos": "n",
     "definition": "spiritual leader of a Jewish congregation; qualified to expound and apply Jewish law",
-    "example": "They said unto him, Rabbi, (which is to say, being interpreted, Master,) where dwellest thou?",
+    "example": "He worked for two hours a day with each model sent by the rabbi.",
     "band": 3
   },
   {
@@ -4595,8 +4595,8 @@
     "id": 575,
     "word": "stud",
     "pos": "n",
-    "definition": "a man who is virile and sexually active",
-    "example": "Green studs cost about $.65",
+    "definition": "ornament consisting of a circular rounded protuberance (as on a vault or shield or belt)",
+    "example": "a leather collar set with metal studs",
     "band": 3
   },
   {
@@ -4684,7 +4684,7 @@
     "word": "typhoon",
     "pos": "n",
     "definition": "a tropical cyclone occurring in the western Pacific or Indian oceans",
-    "example": "Well was it that the Typhoons did not visit them then.",
+    "example": "the typhoon flattened the coastal village",
     "band": 3
   },
   {
@@ -5156,7 +5156,7 @@
     "word": "convict",
     "pos": "n",
     "definition": "a person serving a sentence in a jail or prison",
-    "example": "Convict no more, nor shame, nor dole!",
+    "example": "An agreement allowing convicts to pass on type of locks used on prison doors.",
     "band": 4
   },
   {
@@ -5179,8 +5179,8 @@
     "id": 648,
     "word": "cub",
     "pos": "n",
-    "definition": "an awkward and inexperienced youth",
-    "example": "After Thursday's open date, Solly plans to open with Larry Jackson against the Cubs here Friday night.",
+    "definition": "the young of certain carnivorous mammals such as the bear or wolf or lion",
+    "example": "a bear cub trailed close behind its mother",
     "band": 4
   },
   {
@@ -5820,7 +5820,7 @@
     "word": "oyster",
     "pos": "n",
     "definition": "marine mollusks having a rough irregular shell; found on the sea bed mostly in coastal waters",
-    "example": "Thus the image of God is that which makes a man a man and not an oyster",
+    "example": "she pried open a fresh oyster",
     "band": 4
   },
   {
@@ -5836,7 +5836,7 @@
     "word": "pageant",
     "pos": "n",
     "definition": "an elaborate representation of scenes from history etc",
-    "example": "Miss Rhode Island Pageant Week proclamation by John A. Notte, Jr., Governor",
+    "example": "Many hours are given free by the Jaycees to make this and all local pageants outstanding events.",
     "band": 4
   },
   {
@@ -5972,7 +5972,7 @@
     "word": "recess",
     "pos": "n",
     "definition": "a pause from doing something (as work)",
-    "example": "Recess base slightly to allow room for stopper.",
+    "example": "the children ran outside for recess",
     "band": 4
   },
   {
@@ -6044,7 +6044,7 @@
     "word": "robe",
     "pos": "n",
     "definition": "any loose flowing garment",
-    "example": "Giue me my Robe, for I will go.",
+    "example": "Then David arose, and cut off the skirt of Saul' s robe privily.",
     "band": 4
   },
   {
@@ -6196,7 +6196,7 @@
     "word": "swine",
     "pos": "n",
     "definition": "stout-bodied short-legged omnivorous animals",
-    "example": "Swine showmanship championship went to Bob Day, with Tom Day and Hutchins winning other blues.",
+    "example": "John Haase & Son of Corneilus was the only entrant in open class swine and swept all championships.",
     "band": 4
   },
   {
@@ -6220,7 +6220,7 @@
     "word": "tanker",
     "pos": "n",
     "definition": "a cargo ship designed to carry crude oil in bulk",
-    "example": "Tanker T., 3, 2:05.3 is now wearing hopples and has trained in 2:19",
+    "example": "For last-ditch emergencies SAC has alternate command posts on KC-135 jet tankers.",
     "band": 4
   },
   {
@@ -6276,7 +6276,7 @@
     "word": "tuberculosis",
     "pos": "n",
     "definition": "infection transmitted by inhalation or ingestion of tubercle bacilli and manifested in fever and",
-    "example": "She is state chairman for the New Mexico Tuberculosis and Cancer Associations.",
+    "example": "Inevitably, Mrs. Hull died of starvation and tuberculosis, weighing 60 pounds.",
     "band": 4
   },
   {
@@ -6332,7 +6332,7 @@
     "word": "venom",
     "pos": "n",
     "definition": "toxin secreted by animals; secreted by certain snakes and poisonous insects (e.g.",
-    "example": "By the Gods, You shall digest the Venom of your Spleene Though it do Split you.",
+    "example": "the snake's venom paralyzed its prey",
     "band": 4
   },
   {
@@ -6468,7 +6468,7 @@
     "word": "arithmetic",
     "pos": "n",
     "definition": "the branch of pure mathematics dealing with the theory of numerical calculations",
-    "example": "All of these sub-tests involve reading except Arithmetic Computation.",
+    "example": "she did the arithmetic in her head",
     "band": 5
   },
   {
@@ -6772,7 +6772,7 @@
     "word": "cutler",
     "pos": "n",
     "definition": "a dealer in cutlery",
-    "example": "Cutler seemed seriously agitated.",
+    "example": "the cutler sharpened knives and shears",
     "band": 5
   },
   {
@@ -6868,7 +6868,7 @@
     "word": "emancipation",
     "pos": "n",
     "definition": "freeing someone from the control of another; especially a parent's relinquishing authority and c",
-    "example": "The dark views about the Puritans found in The Emancipation Of Massachusetts were never altered.",
+    "example": "Nevertheless, Palfrey arranged a religious ceremony at King's Chapel to formalize the emancipation.",
     "band": 5
   },
   {
@@ -7524,7 +7524,7 @@
     "word": "prelude",
     "pos": "n",
     "definition": "something that serves as a preceding event or introduces what follows",
-    "example": "This became a dance called Prelude To Flight.",
+    "example": "a tense prelude to war",
     "band": 5
   },
   {
@@ -7819,8 +7819,8 @@
     "id": 978,
     "word": "thrift",
     "pos": "n",
-    "definition": "any of numerous sun-loving low-growing evergreens of the genus Armeria having round heads of pin",
-    "example": "The instances that second Marriage moue, Are base respects of Thrift, but none of Loue.",
+    "definition": "extreme care in spending money; reluctance to spend money unnecessarily",
+    "example": "years of careful thrift filled her savings",
     "band": 5
   },
   {
