@@ -54,4 +54,35 @@ final class ReviewEngineTests: XCTestCase {
         let decoded = try JSONDecoder().decode(ReviewState.self, from: JSONEncoder().encode(state))
         XCTAssertEqual(state, decoded)
     }
+
+    // MARK: Golden vectors
+    // Lock the FSRS-5 defaults so a transcription slip in the ported math (a wrong
+    // weight, a wrong interval formula) fails a test rather than silently drifting
+    // review cadence. These values follow directly from the default weights with
+    // fuzz off; the multi-step recall/forget paths are covered by the ordering tests
+    // above (no reference oracle is available here to generate exact later-step
+    // outputs).
+
+    func test_firstReviewStability_equalsDefaultWeights() {
+        XCTAssertEqual(engine.grade(nil, .again, now: now).stability, 0.4072, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .hard,  now: now).stability, 1.1829, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .good,  now: now).stability, 3.1262, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .easy,  now: now).stability, 15.4722, accuracy: 0.0001)
+    }
+
+    func test_firstReviewIntervals_followStability() {
+        // interval = round(stability · ~1.0), clamped to ≥ 1 day.
+        XCTAssertEqual(engine.grade(nil, .again, now: now).scheduledDays, 1)
+        XCTAssertEqual(engine.grade(nil, .hard,  now: now).scheduledDays, 1)
+        XCTAssertEqual(engine.grade(nil, .good,  now: now).scheduledDays, 3)
+        XCTAssertEqual(engine.grade(nil, .easy,  now: now).scheduledDays, 15)
+    }
+
+    func test_firstReviewDifficulty_decreasesForEasierGrades() {
+        let again = engine.grade(nil, .again, now: now).difficulty
+        let good = engine.grade(nil, .good, now: now).difficulty
+        let easy = engine.grade(nil, .easy, now: now).difficulty
+        XCTAssertGreaterThan(again, good)
+        XCTAssertGreaterThan(good, easy)
+    }
 }

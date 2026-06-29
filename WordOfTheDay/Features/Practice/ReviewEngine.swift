@@ -116,6 +116,11 @@ struct ReviewEngine {
         w[11] * pow(d, -w[12]) * (pow(s + 1, w[13]) - 1) * exp((1 - r) * w[14])
     }
 
+    /// FSRS-5 interval from stability, in **whole days** — this is the long-term
+    /// variant, intentionally with no sub-day learning steps. Same-session
+    /// relearning of a failed card is handled by `ReviewQueue` (it re-shows the
+    /// card), not by minute-level scheduler steps; that's the deliberate
+    /// "lightweight" behaviour for this app.
     private func nextInterval(stability: Double) -> Int {
         let modifier = (pow(Self.requestRetention, 1 / Self.decay) - 1) / Self.factor
         var ivl = min(max(1, (stability * modifier).rounded()), Self.maximumInterval)
