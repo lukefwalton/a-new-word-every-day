@@ -22,6 +22,9 @@ final class AppModel: ObservableObject {
     @Published var focusedWordID: Int?
 
     init(service: DailyWordService, store: SharedStore = .shared) {
+        #if DEBUG
+        Self.applyUITestLaunchOverrides(to: store)
+        #endif
         self.service = service
         self.store = store
         self.theme = store.theme
@@ -34,6 +37,8 @@ final class AppModel: ObservableObject {
     var corpusIsEmpty: Bool { service.corpus.words.isEmpty }
 
     func refreshFromStore() {
+        theme = store.theme
+        onboardingComplete = store.onboardingComplete
         starredIDs = store.starredIDs
         band = store.band
         today = service.todaysWord(store: store)
@@ -129,4 +134,21 @@ final class AppModel: ObservableObject {
             openWord(id)
         }
     }
+
+    #if DEBUG
+    /// UI-test launch flags. `-UITestResetOnboarding` clears persisted state so
+    /// each test run starts from the onboarding gate; `-UITestSkipOnboarding`
+    /// jumps straight to the tab shell (after reset).
+    private static func applyUITestLaunchOverrides(to store: SharedStore) {
+        let args = Set(ProcessInfo.processInfo.arguments)
+        guard args.contains("-UITestResetOnboarding") || args.contains("-UITestSkipOnboarding") else { return }
+        let suite = AppGroup.identifier
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        UserDefaults(suiteName: suite)?.removePersistentDomain(forName: suite)
+        if args.contains("-UITestSkipOnboarding") {
+            store.onboardingComplete = true
+            store.band = 2
+        }
+    }
+    #endif
 }

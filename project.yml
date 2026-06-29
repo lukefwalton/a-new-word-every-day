@@ -114,6 +114,18 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday.tests
         GENERATE_INFOPLIST_FILE: YES
 
+  WordOfTheDayUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: WordOfTheDayUITests
+    dependencies:
+      - target: WordOfTheDay
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday.uitests
+        GENERATE_INFOPLIST_FILE: YES
+
 schemes:
   WordOfTheDay:
     build:
@@ -122,5 +134,6 @@ schemes:
     test:
       targets:
         - WordOfTheDayTests
+        - WordOfTheDayUITests
     run:
       config: Debug

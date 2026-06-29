@@ -11,16 +11,35 @@ else
   xcodegen generate
 fi
 
-DEST='platform=iOS Simulator,name=iPhone 15'
-if ! xcrun simctl list devices available | grep -q "iPhone 15 ("; then
-  UDID=$(xcrun simctl list devices available --json \
-    | python3 -c "import json,sys; r=json.load(sys.stdin)['devices']; ids=[d['udid'] for ds in r.values() for d in ds if d['name'].startswith('iPhone') and d['isAvailable']]; print(ids[0] if ids else '')")
-  if [ -z "$UDID" ]; then
-    echo "No iPhone simulator found" >&2
-    exit 1
-  fi
-  DEST="platform=iOS Simulator,id=$UDID"
-fi
+# xcodebuild's `name=iPhone 15` destination uses OS:latest, which often fails
+# when multiple runtimes expose the same device name. Always pin a UDID instead.
+DEST=$(python3 <<'PY'
+import json, subprocess
+
+def pick():
+    out = subprocess.check_output(
+        ["xcrun", "simctl", "list", "devices", "available", "-j"], text=True
+    )
+    devices = json.loads(out)["devices"]
+    iphones = []
+    for runtime, devs in devices.items():
+        for d in devs:
+            if d.get("isAvailable") and d["name"].startswith("iPhone"):
+                iphones.append(d)
+    if not iphones:
+        return None
+    for preferred in ("iPhone 15", "iPhone 16", "iPhone 17"):
+        for d in iphones:
+            if d["name"] == preferred:
+                return d["udid"]
+    return iphones[0]["udid"]
+
+udid = pick()
+if not udid:
+    raise SystemExit("No iPhone simulator found")
+print(f"platform=iOS Simulator,id={udid}")
+PY
+)
 
 xcodebuild test \
   -scheme WordOfTheDay \

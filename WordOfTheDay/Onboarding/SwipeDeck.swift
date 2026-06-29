@@ -40,28 +40,47 @@ struct SwipeDeck: View {
     var body: some View {
         VStack(spacing: 24) {
             progress
-            ZStack {
-                ForEach(Array(remaining.enumerated()), id: \.element.id) { index, word in
-                    let depth = remaining.count - 1 - index // 0 == top card
-                    if depth < 3 {
-                        card(word, isTop: depth == 0)
-                            .scaleEffect(1 - CGFloat(depth) * 0.04)
-                            .offset(y: CGFloat(depth) * 12)
-                            .zIndex(Double(index))
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .allowsHitTesting(!isCommitting)
+            deck
+                .allowsHitTesting(!isCommitting)
             controls
                 .disabled(isCommitting)
         }
         .padding(.horizontal, 24)
     }
 
+    /// One active card plus at most one stub peeking from behind — a multi-card
+    /// ZStack with scale/offset made stubs visible above *and* below the top card.
+    private var deck: some View {
+        ZStack(alignment: .top) {
+            if remaining.count > 1 {
+                cardStub
+                    .scaleEffect(0.96, anchor: .top)
+                    .offset(y: 10)
+                    .zIndex(0)
+            }
+            if let top = remaining.last {
+                card(top)
+                    .zIndex(1)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: 280, alignment: .top)
+    }
+
     // MARK: Card
 
-    private func card(_ word: Word, isTop: Bool) -> some View {
+    /// Solid fill for deck cards. Stacked cards must be opaque — a translucent
+    /// background lets the words on cards behind bleed through the top card.
+    private var cardFill: Color { palette.backgroundTop }
+
+    private func card(_ word: Word) -> some View {
+        cardFace(word)
+            .offset(drag)
+            .rotationEffect(.degrees(Double(drag.width / 22)))
+            .gesture(dragGesture(for: word))
+            .animation(.spring(response: 0.35, dampingFraction: 0.8), value: drag == .zero)
+    }
+
+    private func cardFace(_ word: Word) -> some View {
         VStack(spacing: 16) {
             Text(word.partOfSpeechLabel.uppercased())
                 .font(LFWTypography.font(.eyebrow, typeface: typeface))
@@ -77,18 +96,23 @@ struct SwipeDeck: View {
         }
         .padding(28)
         .frame(maxWidth: .infinity, minHeight: 260)
-        .background(
-            RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
-                .fill(palette.backgroundTop.opacity(0.55))
-                .overlay(RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
-                    .strokeBorder(palette.primaryText.opacity(0.12), lineWidth: 1))
-        )
-        .overlay(alignment: .topLeading) { if isTop { verdictBadge(known: true) } }
-        .overlay(alignment: .topTrailing) { if isTop { verdictBadge(known: false) } }
-        .offset(isTop ? drag : .zero)
-        .rotationEffect(.degrees(isTop ? Double(drag.width / 22) : 0))
-        .gesture(isTop ? dragGesture(for: word) : nil)
-        .animation(.spring(response: 0.35, dampingFraction: 0.8), value: drag == .zero)
+        .background(cardBackground)
+        .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
+        .overlay(alignment: .topLeading) { verdictBadge(known: true) }
+        .overlay(alignment: .topTrailing) { verdictBadge(known: false) }
+    }
+
+    /// A blank card peeking out behind the active one.
+    private var cardStub: some View {
+        cardBackground
+            .frame(maxWidth: .infinity, minHeight: 260)
+    }
+
+    private var cardBackground: some View {
+        RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
+            .fill(cardFill)
+            .overlay(RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
+                .strokeBorder(palette.primaryText.opacity(0.12), lineWidth: 1))
     }
 
     /// KNOW (leading, green-ish) / NEW (trailing, accent) badges that fade in with

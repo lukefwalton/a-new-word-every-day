@@ -97,6 +97,16 @@ final class AppModelTests: XCTestCase {
         XCTAssertTrue(model.isStarred(8), "foreground refresh should surface widget changes")
     }
 
+    func test_refreshFromStore_picksUpThemeAndOnboardingChanges() {
+        let (model, store) = makeModel()
+        store.theme = LFWThemeConfig(typeface: .literata, palette: .sepia)
+        store.onboardingComplete = true
+        model.refreshFromStore()
+        XCTAssertEqual(model.theme.typeface, .literata)
+        XCTAssertEqual(model.theme.palette, .sepia)
+        XCTAssertTrue(model.onboardingComplete)
+    }
+
     func test_openWord_focusesAndSwitchesToTodayTab() {
         let (model, _) = makeModel()
         model.selectedTab = .practice
