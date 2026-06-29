@@ -36,14 +36,17 @@ def main():
     seen = set()
     for i, r in enumerate(rows):
         tag = r.get("word", f"#{i}")
-        if not str(r.get("word", "")).strip():
-            errors.append(f"{tag}: blank word")
-        if not str(r.get("definition", "")).strip():
-            errors.append(f"{tag}: blank definition")
+        # Type-strict so a hand-edit typo (e.g. "definition": 123) fails here
+        # rather than at runtime when Swift's Codable Word fails to decode.
+        if not isinstance(r.get("word"), str) or not r["word"].strip():
+            errors.append(f"{tag}: word must be a non-empty string")
+        if not isinstance(r.get("definition"), str) or not r["definition"].strip():
+            errors.append(f"{tag}: definition must be a non-empty string")
         if r.get("pos") not in VALID_POS:
             errors.append(f"{tag}: bad pos {r.get('pos')!r}")
-        if r.get("band") not in (1, 2, 3, 4, 5):
-            errors.append(f"{tag}: band out of range")
+        if not isinstance(r.get("band"), int) or isinstance(r.get("band"), bool) \
+                or r.get("band") not in (1, 2, 3, 4, 5):
+            errors.append(f"{tag}: band must be an integer 1..5")
         if r.get("word") in seen:
             errors.append(f"{tag}: duplicate word")
         seen.add(r.get("word"))
