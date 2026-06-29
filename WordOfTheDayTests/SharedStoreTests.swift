@@ -59,4 +59,24 @@ final class SharedStoreTests: XCTestCase {
         store.theme = theme
         XCTAssertEqual(store.theme, theme)
     }
+
+    func test_reviewStates_defaultsToEmpty() {
+        XCTAssertEqual(Fixtures.volatileStore().reviewStates, [:])
+    }
+
+    func test_reviewStates_roundTrip() {
+        let store = Fixtures.volatileStore()
+        let state = ReviewState(due: Fixtures.day(2026, 7, 1), stability: 3, difficulty: 5,
+                                elapsedDays: 0, scheduledDays: 3, reps: 1, lapses: 0,
+                                state: 2, lastReview: Fixtures.day(2026, 6, 28))
+        store.reviewStates = [42: state]
+        XCTAssertEqual(store.reviewStates, [42: state])
+    }
+
+    func test_removeReviewStates_dropsOnlyGivenIds() {
+        let store = Fixtures.volatileStore()
+        store.reviewStates = [1: ReviewState(), 2: ReviewState(), 3: ReviewState()]
+        store.removeReviewStates([2])
+        XCTAssertEqual(Set(store.reviewStates.keys), [1, 3])
+    }
 }

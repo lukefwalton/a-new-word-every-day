@@ -24,10 +24,10 @@ Each is licensed under the SIL Open Font License, Version 1.1
   Recursive — © The Recursive Project Authors (Arrow Type)
 
 --------------------------------------------------------------------------------
-Spaced repetition (the "someday practice" seam)
+Spaced repetition (in-app practice)
 --------------------------------------------------------------------------------
-The SM-2 scheduler in ReviewState.swift implements the published SM-2 algorithm.
-  Algorithm SM-2, (C) Copyright SuperMemo World, 1991.
-If in-app practice is built out, the intended scheduler is
-open-spaced-repetition/swift-fsrs (MIT). Anki's own AGPL code is never used; the
-Anki export is plain CSV that Anki imports natively.
+In-app review scheduling uses the FSRS algorithm via open-spaced-repetition/
+swift-fsrs (MIT License), resolved as a Swift Package at build time. It runs
+entirely on-device; no review data leaves the phone. Anki's own AGPL code is
+never used; the Anki export is plain CSV that Anki imports natively.
+  https://github.com/open-spaced-repetition/swift-fsrs

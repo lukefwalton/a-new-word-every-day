@@ -24,6 +24,7 @@ final class SharedStore {
         static let installDate = "installDate"
         static let theme = "themeConfig"
         static let marks = "difficultyMarks"
+        static let reviewStates = "reviewStates"
     }
 
     // MARK: Stars (the Practice list)
@@ -118,5 +119,44 @@ final class SharedStore {
                 defaults.set(data, forKey: Key.theme)
             }
         }
+    }
+
+    // MARK: Review schedules (per-word FSRS state)
+
+    /// Per-word review schedules, keyed by `Word.id`, JSON-encoded like `theme`
+    /// (the values are structs, so the plist-friendly `dictionary` accessor that
+    /// `difficultyMarks` uses won't serialize them). App-only in practice: the
+    /// widget shares the container but never reads this key.
+    var reviewStates: [Int: ReviewState] {
+        get {
+            guard let data = defaults.data(forKey: Key.reviewStates) else { return [:] }
+            do {
+                let raw = try JSONDecoder().decode([String: ReviewState].self, from: data)
+                return Dictionary(uniqueKeysWithValues: raw.compactMap { key, value in
+                    Int(key).map { ($0, value) }
+                })
+            } catch {
+                // Don't silently wipe review progress on corruption — surface it so
+                // it's diagnosable. We still degrade to empty so the app keeps working.
+                NSLog("[WordOfTheDay] reviewStates failed to decode (%d bytes); treating as empty: %@",
+                      data.count, String(describing: error))
+                return [:]
+            }
+        }
+        set {
+            let raw = Dictionary(uniqueKeysWithValues: newValue.map { (String($0.key), $0.value) })
+            if let data = try? JSONEncoder().encode(raw) {
+                defaults.set(data, forKey: Key.reviewStates)
+            }
+        }
+    }
+
+    /// Drop schedules for words that left the deck (unstarred), so stale FSRS state
+    /// can't linger or silently resurrect if the word is starred again.
+    func removeReviewStates(_ ids: [Int]) {
+        guard !ids.isEmpty else { return }
+        var states = reviewStates
+        for id in ids { states.removeValue(forKey: id) }
+        reviewStates = states
     }
 }
