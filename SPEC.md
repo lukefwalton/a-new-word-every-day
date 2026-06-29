@@ -242,7 +242,7 @@ re-marking (feeds the band). An **Export** affordance (CSV) lives here — see �
 ### 6.4 Settings
 Typeface picker (live preview rendering the same word across the curated VFs),
 palette picker + accent-hue, plus the standard About/Acknowledgements (OFL +
-wordfreq + WordNet + Gutenberg/Brown credits). Writes `LFWThemeConfig` to the App Group and reloads
+CC0 word list). Writes `LFWThemeConfig` to the App Group and reloads
 the widget.
 
 ---
@@ -295,41 +295,34 @@ Mirrors `WorkoutWidget`'s `TimelineProvider` pattern.
 
 ---
 
-## 9. Word corpus pipeline
+## 9. Word corpus
 
-A build-time script (`scripts/build_modern_corpus.py`) produces the 1000-word
-`words.json`; the app **never** fetches anything at runtime. The corpus is
-"elevated everyday" vocabulary — words picked from the **long tail of modern
-English usage** (recognizable and used, not obscure GRE filler). Full source
-matrix in [`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md):
+The corpus is **hand-authored, original, and public-domain**. Each entry is just
+a word, a one-line definition, and a difficulty band (1–5) — no example
+sentences. Every field is written for this app: there is **no external data**
+(no frequency list, no licensed dictionary, no scraped text), so the word list
+is dedicated to the **public domain (CC0)** and free for anyone to reuse without
+attribution or share-alike obligations. The app source code stays MIT.
 
-1. **Selection + difficulty bands → wordfreq.** Take a modern English frequency
-   distribution and pick 1000 words from its long tail, filtered to real WordNet
-   headwords (base forms, no proper nouns / abbreviations / slurs). Split into
-   five bands by frequency quintile (rarer ⇒ higher band).
-2. **Definitions + part of speech → Princeton WordNet** (WordNet License,
-   BSD/MIT-style; most-frequent sense of the word's dominant part of speech).
-3. **Example sentences →** a real sentence using the word, preferring (a) a
-   WordNet example, (b) a **Project Gutenberg** sentence (public-domain
-   literature — keeps a literary flavor), (c) a **Brown Corpus** sentence
-   (modern American English), then (d) a sentence written for this app
-   (`scripts/examples_supplement.json`) for words too modern for those corpora.
+Pipeline: edit `scripts/corpus_source.json` (a flat array of
+`{word, pos, definition, band}`); `scripts/build_corpus.py` validates it, sorts
+by `(band, word)`, and numbers the entries 1..N into `words.json`. No
+dependencies beyond the Python standard library. The app **never** fetches
+anything at runtime.
 
-**Licensing consequence:** wordfreq's frequency data is partly
-**CC BY-SA 4.0**, so the *selection and bands* are share-alike and `words.json`
-ships under **CC BY-SA 4.0** — a deliberate trade to get genuinely-used modern
-words. The app source code stays MIT (see `LICENSE`). The earlier
-permissive-only pipeline (WordNet × Norvig) is preserved in
-`scripts/build_corpus.py` for anyone who wants a fully-permissive corpus.
+Difficulty bands are an editorial judgment of how rare/hard a word is — band 1
+is the most accessible advanced vocabulary, band 5 the rarest and most literary.
+Bands need not be equal-sized; only that all five are represented.
 
-**Attribution we must ship** (Acknowledgements screen + `NOTICE`): wordfreq
-(CC BY-SA), WordNet, Project Gutenberg, and the Brown Corpus.
+This returns to the repo's original "permissive only" stance (see
+[`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md)), taken to
+its conclusion: rather than re-source from any third-party corpus, the word data
+is simply ours.
 
 Output schema per word:
 ```json
 { "id": 142, "word": "laconic", "pos": "adj",
-  "definition": "brief and to the point; effectively cut short",
-  "example": "a laconic reply", "band": 4 }
+  "definition": "using very few words", "band": 4 }
 ```
 
 ---
@@ -374,7 +367,7 @@ word-of-the-day/
   WordWidget/                  ← TimelineProvider, views, StarIntent
   WordOfTheDayTests/
   scripts/                     ← generate.sh, run_tests.sh, check_appgroup_sync.sh,
-                                 build_modern_corpus.py (+ examples_supplement.json), build_corpus.py
+                                 build_corpus.py (+ corpus_source.json)
   docs/
     prior-art-and-licensing.md ← the "don't reinvent the wheel" research
     learnings/
@@ -399,7 +392,7 @@ word-of-the-day/
 **Implemented.** The full vertical slice is built: XcodeGen project, the three
 design-system extensions, the deterministic shared core, the app (onboarding +
 swipe deck + Today + Practice + Settings), the widget (all families + interactive
-star), the 1000-word corpus + build pipeline, App Store privacy manifests,
+star), the hand-authored CC0 corpus, App Store privacy manifests,
 CI, and a unit-test suite over the deterministic core. The codebase is described
 in `docs/learnings/001-architecture.md`. Remaining before submission: an app
 icon asset, and (optionally) running `scripts/fetch_fonts.sh` to bundle the OFL

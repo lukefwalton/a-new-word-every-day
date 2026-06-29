@@ -1,42 +1,16 @@
 Word of the Day
 Copyright Luke F. Walton.
 
-This product bundles or derives from the following third-party works.
-
-IMPORTANT — the bundled word list is share-alike:
-  WordOfTheDay/Resources/words.json is built by scripts/build_modern_corpus.py.
-  Its headword selection and difficulty bands derive from wordfreq's frequency
-  data, part of which is Creative Commons Attribution-ShareAlike 4.0. The word
-  list is therefore distributed under CC BY-SA 4.0, even though the application
-  source code is MIT-licensed (see LICENSE). Redistributing or modifying the
-  word list means honoring CC BY-SA 4.0 and the attributions below.
-  https://creativecommons.org/licenses/by-sa/4.0/
-
 --------------------------------------------------------------------------------
-Word selection + difficulty bands (scripts/build_modern_corpus.py)
+Word list (WordOfTheDay/Resources/words.json)
 --------------------------------------------------------------------------------
-wordfreq (Robyn Speer et al.) — modern English word frequencies.
-  Code: Apache-2.0. Data: redistributable under CC BY-SA 4.0, and itself derived
-  from Google Books Ngrams, Wikipedia, OpenSubtitles, the Leeds Internet Corpus,
-  ParaCrawl, SUBTLEX, and Twitter. Those upstream credits flow through to here.
-  https://github.com/rspeer/wordfreq
-
---------------------------------------------------------------------------------
-Word definitions + parts of speech
---------------------------------------------------------------------------------
-Princeton WordNet — WordNet License (BSD/MIT-style; attribution required).
-  WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.
-  https://wordnet.princeton.edu/license-and-commercial-use
-
---------------------------------------------------------------------------------
-Example sentences
---------------------------------------------------------------------------------
-Drawn from public-domain literature via Project Gutenberg (the NLTK "gutenberg"
-  sample: Austen, Melville, Milton, Shakespeare, Carroll, the KJV Bible, etc.) and
-  the Brown Corpus of present-day American English (Francis & Kucera, Brown
-  University; "redistribution permitted"). Words too modern for those corpora
-  carry example sentences written originally for this app (scripts/examples_supplement.json).
-  https://www.gutenberg.org/  ·  http://www.hit.uib.no/icame/brown/bcm.html
+The word list — every headword, definition, and difficulty band — was written
+for this app and is dedicated to the PUBLIC DOMAIN under Creative Commons CC0 1.0.
+There is no third-party data in it: no frequency list, no licensed dictionary,
+no scraped text. Use it, fork it, redistribute it freely, no attribution
+required. Source of record: scripts/corpus_source.json (assembled by
+scripts/build_corpus.py).
+  https://creativecommons.org/publicdomain/zero/1.0/
 
 --------------------------------------------------------------------------------
 Typefaces (bundled variable fonts, fetched by scripts/fetch_fonts.sh)

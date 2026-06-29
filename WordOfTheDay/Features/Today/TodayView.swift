@@ -60,14 +60,6 @@ struct TodayView: View {
                 .foregroundStyle(palette.primaryText)
                 .fixedSize(horizontal: false, vertical: true)
 
-            if !word.example.isEmpty {
-                Text("“\(word.example)”")
-                    .font(LFWTypography.font(.example, typeface: typeface))
-                    .italic()
-                    .foregroundStyle(palette.secondaryText)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-
             Spacer()
 
             knowControls(word)

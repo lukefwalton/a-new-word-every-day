@@ -30,14 +30,13 @@ nothing ever leaves your phone.
   semantic typography (`LFWTypography`), and user theming (`LFWThemeConfig`).
 - **Widget** — `WidgetKit` timeline that reloads at midnight; reads the shared
   store; never links any write path beyond the interactive star intent.
-- **Corpus** — 1000 "elevated everyday" words (`WordOfTheDay/Resources/words.json`),
-  picked from the long tail of modern English usage. Built offline by
-  `scripts/build_modern_corpus.py`: selection + difficulty bands from
-  [wordfreq](https://github.com/rspeer/wordfreq), definitions from WordNet, and
-  example sentences from public-domain literature (Project Gutenberg) and the
-  Brown Corpus. Because wordfreq's data is share-alike, **the bundled word list
-  is CC BY-SA 4.0** (the app code stays MIT). See
-  [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
+- **Corpus** — a hand-authored list of elevated/advanced words
+  (`WordOfTheDay/Resources/words.json`): each entry is a word, an original
+  one-line definition, and a difficulty band (1–5). It's written for this app
+  with **no external data** (no frequency list, no licensed dictionary, no
+  scraped text) and dedicated to the **public domain (CC0)** — free for anyone
+  to reuse. Edit `scripts/corpus_source.json` and run `scripts/build_corpus.py`
+  to regenerate. See [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
 
 See [SPEC.md](SPEC.md) for the full design and
 [docs/learnings/001-architecture.md](docs/learnings/001-architecture.md) for the
@@ -71,7 +70,6 @@ exporter, scheduler, corpus integrity) is covered by `WordOfTheDayTests`; CI
 
 ## License
 
-Code: MIT, see [LICENSE](LICENSE). Bundled fonts are SIL OFL 1.1. The bundled
-word list (`WordOfTheDay/Resources/words.json`) is **CC BY-SA 4.0**, because its
-selection derives from wordfreq's share-alike frequency data. Full attribution
-and per-source terms: see [NOTICE](NOTICE).
+Code: MIT, see [LICENSE](LICENSE). Bundled fonts are SIL OFL 1.1. The word list
+(`WordOfTheDay/Resources/words.json`) is original work dedicated to the **public
+domain (CC0)** — no copyleft, no attribution required. See [NOTICE](NOTICE).

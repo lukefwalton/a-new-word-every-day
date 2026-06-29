@@ -29,7 +29,7 @@ final class CorpusTests: XCTestCase {
         for word in corpus.words {
             XCTAssertFalse(word.word.trimmingCharacters(in: .whitespaces).isEmpty, "blank headword id=\(word.id)")
             XCTAssertFalse(word.definition.trimmingCharacters(in: .whitespaces).isEmpty, "blank definition id=\(word.id)")
-            XCTAssertTrue(validPOS.contains(word.pos), "bad pos '\(word.pos)' id=\(word.id)")
+            XCTAssertTrue(validPOS.contains(word.pos), "bad pos '\(word.pos)' id=\(word.id)")  // n|v|adj|adv
             XCTAssertTrue((1...5).contains(word.band), "band out of range id=\(word.id)")
         }
     }

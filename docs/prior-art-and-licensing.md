@@ -4,12 +4,16 @@ Where this app reuses existing, well-solved work, and the license of each
 choice. The guiding rule for **application code** is **permissive only**
 (MIT / Apache / BSD / ISC / public-domain / WordNet License / SIL OFL).
 
-> **Update (2026):** the *word list* is the deliberate exception. To get 1000
-> genuinely *used*, recognizable words from the long tail of modern English, the
-> owner accepted a share-alike data source (`wordfreq`). The bundled
-> `words.json` is therefore **CC BY-SA 4.0**; only the corpus is share-alike, and
-> the app code stays MIT. Sections below are kept as the original
-> permissive-only analysis, then amended where the decision changed.
+> **Update (2026) — final decision: the word list is original and public-domain.**
+> After a detour through a share-alike source (`wordfreq`), the owner's call was
+> not to gatekeep the dictionary behind copyleft at all. So the word list is now
+> **hand-authored** — every headword, definition, and difficulty band written for
+> this app, with **no external data** — and dedicated to the **public domain
+> (CC0)**. No frequency list, no third-party dictionary, no scraped text, no
+> attribution required. This is the permissive-only principle below taken to its
+> conclusion: the cleanest way to avoid every license question is to own the data.
+> The source of record is `scripts/corpus_source.json`. The matrix below is kept
+> as a record of the sources evaluated along the way.
 
 License verifications below were done by reading the actual LICENSE files /
 canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
@@ -32,22 +36,21 @@ canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
 | **Brown Corpus** | Present-day American English sentences | Brown University; "redistribution permitted" | ✅ Example sentences for modern words absent from public-domain literature. |
 | Scraped GRE repos (Magoosh/Barron's/Manhattan) | GRE word lists | **No license** + derived from proprietary prep | ❌ Use only as headword *inspiration*; re-source defs from WordNet. |
 
-**Original (permissive-only) build:** WordNet (defs/POS) × Norvig `count_1w`
-(bands), headwords from SCOWL/GRE tiers. Kept in `scripts/build_corpus.py` for
-anyone who wants a fully-permissive corpus. Norvig is fetched at build time and
-is now frequently blocked behind site policies, which was part of the push to
-change approach.
+**Approaches evaluated (all superseded):**
 
-**Amended (shipping) build — `scripts/build_modern_corpus.py`:** take a modern
-English frequency distribution from **wordfreq** and pick 1000 words from its
-*long tail* (recognizable, elevated, not trivially common); split into five
-difficulty bands by frequency quintile; attach **WordNet** definitions + POS;
-attach an example sentence from **Project Gutenberg** (literary, public domain),
-the **Brown Corpus** (modern), or — for words too modern for either — one
-written for this app. Because the selection/banding derive from wordfreq's
-share-alike data, `words.json` ships under **CC BY-SA 4.0**. Ship wordfreq +
-WordNet + Gutenberg + Brown attribution in `NOTICE` and the Acknowledgements
-screen.
+- *Permissive-only:* WordNet (defs/POS) × Norvig `count_1w` (bands), headwords
+  from SCOWL/GRE tiers. Norvig is fetched at build time and is now frequently
+  blocked behind site policies.
+- *Modern long-tail:* a `wordfreq` distribution → 1000 long-tail words → WordNet
+  definitions → example sentences from Gutenberg/Brown/authored. Worked, but
+  wordfreq's data is partly **CC BY-SA**, which would have made `words.json`
+  share-alike — copyleft we chose not to inherit.
+
+**Shipping build — `scripts/build_corpus.py`:** none of the above. The word list
+is **hand-authored and dedicated to the public domain (CC0)**: every headword,
+definition, and difficulty band is original work in `scripts/corpus_source.json`,
+with no external data of any kind. `build_corpus.py` just validates and numbers
+it. No attribution, no share-alike, nothing to gatekeep.
 
 ---
 

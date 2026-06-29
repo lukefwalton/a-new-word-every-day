@@ -14,7 +14,7 @@ final class AnkiExporterTests: XCTestCase {
 
     func test_row_hasFrontTabBack() {
         let word = Word(id: 1, word: "laconic", pos: "adj",
-                        definition: "using very few words", example: "a laconic reply", band: 3)
+                        definition: "using very few words", band: 3)
         let tsv = AnkiExporter.tsv(for: [word])
         let row = tsv.split(separator: "\n").first { $0.hasPrefix("laconic") }
         XCTAssertNotNil(row)
@@ -23,7 +23,6 @@ final class AnkiExporterTests: XCTestCase {
         XCTAssertEqual(cols[0], "laconic")
         XCTAssertTrue(cols[1].contains("(adjective)"))
         XCTAssertTrue(cols[1].contains("using very few words"))
-        XCTAssertTrue(cols[1].contains("a laconic reply"))
     }
 
     func test_lineCount_isHeadersPlusWords() {
@@ -34,17 +33,11 @@ final class AnkiExporterTests: XCTestCase {
 
     func test_tabsInContentAreSanitized() {
         let word = Word(id: 1, word: "x", pos: "n",
-                        definition: "a\tb", example: "c\nd", band: 1)
+                        definition: "a\tb\nc", band: 1)
         let tsv = AnkiExporter.tsv(for: [word])
         let row = tsv.split(separator: "\n").first { $0.hasPrefix("x\t") }!
         // Exactly one tab (the column separator) in the row.
         XCTAssertEqual(row.filter { $0 == "\t" }.count, 1)
         XCTAssertFalse(row.contains("\n"))
-    }
-
-    func test_emptyExample_omitsExampleClause() {
-        let word = Word(id: 1, word: "x", pos: "n", definition: "a thing", example: "", band: 1)
-        let tsv = AnkiExporter.tsv(for: [word])
-        XCTAssertFalse(tsv.contains("e.g."))
     }
 }

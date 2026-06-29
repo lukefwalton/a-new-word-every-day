@@ -57,9 +57,9 @@ fonts and theming, added as generic modules so the siblings could adopt them:
 
 ## Licensing posture
 
-App code is MIT; OFL fonts. The bundled 1000-word `words.json` is the deliberate
-exception: its selection/bands come from wordfreq's share-alike data, so the word
-list ships **CC BY-SA 4.0** (definitions from WordNet; examples from Gutenberg /
-Brown / written for the app). The full matrix is in
-`docs/prior-art-and-licensing.md`; attribution lives in `NOTICE` and the in-app
-Acknowledgements.
+App code is MIT; OFL fonts. The `words.json` corpus is **hand-authored and
+public-domain (CC0)** — every headword, definition, and difficulty band written
+for this app, no external data. `scripts/corpus_source.json` is the source;
+`scripts/build_corpus.py` validates it and numbers the entries (no deps beyond
+the stdlib). The full history of sources evaluated is in
+`docs/prior-art-and-licensing.md`.
