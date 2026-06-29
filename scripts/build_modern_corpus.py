@@ -409,18 +409,21 @@ def main():
     print("Example sources:", dict(src))
     print("Bands:", dict(sorted(Counter(r['band'] for r in out).items())))
     print("POS:", dict(Counter(r['pos'] for r in out)))
-    if src.get("MISSING"):
-        missing = [r["word"] for r in rows if not r["example"]]
-        print(f"\n{len(missing)} words still need an example — add them to "
-              f"{args.supplement.name}:\n" + "\n".join(missing))
-
-    # Guard: every example must actually use its headword (lemma-aware). Catches
-    # bad supplement entries and any future matching regression.
+    # Guards. These make generation fail loudly rather than quietly committing a
+    # corpus with blank or mismatched examples.
+    problems = []
+    missing = [r["word"] for r in rows if not r["example"]]
+    if missing:
+        problems.append(f"{len(missing)} words still need an example (add to "
+                        f"{args.supplement.name}): " + ", ".join(missing))
+    # Every example must actually use its headword (lemma-aware).
     mismatched = [r["word"] for r in out
                   if r["example"] and not example_uses_word(wn, r["example"], r["word"])]
     if mismatched:
-        print(f"\nWARNING: {len(mismatched)} examples do not contain their headword: "
-              + ", ".join(mismatched))
+        problems.append(f"{len(mismatched)} examples do not contain their headword: "
+                        + ", ".join(mismatched))
+    if problems:
+        raise SystemExit("\nFAILED — fix and re-run:\n" + "\n".join(problems))
 
 
 if __name__ == "__main__":

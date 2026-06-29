@@ -1,86 +1,172 @@
 {
   "aviation": {
     "pos": "n",
-    "definition": "the operation of aircraft to provide transportation"
+    "definition": "the operation of aircraft to provide transportation",
+    "example": "she devoted her whole life to aviation"
   },
   "beaver": {
     "pos": "n",
-    "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail"
+    "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail",
+    "example": "a beaver built a dam across the stream"
   },
   "bisexual": {
     "pos": "adj",
-    "definition": "sexually attracted to both sexes"
+    "definition": "sexually attracted to both sexes",
+    "example": "she is openly bisexual"
+  },
+  "bout": {
+    "pos": "n",
+    "definition": "a contest or fight (especially between boxers or wrestlers)",
+    "example": "a heavyweight boxing bout"
   },
   "bridal": {
     "pos": "adj",
-    "definition": "of or relating to a wedding"
+    "definition": "of or relating to a wedding",
+    "example": "a bridal gown of white lace"
+  },
+  "chord": {
+    "pos": "n",
+    "definition": "a combination of three or more notes that blend harmoniously when sounded together",
+    "example": "she strummed a soft minor chord"
+  },
+  "confinement": {
+    "pos": "n",
+    "definition": "the state of being confined",
+    "example": "years of solitary confinement"
   },
   "counsel": {
     "pos": "n",
-    "definition": "something that provides direction or advice as to a decision or course of action"
+    "definition": "something that provides direction or advice as to a decision or course of action",
+    "example": "she sought his counsel before deciding"
   },
   "cub": {
     "pos": "n",
-    "definition": "the young of certain carnivorous mammals such as the bear or wolf or lion"
+    "definition": "the young of certain carnivorous mammals such as the bear or wolf or lion",
+    "example": "a bear cub trailed close behind its mother"
   },
   "curse": {
     "pos": "n",
-    "definition": "an appeal to some supernatural power to inflict evil on someone or some group"
+    "definition": "an appeal to some supernatural power to inflict evil on someone or some group",
+    "example": "an ancient curse hung over the house"
+  },
+  "derive": {
+    "pos": "v",
+    "definition": "come from",
+    "example": "the word derives from Latin"
   },
   "dive": {
     "pos": "n",
-    "definition": "a headlong plunge into water"
+    "definition": "a headlong plunge into water",
+    "example": "a graceful dive from the high board"
+  },
+  "drone": {
+    "pos": "n",
+    "definition": "an aircraft without a pilot that is operated by remote control",
+    "example": "a drone hovered silently overhead"
   },
   "expedition": {
     "pos": "n",
-    "definition": "a journey organized for a particular purpose"
+    "definition": "a journey organized for a particular purpose",
+    "example": "an expedition set out for the South Pole"
+  },
+  "fertile": {
+    "pos": "adj",
+    "definition": "capable of reproducing",
+    "example": "fertile soil yields abundant crops"
+  },
+  "geek": {
+    "pos": "n",
+    "definition": "a person with an unusual or odd personality",
+    "example": "a self-described movie geek"
   },
   "gill": {
     "pos": "n",
-    "definition": "respiratory organ of aquatic animals that breathe oxygen dissolved in water"
+    "definition": "respiratory organ of aquatic animals that breathe oxygen dissolved in water",
+    "example": "the trout's gills opened and closed"
   },
   "ginger": {
     "pos": "n",
-    "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cooker"
+    "definition": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cooker",
+    "example": "she grated fresh ginger into the soup"
   },
   "graft": {
     "pos": "n",
-    "definition": "the practice of offering something (usually money) in order to gain an illicit advantage"
+    "definition": "the practice of offering something (usually money) in order to gain an illicit advantage",
+    "example": "graft in the awarding of city contracts"
   },
   "hacker": {
     "pos": "n",
-    "definition": "a programmer who breaks into computer systems in order to steal or change or destroy information"
+    "definition": "a programmer who breaks into computer systems in order to steal or change or destroy information",
+    "example": "a hacker breached the bank's servers"
+  },
+  "hammer": {
+    "pos": "n",
+    "definition": "a hand tool with a heavy rigid head and a handle; used to deliver an impulsive force by striking",
+    "example": "she drove the nail with a hammer"
   },
   "immune": {
     "pos": "adj",
-    "definition": "not affected by a given influence"
+    "definition": "not affected by a given influence",
+    "example": "the survivors were immune to the disease"
+  },
+  "loom": {
+    "pos": "v",
+    "definition": "come into view indistinctly, often threateningly",
+    "example": "a storm loomed on the horizon"
+  },
+  "offence": {
+    "pos": "n",
+    "definition": "an act punishable by law; usually considered an evil act",
+    "example": "a minor traffic offence"
   },
   "pedal": {
     "pos": "n",
-    "definition": "a lever that is operated with the foot"
+    "definition": "a lever that is operated with the foot",
+    "example": "she pressed the brake pedal to the floor"
+  },
+  "predator": {
+    "pos": "n",
+    "definition": "any animal that lives by preying on other animals",
+    "example": "the lion is an apex predator"
   },
   "realise": {
     "pos": "v",
-    "definition": "perceive (an idea or situation) mentally"
+    "definition": "perceive (an idea or situation) mentally",
+    "example": "he began to realise his mistake"
   },
   "receipt": {
     "pos": "n",
-    "definition": "an acknowledgment (usually tangible) that payment has been made"
+    "definition": "an acknowledgment (usually tangible) that payment has been made",
+    "example": "she kept the receipt for the refund"
   },
   "siren": {
     "pos": "n",
-    "definition": "a warning signal that is a loud wailing sound"
+    "definition": "a warning signal that is a loud wailing sound",
+    "example": "a siren wailed in the distance"
   },
   "stud": {
     "pos": "n",
-    "definition": "ornament consisting of a circular rounded protuberance (as on a vault or shield or belt)"
+    "definition": "ornament consisting of a circular rounded protuberance (as on a vault or shield or belt)",
+    "example": "a leather collar set with metal studs"
   },
   "thrift": {
     "pos": "n",
-    "definition": "extreme care in spending money; reluctance to spend money unnecessarily"
+    "definition": "extreme care in spending money; reluctance to spend money unnecessarily",
+    "example": "years of careful thrift filled her savings"
+  },
+  "tilt": {
+    "pos": "n",
+    "definition": "the property possessed by a line or surface that departs from the vertical",
+    "example": "a slight tilt of the table sent the marble rolling"
+  },
+  "verbally": {
+    "pos": "adv",
+    "definition": "by means of language",
+    "example": "he agreed verbally before signing anything"
   },
   "voucher": {
     "pos": "n",
-    "definition": "a document that serves as evidence of some expenditure"
+    "definition": "a document that serves as evidence of some expenditure",
+    "example": "redeem the voucher at the checkout"
   }
 }

@@ -163,8 +163,8 @@
     "id": 21,
     "word": "bout",
     "pos": "n",
-    "definition": "a division during which one team is on the offensive",
-    "example": "Ile play this bout first, set by a - while.",
+    "definition": "a contest or fight (especially between boxers or wrestlers)",
+    "example": "a heavyweight boxing bout",
     "band": 1
   },
   {
@@ -244,7 +244,7 @@
     "word": "chill",
     "pos": "n",
     "definition": "coldness due to a cold environment",
-    "example": "This face is a haze more chill than the arctic sea, Its sleepy and wobbling icebergs crunch as they go.",
+    "example": "a sudden chill crept into the room",
     "band": 1
   },
   {
@@ -459,8 +459,8 @@
     "id": 58,
     "word": "drone",
     "pos": "n",
-    "definition": "stingless male bee in a colony of social bees (especially honeybees) whose sole function is to m",
-    "example": "The lazy sing-song was spaced in time like the drone of a bumble-bee.",
+    "definition": "an aircraft without a pilot that is operated by remote control",
+    "example": "a drone hovered silently overhead",
     "band": 1
   },
   {
@@ -667,8 +667,8 @@
     "id": 84,
     "word": "hammer",
     "pos": "n",
-    "definition": "the part of a gunlock that strikes the percussion cap when the trigger is pulled",
-    "example": "There, hammer that knot down, and we' ve done.",
+    "definition": "a hand tool with a heavy rigid head and a handle; used to deliver an impulsive force by striking",
+    "example": "she drove the nail with a hammer",
     "band": 1
   },
   {
@@ -940,7 +940,7 @@
     "word": "nerve",
     "pos": "n",
     "definition": "any bundle of nerve fibers running to various organs and tissues of the body",
-    "example": "I didn't even have the nerve to call her on the telephone.",
+    "example": "the dentist drilled close to a nerve",
     "band": 1
   },
   {
@@ -1588,7 +1588,7 @@
     "word": "yield",
     "pos": "n",
     "definition": "production of a certain amount",
-    "example": "Let us not slip th' occasion, whether scorn Or satiate fury yield it from our Foe.",
+    "example": "the field produced a high yield of wheat",
     "band": 1
   },
   {
@@ -2571,8 +2571,8 @@
     "id": 322,
     "word": "offence",
     "pos": "n",
-    "definition": "the action of attacking an enemy",
-    "example": "There' s no offence my Lord",
+    "definition": "an act punishable by law; usually considered an evil act",
+    "example": "a minor traffic offence",
     "band": 2
   },
   {
@@ -3475,8 +3475,8 @@
     "id": 435,
     "word": "chord",
     "pos": "n",
-    "definition": "a straight line connecting two points on a curve",
-    "example": "I take your strong chords, intersperse them, and cheerfully pass them forward.",
+    "definition": "a combination of three or more notes that blend harmoniously when sounded together",
+    "example": "she strummed a soft minor chord",
     "band": 3
   },
   {
@@ -3747,8 +3747,8 @@
     "id": 469,
     "word": "fertile",
     "pos": "adj",
-    "definition": "intellectually productive",
-    "example": "The place smelled strongly of rank, fertile earth, rotting wood and urine.",
+    "definition": "capable of reproducing",
+    "example": "fertile soil yields abundant crops",
     "band": 3
   },
   {
@@ -3811,7 +3811,7 @@
     "id": 477,
     "word": "geek",
     "pos": "n",
-    "definition": "a carnival performer who does disgusting acts",
+    "definition": "a person with an unusual or odd personality",
     "example": "a self-described movie geek",
     "band": 3
   },
@@ -4315,7 +4315,7 @@
     "id": 540,
     "word": "predator",
     "pos": "n",
-    "definition": "someone who attacks in search of booty",
+    "definition": "any animal that lives by preying on other animals",
     "example": "the lion is an apex predator",
     "band": 3
   },
@@ -4635,8 +4635,8 @@
     "id": 580,
     "word": "tilt",
     "pos": "n",
-    "definition": "a contentious speech act; a dispute where there is strong disagreement",
-    "example": "This technique causes the system to respond only to low frequency acceleration components such as the platform tilt.",
+    "definition": "the property possessed by a line or surface that departs from the vertical",
+    "example": "a slight tilt of the table sent the marble rolling",
     "band": 3
   },
   {
@@ -5115,8 +5115,8 @@
     "id": 640,
     "word": "confinement",
     "pos": "n",
-    "definition": "concluding state of pregnancy; from the onset of contractions to the birth of a child",
-    "example": "Out of the dark confinement!",
+    "definition": "the state of being confined",
+    "example": "years of solitary confinement",
     "band": 4
   },
   {
@@ -5211,8 +5211,8 @@
     "id": 652,
     "word": "derive",
     "pos": "v",
-    "definition": "reason by deduction; establish by deduction",
-    "example": "On the contrary, those motions derive their most appalling beauty from it.",
+    "definition": "come from",
+    "example": "the word derives from Latin",
     "band": 4
   },
   {
@@ -7250,9 +7250,9 @@
   {
     "id": 907,
     "word": "loom",
-    "pos": "n",
-    "definition": "a textile machine for weaving yarn into a textile",
-    "example": "Compulsory retirement at sixty-five looms on our horizon.",
+    "pos": "v",
+    "definition": "come into view indistinctly, often threateningly",
+    "example": "a storm loomed on the horizon",
     "band": 5
   },
   {
@@ -7340,7 +7340,7 @@
     "word": "moor",
     "pos": "n",
     "definition": "open land usually with peaty soil covered with heather and bracken and moss",
-    "example": "They've been there since the days of the Moors and the Saracens.",
+    "example": "the wind swept across the open moor",
     "band": 5
   },
   {
@@ -7939,8 +7939,8 @@
     "id": 993,
     "word": "verbally",
     "pos": "adv",
-    "definition": "as a verb",
-    "example": "he had a habit of using nouns verbally",
+    "definition": "by means of language",
+    "example": "he agreed verbally before signing anything",
     "band": 5
   },
   {

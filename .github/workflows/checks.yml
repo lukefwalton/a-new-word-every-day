@@ -73,8 +73,10 @@ jobs:
               got = by_word.get(word)
               if not got:
                   errors.append(f"{word}: missing from corpus")
-              elif got["pos"] != want["pos"] or got["definition"] != want["definition"]:
-                  errors.append(f"{word}: sense drifted\n    want: {want['pos']} | {want['definition']}\n    got:  {got['pos']} | {got['definition']}")
+              else:
+                  for field in ("pos", "definition", "example"):
+                      if got.get(field) != want.get(field):
+                          errors.append(f"{word}.{field} drifted\n    want: {want.get(field)}\n    got:  {got.get(field)}")
           if errors:
               sys.exit("::error::sense regression:\n" + "\n".join(errors))
           print(f"sense golden OK — {len(golden)} ambiguous words pinned")
