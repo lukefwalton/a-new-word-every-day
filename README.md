@@ -30,10 +30,13 @@ nothing ever leaves your phone.
   semantic typography (`LFWTypography`), and user theming (`LFWThemeConfig`).
 - **Widget** — `WidgetKit` timeline that reloads at midnight; reads the shared
   store; never links any write path beyond the interactive star intent.
-- **Corpus** — a curated 100-word seed (`WordOfTheDay/Resources/words.json`, with
-  definitions written for this project). Scale to thousands permissively with
-  `scripts/build_corpus.py` (WordNet + Norvig). See
-  [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
+- **Corpus** — a hand-authored list of elevated/advanced words
+  (`WordOfTheDay/Resources/words.json`): each entry is a word, an original
+  one-line definition, and a difficulty band (1–5). It's written for this app
+  with **no external data** (no frequency list, no licensed dictionary, no
+  scraped text) and dedicated to the **public domain (CC0)** — free for anyone
+  to reuse. Edit `scripts/corpus_source.json` and run `scripts/build_corpus.py`
+  to regenerate. See [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
 
 See [SPEC.md](SPEC.md) for the full design and
 [docs/learnings/001-architecture.md](docs/learnings/001-architecture.md) for the
@@ -67,5 +70,6 @@ exporter, scheduler, corpus integrity) is covered by `WordOfTheDayTests`; CI
 
 ## License
 
-Code: see [LICENSE](LICENSE). Bundled third-party data and fonts (all permissive,
-none copyleft): see [NOTICE](NOTICE).
+Code: MIT, see [LICENSE](LICENSE). Bundled fonts are SIL OFL 1.1. The word list
+(`WordOfTheDay/Resources/words.json`) is original work dedicated to the **public
+domain (CC0)** — no copyleft, no attribution required. See [NOTICE](NOTICE).

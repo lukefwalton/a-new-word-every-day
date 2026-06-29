@@ -17,7 +17,7 @@ final class WordTests: XCTestCase {
     func test_word_decodesFromJSON() throws {
         let json = """
         {"id": 42, "word": "laconic", "pos": "adj",
-         "definition": "using few words", "example": "a laconic reply", "band": 3}
+         "definition": "using few words", "band": 3}
         """.data(using: .utf8)!
         let word = try JSONDecoder().decode(Word.self, from: json)
         XCTAssertEqual(word.id, 42)

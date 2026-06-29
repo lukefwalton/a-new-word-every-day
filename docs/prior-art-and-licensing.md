@@ -1,9 +1,19 @@
 # Prior art & licensing — don't reinvent the wheel
 
 Where this app reuses existing, well-solved work, and the license of each
-choice. The guiding rule: **permissive only** (MIT / Apache / BSD / ISC /
-public-domain / WordNet License / SIL OFL). **Avoid copyleft & share-alike**
-(GPL / AGPL / LGPL / CC-BY-SA) so the corpus and app stay freely redistributable.
+choice. The guiding rule for **application code** is **permissive only**
+(MIT / Apache / BSD / ISC / public-domain / WordNet License / SIL OFL).
+
+> **Update (2026) — final decision: the word list is original and public-domain.**
+> After a detour through a share-alike source (`wordfreq`), the owner's call was
+> not to gatekeep the dictionary behind copyleft at all. So the word list is now
+> **hand-authored** — every headword, definition, and difficulty band written for
+> this app, with **no external data** — and dedicated to the **public domain
+> (CC0)**. No frequency list, no third-party dictionary, no scraped text, no
+> attribution required. This is the permissive-only principle below taken to its
+> conclusion: the cleanest way to avoid every license question is to own the data.
+> The source of record is `scripts/corpus_source.json`. The matrix below is kept
+> as a record of the sources evaluated along the way.
 
 License verifications below were done by reading the actual LICENSE files /
 canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
@@ -22,14 +32,25 @@ canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
 | Wordset Dictionary | Defs/POS/examples (~25k) | **CC-BY-SA 4.0** | ❌ Share-alike — avoid. |
 | Wiktionary / **dictionaryapi.dev** (Free Dictionary API) | Defs | **CC-BY-SA** data (+ GPL API code) | ❌ Share-alike — avoid bundling. Fine for live lookups only. |
 | GCIDE | Dictionary | **GPL** | ❌ Copyleft — avoid. |
-| `wordfreq` bundled data / SUBTLEX-US | Frequencies | **CC-BY-SA / "SA-like"** | ❌ Avoid bundling the data. (The *zipf* method is fine to recompute from permissive inputs — but we just use Norvig.) |
+| `wordfreq` bundled data / SUBTLEX-US | Frequencies | **CC-BY-SA / "SA-like"** | ✅ **Now adopted** for selection + bands (see amended build). Makes `words.json` CC-BY-SA. |
+| **Brown Corpus** | Present-day American English sentences | Brown University; "redistribution permitted" | ✅ Example sentences for modern words absent from public-domain literature. |
 | Scraped GRE repos (Magoosh/Barron's/Manhattan) | GRE word lists | **No license** + derived from proprietary prep | ❌ Use only as headword *inspiration*; re-source defs from WordNet. |
 
-**Chosen build:** WordNet (defs/POS/examples) × Norvig `count_1w` (difficulty
-bands), headwords filtered to GRE/SAT-tier via SCOWL tiers and public GRE word
-lists used as facts. Ship WordNet + Norvig attribution in `NOTICE` and
-Acknowledgements. Every field comes from WordNet-License + MIT + PD — no GPL, no
-CC-BY-SA.
+**Approaches evaluated (all superseded):**
+
+- *Permissive-only:* WordNet (defs/POS) × Norvig `count_1w` (bands), headwords
+  from SCOWL/GRE tiers. Norvig is fetched at build time and is now frequently
+  blocked behind site policies.
+- *Modern long-tail:* a `wordfreq` distribution → 1000 long-tail words → WordNet
+  definitions → example sentences from Gutenberg/Brown/authored. Worked, but
+  wordfreq's data is partly **CC BY-SA**, which would have made `words.json`
+  share-alike — copyleft we chose not to inherit.
+
+**Shipping build — `scripts/build_corpus.py`:** none of the above. The word list
+is **hand-authored and dedicated to the public domain (CC0)**: every headword,
+definition, and difficulty band is original work in `scripts/corpus_source.json`,
+with no external data of any kind. `build_corpus.py` just validates and numbers
+it. No attribution, no share-alike, nothing to gatekeep.
 
 ---
 

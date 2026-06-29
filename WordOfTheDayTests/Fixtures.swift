@@ -18,7 +18,7 @@ enum Fixtures {
 
     static func word(_ id: Int, band: Int, word: String? = nil, pos: String = "adj") -> Word {
         Word(id: id, word: word ?? "word\(id)", pos: pos,
-             definition: "definition \(id)", example: "example \(id)", band: band)
+             definition: "definition \(id)", band: band)
     }
 
     /// `perBand` words in each of `bands` bands, ids 1…(perBand*bands).

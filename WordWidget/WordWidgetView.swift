@@ -58,13 +58,6 @@ struct WordWidgetView: View {
                 .font(LFWTypography.font(.definition, typeface: typeface, size: family == .systemLarge ? 18 : 15))
                 .foregroundStyle(palette.primaryText.opacity(0.92))
                 .lineLimit(family == .systemLarge ? 4 : 2)
-            if family == .systemLarge, !word.example.isEmpty {
-                Text("“\(word.example)”")
-                    .font(LFWTypography.font(.example, typeface: typeface, size: 15))
-                    .italic()
-                    .foregroundStyle(palette.secondaryText)
-                    .lineLimit(2)
-            }
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

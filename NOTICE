@@ -1,26 +1,16 @@
 Word of the Day
 Copyright Luke F. Walton.
 
-This product bundles or derives from the following third-party works. All are
-permissively licensed; none are copyleft or share-alike.
-
 --------------------------------------------------------------------------------
-Word definitions (larger corpus built via scripts/build_corpus.py)
+Word list (WordOfTheDay/Resources/words.json)
 --------------------------------------------------------------------------------
-Princeton WordNet — WordNet License (BSD/MIT-style; attribution required).
-  WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.
-  https://wordnet.princeton.edu/license-and-commercial-use
-
-  (The bundled seed corpus in WordOfTheDay/Resources/words.json contains
-  definitions written originally for this project and carries no third-party
-  obligation. WordNet applies only if you scale the corpus with build_corpus.py.)
-
---------------------------------------------------------------------------------
-Word difficulty / frequency ranking
---------------------------------------------------------------------------------
-Peter Norvig — "Natural Language Corpus Data" frequency lists (count_1w.txt).
-  Licensed under the MIT License.
-  https://norvig.com/ngrams/
+The word list — every headword, definition, and difficulty band — was written
+for this app and is dedicated to the PUBLIC DOMAIN under Creative Commons CC0 1.0.
+There is no third-party data in it: no frequency list, no licensed dictionary,
+no scraped text. Use it, fork it, redistribute it freely, no attribution
+required. Source of record: scripts/corpus_source.json (assembled by
+scripts/build_corpus.py).
+  https://creativecommons.org/publicdomain/zero/1.0/
 
 --------------------------------------------------------------------------------
 Typefaces (bundled variable fonts, fetched by scripts/fetch_fonts.sh)

@@ -242,7 +242,7 @@ re-marking (feeds the band). An **Export** affordance (CSV) lives here — see �
 ### 6.4 Settings
 Typeface picker (live preview rendering the same word across the curated VFs),
 palette picker + accent-hue, plus the standard About/Acknowledgements (OFL +
-WordNet + Norvig credits). Writes `LFWThemeConfig` to the App Group and reloads
+CC0 word list). Writes `LFWThemeConfig` to the App Group and reloads
 the widget.
 
 ---
@@ -295,37 +295,34 @@ Mirrors `WorkoutWidget`'s `TimelineProvider` pattern.
 
 ---
 
-## 9. Word corpus pipeline (licensing-clean)
+## 9. Word corpus
 
-A build-time script (`scripts/build_corpus.py`) produces `words.json`; the app
-**never** fetches anything. The whole corpus is assembled from **permissive /
-public-domain** sources only (full matrix in
-[`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md)):
+The corpus is **hand-authored, original, and public-domain**. Each entry is just
+a word, a one-line definition, and a difficulty band (1–5) — no example
+sentences. Every field is written for this app: there is **no external data**
+(no frequency list, no licensed dictionary, no scraped text), so the word list
+is dedicated to the **public domain (CC0)** and free for anyone to reuse without
+attribution or share-alike obligations. The app source code stays MIT.
 
-1. **Definitions + part of speech + many example sentences → Princeton
-   WordNet.** The WordNet License is OSI-approved, BSD/MIT-style: free for any
-   purpose incl. commercial app bundling, with an attribution notice. **Not**
-   share-alike.
-2. **Difficulty ranking → Peter Norvig's `count_1w.txt`** (Google Web Trillion
-   Word Corpus counts), published under **MIT**. Rarer word ⇒ higher band.
-3. **Which headwords are "GRE/SAT-tier" → SCOWL** frequency tiers (permissive)
-   and/or public GRE word *lists* used only as a headword filter (a list of
-   facts), then **definitions re-sourced from WordNet** so nothing copyrighted
-   is redistributed.
+Pipeline: edit `scripts/corpus_source.json` (a flat array of
+`{word, pos, definition, band}`); `scripts/build_corpus.py` validates it, sorts
+by `(band, word)`, and numbers the entries 1..N into `words.json`. No
+dependencies beyond the Python standard library. The app **never** fetches
+anything at runtime.
 
-**Explicitly avoided** (share-alike / GPL / unclear): Wiktionary &
-`dictionaryapi.dev` (CC-BY-SA), Wordset Dictionary (CC-BY-SA), GCIDE (GPL),
-`wordfreq`/SUBTLEX bundled data (CC-BY-SA-ish), and scraped Magoosh/Barron's GRE
-repos (no license / derived from proprietary prep material).
+Difficulty bands are an editorial judgment of how rare/hard a word is — band 1
+is the most accessible advanced vocabulary, band 5 the rarest and most literary.
+Bands need not be equal-sized; only that all five are represented.
 
-**Attribution we must ship:** WordNet copyright + permission notice, and an MIT
-credit for Norvig — both in the Acknowledgements screen and `NOTICE`.
+This returns to the repo's original "permissive only" stance (see
+[`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md)), taken to
+its conclusion: rather than re-source from any third-party corpus, the word data
+is simply ours.
 
 Output schema per word:
 ```json
 { "id": 142, "word": "laconic", "pos": "adj",
-  "definition": "brief and to the point; effectively cut short",
-  "example": "a laconic reply", "band": 4 }
+  "definition": "using very few words", "band": 4 }
 ```
 
 ---
@@ -369,7 +366,8 @@ word-of-the-day/
     Resources/                 ← words.json, fonts/*.ttf, OFL.txt, Assets
   WordWidget/                  ← TimelineProvider, views, StarIntent
   WordOfTheDayTests/
-  scripts/                     ← generate.sh, run_tests.sh, check_appgroup_sync.sh, build_corpus.py
+  scripts/                     ← generate.sh, run_tests.sh, check_appgroup_sync.sh,
+                                 build_corpus.py (+ corpus_source.json)
   docs/
     prior-art-and-licensing.md ← the "don't reinvent the wheel" research
     learnings/
@@ -394,7 +392,7 @@ word-of-the-day/
 **Implemented.** The full vertical slice is built: XcodeGen project, the three
 design-system extensions, the deterministic shared core, the app (onboarding +
 swipe deck + Today + Practice + Settings), the widget (all families + interactive
-star), the 100-word seed corpus + scale pipeline, App Store privacy manifests,
+star), the hand-authored CC0 corpus, App Store privacy manifests,
 CI, and a unit-test suite over the deterministic core. The codebase is described
 in `docs/learnings/001-architecture.md`. Remaining before submission: an app
 icon asset, and (optionally) running `scripts/fetch_fonts.sh` to bundle the OFL

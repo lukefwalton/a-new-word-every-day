@@ -17,10 +17,7 @@ enum AnkiExporter {
             "#columns:Front\tBack",
         ]
         for word in words {
-            var back = "(\(word.partOfSpeechLabel)) \(word.definition)"
-            if !word.example.isEmpty {
-                back += " — e.g. \(word.example)"
-            }
+            let back = "(\(word.partOfSpeechLabel)) \(word.definition)"
             lines.append("\(field(word.word))\t\(field(back))")
         }
         return lines.joined(separator: "\n") + "\n"
