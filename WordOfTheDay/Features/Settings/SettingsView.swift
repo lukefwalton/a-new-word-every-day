@@ -140,8 +140,9 @@ struct SettingsView: View {
                 .foregroundStyle(palette.secondaryText)
             DisclosureGroup("Acknowledgements") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Definitions in the larger word list derive from Princeton WordNet (WordNet License).")
-                    Text("Word difficulty uses Peter Norvig's frequency data (MIT).")
+                    Text("Definitions and parts of speech derive from Princeton WordNet (WordNet License).")
+                    Text("Word selection and difficulty use word frequencies from wordfreq, available under CC BY-SA 4.0; the bundled word list is shared under the same license.")
+                    Text("Example sentences are drawn from public-domain literature (Project Gutenberg) and the Brown Corpus, or written for this app.")
                     Text("Typefaces — Fraunces, Literata, Inter, Recursive — are licensed under the SIL Open Font License 1.1.")
                 }
                 .font(.footnote)

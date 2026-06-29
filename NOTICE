@@ -1,26 +1,42 @@
 Word of the Day
 Copyright Luke F. Walton.
 
-This product bundles or derives from the following third-party works. All are
-permissively licensed; none are copyleft or share-alike.
+This product bundles or derives from the following third-party works.
+
+IMPORTANT — the bundled word list is share-alike:
+  WordOfTheDay/Resources/words.json is built by scripts/build_modern_corpus.py.
+  Its headword selection and difficulty bands derive from wordfreq's frequency
+  data, part of which is Creative Commons Attribution-ShareAlike 4.0. The word
+  list is therefore distributed under CC BY-SA 4.0, even though the application
+  source code is MIT-licensed (see LICENSE). Redistributing or modifying the
+  word list means honoring CC BY-SA 4.0 and the attributions below.
+  https://creativecommons.org/licenses/by-sa/4.0/
 
 --------------------------------------------------------------------------------
-Word definitions (larger corpus built via scripts/build_corpus.py)
+Word selection + difficulty bands (scripts/build_modern_corpus.py)
+--------------------------------------------------------------------------------
+wordfreq (Robyn Speer et al.) — modern English word frequencies.
+  Code: Apache-2.0. Data: redistributable under CC BY-SA 4.0, and itself derived
+  from Google Books Ngrams, Wikipedia, OpenSubtitles, the Leeds Internet Corpus,
+  ParaCrawl, SUBTLEX, and Twitter. Those upstream credits flow through to here.
+  https://github.com/rspeer/wordfreq
+
+--------------------------------------------------------------------------------
+Word definitions + parts of speech
 --------------------------------------------------------------------------------
 Princeton WordNet — WordNet License (BSD/MIT-style; attribution required).
   WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved.
   https://wordnet.princeton.edu/license-and-commercial-use
 
-  (The bundled seed corpus in WordOfTheDay/Resources/words.json contains
-  definitions written originally for this project and carries no third-party
-  obligation. WordNet applies only if you scale the corpus with build_corpus.py.)
-
 --------------------------------------------------------------------------------
-Word difficulty / frequency ranking
+Example sentences
 --------------------------------------------------------------------------------
-Peter Norvig — "Natural Language Corpus Data" frequency lists (count_1w.txt).
-  Licensed under the MIT License.
-  https://norvig.com/ngrams/
+Drawn from public-domain literature via Project Gutenberg (the NLTK "gutenberg"
+  sample: Austen, Melville, Milton, Shakespeare, Carroll, the KJV Bible, etc.) and
+  the Brown Corpus of present-day American English (Francis & Kucera, Brown
+  University; "redistribution permitted"). Words too modern for those corpora
+  carry example sentences written originally for this app (scripts/examples_supplement.json).
+  https://www.gutenberg.org/  ·  http://www.hit.uib.no/icame/brown/bcm.html
 
 --------------------------------------------------------------------------------
 Typefaces (bundled variable fonts, fetched by scripts/fetch_fonts.sh)

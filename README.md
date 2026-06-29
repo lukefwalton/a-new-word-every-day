@@ -30,9 +30,13 @@ nothing ever leaves your phone.
   semantic typography (`LFWTypography`), and user theming (`LFWThemeConfig`).
 - **Widget** — `WidgetKit` timeline that reloads at midnight; reads the shared
   store; never links any write path beyond the interactive star intent.
-- **Corpus** — a curated 100-word seed (`WordOfTheDay/Resources/words.json`, with
-  definitions written for this project). Scale to thousands permissively with
-  `scripts/build_corpus.py` (WordNet + Norvig). See
+- **Corpus** — 1000 "elevated everyday" words (`WordOfTheDay/Resources/words.json`),
+  picked from the long tail of modern English usage. Built offline by
+  `scripts/build_modern_corpus.py`: selection + difficulty bands from
+  [wordfreq](https://github.com/rspeer/wordfreq), definitions from WordNet, and
+  example sentences from public-domain literature (Project Gutenberg) and the
+  Brown Corpus. Because wordfreq's data is share-alike, **the bundled word list
+  is CC BY-SA 4.0** (the app code stays MIT). See
   [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
 
 See [SPEC.md](SPEC.md) for the full design and
@@ -67,5 +71,7 @@ exporter, scheduler, corpus integrity) is covered by `WordOfTheDayTests`; CI
 
 ## License
 
-Code: see [LICENSE](LICENSE). Bundled third-party data and fonts (all permissive,
-none copyleft): see [NOTICE](NOTICE).
+Code: MIT, see [LICENSE](LICENSE). Bundled fonts are SIL OFL 1.1. The bundled
+word list (`WordOfTheDay/Resources/words.json`) is **CC BY-SA 4.0**, because its
+selection derives from wordfreq's share-alike frequency data. Full attribution
+and per-source terms: see [NOTICE](NOTICE).

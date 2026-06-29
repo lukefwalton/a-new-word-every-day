@@ -1,9 +1,15 @@
 # Prior art & licensing — don't reinvent the wheel
 
 Where this app reuses existing, well-solved work, and the license of each
-choice. The guiding rule: **permissive only** (MIT / Apache / BSD / ISC /
-public-domain / WordNet License / SIL OFL). **Avoid copyleft & share-alike**
-(GPL / AGPL / LGPL / CC-BY-SA) so the corpus and app stay freely redistributable.
+choice. The guiding rule for **application code** is **permissive only**
+(MIT / Apache / BSD / ISC / public-domain / WordNet License / SIL OFL).
+
+> **Update (2026):** the *word list* is the deliberate exception. To get 1000
+> genuinely *used*, recognizable words from the long tail of modern English, the
+> owner accepted a share-alike data source (`wordfreq`). The bundled
+> `words.json` is therefore **CC BY-SA 4.0**; only the corpus is share-alike, and
+> the app code stays MIT. Sections below are kept as the original
+> permissive-only analysis, then amended where the decision changed.
 
 License verifications below were done by reading the actual LICENSE files /
 canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
@@ -22,14 +28,26 @@ canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
 | Wordset Dictionary | Defs/POS/examples (~25k) | **CC-BY-SA 4.0** | ❌ Share-alike — avoid. |
 | Wiktionary / **dictionaryapi.dev** (Free Dictionary API) | Defs | **CC-BY-SA** data (+ GPL API code) | ❌ Share-alike — avoid bundling. Fine for live lookups only. |
 | GCIDE | Dictionary | **GPL** | ❌ Copyleft — avoid. |
-| `wordfreq` bundled data / SUBTLEX-US | Frequencies | **CC-BY-SA / "SA-like"** | ❌ Avoid bundling the data. (The *zipf* method is fine to recompute from permissive inputs — but we just use Norvig.) |
+| `wordfreq` bundled data / SUBTLEX-US | Frequencies | **CC-BY-SA / "SA-like"** | ✅ **Now adopted** for selection + bands (see amended build). Makes `words.json` CC-BY-SA. |
+| **Brown Corpus** | Present-day American English sentences | Brown University; "redistribution permitted" | ✅ Example sentences for modern words absent from public-domain literature. |
 | Scraped GRE repos (Magoosh/Barron's/Manhattan) | GRE word lists | **No license** + derived from proprietary prep | ❌ Use only as headword *inspiration*; re-source defs from WordNet. |
 
-**Chosen build:** WordNet (defs/POS/examples) × Norvig `count_1w` (difficulty
-bands), headwords filtered to GRE/SAT-tier via SCOWL tiers and public GRE word
-lists used as facts. Ship WordNet + Norvig attribution in `NOTICE` and
-Acknowledgements. Every field comes from WordNet-License + MIT + PD — no GPL, no
-CC-BY-SA.
+**Original (permissive-only) build:** WordNet (defs/POS) × Norvig `count_1w`
+(bands), headwords from SCOWL/GRE tiers. Kept in `scripts/build_corpus.py` for
+anyone who wants a fully-permissive corpus. Norvig is fetched at build time and
+is now frequently blocked behind site policies, which was part of the push to
+change approach.
+
+**Amended (shipping) build — `scripts/build_modern_corpus.py`:** take a modern
+English frequency distribution from **wordfreq** and pick 1000 words from its
+*long tail* (recognizable, elevated, not trivially common); split into five
+difficulty bands by frequency quintile; attach **WordNet** definitions + POS;
+attach an example sentence from **Project Gutenberg** (literary, public domain),
+the **Brown Corpus** (modern), or — for words too modern for either — one
+written for this app. Because the selection/banding derive from wordfreq's
+share-alike data, `words.json` ships under **CC BY-SA 4.0**. Ship wordfreq +
+WordNet + Gutenberg + Brown attribution in `NOTICE` and the Acknowledgements
+screen.
 
 ---
 

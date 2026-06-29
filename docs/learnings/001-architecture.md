@@ -57,7 +57,9 @@ fonts and theming, added as generic modules so the siblings could adopt them:
 
 ## Licensing posture
 
-Everything bundled is permissive (seed definitions are original; WordNet +
-Norvig + OFL fonts for the scale path). No copyleft/share-alike. The full matrix
-is in `docs/prior-art-and-licensing.md`; attribution lives in `NOTICE` and the
-in-app Acknowledgements.
+App code is MIT; OFL fonts. The bundled 1000-word `words.json` is the deliberate
+exception: its selection/bands come from wordfreq's share-alike data, so the word
+list ships **CC BY-SA 4.0** (definitions from WordNet; examples from Gutenberg /
+Brown / written for the app). The full matrix is in
+`docs/prior-art-and-licensing.md`; attribution lives in `NOTICE` and the in-app
+Acknowledgements.
