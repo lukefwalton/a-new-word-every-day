@@ -33,8 +33,8 @@ jobs:
           import json, sys
           words = json.load(open("WordOfTheDay/Resources/words.json"))
           errors = []
-          if not isinstance(words, list) or not words:
-              sys.exit("::error::words.json must be a non-empty JSON array")
+          if not isinstance(words, list) or len(words) < 150:
+              sys.exit(f"::error::words.json looks too small ({len(words) if isinstance(words, list) else 'n/a'}) — accidental content drop?")
           ids = [w["id"] for w in words]
           if ids != list(range(1, len(words) + 1)):
               errors.append("ids must be 1..N with no gaps or duplicates")
