@@ -10,39 +10,43 @@ struct PracticeView: View {
     @State private var exportFailed = false
 
     private var typeface: LFWTypeface { model.theme.typeface }
+    private var palette: LFWPaletteColors { model.theme.colors }
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if model.starredWords.isEmpty {
-                    empty
-                } else {
-                    list
+        ThemedScreen(theme: model.theme) {
+            NavigationStack {
+                Group {
+                    if model.starredWords.isEmpty {
+                        empty
+                    } else {
+                        list
+                    }
                 }
-            }
-            .navigationTitle("Practice")
-            .toolbar {
-                if !model.starredWords.isEmpty {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            if let file = makeExport() {
-                                exportURL = file
-                            } else {
-                                exportFailed = true
+                .navigationTitle("Practice")
+                .toolbar {
+                    if !model.starredWords.isEmpty {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                if let file = makeExport() {
+                                    exportURL = file
+                                } else {
+                                    exportFailed = true
+                                }
+                            } label: {
+                                Label("Export to Anki", systemImage: "square.and.arrow.up")
                             }
-                        } label: {
-                            Label("Export to Anki", systemImage: "square.and.arrow.up")
+                            .tint(palette.accent)
                         }
                     }
                 }
-            }
-            .sheet(item: $exportURL) { file in
-                ShareSheet(url: file.url)
-            }
-            .alert("Couldn't create the export file", isPresented: $exportFailed) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text("Something went wrong writing the file. Please try again.")
+                .sheet(item: $exportURL) { file in
+                    ShareSheet(url: file.url)
+                }
+                .alert("Couldn't create the export file", isPresented: $exportFailed) {
+                    Button("OK", role: .cancel) {}
+                } message: {
+                    Text("Something went wrong writing the file. Please try again.")
+                }
             }
         }
     }
@@ -56,27 +60,31 @@ struct PracticeView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(word.word)
                             .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 20))
+                            .foregroundStyle(palette.primaryText)
                         Text("\(word.partOfSpeechLabel) · \(word.definition)")
                             .font(LFWTypography.font(.uiBody, typeface: typeface, size: 14))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(palette.secondaryText)
                             .lineLimit(2)
                     }
                     .padding(.vertical, 4)
                 }
-                .tint(.primary)
+                .tint(palette.primaryText)
             }
             .onDelete { offsets in
                 let ids = offsets.map { model.starredWords[$0].id }
                 model.unstar(ids)
             }
         }
+        .modifier(ThemedListChrome(palette: palette))
     }
 
     private var empty: some View {
         ContentUnavailableView {
             Label("No saved words", systemImage: "star")
+                .foregroundStyle(palette.primaryText)
         } description: {
             Text("Tap the star on a word to save it here for practice.")
+                .foregroundStyle(palette.secondaryText)
         }
     }
 

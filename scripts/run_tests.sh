@@ -11,6 +11,11 @@ else
   xcodegen generate
 fi
 
+# Variable fonts are gitignored; fetch before building if absent.
+if ! compgen -G "WordOfTheDay/Resources/Fonts/*.ttf" > /dev/null; then
+  bash scripts/fetch_fonts.sh
+fi
+
 # xcodebuild's `name=iPhone 15` destination uses OS:latest, which often fails
 # when multiple runtimes expose the same device name. Always pin a UDID instead.
 DEST=$(python3 <<'PY'

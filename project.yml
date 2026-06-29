@@ -57,6 +57,8 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.lukewalton.wordoftheday
         INFOPLIST_FILE: WordOfTheDay/App/Info.plist
         GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
 
   # Read-only Home Screen / Lock Screen widget. Shares the App Group store and the
   # bundled corpus; recomputes today's word deterministically (no shared write).

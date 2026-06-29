@@ -94,14 +94,14 @@ struct TodayView: View {
             } label: {
                 Label("Still learning", systemImage: "arrow.down")
             }
-            .buttonStyle(.lfwCTA(filled: false))
+            .buttonStyle(.themedCTA(palette: palette, filled: false))
 
             Button {
                 model.mark(word, known: true)
             } label: {
                 Label("I know this", systemImage: "checkmark")
             }
-            .buttonStyle(.lfwCTA(filled: true))
+            .buttonStyle(.themedCTA(palette: palette, filled: true))
         }
         .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
     }
@@ -109,8 +109,10 @@ struct TodayView: View {
     private var emptyState: some View {
         ContentUnavailableView {
             Label("No words yet", systemImage: "character.book.closed")
+                .foregroundStyle(palette.primaryText)
         } description: {
             Text("The word list couldn't be loaded. Reopen the app to try again.")
+                .foregroundStyle(palette.secondaryText)
         }
     }
 }

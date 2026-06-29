@@ -7,16 +7,21 @@ struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
 
     private var typeface: LFWTypeface { model.theme.typeface }
+    private var palette: LFWPaletteColors { model.theme.colors }
 
     var body: some View {
-        NavigationStack {
-            Form {
-                typefaceSection
-                colorSection
-                difficultySection
-                aboutSection
+        ThemedScreen(theme: model.theme) {
+            NavigationStack {
+                Form {
+                    typefaceSection
+                    colorSection
+                    difficultySection
+                    aboutSection
+                }
+                .modifier(ThemedFormChrome(palette: palette))
+                .foregroundStyle(palette.primaryText)
+                .navigationTitle("Settings")
             }
-            .navigationTitle("Settings")
         }
     }
 
@@ -33,16 +38,16 @@ struct SettingsView: View {
                     HStack {
                         Text("Eloquent")
                             .font(LFWTypography.font(.uiTitle, typeface: face, size: 22))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(palette.primaryText)
                         Spacer()
                         Text(face.displayName)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(palette.secondaryText)
                         if face == typeface {
-                            Image(systemName: "checkmark").foregroundStyle(.tint)
+                            Image(systemName: "checkmark").foregroundStyle(palette.accent)
                         }
                     }
                 }
-                .tint(model.theme.colors.accent)
+                .tint(palette.accent)
             }
         }
     }
@@ -51,36 +56,34 @@ struct SettingsView: View {
 
     private var colorSection: some View {
         Section("Color") {
-            ForEach(LFWPalette.allCases) { palette in
+            ForEach(LFWPalette.allCases) { paletteOption in
                 Button {
                     var theme = model.theme
-                    theme.palette = palette
+                    theme.palette = paletteOption
                     model.setTheme(theme)
                 } label: {
                     HStack(spacing: 12) {
-                        swatch(palette)
-                        Text(palette.displayName).foregroundStyle(.primary)
+                        swatch(paletteOption)
+                        Text(paletteOption.displayName).foregroundStyle(palette.primaryText)
                         Spacer()
-                        if palette == model.theme.palette {
-                            Image(systemName: "checkmark").foregroundStyle(.tint)
+                        if paletteOption == model.theme.palette {
+                            Image(systemName: "checkmark").foregroundStyle(palette.accent)
                         }
                     }
                 }
-                .tint(model.theme.colors.accent)
+                .tint(palette.accent)
             }
 
             VStack(alignment: .leading) {
                 Text("Accent hue")
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(palette.secondaryText)
                 Slider(
                     value: Binding(
                         get: { model.theme.accentHueShift },
                         set: { newValue in
                             var theme = model.theme
                             theme.accentHueShift = newValue
-                            // Instant in-app preview every step; defer the widget
-                            // reload to the end of the drag (below).
                             model.setTheme(theme, reloadWidget: false)
                         }
                     ),
@@ -89,13 +92,13 @@ struct SettingsView: View {
                         if !editing { model.reloadWidget() }
                     }
                 )
-                .tint(model.theme.colors.accent)
+                .tint(palette.accent)
             }
         }
     }
 
-    private func swatch(_ palette: LFWPalette) -> some View {
-        let c = palette.colors
+    private func swatch(_ paletteOption: LFWPalette) -> some View {
+        let c = paletteOption.colors
         return RoundedRectangle(cornerRadius: LFWRadius.chip, style: .continuous)
             .fill(LinearGradient(colors: [c.backgroundTop, c.backgroundBottom],
                                  startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -114,11 +117,13 @@ struct SettingsView: View {
                 HStack {
                     Text("Difficulty")
                     Spacer()
-                    Text(bandLabel(model.band)).foregroundStyle(.secondary)
+                    Text(bandLabel(model.band)).foregroundStyle(palette.secondaryText)
                 }
             }
+            .tint(palette.accent)
         } footer: {
             Text("Higher levels surface rarer words. Marking words as known or still-learning nudges this automatically.")
+                .foregroundStyle(palette.secondaryText)
         }
     }
 
@@ -132,6 +137,7 @@ struct SettingsView: View {
         Section("About") {
             Label("Free. No account, no tracking, no analytics.", systemImage: "lock.fill")
                 .font(.footnote)
+                .foregroundStyle(palette.secondaryText)
             DisclosureGroup("Acknowledgements") {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Definitions in the larger word list derive from Princeton WordNet (WordNet License).")
@@ -139,8 +145,9 @@ struct SettingsView: View {
                     Text("Typefaces — Fraunces, Literata, Inter, Recursive — are licensed under the SIL Open Font License 1.1.")
                 }
                 .font(.footnote)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(palette.secondaryText)
             }
+            .tint(palette.accent)
         }
     }
 }

@@ -68,9 +68,8 @@ struct SwipeDeck: View {
 
     // MARK: Card
 
-    /// Solid fill for deck cards. Stacked cards must be opaque — a translucent
-    /// background lets the words on cards behind bleed through the top card.
-    private var cardFill: Color { palette.backgroundTop }
+    /// Solid fill for deck cards — opaque and slightly lifted from the backdrop.
+    private var cardFill: Color { palette.backgroundBottom }
 
     private func card(_ word: Word) -> some View {
         cardFace(word)

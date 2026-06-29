@@ -20,10 +20,13 @@ struct RootView: View {
                         .tabItem { Label("Settings", systemImage: "slider.horizontal.3") }
                         .tag(AppModel.Tab.settings)
                 }
+                .tint(model.theme.colors.accent)
             } else {
                 OnboardingView()
             }
         }
         .animation(.easeInOut(duration: 0.4), value: model.onboardingComplete)
+        .onAppear { TabBarAppearance.apply(theme: model.theme) }
+        .onChange(of: model.theme) { _, theme in TabBarAppearance.apply(theme: theme) }
     }
 }
