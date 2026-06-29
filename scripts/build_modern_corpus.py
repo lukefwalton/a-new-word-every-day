@@ -104,7 +104,9 @@ BLOCK = STOP | GREEK | ROMAN | CLIPPED | PROPERISH | INFLECTED | MISSENSE | PROF
 # whereas a post-selection swap leaves all other picks untouched. (Mostly brand
 # names, clippings, and proper-noun homographs that read wrong as a daily word.)
 DROP_AFTER = set("chevy collins franklin morocco murphy nelson sierra pol grad lite horny "
-                 "marc chapman phoenix whale kite".split())
+                 "marc chapman phoenix whale kite "
+                 # comparative/superlative forms — not base headwords
+                 "earliest finer lesser".split())
 
 
 _LEMMA_CACHE = {}

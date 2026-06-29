@@ -7,9 +7,17 @@
     "pos": "n",
     "definition": "large semiaquatic rodent with webbed hind feet and a broad flat tail"
   },
+  "counsel": {
+    "pos": "n",
+    "definition": "something that provides direction or advice as to a decision or course of action"
+  },
   "cub": {
     "pos": "n",
     "definition": "the young of certain carnivorous mammals such as the bear or wolf or lion"
+  },
+  "curse": {
+    "pos": "n",
+    "definition": "an appeal to some supernatural power to inflict evil on someone or some group"
   },
   "dive": {
     "pos": "n",
@@ -23,6 +31,10 @@
     "pos": "n",
     "definition": "respiratory organ of aquatic animals that breathe oxygen dissolved in water"
   },
+  "graft": {
+    "pos": "n",
+    "definition": "the practice of offering something (usually money) in order to gain an illicit advantage"
+  },
   "hacker": {
     "pos": "n",
     "definition": "a programmer who breaks into computer systems in order to steal or change or destroy information"
@@ -34,6 +46,14 @@
   "realise": {
     "pos": "v",
     "definition": "perceive (an idea or situation) mentally"
+  },
+  "receipt": {
+    "pos": "n",
+    "definition": "an acknowledgment (usually tangible) that payment has been made"
+  },
+  "siren": {
+    "pos": "n",
+    "definition": "a warning signal that is a loud wailing sound"
   },
   "stud": {
     "pos": "n",

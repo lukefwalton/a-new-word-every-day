@@ -339,8 +339,8 @@
     "id": 43,
     "word": "counsel",
     "pos": "n",
-    "definition": "a lawyer who pleads cases in court",
-    "example": "Mr . Frederick, we' ll keep your counsel.",
+    "definition": "something that provides direction or advice as to a decision or course of action",
+    "example": "she sought his counsel before deciding",
     "band": 1
   },
   {
@@ -379,8 +379,8 @@
     "id": 48,
     "word": "curse",
     "pos": "n",
-    "definition": "profane or obscene expression usually of surprise or anger",
-    "example": "There is no curse on you.",
+    "definition": "an appeal to some supernatural power to inflict evil on someone or some group",
+    "example": "an ancient curse hung over the house",
     "band": 1
   },
   {
@@ -481,14 +481,6 @@
   },
   {
     "id": 61,
-    "word": "earliest",
-    "pos": "adj",
-    "definition": "(comparative and superlative of `early') more early than; most early",
-    "example": "Verdi's earliest and most raucous opera",
-    "band": 1
-  },
-  {
-    "id": 62,
     "word": "ego",
     "pos": "n",
     "definition": "an inflated feeling of pride in your superiority to others",
@@ -496,7 +488,7 @@
     "band": 1
   },
   {
-    "id": 63,
+    "id": 62,
     "word": "emotionally",
     "pos": "adv",
     "definition": "in an emotional manner",
@@ -504,7 +496,7 @@
     "band": 1
   },
   {
-    "id": 64,
+    "id": 63,
     "word": "emperor",
     "pos": "n",
     "definition": "the male ruler of an empire",
@@ -512,7 +504,7 @@
     "band": 1
   },
   {
-    "id": 65,
+    "id": 64,
     "word": "enormous",
     "pos": "adj",
     "definition": "extraordinarily large in size or extent or amount or power or degree; ; ; ; - Walter Lippman",
@@ -520,7 +512,7 @@
     "band": 1
   },
   {
-    "id": 66,
+    "id": 65,
     "word": "eternal",
     "pos": "adj",
     "definition": "continuing forever or indefinitely",
@@ -528,7 +520,7 @@
     "band": 1
   },
   {
-    "id": 67,
+    "id": 66,
     "word": "ethics",
     "pos": "n",
     "definition": "motivation based on ideas of right and wrong",
@@ -536,7 +528,7 @@
     "band": 1
   },
   {
-    "id": 68,
+    "id": 67,
     "word": "expedition",
     "pos": "n",
     "definition": "a journey organized for a particular purpose",
@@ -544,7 +536,7 @@
     "band": 1
   },
   {
-    "id": 69,
+    "id": 68,
     "word": "facial",
     "pos": "adj",
     "definition": "of or concerning the face",
@@ -552,7 +544,7 @@
     "band": 1
   },
   {
-    "id": 70,
+    "id": 69,
     "word": "farmer",
     "pos": "n",
     "definition": "a person who operates a farm",
@@ -560,7 +552,7 @@
     "band": 1
   },
   {
-    "id": 71,
+    "id": 70,
     "word": "fever",
     "pos": "n",
     "definition": "intense nervous anticipation",
@@ -568,7 +560,7 @@
     "band": 1
   },
   {
-    "id": 72,
+    "id": 71,
     "word": "flesh",
     "pos": "n",
     "definition": "the soft tissue of the body of a vertebrate: mainly muscle tissue and fat",
@@ -576,7 +568,7 @@
     "band": 1
   },
   {
-    "id": 73,
+    "id": 72,
     "word": "fold",
     "pos": "n",
     "definition": "an angular or rounded shape made by folding",
@@ -584,7 +576,7 @@
     "band": 1
   },
   {
-    "id": 74,
+    "id": 73,
     "word": "forgive",
     "pos": "v",
     "definition": "stop blaming or grant forgiveness",
@@ -592,11 +584,19 @@
     "band": 1
   },
   {
-    "id": 75,
+    "id": 74,
     "word": "fridge",
     "pos": "n",
     "definition": "a refrigerator in which the coolant is pumped around by an electric motor",
     "example": "leftovers crowded the fridge",
+    "band": 1
+  },
+  {
+    "id": 75,
+    "word": "garage",
+    "pos": "n",
+    "definition": "an outbuilding (or part of a building) for housing automobiles",
+    "example": "The bombs are as harmless as an automobile in a garage.",
     "band": 1
   },
   {
@@ -761,6 +761,14 @@
   },
   {
     "id": 96,
+    "word": "inquiry",
+    "pos": "n",
+    "definition": "a search for knowledge",
+    "example": "A blank silence followed this gay inquiry.",
+    "band": 1
+  },
+  {
+    "id": 97,
     "word": "inspector",
     "pos": "n",
     "definition": "a high ranking police officer",
@@ -768,7 +776,7 @@
     "band": 1
   },
   {
-    "id": 97,
+    "id": 98,
     "word": "inspire",
     "pos": "v",
     "definition": "heighten or intensify",
@@ -776,7 +784,7 @@
     "band": 1
   },
   {
-    "id": 98,
+    "id": 99,
     "word": "integrity",
     "pos": "n",
     "definition": "an undivided or unbroken completeness or totality with nothing wanting",
@@ -784,7 +792,7 @@
     "band": 1
   },
   {
-    "id": 99,
+    "id": 100,
     "word": "intimate",
     "pos": "adj",
     "definition": "marked by close acquaintance, association, or familiarity; ; - V.L. Parrington",
@@ -792,7 +800,7 @@
     "band": 1
   },
   {
-    "id": 100,
+    "id": 101,
     "word": "invitation",
     "pos": "n",
     "definition": "a request (spoken or written) to participate or be present or take part in something",
@@ -800,7 +808,15 @@
     "band": 1
   },
   {
-    "id": 101,
+    "id": 102,
+    "word": "khan",
+    "pos": "n",
+    "definition": "a title given to rulers or other important people in Asian countries",
+    "example": "the khan summoned his warriors",
+    "band": 1
+  },
+  {
+    "id": 103,
     "word": "laptop",
     "pos": "n",
     "definition": "a portable computer small enough to use in your lap",
@@ -808,15 +824,7 @@
     "band": 1
   },
   {
-    "id": 102,
-    "word": "lesser",
-    "pos": "adj",
-    "definition": "of less size or importance",
-    "example": "the lesser anteater",
-    "band": 1
-  },
-  {
-    "id": 103,
+    "id": 104,
     "word": "liability",
     "pos": "n",
     "definition": "the state of being legally obliged and responsible",
@@ -824,7 +832,7 @@
     "band": 1
   },
   {
-    "id": 104,
+    "id": 105,
     "word": "lottery",
     "pos": "n",
     "definition": "something that is regarded as a chance event",
@@ -832,7 +840,7 @@
     "band": 1
   },
   {
-    "id": 105,
+    "id": 106,
     "word": "machinery",
     "pos": "n",
     "definition": "machines or machine systems collectively",
@@ -840,7 +848,7 @@
     "band": 1
   },
   {
-    "id": 106,
+    "id": 107,
     "word": "magnetic",
     "pos": "adj",
     "definition": "of or relating to or caused by magnetism",
@@ -848,7 +856,7 @@
     "band": 1
   },
   {
-    "id": 107,
+    "id": 108,
     "word": "marijuana",
     "pos": "n",
     "definition": "a strong-smelling plant from whose dried leaves a number of euphoriant and hallucinogenic drugs",
@@ -856,7 +864,7 @@
     "band": 1
   },
   {
-    "id": 108,
+    "id": 109,
     "word": "meaningful",
     "pos": "adj",
     "definition": "having a meaning or purpose",
@@ -864,7 +872,7 @@
     "band": 1
   },
   {
-    "id": 109,
+    "id": 110,
     "word": "meantime",
     "pos": "n",
     "definition": "the time between one event, process, or period and another",
@@ -872,7 +880,7 @@
     "band": 1
   },
   {
-    "id": 110,
+    "id": 111,
     "word": "median",
     "pos": "n",
     "definition": "the value below which 50% of the cases fall",
@@ -880,7 +888,7 @@
     "band": 1
   },
   {
-    "id": 111,
+    "id": 112,
     "word": "mixture",
     "pos": "n",
     "definition": "a substance consisting of two or more substances mixed together (not in fixed proportions and no",
@@ -888,7 +896,7 @@
     "band": 1
   },
   {
-    "id": 112,
+    "id": 113,
     "word": "molecular",
     "pos": "adj",
     "definition": "relating to or produced by or consisting of molecules",
@@ -896,7 +904,7 @@
     "band": 1
   },
   {
-    "id": 113,
+    "id": 114,
     "word": "momentum",
     "pos": "n",
     "definition": "an impelling force or strength",
@@ -904,7 +912,7 @@
     "band": 1
   },
   {
-    "id": 114,
+    "id": 115,
     "word": "monetary",
     "pos": "adj",
     "definition": "relating to or involving money",
@@ -912,19 +920,11 @@
     "band": 1
   },
   {
-    "id": 115,
+    "id": 116,
     "word": "nasty",
     "pos": "adj",
     "definition": "offensive or even (of persons) malicious; ; ; ; ; ; - Ezra Pound",
     "example": "in a nasty mood",
-    "band": 1
-  },
-  {
-    "id": 116,
-    "word": "neat",
-    "pos": "adj",
-    "definition": "clean or organized",
-    "example": "her neat dress",
     "band": 1
   },
   {
@@ -1460,7 +1460,7 @@
     "word": "twist",
     "pos": "n",
     "definition": "an unforeseen development",
-    "example": "He was a tall, spruce man, with a twist of black moustache and incomparable morning dress.",
+    "example": "a clever twist at the end of the novel",
     "band": 1
   },
   {
@@ -1500,7 +1500,7 @@
     "word": "venture",
     "pos": "n",
     "definition": "any venturesome undertaking especially one with an uncertain outcome",
-    "example": "But she did not venture to say it out loud.",
+    "example": "a risky business venture into new markets",
     "band": 1
   },
   {
@@ -2473,6 +2473,14 @@
   },
   {
     "id": 310,
+    "word": "neat",
+    "pos": "adj",
+    "definition": "clean or organized",
+    "example": "her neat dress",
+    "band": 2
+  },
+  {
+    "id": 311,
     "word": "neighbourhood",
     "pos": "n",
     "definition": "a surrounding or nearby region",
@@ -2480,7 +2488,7 @@
     "band": 2
   },
   {
-    "id": 311,
+    "id": 312,
     "word": "neural",
     "pos": "adj",
     "definition": "of or relating to the nervous system",
@@ -2488,7 +2496,7 @@
     "band": 2
   },
   {
-    "id": 312,
+    "id": 313,
     "word": "niche",
     "pos": "n",
     "definition": "a position particularly well suited to the person who occupies it",
@@ -2496,7 +2504,7 @@
     "band": 2
   },
   {
-    "id": 313,
+    "id": 314,
     "word": "nickel",
     "pos": "n",
     "definition": "a hard malleable ductile silvery metallic element that is resistant to corrosion",
@@ -2504,7 +2512,7 @@
     "band": 2
   },
   {
-    "id": 314,
+    "id": 315,
     "word": "ninja",
     "pos": "n",
     "definition": "a member of the ninja who were trained in martial arts and hired for espionage or sabotage or as",
@@ -2512,7 +2520,7 @@
     "band": 2
   },
   {
-    "id": 315,
+    "id": 316,
     "word": "notch",
     "pos": "n",
     "definition": "a V-shaped indentation",
@@ -2520,7 +2528,7 @@
     "band": 2
   },
   {
-    "id": 316,
+    "id": 317,
     "word": "notorious",
     "pos": "adj",
     "definition": "known widely and usually unfavorably",
@@ -2528,7 +2536,7 @@
     "band": 2
   },
   {
-    "id": 317,
+    "id": 318,
     "word": "nursery",
     "pos": "n",
     "definition": "a child's room for a baby",
@@ -2536,7 +2544,7 @@
     "band": 2
   },
   {
-    "id": 318,
+    "id": 319,
     "word": "obesity",
     "pos": "n",
     "definition": "more than average fatness",
@@ -2544,7 +2552,7 @@
     "band": 2
   },
   {
-    "id": 319,
+    "id": 320,
     "word": "obsession",
     "pos": "n",
     "definition": "an irrational motive for performing trivial or repetitive actions, even against your will",
@@ -2552,7 +2560,7 @@
     "band": 2
   },
   {
-    "id": 320,
+    "id": 321,
     "word": "occurrence",
     "pos": "n",
     "definition": "an event that happens",
@@ -2560,7 +2568,7 @@
     "band": 2
   },
   {
-    "id": 321,
+    "id": 322,
     "word": "offence",
     "pos": "n",
     "definition": "the action of attacking an enemy",
@@ -2568,7 +2576,7 @@
     "band": 2
   },
   {
-    "id": 322,
+    "id": 323,
     "word": "opener",
     "pos": "n",
     "definition": "the first event in a series",
@@ -2576,7 +2584,7 @@
     "band": 2
   },
   {
-    "id": 323,
+    "id": 324,
     "word": "overhead",
     "pos": "adj",
     "definition": "located or originating from above",
@@ -2584,7 +2592,7 @@
     "band": 2
   },
   {
-    "id": 324,
+    "id": 325,
     "word": "papa",
     "pos": "n",
     "definition": "an informal term for a father; probably derived from baby talk",
@@ -2592,7 +2600,7 @@
     "band": 2
   },
   {
-    "id": 325,
+    "id": 326,
     "word": "paperwork",
     "pos": "n",
     "definition": "work that involves handling papers: forms or letters or reports etc.",
@@ -2600,7 +2608,7 @@
     "band": 2
   },
   {
-    "id": 326,
+    "id": 327,
     "word": "phantom",
     "pos": "n",
     "definition": "a ghostly appearing figure",
@@ -2608,7 +2616,7 @@
     "band": 2
   },
   {
-    "id": 327,
+    "id": 328,
     "word": "philosophical",
     "pos": "adj",
     "definition": "of or relating to philosophy or philosophers",
@@ -2616,7 +2624,7 @@
     "band": 2
   },
   {
-    "id": 328,
+    "id": 329,
     "word": "photographic",
     "pos": "adj",
     "definition": "relating to photography or obtained by using photography",
@@ -2624,7 +2632,7 @@
     "band": 2
   },
   {
-    "id": 329,
+    "id": 330,
     "word": "pity",
     "pos": "n",
     "definition": "a feeling of sympathy and sorrow for the misfortunes of others",
@@ -2632,7 +2640,7 @@
     "band": 2
   },
   {
-    "id": 330,
+    "id": 331,
     "word": "prejudice",
     "pos": "n",
     "definition": "a partiality that prevents objective consideration of an issue or situation",
@@ -2640,7 +2648,7 @@
     "band": 2
   },
   {
-    "id": 331,
+    "id": 332,
     "word": "presenter",
     "pos": "n",
     "definition": "someone who presents a message of some sort (as a petition or an address or a check or a memoria",
@@ -2648,7 +2656,7 @@
     "band": 2
   },
   {
-    "id": 332,
+    "id": 333,
     "word": "progression",
     "pos": "n",
     "definition": "a series with a definite pattern of advance",
@@ -2656,7 +2664,7 @@
     "band": 2
   },
   {
-    "id": 333,
+    "id": 334,
     "word": "prompt",
     "pos": "adj",
     "definition": "according to schedule or without delay; on time",
@@ -2664,7 +2672,7 @@
     "band": 2
   },
   {
-    "id": 334,
+    "id": 335,
     "word": "propose",
     "pos": "v",
     "definition": "make a proposal, declare a plan for something",
@@ -2672,7 +2680,7 @@
     "band": 2
   },
   {
-    "id": 335,
+    "id": 336,
     "word": "prosecutor",
     "pos": "n",
     "definition": "a government official who conducts criminal prosecutions on behalf of the state",
@@ -2680,7 +2688,7 @@
     "band": 2
   },
   {
-    "id": 336,
+    "id": 337,
     "word": "prospective",
     "pos": "adj",
     "definition": "of or concerned with or related to the future",
@@ -2688,7 +2696,7 @@
     "band": 2
   },
   {
-    "id": 337,
+    "id": 338,
     "word": "providence",
     "pos": "n",
     "definition": "the guardianship and control exercised by a deity",
@@ -2696,7 +2704,7 @@
     "band": 2
   },
   {
-    "id": 338,
+    "id": 339,
     "word": "pumpkin",
     "pos": "n",
     "definition": "a coarse vine widely cultivated for its large pulpy round orange fruit with firm orange skin and",
@@ -2704,7 +2712,7 @@
     "band": 2
   },
   {
-    "id": 339,
+    "id": 340,
     "word": "puzzle",
     "pos": "n",
     "definition": "a particularly baffling problem that is said to have a correct solution",
@@ -2712,7 +2720,7 @@
     "band": 2
   },
   {
-    "id": 340,
+    "id": 341,
     "word": "quiz",
     "pos": "n",
     "definition": "an examination consisting of a few short questions",
@@ -2720,15 +2728,15 @@
     "band": 2
   },
   {
-    "id": 341,
+    "id": 342,
     "word": "receipt",
     "pos": "n",
-    "definition": "the act of receiving",
-    "example": "If payment is by cash, you should ask for a receipt.",
+    "definition": "an acknowledgment (usually tangible) that payment has been made",
+    "example": "she kept the receipt for the refund",
     "band": 2
   },
   {
-    "id": 342,
+    "id": 343,
     "word": "regiment",
     "pos": "n",
     "definition": "army unit smaller than a division",
@@ -2736,7 +2744,7 @@
     "band": 2
   },
   {
-    "id": 343,
+    "id": 344,
     "word": "render",
     "pos": "v",
     "definition": "cause to become",
@@ -2744,7 +2752,7 @@
     "band": 2
   },
   {
-    "id": 344,
+    "id": 345,
     "word": "renewable",
     "pos": "adj",
     "definition": "that can be renewed or extended",
@@ -2752,7 +2760,7 @@
     "band": 2
   },
   {
-    "id": 345,
+    "id": 346,
     "word": "reproduction",
     "pos": "n",
     "definition": "the process of generating offspring",
@@ -2760,7 +2768,7 @@
     "band": 2
   },
   {
-    "id": 346,
+    "id": 347,
     "word": "respiratory",
     "pos": "adj",
     "definition": "pertaining to respiration",
@@ -2768,7 +2776,7 @@
     "band": 2
   },
   {
-    "id": 347,
+    "id": 348,
     "word": "restriction",
     "pos": "n",
     "definition": "a principle that limits the extent of something",
@@ -2776,7 +2784,7 @@
     "band": 2
   },
   {
-    "id": 348,
+    "id": 349,
     "word": "rhetoric",
     "pos": "n",
     "definition": "high-flown style; excessive use of verbal ornamentation",
@@ -2784,7 +2792,7 @@
     "band": 2
   },
   {
-    "id": 349,
+    "id": 350,
     "word": "rivalry",
     "pos": "n",
     "definition": "the act of competing as for profit or a prize",
@@ -2792,7 +2800,7 @@
     "band": 2
   },
   {
-    "id": 350,
+    "id": 351,
     "word": "rub",
     "pos": "v",
     "definition": "move over something with pressure",
@@ -2800,7 +2808,7 @@
     "band": 2
   },
   {
-    "id": 351,
+    "id": 352,
     "word": "ruby",
     "pos": "n",
     "definition": "a transparent piece of ruby that has been cut and polished and is valued as a precious gem",
@@ -2808,7 +2816,7 @@
     "band": 2
   },
   {
-    "id": 352,
+    "id": 353,
     "word": "sage",
     "pos": "n",
     "definition": "a mentor in spiritual and philosophical topics who is renowned for profound wisdom",
@@ -2816,7 +2824,7 @@
     "band": 2
   },
   {
-    "id": 353,
+    "id": 354,
     "word": "salon",
     "pos": "n",
     "definition": "gallery where works of art can be displayed",
@@ -2824,7 +2832,7 @@
     "band": 2
   },
   {
-    "id": 354,
+    "id": 355,
     "word": "scent",
     "pos": "n",
     "definition": "a distinctive odor that is pleasant",
@@ -2832,7 +2840,7 @@
     "band": 2
   },
   {
-    "id": 355,
+    "id": 356,
     "word": "scripture",
     "pos": "n",
     "definition": "any writing that is regarded as sacred by a religious group",
@@ -2840,7 +2848,7 @@
     "band": 2
   },
   {
-    "id": 356,
+    "id": 357,
     "word": "secondly",
     "pos": "adv",
     "definition": "in the second place",
@@ -2848,7 +2856,7 @@
     "band": 2
   },
   {
-    "id": 357,
+    "id": 358,
     "word": "shaft",
     "pos": "n",
     "definition": "an aggressive remark directed at a person like a missile and intended to have a telling effect",
@@ -2856,7 +2864,7 @@
     "band": 2
   },
   {
-    "id": 358,
+    "id": 359,
     "word": "shiny",
     "pos": "adj",
     "definition": "reflecting light",
@@ -2864,7 +2872,7 @@
     "band": 2
   },
   {
-    "id": 359,
+    "id": 360,
     "word": "showcase",
     "pos": "n",
     "definition": "a setting in which something can be displayed to best effect",
@@ -2872,7 +2880,7 @@
     "band": 2
   },
   {
-    "id": 360,
+    "id": 361,
     "word": "simulation",
     "pos": "n",
     "definition": "the act of imitating the behavior of some situation or some process by means of something suitab",
@@ -2880,7 +2888,7 @@
     "band": 2
   },
   {
-    "id": 361,
+    "id": 362,
     "word": "sincerely",
     "pos": "adv",
     "definition": "with sincerity; without pretense",
@@ -2888,7 +2896,7 @@
     "band": 2
   },
   {
-    "id": 362,
+    "id": 363,
     "word": "socially",
     "pos": "adv",
     "definition": "by or with respect to society",
@@ -2896,7 +2904,7 @@
     "band": 2
   },
   {
-    "id": 363,
+    "id": 364,
     "word": "sonic",
     "pos": "adj",
     "definition": "having or caused by speed approximately equal to that of sound in air at sea level",
@@ -2904,7 +2912,7 @@
     "band": 2
   },
   {
-    "id": 364,
+    "id": 365,
     "word": "sore",
     "pos": "adj",
     "definition": "hurting",
@@ -2912,7 +2920,7 @@
     "band": 2
   },
   {
-    "id": 365,
+    "id": 366,
     "word": "spill",
     "pos": "v",
     "definition": "cause or allow (a liquid substance) to run or flow from a container",
@@ -2920,7 +2928,7 @@
     "band": 2
   },
   {
-    "id": 366,
+    "id": 367,
     "word": "spoil",
     "pos": "v",
     "definition": "make a mess of, destroy or ruin",
@@ -2928,7 +2936,7 @@
     "band": 2
   },
   {
-    "id": 367,
+    "id": 368,
     "word": "spouse",
     "pos": "n",
     "definition": "a person's partner in marriage",
@@ -2936,7 +2944,7 @@
     "band": 2
   },
   {
-    "id": 368,
+    "id": 369,
     "word": "stellar",
     "pos": "adj",
     "definition": "indicating the most important performer or role",
@@ -2944,7 +2952,7 @@
     "band": 2
   },
   {
-    "id": 369,
+    "id": 370,
     "word": "stiff",
     "pos": "adj",
     "definition": "not moving or operating freely",
@@ -2952,7 +2960,7 @@
     "band": 2
   },
   {
-    "id": 370,
+    "id": 371,
     "word": "sting",
     "pos": "n",
     "definition": "a kind of pain; something as sudden and painful as being stung",
@@ -2960,7 +2968,7 @@
     "band": 2
   },
   {
-    "id": 371,
+    "id": 372,
     "word": "stunt",
     "pos": "v",
     "definition": "check the growth or development of",
@@ -2968,7 +2976,7 @@
     "band": 2
   },
   {
-    "id": 372,
+    "id": 373,
     "word": "superintendent",
     "pos": "n",
     "definition": "a person who directs and manages an organization",
@@ -2976,7 +2984,7 @@
     "band": 2
   },
   {
-    "id": 373,
+    "id": 374,
     "word": "supposedly",
     "pos": "adv",
     "definition": "believed or reputed to be the case",
@@ -2984,7 +2992,7 @@
     "band": 2
   },
   {
-    "id": 374,
+    "id": 375,
     "word": "surroundings",
     "pos": "n",
     "definition": "the environmental condition",
@@ -2992,7 +3000,7 @@
     "band": 2
   },
   {
-    "id": 375,
+    "id": 376,
     "word": "sweater",
     "pos": "n",
     "definition": "a crocheted or knitted garment covering the upper part of the body",
@@ -3000,7 +3008,7 @@
     "band": 2
   },
   {
-    "id": 376,
+    "id": 377,
     "word": "symphony",
     "pos": "n",
     "definition": "a long and complex sonata for symphony orchestra",
@@ -3008,7 +3016,7 @@
     "band": 2
   },
   {
-    "id": 377,
+    "id": 378,
     "word": "teammate",
     "pos": "n",
     "definition": "a fellow member of a team",
@@ -3016,7 +3024,7 @@
     "band": 2
   },
   {
-    "id": 378,
+    "id": 379,
     "word": "territorial",
     "pos": "adj",
     "definition": "of or relating to a territory",
@@ -3024,7 +3032,7 @@
     "band": 2
   },
   {
-    "id": 379,
+    "id": 380,
     "word": "thief",
     "pos": "n",
     "definition": "a criminal who takes property belonging to someone else with the intention of keeping it or sell",
@@ -3032,7 +3040,7 @@
     "band": 2
   },
   {
-    "id": 380,
+    "id": 381,
     "word": "thoughtful",
     "pos": "adj",
     "definition": "having intellectual depth",
@@ -3040,7 +3048,7 @@
     "band": 2
   },
   {
-    "id": 381,
+    "id": 382,
     "word": "threaten",
     "pos": "v",
     "definition": "pose a threat to; present a danger to",
@@ -3048,7 +3056,7 @@
     "band": 2
   },
   {
-    "id": 382,
+    "id": 383,
     "word": "timely",
     "pos": "adj",
     "definition": "before a time limit expires",
@@ -3056,7 +3064,7 @@
     "band": 2
   },
   {
-    "id": 383,
+    "id": 384,
     "word": "token",
     "pos": "adj",
     "definition": "insignificantly small; a matter of form only (`tokenish' is informal)",
@@ -3064,7 +3072,7 @@
     "band": 2
   },
   {
-    "id": 384,
+    "id": 385,
     "word": "translate",
     "pos": "v",
     "definition": "restate (words) from one language into another language",
@@ -3072,7 +3080,7 @@
     "band": 2
   },
   {
-    "id": 385,
+    "id": 386,
     "word": "trilogy",
     "pos": "n",
     "definition": "a set of three literary or dramatic works related in subject or theme",
@@ -3080,7 +3088,7 @@
     "band": 2
   },
   {
-    "id": 386,
+    "id": 387,
     "word": "trim",
     "pos": "v",
     "definition": "remove the edges from and cut down to the desired size",
@@ -3088,7 +3096,7 @@
     "band": 2
   },
   {
-    "id": 387,
+    "id": 388,
     "word": "triumph",
     "pos": "n",
     "definition": "a successful ending of a struggle or contest",
@@ -3096,7 +3104,7 @@
     "band": 2
   },
   {
-    "id": 388,
+    "id": 389,
     "word": "tuition",
     "pos": "n",
     "definition": "a fee paid for instruction (especially for higher education)",
@@ -3104,7 +3112,7 @@
     "band": 2
   },
   {
-    "id": 389,
+    "id": 390,
     "word": "unaware",
     "pos": "adj",
     "definition": "not aware",
@@ -3112,7 +3120,7 @@
     "band": 2
   },
   {
-    "id": 390,
+    "id": 391,
     "word": "unlock",
     "pos": "v",
     "definition": "open the lock of",
@@ -3120,19 +3128,11 @@
     "band": 2
   },
   {
-    "id": 391,
+    "id": 392,
     "word": "unrelated",
     "pos": "adj",
     "definition": "lacking a logical or causal relation",
     "example": "Rangoni's first entrance is a musical shock, a sudden open fifth in a key totally unrelated to what has preceded it.",
-    "band": 2
-  },
-  {
-    "id": 392,
-    "word": "unusually",
-    "pos": "adv",
-    "definition": "to a remarkable degree or extent",
-    "example": "she was unusually tall",
     "band": 2
   },
   {
@@ -4553,14 +4553,6 @@
   },
   {
     "id": 570,
-    "word": "staircase",
-    "pos": "n",
-    "definition": "a way of access (upward and downward) consisting of a set of steps",
-    "example": "All that have paid march off to the staircase, and take your seats there, one by one.",
-    "band": 3
-  },
-  {
-    "id": 571,
     "word": "stimulation",
     "pos": "n",
     "definition": "the act of arousing an organism to action",
@@ -4568,7 +4560,7 @@
     "band": 3
   },
   {
-    "id": 572,
+    "id": 571,
     "word": "storey",
     "pos": "n",
     "definition": "a structure consisting of a room or set of rooms at a single position along a vertical scale",
@@ -4576,7 +4568,7 @@
     "band": 3
   },
   {
-    "id": 573,
+    "id": 572,
     "word": "strangely",
     "pos": "adv",
     "definition": "in a strange manner",
@@ -4584,7 +4576,7 @@
     "band": 3
   },
   {
-    "id": 574,
+    "id": 573,
     "word": "strive",
     "pos": "v",
     "definition": "attempt by employing effort",
@@ -4592,7 +4584,7 @@
     "band": 3
   },
   {
-    "id": 575,
+    "id": 574,
     "word": "stud",
     "pos": "n",
     "definition": "ornament consisting of a circular rounded protuberance (as on a vault or shield or belt)",
@@ -4600,7 +4592,7 @@
     "band": 3
   },
   {
-    "id": 576,
+    "id": 575,
     "word": "suppression",
     "pos": "n",
     "definition": "the act of withholding or withdrawing some book or writing from publication or circulation",
@@ -4608,7 +4600,7 @@
     "band": 3
   },
   {
-    "id": 577,
+    "id": 576,
     "word": "supremacy",
     "pos": "n",
     "definition": "power to dominate or defeat",
@@ -4616,7 +4608,7 @@
     "band": 3
   },
   {
-    "id": 578,
+    "id": 577,
     "word": "takeover",
     "pos": "n",
     "definition": "a sudden and decisive change of government illegally or by force",
@@ -4624,7 +4616,7 @@
     "band": 3
   },
   {
-    "id": 579,
+    "id": 578,
     "word": "terminate",
     "pos": "v",
     "definition": "bring to an end or halt",
@@ -4632,7 +4624,7 @@
     "band": 3
   },
   {
-    "id": 580,
+    "id": 579,
     "word": "thrive",
     "pos": "v",
     "definition": "grow vigorously",
@@ -4640,7 +4632,7 @@
     "band": 3
   },
   {
-    "id": 581,
+    "id": 580,
     "word": "tilt",
     "pos": "n",
     "definition": "a contentious speech act; a dispute where there is strong disagreement",
@@ -4648,7 +4640,7 @@
     "band": 3
   },
   {
-    "id": 582,
+    "id": 581,
     "word": "torch",
     "pos": "n",
     "definition": "a light usually carried in the hand; consists of some flammable substance",
@@ -4656,7 +4648,7 @@
     "band": 3
   },
   {
-    "id": 583,
+    "id": 582,
     "word": "tracker",
     "pos": "n",
     "definition": "someone who tracks down game",
@@ -4664,7 +4656,7 @@
     "band": 3
   },
   {
-    "id": 584,
+    "id": 583,
     "word": "tray",
     "pos": "n",
     "definition": "an open receptacle for holding or displaying or serving articles or food",
@@ -4672,7 +4664,7 @@
     "band": 3
   },
   {
-    "id": 585,
+    "id": 584,
     "word": "turnout",
     "pos": "n",
     "definition": "the group that gathers together for a particular occasion",
@@ -4680,7 +4672,7 @@
     "band": 3
   },
   {
-    "id": 586,
+    "id": 585,
     "word": "typhoon",
     "pos": "n",
     "definition": "a tropical cyclone occurring in the western Pacific or Indian oceans",
@@ -4688,7 +4680,7 @@
     "band": 3
   },
   {
-    "id": 587,
+    "id": 586,
     "word": "unexpectedly",
     "pos": "adv",
     "definition": "in a way that was not expected",
@@ -4696,7 +4688,7 @@
     "band": 3
   },
   {
-    "id": 588,
+    "id": 587,
     "word": "unfamiliar",
     "pos": "adj",
     "definition": "not known or well known",
@@ -4704,7 +4696,7 @@
     "band": 3
   },
   {
-    "id": 589,
+    "id": 588,
     "word": "unhealthy",
     "pos": "adj",
     "definition": "not in or exhibiting good health in body or mind",
@@ -4712,11 +4704,19 @@
     "band": 3
   },
   {
-    "id": 590,
+    "id": 589,
     "word": "unseen",
     "pos": "adj",
     "definition": "not observed",
     "example": "Does all sit there with you, with the mystic unseen soul?",
+    "band": 3
+  },
+  {
+    "id": 590,
+    "word": "unusually",
+    "pos": "adv",
+    "definition": "to a remarkable degree or extent",
+    "example": "she was unusually tall",
     "band": 3
   },
   {
@@ -5443,8 +5443,8 @@
     "id": 681,
     "word": "graft",
     "pos": "n",
-    "definition": "tissue or organ transplanted from a donor to a recipient",
-    "example": "Graft in the construction of highways and other public works has brought on state and Federal investigations.",
+    "definition": "the practice of offering something (usually money) in order to gain an illicit advantage",
+    "example": "graft in the awarding of city contracts",
     "band": 4
   },
   {
@@ -5473,14 +5473,6 @@
   },
   {
     "id": 685,
-    "word": "handbag",
-    "pos": "n",
-    "definition": "a container used for carrying money and small personal items or accessories (especially by women",
-    "example": "she rummaged through her handbag for the keys",
-    "band": 4
-  },
-  {
-    "id": 686,
     "word": "haunt",
     "pos": "n",
     "definition": "a frequently visited place",
@@ -5488,7 +5480,7 @@
     "band": 4
   },
   {
-    "id": 687,
+    "id": 686,
     "word": "heater",
     "pos": "n",
     "definition": "device that heats water or supplies warmth to a room",
@@ -5496,7 +5488,7 @@
     "band": 4
   },
   {
-    "id": 688,
+    "id": 687,
     "word": "heroine",
     "pos": "n",
     "definition": "the main good female character in a work of fiction",
@@ -5504,7 +5496,7 @@
     "band": 4
   },
   {
-    "id": 689,
+    "id": 688,
     "word": "hind",
     "pos": "adj",
     "definition": "located at or near the back of an animal",
@@ -5512,7 +5504,7 @@
     "band": 4
   },
   {
-    "id": 690,
+    "id": 689,
     "word": "horsepower",
     "pos": "n",
     "definition": "a unit of power equal to 746 watts",
@@ -5520,7 +5512,7 @@
     "band": 4
   },
   {
-    "id": 691,
+    "id": 690,
     "word": "hysterical",
     "pos": "adj",
     "definition": "characterized by or arising from psychoneurotic hysteria; - Morris Fishbein",
@@ -5528,7 +5520,7 @@
     "band": 4
   },
   {
-    "id": 692,
+    "id": 691,
     "word": "illegitimate",
     "pos": "adj",
     "definition": "contrary to or forbidden by law",
@@ -5536,7 +5528,7 @@
     "band": 4
   },
   {
-    "id": 693,
+    "id": 692,
     "word": "imaginative",
     "pos": "adj",
     "definition": "marked by independence and creativity in thought or action; ; - Lewis Mumford",
@@ -5544,7 +5536,7 @@
     "band": 4
   },
   {
-    "id": 694,
+    "id": 693,
     "word": "immensely",
     "pos": "adv",
     "definition": "to an exceedingly great extent or degree",
@@ -5552,7 +5544,7 @@
     "band": 4
   },
   {
-    "id": 695,
+    "id": 694,
     "word": "inefficient",
     "pos": "adj",
     "definition": "not producing desired results; wasteful",
@@ -5560,7 +5552,7 @@
     "band": 4
   },
   {
-    "id": 696,
+    "id": 695,
     "word": "infinitely",
     "pos": "adv",
     "definition": "without bounds",
@@ -5568,7 +5560,7 @@
     "band": 4
   },
   {
-    "id": 697,
+    "id": 696,
     "word": "inherit",
     "pos": "v",
     "definition": "obtain from someone after their death",
@@ -5576,7 +5568,7 @@
     "band": 4
   },
   {
-    "id": 698,
+    "id": 697,
     "word": "inscription",
     "pos": "n",
     "definition": "letters inscribed (especially words engraved or carved) on something",
@@ -5584,7 +5576,7 @@
     "band": 4
   },
   {
-    "id": 699,
+    "id": 698,
     "word": "insistence",
     "pos": "n",
     "definition": "continual and persistent demands",
@@ -5592,7 +5584,7 @@
     "band": 4
   },
   {
-    "id": 700,
+    "id": 699,
     "word": "interrogation",
     "pos": "n",
     "definition": "a sentence of inquiry that asks for a reply",
@@ -5600,7 +5592,7 @@
     "band": 4
   },
   {
-    "id": 701,
+    "id": 700,
     "word": "intrinsic",
     "pos": "adj",
     "definition": "belonging to a thing by its very nature; - John Dewey",
@@ -5608,7 +5600,7 @@
     "band": 4
   },
   {
-    "id": 702,
+    "id": 701,
     "word": "invent",
     "pos": "v",
     "definition": "come up with (an idea, plan, explanation, theory, or principle) after a mental effort",
@@ -5616,7 +5608,7 @@
     "band": 4
   },
   {
-    "id": 703,
+    "id": 702,
     "word": "jackpot",
     "pos": "n",
     "definition": "the cumulative amount involved in a game (such as poker)",
@@ -5624,7 +5616,7 @@
     "band": 4
   },
   {
-    "id": 704,
+    "id": 703,
     "word": "lama",
     "pos": "n",
     "definition": "a Tibetan or Mongolian priest of Lamaism",
@@ -5632,7 +5624,7 @@
     "band": 4
   },
   {
-    "id": 705,
+    "id": 704,
     "word": "ledger",
     "pos": "n",
     "definition": "a record in which commercial accounts are recorded",
@@ -5640,7 +5632,7 @@
     "band": 4
   },
   {
-    "id": 706,
+    "id": 705,
     "word": "lemonade",
     "pos": "n",
     "definition": "sweetened beverage of diluted lemon juice",
@@ -5648,7 +5640,7 @@
     "band": 4
   },
   {
-    "id": 707,
+    "id": 706,
     "word": "lieu",
     "pos": "n",
     "definition": "the post or function properly or customarily occupied or served by another",
@@ -5656,7 +5648,7 @@
     "band": 4
   },
   {
-    "id": 708,
+    "id": 707,
     "word": "limp",
     "pos": "adj",
     "definition": "not firm",
@@ -5664,7 +5656,7 @@
     "band": 4
   },
   {
-    "id": 709,
+    "id": 708,
     "word": "mango",
     "pos": "n",
     "definition": "large evergreen tropical tree cultivated for its large oval fruit",
@@ -5672,7 +5664,7 @@
     "band": 4
   },
   {
-    "id": 710,
+    "id": 709,
     "word": "manpower",
     "pos": "n",
     "definition": "the force of workers available",
@@ -5680,7 +5672,7 @@
     "band": 4
   },
   {
-    "id": 711,
+    "id": 710,
     "word": "mantra",
     "pos": "n",
     "definition": "a commonly repeated word or phrase",
@@ -5688,7 +5680,7 @@
     "band": 4
   },
   {
-    "id": 712,
+    "id": 711,
     "word": "massively",
     "pos": "adv",
     "definition": "to a massive degree or in a massive manner",
@@ -5696,7 +5688,7 @@
     "band": 4
   },
   {
-    "id": 713,
+    "id": 712,
     "word": "mast",
     "pos": "n",
     "definition": "a vertical spar for supporting sails",
@@ -5704,7 +5696,7 @@
     "band": 4
   },
   {
-    "id": 714,
+    "id": 713,
     "word": "mastery",
     "pos": "n",
     "definition": "great skillfulness and knowledge of some subject or activity",
@@ -5712,7 +5704,7 @@
     "band": 4
   },
   {
-    "id": 715,
+    "id": 714,
     "word": "mead",
     "pos": "n",
     "definition": "made of fermented honey and water",
@@ -5720,7 +5712,7 @@
     "band": 4
   },
   {
-    "id": 716,
+    "id": 715,
     "word": "meltdown",
     "pos": "n",
     "definition": "a disaster comparable to a nuclear meltdown",
@@ -5728,7 +5720,7 @@
     "band": 4
   },
   {
-    "id": 717,
+    "id": 716,
     "word": "mermaid",
     "pos": "n",
     "definition": "half woman and half fish; lives in the sea",
@@ -5736,7 +5728,7 @@
     "band": 4
   },
   {
-    "id": 718,
+    "id": 717,
     "word": "methane",
     "pos": "n",
     "definition": "a colorless odorless gas used as a fuel",
@@ -5744,7 +5736,7 @@
     "band": 4
   },
   {
-    "id": 719,
+    "id": 718,
     "word": "mistakenly",
     "pos": "adv",
     "definition": "in a mistaken manner",
@@ -5752,7 +5744,7 @@
     "band": 4
   },
   {
-    "id": 720,
+    "id": 719,
     "word": "multiply",
     "pos": "v",
     "definition": "combine by multiplication",
@@ -5760,7 +5752,7 @@
     "band": 4
   },
   {
-    "id": 721,
+    "id": 720,
     "word": "musk",
     "pos": "n",
     "definition": "an odorous glandular secretion from the male musk deer; used as a perfume fixative",
@@ -5768,7 +5760,7 @@
     "band": 4
   },
   {
-    "id": 722,
+    "id": 721,
     "word": "noteworthy",
     "pos": "adj",
     "definition": "worthy of notice",
@@ -5776,7 +5768,7 @@
     "band": 4
   },
   {
-    "id": 723,
+    "id": 722,
     "word": "numb",
     "pos": "adj",
     "definition": "lacking sensation",
@@ -5784,7 +5776,7 @@
     "band": 4
   },
   {
-    "id": 724,
+    "id": 723,
     "word": "nutshell",
     "pos": "n",
     "definition": "the shell around the kernel of a nut",
@@ -5792,7 +5784,7 @@
     "band": 4
   },
   {
-    "id": 725,
+    "id": 724,
     "word": "opium",
     "pos": "n",
     "definition": "an addictive narcotic extracted from seed capsules of the opium poppy",
@@ -5800,7 +5792,7 @@
     "band": 4
   },
   {
-    "id": 726,
+    "id": 725,
     "word": "orient",
     "pos": "v",
     "definition": "be oriented",
@@ -5808,7 +5800,7 @@
     "band": 4
   },
   {
-    "id": 727,
+    "id": 726,
     "word": "outsider",
     "pos": "n",
     "definition": "someone who is excluded from or is not a member of a group",
@@ -5816,7 +5808,7 @@
     "band": 4
   },
   {
-    "id": 728,
+    "id": 727,
     "word": "oyster",
     "pos": "n",
     "definition": "marine mollusks having a rough irregular shell; found on the sea bed mostly in coastal waters",
@@ -5824,7 +5816,7 @@
     "band": 4
   },
   {
-    "id": 729,
+    "id": 728,
     "word": "pagan",
     "pos": "n",
     "definition": "a person who does not acknowledge your god",
@@ -5832,7 +5824,7 @@
     "band": 4
   },
   {
-    "id": 730,
+    "id": 729,
     "word": "pageant",
     "pos": "n",
     "definition": "an elaborate representation of scenes from history etc",
@@ -5840,7 +5832,7 @@
     "band": 4
   },
   {
-    "id": 731,
+    "id": 730,
     "word": "parameter",
     "pos": "n",
     "definition": "a constant in the equation of a curve that can be varied to yield a family of similar curves",
@@ -5848,7 +5840,7 @@
     "band": 4
   },
   {
-    "id": 732,
+    "id": 731,
     "word": "paranormal",
     "pos": "adj",
     "definition": "not in accordance with scientific laws",
@@ -5856,7 +5848,7 @@
     "band": 4
   },
   {
-    "id": 733,
+    "id": 732,
     "word": "paycheck",
     "pos": "n",
     "definition": "a check issued in payment of wages or salary",
@@ -5864,7 +5856,7 @@
     "band": 4
   },
   {
-    "id": 734,
+    "id": 733,
     "word": "pep",
     "pos": "n",
     "definition": "liveliness and energy",
@@ -5872,7 +5864,7 @@
     "band": 4
   },
   {
-    "id": 735,
+    "id": 734,
     "word": "pianist",
     "pos": "n",
     "definition": "a person who plays the piano",
@@ -5880,7 +5872,7 @@
     "band": 4
   },
   {
-    "id": 736,
+    "id": 735,
     "word": "pinnacle",
     "pos": "n",
     "definition": "a slender upright spire at the top of a buttress of tower",
@@ -5888,7 +5880,7 @@
     "band": 4
   },
   {
-    "id": 737,
+    "id": 736,
     "word": "plaster",
     "pos": "n",
     "definition": "a mixture of lime or gypsum with sand and water; hardens into a smooth solid",
@@ -5896,7 +5888,7 @@
     "band": 4
   },
   {
-    "id": 738,
+    "id": 737,
     "word": "pragmatic",
     "pos": "adj",
     "definition": "concerned with practical matters",
@@ -5904,7 +5896,7 @@
     "band": 4
   },
   {
-    "id": 739,
+    "id": 738,
     "word": "precursor",
     "pos": "n",
     "definition": "a substance from which another substance is formed (especially by a metabolic reaction)",
@@ -5912,7 +5904,7 @@
     "band": 4
   },
   {
-    "id": 740,
+    "id": 739,
     "word": "preschool",
     "pos": "n",
     "definition": "an educational institution for children too young for elementary school",
@@ -5920,7 +5912,7 @@
     "band": 4
   },
   {
-    "id": 741,
+    "id": 740,
     "word": "profitability",
     "pos": "n",
     "definition": "the quality of affording gain or benefit or profit",
@@ -5928,7 +5920,7 @@
     "band": 4
   },
   {
-    "id": 742,
+    "id": 741,
     "word": "propulsion",
     "pos": "n",
     "definition": "a propelling force",
@@ -5936,7 +5928,7 @@
     "band": 4
   },
   {
-    "id": 743,
+    "id": 742,
     "word": "psychiatry",
     "pos": "n",
     "definition": "the branch of medicine dealing with the diagnosis and treatment of mental disorders",
@@ -5944,7 +5936,7 @@
     "band": 4
   },
   {
-    "id": 744,
+    "id": 743,
     "word": "puff",
     "pos": "v",
     "definition": "smoke and exhale strongly",
@@ -5952,7 +5944,7 @@
     "band": 4
   },
   {
-    "id": 745,
+    "id": 744,
     "word": "quartet",
     "pos": "n",
     "definition": "four people considered as a unit",
@@ -5960,7 +5952,7 @@
     "band": 4
   },
   {
-    "id": 746,
+    "id": 745,
     "word": "questionnaire",
     "pos": "n",
     "definition": "a form containing a set of questions; submitted to people to gain statistical information",
@@ -5968,7 +5960,7 @@
     "band": 4
   },
   {
-    "id": 747,
+    "id": 746,
     "word": "recess",
     "pos": "n",
     "definition": "a pause from doing something (as work)",
@@ -5976,7 +5968,7 @@
     "band": 4
   },
   {
-    "id": 748,
+    "id": 747,
     "word": "recognizable",
     "pos": "adj",
     "definition": "easily perceived; easy to become aware of",
@@ -5984,7 +5976,7 @@
     "band": 4
   },
   {
-    "id": 749,
+    "id": 748,
     "word": "reggae",
     "pos": "n",
     "definition": "popular music originating in the West Indies; repetitive bass riffs and regular chords played on",
@@ -5992,7 +5984,7 @@
     "band": 4
   },
   {
-    "id": 750,
+    "id": 749,
     "word": "repayment",
     "pos": "n",
     "definition": "the act of returning money received previously",
@@ -6000,7 +5992,7 @@
     "band": 4
   },
   {
-    "id": 751,
+    "id": 750,
     "word": "repertoire",
     "pos": "n",
     "definition": "the entire range of skills or aptitudes or devices used in a particular field or occupation",
@@ -6008,7 +6000,7 @@
     "band": 4
   },
   {
-    "id": 752,
+    "id": 751,
     "word": "repression",
     "pos": "n",
     "definition": "a state of forcible subjugation",
@@ -6016,7 +6008,7 @@
     "band": 4
   },
   {
-    "id": 753,
+    "id": 752,
     "word": "resilient",
     "pos": "adj",
     "definition": "elastic; rebounds readily",
@@ -6024,7 +6016,7 @@
     "band": 4
   },
   {
-    "id": 754,
+    "id": 753,
     "word": "revise",
     "pos": "v",
     "definition": "make revisions in",
@@ -6032,7 +6024,7 @@
     "band": 4
   },
   {
-    "id": 755,
+    "id": 754,
     "word": "riches",
     "pos": "n",
     "definition": "an abundance of material possessions and resources",
@@ -6040,7 +6032,7 @@
     "band": 4
   },
   {
-    "id": 756,
+    "id": 755,
     "word": "robe",
     "pos": "n",
     "definition": "any loose flowing garment",
@@ -6048,7 +6040,7 @@
     "band": 4
   },
   {
-    "id": 757,
+    "id": 756,
     "word": "rooftop",
     "pos": "n",
     "definition": "the top of a (usually flat) roof",
@@ -6056,7 +6048,7 @@
     "band": 4
   },
   {
-    "id": 758,
+    "id": 757,
     "word": "sawyer",
     "pos": "n",
     "definition": "one who is employed to saw wood",
@@ -6064,7 +6056,7 @@
     "band": 4
   },
   {
-    "id": 759,
+    "id": 758,
     "word": "scanner",
     "pos": "n",
     "definition": "a radio receiver that moves automatically across some selected range of frequencies looking for",
@@ -6072,7 +6064,7 @@
     "band": 4
   },
   {
-    "id": 760,
+    "id": 759,
     "word": "secretariat",
     "pos": "n",
     "definition": "an administrative unit responsible for maintaining records and other secretarial duties",
@@ -6080,7 +6072,7 @@
     "band": 4
   },
   {
-    "id": 761,
+    "id": 760,
     "word": "semiconductor",
     "pos": "n",
     "definition": "a substance as germanium or silicon whose electrical conductivity is intermediate between that o",
@@ -6088,7 +6080,7 @@
     "band": 4
   },
   {
-    "id": 762,
+    "id": 761,
     "word": "shameful",
     "pos": "adj",
     "definition": "deserving or bringing disgrace or shame; - Rachel Carson",
@@ -6096,7 +6088,7 @@
     "band": 4
   },
   {
-    "id": 763,
+    "id": 762,
     "word": "sharia",
     "pos": "n",
     "definition": "the code of law derived from the Koran and from the teachings and example of Mohammed",
@@ -6104,7 +6096,7 @@
     "band": 4
   },
   {
-    "id": 764,
+    "id": 763,
     "word": "simulate",
     "pos": "v",
     "definition": "reproduce someone's behavior or looks",
@@ -6112,15 +6104,15 @@
     "band": 4
   },
   {
-    "id": 765,
+    "id": 764,
     "word": "siren",
     "pos": "n",
-    "definition": "a woman who is considered to be dangerously seductive",
-    "example": "It was the sound of a siren.",
+    "definition": "a warning signal that is a loud wailing sound",
+    "example": "a siren wailed in the distance",
     "band": 4
   },
   {
-    "id": 766,
+    "id": 765,
     "word": "slit",
     "pos": "n",
     "definition": "a long narrow opening",
@@ -6128,7 +6120,7 @@
     "band": 4
   },
   {
-    "id": 767,
+    "id": 766,
     "word": "spinach",
     "pos": "n",
     "definition": "southwestern Asian plant widely cultivated for its succulent edible dark green leaves",
@@ -6136,11 +6128,19 @@
     "band": 4
   },
   {
-    "id": 768,
+    "id": 767,
     "word": "spoiler",
     "pos": "n",
     "definition": "a candidate with no chance of winning but who may draw enough votes to prevent one of the leadin",
     "example": "the third-party spoiler split the vote",
+    "band": 4
+  },
+  {
+    "id": 768,
+    "word": "staircase",
+    "pos": "n",
+    "definition": "a way of access (upward and downward) consisting of a set of steps",
+    "example": "All that have paid march off to the staircase, and take your seats there, one by one.",
     "band": 4
   },
   {
@@ -6953,14 +6953,6 @@
   },
   {
     "id": 870,
-    "word": "finer",
-    "pos": "adj",
-    "definition": "greater in quality or excellence",
-    "example": "a finer wine",
-    "band": 5
-  },
-  {
-    "id": 871,
     "word": "foliage",
     "pos": "n",
     "definition": "the main organ of photosynthesis and transpiration in higher plants",
@@ -6968,7 +6960,7 @@
     "band": 5
   },
   {
-    "id": 872,
+    "id": 871,
     "word": "foundry",
     "pos": "n",
     "definition": "factory where metal castings are produced",
@@ -6976,7 +6968,7 @@
     "band": 5
   },
   {
-    "id": 873,
+    "id": 872,
     "word": "fright",
     "pos": "n",
     "definition": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a",
@@ -6984,7 +6976,7 @@
     "band": 5
   },
   {
-    "id": 874,
+    "id": 873,
     "word": "futuristic",
     "pos": "adj",
     "definition": "of or relating to futurism",
@@ -6992,7 +6984,7 @@
     "band": 5
   },
   {
-    "id": 875,
+    "id": 874,
     "word": "glacial",
     "pos": "adj",
     "definition": "relating to or derived from a glacier",
@@ -7000,7 +6992,7 @@
     "band": 5
   },
   {
-    "id": 876,
+    "id": 875,
     "word": "golfer",
     "pos": "n",
     "definition": "someone who plays the game of golf",
@@ -7008,7 +7000,7 @@
     "band": 5
   },
   {
-    "id": 877,
+    "id": 876,
     "word": "gourmet",
     "pos": "n",
     "definition": "a person devoted to refined sensuous enjoyment (especially good food and drink)",
@@ -7016,7 +7008,7 @@
     "band": 5
   },
   {
-    "id": 878,
+    "id": 877,
     "word": "grossly",
     "pos": "adv",
     "definition": "in a gross manner",
@@ -7024,11 +7016,19 @@
     "band": 5
   },
   {
-    "id": 879,
+    "id": 878,
     "word": "hamster",
     "pos": "n",
     "definition": "short-tailed Old World burrowing rodent with large cheek pouches",
     "example": "the hamster spun on its wheel",
+    "band": 5
+  },
+  {
+    "id": 879,
+    "word": "handbag",
+    "pos": "n",
+    "definition": "a container used for carrying money and small personal items or accessories (especially by women",
+    "example": "she rummaged through her handbag for the keys",
     "band": 5
   },
   {
