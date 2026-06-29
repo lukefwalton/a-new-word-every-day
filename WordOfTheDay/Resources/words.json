@@ -1,8112 +1,8112 @@
 [
   {
-    "id": 1,
+    "id": 3338138011977114,
     "word": "adept",
     "pos": "adj",
     "definition": "very skilled or proficient",
     "band": 1
   },
   {
-    "id": 2,
+    "id": 3592460663597235,
     "word": "amend",
     "pos": "v",
     "definition": "to change or correct for the better",
     "band": 1
   },
   {
-    "id": 3,
+    "id": 791283861180175,
     "word": "ample",
     "pos": "adj",
     "definition": "more than enough",
     "band": 1
   },
   {
-    "id": 4,
+    "id": 833264633402147,
     "word": "apt",
     "pos": "adj",
     "definition": "naturally suited; quick to learn",
     "band": 1
   },
   {
-    "id": 5,
+    "id": 1938044984167061,
     "word": "ardor",
     "pos": "n",
     "definition": "intense warmth of feeling",
     "band": 1
   },
   {
-    "id": 6,
+    "id": 1039847731989251,
     "word": "avid",
     "pos": "adj",
     "definition": "keenly enthusiastic",
     "band": 1
   },
   {
-    "id": 7,
+    "id": 694377590585628,
     "word": "baffle",
     "pos": "v",
     "definition": "to confuse or perplex",
     "band": 1
   },
   {
-    "id": 8,
+    "id": 2231195216378793,
     "word": "bane",
     "pos": "n",
     "definition": "a cause of ruin or persistent distress",
     "band": 1
   },
   {
-    "id": 9,
+    "id": 1913471773795868,
     "word": "banish",
     "pos": "v",
     "definition": "to send away or expel",
     "band": 1
   },
   {
-    "id": 10,
+    "id": 2961042279511893,
     "word": "barren",
     "pos": "adj",
     "definition": "unable to produce; desolate",
     "band": 1
   },
   {
-    "id": 11,
+    "id": 163251786189236,
     "word": "bashful",
     "pos": "adj",
     "definition": "shy and easily embarrassed",
     "band": 1
   },
   {
-    "id": 12,
+    "id": 672216646593217,
     "word": "blatant",
     "pos": "adj",
     "definition": "offensively obvious",
     "band": 1
   },
   {
-    "id": 13,
+    "id": 1318156397581752,
     "word": "bleak",
     "pos": "adj",
     "definition": "bare, cold, and cheerless",
     "band": 1
   },
   {
-    "id": 14,
+    "id": 3565599887137453,
     "word": "bliss",
     "pos": "n",
     "definition": "perfect happiness",
     "band": 1
   },
   {
-    "id": 15,
+    "id": 4277202324874605,
     "word": "blithe",
     "pos": "adj",
     "definition": "carefree and lighthearted",
     "band": 1
   },
   {
-    "id": 16,
+    "id": 855983380897595,
     "word": "blunt",
     "pos": "adj",
     "definition": "so direct as to seem rude",
     "band": 1
   },
   {
-    "id": 17,
+    "id": 3971902735433712,
     "word": "boon",
     "pos": "n",
     "definition": "a benefit or blessing",
     "band": 1
   },
   {
-    "id": 18,
+    "id": 597285669451264,
     "word": "brink",
     "pos": "n",
     "definition": "the very edge of something",
     "band": 1
   },
   {
-    "id": 19,
+    "id": 1217846379458348,
     "word": "brisk",
     "pos": "adj",
     "definition": "quick and energetic",
     "band": 1
   },
   {
-    "id": 20,
+    "id": 3433622918003686,
     "word": "brittle",
     "pos": "adj",
     "definition": "hard but easily broken",
     "band": 1
   },
   {
-    "id": 21,
+    "id": 938790077953970,
     "word": "brood",
     "pos": "v",
     "definition": "to dwell gloomily on a subject",
     "band": 1
   },
   {
-    "id": 22,
+    "id": 3013781706065655,
     "word": "brusque",
     "pos": "adj",
     "definition": "abrupt and curt in manner",
     "band": 1
   },
   {
-    "id": 23,
+    "id": 2774172204004783,
     "word": "candid",
     "pos": "adj",
     "definition": "frank and honest in expression",
     "band": 1
   },
   {
-    "id": 24,
+    "id": 3073693689992941,
     "word": "cherish",
     "pos": "v",
     "definition": "to hold dear",
     "band": 1
   },
   {
-    "id": 25,
+    "id": 593342989295623,
     "word": "coarse",
     "pos": "adj",
     "definition": "rough; crude or vulgar",
     "band": 1
   },
   {
-    "id": 26,
+    "id": 2539859276775021,
     "word": "coax",
     "pos": "v",
     "definition": "to gently and patiently persuade",
     "band": 1
   },
   {
-    "id": 27,
+    "id": 1554948819057159,
     "word": "crave",
     "pos": "v",
     "definition": "to long for intensely",
     "band": 1
   },
   {
-    "id": 28,
+    "id": 586827344170128,
     "word": "cunning",
     "pos": "adj",
     "definition": "clever in a sly way",
     "band": 1
   },
   {
-    "id": 29,
+    "id": 215906370895452,
     "word": "curb",
     "pos": "v",
     "definition": "to restrain or hold back",
     "band": 1
   },
   {
-    "id": 30,
+    "id": 3601279036949294,
     "word": "daunt",
     "pos": "v",
     "definition": "to discourage or intimidate",
     "band": 1
   },
   {
-    "id": 31,
+    "id": 2107921251760643,
     "word": "deplete",
     "pos": "v",
     "definition": "to use up",
     "band": 1
   },
   {
-    "id": 32,
+    "id": 4352252472593033,
     "word": "deprive",
     "pos": "v",
     "definition": "to take something away from",
     "band": 1
   },
   {
-    "id": 33,
+    "id": 2814067601211378,
     "word": "deter",
     "pos": "v",
     "definition": "to discourage from acting through doubt or fear",
     "band": 1
   },
   {
-    "id": 34,
+    "id": 2057552995584455,
     "word": "diligent",
     "pos": "adj",
     "definition": "showing careful and persistent effort",
     "band": 1
   },
   {
-    "id": 35,
+    "id": 635091113407312,
     "word": "dire",
     "pos": "adj",
     "definition": "extremely serious or urgent",
     "band": 1
   },
   {
-    "id": 36,
+    "id": 3649829643043333,
     "word": "dismal",
     "pos": "adj",
     "definition": "gloomy and depressing",
     "band": 1
   },
   {
-    "id": 37,
+    "id": 2423513388206899,
     "word": "dismay",
     "pos": "n",
     "definition": "distress caused by something unexpected",
     "band": 1
   },
   {
-    "id": 38,
+    "id": 4334515734561807,
     "word": "divert",
     "pos": "v",
     "definition": "to turn aside; to amuse",
     "band": 1
   },
   {
-    "id": 39,
+    "id": 4381540190014664,
     "word": "drab",
     "pos": "adj",
     "definition": "dull and dreary",
     "band": 1
   },
   {
-    "id": 40,
+    "id": 1342326445878738,
     "word": "dread",
     "pos": "n",
     "definition": "great fear or apprehension",
     "band": 1
   },
   {
-    "id": 41,
+    "id": 3579434038933044,
     "word": "dwindle",
     "pos": "v",
     "definition": "to grow steadily smaller",
     "band": 1
   },
   {
-    "id": 42,
+    "id": 1091174220756314,
     "word": "earnest",
     "pos": "adj",
     "definition": "serious and sincere in intention",
     "band": 1
   },
   {
-    "id": 43,
+    "id": 3789278569346845,
     "word": "eerie",
     "pos": "adj",
     "definition": "strange and unsettling",
     "band": 1
   },
   {
-    "id": 44,
+    "id": 222609422202376,
     "word": "elated",
     "pos": "adj",
     "definition": "joyful and excited",
     "band": 1
   },
   {
-    "id": 45,
+    "id": 3707717513132909,
     "word": "eloquent",
     "pos": "adj",
     "definition": "fluent and persuasive in speaking or writing",
     "band": 1
   },
   {
-    "id": 46,
+    "id": 727045295812289,
     "word": "endure",
     "pos": "v",
     "definition": "to suffer patiently; to last",
     "band": 1
   },
   {
-    "id": 47,
+    "id": 1921863607114569,
     "word": "entice",
     "pos": "v",
     "definition": "to attract by offering pleasure",
     "band": 1
   },
   {
-    "id": 48,
+    "id": 417023702885556,
     "word": "esteem",
     "pos": "n",
     "definition": "respect and admiration",
     "band": 1
   },
   {
-    "id": 49,
+    "id": 2777578576265227,
     "word": "evoke",
     "pos": "v",
     "definition": "to call to mind",
     "band": 1
   },
   {
-    "id": 50,
+    "id": 2827310482180099,
     "word": "exert",
     "pos": "v",
     "definition": "to apply effort or force",
     "band": 1
   },
   {
-    "id": 51,
+    "id": 1462283374637941,
     "word": "falter",
     "pos": "v",
     "definition": "to hesitate or lose strength",
     "band": 1
   },
   {
-    "id": 52,
+    "id": 847611484843871,
     "word": "feeble",
     "pos": "adj",
     "definition": "lacking strength",
     "band": 1
   },
   {
-    "id": 53,
+    "id": 2577332577641431,
     "word": "flair",
     "pos": "n",
     "definition": "a natural talent; stylishness",
     "band": 1
   },
   {
-    "id": 54,
+    "id": 1093331652629961,
     "word": "flimsy",
     "pos": "adj",
     "definition": "insubstantial and easily damaged",
     "band": 1
   },
   {
-    "id": 55,
+    "id": 374542977138827,
     "word": "foe",
     "pos": "n",
     "definition": "an enemy",
     "band": 1
   },
   {
-    "id": 56,
+    "id": 3623810943955488,
     "word": "folly",
     "pos": "n",
     "definition": "foolishness or a foolish act",
     "band": 1
   },
   {
-    "id": 57,
+    "id": 4116055296159329,
     "word": "forsake",
     "pos": "v",
     "definition": "to abandon",
     "band": 1
   },
   {
-    "id": 58,
+    "id": 4328758975478467,
     "word": "foster",
     "pos": "v",
     "definition": "to encourage the growth or development of",
     "band": 1
   },
   {
-    "id": 59,
+    "id": 3745006888038566,
     "word": "fret",
     "pos": "v",
     "definition": "to worry persistently",
     "band": 1
   },
   {
-    "id": 60,
+    "id": 3114504175952188,
     "word": "frugal",
     "pos": "adj",
     "definition": "sparing or economical with resources",
     "band": 1
   },
   {
-    "id": 61,
+    "id": 1446805756969950,
     "word": "gallant",
     "pos": "adj",
     "definition": "brave and chivalrous",
     "band": 1
   },
   {
-    "id": 62,
+    "id": 357974136536746,
     "word": "gaunt",
     "pos": "adj",
     "definition": "thin and bony",
     "band": 1
   },
   {
-    "id": 63,
+    "id": 2642527316385623,
     "word": "ghastly",
     "pos": "adj",
     "definition": "causing horror; deathly pale",
     "band": 1
   },
   {
-    "id": 64,
+    "id": 4094175034432522,
     "word": "gleam",
     "pos": "v",
     "definition": "to shine softly",
     "band": 1
   },
   {
-    "id": 65,
+    "id": 1186577657864758,
     "word": "glee",
     "pos": "n",
     "definition": "great delight",
     "band": 1
   },
   {
-    "id": 66,
+    "id": 4199071748768720,
     "word": "glimpse",
     "pos": "n",
     "definition": "a brief, partial view",
     "band": 1
   },
   {
-    "id": 67,
+    "id": 2587359321739307,
     "word": "gloomy",
     "pos": "adj",
     "definition": "dark, dreary, or low in spirits",
     "band": 1
   },
   {
-    "id": 68,
+    "id": 1772072456760095,
     "word": "goad",
     "pos": "v",
     "definition": "to prod or urge into action",
     "band": 1
   },
   {
-    "id": 69,
+    "id": 1338198239915408,
     "word": "gracious",
     "pos": "adj",
     "definition": "courteous, kind, and considerate",
     "band": 1
   },
   {
-    "id": 70,
+    "id": 4443532149590357,
     "word": "grim",
     "pos": "adj",
     "definition": "forbidding or harsh",
     "band": 1
   },
   {
-    "id": 71,
+    "id": 1855515044296630,
     "word": "grit",
     "pos": "n",
     "definition": "courage and firm resolve",
     "band": 1
   },
   {
-    "id": 72,
+    "id": 1809166875029953,
     "word": "grudge",
     "pos": "n",
     "definition": "a persistent feeling of resentment",
     "band": 1
   },
   {
-    "id": 73,
+    "id": 3518944275202326,
     "word": "gruff",
     "pos": "adj",
     "definition": "rough and abrupt in manner",
     "band": 1
   },
   {
-    "id": 74,
+    "id": 1210877540307603,
     "word": "hardy",
     "pos": "adj",
     "definition": "tough and resilient",
     "band": 1
   },
   {
-    "id": 75,
+    "id": 2852439824482815,
     "word": "hasten",
     "pos": "v",
     "definition": "to move or act quickly",
     "band": 1
   },
   {
-    "id": 76,
+    "id": 3182959884006039,
     "word": "haven",
     "pos": "n",
     "definition": "a place of safety or refuge",
     "band": 1
   },
   {
-    "id": 77,
+    "id": 1879643937206415,
     "word": "hazard",
     "pos": "n",
     "definition": "a danger or risk",
     "band": 1
   },
   {
-    "id": 78,
+    "id": 2355351330064090,
     "word": "hearty",
     "pos": "adj",
     "definition": "warm, vigorous, and sincere",
     "band": 1
   },
   {
-    "id": 79,
+    "id": 3723168899575998,
     "word": "heed",
     "pos": "v",
     "definition": "to pay careful attention to",
     "band": 1
   },
   {
-    "id": 80,
+    "id": 466313622096354,
     "word": "hinder",
     "pos": "v",
     "definition": "to obstruct or delay",
     "band": 1
   },
   {
-    "id": 81,
+    "id": 3680339588183420,
     "word": "hoard",
     "pos": "v",
     "definition": "to amass and hide away",
     "band": 1
   },
   {
-    "id": 82,
+    "id": 1450618640142858,
     "word": "hostile",
     "pos": "adj",
     "definition": "unfriendly or antagonistic",
     "band": 1
   },
   {
-    "id": 83,
+    "id": 4429212962417583,
     "word": "hover",
     "pos": "v",
     "definition": "to remain suspended; to linger nearby",
     "band": 1
   },
   {
-    "id": 84,
+    "id": 94255822238024,
     "word": "humble",
     "pos": "adj",
     "definition": "modest about one's importance",
     "band": 1
   },
   {
-    "id": 85,
+    "id": 1607056578724493,
     "word": "impart",
     "pos": "v",
     "definition": "to communicate or bestow",
     "band": 1
   },
   {
-    "id": 86,
+    "id": 1237460020732005,
     "word": "impel",
     "pos": "v",
     "definition": "to drive or urge forward",
     "band": 1
   },
   {
-    "id": 87,
+    "id": 220041837705116,
     "word": "infer",
     "pos": "v",
     "definition": "to deduce from evidence",
     "band": 1
   },
   {
-    "id": 88,
+    "id": 320981777888169,
     "word": "inhibit",
     "pos": "v",
     "definition": "to hold back or restrain",
     "band": 1
   },
   {
-    "id": 89,
+    "id": 2816698794875140,
     "word": "irk",
     "pos": "v",
     "definition": "to irritate or annoy",
     "band": 1
   },
   {
-    "id": 90,
+    "id": 4364091535093916,
     "word": "jaded",
     "pos": "adj",
     "definition": "dulled or bored by overindulgence",
     "band": 1
   },
   {
-    "id": 91,
+    "id": 726084482711543,
     "word": "jeer",
     "pos": "v",
     "definition": "to mock loudly",
     "band": 1
   },
   {
-    "id": 92,
+    "id": 2486704631903507,
     "word": "jolt",
     "pos": "v",
     "definition": "to jerk suddenly; to shock",
     "band": 1
   },
   {
-    "id": 93,
+    "id": 4151811676051253,
     "word": "keen",
     "pos": "adj",
     "definition": "sharp, eager, or perceptive",
     "band": 1
   },
   {
-    "id": 94,
+    "id": 2135693303310135,
     "word": "kindle",
     "pos": "v",
     "definition": "to set alight; to arouse",
     "band": 1
   },
   {
-    "id": 95,
+    "id": 3617307929280575,
     "word": "knack",
     "pos": "n",
     "definition": "a clever, acquired skill",
     "band": 1
   },
   {
-    "id": 96,
+    "id": 3312016475217784,
     "word": "linger",
     "pos": "v",
     "definition": "to stay longer than expected",
     "band": 1
   },
   {
-    "id": 97,
+    "id": 976656727596655,
     "word": "lofty",
     "pos": "adj",
     "definition": "very high; noble or grand",
     "band": 1
   },
   {
-    "id": 98,
+    "id": 141385034335127,
     "word": "lull",
     "pos": "n",
     "definition": "a temporary pause or calm",
     "band": 1
   },
   {
-    "id": 99,
+    "id": 1293253588273824,
     "word": "lure",
     "pos": "v",
     "definition": "to tempt or entice away",
     "band": 1
   },
   {
-    "id": 100,
+    "id": 170503212417672,
     "word": "lurk",
     "pos": "v",
     "definition": "to wait in hiding",
     "band": 1
   },
   {
-    "id": 101,
+    "id": 353545604005607,
     "word": "mar",
     "pos": "v",
     "definition": "to spoil or damage",
     "band": 1
   },
   {
-    "id": 102,
+    "id": 23457288348837,
     "word": "meddle",
     "pos": "v",
     "definition": "to interfere in others' affairs",
     "band": 1
   },
   {
-    "id": 103,
+    "id": 3326189605812983,
     "word": "meek",
     "pos": "adj",
     "definition": "quiet, gentle, and submissive",
     "band": 1
   },
   {
-    "id": 104,
+    "id": 344966469038432,
     "word": "menace",
     "pos": "n",
     "definition": "a threat or source of danger",
     "band": 1
   },
   {
-    "id": 105,
+    "id": 332755374221767,
     "word": "mend",
     "pos": "v",
     "definition": "to repair or restore",
     "band": 1
   },
   {
-    "id": 106,
+    "id": 4499472585240069,
     "word": "merit",
     "pos": "n",
     "definition": "worthiness or excellence",
     "band": 1
   },
   {
-    "id": 107,
+    "id": 805872422844397,
     "word": "meticulous",
     "pos": "adj",
     "definition": "showing great attention to detail",
     "band": 1
   },
   {
-    "id": 108,
+    "id": 2089436223801378,
     "word": "mimic",
     "pos": "v",
     "definition": "to imitate",
     "band": 1
   },
   {
-    "id": 109,
+    "id": 3827394062882576,
     "word": "mingle",
     "pos": "v",
     "definition": "to mix or mingle together",
     "band": 1
   },
   {
-    "id": 110,
+    "id": 1835388007355331,
     "word": "mirth",
     "pos": "n",
     "definition": "amusement and laughter",
     "band": 1
   },
   {
-    "id": 111,
+    "id": 1255539711002504,
     "word": "mock",
     "pos": "v",
     "definition": "to ridicule or imitate scornfully",
     "band": 1
   },
   {
-    "id": 112,
+    "id": 177538043034692,
     "word": "modest",
     "pos": "adj",
     "definition": "unassuming or moderate",
     "band": 1
   },
   {
-    "id": 113,
+    "id": 1018449963665261,
     "word": "murky",
     "pos": "adj",
     "definition": "dark, gloomy, or unclear",
     "band": 1
   },
   {
-    "id": 114,
+    "id": 207101292437569,
     "word": "naive",
     "pos": "adj",
     "definition": "innocently simple; lacking experience",
     "band": 1
   },
   {
-    "id": 115,
+    "id": 34718431510697,
     "word": "novice",
     "pos": "n",
     "definition": "a beginner",
     "band": 1
   },
   {
-    "id": 116,
+    "id": 3148748020544127,
     "word": "obscure",
     "pos": "adj",
     "definition": "not well known; hard to understand",
     "band": 1
   },
   {
-    "id": 117,
+    "id": 3886194103548237,
     "word": "omen",
     "pos": "n",
     "definition": "a sign of the future",
     "band": 1
   },
   {
-    "id": 118,
+    "id": 926232054171402,
     "word": "onset",
     "pos": "n",
     "definition": "the beginning of something",
     "band": 1
   },
   {
-    "id": 119,
+    "id": 2838898514984403,
     "word": "pang",
     "pos": "n",
     "definition": "a sudden sharp pain or emotion",
     "band": 1
   },
   {
-    "id": 120,
+    "id": 4113679010873797,
     "word": "peril",
     "pos": "n",
     "definition": "serious danger",
     "band": 1
   },
   {
-    "id": 121,
+    "id": 957105544643114,
     "word": "pester",
     "pos": "v",
     "definition": "to trouble persistently",
     "band": 1
   },
   {
-    "id": 122,
+    "id": 3966953169355221,
     "word": "pithy",
     "pos": "adj",
     "definition": "concise and full of meaning",
     "band": 1
   },
   {
-    "id": 123,
+    "id": 2750720989460528,
     "word": "plea",
     "pos": "n",
     "definition": "an earnest or urgent request",
     "band": 1
   },
   {
-    "id": 124,
+    "id": 4461779038181504,
     "word": "plight",
     "pos": "n",
     "definition": "a difficult or unfortunate situation",
     "band": 1
   },
   {
-    "id": 125,
+    "id": 1976610455211795,
     "word": "ploy",
     "pos": "n",
     "definition": "a cunning maneuver",
     "band": 1
   },
   {
-    "id": 126,
+    "id": 2739512560425012,
     "word": "plunder",
     "pos": "v",
     "definition": "to rob by force",
     "band": 1
   },
   {
-    "id": 127,
+    "id": 3735385012258597,
     "word": "poise",
     "pos": "n",
     "definition": "graceful, dignified composure",
     "band": 1
   },
   {
-    "id": 128,
+    "id": 3505157589592034,
     "word": "ponder",
     "pos": "v",
     "definition": "to think over carefully",
     "band": 1
   },
   {
-    "id": 129,
+    "id": 1428439639894640,
     "word": "pounce",
     "pos": "v",
     "definition": "to spring suddenly",
     "band": 1
   },
   {
-    "id": 130,
+    "id": 3285735754399247,
     "word": "prim",
     "pos": "adj",
     "definition": "stiffly proper and formal",
     "band": 1
   },
   {
-    "id": 131,
+    "id": 2978148895887609,
     "word": "probe",
     "pos": "v",
     "definition": "to investigate closely",
     "band": 1
   },
   {
-    "id": 132,
+    "id": 4063528046763364,
     "word": "prone",
     "pos": "adj",
     "definition": "likely to; lying face down",
     "band": 1
   },
   {
-    "id": 133,
+    "id": 1424361963856524,
     "word": "prowl",
     "pos": "v",
     "definition": "to move about stealthily",
     "band": 1
   },
   {
-    "id": 134,
+    "id": 582069465625026,
     "word": "prudent",
     "pos": "adj",
     "definition": "careful and sensible in judgment",
     "band": 1
   },
   {
-    "id": 135,
+    "id": 3018955988324182,
     "word": "quaint",
     "pos": "adj",
     "definition": "attractively old-fashioned",
     "band": 1
   },
   {
-    "id": 136,
+    "id": 3418241412620477,
     "word": "quench",
     "pos": "v",
     "definition": "to satisfy thirst; to extinguish",
     "band": 1
   },
   {
-    "id": 137,
+    "id": 2069169880249598,
     "word": "rash",
     "pos": "adj",
     "definition": "acting without careful thought",
     "band": 1
   },
   {
-    "id": 138,
+    "id": 3788382551387390,
     "word": "recoil",
     "pos": "v",
     "definition": "to draw back in fear or disgust",
     "band": 1
   },
   {
-    "id": 139,
+    "id": 915975456853658,
     "word": "refute",
     "pos": "v",
     "definition": "to prove false",
     "band": 1
   },
   {
-    "id": 140,
+    "id": 1902159835322876,
     "word": "renown",
     "pos": "n",
     "definition": "fame and acclaim",
     "band": 1
   },
   {
-    "id": 141,
+    "id": 2124075971294616,
     "word": "repel",
     "pos": "v",
     "definition": "to drive back; to disgust",
     "band": 1
   },
   {
-    "id": 142,
+    "id": 3997017803437100,
     "word": "revel",
     "pos": "v",
     "definition": "to take great delight",
     "band": 1
   },
   {
-    "id": 143,
+    "id": 3597024230514753,
     "word": "rife",
     "pos": "adj",
     "definition": "widespread; abundant",
     "band": 1
   },
   {
-    "id": 144,
+    "id": 1043448700449039,
     "word": "rigid",
     "pos": "adj",
     "definition": "stiff and unwilling to bend or change",
     "band": 1
   },
   {
-    "id": 145,
+    "id": 3071485562745597,
     "word": "roam",
     "pos": "v",
     "definition": "to wander without a fixed course",
     "band": 1
   },
   {
-    "id": 146,
+    "id": 1549945818170572,
     "word": "robust",
     "pos": "adj",
     "definition": "strong, sturdy, and healthy",
     "band": 1
   },
   {
-    "id": 147,
+    "id": 1443090970519556,
     "word": "rue",
     "pos": "v",
     "definition": "to bitterly regret",
     "band": 1
   },
   {
-    "id": 148,
+    "id": 90086442592924,
     "word": "ruse",
     "pos": "n",
     "definition": "a trick or stratagem",
     "band": 1
   },
   {
-    "id": 149,
+    "id": 2256453995892001,
     "word": "rustic",
     "pos": "adj",
     "definition": "of the countryside; plain and simple",
     "band": 1
   },
   {
-    "id": 150,
+    "id": 1670915663500280,
     "word": "savor",
     "pos": "v",
     "definition": "to enjoy fully and slowly",
     "band": 1
   },
   {
-    "id": 151,
+    "id": 2821483104397146,
     "word": "scant",
     "pos": "adj",
     "definition": "barely sufficient",
     "band": 1
   },
   {
-    "id": 152,
+    "id": 2880709068985681,
     "word": "scoff",
     "pos": "v",
     "definition": "to mock or jeer",
     "band": 1
   },
   {
-    "id": 153,
+    "id": 1341402979644812,
     "word": "scorn",
     "pos": "n",
     "definition": "open contempt or disdain",
     "band": 1
   },
   {
-    "id": 154,
+    "id": 1009810263032439,
     "word": "scour",
     "pos": "v",
     "definition": "to scrub; to search thoroughly",
     "band": 1
   },
   {
-    "id": 155,
+    "id": 2127534052466244,
     "word": "scowl",
     "pos": "v",
     "definition": "to frown angrily",
     "band": 1
   },
   {
-    "id": 156,
+    "id": 3827495973403851,
     "word": "seethe",
     "pos": "v",
     "definition": "to boil; to be inwardly furious",
     "band": 1
   },
   {
-    "id": 157,
+    "id": 2554275436557642,
     "word": "serene",
     "pos": "adj",
     "definition": "calm, peaceful, and untroubled",
     "band": 1
   },
   {
-    "id": 158,
+    "id": 1799725296377741,
     "word": "shabby",
     "pos": "adj",
     "definition": "worn out and run-down",
     "band": 1
   },
   {
-    "id": 159,
+    "id": 3896301639703883,
     "word": "shrewd",
     "pos": "adj",
     "definition": "sharp and clever in judgment",
     "band": 1
   },
   {
-    "id": 160,
+    "id": 599942303975053,
     "word": "shun",
     "pos": "v",
     "definition": "to deliberately avoid",
     "band": 1
   },
   {
-    "id": 161,
+    "id": 2627209069422229,
     "word": "sincere",
     "pos": "adj",
     "definition": "genuine and free from pretense",
     "band": 1
   },
   {
-    "id": 162,
+    "id": 2899019497055585,
     "word": "sleek",
     "pos": "adj",
     "definition": "smooth, glossy, and elegant",
     "band": 1
   },
   {
-    "id": 163,
+    "id": 2448475936696190,
     "word": "sly",
     "pos": "adj",
     "definition": "cunning and secretive",
     "band": 1
   },
   {
-    "id": 164,
+    "id": 1716582901336106,
     "word": "smug",
     "pos": "adj",
     "definition": "annoyingly self-satisfied",
     "band": 1
   },
   {
-    "id": 165,
+    "id": 1912442321642374,
     "word": "sober",
     "pos": "adj",
     "definition": "serious and solemn; not drunk",
     "band": 1
   },
   {
-    "id": 166,
+    "id": 2825568550752532,
     "word": "somber",
     "pos": "adj",
     "definition": "dark, grave, or serious in tone",
     "band": 1
   },
   {
-    "id": 167,
+    "id": 84488727280699,
     "word": "soothe",
     "pos": "v",
     "definition": "to calm or comfort",
     "band": 1
   },
   {
-    "id": 168,
+    "id": 2731385810778709,
     "word": "spite",
     "pos": "n",
     "definition": "a desire to hurt or annoy",
     "band": 1
   },
   {
-    "id": 169,
+    "id": 4157897633617803,
     "word": "stark",
     "pos": "adj",
     "definition": "severe or bare; sharply clear",
     "band": 1
   },
   {
-    "id": 170,
+    "id": 2074395040021521,
     "word": "stern",
     "pos": "adj",
     "definition": "strict and serious",
     "band": 1
   },
   {
-    "id": 171,
+    "id": 552640163616213,
     "word": "stifle",
     "pos": "v",
     "definition": "to suppress or smother",
     "band": 1
   },
   {
-    "id": 172,
+    "id": 1409598548490471,
     "word": "stout",
     "pos": "adj",
     "definition": "sturdy and thickset",
     "band": 1
   },
   {
-    "id": 173,
+    "id": 2190609110168282,
     "word": "strife",
     "pos": "n",
     "definition": "bitter conflict",
     "band": 1
   },
   {
-    "id": 174,
+    "id": 2197244060243009,
     "word": "sturdy",
     "pos": "adj",
     "definition": "solidly built and strong",
     "band": 1
   },
   {
-    "id": 175,
+    "id": 1616297938070368,
     "word": "subdue",
     "pos": "v",
     "definition": "to bring under control",
     "band": 1
   },
   {
-    "id": 176,
+    "id": 292802007740919,
     "word": "subtle",
     "pos": "adj",
     "definition": "delicate and not immediately obvious",
     "band": 1
   },
   {
-    "id": 177,
+    "id": 3977085931394909,
     "word": "sulk",
     "pos": "v",
     "definition": "to be silently sullen",
     "band": 1
   },
   {
-    "id": 178,
+    "id": 3187083272999379,
     "word": "summon",
     "pos": "v",
     "definition": "to call forth",
     "band": 1
   },
   {
-    "id": 179,
+    "id": 1700625645598830,
     "word": "sway",
     "pos": "v",
     "definition": "to influence; to swing back and forth",
     "band": 1
   },
   {
-    "id": 180,
+    "id": 3749041769366240,
     "word": "taint",
     "pos": "v",
     "definition": "to contaminate or corrupt",
     "band": 1
   },
   {
-    "id": 181,
+    "id": 3050075756936222,
     "word": "taunt",
     "pos": "v",
     "definition": "to provoke with mockery",
     "band": 1
   },
   {
-    "id": 182,
+    "id": 1491277903438855,
     "word": "tedious",
     "pos": "adj",
     "definition": "tiresomely long or dull",
     "band": 1
   },
   {
-    "id": 183,
+    "id": 2823120212253649,
     "word": "terse",
     "pos": "adj",
     "definition": "brief and to the point",
     "band": 1
   },
   {
-    "id": 184,
+    "id": 906830359084428,
     "word": "thrift",
     "pos": "n",
     "definition": "careful management of money",
     "band": 1
   },
   {
-    "id": 185,
+    "id": 1309679107526661,
     "word": "thrive",
     "pos": "v",
     "definition": "to grow or develop vigorously",
     "band": 1
   },
   {
-    "id": 186,
+    "id": 2436562680274437,
     "word": "throng",
     "pos": "n",
     "definition": "a large, densely packed crowd",
     "band": 1
   },
   {
-    "id": 187,
+    "id": 2056257176781684,
     "word": "timid",
     "pos": "adj",
     "definition": "lacking courage or confidence",
     "band": 1
   },
   {
-    "id": 188,
+    "id": 1245627794065689,
     "word": "toil",
     "pos": "v",
     "definition": "to work long and hard",
     "band": 1
   },
   {
-    "id": 189,
+    "id": 2568224941237052,
     "word": "topple",
     "pos": "v",
     "definition": "to fall or overturn",
     "band": 1
   },
   {
-    "id": 190,
+    "id": 621311951477238,
     "word": "trek",
     "pos": "n",
     "definition": "a long, arduous journey",
     "band": 1
   },
   {
-    "id": 191,
+    "id": 2240102227016820,
     "word": "trifle",
     "pos": "n",
     "definition": "something of little value",
     "band": 1
   },
   {
-    "id": 192,
+    "id": 4157974612660018,
     "word": "trudge",
     "pos": "v",
     "definition": "to walk wearily",
     "band": 1
   },
   {
-    "id": 193,
+    "id": 1809454359149880,
     "word": "turmoil",
     "pos": "n",
     "definition": "a state of great disturbance or confusion",
     "band": 1
   },
   {
-    "id": 194,
+    "id": 1497482578403905,
     "word": "unruly",
     "pos": "adj",
     "definition": "disorderly and hard to control",
     "band": 1
   },
   {
-    "id": 195,
+    "id": 1482727103332676,
     "word": "uphold",
     "pos": "v",
     "definition": "to support or maintain",
     "band": 1
   },
   {
-    "id": 196,
+    "id": 180048715396357,
     "word": "valor",
     "pos": "n",
     "definition": "great courage in the face of danger",
     "band": 1
   },
   {
-    "id": 197,
+    "id": 2442331649501585,
     "word": "veer",
     "pos": "v",
     "definition": "to change direction suddenly",
     "band": 1
   },
   {
-    "id": 198,
+    "id": 158193997260294,
     "word": "vibrant",
     "pos": "adj",
     "definition": "full of energy and brightness",
     "band": 1
   },
   {
-    "id": 199,
+    "id": 1288918660700827,
     "word": "vice",
     "pos": "n",
     "definition": "an immoral habit or failing",
     "band": 1
   },
   {
-    "id": 200,
+    "id": 729889323744613,
     "word": "vile",
     "pos": "adj",
     "definition": "morally bad; disgusting",
     "band": 1
   },
   {
-    "id": 201,
+    "id": 418597688451389,
     "word": "vital",
     "pos": "adj",
     "definition": "absolutely necessary; full of life",
     "band": 1
   },
   {
-    "id": 202,
+    "id": 2829541469126633,
     "word": "vivid",
     "pos": "adj",
     "definition": "strikingly bright or sharply detailed",
     "band": 1
   },
   {
-    "id": 203,
+    "id": 4113195316285091,
     "word": "void",
     "pos": "n",
     "definition": "a completely empty space",
     "band": 1
   },
   {
-    "id": 204,
+    "id": 490906986039848,
     "word": "vow",
     "pos": "n",
     "definition": "a solemn promise",
     "band": 1
   },
   {
-    "id": 205,
+    "id": 513718690686426,
     "word": "wail",
     "pos": "v",
     "definition": "to cry out in grief",
     "band": 1
   },
   {
-    "id": 206,
+    "id": 1323346758508623,
     "word": "weary",
     "pos": "adj",
     "definition": "very tired or worn out",
     "band": 1
   },
   {
-    "id": 207,
+    "id": 2305254843780437,
     "word": "whim",
     "pos": "n",
     "definition": "a sudden, capricious impulse",
     "band": 1
   },
   {
-    "id": 208,
+    "id": 3948447513712153,
     "word": "wield",
     "pos": "v",
     "definition": "to handle or exert (power, a tool)",
     "band": 1
   },
   {
-    "id": 209,
+    "id": 1513577868931102,
     "word": "wily",
     "pos": "adj",
     "definition": "skilled at gaining advantage by trickery",
     "band": 1
   },
   {
-    "id": 210,
+    "id": 4499350193469053,
     "word": "wince",
     "pos": "v",
     "definition": "to flinch in pain",
     "band": 1
   },
   {
-    "id": 211,
+    "id": 2206708129385574,
     "word": "wither",
     "pos": "v",
     "definition": "to shrivel and fade",
     "band": 1
   },
   {
-    "id": 212,
+    "id": 511205277447862,
     "word": "witty",
     "pos": "adj",
     "definition": "cleverly and quickly humorous",
     "band": 1
   },
   {
-    "id": 213,
+    "id": 946884542297230,
     "word": "woe",
     "pos": "n",
     "definition": "great sorrow or distress",
     "band": 1
   },
   {
-    "id": 214,
+    "id": 1312328395492267,
     "word": "woo",
     "pos": "v",
     "definition": "to seek the favor or love of",
     "band": 1
   },
   {
-    "id": 215,
+    "id": 1523188982704623,
     "word": "wrath",
     "pos": "n",
     "definition": "extreme anger",
     "band": 1
   },
   {
-    "id": 216,
+    "id": 828341184546651,
     "word": "wry",
     "pos": "adj",
     "definition": "drily mocking or ironic",
     "band": 1
   },
   {
-    "id": 217,
+    "id": 1629458424833674,
     "word": "yearn",
     "pos": "v",
     "definition": "to long for something deeply",
     "band": 1
   },
   {
-    "id": 218,
+    "id": 4340645774457840,
     "word": "zeal",
     "pos": "n",
     "definition": "great energy or enthusiasm for a cause",
     "band": 1
   },
   {
-    "id": 219,
+    "id": 1273073906399160,
     "word": "zest",
     "pos": "n",
     "definition": "great enthusiasm and energy",
     "band": 1
   },
   {
-    "id": 220,
+    "id": 1246727514190242,
     "word": "abase",
     "pos": "v",
     "definition": "to lower in rank or dignity",
     "band": 2
   },
   {
-    "id": 221,
+    "id": 4230347036425731,
     "word": "abash",
     "pos": "v",
     "definition": "to embarrass or disconcert",
     "band": 2
   },
   {
-    "id": 222,
+    "id": 4301750192962318,
     "word": "abide",
     "pos": "v",
     "definition": "to tolerate; to remain",
     "band": 2
   },
   {
-    "id": 223,
+    "id": 1931532021806864,
     "word": "abstain",
     "pos": "v",
     "definition": "to choose not to do or take something",
     "band": 2
   },
   {
-    "id": 224,
+    "id": 1773921175967865,
     "word": "accost",
     "pos": "v",
     "definition": "to approach and address boldly",
     "band": 2
   },
   {
-    "id": 225,
+    "id": 3548523155808758,
     "word": "adage",
     "pos": "n",
     "definition": "a traditional saying",
     "band": 2
   },
   {
-    "id": 226,
+    "id": 1276487198168327,
     "word": "adamant",
     "pos": "adj",
     "definition": "refusing to be persuaded",
     "band": 2
   },
   {
-    "id": 227,
+    "id": 89399849318473,
     "word": "adroit",
     "pos": "adj",
     "definition": "clever and skillful",
     "band": 2
   },
   {
-    "id": 228,
+    "id": 391218185742154,
     "word": "affable",
     "pos": "adj",
     "definition": "friendly and easy to talk to",
     "band": 2
   },
   {
-    "id": 229,
+    "id": 2335396061507583,
     "word": "affirm",
     "pos": "v",
     "definition": "to state firmly",
     "band": 2
   },
   {
-    "id": 230,
+    "id": 3907228359008447,
     "word": "affront",
     "pos": "n",
     "definition": "an open insult",
     "band": 2
   },
   {
-    "id": 231,
+    "id": 4465659118923114,
     "word": "aloof",
     "pos": "adj",
     "definition": "distant and emotionally uninvolved",
     "band": 2
   },
   {
-    "id": 232,
+    "id": 4235722207861244,
     "word": "amiable",
     "pos": "adj",
     "definition": "friendly and pleasant",
     "band": 2
   },
   {
-    "id": 233,
+    "id": 2873497508818990,
     "word": "aplomb",
     "pos": "n",
     "definition": "self-confident composure",
     "band": 2
   },
   {
-    "id": 234,
+    "id": 4332874825212508,
     "word": "appall",
     "pos": "v",
     "definition": "to dismay or horrify",
     "band": 2
   },
   {
-    "id": 235,
+    "id": 2456517180573138,
     "word": "appease",
     "pos": "v",
     "definition": "to pacify or soothe, often by concession",
     "band": 2
   },
   {
-    "id": 236,
+    "id": 233943029792318,
     "word": "ardent",
     "pos": "adj",
     "definition": "passionate and enthusiastic",
     "band": 2
   },
   {
-    "id": 237,
+    "id": 3541926454115440,
     "word": "astute",
     "pos": "adj",
     "definition": "shrewd and perceptive",
     "band": 2
   },
   {
-    "id": 238,
+    "id": 1390821479914967,
     "word": "austere",
     "pos": "adj",
     "definition": "severe or strict in manner; plain",
     "band": 2
   },
   {
-    "id": 239,
+    "id": 3478712692357312,
     "word": "baleful",
     "pos": "adj",
     "definition": "menacing; harmful",
     "band": 2
   },
   {
-    "id": 240,
+    "id": 3668030412530441,
     "word": "beguile",
     "pos": "v",
     "definition": "to charm, often deceptively",
     "band": 2
   },
   {
-    "id": 241,
+    "id": 1592727487046860,
     "word": "belittle",
     "pos": "v",
     "definition": "to make seem unimportant",
     "band": 2
   },
   {
-    "id": 242,
+    "id": 3858309375023325,
     "word": "berate",
     "pos": "v",
     "definition": "to scold harshly",
     "band": 2
   },
   {
-    "id": 243,
+    "id": 2253763698368925,
     "word": "blight",
     "pos": "n",
     "definition": "a thing that spoils or ruins",
     "band": 2
   },
   {
-    "id": 244,
+    "id": 1829741050002664,
     "word": "bolster",
     "pos": "v",
     "definition": "to support or strengthen",
     "band": 2
   },
   {
-    "id": 245,
+    "id": 2424928131810931,
     "word": "bountiful",
     "pos": "adj",
     "definition": "abundant and generous",
     "band": 2
   },
   {
-    "id": 246,
+    "id": 3008341899060849,
     "word": "brazen",
     "pos": "adj",
     "definition": "bold and without shame",
     "band": 2
   },
   {
-    "id": 247,
+    "id": 795630798224440,
     "word": "callous",
     "pos": "adj",
     "definition": "emotionally hardened and unfeeling",
     "band": 2
   },
   {
-    "id": 248,
+    "id": 3903674183212028,
     "word": "candidly",
     "pos": "adv",
     "definition": "in an open and honest way",
     "band": 2
   },
   {
-    "id": 249,
+    "id": 319238651061620,
     "word": "candor",
     "pos": "n",
     "definition": "open and honest expression",
     "band": 2
   },
   {
-    "id": 250,
+    "id": 3635210033670347,
     "word": "chagrin",
     "pos": "n",
     "definition": "distress from failure or humiliation",
     "band": 2
   },
   {
-    "id": 251,
+    "id": 3147391033338435,
     "word": "chide",
     "pos": "v",
     "definition": "to scold mildly",
     "band": 2
   },
   {
-    "id": 252,
+    "id": 1312843924852961,
     "word": "churlish",
     "pos": "adj",
     "definition": "rude and surly",
     "band": 2
   },
   {
-    "id": 253,
+    "id": 3608344384152826,
     "word": "coddle",
     "pos": "v",
     "definition": "to treat with excessive care",
     "band": 2
   },
   {
-    "id": 254,
+    "id": 2800851206803962,
     "word": "condone",
     "pos": "v",
     "definition": "to overlook or tacitly approve a wrong",
     "band": 2
   },
   {
-    "id": 255,
+    "id": 4375951569314873,
     "word": "contempt",
     "pos": "n",
     "definition": "the feeling that someone is beneath consideration",
     "band": 2
   },
   {
-    "id": 256,
+    "id": 2647563187004375,
     "word": "cordial",
     "pos": "adj",
     "definition": "warm and friendly",
     "band": 2
   },
   {
-    "id": 257,
+    "id": 886259247183903,
     "word": "cordon",
     "pos": "n",
     "definition": "a line of guards or barriers",
     "band": 2
   },
   {
-    "id": 258,
+    "id": 1853160260232380,
     "word": "covet",
     "pos": "v",
     "definition": "to desire enviously",
     "band": 2
   },
   {
-    "id": 259,
+    "id": 4060947358874688,
     "word": "cower",
     "pos": "v",
     "definition": "to crouch in fear",
     "band": 2
   },
   {
-    "id": 260,
+    "id": 2814734664686222,
     "word": "curtail",
     "pos": "v",
     "definition": "to cut short or reduce",
     "band": 2
   },
   {
-    "id": 261,
+    "id": 707811968807210,
     "word": "dapper",
     "pos": "adj",
     "definition": "neat and trim in dress",
     "band": 2
   },
   {
-    "id": 262,
+    "id": 2680383872969472,
     "word": "daub",
     "pos": "v",
     "definition": "to smear carelessly",
     "band": 2
   },
   {
-    "id": 263,
+    "id": 3262944621584763,
     "word": "decorum",
     "pos": "n",
     "definition": "proper, dignified behavior",
     "band": 2
   },
   {
-    "id": 264,
+    "id": 1311359699714967,
     "word": "deft",
     "pos": "adj",
     "definition": "neatly skillful and quick",
     "band": 2
   },
   {
-    "id": 265,
+    "id": 260919071723128,
     "word": "demise",
     "pos": "n",
     "definition": "death or the end of something",
     "band": 2
   },
   {
-    "id": 266,
+    "id": 2844318313339488,
     "word": "demure",
     "pos": "adj",
     "definition": "modest and reserved",
     "band": 2
   },
   {
-    "id": 267,
+    "id": 19344872945372,
     "word": "deplore",
     "pos": "v",
     "definition": "to strongly disapprove of",
     "band": 2
   },
   {
-    "id": 268,
+    "id": 3757993088138156,
     "word": "devout",
     "pos": "adj",
     "definition": "deeply religious or committed",
     "band": 2
   },
   {
-    "id": 269,
+    "id": 1787506749541249,
     "word": "diffident",
     "pos": "adj",
     "definition": "shy and lacking self-confidence",
     "band": 2
   },
   {
-    "id": 270,
+    "id": 868043048255772,
     "word": "din",
     "pos": "n",
     "definition": "a loud, prolonged noise",
     "band": 2
   },
   {
-    "id": 271,
+    "id": 2624724397933459,
     "word": "discern",
     "pos": "v",
     "definition": "to perceive or recognize clearly",
     "band": 2
   },
   {
-    "id": 272,
+    "id": 1872873748915630,
     "word": "dispel",
     "pos": "v",
     "definition": "to drive away",
     "band": 2
   },
   {
-    "id": 273,
+    "id": 3319511241619851,
     "word": "divulge",
     "pos": "v",
     "definition": "to reveal something secret",
     "band": 2
   },
   {
-    "id": 274,
+    "id": 422618575570723,
     "word": "docile",
     "pos": "adj",
     "definition": "easily managed and obedient",
     "band": 2
   },
   {
-    "id": 275,
+    "id": 2859586977693545,
     "word": "dogged",
     "pos": "adj",
     "definition": "stubbornly persistent",
     "band": 2
   },
   {
-    "id": 276,
+    "id": 2442132836307420,
     "word": "dote",
     "pos": "v",
     "definition": "to be excessively fond",
     "band": 2
   },
   {
-    "id": 277,
+    "id": 1600717154254738,
     "word": "dour",
     "pos": "adj",
     "definition": "gloomy, stern, and forbidding",
     "band": 2
   },
   {
-    "id": 278,
+    "id": 804404162335654,
     "word": "eloquence",
     "pos": "n",
     "definition": "fluent, persuasive expression",
     "band": 2
   },
   {
-    "id": 279,
+    "id": 4441478469156638,
     "word": "elude",
     "pos": "v",
     "definition": "to escape or evade cleverly",
     "band": 2
   },
   {
-    "id": 280,
+    "id": 2375660741759570,
     "word": "emulate",
     "pos": "v",
     "definition": "to strive to equal or imitate",
     "band": 2
   },
   {
-    "id": 281,
+    "id": 2630475052377064,
     "word": "enthrall",
     "pos": "v",
     "definition": "to captivate completely",
     "band": 2
   },
   {
-    "id": 282,
+    "id": 2308978695864487,
     "word": "fervid",
     "pos": "adj",
     "definition": "intensely passionate",
     "band": 2
   },
   {
-    "id": 283,
+    "id": 2487074452828367,
     "word": "fervor",
     "pos": "n",
     "definition": "intense, passionate feeling",
     "band": 2
   },
   {
-    "id": 284,
+    "id": 399539728028473,
     "word": "fiasco",
     "pos": "n",
     "definition": "a complete and ridiculous failure",
     "band": 2
   },
   {
-    "id": 285,
+    "id": 3042163539093793,
     "word": "fickle",
     "pos": "adj",
     "definition": "changeable and inconstant",
     "band": 2
   },
   {
-    "id": 286,
+    "id": 3468294677507248,
     "word": "fledgling",
     "pos": "adj",
     "definition": "new and inexperienced",
     "band": 2
   },
   {
-    "id": 287,
+    "id": 2874323158447382,
     "word": "flippant",
     "pos": "adj",
     "definition": "not showing proper seriousness",
     "band": 2
   },
   {
-    "id": 288,
+    "id": 2972563821558392,
     "word": "flounder",
     "pos": "v",
     "definition": "to struggle clumsily",
     "band": 2
   },
   {
-    "id": 289,
+    "id": 942339515636669,
     "word": "forbearance",
     "pos": "n",
     "definition": "patient self-control",
     "band": 2
   },
   {
-    "id": 290,
+    "id": 2181411519146130,
     "word": "forlorn",
     "pos": "adj",
     "definition": "sad and abandoned",
     "band": 2
   },
   {
-    "id": 291,
+    "id": 4157550219030806,
     "word": "forte",
     "pos": "n",
     "definition": "a person's strong point",
     "band": 2
   },
   {
-    "id": 292,
+    "id": 1407211463785886,
     "word": "gainful",
     "pos": "adj",
     "definition": "profitable",
     "band": 2
   },
   {
-    "id": 293,
+    "id": 3618767630988345,
     "word": "gambit",
     "pos": "n",
     "definition": "a calculated opening maneuver",
     "band": 2
   },
   {
-    "id": 294,
+    "id": 3626786496119526,
     "word": "gaudy",
     "pos": "adj",
     "definition": "tastelessly showy",
     "band": 2
   },
   {
-    "id": 295,
+    "id": 106539450975488,
     "word": "genial",
     "pos": "adj",
     "definition": "warm and cheerful in manner",
     "band": 2
   },
   {
-    "id": 296,
+    "id": 2031850177026156,
     "word": "glib",
     "pos": "adj",
     "definition": "fluent but shallow or insincere",
     "band": 2
   },
   {
-    "id": 297,
+    "id": 2319487153396923,
     "word": "grave",
     "pos": "adj",
     "definition": "serious and solemn",
     "band": 2
   },
   {
-    "id": 298,
+    "id": 1991903590142521,
     "word": "gregarious",
     "pos": "adj",
     "definition": "sociable and fond of company",
     "band": 2
   },
   {
-    "id": 299,
+    "id": 2148615551789328,
     "word": "grovel",
     "pos": "v",
     "definition": "to behave with abject servility",
     "band": 2
   },
   {
-    "id": 300,
+    "id": 3507888675742522,
     "word": "haggard",
     "pos": "adj",
     "definition": "looking exhausted and gaunt",
     "band": 2
   },
   {
-    "id": 301,
+    "id": 3267553246614904,
     "word": "hamper",
     "pos": "v",
     "definition": "to hinder or impede",
     "band": 2
   },
   {
-    "id": 302,
+    "id": 4097382328176328,
     "word": "harangue",
     "pos": "v",
     "definition": "to lecture aggressively",
     "band": 2
   },
   {
-    "id": 303,
+    "id": 3453684189969935,
     "word": "haughty",
     "pos": "adj",
     "definition": "arrogantly superior and disdainful",
     "band": 2
   },
   {
-    "id": 304,
+    "id": 1681225736342887,
     "word": "hoax",
     "pos": "n",
     "definition": "a humorous or malicious deception",
     "band": 2
   },
   {
-    "id": 305,
+    "id": 3466037816489384,
     "word": "hone",
     "pos": "v",
     "definition": "to sharpen or refine",
     "band": 2
   },
   {
-    "id": 306,
+    "id": 3647161383306351,
     "word": "imbue",
     "pos": "v",
     "definition": "to fill or inspire deeply",
     "band": 2
   },
   {
-    "id": 307,
+    "id": 2682818382602209,
     "word": "impetuous",
     "pos": "adj",
     "definition": "acting rashly, without thought",
     "band": 2
   },
   {
-    "id": 308,
+    "id": 1110657335391402,
     "word": "incessant",
     "pos": "adj",
     "definition": "continuing without pause",
     "band": 2
   },
   {
-    "id": 309,
+    "id": 800781833596443,
     "word": "incite",
     "pos": "v",
     "definition": "to stir up or provoke",
     "band": 2
   },
   {
-    "id": 310,
+    "id": 3904475517700734,
     "word": "indict",
     "pos": "v",
     "definition": "to formally accuse",
     "band": 2
   },
   {
-    "id": 311,
+    "id": 1762073518151828,
     "word": "inept",
     "pos": "adj",
     "definition": "clumsy or incompetent",
     "band": 2
   },
   {
-    "id": 312,
+    "id": 882611578376881,
     "word": "irate",
     "pos": "adj",
     "definition": "extremely angry",
     "band": 2
   },
   {
-    "id": 313,
+    "id": 4452185825485049,
     "word": "jaunty",
     "pos": "adj",
     "definition": "lively and self-confident",
     "band": 2
   },
   {
-    "id": 314,
+    "id": 1508876719592128,
     "word": "jovial",
     "pos": "adj",
     "definition": "cheerful and good-humored",
     "band": 2
   },
   {
-    "id": 315,
+    "id": 2062385644618265,
     "word": "jubilant",
     "pos": "adj",
     "definition": "joyfully triumphant",
     "band": 2
   },
   {
-    "id": 316,
+    "id": 3735054085056536,
     "word": "lament",
     "pos": "v",
     "definition": "to mourn or express grief",
     "band": 2
   },
   {
-    "id": 317,
+    "id": 1265501415351513,
     "word": "languish",
     "pos": "v",
     "definition": "to lose vitality; to suffer neglect",
     "band": 2
   },
   {
-    "id": 318,
+    "id": 1825586748037745,
     "word": "lavish",
     "pos": "adj",
     "definition": "abundant or extravagant",
     "band": 2
   },
   {
-    "id": 319,
+    "id": 4058354430632974,
     "word": "lax",
     "pos": "adj",
     "definition": "not strict; careless",
     "band": 2
   },
   {
-    "id": 320,
+    "id": 12861846529970,
     "word": "listless",
     "pos": "adj",
     "definition": "lacking energy or interest",
     "band": 2
   },
   {
-    "id": 321,
+    "id": 4088717571459669,
     "word": "lithe",
     "pos": "adj",
     "definition": "graceful, supple, and flexible",
     "band": 2
   },
   {
-    "id": 322,
+    "id": 2374872394090129,
     "word": "loathe",
     "pos": "v",
     "definition": "to hate intensely",
     "band": 2
   },
   {
-    "id": 323,
+    "id": 108827400787498,
     "word": "malice",
     "pos": "n",
     "definition": "the intention to do harm",
     "band": 2
   },
   {
-    "id": 324,
+    "id": 1240476682872244,
     "word": "malign",
     "pos": "v",
     "definition": "to speak harmful untruths about",
     "band": 2
   },
   {
-    "id": 325,
+    "id": 3549307372583544,
     "word": "mawkish",
     "pos": "adj",
     "definition": "sickeningly sentimental",
     "band": 2
   },
   {
-    "id": 326,
+    "id": 413931246707749,
     "word": "meager",
     "pos": "adj",
     "definition": "scanty or inadequate",
     "band": 2
   },
   {
-    "id": 327,
+    "id": 945452066083485,
     "word": "muster",
     "pos": "v",
     "definition": "to gather or summon",
     "band": 2
   },
   {
-    "id": 328,
+    "id": 1325828992447894,
     "word": "nettle",
     "pos": "v",
     "definition": "to irritate or annoy",
     "band": 2
   },
   {
-    "id": 329,
+    "id": 2418356726924505,
     "word": "nimble",
     "pos": "adj",
     "definition": "quick and light in movement or thought",
     "band": 2
   },
   {
-    "id": 330,
+    "id": 1437028909452915,
     "word": "nonchalant",
     "pos": "adj",
     "definition": "casually unconcerned",
     "band": 2
   },
   {
-    "id": 331,
+    "id": 2979262242369273,
     "word": "nuance",
     "pos": "n",
     "definition": "a subtle distinction or shade of meaning",
     "band": 2
   },
   {
-    "id": 332,
+    "id": 1584896106768431,
     "word": "obstinate",
     "pos": "adj",
     "definition": "stubbornly refusing to change",
     "band": 2
   },
   {
-    "id": 333,
+    "id": 1595523591884901,
     "word": "ominous",
     "pos": "adj",
     "definition": "threatening; foreboding evil",
     "band": 2
   },
   {
-    "id": 334,
+    "id": 4465749956029623,
     "word": "opulent",
     "pos": "adj",
     "definition": "luxurious and richly abundant",
     "band": 2
   },
   {
-    "id": 335,
+    "id": 2547887609027908,
     "word": "ordeal",
     "pos": "n",
     "definition": "a painful or testing experience",
     "band": 2
   },
   {
-    "id": 336,
+    "id": 4465824569917857,
     "word": "ornate",
     "pos": "adj",
     "definition": "elaborately decorated",
     "band": 2
   },
   {
-    "id": 337,
+    "id": 3467507214381845,
     "word": "overt",
     "pos": "adj",
     "definition": "done or shown openly",
     "band": 2
   },
   {
-    "id": 338,
+    "id": 1749966219789438,
     "word": "paltry",
     "pos": "adj",
     "definition": "petty and insignificant",
     "band": 2
   },
   {
-    "id": 339,
+    "id": 3903496955269312,
     "word": "parry",
     "pos": "v",
     "definition": "to ward off or deflect",
     "band": 2
   },
   {
-    "id": 340,
+    "id": 2298415130406467,
     "word": "pensive",
     "pos": "adj",
     "definition": "deeply or wistfully thoughtful",
     "band": 2
   },
   {
-    "id": 341,
+    "id": 3952213686508503,
     "word": "pious",
     "pos": "adj",
     "definition": "devoutly religious",
     "band": 2
   },
   {
-    "id": 342,
+    "id": 2666333356789614,
     "word": "placid",
     "pos": "adj",
     "definition": "calm and not easily upset",
     "band": 2
   },
   {
-    "id": 343,
+    "id": 3925352494071933,
     "word": "plausible",
     "pos": "adj",
     "definition": "seeming reasonable or probable",
     "band": 2
   },
   {
-    "id": 344,
+    "id": 1330443947294936,
     "word": "plucky",
     "pos": "adj",
     "definition": "showing courage",
     "band": 2
   },
   {
-    "id": 345,
+    "id": 1765835298279251,
     "word": "poised",
     "pos": "adj",
     "definition": "calm, composed, and self-assured",
     "band": 2
   },
   {
-    "id": 346,
+    "id": 4254842104213269,
     "word": "portent",
     "pos": "n",
     "definition": "a sign of something to come",
     "band": 2
   },
   {
-    "id": 347,
+    "id": 3165130043971617,
     "word": "potent",
     "pos": "adj",
     "definition": "powerful and effective",
     "band": 2
   },
   {
-    "id": 348,
+    "id": 3273116492790283,
     "word": "pragmatic",
     "pos": "adj",
     "definition": "concerned with practical results rather than theory",
     "band": 2
   },
   {
-    "id": 349,
+    "id": 3191645736339216,
     "word": "prattle",
     "pos": "v",
     "definition": "to chatter idly",
     "band": 2
   },
   {
-    "id": 350,
+    "id": 2082781636124371,
     "word": "prosaic",
     "pos": "adj",
     "definition": "dull and lacking imagination",
     "band": 2
   },
   {
-    "id": 351,
+    "id": 53489257253336,
     "word": "prowess",
     "pos": "n",
     "definition": "outstanding skill or ability",
     "band": 2
   },
   {
-    "id": 352,
+    "id": 3013330036715216,
     "word": "prudence",
     "pos": "n",
     "definition": "careful good judgment",
     "band": 2
   },
   {
-    "id": 353,
+    "id": 2642396954075551,
     "word": "quell",
     "pos": "v",
     "definition": "to suppress or put an end to",
     "band": 2
   },
   {
-    "id": 354,
+    "id": 3318103763324564,
     "word": "quibble",
     "pos": "v",
     "definition": "to argue over trivial matters",
     "band": 2
   },
   {
-    "id": 355,
+    "id": 3772886893903797,
     "word": "rabid",
     "pos": "adj",
     "definition": "extreme and fanatical",
     "band": 2
   },
   {
-    "id": 356,
+    "id": 4178859879954978,
     "word": "rampant",
     "pos": "adj",
     "definition": "spreading unchecked",
     "band": 2
   },
   {
-    "id": 357,
+    "id": 2800380524300229,
     "word": "rancor",
     "pos": "n",
     "definition": "bitter, long-lasting resentment",
     "band": 2
   },
   {
-    "id": 358,
+    "id": 4369621433419432,
     "word": "rebuff",
     "pos": "v",
     "definition": "to reject bluntly",
     "band": 2
   },
   {
-    "id": 359,
+    "id": 227119458113252,
     "word": "rebut",
     "pos": "v",
     "definition": "to argue against; to refute",
     "band": 2
   },
   {
-    "id": 360,
+    "id": 3322539669749677,
     "word": "recant",
     "pos": "v",
     "definition": "to withdraw a former statement",
     "band": 2
   },
   {
-    "id": 361,
+    "id": 2887156239534327,
     "word": "redress",
     "pos": "n",
     "definition": "compensation for a wrong",
     "band": 2
   },
   {
-    "id": 362,
+    "id": 1470915236961718,
     "word": "relent",
     "pos": "v",
     "definition": "to soften or give way",
     "band": 2
   },
   {
-    "id": 363,
+    "id": 317406551414338,
     "word": "relish",
     "pos": "v",
     "definition": "to take great enjoyment in",
     "band": 2
   },
   {
-    "id": 364,
+    "id": 2537205691377660,
     "word": "repose",
     "pos": "n",
     "definition": "a state of restful calm",
     "band": 2
   },
   {
-    "id": 365,
+    "id": 3687096031113272,
     "word": "resilient",
     "pos": "adj",
     "definition": "able to recover quickly",
     "band": 2
   },
   {
-    "id": 366,
+    "id": 2509397093792745,
     "word": "reticent",
     "pos": "adj",
     "definition": "reluctant to speak freely",
     "band": 2
   },
   {
-    "id": 367,
+    "id": 2242938578904092,
     "word": "revere",
     "pos": "v",
     "definition": "to regard with deep respect",
     "band": 2
   },
   {
-    "id": 368,
+    "id": 1345423927106956,
     "word": "rile",
     "pos": "v",
     "definition": "to anger or irritate",
     "band": 2
   },
   {
-    "id": 369,
+    "id": 647650475047592,
     "word": "rouse",
     "pos": "v",
     "definition": "to awaken or stir to action",
     "band": 2
   },
   {
-    "id": 370,
+    "id": 2573340906235131,
     "word": "sardonic",
     "pos": "adj",
     "definition": "grimly or scornfully mocking",
     "band": 2
   },
   {
-    "id": 371,
+    "id": 1799694795271708,
     "word": "scathing",
     "pos": "adj",
     "definition": "harshly and severely critical",
     "band": 2
   },
   {
-    "id": 372,
+    "id": 4263902344910966,
     "word": "seclude",
     "pos": "v",
     "definition": "to keep apart from others",
     "band": 2
   },
   {
-    "id": 373,
+    "id": 919584930791491,
     "word": "shoddy",
     "pos": "adj",
     "definition": "poorly made or done",
     "band": 2
   },
   {
-    "id": 374,
+    "id": 3178031220933510,
     "word": "slander",
     "pos": "n",
     "definition": "a false spoken statement that harms",
     "band": 2
   },
   {
-    "id": 375,
+    "id": 906168522922707,
     "word": "slovenly",
     "pos": "adj",
     "definition": "untidy and careless",
     "band": 2
   },
   {
-    "id": 376,
+    "id": 1434805863310842,
     "word": "snide",
     "pos": "adj",
     "definition": "slyly disparaging",
     "band": 2
   },
   {
-    "id": 377,
+    "id": 1149129749231583,
     "word": "solace",
     "pos": "n",
     "definition": "comfort in a time of distress",
     "band": 2
   },
   {
-    "id": 378,
+    "id": 2929262185778903,
     "word": "solemn",
     "pos": "adj",
     "definition": "formal, serious, and dignified",
     "band": 2
   },
   {
-    "id": 379,
+    "id": 3661117890330466,
     "word": "sordid",
     "pos": "adj",
     "definition": "dirty; morally degraded",
     "band": 2
   },
   {
-    "id": 380,
+    "id": 3354077700430272,
     "word": "sparse",
     "pos": "adj",
     "definition": "thinly scattered",
     "band": 2
   },
   {
-    "id": 381,
+    "id": 4101485736574201,
     "word": "spurn",
     "pos": "v",
     "definition": "to reject with contempt",
     "band": 2
   },
   {
-    "id": 382,
+    "id": 468944522467287,
     "word": "squalid",
     "pos": "adj",
     "definition": "filthy and wretched",
     "band": 2
   },
   {
-    "id": 383,
+    "id": 2128366843495975,
     "word": "staunch",
     "pos": "adj",
     "definition": "loyal and steadfast",
     "band": 2
   },
   {
-    "id": 384,
+    "id": 4220096435160687,
     "word": "steadfast",
     "pos": "adj",
     "definition": "firm and unwavering",
     "band": 2
   },
   {
-    "id": 385,
+    "id": 833740430126401,
     "word": "stigma",
     "pos": "n",
     "definition": "a mark of disgrace",
     "band": 2
   },
   {
-    "id": 386,
+    "id": 3868467568837742,
     "word": "stint",
     "pos": "n",
     "definition": "a fixed period of work",
     "band": 2
   },
   {
-    "id": 387,
+    "id": 3646426836124029,
     "word": "strident",
     "pos": "adj",
     "definition": "loud and harsh",
     "band": 2
   },
   {
-    "id": 388,
+    "id": 3913451066374705,
     "word": "subvert",
     "pos": "v",
     "definition": "to undermine",
     "band": 2
   },
   {
-    "id": 389,
+    "id": 2725386813970753,
     "word": "sullen",
     "pos": "adj",
     "definition": "gloomily silent and resentful",
     "band": 2
   },
   {
-    "id": 390,
+    "id": 1459614209993600,
     "word": "sumptuous",
     "pos": "adj",
     "definition": "splendid and costly",
     "band": 2
   },
   {
-    "id": 391,
+    "id": 1333924791483846,
     "word": "supplant",
     "pos": "v",
     "definition": "to take the place of",
     "band": 2
   },
   {
-    "id": 392,
+    "id": 3809977059407981,
     "word": "supple",
     "pos": "adj",
     "definition": "bending easily; flexible",
     "band": 2
   },
   {
-    "id": 393,
+    "id": 1298363335412811,
     "word": "surly",
     "pos": "adj",
     "definition": "bad-tempered and unfriendly",
     "band": 2
   },
   {
-    "id": 394,
+    "id": 1550697788357828,
     "word": "tacit",
     "pos": "adj",
     "definition": "understood without being stated",
     "band": 2
   },
   {
-    "id": 395,
+    "id": 419353731719768,
     "word": "tawdry",
     "pos": "adj",
     "definition": "cheap, gaudy, and showy",
     "band": 2
   },
   {
-    "id": 396,
+    "id": 2491651120200573,
     "word": "tenacious",
     "pos": "adj",
     "definition": "holding firmly; persistent",
     "band": 2
   },
   {
-    "id": 397,
+    "id": 1354053012167742,
     "word": "tepid",
     "pos": "adj",
     "definition": "lukewarm or unenthusiastic",
     "band": 2
   },
   {
-    "id": 398,
+    "id": 4399049989422710,
     "word": "thwart",
     "pos": "v",
     "definition": "to prevent or frustrate",
     "band": 2
   },
   {
-    "id": 399,
+    "id": 319146504641516,
     "word": "torrid",
     "pos": "adj",
     "definition": "very hot; passionate",
     "band": 2
   },
   {
-    "id": 400,
+    "id": 1855439367231707,
     "word": "trepidation",
     "pos": "n",
     "definition": "fearful uncertainty",
     "band": 2
   },
   {
-    "id": 401,
+    "id": 717431106732155,
     "word": "unkempt",
     "pos": "adj",
     "definition": "untidy and unmaintained",
     "band": 2
   },
   {
-    "id": 402,
+    "id": 3148799291853895,
     "word": "urbane",
     "pos": "adj",
     "definition": "suave and sophisticated",
     "band": 2
   },
   {
-    "id": 403,
+    "id": 3670203288842194,
     "word": "usurp",
     "pos": "v",
     "definition": "to seize power or position without right",
     "band": 2
   },
   {
-    "id": 404,
+    "id": 1162090756298213,
     "word": "vehement",
     "pos": "adj",
     "definition": "showing strong, forceful feeling",
     "band": 2
   },
   {
-    "id": 405,
+    "id": 1346542369607588,
     "word": "vigor",
     "pos": "n",
     "definition": "physical or mental energy and strength",
     "band": 2
   },
   {
-    "id": 406,
+    "id": 620665841622228,
     "word": "vivacious",
     "pos": "adj",
     "definition": "lively and animated",
     "band": 2
   },
   {
-    "id": 407,
+    "id": 2628789262423540,
     "word": "wane",
     "pos": "v",
     "definition": "to decrease gradually",
     "band": 2
   },
   {
-    "id": 408,
+    "id": 935748381415260,
     "word": "wary",
     "pos": "adj",
     "definition": "cautious and watchful",
     "band": 2
   },
   {
-    "id": 409,
+    "id": 442800021338100,
     "word": "waver",
     "pos": "v",
     "definition": "to hesitate; to fluctuate",
     "band": 2
   },
   {
-    "id": 410,
+    "id": 896077394312943,
     "word": "zany",
     "pos": "adj",
     "definition": "amusingly unconventional",
     "band": 2
   },
   {
-    "id": 411,
+    "id": 1314762135522968,
     "word": "abate",
     "pos": "v",
     "definition": "to lessen or subside",
     "band": 3
   },
   {
-    "id": 412,
+    "id": 2700687386171269,
     "word": "abdicate",
     "pos": "v",
     "definition": "to formally give up power",
     "band": 3
   },
   {
-    "id": 413,
+    "id": 3338116728896281,
     "word": "aberrant",
     "pos": "adj",
     "definition": "deviating from what is normal",
     "band": 3
   },
   {
-    "id": 414,
+    "id": 203386705310233,
     "word": "aberration",
     "pos": "n",
     "definition": "a departure from what is normal",
     "band": 3
   },
   {
-    "id": 415,
+    "id": 565089787199994,
     "word": "abet",
     "pos": "v",
     "definition": "to encourage or assist in wrongdoing",
     "band": 3
   },
   {
-    "id": 416,
+    "id": 4297740502007721,
     "word": "abhor",
     "pos": "v",
     "definition": "to regard with disgust and hatred",
     "band": 3
   },
   {
-    "id": 417,
+    "id": 248620014449583,
     "word": "abstemious",
     "pos": "adj",
     "definition": "sparing in eating and drinking",
     "band": 3
   },
   {
-    "id": 418,
+    "id": 463428368505932,
     "word": "accolade",
     "pos": "n",
     "definition": "an award or expression of praise",
     "band": 3
   },
   {
-    "id": 419,
+    "id": 3416662692691495,
     "word": "acerbic",
     "pos": "adj",
     "definition": "sharp and forthright in tone",
     "band": 3
   },
   {
-    "id": 420,
+    "id": 2225918042813368,
     "word": "acquiesce",
     "pos": "v",
     "definition": "to accept reluctantly without protest",
     "band": 3
   },
   {
-    "id": 421,
+    "id": 2849718038722731,
     "word": "acrimonious",
     "pos": "adj",
     "definition": "bitter and sharp in tone",
     "band": 3
   },
   {
-    "id": 422,
+    "id": 2014698123141246,
     "word": "admonish",
     "pos": "v",
     "definition": "to warn or reprove firmly",
     "band": 3
   },
   {
-    "id": 423,
+    "id": 1354312379171106,
     "word": "admonitory",
     "pos": "adj",
     "definition": "giving a warning",
     "band": 3
   },
   {
-    "id": 424,
+    "id": 3418290188265637,
     "word": "adversity",
     "pos": "n",
     "definition": "misfortune or hardship",
     "band": 3
   },
   {
-    "id": 425,
+    "id": 4426468563988056,
     "word": "affluent",
     "pos": "adj",
     "definition": "wealthy",
     "band": 3
   },
   {
-    "id": 426,
+    "id": 341833809337798,
     "word": "allay",
     "pos": "v",
     "definition": "to lessen or relieve a fear or concern",
     "band": 3
   },
   {
-    "id": 427,
+    "id": 541573132609769,
     "word": "alleviate",
     "pos": "v",
     "definition": "to make less severe",
     "band": 3
   },
   {
-    "id": 428,
+    "id": 1712492974426130,
     "word": "aloofness",
     "pos": "n",
     "definition": "emotional distance",
     "band": 3
   },
   {
-    "id": 429,
+    "id": 4122644185191705,
     "word": "ambivalent",
     "pos": "adj",
     "definition": "having mixed or contradictory feelings",
     "band": 3
   },
   {
-    "id": 430,
+    "id": 3875932907149023,
     "word": "amiss",
     "pos": "adj",
     "definition": "wrong or out of order",
     "band": 3
   },
   {
-    "id": 431,
+    "id": 2289945140055064,
     "word": "amorphous",
     "pos": "adj",
     "definition": "without a clear shape or form",
     "band": 3
   },
   {
-    "id": 432,
+    "id": 2454581608909624,
     "word": "anguish",
     "pos": "n",
     "definition": "severe mental or physical suffering",
     "band": 3
   },
   {
-    "id": 433,
+    "id": 1502675548367683,
     "word": "anomaly",
     "pos": "n",
     "definition": "something that deviates from the norm",
     "band": 3
   },
   {
-    "id": 434,
+    "id": 3382358048224252,
     "word": "apathy",
     "pos": "n",
     "definition": "lack of interest or concern",
     "band": 3
   },
   {
-    "id": 435,
+    "id": 3081118168661074,
     "word": "apprise",
     "pos": "v",
     "definition": "to inform",
     "band": 3
   },
   {
-    "id": 436,
+    "id": 1342370214266845,
     "word": "arduous",
     "pos": "adj",
     "definition": "demanding great effort",
     "band": 3
   },
   {
-    "id": 437,
+    "id": 3933473905209361,
     "word": "artifice",
     "pos": "n",
     "definition": "clever or cunning trickery",
     "band": 3
   },
   {
-    "id": 438,
+    "id": 4398994085149609,
     "word": "ascertain",
     "pos": "v",
     "definition": "to find out for certain",
     "band": 3
   },
   {
-    "id": 439,
+    "id": 1909322532256062,
     "word": "askew",
     "pos": "adj",
     "definition": "not straight; crooked",
     "band": 3
   },
   {
-    "id": 440,
+    "id": 1656215386536843,
     "word": "aspersion",
     "pos": "n",
     "definition": "a damaging or disparaging remark",
     "band": 3
   },
   {
-    "id": 441,
+    "id": 1033519545131929,
     "word": "assail",
     "pos": "v",
     "definition": "to attack violently",
     "band": 3
   },
   {
-    "id": 442,
+    "id": 2125934395925935,
     "word": "assuage",
     "pos": "v",
     "definition": "to make an unpleasant feeling less intense",
     "band": 3
   },
   {
-    "id": 443,
+    "id": 121621470374848,
     "word": "astringent",
     "pos": "adj",
     "definition": "sharp or severe",
     "band": 3
   },
   {
-    "id": 444,
+    "id": 414941539074862,
     "word": "audacious",
     "pos": "adj",
     "definition": "boldly daring",
     "band": 3
   },
   {
-    "id": 445,
+    "id": 1169642104922424,
     "word": "auspicious",
     "pos": "adj",
     "definition": "promising future success",
     "band": 3
   },
   {
-    "id": 446,
+    "id": 2945670775488976,
     "word": "avarice",
     "pos": "n",
     "definition": "extreme greed for wealth",
     "band": 3
   },
   {
-    "id": 447,
+    "id": 1522791370172349,
     "word": "banal",
     "pos": "adj",
     "definition": "boringly ordinary; unoriginal",
     "band": 3
   },
   {
-    "id": 448,
+    "id": 2499849016937121,
     "word": "bedraggle",
     "pos": "v",
     "definition": "to make wet, limp, and dirty",
     "band": 3
   },
   {
-    "id": 449,
+    "id": 3606382799498456,
     "word": "beleaguer",
     "pos": "v",
     "definition": "to beset with difficulties",
     "band": 3
   },
   {
-    "id": 450,
+    "id": 2457880192593196,
     "word": "belie",
     "pos": "v",
     "definition": "to give a false impression of",
     "band": 3
   },
   {
-    "id": 451,
+    "id": 1977330959525384,
     "word": "benign",
     "pos": "adj",
     "definition": "gentle and harmless",
     "band": 3
   },
   {
-    "id": 452,
+    "id": 3551196972915909,
     "word": "bequeath",
     "pos": "v",
     "definition": "to hand down or leave by will",
     "band": 3
   },
   {
-    "id": 453,
+    "id": 2676426259668326,
     "word": "brevity",
     "pos": "n",
     "definition": "concise and exact expression",
     "band": 3
   },
   {
-    "id": 454,
+    "id": 2128360639182276,
     "word": "buoyant",
     "pos": "adj",
     "definition": "cheerful; able to float",
     "band": 3
   },
   {
-    "id": 455,
+    "id": 2096086063481501,
     "word": "capricious",
     "pos": "adj",
     "definition": "given to sudden changes of mood",
     "band": 3
   },
   {
-    "id": 456,
+    "id": 336469242789842,
     "word": "censorious",
     "pos": "adj",
     "definition": "severely critical",
     "band": 3
   },
   {
-    "id": 457,
+    "id": 1066318498029980,
     "word": "censure",
     "pos": "v",
     "definition": "to express formal disapproval of",
     "band": 3
   },
   {
-    "id": 458,
+    "id": 1102641830007827,
     "word": "chasten",
     "pos": "v",
     "definition": "to discipline; to subdue",
     "band": 3
   },
   {
-    "id": 459,
+    "id": 2286858550901418,
     "word": "clandestine",
     "pos": "adj",
     "definition": "kept secret, especially for an illicit purpose",
     "band": 3
   },
   {
-    "id": 460,
+    "id": 1698002881148535,
     "word": "coerce",
     "pos": "v",
     "definition": "to compel by force or threat",
     "band": 3
   },
   {
-    "id": 461,
+    "id": 3838959639983106,
     "word": "cogent",
     "pos": "adj",
     "definition": "clear, logical, and convincing",
     "band": 3
   },
   {
-    "id": 462,
+    "id": 2329099774719041,
     "word": "cogitate",
     "pos": "v",
     "definition": "to think deeply",
     "band": 3
   },
   {
-    "id": 463,
+    "id": 468747161280676,
     "word": "commensurate",
     "pos": "adj",
     "definition": "corresponding in size or degree",
     "band": 3
   },
   {
-    "id": 464,
+    "id": 3881675743629468,
     "word": "complacent",
     "pos": "adj",
     "definition": "smugly self-satisfied",
     "band": 3
   },
   {
-    "id": 465,
+    "id": 129044708997619,
     "word": "compunction",
     "pos": "n",
     "definition": "a feeling of guilt or unease",
     "band": 3
   },
   {
-    "id": 466,
+    "id": 81636356408319,
     "word": "conciliatory",
     "pos": "adj",
     "definition": "intended to placate or reconcile",
     "band": 3
   },
   {
-    "id": 467,
+    "id": 1339575466427530,
     "word": "conjecture",
     "pos": "n",
     "definition": "an opinion based on incomplete evidence",
     "band": 3
   },
   {
-    "id": 468,
+    "id": 2747587764501616,
     "word": "consternation",
     "pos": "n",
     "definition": "feelings of anxiety and dismay",
     "band": 3
   },
   {
-    "id": 469,
+    "id": 2481144124879707,
     "word": "contrive",
     "pos": "v",
     "definition": "to devise or plan cleverly",
     "band": 3
   },
   {
-    "id": 470,
+    "id": 173028751670984,
     "word": "copious",
     "pos": "adj",
     "definition": "abundant in quantity",
     "band": 3
   },
   {
-    "id": 471,
+    "id": 3762952629543161,
     "word": "credulous",
     "pos": "adj",
     "definition": "too ready to believe",
     "band": 3
   },
   {
-    "id": 472,
+    "id": 1307821011027796,
     "word": "cursory",
     "pos": "adj",
     "definition": "hasty and superficial",
     "band": 3
   },
   {
-    "id": 473,
+    "id": 1728027597117374,
     "word": "dearth",
     "pos": "n",
     "definition": "a scarcity",
     "band": 3
   },
   {
-    "id": 474,
+    "id": 1604630587921793,
     "word": "debacle",
     "pos": "n",
     "definition": "a sudden and ignominious collapse",
     "band": 3
   },
   {
-    "id": 475,
+    "id": 4368222967478056,
     "word": "debase",
     "pos": "v",
     "definition": "to lower in quality or value",
     "band": 3
   },
   {
-    "id": 476,
+    "id": 1316230344045172,
     "word": "decadent",
     "pos": "adj",
     "definition": "marked by moral decline",
     "band": 3
   },
   {
-    "id": 477,
+    "id": 1361455492867616,
     "word": "decrepit",
     "pos": "adj",
     "definition": "worn out by age or use",
     "band": 3
   },
   {
-    "id": 478,
+    "id": 3279642187031641,
     "word": "deference",
     "pos": "n",
     "definition": "respectful submission to another",
     "band": 3
   },
   {
-    "id": 479,
+    "id": 2946249261428878,
     "word": "defile",
     "pos": "v",
     "definition": "to make impure",
     "band": 3
   },
   {
-    "id": 480,
+    "id": 640022929963514,
     "word": "deleterious",
     "pos": "adj",
     "definition": "causing harm",
     "band": 3
   },
   {
-    "id": 481,
+    "id": 1267315011632103,
     "word": "delineate",
     "pos": "v",
     "definition": "to describe or outline precisely",
     "band": 3
   },
   {
-    "id": 482,
+    "id": 1733317068533454,
     "word": "demur",
     "pos": "v",
     "definition": "to raise objections or hesitate",
     "band": 3
   },
   {
-    "id": 483,
+    "id": 4001472413080318,
     "word": "denizen",
     "pos": "n",
     "definition": "an inhabitant",
     "band": 3
   },
   {
-    "id": 484,
+    "id": 2111314920895899,
     "word": "denounce",
     "pos": "v",
     "definition": "to publicly condemn",
     "band": 3
   },
   {
-    "id": 485,
+    "id": 1265601444331093,
     "word": "deprecate",
     "pos": "v",
     "definition": "to express disapproval of",
     "band": 3
   },
   {
-    "id": 486,
+    "id": 1711506677863898,
     "word": "deride",
     "pos": "v",
     "definition": "to mock contemptuously",
     "band": 3
   },
   {
-    "id": 487,
+    "id": 1097332021145112,
     "word": "despondent",
     "pos": "adj",
     "definition": "in low spirits from loss of hope",
     "band": 3
   },
   {
-    "id": 488,
+    "id": 4227778694316880,
     "word": "desultory",
     "pos": "adj",
     "definition": "lacking a plan; moving randomly",
     "band": 3
   },
   {
-    "id": 489,
+    "id": 2426504305713467,
     "word": "dexterous",
     "pos": "adj",
     "definition": "skillful with the hands or mind",
     "band": 3
   },
   {
-    "id": 490,
+    "id": 2402972863325761,
     "word": "didactic",
     "pos": "adj",
     "definition": "intended to instruct, often moralizing",
     "band": 3
   },
   {
-    "id": 491,
+    "id": 3494466277878534,
     "word": "dilatory",
     "pos": "adj",
     "definition": "slow to act; intended to cause delay",
     "band": 3
   },
   {
-    "id": 492,
+    "id": 3619553258877745,
     "word": "disconcert",
     "pos": "v",
     "definition": "to unsettle or confuse",
     "band": 3
   },
   {
-    "id": 493,
+    "id": 3540725625150769,
     "word": "discord",
     "pos": "n",
     "definition": "lack of harmony or agreement",
     "band": 3
   },
   {
-    "id": 494,
+    "id": 4354121115106280,
     "word": "discrete",
     "pos": "adj",
     "definition": "individually separate and distinct",
     "band": 3
   },
   {
-    "id": 495,
+    "id": 2750222377355234,
     "word": "disdain",
     "pos": "n",
     "definition": "contempt for something unworthy",
     "band": 3
   },
   {
-    "id": 496,
+    "id": 1838375904809623,
     "word": "disparage",
     "pos": "v",
     "definition": "to belittle",
     "band": 3
   },
   {
-    "id": 497,
+    "id": 1205477250086458,
     "word": "disparate",
     "pos": "adj",
     "definition": "essentially different and unrelated",
     "band": 3
   },
   {
-    "id": 498,
+    "id": 3523619062182686,
     "word": "dispassionate",
     "pos": "adj",
     "definition": "unaffected by emotion; impartial",
     "band": 3
   },
   {
-    "id": 499,
+    "id": 515895842724742,
     "word": "dissonance",
     "pos": "n",
     "definition": "lack of harmony",
     "band": 3
   },
   {
-    "id": 500,
+    "id": 2202023170382709,
     "word": "dogmatic",
     "pos": "adj",
     "definition": "asserting opinions as undeniable truth",
     "band": 3
   },
   {
-    "id": 501,
+    "id": 2507313398819342,
     "word": "ebb",
     "pos": "v",
     "definition": "to recede or decline",
     "band": 3
   },
   {
-    "id": 502,
+    "id": 3994955932424959,
     "word": "eclectic",
     "pos": "adj",
     "definition": "drawing from many sources",
     "band": 3
   },
   {
-    "id": 503,
+    "id": 911034126482344,
     "word": "efface",
     "pos": "v",
     "definition": "to erase or rub out",
     "band": 3
   },
   {
-    "id": 504,
+    "id": 2756746136080820,
     "word": "effrontery",
     "pos": "n",
     "definition": "shameless boldness",
     "band": 3
   },
   {
-    "id": 505,
+    "id": 884441219197818,
     "word": "effusive",
     "pos": "adj",
     "definition": "expressing emotion in an unrestrained way",
     "band": 3
   },
   {
-    "id": 506,
+    "id": 2704273255638643,
     "word": "egregious",
     "pos": "adj",
     "definition": "outstandingly bad",
     "band": 3
   },
   {
-    "id": 507,
+    "id": 2561328389332785,
     "word": "elicit",
     "pos": "v",
     "definition": "to draw out a response or fact",
     "band": 3
   },
   {
-    "id": 508,
+    "id": 2462557487640712,
     "word": "emaciated",
     "pos": "adj",
     "definition": "abnormally thin from hunger",
     "band": 3
   },
   {
-    "id": 509,
+    "id": 3818701965116176,
     "word": "embellish",
     "pos": "v",
     "definition": "to decorate or exaggerate",
     "band": 3
   },
   {
-    "id": 510,
+    "id": 496901028628493,
     "word": "enervate",
     "pos": "v",
     "definition": "to drain of energy",
     "band": 3
   },
   {
-    "id": 511,
+    "id": 1799169216060790,
     "word": "enigmatic",
     "pos": "adj",
     "definition": "mysterious and hard to interpret",
     "band": 3
   },
   {
-    "id": 512,
+    "id": 1649057974384836,
     "word": "enmesh",
     "pos": "v",
     "definition": "to entangle",
     "band": 3
   },
   {
-    "id": 513,
+    "id": 1073211230428670,
     "word": "ephemeral",
     "pos": "adj",
     "definition": "lasting for a very short time",
     "band": 3
   },
   {
-    "id": 514,
+    "id": 1287381176141969,
     "word": "epitome",
     "pos": "n",
     "definition": "a perfect example",
     "band": 3
   },
   {
-    "id": 515,
+    "id": 3484537933386739,
     "word": "equitable",
     "pos": "adj",
     "definition": "fair and impartial",
     "band": 3
   },
   {
-    "id": 516,
+    "id": 2896170237223853,
     "word": "equivocal",
     "pos": "adj",
     "definition": "open to more than one interpretation",
     "band": 3
   },
   {
-    "id": 517,
+    "id": 2502688750871217,
     "word": "erudite",
     "pos": "adj",
     "definition": "having or showing great learning",
     "band": 3
   },
   {
-    "id": 518,
+    "id": 2383009392774942,
     "word": "ethereal",
     "pos": "adj",
     "definition": "delicate and light; heavenly",
     "band": 3
   },
   {
-    "id": 519,
+    "id": 733319550321202,
     "word": "exacerbate",
     "pos": "v",
     "definition": "to make worse",
     "band": 3
   },
   {
-    "id": 520,
+    "id": 2573359364876465,
     "word": "exonerate",
     "pos": "v",
     "definition": "to clear of blame",
     "band": 3
   },
   {
-    "id": 521,
+    "id": 1924409996887441,
     "word": "expedient",
     "pos": "adj",
     "definition": "convenient and practical",
     "band": 3
   },
   {
-    "id": 522,
+    "id": 1154783831919166,
     "word": "extant",
     "pos": "adj",
     "definition": "still in existence",
     "band": 3
   },
   {
-    "id": 523,
+    "id": 2409626609100480,
     "word": "extol",
     "pos": "v",
     "definition": "to praise enthusiastically",
     "band": 3
   },
   {
-    "id": 524,
+    "id": 31012801568290,
     "word": "facetious",
     "pos": "adj",
     "definition": "flippant about serious matters",
     "band": 3
   },
   {
-    "id": 525,
+    "id": 831650555625163,
     "word": "fallacy",
     "pos": "n",
     "definition": "a mistaken belief or flawed reasoning",
     "band": 3
   },
   {
-    "id": 526,
+    "id": 4352242767428292,
     "word": "fastidious",
     "pos": "adj",
     "definition": "very attentive to detail; hard to please",
     "band": 3
   },
   {
-    "id": 527,
+    "id": 7621014415357,
     "word": "fathom",
     "pos": "v",
     "definition": "to understand deeply",
     "band": 3
   },
   {
-    "id": 528,
+    "id": 649313040975899,
     "word": "feign",
     "pos": "v",
     "definition": "to pretend or fake",
     "band": 3
   },
   {
-    "id": 529,
+    "id": 1731499654076563,
     "word": "fervent",
     "pos": "adj",
     "definition": "intensely passionate",
     "band": 3
   },
   {
-    "id": 530,
+    "id": 1449371930232908,
     "word": "flout",
     "pos": "v",
     "definition": "to openly disregard a rule",
     "band": 3
   },
   {
-    "id": 531,
+    "id": 588107297864098,
     "word": "fortuitous",
     "pos": "adj",
     "definition": "happening by lucky chance",
     "band": 3
   },
   {
-    "id": 532,
+    "id": 1833081302431540,
     "word": "frenetic",
     "pos": "adj",
     "definition": "fast and energetic in a wild way",
     "band": 3
   },
   {
-    "id": 533,
+    "id": 3736487813907503,
     "word": "furtive",
     "pos": "adj",
     "definition": "secretive and stealthy",
     "band": 3
   },
   {
-    "id": 534,
+    "id": 3092166251854673,
     "word": "gambol",
     "pos": "v",
     "definition": "to run and leap playfully",
     "band": 3
   },
   {
-    "id": 535,
+    "id": 4239809952154681,
     "word": "garish",
     "pos": "adj",
     "definition": "obtrusively bright and showy",
     "band": 3
   },
   {
-    "id": 536,
+    "id": 1068714021929475,
     "word": "garrulous",
     "pos": "adj",
     "definition": "excessively talkative",
     "band": 3
   },
   {
-    "id": 537,
+    "id": 713814102059684,
     "word": "germane",
     "pos": "adj",
     "definition": "relevant to the matter at hand",
     "band": 3
   },
   {
-    "id": 538,
+    "id": 172549052986126,
     "word": "grandiose",
     "pos": "adj",
     "definition": "impressive or intended to impress; pompous",
     "band": 3
   },
   {
-    "id": 539,
+    "id": 450718179730690,
     "word": "gratuitous",
     "pos": "adj",
     "definition": "uncalled for; unwarranted",
     "band": 3
   },
   {
-    "id": 540,
+    "id": 1034385744430978,
     "word": "guile",
     "pos": "n",
     "definition": "sly cunning or deceit",
     "band": 3
   },
   {
-    "id": 541,
+    "id": 3875883414174540,
     "word": "guileless",
     "pos": "adj",
     "definition": "sincere and without deceit",
     "band": 3
   },
   {
-    "id": 542,
+    "id": 3063299826575976,
     "word": "hapless",
     "pos": "adj",
     "definition": "unlucky",
     "band": 3
   },
   {
-    "id": 543,
+    "id": 177644954980719,
     "word": "harrow",
     "pos": "v",
     "definition": "to distress greatly",
     "band": 3
   },
   {
-    "id": 544,
+    "id": 2552393218564426,
     "word": "heinous",
     "pos": "adj",
     "definition": "utterly wicked",
     "band": 3
   },
   {
-    "id": 545,
+    "id": 256075983688876,
     "word": "hubris",
     "pos": "n",
     "definition": "excessive pride or self-confidence",
     "band": 3
   },
   {
-    "id": 546,
+    "id": 2577746484954910,
     "word": "idyllic",
     "pos": "adj",
     "definition": "blissfully peaceful and picturesque",
     "band": 3
   },
   {
-    "id": 547,
+    "id": 3540669689459908,
     "word": "ignoble",
     "pos": "adj",
     "definition": "dishonorable; low in character",
     "band": 3
   },
   {
-    "id": 548,
+    "id": 2038094924378398,
     "word": "imminent",
     "pos": "adj",
     "definition": "about to happen",
     "band": 3
   },
   {
-    "id": 549,
+    "id": 3442755223774484,
     "word": "impasse",
     "pos": "n",
     "definition": "a deadlock",
     "band": 3
   },
   {
-    "id": 550,
+    "id": 1014518506109195,
     "word": "impede",
     "pos": "v",
     "definition": "to obstruct or delay",
     "band": 3
   },
   {
-    "id": 551,
+    "id": 3938225614191387,
     "word": "impervious",
     "pos": "adj",
     "definition": "unable to be affected or penetrated",
     "band": 3
   },
   {
-    "id": 552,
+    "id": 714810880903547,
     "word": "impetus",
     "pos": "n",
     "definition": "a driving force",
     "band": 3
   },
   {
-    "id": 553,
+    "id": 4468383541182065,
     "word": "implacable",
     "pos": "adj",
     "definition": "unable to be appeased",
     "band": 3
   },
   {
-    "id": 554,
+    "id": 2478537237813006,
     "word": "inane",
     "pos": "adj",
     "definition": "silly and empty",
     "band": 3
   },
   {
-    "id": 555,
+    "id": 1225635752552983,
     "word": "incisive",
     "pos": "adj",
     "definition": "sharply clear and direct",
     "band": 3
   },
   {
-    "id": 556,
+    "id": 4158204949140193,
     "word": "incongruous",
     "pos": "adj",
     "definition": "out of place; inconsistent",
     "band": 3
   },
   {
-    "id": 557,
+    "id": 1675050667664440,
     "word": "indigent",
     "pos": "adj",
     "definition": "poor and needy",
     "band": 3
   },
   {
-    "id": 558,
+    "id": 617306807626298,
     "word": "indignant",
     "pos": "adj",
     "definition": "angry at unfairness",
     "band": 3
   },
   {
-    "id": 559,
+    "id": 2348725607320816,
     "word": "indolent",
     "pos": "adj",
     "definition": "habitually lazy",
     "band": 3
   },
   {
-    "id": 560,
+    "id": 2989758669676099,
     "word": "indomitable",
     "pos": "adj",
     "definition": "impossible to subdue",
     "band": 3
   },
   {
-    "id": 561,
+    "id": 1413207671027113,
     "word": "ingenuous",
     "pos": "adj",
     "definition": "innocent, frank, and unsuspecting",
     "band": 3
   },
   {
-    "id": 562,
+    "id": 345930929370850,
     "word": "inimical",
     "pos": "adj",
     "definition": "harmful or hostile",
     "band": 3
   },
   {
-    "id": 563,
+    "id": 4265431470466735,
     "word": "innocuous",
     "pos": "adj",
     "definition": "harmless",
     "band": 3
   },
   {
-    "id": 564,
+    "id": 981839998431197,
     "word": "inscrutable",
     "pos": "adj",
     "definition": "impossible to interpret",
     "band": 3
   },
   {
-    "id": 565,
+    "id": 2000827007820875,
     "word": "insipid",
     "pos": "adj",
     "definition": "lacking flavor or interest",
     "band": 3
   },
   {
-    "id": 566,
+    "id": 718645617792789,
     "word": "insolent",
     "pos": "adj",
     "definition": "rudely disrespectful",
     "band": 3
   },
   {
-    "id": 567,
+    "id": 2769981383862721,
     "word": "intractable",
     "pos": "adj",
     "definition": "hard to control or deal with",
     "band": 3
   },
   {
-    "id": 568,
+    "id": 3333531332937451,
     "word": "intrepid",
     "pos": "adj",
     "definition": "fearless and adventurous",
     "band": 3
   },
   {
-    "id": 569,
+    "id": 3574094423188598,
     "word": "intrinsic",
     "pos": "adj",
     "definition": "belonging naturally; essential",
     "band": 3
   },
   {
-    "id": 570,
+    "id": 572565891406525,
     "word": "inundate",
     "pos": "v",
     "definition": "to overwhelm or flood",
     "band": 3
   },
   {
-    "id": 571,
+    "id": 1750409372589878,
     "word": "jocular",
     "pos": "adj",
     "definition": "fond of joking",
     "band": 3
   },
   {
-    "id": 572,
+    "id": 2962665565451147,
     "word": "juxtapose",
     "pos": "v",
     "definition": "to place side by side for contrast",
     "band": 3
   },
   {
-    "id": 573,
+    "id": 2240121959157156,
     "word": "laconic",
     "pos": "adj",
     "definition": "using very few words",
     "band": 3
   },
   {
-    "id": 574,
+    "id": 3771477015362688,
     "word": "languid",
     "pos": "adj",
     "definition": "pleasantly slow and relaxed; sluggish",
     "band": 3
   },
   {
-    "id": 575,
+    "id": 4012765103684035,
     "word": "languor",
     "pos": "n",
     "definition": "pleasant tiredness; lack of energy",
     "band": 3
   },
   {
-    "id": 576,
+    "id": 1222743665089801,
     "word": "laudable",
     "pos": "adj",
     "definition": "deserving praise",
     "band": 3
   },
   {
-    "id": 577,
+    "id": 1660942342404406,
     "word": "lethargic",
     "pos": "adj",
     "definition": "sluggish and lacking energy",
     "band": 3
   },
   {
-    "id": 578,
+    "id": 3388353313138627,
     "word": "lethargy",
     "pos": "n",
     "definition": "a lack of energy",
     "band": 3
   },
   {
-    "id": 579,
+    "id": 1035481408383699,
     "word": "levity",
     "pos": "n",
     "definition": "humor or lightness, especially when inappropriate",
     "band": 3
   },
   {
-    "id": 580,
+    "id": 1029042333481295,
     "word": "lucid",
     "pos": "adj",
     "definition": "clear and easy to understand",
     "band": 3
   },
   {
-    "id": 581,
+    "id": 3108380315499846,
     "word": "lucidity",
     "pos": "n",
     "definition": "clearness of thought or expression",
     "band": 3
   },
   {
-    "id": 582,
+    "id": 785426624405248,
     "word": "magnanimous",
     "pos": "adj",
     "definition": "generous and forgiving",
     "band": 3
   },
   {
-    "id": 583,
+    "id": 2649670332354309,
     "word": "malaise",
     "pos": "n",
     "definition": "a vague feeling of unease",
     "band": 3
   },
   {
-    "id": 584,
+    "id": 962984763599113,
     "word": "malleable",
     "pos": "adj",
     "definition": "easily shaped or influenced",
     "band": 3
   },
   {
-    "id": 585,
+    "id": 1629019820268290,
     "word": "maverick",
     "pos": "n",
     "definition": "an unconventional, independent person",
     "band": 3
   },
   {
-    "id": 586,
+    "id": 2967529797493718,
     "word": "meander",
     "pos": "v",
     "definition": "to wander aimlessly",
     "band": 3
   },
   {
-    "id": 587,
+    "id": 1725437393700281,
     "word": "morass",
     "pos": "n",
     "definition": "a complicated, confused situation",
     "band": 3
   },
   {
-    "id": 588,
+    "id": 1307239868760735,
     "word": "morose",
     "pos": "adj",
     "definition": "sullen and ill-tempered",
     "band": 3
   },
   {
-    "id": 589,
+    "id": 510617234431111,
     "word": "mundane",
     "pos": "adj",
     "definition": "dull and ordinary",
     "band": 3
   },
   {
-    "id": 590,
+    "id": 2950616469896773,
     "word": "nadir",
     "pos": "n",
     "definition": "the lowest point",
     "band": 3
   },
   {
-    "id": 591,
+    "id": 41419592872570,
     "word": "nebulous",
     "pos": "adj",
     "definition": "vague or ill-defined",
     "band": 3
   },
   {
-    "id": 592,
+    "id": 1555628875452673,
     "word": "nominal",
     "pos": "adj",
     "definition": "in name only; very small",
     "band": 3
   },
   {
-    "id": 593,
+    "id": 2733232705361580,
     "word": "nonchalance",
     "pos": "n",
     "definition": "casual lack of concern",
     "band": 3
   },
   {
-    "id": 594,
+    "id": 2929020736737353,
     "word": "nostalgia",
     "pos": "n",
     "definition": "a wistful longing for the past",
     "band": 3
   },
   {
-    "id": 595,
+    "id": 3002942126776823,
     "word": "obscurity",
     "pos": "n",
     "definition": "the state of being unknown or unclear",
     "band": 3
   },
   {
-    "id": 596,
+    "id": 3877522441921994,
     "word": "obsolete",
     "pos": "adj",
     "definition": "no longer in use",
     "band": 3
   },
   {
-    "id": 597,
+    "id": 2103312628533014,
     "word": "obtuse",
     "pos": "adj",
     "definition": "slow to understand",
     "band": 3
   },
   {
-    "id": 598,
+    "id": 3640889344171268,
     "word": "officious",
     "pos": "adj",
     "definition": "meddlesome in offering unwanted help",
     "band": 3
   },
   {
-    "id": 599,
+    "id": 2932519295139057,
     "word": "onerous",
     "pos": "adj",
     "definition": "involving heavy effort or burden",
     "band": 3
   },
   {
-    "id": 600,
+    "id": 622843363454671,
     "word": "opaque",
     "pos": "adj",
     "definition": "not transparent; hard to understand",
     "band": 3
   },
   {
-    "id": 601,
+    "id": 3158787244089665,
     "word": "ostensible",
     "pos": "adj",
     "definition": "apparent but not necessarily true",
     "band": 3
   },
   {
-    "id": 602,
+    "id": 4235617163381717,
     "word": "ostentatious",
     "pos": "adj",
     "definition": "showy in a way meant to impress",
     "band": 3
   },
   {
-    "id": 603,
+    "id": 2771691456554658,
     "word": "overwrought",
     "pos": "adj",
     "definition": "in a state of nervous excitement",
     "band": 3
   },
   {
-    "id": 604,
+    "id": 1981275490193554,
     "word": "palatable",
     "pos": "adj",
     "definition": "pleasant to taste or accept",
     "band": 3
   },
   {
-    "id": 605,
+    "id": 2597488655643006,
     "word": "paradox",
     "pos": "n",
     "definition": "a self-contradictory but possibly true statement",
     "band": 3
   },
   {
-    "id": 606,
+    "id": 3364995099532722,
     "word": "paragon",
     "pos": "n",
     "definition": "a model of excellence",
     "band": 3
   },
   {
-    "id": 607,
+    "id": 1075984274172637,
     "word": "paroxysm",
     "pos": "n",
     "definition": "a sudden violent outburst",
     "band": 3
   },
   {
-    "id": 608,
+    "id": 496429358219250,
     "word": "penury",
     "pos": "n",
     "definition": "extreme poverty",
     "band": 3
   },
   {
-    "id": 609,
+    "id": 918436563041740,
     "word": "pervade",
     "pos": "v",
     "definition": "to spread through all parts of",
     "band": 3
   },
   {
-    "id": 610,
+    "id": 3795673003257422,
     "word": "petulant",
     "pos": "adj",
     "definition": "childishly sulky or irritable",
     "band": 3
   },
   {
-    "id": 611,
+    "id": 4041613925585223,
     "word": "placate",
     "pos": "v",
     "definition": "to soothe or pacify",
     "band": 3
   },
   {
-    "id": 612,
+    "id": 2106817789435726,
     "word": "plethora",
     "pos": "n",
     "definition": "an overabundance",
     "band": 3
   },
   {
-    "id": 613,
+    "id": 2907007955904799,
     "word": "poignant",
     "pos": "adj",
     "definition": "keenly affecting the emotions",
     "band": 3
   },
   {
-    "id": 614,
+    "id": 1015014492125490,
     "word": "pompous",
     "pos": "adj",
     "definition": "self-important and pretentious",
     "band": 3
   },
   {
-    "id": 615,
+    "id": 2851080150949987,
     "word": "ponderous",
     "pos": "adj",
     "definition": "slow and clumsy from weight",
     "band": 3
   },
   {
-    "id": 616,
+    "id": 2824810706208249,
     "word": "precarious",
     "pos": "adj",
     "definition": "dangerously insecure",
     "band": 3
   },
   {
-    "id": 617,
+    "id": 2841161253048791,
     "word": "precipitate",
     "pos": "v",
     "definition": "to cause to happen suddenly",
     "band": 3
   },
   {
-    "id": 618,
+    "id": 1603257906338723,
     "word": "precocious",
     "pos": "adj",
     "definition": "advanced beyond one's age",
     "band": 3
   },
   {
-    "id": 619,
+    "id": 1427750994786742,
     "word": "pretext",
     "pos": "n",
     "definition": "a false reason given to hide the real one",
     "band": 3
   },
   {
-    "id": 620,
+    "id": 3548335604530551,
     "word": "proclivity",
     "pos": "n",
     "definition": "a natural inclination",
     "band": 3
   },
   {
-    "id": 621,
+    "id": 671402589587527,
     "word": "prodigious",
     "pos": "adj",
     "definition": "remarkably great in size or degree",
     "band": 3
   },
   {
-    "id": 622,
+    "id": 238085334286657,
     "word": "profound",
     "pos": "adj",
     "definition": "very deep in meaning or feeling",
     "band": 3
   },
   {
-    "id": 623,
+    "id": 150597317661937,
     "word": "profuse",
     "pos": "adj",
     "definition": "abundant; given freely",
     "band": 3
   },
   {
-    "id": 624,
+    "id": 3630179996046976,
     "word": "prolific",
     "pos": "adj",
     "definition": "producing abundantly",
     "band": 3
   },
   {
-    "id": 625,
+    "id": 3848980336146174,
     "word": "qualm",
     "pos": "n",
     "definition": "an uneasy feeling of doubt",
     "band": 3
   },
   {
-    "id": 626,
+    "id": 652083039060929,
     "word": "quandary",
     "pos": "n",
     "definition": "a state of uncertainty or perplexity",
     "band": 3
   },
   {
-    "id": 627,
+    "id": 1245382764564331,
     "word": "rancorous",
     "pos": "adj",
     "definition": "full of bitter resentment",
     "band": 3
   },
   {
-    "id": 628,
+    "id": 3781732386502539,
     "word": "rapport",
     "pos": "n",
     "definition": "a close, harmonious relationship",
     "band": 3
   },
   {
-    "id": 629,
+    "id": 3292681237348083,
     "word": "rebuke",
     "pos": "v",
     "definition": "to sharply criticize",
     "band": 3
   },
   {
-    "id": 630,
+    "id": 1380062525660418,
     "word": "recoup",
     "pos": "v",
     "definition": "to regain or recover",
     "band": 3
   },
   {
-    "id": 631,
+    "id": 4434253975660931,
     "word": "redolent",
     "pos": "adj",
     "definition": "strongly reminiscent or fragrant",
     "band": 3
   },
   {
-    "id": 632,
+    "id": 2470216665916,
     "word": "relegate",
     "pos": "v",
     "definition": "to consign to a lower rank",
     "band": 3
   },
   {
-    "id": 633,
+    "id": 941414517746789,
     "word": "relinquish",
     "pos": "v",
     "definition": "to voluntarily give up",
     "band": 3
   },
   {
-    "id": 634,
+    "id": 400053421791320,
     "word": "remorse",
     "pos": "n",
     "definition": "deep regret for wrongdoing",
     "band": 3
   },
   {
-    "id": 635,
+    "id": 4046480538106758,
     "word": "replete",
     "pos": "adj",
     "definition": "filled or well-supplied",
     "band": 3
   },
   {
-    "id": 636,
+    "id": 1583656312525493,
     "word": "reprehensible",
     "pos": "adj",
     "definition": "deserving condemnation",
     "band": 3
   },
   {
-    "id": 637,
+    "id": 4351467839425585,
     "word": "rescind",
     "pos": "v",
     "definition": "to revoke or cancel",
     "band": 3
   },
   {
-    "id": 638,
+    "id": 710737270186040,
     "word": "resolute",
     "pos": "adj",
     "definition": "firmly determined",
     "band": 3
   },
   {
-    "id": 639,
+    "id": 3260959734772289,
     "word": "respite",
     "pos": "n",
     "definition": "a short rest from something difficult",
     "band": 3
   },
   {
-    "id": 640,
+    "id": 3424270112155340,
     "word": "reverent",
     "pos": "adj",
     "definition": "feeling or showing deep respect",
     "band": 3
   },
   {
-    "id": 641,
+    "id": 2970179432396118,
     "word": "reverie",
     "pos": "n",
     "definition": "a state of pleasant daydreaming",
     "band": 3
   },
   {
-    "id": 642,
+    "id": 173328026243151,
     "word": "rudimentary",
     "pos": "adj",
     "definition": "basic and undeveloped",
     "band": 3
   },
   {
-    "id": 643,
+    "id": 1320131851705203,
     "word": "ruminate",
     "pos": "v",
     "definition": "to think deeply about",
     "band": 3
   },
   {
-    "id": 644,
+    "id": 4070236479395499,
     "word": "sagacious",
     "pos": "adj",
     "definition": "wise and shrewd",
     "band": 3
   },
   {
-    "id": 645,
+    "id": 182578006317045,
     "word": "salient",
     "pos": "adj",
     "definition": "most noticeable or important",
     "band": 3
   },
   {
-    "id": 646,
+    "id": 4063705262555243,
     "word": "sanguine",
     "pos": "adj",
     "definition": "cheerfully optimistic",
     "band": 3
   },
   {
-    "id": 647,
+    "id": 1552385866891750,
     "word": "scrupulous",
     "pos": "adj",
     "definition": "careful, thorough, and principled",
     "band": 3
   },
   {
-    "id": 648,
+    "id": 3430441837947778,
     "word": "serendipity",
     "pos": "n",
     "definition": "a fortunate accidental discovery",
     "band": 3
   },
   {
-    "id": 649,
+    "id": 1193807380932111,
     "word": "servile",
     "pos": "adj",
     "definition": "excessively submissive",
     "band": 3
   },
   {
-    "id": 650,
+    "id": 1315499026344749,
     "word": "slothful",
     "pos": "adj",
     "definition": "lazy",
     "band": 3
   },
   {
-    "id": 651,
+    "id": 3436704658349751,
     "word": "spurious",
     "pos": "adj",
     "definition": "false or not genuine",
     "band": 3
   },
   {
-    "id": 652,
+    "id": 1753821050085517,
     "word": "squander",
     "pos": "v",
     "definition": "to waste recklessly",
     "band": 3
   },
   {
-    "id": 653,
+    "id": 4127031992089136,
     "word": "stagnant",
     "pos": "adj",
     "definition": "not flowing; inactive",
     "band": 3
   },
   {
-    "id": 654,
+    "id": 3632086508185227,
     "word": "staid",
     "pos": "adj",
     "definition": "sedate and conventional",
     "band": 3
   },
   {
-    "id": 655,
+    "id": 1337441907658595,
     "word": "stoic",
     "pos": "adj",
     "definition": "enduring hardship without showing feeling",
     "band": 3
   },
   {
-    "id": 656,
+    "id": 4175722485630137,
     "word": "stoke",
     "pos": "v",
     "definition": "to stir up or intensify",
     "band": 3
   },
   {
-    "id": 657,
+    "id": 2455479174955516,
     "word": "stymie",
     "pos": "v",
     "definition": "to block or thwart",
     "band": 3
   },
   {
-    "id": 658,
+    "id": 1845868961433299,
     "word": "subjugate",
     "pos": "v",
     "definition": "to bring under domination",
     "band": 3
   },
   {
-    "id": 659,
+    "id": 463449482462260,
     "word": "sublime",
     "pos": "adj",
     "definition": "of awe-inspiring grandeur",
     "band": 3
   },
   {
-    "id": 660,
+    "id": 393962826485389,
     "word": "succinct",
     "pos": "adj",
     "definition": "briefly and clearly expressed",
     "band": 3
   },
   {
-    "id": 661,
+    "id": 2044046101838425,
     "word": "succumb",
     "pos": "v",
     "definition": "to yield or give way",
     "band": 3
   },
   {
-    "id": 662,
+    "id": 3468142112872415,
     "word": "surfeit",
     "pos": "n",
     "definition": "an excessive amount",
     "band": 3
   },
   {
-    "id": 663,
+    "id": 3590682128814715,
     "word": "tactful",
     "pos": "adj",
     "definition": "skilled at avoiding giving offense",
     "band": 3
   },
   {
-    "id": 664,
+    "id": 3485058568052886,
     "word": "tangible",
     "pos": "adj",
     "definition": "perceptible by touch; real",
     "band": 3
   },
   {
-    "id": 665,
+    "id": 1799158632530912,
     "word": "temerity",
     "pos": "n",
     "definition": "reckless boldness",
     "band": 3
   },
   {
-    "id": 666,
+    "id": 3302057247168157,
     "word": "tenuous",
     "pos": "adj",
     "definition": "weak, slight, or flimsy",
     "band": 3
   },
   {
-    "id": 667,
+    "id": 3073418836583261,
     "word": "tirade",
     "pos": "n",
     "definition": "a long, angry speech",
     "band": 3
   },
   {
-    "id": 668,
+    "id": 3077419120683130,
     "word": "transient",
     "pos": "adj",
     "definition": "lasting only a short time",
     "band": 3
   },
   {
-    "id": 669,
+    "id": 995451515818850,
     "word": "trite",
     "pos": "adj",
     "definition": "overused and lacking originality",
     "band": 3
   },
   {
-    "id": 670,
+    "id": 4194384313366830,
     "word": "turbulent",
     "pos": "adj",
     "definition": "full of disorder or violent motion",
     "band": 3
   },
   {
-    "id": 671,
+    "id": 2835890763009964,
     "word": "ubiquitous",
     "pos": "adj",
     "definition": "present everywhere at once",
     "band": 3
   },
   {
-    "id": 672,
+    "id": 2230703735616815,
     "word": "undermine",
     "pos": "v",
     "definition": "to weaken gradually",
     "band": 3
   },
   {
-    "id": 673,
+    "id": 4317823430344438,
     "word": "unwitting",
     "pos": "adj",
     "definition": "not aware; unintentional",
     "band": 3
   },
   {
-    "id": 674,
+    "id": 104434998478959,
     "word": "vacillation",
     "pos": "n",
     "definition": "wavering between choices",
     "band": 3
   },
   {
-    "id": 675,
+    "id": 2704594537239274,
     "word": "vacuous",
     "pos": "adj",
     "definition": "empty of thought or meaning",
     "band": 3
   },
   {
-    "id": 676,
+    "id": 678439628778076,
     "word": "vanquish",
     "pos": "v",
     "definition": "to defeat thoroughly",
     "band": 3
   },
   {
-    "id": 677,
+    "id": 351649439568786,
     "word": "vehemence",
     "pos": "n",
     "definition": "forceful intensity of feeling",
     "band": 3
   },
   {
-    "id": 678,
+    "id": 52736128561130,
     "word": "venerable",
     "pos": "adj",
     "definition": "worthy of deep respect through age",
     "band": 3
   },
   {
-    "id": 679,
+    "id": 3213841118058945,
     "word": "venerate",
     "pos": "v",
     "definition": "to regard with deep respect",
     "band": 3
   },
   {
-    "id": 680,
+    "id": 1116255616660472,
     "word": "verbose",
     "pos": "adj",
     "definition": "using more words than needed",
     "band": 3
   },
   {
-    "id": 681,
+    "id": 3296870931213589,
     "word": "vestige",
     "pos": "n",
     "definition": "a remaining trace",
     "band": 3
   },
   {
-    "id": 682,
+    "id": 165736598344503,
     "word": "vex",
     "pos": "v",
     "definition": "to annoy or worry",
     "band": 3
   },
   {
-    "id": 683,
+    "id": 3817201692905324,
     "word": "vindicate",
     "pos": "v",
     "definition": "to clear of blame; to justify",
     "band": 3
   },
   {
-    "id": 684,
+    "id": 3592299891900620,
     "word": "voracious",
     "pos": "adj",
     "definition": "wanting great quantities; greedy",
     "band": 3
   },
   {
-    "id": 685,
+    "id": 670759673286868,
     "word": "wanton",
     "pos": "adj",
     "definition": "deliberate and unprovoked",
     "band": 3
   },
   {
-    "id": 686,
+    "id": 1466178795583224,
     "word": "wistful",
     "pos": "adj",
     "definition": "full of yearning or wishful sadness",
     "band": 3
   },
   {
-    "id": 687,
+    "id": 1979157116992353,
     "word": "zealot",
     "pos": "n",
     "definition": "a fanatical partisan",
     "band": 3
   },
   {
-    "id": 688,
+    "id": 2055354039287726,
     "word": "zealous",
     "pos": "adj",
     "definition": "fervently devoted to a cause",
     "band": 3
   },
   {
-    "id": 689,
+    "id": 2321809449666726,
     "word": "zenith",
     "pos": "n",
     "definition": "the highest point",
     "band": 3
   },
   {
-    "id": 690,
+    "id": 2157619866095177,
     "word": "abeyance",
     "pos": "n",
     "definition": "a state of temporary suspension",
     "band": 4
   },
   {
-    "id": 691,
+    "id": 4343777814782795,
     "word": "abrogate",
     "pos": "v",
     "definition": "to formally abolish or repeal",
     "band": 4
   },
   {
-    "id": 692,
+    "id": 1539809701455918,
     "word": "abscond",
     "pos": "v",
     "definition": "to flee secretly, often with stolen goods",
     "band": 4
   },
   {
-    "id": 693,
+    "id": 4454801290574264,
     "word": "acrid",
     "pos": "adj",
     "definition": "unpleasantly sharp or bitter",
     "band": 4
   },
   {
-    "id": 694,
+    "id": 3911056632803500,
     "word": "acumen",
     "pos": "n",
     "definition": "keen insight and good judgment",
     "band": 4
   },
   {
-    "id": 695,
+    "id": 4484371886365454,
     "word": "adamantine",
     "pos": "adj",
     "definition": "unbreakably firm",
     "band": 4
   },
   {
-    "id": 696,
+    "id": 1276043485014387,
     "word": "adjure",
     "pos": "v",
     "definition": "to urge or command solemnly",
     "band": 4
   },
   {
-    "id": 697,
+    "id": 3639620167061192,
     "word": "adumbrate",
     "pos": "v",
     "definition": "to outline or foreshadow faintly",
     "band": 4
   },
   {
-    "id": 698,
+    "id": 1931439022389478,
     "word": "aggrandize",
     "pos": "v",
     "definition": "to increase one's power or wealth",
     "band": 4
   },
   {
-    "id": 699,
+    "id": 4365659656457717,
     "word": "alacrity",
     "pos": "n",
     "definition": "brisk and cheerful eagerness",
     "band": 4
   },
   {
-    "id": 700,
+    "id": 3295262882772851,
     "word": "amalgamate",
     "pos": "v",
     "definition": "to combine into one",
     "band": 4
   },
   {
-    "id": 701,
+    "id": 3878272627541301,
     "word": "amenable",
     "pos": "adj",
     "definition": "open to suggestion; agreeable",
     "band": 4
   },
   {
-    "id": 702,
+    "id": 4382284264614315,
     "word": "anachronism",
     "pos": "n",
     "definition": "a thing out of its proper time",
     "band": 4
   },
   {
-    "id": 703,
+    "id": 1775015220400981,
     "word": "anathema",
     "pos": "n",
     "definition": "something or someone intensely detested",
     "band": 4
   },
   {
-    "id": 704,
+    "id": 1043914648100112,
     "word": "anodyne",
     "pos": "adj",
     "definition": "soothing; deliberately inoffensive",
     "band": 4
   },
   {
-    "id": 705,
+    "id": 2840050223862865,
     "word": "antipathy",
     "pos": "n",
     "definition": "deep-seated dislike",
     "band": 4
   },
   {
-    "id": 706,
+    "id": 709199926430580,
     "word": "antithesis",
     "pos": "n",
     "definition": "the exact opposite",
     "band": 4
   },
   {
-    "id": 707,
+    "id": 4039508051004337,
     "word": "apocryphal",
     "pos": "adj",
     "definition": "of doubtful authenticity",
     "band": 4
   },
   {
-    "id": 708,
+    "id": 46900600861118,
     "word": "apposite",
     "pos": "adj",
     "definition": "strikingly appropriate",
     "band": 4
   },
   {
-    "id": 709,
+    "id": 2977497777666140,
     "word": "approbation",
     "pos": "n",
     "definition": "warm approval or praise",
     "band": 4
   },
   {
-    "id": 710,
+    "id": 1937206668050501,
     "word": "approbatory",
     "pos": "adj",
     "definition": "expressing approval",
     "band": 4
   },
   {
-    "id": 711,
+    "id": 4077802661792855,
     "word": "arcane",
     "pos": "adj",
     "definition": "understood by few; mysterious",
     "band": 4
   },
   {
-    "id": 712,
+    "id": 618159503728930,
     "word": "arrogate",
     "pos": "v",
     "definition": "to claim or seize without right",
     "band": 4
   },
   {
-    "id": 713,
+    "id": 3383197613591984,
     "word": "artless",
     "pos": "adj",
     "definition": "without guile; natural",
     "band": 4
   },
   {
-    "id": 714,
+    "id": 489052588890913,
     "word": "ascetic",
     "pos": "adj",
     "definition": "severely self-disciplined and abstinent",
     "band": 4
   },
   {
-    "id": 715,
+    "id": 3748864242483420,
     "word": "assiduous",
     "pos": "adj",
     "definition": "showing great care and persistence",
     "band": 4
   },
   {
-    "id": 716,
+    "id": 4039228210616098,
     "word": "augury",
     "pos": "n",
     "definition": "a sign or omen of the future",
     "band": 4
   },
   {
-    "id": 717,
+    "id": 1938059158184816,
     "word": "austerity",
     "pos": "n",
     "definition": "stern simplicity; severe self-denial",
     "band": 4
   },
   {
-    "id": 718,
+    "id": 3805781650555632,
     "word": "avuncular",
     "pos": "adj",
     "definition": "kindly like an uncle",
     "band": 4
   },
   {
-    "id": 719,
+    "id": 457543957169539,
     "word": "baroque",
     "pos": "adj",
     "definition": "extravagantly ornate",
     "band": 4
   },
   {
-    "id": 720,
+    "id": 4403361147445792,
     "word": "beatific",
     "pos": "adj",
     "definition": "blissfully serene",
     "band": 4
   },
   {
-    "id": 721,
+    "id": 2702258022115012,
     "word": "bellicose",
     "pos": "adj",
     "definition": "eager to fight",
     "band": 4
   },
   {
-    "id": 722,
+    "id": 824297497911318,
     "word": "benediction",
     "pos": "n",
     "definition": "a blessing",
     "band": 4
   },
   {
-    "id": 723,
+    "id": 1950882571637026,
     "word": "blandishment",
     "pos": "n",
     "definition": "flattering speech meant to persuade",
     "band": 4
   },
   {
-    "id": 724,
+    "id": 3968534012460901,
     "word": "bombastic",
     "pos": "adj",
     "definition": "high-sounding but with little meaning",
     "band": 4
   },
   {
-    "id": 725,
+    "id": 1057187657225805,
     "word": "cacophony",
     "pos": "n",
     "definition": "a harsh, discordant mixture of sounds",
     "band": 4
   },
   {
-    "id": 726,
+    "id": 1069518979834239,
     "word": "cajole",
     "pos": "v",
     "definition": "to persuade by flattery",
     "band": 4
   },
   {
-    "id": 727,
+    "id": 4303104090260941,
     "word": "cantankerous",
     "pos": "adj",
     "definition": "bad-tempered and argumentative",
     "band": 4
   },
   {
-    "id": 728,
+    "id": 4334653784157846,
     "word": "castigate",
     "pos": "v",
     "definition": "to reprimand severely",
     "band": 4
   },
   {
-    "id": 729,
+    "id": 1298791541931106,
     "word": "celerity",
     "pos": "n",
     "definition": "swiftness",
     "band": 4
   },
   {
-    "id": 730,
+    "id": 653964203816100,
     "word": "chicanery",
     "pos": "n",
     "definition": "the use of trickery",
     "band": 4
   },
   {
-    "id": 731,
+    "id": 600675421917237,
     "word": "chimerical",
     "pos": "adj",
     "definition": "wildly fanciful; imaginary",
     "band": 4
   },
   {
-    "id": 732,
+    "id": 3440361897028055,
     "word": "circumlocution",
     "pos": "n",
     "definition": "roundabout, evasive speech",
     "band": 4
   },
   {
-    "id": 733,
+    "id": 216229008750027,
     "word": "circumspect",
     "pos": "adj",
     "definition": "cautious and considering all risks",
     "band": 4
   },
   {
-    "id": 734,
+    "id": 1165591293598525,
     "word": "coalesce",
     "pos": "v",
     "definition": "to come together into one",
     "band": 4
   },
   {
-    "id": 735,
+    "id": 2569199646372016,
     "word": "comport",
     "pos": "v",
     "definition": "to conduct oneself; to agree with",
     "band": 4
   },
   {
-    "id": 736,
+    "id": 1528400494254490,
     "word": "concomitant",
     "pos": "adj",
     "definition": "naturally accompanying",
     "band": 4
   },
   {
-    "id": 737,
+    "id": 115988245459397,
     "word": "conflagration",
     "pos": "n",
     "definition": "a large destructive fire",
     "band": 4
   },
   {
-    "id": 738,
+    "id": 2487559063820073,
     "word": "congenial",
     "pos": "adj",
     "definition": "pleasant and agreeable",
     "band": 4
   },
   {
-    "id": 739,
+    "id": 1095272305723074,
     "word": "contiguous",
     "pos": "adj",
     "definition": "sharing a border; adjacent",
     "band": 4
   },
   {
-    "id": 740,
+    "id": 3954124496681243,
     "word": "contrite",
     "pos": "adj",
     "definition": "feeling deep remorse",
     "band": 4
   },
   {
-    "id": 741,
+    "id": 3247464687748746,
     "word": "countenance",
     "pos": "v",
     "definition": "to tolerate or approve",
     "band": 4
   },
   {
-    "id": 742,
+    "id": 2297636124547453,
     "word": "craven",
     "pos": "adj",
     "definition": "contemptibly cowardly",
     "band": 4
   },
   {
-    "id": 743,
+    "id": 3672838093332477,
     "word": "culpable",
     "pos": "adj",
     "definition": "deserving blame",
     "band": 4
   },
   {
-    "id": 744,
+    "id": 2580911356891280,
     "word": "debauchery",
     "pos": "n",
     "definition": "excessive indulgence in pleasure",
     "band": 4
   },
   {
-    "id": 745,
+    "id": 1522802374680130,
     "word": "debilitate",
     "pos": "v",
     "definition": "to weaken",
     "band": 4
   },
   {
-    "id": 746,
+    "id": 3491440235651926,
     "word": "defunct",
     "pos": "adj",
     "definition": "no longer existing or functioning",
     "band": 4
   },
   {
-    "id": 747,
+    "id": 3580800098285633,
     "word": "demagogue",
     "pos": "n",
     "definition": "a leader who exploits popular passions",
     "band": 4
   },
   {
-    "id": 748,
+    "id": 342759599864614,
     "word": "denigrate",
     "pos": "v",
     "definition": "to belittle or disparage",
     "band": 4
   },
   {
-    "id": 749,
+    "id": 1961878497690706,
     "word": "desiccate",
     "pos": "v",
     "definition": "to dry out thoroughly",
     "band": 4
   },
   {
-    "id": 750,
+    "id": 2055058325848869,
     "word": "destitute",
     "pos": "adj",
     "definition": "extremely poor",
     "band": 4
   },
   {
-    "id": 751,
+    "id": 2780575612386024,
     "word": "diaphanous",
     "pos": "adj",
     "definition": "light, delicate, and translucent",
     "band": 4
   },
   {
-    "id": 752,
+    "id": 176047679071337,
     "word": "diatribe",
     "pos": "n",
     "definition": "a bitter and abusive verbal attack",
     "band": 4
   },
   {
-    "id": 753,
+    "id": 4304215701951094,
     "word": "dichotomy",
     "pos": "n",
     "definition": "a division into two opposed parts",
     "band": 4
   },
   {
-    "id": 754,
+    "id": 1056605052775076,
     "word": "disabuse",
     "pos": "v",
     "definition": "to free from a mistaken belief",
     "band": 4
   },
   {
-    "id": 755,
+    "id": 488654147114099,
     "word": "disparity",
     "pos": "n",
     "definition": "a great difference",
     "band": 4
   },
   {
-    "id": 756,
+    "id": 1469273874281403,
     "word": "dissemble",
     "pos": "v",
     "definition": "to conceal one's true motives",
     "band": 4
   },
   {
-    "id": 757,
+    "id": 1145165889543282,
     "word": "dolorous",
     "pos": "adj",
     "definition": "feeling or expressing great sorrow",
     "band": 4
   },
   {
-    "id": 758,
+    "id": 3138291152854889,
     "word": "duplicity",
     "pos": "n",
     "definition": "deceitful double-dealing",
     "band": 4
   },
   {
-    "id": 759,
+    "id": 1285351851529264,
     "word": "ebullient",
     "pos": "adj",
     "definition": "cheerful and full of energy",
     "band": 4
   },
   {
-    "id": 760,
+    "id": 3385840865765143,
     "word": "effervescent",
     "pos": "adj",
     "definition": "vivacious and enthusiastic",
     "band": 4
   },
   {
-    "id": 761,
+    "id": 1911292445602156,
     "word": "effete",
     "pos": "adj",
     "definition": "weak and decadent; worn out",
     "band": 4
   },
   {
-    "id": 762,
+    "id": 1700706410556324,
     "word": "elegy",
     "pos": "n",
     "definition": "a mournful poem, especially for the dead",
     "band": 4
   },
   {
-    "id": 763,
+    "id": 2212066073865917,
     "word": "emollient",
     "pos": "adj",
     "definition": "soothing",
     "band": 4
   },
   {
-    "id": 764,
+    "id": 446337486220369,
     "word": "endemic",
     "pos": "adj",
     "definition": "native to a particular place",
     "band": 4
   },
   {
-    "id": 765,
+    "id": 2918409326731714,
     "word": "enmity",
     "pos": "n",
     "definition": "deep-seated hostility",
     "band": 4
   },
   {
-    "id": 766,
+    "id": 1700160003059727,
     "word": "ennui",
     "pos": "n",
     "definition": "weary boredom from lack of interest",
     "band": 4
   },
   {
-    "id": 767,
+    "id": 3528204515035796,
     "word": "ephemera",
     "pos": "n",
     "definition": "things that last only briefly",
     "band": 4
   },
   {
-    "id": 768,
+    "id": 1925510850917964,
     "word": "epicure",
     "pos": "n",
     "definition": "one devoted to refined pleasures of the table",
     "band": 4
   },
   {
-    "id": 769,
+    "id": 4104458606827263,
     "word": "equanimity",
     "pos": "n",
     "definition": "calmness and composure under strain",
     "band": 4
   },
   {
-    "id": 770,
+    "id": 551605056595086,
     "word": "equivocate",
     "pos": "v",
     "definition": "to use ambiguous language to deceive",
     "band": 4
   },
   {
-    "id": 771,
+    "id": 3122647508816534,
     "word": "ersatz",
     "pos": "adj",
     "definition": "being a poor imitation",
     "band": 4
   },
   {
-    "id": 772,
+    "id": 2572236306030683,
     "word": "eschew",
     "pos": "v",
     "definition": "to deliberately avoid",
     "band": 4
   },
   {
-    "id": 773,
+    "id": 3553589056966884,
     "word": "esoteric",
     "pos": "adj",
     "definition": "understood by only a select few",
     "band": 4
   },
   {
-    "id": 774,
+    "id": 1044139317872885,
     "word": "eulogy",
     "pos": "n",
     "definition": "a speech of high praise",
     "band": 4
   },
   {
-    "id": 775,
+    "id": 1456617157087520,
     "word": "evanescent",
     "pos": "adj",
     "definition": "quickly fading from sight or memory",
     "band": 4
   },
   {
-    "id": 776,
+    "id": 2151462342821339,
     "word": "excoriate",
     "pos": "v",
     "definition": "to censure harshly",
     "band": 4
   },
   {
-    "id": 777,
+    "id": 420087688896980,
     "word": "exculpate",
     "pos": "v",
     "definition": "to clear of guilt",
     "band": 4
   },
   {
-    "id": 778,
+    "id": 2845567254328415,
     "word": "execrable",
     "pos": "adj",
     "definition": "extremely bad",
     "band": 4
   },
   {
-    "id": 779,
+    "id": 3512011370988367,
     "word": "exhort",
     "pos": "v",
     "definition": "to strongly urge",
     "band": 4
   },
   {
-    "id": 780,
+    "id": 1292675906918347,
     "word": "exigent",
     "pos": "adj",
     "definition": "requiring urgent attention",
     "band": 4
   },
   {
-    "id": 781,
+    "id": 3976562087786216,
     "word": "expiate",
     "pos": "v",
     "definition": "to atone for",
     "band": 4
   },
   {
-    "id": 782,
+    "id": 2401668117148547,
     "word": "expostulate",
     "pos": "v",
     "definition": "to argue earnestly in protest",
     "band": 4
   },
   {
-    "id": 783,
+    "id": 1674688533037966,
     "word": "expurgate",
     "pos": "v",
     "definition": "to remove objectionable matter from a text",
     "band": 4
   },
   {
-    "id": 784,
+    "id": 3256544975011942,
     "word": "extemporize",
     "pos": "v",
     "definition": "to improvise",
     "band": 4
   },
   {
-    "id": 785,
+    "id": 1911598165948781,
     "word": "extraneous",
     "pos": "adj",
     "definition": "irrelevant; not essential",
     "band": 4
   },
   {
-    "id": 786,
+    "id": 3053873419071911,
     "word": "facile",
     "pos": "adj",
     "definition": "easily achieved; superficial",
     "band": 4
   },
   {
-    "id": 787,
+    "id": 3771322644486927,
     "word": "fatuity",
     "pos": "n",
     "definition": "smug stupidity",
     "band": 4
   },
   {
-    "id": 788,
+    "id": 1833820377065130,
     "word": "fecund",
     "pos": "adj",
     "definition": "fertile and productive",
     "band": 4
   },
   {
-    "id": 789,
+    "id": 2124522215773169,
     "word": "fetid",
     "pos": "adj",
     "definition": "smelling unpleasant",
     "band": 4
   },
   {
-    "id": 790,
+    "id": 1741688471725379,
     "word": "flagrant",
     "pos": "adj",
     "definition": "conspicuously offensive",
     "band": 4
   },
   {
-    "id": 791,
+    "id": 3216621089676159,
     "word": "florid",
     "pos": "adj",
     "definition": "excessively ornate; ruddy",
     "band": 4
   },
   {
-    "id": 792,
+    "id": 955764000725809,
     "word": "forbearing",
     "pos": "adj",
     "definition": "patient and tolerant",
     "band": 4
   },
   {
-    "id": 793,
+    "id": 4316019873912459,
     "word": "fortitude",
     "pos": "n",
     "definition": "courage in pain or adversity",
     "band": 4
   },
   {
-    "id": 794,
+    "id": 2325671090947338,
     "word": "fractious",
     "pos": "adj",
     "definition": "irritable and quarrelsome",
     "band": 4
   },
   {
-    "id": 795,
+    "id": 3350361835480228,
     "word": "fulsome",
     "pos": "adj",
     "definition": "excessive and insincere",
     "band": 4
   },
   {
-    "id": 796,
+    "id": 310255804819826,
     "word": "garner",
     "pos": "v",
     "definition": "to gather or collect",
     "band": 4
   },
   {
-    "id": 797,
+    "id": 2568035340450716,
     "word": "gauche",
     "pos": "adj",
     "definition": "socially awkward",
     "band": 4
   },
   {
-    "id": 798,
+    "id": 3995779376660418,
     "word": "germinal",
     "pos": "adj",
     "definition": "in the earliest stage of development",
     "band": 4
   },
   {
-    "id": 799,
+    "id": 2203964273434112,
     "word": "hackneyed",
     "pos": "adj",
     "definition": "overused and unoriginal",
     "band": 4
   },
   {
-    "id": 800,
+    "id": 56158106536512,
     "word": "halcyon",
     "pos": "adj",
     "definition": "calm, peaceful, and happy",
     "band": 4
   },
   {
-    "id": 801,
+    "id": 980502116596889,
     "word": "harbinger",
     "pos": "n",
     "definition": "a forerunner or omen",
     "band": 4
   },
   {
-    "id": 802,
+    "id": 3956299966551631,
     "word": "hauteur",
     "pos": "n",
     "definition": "haughty manner",
     "band": 4
   },
   {
-    "id": 803,
+    "id": 223164134621900,
     "word": "hegemony",
     "pos": "n",
     "definition": "dominance of one group over others",
     "band": 4
   },
   {
-    "id": 804,
+    "id": 2970268286557808,
     "word": "iconoclasm",
     "pos": "n",
     "definition": "the attacking of cherished beliefs",
     "band": 4
   },
   {
-    "id": 805,
+    "id": 3194654100717007,
     "word": "iconoclast",
     "pos": "n",
     "definition": "one who attacks cherished beliefs",
     "band": 4
   },
   {
-    "id": 806,
+    "id": 2051741192913430,
     "word": "idiosyncrasy",
     "pos": "n",
     "definition": "a peculiar individual trait",
     "band": 4
   },
   {
-    "id": 807,
+    "id": 1483068836206433,
     "word": "ignominious",
     "pos": "adj",
     "definition": "deserving public disgrace",
     "band": 4
   },
   {
-    "id": 808,
+    "id": 275469063508124,
     "word": "imbroglio",
     "pos": "n",
     "definition": "a confused and embarrassing situation",
     "band": 4
   },
   {
-    "id": 809,
+    "id": 413942775286213,
     "word": "immutable",
     "pos": "adj",
     "definition": "unchanging",
     "band": 4
   },
   {
-    "id": 810,
+    "id": 4050402687855647,
     "word": "impassive",
     "pos": "adj",
     "definition": "showing no emotion",
     "band": 4
   },
   {
-    "id": 811,
+    "id": 973719272981255,
     "word": "impecunious",
     "pos": "adj",
     "definition": "having little or no money",
     "band": 4
   },
   {
-    "id": 812,
+    "id": 1495246565320551,
     "word": "imperious",
     "pos": "adj",
     "definition": "arrogantly commanding",
     "band": 4
   },
   {
-    "id": 813,
+    "id": 4433154095705745,
     "word": "imperturbable",
     "pos": "adj",
     "definition": "unable to be upset or excited",
     "band": 4
   },
   {
-    "id": 814,
+    "id": 4390066076638345,
     "word": "impetuosity",
     "pos": "n",
     "definition": "rash impulsiveness",
     "band": 4
   },
   {
-    "id": 815,
+    "id": 2933498885502232,
     "word": "importune",
     "pos": "v",
     "definition": "to beg persistently",
     "band": 4
   },
   {
-    "id": 816,
+    "id": 3493984559941885,
     "word": "impugn",
     "pos": "v",
     "definition": "to call into question; to attack as false",
     "band": 4
   },
   {
-    "id": 817,
+    "id": 113894557443825,
     "word": "inchoate",
     "pos": "adj",
     "definition": "just begun and not fully formed",
     "band": 4
   },
   {
-    "id": 818,
+    "id": 2585874791647386,
     "word": "incontrovertible",
     "pos": "adj",
     "definition": "impossible to deny",
     "band": 4
   },
   {
-    "id": 819,
+    "id": 4322558830047895,
     "word": "incorrigible",
     "pos": "adj",
     "definition": "incapable of being reformed",
     "band": 4
   },
   {
-    "id": 820,
+    "id": 4426791924447640,
     "word": "indefatigable",
     "pos": "adj",
     "definition": "tirelessly persistent",
     "band": 4
   },
   {
-    "id": 821,
+    "id": 156674981802515,
     "word": "indolence",
     "pos": "n",
     "definition": "habitual laziness",
     "band": 4
   },
   {
-    "id": 822,
+    "id": 2393879759439710,
     "word": "ineffable",
     "pos": "adj",
     "definition": "too great to be expressed in words",
     "band": 4
   },
   {
-    "id": 823,
+    "id": 3696834581866933,
     "word": "ineffectual",
     "pos": "adj",
     "definition": "not producing the desired effect",
     "band": 4
   },
   {
-    "id": 824,
+    "id": 2555787916931410,
     "word": "ineluctable",
     "pos": "adj",
     "definition": "impossible to avoid",
     "band": 4
   },
   {
-    "id": 825,
+    "id": 4016105296630583,
     "word": "inexorable",
     "pos": "adj",
     "definition": "impossible to stop or resist",
     "band": 4
   },
   {
-    "id": 826,
+    "id": 1016761237497209,
     "word": "ingenue",
     "pos": "n",
     "definition": "an innocent young woman",
     "band": 4
   },
   {
-    "id": 827,
+    "id": 3704503672621244,
     "word": "inimitable",
     "pos": "adj",
     "definition": "impossible to imitate",
     "band": 4
   },
   {
-    "id": 828,
+    "id": 1169396044660772,
     "word": "iniquity",
     "pos": "n",
     "definition": "gross injustice or wickedness",
     "band": 4
   },
   {
-    "id": 829,
+    "id": 2486296177447327,
     "word": "insidious",
     "pos": "adj",
     "definition": "harmful in a gradual, stealthy way",
     "band": 4
   },
   {
-    "id": 830,
+    "id": 4122304807253955,
     "word": "insurrection",
     "pos": "n",
     "definition": "a violent uprising against authority",
     "band": 4
   },
   {
-    "id": 831,
+    "id": 269794628280041,
     "word": "intimation",
     "pos": "n",
     "definition": "a hint or indirect suggestion",
     "band": 4
   },
   {
-    "id": 832,
+    "id": 2326493044767904,
     "word": "intransigent",
     "pos": "adj",
     "definition": "unwilling to compromise",
     "band": 4
   },
   {
-    "id": 833,
+    "id": 4386441311392056,
     "word": "inure",
     "pos": "v",
     "definition": "to accustom to something unpleasant",
     "band": 4
   },
   {
-    "id": 834,
+    "id": 2954015098815536,
     "word": "inveterate",
     "pos": "adj",
     "definition": "firmly established by long habit",
     "band": 4
   },
   {
-    "id": 835,
+    "id": 26420021386344,
     "word": "jocund",
     "pos": "adj",
     "definition": "cheerful and lighthearted",
     "band": 4
   },
   {
-    "id": 836,
+    "id": 745681584365055,
     "word": "kindred",
     "pos": "adj",
     "definition": "similar in kind; related",
     "band": 4
   },
   {
-    "id": 837,
+    "id": 1798919565541406,
     "word": "lambent",
     "pos": "adj",
     "definition": "softly glowing or flickering",
     "band": 4
   },
   {
-    "id": 838,
+    "id": 2515951281513719,
     "word": "languorous",
     "pos": "adj",
     "definition": "relaxed and lazy",
     "band": 4
   },
   {
-    "id": 839,
+    "id": 3614834994287930,
     "word": "largesse",
     "pos": "n",
     "definition": "generous giving",
     "band": 4
   },
   {
-    "id": 840,
+    "id": 2002507472236944,
     "word": "lassitude",
     "pos": "n",
     "definition": "weariness and lack of energy",
     "band": 4
   },
   {
-    "id": 841,
+    "id": 4286746467540734,
     "word": "latent",
     "pos": "adj",
     "definition": "existing but not yet evident",
     "band": 4
   },
   {
-    "id": 842,
+    "id": 1480673392802584,
     "word": "laudatory",
     "pos": "adj",
     "definition": "expressing praise",
     "band": 4
   },
   {
-    "id": 843,
+    "id": 927790244833737,
     "word": "licentious",
     "pos": "adj",
     "definition": "lacking moral or sexual restraint",
     "band": 4
   },
   {
-    "id": 844,
+    "id": 2444110890014823,
     "word": "loquacious",
     "pos": "adj",
     "definition": "very talkative",
     "band": 4
   },
   {
-    "id": 845,
+    "id": 191034043480243,
     "word": "malefactor",
     "pos": "n",
     "definition": "a wrongdoer",
     "band": 4
   },
   {
-    "id": 846,
+    "id": 1906722990324809,
     "word": "malevolent",
     "pos": "adj",
     "definition": "wishing harm to others",
     "band": 4
   },
   {
-    "id": 847,
+    "id": 3478781555537770,
     "word": "manifest",
     "pos": "adj",
     "definition": "clear and obvious",
     "band": 4
   },
   {
-    "id": 848,
+    "id": 676247680201310,
     "word": "mendacious",
     "pos": "adj",
     "definition": "given to lying",
     "band": 4
   },
   {
-    "id": 849,
+    "id": 2577913949280361,
     "word": "mercurial",
     "pos": "adj",
     "definition": "subject to sudden mood changes",
     "band": 4
   },
   {
-    "id": 850,
+    "id": 601098780710708,
     "word": "modicum",
     "pos": "n",
     "definition": "a small amount",
     "band": 4
   },
   {
-    "id": 851,
+    "id": 827688837512,
     "word": "mottled",
     "pos": "adj",
     "definition": "marked with patches of color",
     "band": 4
   },
   {
-    "id": 852,
+    "id": 1240496853891048,
     "word": "multifarious",
     "pos": "adj",
     "definition": "having great variety",
     "band": 4
   },
   {
-    "id": 853,
+    "id": 1489642764378025,
     "word": "munificent",
     "pos": "adj",
     "definition": "extremely generous",
     "band": 4
   },
   {
-    "id": 854,
+    "id": 3668082681861754,
     "word": "nascent",
     "pos": "adj",
     "definition": "just coming into existence",
     "band": 4
   },
   {
-    "id": 855,
+    "id": 2103029408031931,
     "word": "nefarious",
     "pos": "adj",
     "definition": "wicked and criminal",
     "band": 4
   },
   {
-    "id": 856,
+    "id": 464581045044856,
     "word": "obdurate",
     "pos": "adj",
     "definition": "stubbornly refusing to change",
     "band": 4
   },
   {
-    "id": 857,
+    "id": 2660911709547355,
     "word": "obeisance",
     "pos": "n",
     "definition": "deferential respect",
     "band": 4
   },
   {
-    "id": 858,
+    "id": 3356735091692012,
     "word": "obfuscate",
     "pos": "v",
     "definition": "to deliberately make unclear",
     "band": 4
   },
   {
-    "id": 859,
+    "id": 3553480637102536,
     "word": "obfuscation",
     "pos": "n",
     "definition": "the act of making unclear",
     "band": 4
   },
   {
-    "id": 860,
+    "id": 3411790512739400,
     "word": "obloquy",
     "pos": "n",
     "definition": "strong public condemnation",
     "band": 4
   },
   {
-    "id": 861,
+    "id": 951271321781596,
     "word": "obsequious",
     "pos": "adj",
     "definition": "excessively eager to please or obey",
     "band": 4
   },
   {
-    "id": 862,
+    "id": 1629336469177239,
     "word": "obstreperous",
     "pos": "adj",
     "definition": "noisy and difficult to control",
     "band": 4
   },
   {
-    "id": 863,
+    "id": 4095027029461900,
     "word": "obviate",
     "pos": "v",
     "definition": "to remove a need or difficulty",
     "band": 4
   },
   {
-    "id": 864,
+    "id": 784427491482877,
     "word": "opprobrium",
     "pos": "n",
     "definition": "harsh public disgrace",
     "band": 4
   },
   {
-    "id": 865,
+    "id": 4320527919805974,
     "word": "ostracize",
     "pos": "v",
     "definition": "to exclude from a group",
     "band": 4
   },
   {
-    "id": 866,
+    "id": 3929302078444713,
     "word": "palliative",
     "pos": "adj",
     "definition": "relieving without curing",
     "band": 4
   },
   {
-    "id": 867,
+    "id": 3074011311139204,
     "word": "palpable",
     "pos": "adj",
     "definition": "able to be felt; plainly evident",
     "band": 4
   },
   {
-    "id": 868,
+    "id": 1302232548619410,
     "word": "panacea",
     "pos": "n",
     "definition": "a supposed cure-all",
     "band": 4
   },
   {
-    "id": 869,
+    "id": 2880183992995194,
     "word": "paradigm",
     "pos": "n",
     "definition": "a typical example or model",
     "band": 4
   },
   {
-    "id": 870,
+    "id": 3360887683496837,
     "word": "parsimonious",
     "pos": "adj",
     "definition": "excessively frugal",
     "band": 4
   },
   {
-    "id": 871,
+    "id": 4466081981923037,
     "word": "paucity",
     "pos": "n",
     "definition": "scarcity",
     "band": 4
   },
   {
-    "id": 872,
+    "id": 101456759533314,
     "word": "pellucid",
     "pos": "adj",
     "definition": "translucently clear",
     "band": 4
   },
   {
-    "id": 873,
+    "id": 50544463047792,
     "word": "penchant",
     "pos": "n",
     "definition": "a strong habitual liking",
     "band": 4
   },
   {
-    "id": 874,
+    "id": 207359895377581,
     "word": "perdition",
     "pos": "n",
     "definition": "utter ruin; damnation",
     "band": 4
   },
   {
-    "id": 875,
+    "id": 3256194039737588,
     "word": "peremptory",
     "pos": "adj",
     "definition": "insisting on immediate obedience",
     "band": 4
   },
   {
-    "id": 876,
+    "id": 2399039090287778,
     "word": "perfidious",
     "pos": "adj",
     "definition": "deceitful and untrustworthy",
     "band": 4
   },
   {
-    "id": 877,
+    "id": 4197980266063465,
     "word": "perfidy",
     "pos": "n",
     "definition": "deliberate betrayal of trust",
     "band": 4
   },
   {
-    "id": 878,
+    "id": 3535619135956937,
     "word": "perfunctory",
     "pos": "adj",
     "definition": "done routinely and without care",
     "band": 4
   },
   {
-    "id": 879,
+    "id": 3482743618772148,
     "word": "pernicious",
     "pos": "adj",
     "definition": "harmful in a gradual, subtle way",
     "band": 4
   },
   {
-    "id": 880,
+    "id": 2244894383149278,
     "word": "phalanx",
     "pos": "n",
     "definition": "a tightly massed group",
     "band": 4
   },
   {
-    "id": 881,
+    "id": 3023664181655006,
     "word": "plaintive",
     "pos": "adj",
     "definition": "sounding sad and mournful",
     "band": 4
   },
   {
-    "id": 882,
+    "id": 3369909612732664,
     "word": "plenitude",
     "pos": "n",
     "definition": "an abundance",
     "band": 4
   },
   {
-    "id": 883,
+    "id": 3618807201036215,
     "word": "portentous",
     "pos": "adj",
     "definition": "ominously significant",
     "band": 4
   },
   {
-    "id": 884,
+    "id": 851411469033368,
     "word": "precept",
     "pos": "n",
     "definition": "a rule of conduct",
     "band": 4
   },
   {
-    "id": 885,
+    "id": 2035369989003942,
     "word": "predilection",
     "pos": "n",
     "definition": "a preference or special liking",
     "band": 4
   },
   {
-    "id": 886,
+    "id": 4456017671366761,
     "word": "preponderance",
     "pos": "n",
     "definition": "superiority in number or weight",
     "band": 4
   },
   {
-    "id": 887,
+    "id": 3253442355037382,
     "word": "prerogative",
     "pos": "n",
     "definition": "an exclusive right or privilege",
     "band": 4
   },
   {
-    "id": 888,
+    "id": 3436903827424194,
     "word": "prescient",
     "pos": "adj",
     "definition": "knowing things before they occur",
     "band": 4
   },
   {
-    "id": 889,
+    "id": 104998416448671,
     "word": "prodigal",
     "pos": "adj",
     "definition": "wastefully extravagant",
     "band": 4
   },
   {
-    "id": 890,
+    "id": 3618882764086680,
     "word": "prodigy",
     "pos": "n",
     "definition": "a person with exceptional talents",
     "band": 4
   },
   {
-    "id": 891,
+    "id": 3722019070681327,
     "word": "promulgate",
     "pos": "v",
     "definition": "to make widely known or put into effect",
     "band": 4
   },
   {
-    "id": 892,
+    "id": 2545657782286000,
     "word": "propensity",
     "pos": "n",
     "definition": "a natural tendency",
     "band": 4
   },
   {
-    "id": 893,
+    "id": 1403208216122012,
     "word": "propitiate",
     "pos": "v",
     "definition": "to appease",
     "band": 4
   },
   {
-    "id": 894,
+    "id": 2867452505687384,
     "word": "proscribe",
     "pos": "v",
     "definition": "to forbid by official order",
     "band": 4
   },
   {
-    "id": 895,
+    "id": 2203431350472976,
     "word": "protean",
     "pos": "adj",
     "definition": "readily taking on different forms",
     "band": 4
   },
   {
-    "id": 896,
+    "id": 2249390952955981,
     "word": "provident",
     "pos": "adj",
     "definition": "providing carefully for the future",
     "band": 4
   },
   {
-    "id": 897,
+    "id": 3924873231763143,
     "word": "puerile",
     "pos": "adj",
     "definition": "childishly silly",
     "band": 4
   },
   {
-    "id": 898,
+    "id": 2718539580263256,
     "word": "pugnacious",
     "pos": "adj",
     "definition": "eager to fight or quarrel",
     "band": 4
   },
   {
-    "id": 899,
+    "id": 750520717485626,
     "word": "punctilious",
     "pos": "adj",
     "definition": "attentive to fine points of conduct",
     "band": 4
   },
   {
-    "id": 900,
+    "id": 3169316199502186,
     "word": "quagmire",
     "pos": "n",
     "definition": "an awkward, complex situation",
     "band": 4
   },
   {
-    "id": 901,
+    "id": 948048507546703,
     "word": "querulous",
     "pos": "adj",
     "definition": "habitually complaining",
     "band": 4
   },
   {
-    "id": 902,
+    "id": 314226623880240,
     "word": "quixotic",
     "pos": "adj",
     "definition": "idealistic and impractical",
     "band": 4
   },
   {
-    "id": 903,
+    "id": 4428332781993967,
     "word": "rarefied",
     "pos": "adj",
     "definition": "of a select, exclusive nature",
     "band": 4
   },
   {
-    "id": 904,
+    "id": 4169187050012331,
     "word": "recalcitrant",
     "pos": "adj",
     "definition": "stubbornly resistant to authority",
     "band": 4
   },
   {
-    "id": 905,
+    "id": 4404528196285990,
     "word": "recidivism",
     "pos": "n",
     "definition": "a relapse into crime",
     "band": 4
   },
   {
-    "id": 906,
+    "id": 2893887768853076,
     "word": "reclusive",
     "pos": "adj",
     "definition": "avoiding the company of others",
     "band": 4
   },
   {
-    "id": 907,
+    "id": 564866467232510,
     "word": "recumbent",
     "pos": "adj",
     "definition": "lying down",
     "band": 4
   },
   {
-    "id": 908,
+    "id": 3560789063042076,
     "word": "redoubtable",
     "pos": "adj",
     "definition": "formidable and worthy of respect",
     "band": 4
   },
   {
-    "id": 909,
+    "id": 427669189422744,
     "word": "refractory",
     "pos": "adj",
     "definition": "stubbornly resistant to control",
     "band": 4
   },
   {
-    "id": 910,
+    "id": 1685870754740708,
     "word": "relentless",
     "pos": "adj",
     "definition": "unceasing and unyielding",
     "band": 4
   },
   {
-    "id": 911,
+    "id": 1615892233416795,
     "word": "remonstrate",
     "pos": "v",
     "definition": "to protest or object",
     "band": 4
   },
   {
-    "id": 912,
+    "id": 2311537122647749,
     "word": "reprisal",
     "pos": "n",
     "definition": "an act of retaliation",
     "band": 4
   },
   {
-    "id": 913,
+    "id": 2701919524824815,
     "word": "reprobate",
     "pos": "n",
     "definition": "an unprincipled person",
     "band": 4
   },
   {
-    "id": 914,
+    "id": 2128091698585629,
     "word": "repudiate",
     "pos": "v",
     "definition": "to reject or disown",
     "band": 4
   },
   {
-    "id": 915,
+    "id": 3239398731789262,
     "word": "requite",
     "pos": "v",
     "definition": "to return a favor or wrong",
     "band": 4
   },
   {
-    "id": 916,
+    "id": 4428845469665282,
     "word": "resplendent",
     "pos": "adj",
     "definition": "brilliantly shining",
     "band": 4
   },
   {
-    "id": 917,
+    "id": 1551845567781528,
     "word": "restive",
     "pos": "adj",
     "definition": "restless and difficult to control",
     "band": 4
   },
   {
-    "id": 918,
+    "id": 2319003331083795,
     "word": "retinue",
     "pos": "n",
     "definition": "a group of attendants",
     "band": 4
   },
   {
-    "id": 919,
+    "id": 3668805673642256,
     "word": "rococo",
     "pos": "adj",
     "definition": "extravagantly ornate and florid",
     "band": 4
   },
   {
-    "id": 920,
+    "id": 1011731624572118,
     "word": "sagacity",
     "pos": "n",
     "definition": "keen judgment and wisdom",
     "band": 4
   },
   {
-    "id": 921,
+    "id": 1102365990849055,
     "word": "salubrious",
     "pos": "adj",
     "definition": "health-giving; wholesome",
     "band": 4
   },
   {
-    "id": 922,
+    "id": 1930415036461547,
     "word": "sanctimonious",
     "pos": "adj",
     "definition": "making a show of moral superiority",
     "band": 4
   },
   {
-    "id": 923,
+    "id": 177142845510425,
     "word": "sanction",
     "pos": "n",
     "definition": "official permission; a penalty",
     "band": 4
   },
   {
-    "id": 924,
+    "id": 319488700971216,
     "word": "scurrilous",
     "pos": "adj",
     "definition": "abusive and defamatory",
     "band": 4
   },
   {
-    "id": 925,
+    "id": 199730182849235,
     "word": "sedentary",
     "pos": "adj",
     "definition": "involving much sitting",
     "band": 4
   },
   {
-    "id": 926,
+    "id": 512124419708926,
     "word": "sinecure",
     "pos": "n",
     "definition": "a position requiring little work",
     "band": 4
   },
   {
-    "id": 927,
+    "id": 3540102167231859,
     "word": "sinuous",
     "pos": "adj",
     "definition": "having many curves; supple",
     "band": 4
   },
   {
-    "id": 928,
+    "id": 2107843330336866,
     "word": "solicitous",
     "pos": "adj",
     "definition": "showing attentive concern",
     "band": 4
   },
   {
-    "id": 929,
+    "id": 1633799556677206,
     "word": "somnolent",
     "pos": "adj",
     "definition": "sleepy or drowsy",
     "band": 4
   },
   {
-    "id": 930,
+    "id": 169804867812931,
     "word": "soporific",
     "pos": "adj",
     "definition": "tending to induce sleep",
     "band": 4
   },
   {
-    "id": 931,
+    "id": 1888199761211672,
     "word": "specious",
     "pos": "adj",
     "definition": "superficially plausible but actually wrong",
     "band": 4
   },
   {
-    "id": 932,
+    "id": 3791786214234300,
     "word": "staccato",
     "pos": "adj",
     "definition": "with sharp, disconnected sounds",
     "band": 4
   },
   {
-    "id": 933,
+    "id": 2560890203599882,
     "word": "stentorian",
     "pos": "adj",
     "definition": "extremely loud",
     "band": 4
   },
   {
-    "id": 934,
+    "id": 564525125254634,
     "word": "stolid",
     "pos": "adj",
     "definition": "showing little emotion",
     "band": 4
   },
   {
-    "id": 935,
+    "id": 2513497601873961,
     "word": "subterfuge",
     "pos": "n",
     "definition": "deceit used to achieve a goal",
     "band": 4
   },
   {
-    "id": 936,
+    "id": 4412031931316979,
     "word": "supplicate",
     "pos": "v",
     "definition": "to ask humbly and earnestly",
     "band": 4
   },
   {
-    "id": 937,
+    "id": 4127722554478633,
     "word": "surreptitious",
     "pos": "adj",
     "definition": "kept secret; stealthy",
     "band": 4
   },
   {
-    "id": 938,
+    "id": 3388056579400096,
     "word": "sycophancy",
     "pos": "n",
     "definition": "servile flattery",
     "band": 4
   },
   {
-    "id": 939,
+    "id": 1144002838422228,
     "word": "sycophant",
     "pos": "n",
     "definition": "a servile flatterer",
     "band": 4
   },
   {
-    "id": 940,
+    "id": 3408441645345387,
     "word": "sycophantic",
     "pos": "adj",
     "definition": "flattering to gain favor",
     "band": 4
   },
   {
-    "id": 941,
+    "id": 4158297572477157,
     "word": "taciturn",
     "pos": "adj",
     "definition": "reserved and saying little",
     "band": 4
   },
   {
-    "id": 942,
+    "id": 4250016930791840,
     "word": "temperate",
     "pos": "adj",
     "definition": "showing moderation and restraint",
     "band": 4
   },
   {
-    "id": 943,
+    "id": 384186920074603,
     "word": "tendentious",
     "pos": "adj",
     "definition": "biased toward a particular view",
     "band": 4
   },
   {
-    "id": 944,
+    "id": 3204751720105408,
     "word": "torpid",
     "pos": "adj",
     "definition": "sluggish and inactive",
     "band": 4
   },
   {
-    "id": 945,
+    "id": 1033812000578400,
     "word": "tractable",
     "pos": "adj",
     "definition": "easily managed",
     "band": 4
   },
   {
-    "id": 946,
+    "id": 805526061232460,
     "word": "transgress",
     "pos": "v",
     "definition": "to violate a law or rule",
     "band": 4
   },
   {
-    "id": 947,
+    "id": 2468917938686572,
     "word": "travail",
     "pos": "n",
     "definition": "painful or laborious effort",
     "band": 4
   },
   {
-    "id": 948,
+    "id": 4452701484101589,
     "word": "trenchant",
     "pos": "adj",
     "definition": "vigorous and incisive in expression",
     "band": 4
   },
   {
-    "id": 949,
+    "id": 2110785074427560,
     "word": "truculent",
     "pos": "adj",
     "definition": "eager to argue or fight",
     "band": 4
   },
   {
-    "id": 950,
+    "id": 4266374251585768,
     "word": "truncate",
     "pos": "v",
     "definition": "to shorten by cutting off",
     "band": 4
   },
   {
-    "id": 951,
+    "id": 2529438917568044,
     "word": "turgid",
     "pos": "adj",
     "definition": "swollen; pompously wordy",
     "band": 4
   },
   {
-    "id": 952,
+    "id": 442945611472454,
     "word": "umbrage",
     "pos": "n",
     "definition": "offense or annoyance",
     "band": 4
   },
   {
-    "id": 953,
+    "id": 680518129305042,
     "word": "untenable",
     "pos": "adj",
     "definition": "not defensible",
     "band": 4
   },
   {
-    "id": 954,
+    "id": 544900313175841,
     "word": "vacillate",
     "pos": "v",
     "definition": "to waver between choices",
     "band": 4
   },
   {
-    "id": 955,
+    "id": 2098172304296971,
     "word": "vapid",
     "pos": "adj",
     "definition": "dull and lacking liveliness",
     "band": 4
   },
   {
-    "id": 956,
+    "id": 3159483279166391,
     "word": "variegated",
     "pos": "adj",
     "definition": "marked with different colors",
     "band": 4
   },
   {
-    "id": 957,
+    "id": 1898346324390218,
     "word": "venal",
     "pos": "adj",
     "definition": "open to bribery; corruptible",
     "band": 4
   },
   {
-    "id": 958,
+    "id": 519015010643049,
     "word": "verbiage",
     "pos": "n",
     "definition": "excessive or meaningless words",
     "band": 4
   },
   {
-    "id": 959,
+    "id": 549573097717321,
     "word": "vilify",
     "pos": "v",
     "definition": "to speak abusively about",
     "band": 4
   },
   {
-    "id": 960,
+    "id": 1660424522381236,
     "word": "virulent",
     "pos": "adj",
     "definition": "extremely harmful or hostile",
     "band": 4
   },
   {
-    "id": 961,
+    "id": 1417133227882996,
     "word": "vociferous",
     "pos": "adj",
     "definition": "loud and insistent in expression",
     "band": 4
   },
   {
-    "id": 962,
+    "id": 2464734565995079,
     "word": "winsome",
     "pos": "adj",
     "definition": "charming in an innocent way",
     "band": 4
   },
   {
-    "id": 963,
+    "id": 3935130271316980,
     "word": "wizened",
     "pos": "adj",
     "definition": "shriveled with age",
     "band": 4
   },
   {
-    "id": 964,
+    "id": 2616650734125776,
     "word": "abnegate",
     "pos": "v",
     "definition": "to renounce or surrender",
     "band": 5
   },
   {
-    "id": 965,
+    "id": 584287966958944,
     "word": "abnegation",
     "pos": "n",
     "definition": "the renunciation of one's own interests",
     "band": 5
   },
   {
-    "id": 966,
+    "id": 2349065029927100,
     "word": "abstruse",
     "pos": "adj",
     "definition": "difficult to understand",
     "band": 5
   },
   {
-    "id": 967,
+    "id": 861807455138184,
     "word": "acerbate",
     "pos": "v",
     "definition": "to embitter or exasperate",
     "band": 5
   },
   {
-    "id": 968,
+    "id": 3414855158216956,
     "word": "adventitious",
     "pos": "adj",
     "definition": "arising from an external, accidental cause",
     "band": 5
   },
   {
-    "id": 969,
+    "id": 202985928118744,
     "word": "aleatory",
     "pos": "adj",
     "definition": "depending on chance",
     "band": 5
   },
   {
-    "id": 970,
+    "id": 1789915478594240,
     "word": "amaranthine",
     "pos": "adj",
     "definition": "undying; eternally beautiful",
     "band": 5
   },
   {
-    "id": 971,
+    "id": 4321473703221746,
     "word": "anfractuous",
     "pos": "adj",
     "definition": "full of twists and turns",
     "band": 5
   },
   {
-    "id": 972,
+    "id": 4387789125377668,
     "word": "animadversion",
     "pos": "n",
     "definition": "harsh criticism",
     "band": 5
   },
   {
-    "id": 973,
+    "id": 1750833014084356,
     "word": "antediluvian",
     "pos": "adj",
     "definition": "extremely old or outdated",
     "band": 5
   },
   {
-    "id": 974,
+    "id": 1312338015223249,
     "word": "apostasy",
     "pos": "n",
     "definition": "abandonment of one's beliefs",
     "band": 5
   },
   {
-    "id": 975,
+    "id": 4479076645908489,
     "word": "apothegm",
     "pos": "n",
     "definition": "a short, instructive saying",
     "band": 5
   },
   {
-    "id": 976,
+    "id": 3230139916603118,
     "word": "apotheosis",
     "pos": "n",
     "definition": "the highest point; deification",
     "band": 5
   },
   {
-    "id": 977,
+    "id": 3935166234336838,
     "word": "arrant",
     "pos": "adj",
     "definition": "complete and utter",
     "band": 5
   },
   {
-    "id": 978,
+    "id": 613024569362656,
     "word": "asperity",
     "pos": "n",
     "definition": "harshness of tone or manner",
     "band": 5
   },
   {
-    "id": 979,
+    "id": 3410744574407730,
     "word": "asperse",
     "pos": "v",
     "definition": "to spread damaging false charges against",
     "band": 5
   },
   {
-    "id": 980,
+    "id": 4274921177041082,
     "word": "autochthonous",
     "pos": "adj",
     "definition": "native to the place where found",
     "band": 5
   },
   {
-    "id": 981,
+    "id": 3782334931707525,
     "word": "bilious",
     "pos": "adj",
     "definition": "spiteful and bad-tempered",
     "band": 5
   },
   {
-    "id": 982,
+    "id": 753631320282922,
     "word": "bowdlerize",
     "pos": "v",
     "definition": "to remove material deemed improper from a text",
     "band": 5
   },
   {
-    "id": 983,
+    "id": 3316948730956262,
     "word": "cachinnate",
     "pos": "v",
     "definition": "to laugh loudly",
     "band": 5
   },
   {
-    "id": 984,
+    "id": 2287525114938729,
     "word": "cadaverous",
     "pos": "adj",
     "definition": "gaunt and corpse-like",
     "band": 5
   },
   {
-    "id": 985,
+    "id": 901971007671523,
     "word": "calumnious",
     "pos": "adj",
     "definition": "slanderous",
     "band": 5
   },
   {
-    "id": 986,
+    "id": 747041594646102,
     "word": "calumny",
     "pos": "n",
     "definition": "a false and malicious statement",
     "band": 5
   },
   {
-    "id": 987,
+    "id": 4449914970392377,
     "word": "captious",
     "pos": "adj",
     "definition": "inclined to find trivial faults",
     "band": 5
   },
   {
-    "id": 988,
+    "id": 430783644017548,
     "word": "casuistry",
     "pos": "n",
     "definition": "clever but unsound reasoning",
     "band": 5
   },
   {
-    "id": 989,
+    "id": 1281749930207201,
     "word": "cavil",
     "pos": "v",
     "definition": "to raise petty objections",
     "band": 5
   },
   {
-    "id": 990,
+    "id": 3367475479841203,
     "word": "circumlocutory",
     "pos": "adj",
     "definition": "using needlessly many words",
     "band": 5
   },
   {
-    "id": 991,
+    "id": 793421811006448,
     "word": "clamorous",
     "pos": "adj",
     "definition": "loud and insistent",
     "band": 5
   },
   {
-    "id": 992,
+    "id": 1250515595312035,
     "word": "comestible",
     "pos": "n",
     "definition": "an item of food",
     "band": 5
   },
   {
-    "id": 993,
+    "id": 3620400953687961,
     "word": "concupiscence",
     "pos": "n",
     "definition": "strong sensual desire",
     "band": 5
   },
   {
-    "id": 994,
+    "id": 4063856336928334,
     "word": "contumacious",
     "pos": "adj",
     "definition": "stubbornly disobedient to authority",
     "band": 5
   },
   {
-    "id": 995,
+    "id": 3614400409038790,
     "word": "contumely",
     "pos": "n",
     "definition": "insolent and contemptuous treatment",
     "band": 5
   },
   {
-    "id": 996,
+    "id": 4366259254308598,
     "word": "crapulous",
     "pos": "adj",
     "definition": "sick from excessive eating or drinking",
     "band": 5
   },
   {
-    "id": 997,
+    "id": 2777599637647608,
     "word": "crepuscular",
     "pos": "adj",
     "definition": "relating to twilight",
     "band": 5
   },
   {
-    "id": 998,
+    "id": 821119861179321,
     "word": "defalcate",
     "pos": "v",
     "definition": "to misuse funds entrusted to one",
     "band": 5
   },
   {
-    "id": 999,
+    "id": 2472997394978739,
     "word": "deliquesce",
     "pos": "v",
     "definition": "to melt away or dissolve",
     "band": 5
   },
   {
-    "id": 1000,
+    "id": 1541481543347757,
     "word": "descant",
     "pos": "v",
     "definition": "to discourse at length",
     "band": 5
   },
   {
-    "id": 1001,
+    "id": 694784398148824,
     "word": "descry",
     "pos": "v",
     "definition": "to catch sight of something distant",
     "band": 5
   },
   {
-    "id": 1002,
+    "id": 3774577591335973,
     "word": "desuetude",
     "pos": "n",
     "definition": "a state of disuse",
     "band": 5
   },
   {
-    "id": 1003,
+    "id": 2062566829778064,
     "word": "diaphoresis",
     "pos": "n",
     "definition": "profuse sweating",
     "band": 5
   },
   {
-    "id": 1004,
+    "id": 3337163567816614,
     "word": "dilettante",
     "pos": "n",
     "definition": "a dabbler who lacks depth",
     "band": 5
   },
   {
-    "id": 1005,
+    "id": 3398913027817654,
     "word": "disquisition",
     "pos": "n",
     "definition": "a long, formal discourse",
     "band": 5
   },
   {
-    "id": 1006,
+    "id": 2552459706014902,
     "word": "ebullition",
     "pos": "n",
     "definition": "a sudden outburst",
     "band": 5
   },
   {
-    "id": 1007,
+    "id": 608836229399610,
     "word": "effulgent",
     "pos": "adj",
     "definition": "shining brilliantly",
     "band": 5
   },
   {
-    "id": 1008,
+    "id": 127209297542416,
     "word": "eldritch",
     "pos": "adj",
     "definition": "weird and sinister",
     "band": 5
   },
   {
-    "id": 1009,
+    "id": 3881775999433126,
     "word": "eleemosynary",
     "pos": "adj",
     "definition": "relating to charity",
     "band": 5
   },
   {
-    "id": 1010,
+    "id": 543717584005377,
     "word": "emolument",
     "pos": "n",
     "definition": "payment for work or office",
     "band": 5
   },
   {
-    "id": 1011,
+    "id": 1819522179845267,
     "word": "encomium",
     "pos": "n",
     "definition": "a formal expression of high praise",
     "band": 5
   },
   {
-    "id": 1012,
+    "id": 4450951087906562,
     "word": "epigone",
     "pos": "n",
     "definition": "an undistinguished imitator",
     "band": 5
   },
   {
-    "id": 1013,
+    "id": 4287652572532440,
     "word": "eructation",
     "pos": "n",
     "definition": "the act of belching",
     "band": 5
   },
   {
-    "id": 1014,
+    "id": 1980317451878674,
     "word": "estivate",
     "pos": "v",
     "definition": "to spend the summer in dormancy",
     "band": 5
   },
   {
-    "id": 1015,
+    "id": 2955339932711231,
     "word": "excrescence",
     "pos": "n",
     "definition": "an abnormal outgrowth",
     "band": 5
   },
   {
-    "id": 1016,
+    "id": 4031021398745019,
     "word": "execrate",
     "pos": "v",
     "definition": "to feel or express great loathing for",
     "band": 5
   },
   {
-    "id": 1017,
+    "id": 2765397588927035,
     "word": "exiguous",
     "pos": "adj",
     "definition": "very small in amount",
     "band": 5
   },
   {
-    "id": 1018,
+    "id": 2847004416192492,
     "word": "fainéant",
     "pos": "adj",
     "definition": "idle and ineffective",
     "band": 5
   },
   {
-    "id": 1019,
+    "id": 3886482841295118,
     "word": "farrago",
     "pos": "n",
     "definition": "a confused mixture",
     "band": 5
   },
   {
-    "id": 1020,
+    "id": 4454857381079897,
     "word": "fatuous",
     "pos": "adj",
     "definition": "silly and pointless in a self-satisfied way",
     "band": 5
   },
   {
-    "id": 1021,
+    "id": 3546554697797182,
     "word": "feckless",
     "pos": "adj",
     "definition": "weak, ineffective, and irresponsible",
     "band": 5
   },
   {
-    "id": 1022,
+    "id": 4342464497460074,
     "word": "fecundity",
     "pos": "n",
     "definition": "fertility or productiveness",
     "band": 5
   },
   {
-    "id": 1023,
+    "id": 1501882178915030,
     "word": "fissile",
     "pos": "adj",
     "definition": "tending to split",
     "band": 5
   },
   {
-    "id": 1024,
+    "id": 2922122387222714,
     "word": "fissiparous",
     "pos": "adj",
     "definition": "inclined to split into factions",
     "band": 5
   },
   {
-    "id": 1025,
+    "id": 965065934256636,
     "word": "flagitious",
     "pos": "adj",
     "definition": "shamefully wicked",
     "band": 5
   },
   {
-    "id": 1026,
+    "id": 952401051696866,
     "word": "floccinaucinihilipilification",
     "pos": "n",
     "definition": "the act of judging something worthless",
     "band": 5
   },
   {
-    "id": 1027,
+    "id": 548169137565724,
     "word": "formication",
     "pos": "n",
     "definition": "a sensation of insects crawling on the skin",
     "band": 5
   },
   {
-    "id": 1028,
+    "id": 1909055085992354,
     "word": "frangible",
     "pos": "adj",
     "definition": "easily broken",
     "band": 5
   },
   {
-    "id": 1029,
+    "id": 3618523663551009,
     "word": "froward",
     "pos": "adj",
     "definition": "stubbornly contrary and difficult",
     "band": 5
   },
   {
-    "id": 1030,
+    "id": 2343660273155121,
     "word": "fugacious",
     "pos": "adj",
     "definition": "fleeting; quickly fading",
     "band": 5
   },
   {
-    "id": 1031,
+    "id": 4464617250727248,
     "word": "fulgent",
     "pos": "adj",
     "definition": "dazzlingly bright",
     "band": 5
   },
   {
-    "id": 1032,
+    "id": 460045012277450,
     "word": "fuliginous",
     "pos": "adj",
     "definition": "sooty or dusky",
     "band": 5
   },
   {
-    "id": 1033,
+    "id": 1830664081341365,
     "word": "fulmination",
     "pos": "n",
     "definition": "a vehement denunciation",
     "band": 5
   },
   {
-    "id": 1034,
+    "id": 3066561446545207,
     "word": "fustian",
     "pos": "n",
     "definition": "pompous, pretentious language",
     "band": 5
   },
   {
-    "id": 1035,
+    "id": 682591243871833,
     "word": "gainsay",
     "pos": "v",
     "definition": "to deny or contradict",
     "band": 5
   },
   {
-    "id": 1036,
+    "id": 4108562733804367,
     "word": "gallimaufry",
     "pos": "n",
     "definition": "a jumble or hodgepodge",
     "band": 5
   },
   {
-    "id": 1037,
+    "id": 3444100841049530,
     "word": "gasconade",
     "pos": "n",
     "definition": "extravagant boasting",
     "band": 5
   },
   {
-    "id": 1038,
+    "id": 1146575807060211,
     "word": "gelid",
     "pos": "adj",
     "definition": "icy cold",
     "band": 5
   },
   {
-    "id": 1039,
+    "id": 2613935502296793,
     "word": "grandiloquent",
     "pos": "adj",
     "definition": "pompous and lofty in speech",
     "band": 5
   },
   {
-    "id": 1040,
+    "id": 1426700602022460,
     "word": "hagiography",
     "pos": "n",
     "definition": "an idealizing biography",
     "band": 5
   },
   {
-    "id": 1041,
+    "id": 2690635124868921,
     "word": "hebetude",
     "pos": "n",
     "definition": "dullness of mind",
     "band": 5
   },
   {
-    "id": 1042,
+    "id": 1266423499169735,
     "word": "hidebound",
     "pos": "adj",
     "definition": "rigidly conventional and narrow-minded",
     "band": 5
   },
   {
-    "id": 1043,
+    "id": 2216934059848873,
     "word": "hortatory",
     "pos": "adj",
     "definition": "urging to some course of action",
     "band": 5
   },
   {
-    "id": 1044,
+    "id": 3807102911992925,
     "word": "ignominy",
     "pos": "n",
     "definition": "public shame and disgrace",
     "band": 5
   },
   {
-    "id": 1045,
+    "id": 2436116826961931,
     "word": "immure",
     "pos": "v",
     "definition": "to enclose or imprison within walls",
     "band": 5
   },
   {
-    "id": 1046,
+    "id": 2258125834824679,
     "word": "imprecation",
     "pos": "n",
     "definition": "a spoken curse",
     "band": 5
   },
   {
-    "id": 1047,
+    "id": 506394524581307,
     "word": "inanition",
     "pos": "n",
     "definition": "exhaustion from lack of nourishment",
     "band": 5
   },
   {
-    "id": 1048,
+    "id": 507680502418154,
     "word": "incarnadine",
     "pos": "adj",
     "definition": "blood-red",
     "band": 5
   },
   {
-    "id": 1049,
+    "id": 1692935235323870,
     "word": "inspissate",
     "pos": "v",
     "definition": "to thicken or congeal",
     "band": 5
   },
   {
-    "id": 1050,
+    "id": 3161827670954157,
     "word": "insuperable",
     "pos": "adj",
     "definition": "impossible to overcome",
     "band": 5
   },
   {
-    "id": 1051,
+    "id": 4204082488119324,
     "word": "internecine",
     "pos": "adj",
     "definition": "mutually destructive within a group",
     "band": 5
   },
   {
-    "id": 1052,
+    "id": 3027644386454879,
     "word": "inveigh",
     "pos": "v",
     "definition": "to protest strongly against",
     "band": 5
   },
   {
-    "id": 1053,
+    "id": 26124662901078,
     "word": "inveigle",
     "pos": "v",
     "definition": "to win over by deception",
     "band": 5
   },
   {
-    "id": 1054,
+    "id": 522581356065162,
     "word": "jactitation",
     "pos": "n",
     "definition": "restless tossing; boastful claims",
     "band": 5
   },
   {
-    "id": 1055,
+    "id": 2315115920930582,
     "word": "jejune",
     "pos": "adj",
     "definition": "naive, simplistic, or insubstantial",
     "band": 5
   },
   {
-    "id": 1056,
+    "id": 4452383602177685,
     "word": "jeremiad",
     "pos": "n",
     "definition": "a long, mournful lament or complaint",
     "band": 5
   },
   {
-    "id": 1057,
+    "id": 1343529753824600,
     "word": "kakistocracy",
     "pos": "n",
     "definition": "government by the worst people",
     "band": 5
   },
   {
-    "id": 1058,
+    "id": 1804317246452835,
     "word": "labile",
     "pos": "adj",
     "definition": "easily changed; unstable",
     "band": 5
   },
   {
-    "id": 1059,
+    "id": 2304939042340366,
     "word": "lachrymose",
     "pos": "adj",
     "definition": "tearful or inclined to weep",
     "band": 5
   },
   {
-    "id": 1060,
+    "id": 771303737610019,
     "word": "limerence",
     "pos": "n",
     "definition": "an overwhelming romantic infatuation",
     "band": 5
   },
   {
-    "id": 1061,
+    "id": 1897492984521315,
     "word": "limpid",
     "pos": "adj",
     "definition": "clear and transparent",
     "band": 5
   },
   {
-    "id": 1062,
+    "id": 1925851564406802,
     "word": "logorrhea",
     "pos": "n",
     "definition": "excessive, incoherent talkativeness",
     "band": 5
   },
   {
-    "id": 1063,
+    "id": 13275106990049,
     "word": "lucubration",
     "pos": "n",
     "definition": "laborious study, especially at night",
     "band": 5
   },
   {
-    "id": 1064,
+    "id": 2998235755124068,
     "word": "lugubrious",
     "pos": "adj",
     "definition": "mournful, often exaggeratedly so",
     "band": 5
   },
   {
-    "id": 1065,
+    "id": 4127702060062717,
     "word": "macerate",
     "pos": "v",
     "definition": "to soften by soaking",
     "band": 5
   },
   {
-    "id": 1066,
+    "id": 3200344820604397,
     "word": "maleficent",
     "pos": "adj",
     "definition": "causing harm or evil",
     "band": 5
   },
   {
-    "id": 1067,
+    "id": 4089084445354412,
     "word": "maudlin",
     "pos": "adj",
     "definition": "weakly and tearfully sentimental",
     "band": 5
   },
   {
-    "id": 1068,
+    "id": 1640519060627169,
     "word": "mellifluous",
     "pos": "adj",
     "definition": "sweet and smooth-sounding",
     "band": 5
   },
   {
-    "id": 1069,
+    "id": 839118279430140,
     "word": "mendacity",
     "pos": "n",
     "definition": "habitual untruthfulness",
     "band": 5
   },
   {
-    "id": 1070,
+    "id": 3553727872422232,
     "word": "mendicant",
     "pos": "n",
     "definition": "a beggar",
     "band": 5
   },
   {
-    "id": 1071,
+    "id": 3240850837613229,
     "word": "meretricious",
     "pos": "adj",
     "definition": "showily attractive but cheap or insincere",
     "band": 5
   },
   {
-    "id": 1072,
+    "id": 852902976666334,
     "word": "minatory",
     "pos": "adj",
     "definition": "threatening or menacing",
     "band": 5
   },
   {
-    "id": 1073,
+    "id": 2265117722536297,
     "word": "missive",
     "pos": "n",
     "definition": "a written message",
     "band": 5
   },
   {
-    "id": 1074,
+    "id": 571796798000361,
     "word": "nescience",
     "pos": "n",
     "definition": "lack of knowledge",
     "band": 5
   },
   {
-    "id": 1075,
+    "id": 2739597122520845,
     "word": "nidor",
     "pos": "n",
     "definition": "a strong cooking smell",
     "band": 5
   },
   {
-    "id": 1076,
+    "id": 705287606740706,
     "word": "nugatory",
     "pos": "adj",
     "definition": "of little or no value",
     "band": 5
   },
   {
-    "id": 1077,
+    "id": 4029547920138166,
     "word": "objurgate",
     "pos": "v",
     "definition": "to rebuke severely",
     "band": 5
   },
   {
-    "id": 1078,
+    "id": 939235820501482,
     "word": "obstinacy",
     "pos": "n",
     "definition": "stubborn refusal to change",
     "band": 5
   },
   {
-    "id": 1079,
+    "id": 2205658274525998,
     "word": "obtund",
     "pos": "v",
     "definition": "to dull or blunt",
     "band": 5
   },
   {
-    "id": 1080,
+    "id": 4483294442469340,
     "word": "opprobrious",
     "pos": "adj",
     "definition": "expressing scornful reproach",
     "band": 5
   },
   {
-    "id": 1081,
+    "id": 1683957770991961,
     "word": "orotund",
     "pos": "adj",
     "definition": "resonant and pompous in speech",
     "band": 5
   },
   {
-    "id": 1082,
+    "id": 2581747809128764,
     "word": "palliate",
     "pos": "v",
     "definition": "to ease without curing",
     "band": 5
   },
   {
-    "id": 1083,
+    "id": 3105583502072002,
     "word": "panegyric",
     "pos": "n",
     "definition": "a speech of elaborate praise",
     "band": 5
   },
   {
-    "id": 1084,
+    "id": 3917293789857789,
     "word": "parlous",
     "pos": "adj",
     "definition": "full of danger or uncertainty",
     "band": 5
   },
   {
-    "id": 1085,
+    "id": 3114987000553715,
     "word": "penurious",
     "pos": "adj",
     "definition": "extremely poor or miserly",
     "band": 5
   },
   {
-    "id": 1086,
+    "id": 4188649421375966,
     "word": "peregrination",
     "pos": "n",
     "definition": "a long, wandering journey",
     "band": 5
   },
   {
-    "id": 1087,
+    "id": 1250512461875174,
     "word": "perfervid",
     "pos": "adj",
     "definition": "intensely fervent",
     "band": 5
   },
   {
-    "id": 1088,
+    "id": 254790814313256,
     "word": "peripatetic",
     "pos": "adj",
     "definition": "traveling from place to place",
     "band": 5
   },
   {
-    "id": 1089,
+    "id": 3889928184694972,
     "word": "perspicacious",
     "pos": "adj",
     "definition": "keenly perceptive and discerning",
     "band": 5
   },
   {
-    "id": 1090,
+    "id": 2862063995031501,
     "word": "perspicuity",
     "pos": "n",
     "definition": "clearness of expression",
     "band": 5
   },
   {
-    "id": 1091,
+    "id": 1227965317233908,
     "word": "perspicuous",
     "pos": "adj",
     "definition": "clearly expressed and understood",
     "band": 5
   },
   {
-    "id": 1092,
+    "id": 1955119222755809,
     "word": "phlegmatic",
     "pos": "adj",
     "definition": "calm and unemotional by temperament",
     "band": 5
   },
   {
-    "id": 1093,
+    "id": 155166347922237,
     "word": "plangent",
     "pos": "adj",
     "definition": "loud, resonant, and mournful",
     "band": 5
   },
   {
-    "id": 1094,
+    "id": 2412411159725546,
     "word": "pleonasm",
     "pos": "n",
     "definition": "the use of redundant words",
     "band": 5
   },
   {
-    "id": 1095,
+    "id": 870453537771090,
     "word": "postprandial",
     "pos": "adj",
     "definition": "occurring after a meal",
     "band": 5
   },
   {
-    "id": 1096,
+    "id": 3196194175731925,
     "word": "preternatural",
     "pos": "adj",
     "definition": "beyond what is natural",
     "band": 5
   },
   {
-    "id": 1097,
+    "id": 950408217034034,
     "word": "prevaricate",
     "pos": "v",
     "definition": "to speak evasively to mislead",
     "band": 5
   },
   {
-    "id": 1098,
+    "id": 1078957990450103,
     "word": "probity",
     "pos": "n",
     "definition": "strong moral integrity",
     "band": 5
   },
   {
-    "id": 1099,
+    "id": 3908205887767094,
     "word": "prolix",
     "pos": "adj",
     "definition": "tediously long-winded",
     "band": 5
   },
   {
-    "id": 1100,
+    "id": 462842901761870,
     "word": "propinquity",
     "pos": "n",
     "definition": "nearness in place or relationship",
     "band": 5
   },
   {
-    "id": 1101,
+    "id": 394394954780225,
     "word": "propitiatory",
     "pos": "adj",
     "definition": "intended to appease",
     "band": 5
   },
   {
-    "id": 1102,
+    "id": 1882478348716296,
     "word": "pugilist",
     "pos": "n",
     "definition": "a boxer",
     "band": 5
   },
   {
-    "id": 1103,
+    "id": 1668382833057811,
     "word": "pulchritude",
     "pos": "n",
     "definition": "physical beauty",
     "band": 5
   },
   {
-    "id": 1104,
+    "id": 1999559293551902,
     "word": "pusillanimous",
     "pos": "adj",
     "definition": "timid and cowardly",
     "band": 5
   },
   {
-    "id": 1105,
+    "id": 3348170820217443,
     "word": "quiddity",
     "pos": "n",
     "definition": "the essential nature of a thing",
     "band": 5
   },
   {
-    "id": 1106,
+    "id": 419371629118782,
     "word": "quiescent",
     "pos": "adj",
     "definition": "in a state of quiet inactivity",
     "band": 5
   },
   {
-    "id": 1107,
+    "id": 789321063758946,
     "word": "quotidian",
     "pos": "adj",
     "definition": "occurring daily; ordinary",
     "band": 5
   },
   {
-    "id": 1108,
+    "id": 884065610987931,
     "word": "ratiocination",
     "pos": "n",
     "definition": "methodical, logical reasoning",
     "band": 5
   },
   {
-    "id": 1109,
+    "id": 1944446340590818,
     "word": "rebarbative",
     "pos": "adj",
     "definition": "repellent or irritating",
     "band": 5
   },
   {
-    "id": 1110,
+    "id": 2024181290761103,
     "word": "recondite",
     "pos": "adj",
     "definition": "obscure and known to few",
     "band": 5
   },
   {
-    "id": 1111,
+    "id": 733078126743025,
     "word": "recrudescence",
     "pos": "n",
     "definition": "a renewed outbreak after a lull",
     "band": 5
   },
   {
-    "id": 1112,
+    "id": 622097681861459,
     "word": "refulgent",
     "pos": "adj",
     "definition": "shining brightly",
     "band": 5
   },
   {
-    "id": 1113,
+    "id": 1462529725905299,
     "word": "remonstrance",
     "pos": "n",
     "definition": "a forceful protest",
     "band": 5
   },
   {
-    "id": 1114,
+    "id": 2569018752959024,
     "word": "risible",
     "pos": "adj",
     "definition": "laughable",
     "band": 5
   },
   {
-    "id": 1115,
+    "id": 533048699087546,
     "word": "rodomontade",
     "pos": "n",
     "definition": "boastful, blustering talk",
     "band": 5
   },
   {
-    "id": 1116,
+    "id": 3325100894261569,
     "word": "sangfroid",
     "pos": "n",
     "definition": "composure under strain",
     "band": 5
   },
   {
-    "id": 1117,
+    "id": 3991207725239439,
     "word": "sanguinary",
     "pos": "adj",
     "definition": "involving much bloodshed",
     "band": 5
   },
   {
-    "id": 1118,
+    "id": 656750640296418,
     "word": "saturnalia",
     "pos": "n",
     "definition": "a wild, unrestrained celebration",
     "band": 5
   },
   {
-    "id": 1119,
+    "id": 2525316965514112,
     "word": "saturnine",
     "pos": "adj",
     "definition": "gloomy and sardonic in temperament",
     "band": 5
   },
   {
-    "id": 1120,
+    "id": 2942947610974741,
     "word": "scapegrace",
     "pos": "n",
     "definition": "a mischievous, incorrigible person",
     "band": 5
   },
   {
-    "id": 1121,
+    "id": 666126066412825,
     "word": "sciolism",
     "pos": "n",
     "definition": "superficial pretension to knowledge",
     "band": 5
   },
   {
-    "id": 1122,
+    "id": 2899525122930028,
     "word": "sedulous",
     "pos": "adj",
     "definition": "diligent and painstaking",
     "band": 5
   },
   {
-    "id": 1123,
+    "id": 1000926504173576,
     "word": "sempiternal",
     "pos": "adj",
     "definition": "everlasting",
     "band": 5
   },
   {
-    "id": 1124,
+    "id": 2210603507315179,
     "word": "sententious",
     "pos": "adj",
     "definition": "given to pompous moralizing",
     "band": 5
   },
   {
-    "id": 1125,
+    "id": 4373073880015509,
     "word": "serried",
     "pos": "adj",
     "definition": "standing close together in rows",
     "band": 5
   },
   {
-    "id": 1126,
+    "id": 4328614626261332,
     "word": "sesquipedalian",
     "pos": "adj",
     "definition": "given to using long words",
     "band": 5
   },
   {
-    "id": 1127,
+    "id": 3512355688874132,
     "word": "supercilious",
     "pos": "adj",
     "definition": "haughtily contemptuous",
     "band": 5
   },
   {
-    "id": 1128,
+    "id": 2177064457436161,
     "word": "supererogatory",
     "pos": "adj",
     "definition": "beyond what is required",
     "band": 5
   },
   {
-    "id": 1129,
+    "id": 4114834743685495,
     "word": "susurrus",
     "pos": "n",
     "definition": "a soft murmuring or rustling",
     "band": 5
   },
   {
-    "id": 1130,
+    "id": 2147839284798016,
     "word": "tatterdemalion",
     "pos": "adj",
     "definition": "ragged and tattered",
     "band": 5
   },
   {
-    "id": 1131,
+    "id": 78728334407036,
     "word": "temulent",
     "pos": "adj",
     "definition": "drunken",
     "band": 5
   },
   {
-    "id": 1132,
+    "id": 4131360482808509,
     "word": "tergiversate",
     "pos": "v",
     "definition": "to make conflicting statements; equivocate",
     "band": 5
   },
   {
-    "id": 1133,
+    "id": 2487559782974671,
     "word": "threnody",
     "pos": "n",
     "definition": "a song of mourning",
     "band": 5
   },
   {
-    "id": 1134,
+    "id": 2414015359081029,
     "word": "tortuous",
     "pos": "adj",
     "definition": "full of twists; devious",
     "band": 5
   },
   {
-    "id": 1135,
+    "id": 3114809728567264,
     "word": "traduce",
     "pos": "v",
     "definition": "to speak badly of so as to damage a reputation",
     "band": 5
   },
   {
-    "id": 1136,
+    "id": 172634156158336,
     "word": "truculence",
     "pos": "n",
     "definition": "eagerness to fight or argue",
     "band": 5
   },
   {
-    "id": 1137,
+    "id": 3683068557674364,
     "word": "tumid",
     "pos": "adj",
     "definition": "swollen; pompous",
     "band": 5
   },
   {
-    "id": 1138,
+    "id": 2815284176686045,
     "word": "turbid",
     "pos": "adj",
     "definition": "cloudy or muddy; confused",
     "band": 5
   },
   {
-    "id": 1139,
+    "id": 3773187008914496,
     "word": "turpitude",
     "pos": "n",
     "definition": "depravity or wickedness",
     "band": 5
   },
   {
-    "id": 1140,
+    "id": 1304974952909745,
     "word": "ululate",
     "pos": "v",
     "definition": "to howl or wail loudly",
     "band": 5
   },
   {
-    "id": 1141,
+    "id": 2366258558973044,
     "word": "usufruct",
     "pos": "n",
     "definition": "the right to use another's property",
     "band": 5
   },
   {
-    "id": 1142,
+    "id": 1473522295953635,
     "word": "vainglorious",
     "pos": "adj",
     "definition": "boastfully and excessively vain",
     "band": 5
   },
   {
-    "id": 1143,
+    "id": 3254335892711118,
     "word": "vatic",
     "pos": "adj",
     "definition": "prophetic",
     "band": 5
   },
   {
-    "id": 1144,
+    "id": 2295396673041478,
     "word": "velleity",
     "pos": "n",
     "definition": "a wish too weak to lead to action",
     "band": 5
   },
   {
-    "id": 1145,
+    "id": 4110730695027523,
     "word": "vendetta",
     "pos": "n",
     "definition": "a prolonged bitter feud",
     "band": 5
   },
   {
-    "id": 1146,
+    "id": 3297182606147928,
     "word": "verboten",
     "pos": "adj",
     "definition": "forbidden",
     "band": 5
   },
   {
-    "id": 1147,
+    "id": 2427703838196437,
     "word": "verdant",
     "pos": "adj",
     "definition": "green with lush vegetation",
     "band": 5
   },
   {
-    "id": 1148,
+    "id": 970389272376996,
     "word": "verisimilitude",
     "pos": "n",
     "definition": "the appearance of being true or real",
     "band": 5
   },
   {
-    "id": 1149,
+    "id": 2690988776755142,
     "word": "vicissitude",
     "pos": "n",
     "definition": "an unwelcome change of circumstances",
     "band": 5
   },
   {
-    "id": 1150,
+    "id": 3439803703636648,
     "word": "vitiate",
     "pos": "v",
     "definition": "to spoil or impair the quality of",
     "band": 5
   },
   {
-    "id": 1151,
+    "id": 4123268307134520,
     "word": "vituperate",
     "pos": "v",
     "definition": "to blame or insult abusively",
     "band": 5
   },
   {
-    "id": 1152,
+    "id": 23260984839670,
     "word": "vituperation",
     "pos": "n",
     "definition": "bitter and abusive language",
     "band": 5
   },
   {
-    "id": 1153,
+    "id": 1692930971023859,
     "word": "voluble",
     "pos": "adj",
     "definition": "speaking fluently and at length",
     "band": 5
   },
   {
-    "id": 1154,
+    "id": 1588677497490422,
     "word": "welter",
     "pos": "n",
     "definition": "a confused, disordered mass",
     "band": 5
   },
   {
-    "id": 1155,
+    "id": 4061315011809256,
     "word": "wend",
     "pos": "v",
     "definition": "to travel slowly along a course",
     "band": 5
   },
   {
-    "id": 1156,
+    "id": 1193883567866259,
     "word": "winnow",
     "pos": "v",
     "definition": "to sift out or separate",
     "band": 5
   },
   {
-    "id": 1157,
+    "id": 660011918767468,
     "word": "wraith",
     "pos": "n",
     "definition": "a ghost",
     "band": 5
   },
   {
-    "id": 1158,
+    "id": 3824252382834886,
     "word": "zealotry",
     "pos": "n",
     "definition": "fanatical devotion",
     "band": 5
   },
   {
-    "id": 1159,
+    "id": 1387521898366376,
     "word": "zephyr",
     "pos": "n",
     "definition": "a soft, gentle breeze",

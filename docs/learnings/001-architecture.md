@@ -60,6 +60,7 @@ fonts and theming, added as generic modules so the siblings could adopt them:
 App code is MIT; OFL fonts. The `words.json` corpus is **hand-authored and
 public-domain (CC0)** — every headword, definition, and difficulty band written
 for this app, no external data. `scripts/corpus_source.json` is the source;
-`scripts/build_corpus.py` validates it and numbers the entries (no deps beyond
+`scripts/build_corpus.py` validates it and assigns each word a stable
+hash-derived id (so persisted state keyed on `Word.id` survives corpus edits; no deps beyond
 the stdlib). The full history of sources evaluated is in
 `docs/prior-art-and-licensing.md`.

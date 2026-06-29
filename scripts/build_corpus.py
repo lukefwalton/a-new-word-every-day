@@ -7,8 +7,11 @@ public domain (CC0). There is **no** external data dependency — no frequency
 list, no third-party dictionary, no scraped text — so the shipped word list is
 free for anyone to use without attribution or share-alike obligations.
 
-This script just validates the source and gives it stable ids: it sorts by
-(band, word) and numbers the entries 1..N. Run it after editing the source.
+This script validates the source and assigns each word a **stable id derived
+from the word itself** (a hash), not from its position. That matters because
+persisted user state — starred words, difficulty marks — keys off `Word.id`, so
+ids must never be reassigned when the list grows or is reordered. Adding,
+removing, or re-sorting words leaves every other word's id untouched.
 
 Usage:
     python scripts/build_corpus.py
@@ -16,11 +19,18 @@ Usage:
 """
 
 import argparse
+import hashlib
 import json
 from collections import Counter
 from pathlib import Path
 
 VALID_POS = {"n", "v", "adj", "adv"}
+
+
+def stable_id(word: str) -> int:
+    """A deterministic positive id that depends only on the word, so it never
+    changes as the corpus is edited. 52 bits keeps it well inside Swift's Int."""
+    return int(hashlib.sha1(word.encode("utf-8")).hexdigest()[:13], 16)
 
 
 def main():
@@ -59,9 +69,13 @@ def main():
         raise SystemExit("FAILED — fix corpus_source.json:\n" + "\n".join(errors))
 
     rows.sort(key=lambda r: (r["band"], r["word"]))
-    out = [{"id": i, "word": r["word"], "pos": r["pos"],
+    out = [{"id": stable_id(r["word"]), "word": r["word"], "pos": r["pos"],
             "definition": r["definition"], "band": r["band"]}
-           for i, r in enumerate(rows, start=1)]
+           for r in rows]
+    ids = [r["id"] for r in out]
+    if len(set(ids)) != len(ids):
+        dup = [w["word"] for w in out if ids.count(w["id"]) > 1]
+        raise SystemExit(f"FAILED — id hash collision between: {dup}")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
 
