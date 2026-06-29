@@ -135,4 +135,33 @@ final class AppModelTests: XCTestCase {
         model.handle(url: URL(string: "https://example.com/word/4")!)
         XCTAssertNil(model.focusedWordID)
     }
+
+    // MARK: Review (in-app study)
+
+    func test_starredWord_isDueForReview() {
+        let (model, _) = makeModel()
+        let word = Fixtures.word(7, band: 2)
+        model.toggleStar(word.id)
+        XCTAssertTrue(model.dueWords().contains(word), "a freshly starred word is due immediately")
+        XCTAssertEqual(model.dueCount, 1)
+    }
+
+    func test_gradeGood_schedulesOutAndClearsDue() {
+        let (model, _) = makeModel()
+        let word = Fixtures.word(7, band: 2)
+        model.toggleStar(word.id)
+        model.grade(word, .good)
+        XCTAssertFalse(model.dueWords().contains(word), "Good schedules the word into the future")
+        XCTAssertEqual(model.dueCount, 0)
+    }
+
+    func test_unstar_dropsReviewSchedule() {
+        let (model, store) = makeModel()
+        let word = Fixtures.word(7, band: 2)
+        model.toggleStar(word.id)
+        model.grade(word, .good)
+        XCTAssertNotNil(store.reviewStates[word.id], "grading persists a schedule")
+        model.toggleStar(word.id)   // unstar
+        XCTAssertNil(store.reviewStates[word.id], "leaving the deck drops the schedule")
+    }
 }

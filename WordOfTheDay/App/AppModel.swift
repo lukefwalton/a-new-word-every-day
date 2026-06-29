@@ -9,6 +9,7 @@ final class AppModel: ObservableObject {
     let service: DailyWordService
     let store: SharedStore
     private let difficulty = DifficultyModel()
+    private let engine: ReviewEngine
 
     enum Tab: Hashable { case today, practice, settings }
 
@@ -18,20 +19,25 @@ final class AppModel: ObservableObject {
     @Published private(set) var onboardingComplete: Bool
     @Published private(set) var starredIDs: [Int]
     @Published private(set) var today: Word?
+    /// Number of starred words due to study now — drives the Practice tab's
+    /// (secondary, opt-in) Study affordance.
+    @Published private(set) var dueCount: Int = 0
     /// Set when a deep link (or the widget) asks to focus a specific word.
     @Published var focusedWordID: Int?
 
-    init(service: DailyWordService, store: SharedStore = .shared) {
+    init(service: DailyWordService, store: SharedStore = .shared, engine: ReviewEngine = ReviewEngine()) {
         #if DEBUG
         Self.applyUITestLaunchOverrides(to: store)
         #endif
         self.service = service
         self.store = store
+        self.engine = engine
         self.theme = store.theme
         self.band = store.band
         self.onboardingComplete = store.onboardingComplete
         self.starredIDs = store.starredIDs
         self.today = service.todaysWord(store: store)
+        recomputeDue()
     }
 
     var corpusIsEmpty: Bool { service.corpus.words.isEmpty }
@@ -42,6 +48,7 @@ final class AppModel: ObservableObject {
         starredIDs = store.starredIDs
         band = store.band
         today = service.todaysWord(store: store)
+        recomputeDue()
     }
 
     // MARK: Theme
@@ -94,7 +101,11 @@ final class AppModel: ObservableObject {
 
     func toggleStar(_ id: Int) {
         store.toggleStar(id)
+        // Leaving the deck (unstarring) drops the word's review schedule so it
+        // doesn't linger or silently resurrect if the word is starred again later.
+        if !store.isStarred(id) { store.removeReviewStates([id]) }
         starredIDs = store.starredIDs
+        recomputeDue()
         WidgetReloader.reload()
     }
 
@@ -102,8 +113,50 @@ final class AppModel: ObservableObject {
 
     func unstar(_ ids: [Int]) {
         for id in ids where store.isStarred(id) { store.toggleStar(id) }
+        store.removeReviewStates(ids)
         starredIDs = store.starredIDs
+        recomputeDue()
         WidgetReloader.reload()
+    }
+
+    // MARK: Review (in-app study — the lightweight Anki behind the widget)
+
+    /// Words ready to study now: starred words whose schedule is due, or that have
+    /// never been reviewed. Due-soonest first; never-reviewed words sort last, so a
+    /// session clears pending reviews before introducing brand-new cards.
+    func dueWords(now: Date = Date()) -> [Word] {
+        let states = store.reviewStates
+        return service.starredWords(store: store)
+            .filter { engine.isDue(states[$0.id], now: now) }
+            .sorted { lhs, rhs in
+                switch (states[lhs.id]?.due, states[rhs.id]?.due) {
+                case let (l?, r?): return l < r
+                case (_?, nil):    return true     // scheduled words before brand-new
+                case (nil, _?):    return false
+                case (nil, nil):   return false
+                }
+            }
+    }
+
+    /// Record a recall grade for a word and persist its new FSRS schedule.
+    func grade(_ word: Word, _ grade: ReviewGrade, now: Date = Date()) {
+        do {
+            let next = try engine.grade(store.reviewStates[word.id], grade, now: now)
+            var states = store.reviewStates
+            states[word.id] = next
+            store.reviewStates = states
+        } catch {
+            // Unreachable: `ReviewGrade` excludes FSRS's invalid `.manual`. Surface
+            // it loudly rather than corrupt the schedule, and leave it untouched.
+            assertionFailure("FSRS rejected grade \(grade) for word \(word.id): \(error)")
+            NSLog("[WordOfTheDay] review scheduling failed for word %d: %@", word.id, String(describing: error))
+        }
+        recomputeDue(now: now)
+    }
+
+    /// Refresh the published due count that drives the Practice tab's Study affordance.
+    func recomputeDue(now: Date = Date()) {
+        dueCount = dueWords(now: now).count
     }
 
     // MARK: In-app word marking (nudges the band)

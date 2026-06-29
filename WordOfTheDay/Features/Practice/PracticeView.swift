@@ -8,6 +8,7 @@ struct PracticeView: View {
     @EnvironmentObject private var model: AppModel
     @State private var exportURL: ExportFile?
     @State private var exportFailed = false
+    @State private var studying = false
 
     private var typeface: LFWTypeface { model.theme.typeface }
     private var palette: LFWPaletteColors { model.theme.colors }
@@ -19,7 +20,11 @@ struct PracticeView: View {
                     if model.starredWords.isEmpty {
                         empty
                     } else {
-                        list
+                        VStack(spacing: 0) {
+                            // Secondary, opt-in: only appears when something is due.
+                            if model.dueCount > 0 { studyBar }
+                            list
+                        }
                     }
                 }
                 .navigationTitle("Practice")
@@ -47,8 +52,41 @@ struct PracticeView: View {
                 } message: {
                     Text("Something went wrong writing the file. Please try again.")
                 }
+                .fullScreenCover(isPresented: $studying) {
+                    ReviewSessionView().environmentObject(model)
+                }
             }
         }
+    }
+
+    /// A quiet entry point into the study session — present only when words are due.
+    /// The saved-words list below remains the tab's primary content.
+    private var studyBar: some View {
+        Button { studying = true } label: {
+            HStack(spacing: 10) {
+                Image(systemName: "rectangle.stack.fill")
+                Text("Study · \(model.dueCount) due")
+                    .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 17))
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+            }
+            .foregroundStyle(palette.primaryText)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
+            .background(
+                RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
+                    .fill(palette.accent.opacity(0.18))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
+                    .strokeBorder(palette.accent.opacity(0.40), lineWidth: 1)
+            )
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 10)
+        .padding(.bottom, 2)
+        .accessibilityLabel("Study \(model.dueCount) words due for review")
     }
 
     private var list: some View {
