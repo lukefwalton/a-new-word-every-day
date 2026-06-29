@@ -32,6 +32,8 @@ def main():
     args = ap.parse_args()
 
     rows = json.loads(args.source.read_text())
+    if not isinstance(rows, list) or not all(isinstance(r, dict) for r in rows):
+        raise SystemExit(f"FAILED — {args.source.name} must be a JSON array of objects")
     errors = []
     seen = set()
     for i, r in enumerate(rows):
