@@ -69,3 +69,6 @@ WordOfTheDay/Resources/Fonts/*.otf
 *.xcodeproj
 project.local.yml
 project.generated.yml
+
+# Local build artifacts (release.sh archive, simulator derived data)
+build/

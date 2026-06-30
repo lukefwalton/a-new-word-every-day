@@ -72,7 +72,6 @@ targets:
         buildPhase: resources    # the widget bundles its own copy of words.json + fonts
         excludes:
           - PrivacyInfo.xcprivacy   # the widget ships WordWidget/PrivacyInfo.xcprivacy instead
-          - Fonts/OFL.txt           # license text only needs to ship in the app bundle
     entitlements:
       path: WordWidget/WordWidget.entitlements
       properties:
@@ -84,6 +83,7 @@ targets:
         CFBundleDisplayName: Word of the Day
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
         UIAppFonts:
@@ -139,3 +139,7 @@ schemes:
         - WordOfTheDayUITests
     run:
       config: Debug
+    archive:
+      config: Release
+    profile:
+      config: Release
