@@ -89,4 +89,74 @@ final class WordOfTheDayUITests: XCTestCase {
         // At least one starred row should exist (exact word varies by install salt).
         XCTAssertGreaterThan(app.cells.count, 0)
     }
+
+    func test_studySession_revealAndGradeGood_finishes() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-UITestResetOnboarding", "-UITestSkipOnboarding"]
+        app.launch()
+
+        XCTAssertTrue(app.buttons["Save to practice list"].waitForExistence(timeout: 5))
+        app.buttons["Save to practice list"].tap()
+
+        app.tabBars.buttons["Practice"].tap()
+        XCTAssertTrue(app.navigationBars["Practice"].waitForExistence(timeout: 3))
+
+        let study = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Study'")).firstMatch
+        XCTAssertTrue(study.waitForExistence(timeout: 5))
+        study.tap()
+
+        XCTAssertTrue(app.buttons["Reveal"].waitForExistence(timeout: 5))
+        app.buttons["Reveal"].tap()
+        let good = app.buttons["Good — grade your recall"]
+        XCTAssertTrue(good.waitForExistence(timeout: 5))
+        good.tap()
+
+        XCTAssertTrue(app.staticTexts["All caught up"].waitForExistence(timeout: 5))
+        app.buttons["Done"].tap()
+        XCTAssertTrue(app.navigationBars["Practice"].waitForExistence(timeout: 3))
+    }
+
+    func test_settings_aboutLinks_existAndOpenSupportSite() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-UITestResetOnboarding", "-UITestSkipOnboarding"]
+        app.launch()
+
+        app.tabBars.buttons["Settings"].tap()
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 5))
+
+        let support = app.buttons["Support & feedback"]
+        let privacy = app.buttons["Privacy policy"]
+        scrollToElement(support, in: app)
+        XCTAssertTrue(support.waitForExistence(timeout: 3))
+        XCTAssertTrue(privacy.exists)
+
+        support.tap()
+
+        let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
+        XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10))
+        XCTAssertTrue(
+            safari.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Word of the Day")).firstMatch
+                .waitForExistence(timeout: 10)
+        )
+
+        app.activate()
+        XCTAssertTrue(app.tabBars.buttons["Settings"].waitForExistence(timeout: 5))
+        if !app.tabBars.buttons["Settings"].isSelected {
+            app.tabBars.buttons["Settings"].tap()
+        }
+        scrollToElement(privacy, in: app)
+        privacy.tap()
+        XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10))
+        XCTAssertTrue(
+            safari.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Privacy Policy")).firstMatch
+                .waitForExistence(timeout: 10)
+        )
+    }
+
+    /// Scroll a form until `element` is on screen (Settings About is below the fold).
+    private func scrollToElement(_ element: XCUIElement, in app: XCUIApplication, maxSwipes: Int = 6) {
+        for _ in 0..<maxSwipes where !element.isHittable {
+            app.swipeUp()
+        }
+    }
 }

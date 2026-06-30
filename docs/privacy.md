@@ -31,8 +31,9 @@ your device only. Nothing is synced to a server because there is no server.
 
 ## Third-party code
 
-The app bundles open-source fonts (SIL Open Font License) and uses the FSRS
-algorithm (MIT) for optional in-app review scheduling. No third party receives
+The app bundles open-source fonts (SIL Open Font License) and implements FSRS-5
+on-device for optional in-app review scheduling (hand-rolled port of the
+MIT-licensed swift-fsrs reference; no runtime package). No third party receives
 your data.
 
 ## Contact
