@@ -144,9 +144,10 @@ final class AppModel: ObservableObject {
             }
     }
 
-    /// The next-review interval (in whole days) each grade would schedule for a word,
-    /// from its current saved state — so the study session can show "Good · 3d" under
-    /// the buttons before the user commits. Fuzz-free, so it matches what's promised.
+    /// The base next-review interval (in whole days) each grade would schedule for a
+    /// word, from its current saved state — so the study session can show "Good · 3d"
+    /// under the buttons before the user commits. Fuzz-free, so it's the stable base
+    /// the grade lands on (`grade()` then jitters the final due date a few percent).
     func reviewPreview(_ word: Word, now: Date = Date()) -> [ReviewGrade: Int] {
         engine.preview(store.reviewStates[word.id], now: now)
     }
