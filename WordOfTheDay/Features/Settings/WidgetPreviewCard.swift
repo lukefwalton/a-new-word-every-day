@@ -58,7 +58,8 @@ struct WidgetPreviewCard: View {
                     .foregroundStyle(palette.secondaryText)
             }
             Spacer(minLength: 0)
-            heroWord(size: 34)
+            WidgetHeroText(word: word.word, typeface: typeface,
+                           color: palette.primaryText, glow: palette.accent, size: 34)
                 .frame(maxWidth: .infinity, alignment: elementAlignment)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: 12))
@@ -88,7 +89,8 @@ struct WidgetPreviewCard: View {
     private var minimal: some View {
         VStack(spacing: 8) {
             Spacer(minLength: 0)
-            heroWord(size: 40)
+            WidgetHeroText(word: word.word, typeface: typeface,
+                           color: palette.primaryText, glow: palette.accent, size: 40)
                 .frame(maxWidth: .infinity, alignment: .center)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: 13))
@@ -105,31 +107,4 @@ struct WidgetPreviewCard: View {
         }
     }
 
-    private func heroWord(size: CGFloat) -> some View {
-        Group {
-            if LFWVariableFont.isRegistered(typeface.family) {
-                Text(word.word)
-                    .font(.lfwVariable(typeface.family, size: size, axes: heroAxes(size: size)))
-            } else {
-                Text(word.word)
-                    .font(LFWTypography.font(.heroWord, typeface: typeface, size: size))
-            }
-        }
-        .foregroundStyle(palette.primaryText)
-        .lineLimit(1)
-        .minimumScaleFactor(0.5)
-        .background(
-            Circle().fill(palette.accent.opacity(0.16))
-                .frame(width: size * 1.7, height: size * 1.7)
-                .blur(radius: 26)
-        )
-    }
-
-    private func heroAxes(size: CGFloat) -> [Int: CGFloat] {
-        var axes: [Int: CGFloat] = [LFWVariableFont.weight: 560]
-        if typeface.hasOpticalSize {
-            axes[LFWVariableFont.opticalSize] = min(max(size, 9), 144)
-        }
-        return axes
-    }
 }

@@ -69,7 +69,8 @@ struct WordWidgetView: View {
         return VStack(alignment: centered ? .center : .leading, spacing: size == .small ? 6 : 8) {
             header(word, compact: size == .small, starSize: size == .small ? 14 : 16)
             Spacer(minLength: 0)
-            heroBlock(word, size: heroSize)
+            WidgetHeroText(word: word.word, typeface: typeface,
+                           color: palette.primaryText, glow: palette.accent, size: heroSize)
                 .frame(maxWidth: .infinity, alignment: elementAlignment)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 13))
@@ -104,7 +105,9 @@ struct WordWidgetView: View {
     private func minimalBody(_ word: Word, size: WidgetLayoutSize) -> some View {
         VStack(spacing: 8) {
             Spacer(minLength: 0)
-            heroBlock(word, size: heroSize(size, minimal: true))
+            WidgetHeroText(word: word.word, typeface: typeface,
+                           color: palette.primaryText, glow: palette.accent,
+                           size: heroSize(size, minimal: true))
                 .frame(maxWidth: .infinity, alignment: .center)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 14))
@@ -167,42 +170,6 @@ struct WordWidgetView: View {
             .buttonStyle(.plain)
             .accessibilityLabel(entry.isStarred ? "Remove from practice list" : "Save to practice list")
         }
-    }
-
-    /// The hero word with a soft accent glow behind it — a designed, not just
-    /// themed, presence.
-    private func heroBlock(_ word: Word, size: CGFloat) -> some View {
-        widgetHero(word, size: size)
-            .foregroundStyle(palette.primaryText)
-            .minimumScaleFactor(0.45)
-            .lineLimit(1)
-            .accessibilityAddTraits(.isHeader)
-            .background(
-                Circle()
-                    .fill(palette.accent.opacity(0.16))
-                    .frame(width: size * 1.7, height: size * 1.7)
-                    .blur(radius: 30)
-            )
-    }
-
-    /// Variable-font hero at rest weight — richer than static `LFWTypography.font`.
-    @ViewBuilder
-    private func widgetHero(_ word: Word, size: CGFloat) -> some View {
-        if LFWVariableFont.isRegistered(typeface.family) {
-            Text(word.word)
-                .font(.lfwVariable(typeface.family, size: size, axes: heroAxes(size: size)))
-        } else {
-            Text(word.word)
-                .font(LFWTypography.font(.heroWord, typeface: typeface, size: size))
-        }
-    }
-
-    private func heroAxes(size: CGFloat) -> [Int: CGFloat] {
-        var axes: [Int: CGFloat] = [LFWVariableFont.weight: 560]
-        if typeface.hasOpticalSize {
-            axes[LFWVariableFont.opticalSize] = min(max(size, 9), 144)
-        }
-        return axes
     }
 
     // MARK: Lock screen
