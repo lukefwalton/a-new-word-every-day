@@ -77,7 +77,7 @@ In App Store Connect:
 | **Screenshots** | Include the Home Screen widget — it's the product |
 
 ```bash
-bash scripts/capture_app_store_screenshots.sh   # 6.5" simulator captures → build/app-store-screenshots/
+bash scripts/capture_app_store_screenshots.sh   # iphone/ (6.5") + ipad/ (13") → build/app-store-screenshots/
 ```
 
 Review notes: no login, no network, widget star works without opening the app.

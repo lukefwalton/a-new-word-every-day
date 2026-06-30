@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# Build, seed demo state, and capture 6.5" App Store screenshots in the simulator.
+# Build, seed demo state, and capture App Store screenshots in the simulator.
 #
 # Output: build/app-store-screenshots/
-#   01-today.png      — hero word (Today tab)
-#   02-settings.png   — widget preview + customization (Settings)
-#   03-practice.png   — starred words list (Practice)
+#   iphone/   6.5" (1284×2778) — required for iPhone
+#   ipad/     13"  (2064×2752) — required even for iPhone-only apps on iPad
 #
 # Requires: Xcode, iOS Simulator, fonts (scripts/fetch_fonts.sh).
 set -euo pipefail
@@ -20,83 +19,89 @@ if ! compgen -G "WordOfTheDay/Resources/Fonts/*.ttf" > /dev/null 2>&1; then
   bash scripts/fetch_fonts.sh
 fi
 
-SIM_ID="${SIM_ID:-$(python3 <<'PY'
-import json, subprocess
+pick_sim() {
+  python3 - "$@" <<'PY'
+import json, subprocess, sys
+names = sys.argv[1:]
 out = subprocess.check_output(["xcrun", "simctl", "list", "devices", "available", "-j"], text=True)
 devices = json.loads(out)["devices"]
-candidates = []
-for runtime, devs in devices.items():
-    for d in devs:
-        if d.get("isAvailable") and d["name"] in (
-            "iPhone 14 Plus", "iPhone 15 Plus", "iPhone 15 Pro Max", "iPhone 16 Plus"
-        ):
-            candidates.append(d)
-for preferred in ("iPhone 15 Pro Max", "iPhone 14 Plus", "iPhone 15 Plus", "iPhone 16 Plus"):
-    for d in candidates:
-        if d["name"] == preferred:
-            print(d["udid"])
-            raise SystemExit
-if candidates:
-    print(candidates[0]["udid"])
-else:
-    raise SystemExit("No 6.5\" iPhone simulator found (need iPhone 14 Plus class)")
+for want in names:
+    for devs in devices.values():
+        for d in devs:
+            if d.get("isAvailable") and d["name"] == want:
+                print(d["udid"])
+                raise SystemExit
+for want in names:
+    for devs in devices.values():
+        for d in devs:
+            if d.get("isAvailable") and want in d["name"]:
+                print(d["udid"])
+                raise SystemExit
+raise SystemExit(f"No simulator found for: {names}")
 PY
-)}"
+}
 
 BUNDLE="com.lukewalton.wordoftheday"
-OUT_DIR="build/app-store-screenshots"
-mkdir -p "$OUT_DIR"
-
-echo "Building for simulator ($SIM_ID)..."
-xcodebuild build \
-  -scheme WordOfTheDay \
-  -configuration Debug \
-  -destination "platform=iOS Simulator,id=$SIM_ID" \
-  -derivedDataPath build/DerivedData \
-  CODE_SIGNING_ALLOWED=NO >/dev/null
-
-APP="build/DerivedData/Build/Products/Debug-iphonesimulator/WordOfTheDay.app"
-
-xcrun simctl boot "$SIM_ID" 2>/dev/null || true
-open -a Simulator --args -CurrentDeviceUDID "$SIM_ID"
-sleep 2
-
-xcrun simctl uninstall "$SIM_ID" "$BUNDLE" 2>/dev/null || true
-xcrun simctl install "$SIM_ID" "$APP"
-
 BASE_ARGS=(-UITestResetOnboarding -UITestSkipOnboarding -ScreenshotDemo)
 
 flatten_png() {
-  local src="$1" dest="$2"
+  local src="$1" dest="$2" w="$3" h="$4"
   local tmp="${dest%.png}.jpg"
   sips -s format jpeg -s formatOptions 100 "$src" --out "$tmp" >/dev/null
   sips -s format png "$tmp" --out "$dest" >/dev/null
   rm -f "$tmp"
-  sips -z 2778 1284 "$dest" --out "$dest" >/dev/null
+  sips -z "$h" "$w" "$dest" --out "$dest" >/dev/null
 }
 
-capture() {
-  local slug="$1"
-  shift
-  echo "→ $slug"
-  xcrun simctl terminate "$SIM_ID" "$BUNDLE" 2>/dev/null || true
-  sleep 0.4
-  xcrun simctl launch "$SIM_ID" "$BUNDLE" -- "${BASE_ARGS[@]}" "$@"
-  sleep 3.5
-  local raw="/tmp/anwed-${slug}-raw.png"
-  xcrun simctl io "$SIM_ID" screenshot "$raw"
-  flatten_png "$raw" "$OUT_DIR/${slug}.png"
-  rm -f "$raw"
-  W=$(sips -g pixelWidth "$OUT_DIR/${slug}.png" | awk '/pixelWidth/{print $2}')
-  H=$(sips -g pixelHeight "$OUT_DIR/${slug}.png" | awk '/pixelHeight/{print $2}')
-  echo "  ✓ $OUT_DIR/${slug}.png (${W}×${H})"
+capture_set() {
+  local sim_id="$1" out_dir="$2" w="$3" h="$4" label="$5"
+  mkdir -p "$out_dir"
+
+  echo ""
+  echo "=== $label (${w}x${h}) — $sim_id ==="
+  echo "Building for simulator..."
+  xcodebuild build \
+    -scheme WordOfTheDay \
+    -configuration Debug \
+    -destination "platform=iOS Simulator,id=$sim_id" \
+    -derivedDataPath build/DerivedData \
+    CODE_SIGNING_ALLOWED=NO >/dev/null
+
+  local app="build/DerivedData/Build/Products/Debug-iphonesimulator/WordOfTheDay.app"
+  xcrun simctl boot "$sim_id" 2>/dev/null || true
+  open -a Simulator --args -CurrentDeviceUDID "$sim_id"
+  sleep 2
+  xcrun simctl uninstall "$sim_id" "$BUNDLE" 2>/dev/null || true
+  xcrun simctl install "$sim_id" "$app"
+
+  capture_one() {
+    local slug="$1"
+    shift
+    echo "→ $slug"
+    xcrun simctl terminate "$sim_id" "$BUNDLE" 2>/dev/null || true
+    sleep 0.4
+    xcrun simctl launch "$sim_id" "$BUNDLE" -- "${BASE_ARGS[@]}" "$@"
+    sleep 3.5
+    local raw="/tmp/anwed-${label}-${slug}-raw.png"
+    xcrun simctl io "$sim_id" screenshot "$raw"
+    flatten_png "$raw" "$out_dir/${slug}.png" "$w" "$h"
+    rm -f "$raw"
+    echo "  ✓ $out_dir/${slug}.png"
+  }
+
+  capture_one "01-today"
+  capture_one "02-settings" -OpenTabSettings
+  capture_one "03-practice" -OpenTabPractice
 }
 
-capture "01-today"
-capture "02-settings" -OpenTabSettings
-capture "03-practice" -OpenTabPractice
+IPHONE_SIM="${IPHONE_SIM:-$(pick_sim "iPhone 15 Pro Max" "iPhone 14 Plus" "iPhone 15 Plus" "iPhone 16 Plus")}"
+IPAD_SIM="${IPAD_SIM:-$(pick_sim "iPad Pro 13-inch (M5)" "iPad Pro 13-inch (M4)" "iPad Pro 12.9-inch (6th generation)")}"
+
+capture_set "$IPHONE_SIM" "build/app-store-screenshots/iphone" 1284 2778 "iPhone 6.5\""
+capture_set "$IPAD_SIM"   "build/app-store-screenshots/ipad"   2064 2752 "iPad 13\""
 
 echo ""
-echo "Done → $OUT_DIR/"
-ls -la "$OUT_DIR"/*.png
-open "$OUT_DIR"
+echo "Done."
+echo "  iPhone → build/app-store-screenshots/iphone/"
+echo "  iPad   → build/app-store-screenshots/ipad/"
+open build/app-store-screenshots
