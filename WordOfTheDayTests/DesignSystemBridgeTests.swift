@@ -45,4 +45,35 @@ final class DesignSystemBridgeTests: XCTestCase {
         XCTAssertEqual(LFWTypeface.fraunces.fallbackDesign, .serif)
         XCTAssertEqual(LFWTypeface.inter.fallbackDesign, .rounded)
     }
+
+    /// When the app bundle includes the OFL fonts (CI runs `fetch_fonts.sh`
+    /// before building), every `LFWTypeface.family` must resolve in Core Text.
+    /// Wrong names silently fall back to system fonts — this catches that drift.
+    func test_bundledTypefaces_areRegisteredInAppBundle() {
+        let bundled = Set(
+            Bundle.main.urls(forResourcesWithExtension: "ttf", subdirectory: nil)?
+                .map { $0.lastPathComponent } ?? []
+        )
+        XCTAssertFalse(bundled.isEmpty, "No .ttf files in app bundle — run scripts/fetch_fonts.sh before testing")
+
+        for face in LFWTypeface.allCases {
+            XCTAssertTrue(
+                bundled.contains(face.bundledFileName),
+                "\(face.bundledFileName) missing from app bundle resources"
+            )
+            XCTAssertTrue(
+                LFWVariableFont.isRegistered(face.family),
+                "\(face.displayName): family '\(face.family)' not registered — check UIAppFonts and LFWTypeface.family"
+            )
+            let axes = LFWVariableFont.axes(of: face.family)
+            XCTAssertFalse(
+                axes.isEmpty,
+                "\(face.displayName): no variation axes for '\(face.family)'"
+            )
+            XCTAssertNotNil(
+                axes["wght"],
+                "\(face.displayName): missing wght axis on '\(face.family)'"
+            )
+        }
+    }
 }

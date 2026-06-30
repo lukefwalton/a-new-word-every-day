@@ -18,10 +18,13 @@ Typefaces (bundled variable fonts, fetched by scripts/fetch_fonts.sh)
 Each is licensed under the SIL Open Font License, Version 1.1
 (see WordOfTheDay/Resources/Fonts/OFL.txt):
 
-  Fraunces  — © The Fraunces Project Authors (Undercase Type)
-  Literata  — © The Literata Project Authors
-  Inter     — © The Inter Project Authors (Rasmus Andersson)
-  Recursive — © The Recursive Project Authors (Arrow Type)
+  Fraunces        — © The Fraunces Project Authors (Undercase Type)
+  Literata        — © The Literata Project Authors
+  Newsreader      — © The Newsreader Project Authors (Production Type)
+  Source Serif 4  — © Adobe (Source Serif 4 Project Authors)
+  Inter           — © The Inter Project Authors (Rasmus Andersson)
+  Source Sans 3   — © Adobe (Source Sans 3 Project Authors)
+  Recursive       — © The Recursive Project Authors (Arrow Type)
 
 --------------------------------------------------------------------------------
 Spaced repetition (in-app practice)

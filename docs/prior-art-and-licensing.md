@@ -69,6 +69,7 @@ Acknowledgements credit.
 | **Literata** | Reading serif | `opsz`, `wght` | `googlefonts/literata` |
 | **Newsreader** | Reading serif | `opsz`, `wght` | `productiontype/Newsreader` |
 | **Source Serif 4** | Text serif | `opsz`, `wght` | `adobe-fonts/source-serif` |
+| **Source Sans 3** | UI sans alt | `wght` | `adobe-fonts/source-sans` |
 
 **Embedding gotchas:** add each file to `UIAppFonts` *and* the target's Copy
 Bundle Resources; the runtime PostScript family name is the VF's *default named

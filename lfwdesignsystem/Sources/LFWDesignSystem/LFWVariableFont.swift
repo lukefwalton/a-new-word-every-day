@@ -14,7 +14,7 @@ import CoreText
 /// (a map of *integer* axis tags → values), then bridge to SwiftUI with
 /// `Font(uiFont)`.
 ///
-/// All fonts shipped here are SIL OFL 1.1 (Fraunces/Inter/Recursive/Literata).
+/// All fonts shipped here are SIL OFL 1.1 (see LFWTypeface for the full set).
 public enum LFWVariableFont {
 
     /// Pack a four-character axis code ("wght") into its Core Text integer tag.
@@ -42,21 +42,43 @@ public enum LFWVariableFont {
     /// the typography layer can fall back to a system face instead of silently
     /// rendering the system font under a custom name.
     public static func isRegistered(_ family: String) -> Bool {
+        resolvedName(for: family) != nil
+    }
+
+    /// PostScript name to pass to Core Text / `UIFontDescriptor` for a bundled
+    /// variable font. Family names like `"Inter"` are not always valid CT names —
+    /// Inter's VF registers as `"InterVariable"` under the `"Inter"` family.
+    public static func resolvedName(for family: String, size: CGFloat = 24) -> String? {
         #if canImport(UIKit)
-        if !UIFont.fontNames(forFamilyName: family).isEmpty { return true }
-        // Some variable fonts register only under their PostScript/full name.
-        return UIFont(name: family, size: 12) != nil
+        if let font = UIFont(name: family, size: size), hasVariationAxes(font) {
+            return font.fontName
+        }
+        for name in UIFont.fontNames(forFamilyName: family) {
+            if let font = UIFont(name: name, size: size), hasVariationAxes(font) {
+                return name
+            }
+        }
+        if let font = UIFont(name: family, size: size) { return font.fontName }
+        return UIFont.fontNames(forFamilyName: family).first
         #else
-        return false
+        return family
         #endif
     }
+
+    #if canImport(UIKit)
+    private static func hasVariationAxes(_ font: UIFont) -> Bool {
+        guard let raw = CTFontCopyVariationAxes(font as CTFont) as? [[CFString: Any]] else { return false }
+        return !raw.isEmpty
+    }
+    #endif
 
     /// The variation axes a registered font exposes, keyed by 4-char code →
     /// (min, default, max). Empty if the font isn't found. For diagnostics — log
     /// once at startup to confirm the real tags/ranges of a bundled font.
     public static func axes(of family: String, size: CGFloat = 24) -> [String: (min: Double, default: Double, max: Double)] {
         var result: [String: (min: Double, default: Double, max: Double)] = [:]
-        let ct = CTFontCreateWithName(family as CFString, size, nil)
+        guard let name = resolvedName(for: family, size: size) else { return result }
+        let ct = CTFontCreateWithName(name as CFString, size, nil)
         guard let raw = CTFontCopyVariationAxes(ct) as? [[CFString: Any]] else { return result }
         for axis in raw {
             guard let id = axis[kCTFontVariationAxisIdentifierKey] as? Int else { continue }
@@ -103,14 +125,15 @@ final class LFWVariableFontCache {
     private var cache: [String: UIFont] = [:]
 
     func font(name: String, size: CGFloat, axes: [Int: CGFloat]) -> UIFont {
-        let key = cacheKey(name: name, size: size, axes: axes)
+        let resolved = LFWVariableFont.resolvedName(for: name, size: size) ?? name
+        let key = cacheKey(name: resolved, size: size, axes: axes)
         lock.lock(); defer { lock.unlock() }
         if let hit = cache[key] { return hit }
 
         var variations: [Int: CGFloat] = [:]
         for (tag, value) in axes { variations[tag] = value.rounded() }
         let descriptor = UIFontDescriptor(fontAttributes: [
-            .name: name,
+            .name: resolved,
             UIFontDescriptor.AttributeName(rawValue: kCTFontVariationAttribute as String): variations
         ])
         let font = UIFont(descriptor: descriptor, size: size)

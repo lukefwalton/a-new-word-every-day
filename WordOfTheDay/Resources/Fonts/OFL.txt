@@ -1,11 +1,14 @@
-The bundled typefaces — Fraunces, Literata, Inter, and Recursive — are each
-licensed under the SIL Open Font License, Version 1.1. The full license text
-follows. Copyright belongs to the respective font authors:
+The bundled typefaces are each licensed under the SIL Open Font License,
+Version 1.1. The full license text follows. Copyright belongs to the respective
+font authors:
 
-  Fraunces  © The Fraunces Project Authors (Undercase Type)
-  Literata  © The Literata Project Authors
-  Inter     © The Inter Project Authors (Rasmus Andersson)
-  Recursive © The Recursive Project Authors (Arrow Type)
+  Fraunces        © The Fraunces Project Authors (Undercase Type)
+  Literata        © The Literata Project Authors
+  Newsreader      © The Newsreader Project Authors (Production Type)
+  Source Serif 4  © Adobe (Source Serif 4 Project Authors)
+  Inter           © The Inter Project Authors (Rasmus Andersson)
+  Source Sans 3   © Adobe (Source Sans 3 Project Authors)
+  Recursive       © The Recursive Project Authors (Arrow Type)
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
