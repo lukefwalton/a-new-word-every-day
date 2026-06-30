@@ -52,7 +52,7 @@ struct SettingsView: View {
         } header: {
             Text("Home Screen widget")
         } footer: {
-            Text("The widget is the product — it uses your typeface, palette, and accent hue from below. Add it from the Home Screen, then customize here.")
+            Text("These set the default look for your widgets. Each widget on the Home Screen can also be customized on its own — long-press it and tap Edit Widget.")
                 .foregroundStyle(palette.secondaryText)
         }
     }
