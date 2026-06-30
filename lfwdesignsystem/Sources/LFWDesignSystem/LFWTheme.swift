@@ -187,6 +187,22 @@ public struct LFWThemeConfig: Codable, Equatable, Sendable {
     /// The family default: Fraunces + Deep Sea, no hue shift.
     public static let `default` = LFWThemeConfig()
 
+    private enum CodingKeys: String, CodingKey {
+        case typeface, palette, accentHueShift
+    }
+
+    // Tolerant decode: an unknown typeface/palette raw value — from app/widget version
+    // skew or a downgrade that doesn't know a newer palette — defaults rather than
+    // failing the whole theme decode (which would reset every choice).
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        let rawTypeface = (try? c.decodeIfPresent(String.self, forKey: .typeface)) ?? nil
+        let rawPalette = (try? c.decodeIfPresent(String.self, forKey: .palette)) ?? nil
+        typeface = rawTypeface.flatMap(LFWTypeface.init(rawValue:)) ?? .fraunces
+        palette = rawPalette.flatMap(LFWPalette.init(rawValue:)) ?? .deepSea
+        accentHueShift = ((try? c.decodeIfPresent(Double.self, forKey: .accentHueShift)) ?? nil) ?? 0
+    }
+
     /// Palette colors with the accent-hue nudge applied.
     public var colors: LFWPaletteColors {
         let base = palette.colors

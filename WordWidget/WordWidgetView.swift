@@ -85,6 +85,13 @@ struct WordWidgetView: View {
                     .multilineTextAlignment(centered ? .center : .leading)
                     .frame(maxWidth: .infinity, alignment: elementAlignment)
             }
+            if size == .extraLarge {
+                Text("Tap to open · star to save")
+                    .font(LFWTypography.font(.eyebrow, typeface: typeface, size: 10))
+                    .kerning(1.2)
+                    .foregroundStyle(palette.secondaryText)
+                    .frame(maxWidth: .infinity, alignment: elementAlignment)
+            }
         }
         .padding(padding)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: centered ? .top : .topLeading)

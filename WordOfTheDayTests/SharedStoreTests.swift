@@ -122,6 +122,18 @@ final class SharedStoreTests: XCTestCase {
         }
     }
 
+    func test_theme_tolerantDecode_defaultsUnknownTypefaceAndPalette() throws {
+        // A theme written with a palette/typeface this build doesn't know must default,
+        // not throw (which would reset the whole theme).
+        let future = try JSONSerialization.data(withJSONObject: [
+            "typeface": "comic", "palette": "neon", "accentHueShift": 12.0,
+        ])
+        let decoded = try JSONDecoder().decode(LFWThemeConfig.self, from: future)
+        XCTAssertEqual(decoded.typeface, .fraunces)
+        XCTAssertEqual(decoded.palette, .deepSea)
+        XCTAssertEqual(decoded.accentHueShift, 12.0)
+    }
+
     func test_removeReviewStates_dropsOnlyGivenIds() {
         let store = Fixtures.volatileStore()
         store.reviewStates = [1: ReviewState(), 2: ReviewState(), 3: ReviewState()]
