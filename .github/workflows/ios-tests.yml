@@ -16,12 +16,7 @@ concurrency:
 jobs:
   unit-tests:
     name: Swift unit tests
-    # macos-15 ships Xcode 16 (Swift 6 build tools). Required because swift-fsrs
-    # declares swift-tools-version 6.0 in its Package.swift, which Xcode 15.x
-    # (the macos-14 default) refuses to resolve. The app itself still builds in
-    # Swift 5 language mode for iOS 17 — only the toolchain that reads the
-    # manifest moves. FSRS is pinned by git revision in project.yml.
-    runs-on: macos-15
+    runs-on: macos-14
     timeout-minutes: 30
     defaults:
       run:

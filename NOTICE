@@ -26,8 +26,9 @@ Each is licensed under the SIL Open Font License, Version 1.1
 --------------------------------------------------------------------------------
 Spaced repetition (in-app practice)
 --------------------------------------------------------------------------------
-In-app review scheduling uses the FSRS algorithm via open-spaced-repetition/
-swift-fsrs (MIT License), resolved as a Swift Package at build time. It runs
-entirely on-device; no review data leaves the phone. Anki's own AGPL code is
+In-app review scheduling uses the FSRS-5 algorithm, ported into this app from
+open-spaced-repetition/swift-fsrs (MIT License) — re-implemented in
+WordOfTheDay/Features/Practice/ReviewEngine.swift, not linked as a dependency. It
+runs entirely on-device; no review data leaves the phone. Anki's own AGPL code is
 never used; the Anki export is plain CSV that Anki imports natively.
   https://github.com/open-spaced-repetition/swift-fsrs

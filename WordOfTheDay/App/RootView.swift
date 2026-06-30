@@ -5,6 +5,7 @@ import SwiftUI
 /// onboarding and the app.
 struct RootView: View {
     @EnvironmentObject private var model: AppModel
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         Group {
@@ -28,5 +29,10 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.4), value: model.onboardingComplete)
         .onAppear { TabBarAppearance.apply(theme: model.theme) }
         .onChange(of: model.theme) { _, theme in TabBarAppearance.apply(theme: theme) }
+        // Re-sync on foreground: pick up widget-side star changes and refresh the
+        // time-based due count (a card may have come due while backgrounded).
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active { model.refreshFromStore() }
+        }
     }
 }

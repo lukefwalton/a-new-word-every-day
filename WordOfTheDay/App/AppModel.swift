@@ -140,17 +140,9 @@ final class AppModel: ObservableObject {
 
     /// Record a recall grade for a word and persist its new FSRS schedule.
     func grade(_ word: Word, _ grade: ReviewGrade, now: Date = Date()) {
-        do {
-            let next = try engine.grade(store.reviewStates[word.id], grade, now: now)
-            var states = store.reviewStates
-            states[word.id] = next
-            store.reviewStates = states
-        } catch {
-            // Unreachable: `ReviewGrade` excludes FSRS's invalid `.manual`. Surface
-            // it loudly rather than corrupt the schedule, and leave it untouched.
-            assertionFailure("FSRS rejected grade \(grade) for word \(word.id): \(error)")
-            NSLog("[WordOfTheDay] review scheduling failed for word %d: %@", word.id, String(describing: error))
-        }
+        var states = store.reviewStates
+        states[word.id] = engine.grade(states[word.id], grade, now: now)
+        store.reviewStates = states
         recomputeDue(now: now)
     }
 

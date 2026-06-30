@@ -8,11 +8,12 @@ the app. Star a word → it's in your deck → study it on a spaced-repetition s
 
 | Piece | Where | Role |
 |---|---|---|
-| `ReviewState` | `Shared/ReviewState.swift` | Neutral, `Codable` per-word schedule. **No `FSRS` import.** Mirrors the FSRS `Card` 1:1. |
-| `ReviewGrade` | `Shared/ReviewState.swift` | Again/Hard/Good/Easy (raw 1–4 = FSRS `Rating`; the invalid `.manual` is excluded by construction). |
-| `ReviewEngine` | `Features/Practice/ReviewEngine.swift` | **The only file that imports `FSRS`.** Converts `ReviewState ⇄ Card`, drives `next()`. |
-| `ReviewSessionView` | `Features/Practice/ReviewSessionView.swift` | The study loop: tap to reveal, grade, FSRS reschedules. |
-| `SharedStore.reviewStates` | `Shared/SharedStore.swift` | `[Word.id: ReviewState]`, JSON in the App Group. Dropped when a word is unstarred. |
+| `ReviewState` | `Shared/ReviewState.swift` | Neutral, `Codable` per-word schedule (mirrors the FSRS card fields). |
+| `ReviewGrade` | `Shared/ReviewState.swift` | Again/Hard/Good/Easy (raw 1–4 = FSRS rating). |
+| `ReviewEngine` | `Features/Practice/ReviewEngine.swift` | The scheduler — a self-contained FSRS-5 port. The single algorithm boundary. |
+| `ReviewQueue` | `Features/Practice/ReviewQueue.swift` | In-session queue; re-queues `.again` cards. Unit-tested. |
+| `ReviewSessionView` | `Features/Practice/ReviewSessionView.swift` | The study loop: reveal, grade, reschedule. |
+| `SharedStore.reviewStates` | `Shared/SharedStore.swift` | `[Word.id: ReviewState]`, JSON in the App Group. Dropped on unstar. |
 
 `AppModel` exposes `dueWords()` / `dueCount` / `grade(_:_:)`; the Practice tab shows
 a slim **"Study · N due"** entry only when something is due. The deck is exactly the
@@ -20,40 +21,34 @@ starred words; a starred word with no saved schedule is a new card, due now.
 
 ## Decisions
 
-- **Engine: `open-spaced-repetition/swift-fsrs` (MIT), the app's first runtime
-  dependency.** "Anki" means FSRS, and a maintained native-Swift FSRS beats
-  hand-rolling one. It's resolved at *build* time only — no runtime network, so the
-  local-first/no-tracking doctrine holds; review data never leaves the device.
-- **Pinned with a git `revision` in `project.yml`, not a committed
-  `Package.resolved`.** The Xcode project is generated and `*.xcodeproj` is
-  gitignored, so the lockfile lives *inside* an ignored directory. The revision pin
-  is the lock instead, and it's deterministic. (The v5.0.0 tag shipped internal
-  FSRS APIs; we pin to `f731c4b` — the public-access fix on FSRS-5 semantics.
-  FSRS-6 is on later `main`.) Its `Package.swift` declares
-  `swift-tools-version: 6.0`, so CI runs on `macos-15` (Xcode 16) to resolve it —
-  the app still compiles in Swift 5 language mode for iOS 17.
+- **The FSRS algorithm is ported, not depended on.** `open-spaced-repetition/swift-fsrs`
+  (MIT) declares its types `public` but its initializers/methods `internal`, so it
+  can't be called from another module (its README example only compiles inside its own
+  test target). Rather than vendor the whole package, `ReviewEngine.swift`
+  re-implements the FSRS-5 math (long-term variant) directly, with attribution. That
+  keeps the repo's **zero-runtime-dependency, Xcode-15 / Swift-5** posture, never
+  touches the widget, and runs entirely on-device.
+- **Persistence is engine-agnostic.** `ReviewState` is our own neutral type (not an
+  FSRS package type), so the algorithm can be swapped again by editing only
+  `ReviewEngine` — no data migration — and the widget (which links only `Shared/`)
+  never sees the scheduler.
+- **`ReviewEngine.grade` is total (non-throwing):** inputs are clamped and `ReviewGrade`
+  excludes FSRS's invalid `.manual`, so there's no failure mode to surface.
 
 ## Session behaviour
 
 The study queue is snapshotted once when `ReviewSessionView` appears, but a word
-graded **Again** is re-appended to that queue so it returns later in the same
-session ("study until caught up"). `dueCount` is recomputed on Practice-tab
-appearance as well as on grade/star changes, since due-ness is time-based.
-- **Persistence is engine-agnostic.** `ReviewState` is our own type, not FSRS's
-  `Card`, so swapping schedulers later is a one-file change in `ReviewEngine`, not a
-  data migration — and the package import never reaches the **widget**, which links
-  only `Shared/` and shows no review state.
-- **Throws are surfaced, not hidden.** `ReviewEngine.grade` is `throws`; `AppModel`
-  catches with `assertionFailure` + log and leaves the schedule untouched. It can't
-  actually fail (no `.manual`), but it isn't swallowed.
+graded **Again** is re-appended (`ReviewQueue.advance`) so it returns later in the
+same session ("study until caught up"). `dueCount` is recomputed on Practice-tab
+appearance, on review-sheet dismiss, and on scene-active transitions, since due-ness
+is time-based.
 
-## Tests
+## Algorithm notes
 
-`ReviewEngineTests` builds the engine with `enableFuzz: false` and asserts only
-ordering/direction (again < good ≤ easy; new is due; Good schedules out), never exact
-day counts — robust across FSRS parameter changes. `SharedStoreTests` round-trips
-`reviewStates`; `AppModelTests` covers star→due, grade→cleared, unstar→schedule dropped.
-
-The old SM-2 placeholder (`SM2Scheduler` + the previous `ReviewState`) and its tests
-were deleted — `ReviewEngine` is the reversible boundary now, so a second scheduler
-would just be stale code.
+FSRS-5 long-term scheduler, ported from swift-fsrs
+`Sources/FSRS/Algorithm/FSRSAlgorithm.swift`: `DECAY = -0.5`, `FACTOR = 19/81`, the
+19-weight default vector, forgetting curve `R = (1 + FACTOR·t/S)^DECAY`, initial
+stability/difficulty per grade, difficulty mean-reversion toward the Easy initial
+difficulty, recall-vs-forget stability, and
+`interval = round(S · ((0.9^(1/DECAY) − 1)/FACTOR))` clamped to `[1, 36500]` with
+optional fuzz. Tests assert ordering/direction only (fuzz off), never exact intervals.
