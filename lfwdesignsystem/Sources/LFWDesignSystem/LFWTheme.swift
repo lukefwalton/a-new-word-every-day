@@ -68,6 +68,9 @@ public enum LFWPalette: String, Codable, CaseIterable, Identifiable, Sendable {
     case dusk
     case sepia
     case highContrast
+    case forest
+    case dawn
+    case grape
 
     public var id: String { rawValue }
 
@@ -78,13 +81,16 @@ public enum LFWPalette: String, Codable, CaseIterable, Identifiable, Sendable {
         case .dusk:         return "Dusk"
         case .sepia:        return "Sepia"
         case .highContrast: return "High Contrast"
+        case .forest:       return "Forest"
+        case .dawn:         return "Dawn"
+        case .grape:        return "Grape"
         }
     }
 
     public var isDark: Bool {
         switch self {
-        case .deepSea, .dusk, .highContrast: return true
-        case .paper, .sepia: return false
+        case .deepSea, .dusk, .highContrast, .forest, .grape: return true
+        case .paper, .sepia, .dawn: return false
         }
     }
 
@@ -120,6 +126,24 @@ public enum LFWPalette: String, Codable, CaseIterable, Identifiable, Sendable {
                 surface: Color(lfwHex: 0x5B4636).opacity(0.06),
                 primaryText: Color(lfwHex: 0x4A3B2A), secondaryText: Color(lfwHex: 0x7A6650),
                 accent: Color(lfwHex: 0xB2562E))
+        case .forest:
+            return LFWPaletteColors(
+                backgroundTop: Color(lfwHex: 0x0C2A22), backgroundBottom: Color(lfwHex: 0x1C5C44),
+                surface: LFWColors.paper.opacity(0.08),
+                primaryText: LFWColors.paper, secondaryText: LFWColors.paper.opacity(0.72),
+                accent: Color(lfwHex: 0xC7E66B))
+        case .dawn:
+            return LFWPaletteColors(
+                backgroundTop: Color(lfwHex: 0xFFE3D3), backgroundBottom: Color(lfwHex: 0xF7C0C8),
+                surface: Color(lfwHex: 0x5B2A3A).opacity(0.06),
+                primaryText: Color(lfwHex: 0x4A2533), secondaryText: Color(lfwHex: 0x8A5A66),
+                accent: Color(lfwHex: 0xD8537C))
+        case .grape:
+            return LFWPaletteColors(
+                backgroundTop: Color(lfwHex: 0x241248), backgroundBottom: Color(lfwHex: 0x6A1F7A),
+                surface: LFWColors.paper.opacity(0.08),
+                primaryText: LFWColors.paper, secondaryText: LFWColors.paper.opacity(0.72),
+                accent: Color(lfwHex: 0x5FE0C8))
         }
     }
 }
@@ -162,6 +186,22 @@ public struct LFWThemeConfig: Codable, Equatable, Sendable {
 
     /// The family default: Fraunces + Deep Sea, no hue shift.
     public static let `default` = LFWThemeConfig()
+
+    private enum CodingKeys: String, CodingKey {
+        case typeface, palette, accentHueShift
+    }
+
+    // Tolerant decode: an unknown typeface/palette raw value — from app/widget version
+    // skew or a downgrade that doesn't know a newer palette — defaults rather than
+    // failing the whole theme decode (which would reset every choice).
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        let rawTypeface = (try? c.decodeIfPresent(String.self, forKey: .typeface)) ?? nil
+        let rawPalette = (try? c.decodeIfPresent(String.self, forKey: .palette)) ?? nil
+        typeface = rawTypeface.flatMap(LFWTypeface.init(rawValue:)) ?? .fraunces
+        palette = rawPalette.flatMap(LFWPalette.init(rawValue:)) ?? .deepSea
+        accentHueShift = ((try? c.decodeIfPresent(Double.self, forKey: .accentHueShift)) ?? nil) ?? 0
+    }
 
     /// Palette colors with the accent-hue nudge applied.
     public var colors: LFWPaletteColors {

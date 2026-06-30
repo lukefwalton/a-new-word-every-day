@@ -88,9 +88,50 @@ final class SharedStoreTests: XCTestCase {
 
     func test_widgetPreferences_roundTrips() {
         let store = Fixtures.volatileStore()
-        let prefs = WidgetPreferences(detailLevel: .rich)
+        let prefs = WidgetPreferences(detailLevel: .rich, backgroundStyle: .accent, layoutStyle: .minimal)
         store.widgetPreferences = prefs
         XCTAssertEqual(store.widgetPreferences, prefs)
+    }
+
+    func test_widgetPreferences_tolerantDecode_defaultsMissingKeys() throws {
+        // Preferences saved before the background/layout knobs existed carry only
+        // detailLevel — they must decode (defaulting the new fields), not reset.
+        let legacy = try JSONSerialization.data(withJSONObject: ["detailLevel": "rich"])
+        let decoded = try JSONDecoder().decode(WidgetPreferences.self, from: legacy)
+        XCTAssertEqual(decoded.detailLevel, .rich)
+        XCTAssertEqual(decoded.backgroundStyle, .blobs)
+        XCTAssertEqual(decoded.layoutStyle, .editorial)
+    }
+
+    func test_widgetPreferences_tolerantDecode_defaultsUnknownValues() throws {
+        // A value written by a newer build (unknown case) must default, not throw.
+        let future = try JSONSerialization.data(withJSONObject: [
+            "detailLevel": "ultra",
+            "backgroundStyle": "hologram",
+            "layoutStyle": "carousel",
+        ])
+        let decoded = try JSONDecoder().decode(WidgetPreferences.self, from: future)
+        XCTAssertEqual(decoded, .default)
+    }
+
+    func test_newPalettes_roundTripThroughTheme() {
+        let store = Fixtures.volatileStore()
+        for palette in [LFWPalette.forest, .dawn, .grape] {
+            store.theme = LFWThemeConfig(typeface: .inter, palette: palette)
+            XCTAssertEqual(store.theme.palette, palette)
+        }
+    }
+
+    func test_theme_tolerantDecode_defaultsUnknownTypefaceAndPalette() throws {
+        // A theme written with a palette/typeface this build doesn't know must default,
+        // not throw (which would reset the whole theme).
+        let future = try JSONSerialization.data(withJSONObject: [
+            "typeface": "comic", "palette": "neon", "accentHueShift": 12.0,
+        ])
+        let decoded = try JSONDecoder().decode(LFWThemeConfig.self, from: future)
+        XCTAssertEqual(decoded.typeface, .fraunces)
+        XCTAssertEqual(decoded.palette, .deepSea)
+        XCTAssertEqual(decoded.accentHueShift, 12.0)
     }
 
     func test_removeReviewStates_dropsOnlyGivenIds() {
