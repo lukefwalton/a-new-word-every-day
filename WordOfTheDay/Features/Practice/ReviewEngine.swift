@@ -49,6 +49,33 @@ struct ReviewEngine {
     /// been reviewed (a fresh card). Total function — out-of-range values are
     /// clamped, so there's no failure mode to surface.
     func grade(_ state: ReviewState?, _ grade: ReviewGrade, now: Date = Date()) -> ReviewState {
+        var next = projected(state, grade, now: now)
+        let interval = nextInterval(stability: next.stability, fuzz: enableFuzz)
+        next.scheduledDays = Double(interval)
+        next.due = Self.add(days: interval, to: now)
+        return next
+    }
+
+    /// The next-review interval (in **whole days**) each grade would schedule from
+    /// the card's current state, computed *without* fuzz so it's stable and exactly
+    /// reproducible. The study UI shows these under the grade buttons ("Good · 3d")
+    /// so the schedule is visible before the user commits. A `nil` state previews a
+    /// brand-new card. No side effects.
+    func preview(_ state: ReviewState?, now: Date = Date()) -> [ReviewGrade: Int] {
+        var intervals: [ReviewGrade: Int] = [:]
+        for grade in ReviewGrade.allCases {
+            let outcome = projected(state, grade, now: now)
+            intervals[grade] = nextInterval(stability: outcome.stability, fuzz: false)
+        }
+        return intervals
+    }
+
+    /// The post-review FSRS state (difficulty, stability, reps, lapses, …) for a
+    /// grade — everything *except* the interval-derived `scheduledDays`/`due`, which
+    /// `grade()` and `preview()` apply differently (real fuzz vs none). Pure; the
+    /// single place the DSR update lives, so the committed schedule and the previewed
+    /// one can never drift.
+    private func projected(_ state: ReviewState?, _ grade: ReviewGrade, now: Date) -> ReviewState {
         var next = state ?? ReviewState(due: now)
         let g = Double(grade.rawValue)            // again=1 … easy=4
 
@@ -73,14 +100,11 @@ struct ReviewEngine {
         }
 
         next.stability = max(Self.minimumStability, next.stability)
-        let interval = nextInterval(stability: next.stability)
-        next.scheduledDays = Double(interval)
         next.reps += 1
         // The long-term scheduler has no learning steps, so cards are always in the
         // Review state (matches swift-fsrs's LongTermScheduler).
         next.state = 2
         next.lastReview = now
-        next.due = Self.add(days: interval, to: now)
         return next
     }
 
@@ -126,10 +150,10 @@ struct ReviewEngine {
     /// relearning of a failed card is handled by `ReviewQueue` (it re-shows the
     /// card), not by minute-level scheduler steps; that's the deliberate
     /// "lightweight" behaviour for this app.
-    private func nextInterval(stability: Double) -> Int {
+    private func nextInterval(stability: Double, fuzz: Bool) -> Int {
         let modifier = (pow(Self.requestRetention, 1 / Self.decay) - 1) / Self.factor
         var ivl = min(max(1, (stability * modifier).rounded()), Self.maximumInterval)
-        if enableFuzz { ivl = Self.fuzz(ivl) }
+        if fuzz { ivl = Self.fuzz(ivl) }
         return Int(ivl)
     }
 
