@@ -60,7 +60,12 @@ jobs:
           print(f"platform=iOS Simulator,id={iphones[0]['udid']}")
           PY
           )
+          # Retry flaky tests (e.g. the simulator's intermittent "Failed to
+          # terminate" on app relaunch) instead of failing the whole run. A
+          # genuinely broken test still fails after all iterations.
           xcodebuild test-without-building \
             -scheme WordOfTheDay \
             -destination "$DEST" \
+            -retry-tests-on-failure \
+            -test-iterations 3 \
             CODE_SIGNING_ALLOWED=NO
