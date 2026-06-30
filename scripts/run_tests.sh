@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#
+# ============================================
+# Purpose:           Generate the project and run the Swift unit suite on a simulator.
+# When to use:       Before pushing, and to reproduce CI locally.
+# Safe to run in prod?  Yes — builds and tests only; no release side effects.
+# Owner:             Luke F. Walton
+# ============================================
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

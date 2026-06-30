@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-# Prepare and archive a Release build for App Store upload.
+#
+# ============================================
+# Purpose:           Fetch fonts, run tests, and archive a Release build for App Store upload.
+# When to use:       When cutting an App Store build.
+# Safe to run in prod?  Yes, with caution — produces the shippable archive; run on a clean, signed checkout.
+# Owner:             Luke F. Walton
+# ============================================
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

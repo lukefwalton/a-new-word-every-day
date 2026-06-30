@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 #
+# ============================================
+# Purpose:           Download the OFL 1.1 variable fonts into WordOfTheDay/Resources/Fonts/.
+# When to use:       Before a release build, or any build that needs the bundled fonts.
+# Safe to run in prod?  Yes — network download into a gitignored local folder; nothing committed.
+# Owner:             Luke F. Walton
+# ============================================
+#
 # Fetch the OFL 1.1 variable fonts into WordOfTheDay/Resources/Fonts/.
 #
 # The fonts are NOT committed (kept out of git via .gitignore) to keep the repo
