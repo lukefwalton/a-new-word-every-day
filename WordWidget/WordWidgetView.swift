@@ -4,8 +4,11 @@ import AppIntents
 import LFWDesignSystem
 
 /// Renders an entry across all supported families. Home Screen families use the
-/// full themed presentation (blobs, variable hero type, surface card); lock-screen
-/// accessories stay compact but still use the user's typeface where allowed.
+/// full themed presentation (background, variable hero type, optional surface card);
+/// lock-screen accessories stay compact but still use the user's typeface.
+///
+/// The look is driven by the user's `WidgetPreferences`: background style, layout
+/// style, and detail level, on top of the `LFWThemeConfig` (typeface + palette).
 struct WordWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: WordEntry
@@ -13,6 +16,7 @@ struct WordWidgetView: View {
     private var typeface: LFWTypeface { entry.theme.typeface }
     private var palette: LFWPaletteColors { entry.theme.colors }
     private var detail: WidgetDetailLevel { entry.widgetPreferences.detailLevel }
+    private var layout: WidgetLayoutStyle { entry.widgetPreferences.layoutStyle }
 
     var body: some View {
         if let word = entry.word {
@@ -41,65 +45,103 @@ struct WordWidgetView: View {
 
     // MARK: Home Screen
 
+    @ViewBuilder
     private func homeScreen(_ word: Word, size: WidgetLayoutSize) -> some View {
-        let heroSize: CGFloat = {
-            switch size {
-            case .small:      return 32
-            case .medium:     return 36
-            case .large:      return 46
-            case .extraLarge: return 54
+        Group {
+            if layout == .minimal {
+                minimalBody(word, size: size)
+            } else {
+                framedBody(word, size: size, centered: layout.isCentered)
             }
-        }()
+        }
+        .widgetURL(deepLink(word))
+    }
+
+    /// Editorial (left) and Centered layouts: eyebrow + star header, hero, part of
+    /// speech, definition, on a translucent surface card.
+    private func framedBody(_ word: Word, size: WidgetLayoutSize, centered: Bool) -> some View {
+        let heroSize = heroSize(size, minimal: false)
         let defSize: CGFloat = size == .extraLarge ? 19 : (size == .large ? 17 : 15)
         let defLines = detail.definitionLines(family: size)
         let padding: CGFloat = size == .small ? 14 : 16
+        let elementAlignment: Alignment = centered ? .center : .leading
 
-        return VStack(alignment: .leading, spacing: size == .small ? 6 : 8) {
+        return VStack(alignment: centered ? .center : .leading, spacing: size == .small ? 6 : 8) {
             header(word, compact: size == .small, starSize: size == .small ? 14 : 16)
             Spacer(minLength: 0)
-            widgetHero(word, size: heroSize)
-                .foregroundStyle(palette.primaryText)
-                .minimumScaleFactor(0.45)
-                .lineLimit(1)
-                .accessibilityAddTraits(.isHeader)
+            heroBlock(word, size: heroSize)
+                .frame(maxWidth: .infinity, alignment: elementAlignment)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 13))
                 .foregroundStyle(palette.accent)
+                .frame(maxWidth: .infinity, alignment: elementAlignment)
+                .multilineTextAlignment(centered ? .center : .leading)
             if defLines > 0 {
                 Text(word.definition)
                     .font(LFWTypography.font(.definition, typeface: typeface, size: defSize))
                     .foregroundStyle(palette.primaryText.opacity(0.94))
                     .lineLimit(defLines)
                     .minimumScaleFactor(0.85)
-            }
-            if size == .extraLarge {
-                Text("Tap to open · star to save")
-                    .font(LFWTypography.font(.eyebrow, typeface: typeface, size: 10))
-                    .kerning(1.2)
-                    .foregroundStyle(palette.secondaryText)
+                    .multilineTextAlignment(centered ? .center : .leading)
+                    .frame(maxWidth: .infinity, alignment: elementAlignment)
             }
         }
         .padding(padding)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(
-            RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
-                .fill(palette.surface)
-                .overlay(
-                    RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
-                        .strokeBorder(palette.primaryText.opacity(0.10), lineWidth: 1)
-                )
-        )
-        .widgetURL(deepLink(word))
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: centered ? .top : .topLeading)
+        .background(cardChrome)
+    }
+
+    /// Minimal layout: just the word + part of speech, centered and type-forward, on
+    /// the bare background (no card, no eyebrow). The star stays reachable, tucked in
+    /// the top-trailing corner.
+    private func minimalBody(_ word: Word, size: WidgetLayoutSize) -> some View {
+        VStack(spacing: 8) {
+            Spacer(minLength: 0)
+            heroBlock(word, size: heroSize(size, minimal: true))
+                .frame(maxWidth: .infinity, alignment: .center)
+            Text(word.partOfSpeechLabel)
+                .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 14))
+                .foregroundStyle(palette.accent)
+                .multilineTextAlignment(.center)
+            Spacer(minLength: 0)
+        }
+        .padding(size == .small ? 14 : 16)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .overlay(alignment: .topTrailing) {
+            starButton(word, size: size == .small ? 14 : 16)
+        }
+    }
+
+    private func heroSize(_ size: WidgetLayoutSize, minimal: Bool) -> CGFloat {
+        switch size {
+        case .small:      return minimal ? 40 : 32
+        case .medium:     return minimal ? 46 : 36
+        case .large:      return minimal ? 58 : 46
+        case .extraLarge: return minimal ? 70 : 54
+        }
+    }
+
+    private var cardChrome: some View {
+        RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
+            .fill(palette.surface)
+            .overlay(
+                RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
+                    .strokeBorder(palette.primaryText.opacity(0.10), lineWidth: 1)
+            )
     }
 
     private func header(_ word: Word, compact: Bool, starSize: CGFloat) -> some View {
-        HStack(alignment: .center, spacing: 8) {
-            Text(compact ? "TODAY" : "WORD OF THE DAY")
-                .font(LFWTypography.font(.eyebrow, typeface: typeface, size: compact ? 9 : 10))
-                .kerning(compact ? 1.2 : 1.5)
-                .foregroundStyle(palette.accent)
-                .lineLimit(1)
-                .minimumScaleFactor(0.8)
+        HStack(alignment: .top, spacing: 8) {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(compact ? "TODAY" : "WORD OF THE DAY")
+                    .font(LFWTypography.font(.eyebrow, typeface: typeface, size: compact ? 9 : 10))
+                    .kerning(compact ? 1.2 : 1.5)
+                    .foregroundStyle(palette.accent)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                // Decorative accent rule under the eyebrow.
+                Capsule().fill(palette.accent).frame(width: 20, height: 2.5)
+            }
             Spacer(minLength: 4)
             starButton(word, size: starSize)
         }
@@ -118,6 +160,22 @@ struct WordWidgetView: View {
             .buttonStyle(.plain)
             .accessibilityLabel(entry.isStarred ? "Remove from practice list" : "Save to practice list")
         }
+    }
+
+    /// The hero word with a soft accent glow behind it — a designed, not just
+    /// themed, presence.
+    private func heroBlock(_ word: Word, size: CGFloat) -> some View {
+        widgetHero(word, size: size)
+            .foregroundStyle(palette.primaryText)
+            .minimumScaleFactor(0.45)
+            .lineLimit(1)
+            .accessibilityAddTraits(.isHeader)
+            .background(
+                Circle()
+                    .fill(palette.accent.opacity(0.16))
+                    .frame(width: size * 1.7, height: size * 1.7)
+                    .blur(radius: 30)
+            )
     }
 
     /// Variable-font hero at rest weight — richer than static `LFWTypography.font`.

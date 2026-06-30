@@ -88,9 +88,27 @@ final class SharedStoreTests: XCTestCase {
 
     func test_widgetPreferences_roundTrips() {
         let store = Fixtures.volatileStore()
-        let prefs = WidgetPreferences(detailLevel: .rich)
+        let prefs = WidgetPreferences(detailLevel: .rich, backgroundStyle: .accent, layoutStyle: .minimal)
         store.widgetPreferences = prefs
         XCTAssertEqual(store.widgetPreferences, prefs)
+    }
+
+    func test_widgetPreferences_tolerantDecode_defaultsMissingKeys() throws {
+        // Preferences saved before the background/layout knobs existed carry only
+        // detailLevel — they must decode (defaulting the new fields), not reset.
+        let legacy = try JSONSerialization.data(withJSONObject: ["detailLevel": "rich"])
+        let decoded = try JSONDecoder().decode(WidgetPreferences.self, from: legacy)
+        XCTAssertEqual(decoded.detailLevel, .rich)
+        XCTAssertEqual(decoded.backgroundStyle, .blobs)
+        XCTAssertEqual(decoded.layoutStyle, .editorial)
+    }
+
+    func test_newPalettes_roundTripThroughTheme() {
+        let store = Fixtures.volatileStore()
+        for palette in [LFWPalette.forest, .dawn, .grape] {
+            store.theme = LFWThemeConfig(typeface: .inter, palette: palette)
+            XCTAssertEqual(store.theme.palette, palette)
+        }
     }
 
     func test_removeReviewStates_dropsOnlyGivenIds() {

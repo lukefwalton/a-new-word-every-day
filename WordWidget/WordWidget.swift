@@ -56,7 +56,8 @@ struct WordWidget: Widget {
         StaticConfiguration(kind: kind, provider: WordProvider()) { entry in
             WordWidgetView(entry: entry)
                 .containerBackground(for: .widget) {
-                    LFWThemedBackground(config: entry.theme, animated: false)
+                    WidgetBackground(theme: entry.theme,
+                                     style: entry.widgetPreferences.backgroundStyle)
                 }
         }
         .configurationDisplayName("Word of the Day")

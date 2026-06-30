@@ -14,6 +14,8 @@ struct SettingsView: View {
             NavigationStack {
                 Form {
                     widgetSection
+                    widgetBackgroundSection
+                    widgetLayoutSection
                     typefaceSection
                     colorSection
                     difficultySection
@@ -39,24 +41,13 @@ struct SettingsView: View {
             }
 
             ForEach(WidgetDetailLevel.allCases) { level in
-                Button {
-                    model.setWidgetPreferences(WidgetPreferences(detailLevel: level))
-                } label: {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(level.displayName)
-                                .foregroundStyle(palette.primaryText)
-                            Text(level.subtitle)
-                                .font(.caption)
-                                .foregroundStyle(palette.secondaryText)
-                        }
-                        Spacer()
-                        if model.widgetPreferences.detailLevel == level {
-                            Image(systemName: "checkmark").foregroundStyle(palette.accent)
-                        }
-                    }
+                styleRow(title: level.displayName,
+                         subtitle: level.subtitle,
+                         selected: model.widgetPreferences.detailLevel == level) {
+                    var prefs = model.widgetPreferences
+                    prefs.detailLevel = level
+                    model.setWidgetPreferences(prefs)
                 }
-                .tint(palette.accent)
             }
         } header: {
             Text("Home Screen widget")
@@ -64,6 +55,54 @@ struct SettingsView: View {
             Text("The widget is the product — it uses your typeface, palette, and accent hue from below. Add it from the Home Screen, then customize here.")
                 .foregroundStyle(palette.secondaryText)
         }
+    }
+
+    private var widgetBackgroundSection: some View {
+        Section("Widget background") {
+            ForEach(WidgetBackgroundStyle.allCases) { style in
+                styleRow(title: style.displayName,
+                         subtitle: style.subtitle,
+                         selected: model.widgetPreferences.backgroundStyle == style) {
+                    var prefs = model.widgetPreferences
+                    prefs.backgroundStyle = style
+                    model.setWidgetPreferences(prefs)
+                }
+            }
+        }
+    }
+
+    private var widgetLayoutSection: some View {
+        Section("Widget layout") {
+            ForEach(WidgetLayoutStyle.allCases) { style in
+                styleRow(title: style.displayName,
+                         subtitle: style.subtitle,
+                         selected: model.widgetPreferences.layoutStyle == style) {
+                    var prefs = model.widgetPreferences
+                    prefs.layoutStyle = style
+                    model.setWidgetPreferences(prefs)
+                }
+            }
+        }
+    }
+
+    /// A selectable preference row (title + subtitle + checkmark) shared by the
+    /// detail / background / layout pickers.
+    @ViewBuilder
+    private func styleRow(title: String, subtitle: String, selected: Bool,
+                          _ action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title).foregroundStyle(palette.primaryText)
+                    Text(subtitle).font(.caption).foregroundStyle(palette.secondaryText)
+                }
+                Spacer()
+                if selected {
+                    Image(systemName: "checkmark").foregroundStyle(palette.accent)
+                }
+            }
+        }
+        .tint(palette.accent)
     }
 
     // MARK: Typeface
