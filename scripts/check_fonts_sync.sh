@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 #
+# ============================================
+# Purpose:           Verify the bundled typeface list matches across Swift, plists, and project.yml.
+# When to use:       In CI, and after changing the set of bundled fonts.
+# Safe to run in prod?  Yes — read-only validation, makes no writes.
+# Owner:             Luke F. Walton
+# ============================================
+#
 # Keeps the bundled typeface list aligned across Swift (LFWTypeface.bundledFileName),
 # scripts/fetch_fonts.sh, WordOfTheDay/App/Info.plist, WordWidget/Info.plist, and
 # project.yml (widget UIAppFonts). A mismatch can't be caught at compile time and

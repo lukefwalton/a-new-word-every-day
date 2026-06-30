@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#
+# ============================================
+# Purpose:           Generate the Xcode project from project.yml (merging project.local.yml).
+# When to use:       After cloning, or after changing project.yml / project.local.yml.
+# Safe to run in prod?  Yes — local dev; regenerates the gitignored .xcodeproj.
+# Owner:             Luke F. Walton
+# ============================================
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

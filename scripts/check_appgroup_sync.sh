@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 #
+# ============================================
+# Purpose:           Verify the App Group id matches between project.yml and Shared/AppGroup.swift.
+# When to use:       In CI, and before committing entitlement or App Group changes.
+# Safe to run in prod?  Yes — read-only validation, makes no writes.
+# Owner:             Luke F. Walton
+# ============================================
+#
 # Keeps the App Group identifier in sync between the two places that declare it
 # and can't see each other: project.yml's com.apple.security.application-groups
 # entitlements (the build side, consumed by XcodeGen) and AppGroup.identifier in

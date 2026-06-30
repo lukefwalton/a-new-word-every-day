@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-# Create project.local.yml with this Mac's Apple Development team ID, then generate.
+#
+# ============================================
+# Purpose:           Write project.local.yml with this Mac's Apple Development team ID, then generate.
+# When to use:       First-time local setup on a new machine.
+# Safe to run in prod?  Yes — writes only the gitignored project.local.yml.
+# Owner:             Luke F. Walton
+# ============================================
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Assemble WordOfTheDay/Resources/words.json from the hand-authored corpus.
 
+Purpose:           Validate scripts/corpus_source.json and (re)generate words.json.
+When to use:       After editing the corpus source (add, remove, or reword entries).
+Safe to run in prod?  Yes — deterministic; only rewrites the generated words.json.
+Owner:             Luke F. Walton
+
 The corpus is original work: every word, definition, and difficulty band in
 scripts/corpus_source.json was written for this app and is dedicated to the
 public domain (CC0). There is **no** external data dependency — no frequency

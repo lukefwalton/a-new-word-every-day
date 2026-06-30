@@ -1,0 +1,49 @@
+name: Word suggestion
+description: Suggest a word for the corpus.
+labels: ["corpus"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggesting a word is the most useful contribution you can make. Definitions
+        must be **original** — no copied dictionary text — because the corpus is
+        dedicated to the public domain (CC0). You can also open a PR editing
+        `scripts/corpus_source.json` directly.
+  - type: input
+    id: word
+    attributes:
+      label: Word
+      placeholder: "e.g. laconic"
+    validations:
+      required: true
+  - type: dropdown
+    id: pos
+    attributes:
+      label: Part of speech
+      options:
+        - noun (n)
+        - verb (v)
+        - adjective (adj)
+        - adverb (adv)
+    validations:
+      required: true
+  - type: input
+    id: definition
+    attributes:
+      label: Definition (original, one line)
+      placeholder: "e.g. using very few words"
+    validations:
+      required: true
+  - type: dropdown
+    id: band
+    attributes:
+      label: Difficulty band
+      description: 1 = most accessible advanced vocabulary, 5 = rarest / most literary.
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+    validations:
+      required: true

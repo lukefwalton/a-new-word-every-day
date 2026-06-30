@@ -5,7 +5,9 @@ English word each day. The widget is the product; the app is the place you
 configure it, practice starred words, and (on first run) calibrate your level
 with a Tinder-style swipe deck.
 
-This is a planning document. No app code exists yet — see [Status](#status--scope).
+This document captured the original design. The app is now **implemented** — see
+[Status & scope](#status--scope) — and SPEC is kept as the rationale behind the
+shipped architecture.
 
 ---
 
@@ -354,7 +356,7 @@ adding it later is a swap, not a migration:
 
 ```
 word-of-the-day/
-  SPEC.md                      ← this file
+  README.md
   project.yml                  ← XcodeGen (mirrors workout-logger)
   project.local.yml.example
   lfwdesignsystem/             ← vendored; +LFWVariableFont, LFWTypography, LFWTheme
@@ -372,7 +374,9 @@ word-of-the-day/
   scripts/                     ← generate.sh, run_tests.sh, check_appgroup_sync.sh,
                                  build_corpus.py (+ corpus_source.json)
   docs/
+    SPEC.md                    ← this file
     prior-art-and-licensing.md ← the "don't reinvent the wheel" research
+    privacy.md
     learnings/
   .github/workflows/           ← config-guardrails + ios-tests (from sibling repos)
 ```
@@ -397,6 +401,7 @@ design-system extensions, the deterministic shared core, the app (onboarding +
 swipe deck + Today + Practice + Settings), the widget (all families + interactive
 star), the hand-authored CC0 corpus, App Store privacy manifests,
 CI, and a unit-test suite over the deterministic core. The codebase is described
-in `docs/learnings/001-architecture.md`. Remaining before submission: an app
-icon asset, and (optionally) running `scripts/fetch_fonts.sh` to bundle the OFL
-variable fonts — the app falls back to a system serif/sans without them.
+in `docs/learnings/001-architecture.md`. The app icon is in place
+(`AppIcon-1024.png`); the only optional step before submission is running
+`scripts/fetch_fonts.sh` to bundle the OFL variable fonts — the app falls back to
+a system serif/sans without them.

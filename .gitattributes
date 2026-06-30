@@ -1,0 +1,27 @@
+# Normalize line endings on commit. Force LF on everything that runs on Linux CI
+# runners or in a shell, so a checkout on another OS can never introduce CRLF
+# breakage.
+* text=auto
+
+*.sh    text eol=lf
+*.py    text eol=lf
+*.swift text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+
+# Binary assets — never normalize or diff as text.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+
+# Generated from scripts/corpus_source.json by scripts/build_corpus.py — collapse
+# it in diffs and keep it out of GitHub's language statistics.
+WordOfTheDay/Resources/words.json linguist-generated=true

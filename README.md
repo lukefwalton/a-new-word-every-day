@@ -1,8 +1,20 @@
-# Word of the Day
+<div align="center">
+
+<img src="WordOfTheDay/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="A New Word Every Day app icon" width="116" height="116" />
+
+# A New Word Every Day
 
 A free, local-first iOS app + Home Screen / Lock Screen **widget** that teaches
 one elevated English word a day — beautiful variable type, your colors, no login,
 nothing ever leaves your phone.
+
+[![iOS Tests](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/ios-tests.yml/badge.svg)](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/ios-tests.yml)
+[![Checks](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/checks.yml/badge.svg)](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/checks.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Corpus: CC0](https://img.shields.io/badge/Corpus-CC0-1f8a4c.svg)](NOTICE)
+![Platform: iOS 17+](https://img.shields.io/badge/Platform-iOS%2017%2B-lightgrey.svg)
+
+</div>
 
 > **No account. No servers. No tracking. No analytics.** Everything — your stars,
 > your difficulty level, your theme — lives on device in an App Group store the
@@ -38,9 +50,15 @@ nothing ever leaves your phone.
   to reuse. Edit `scripts/corpus_source.json` and run `scripts/build_corpus.py`
   to regenerate. See [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
 
-See [SPEC.md](SPEC.md) for the full design and
-[docs/learnings/001-architecture.md](docs/learnings/001-architecture.md) for the
-shape of the codebase.
+## Documentation
+
+All project docs live in [`docs/`](docs/):
+
+- [docs/SPEC.md](docs/SPEC.md) — the full design and the rationale behind the shipped architecture.
+- [docs/learnings/001-architecture.md](docs/learnings/001-architecture.md) — the shape of the codebase.
+- [docs/learnings/002-fsrs-review.md](docs/learnings/002-fsrs-review.md) — the in-app spaced-repetition (FSRS) review engine.
+- [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md) — sources evaluated and the permissive-only licensing stance.
+- [docs/privacy.md](docs/privacy.md) — the privacy policy (mirror of the canonical page).
 
 ## Build
 
@@ -88,6 +106,14 @@ bash scripts/run_tests.sh
 The deterministic core (daily selection, difficulty calibration, store,
 exporter, scheduler, corpus integrity) is covered by `WordOfTheDayTests`; CI
 (`.github/workflows`) runs the suite on macOS and config guardrails on Linux.
+
+## Contributing
+
+Issues and pull requests are welcome — suggesting a new word for the corpus is the
+most useful contribution. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow
+(including how to edit the corpus), and please review the
+[Code of Conduct](CODE_OF_CONDUCT.md). For security reports, see
+[SECURITY.md](SECURITY.md).
 
 ## License
 
