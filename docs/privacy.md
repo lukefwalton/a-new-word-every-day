@@ -39,4 +39,4 @@ your data.
 ## Contact
 
 Questions: [luke@lukefwalton.com](mailto:luke@lukefwalton.com) or
-[GitHub Issues](https://github.com/lukefwalton/word-of-the-day/issues)
+[GitHub Issues](https://github.com/lukefwalton/a-new-word-every-day/issues)
