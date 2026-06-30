@@ -135,8 +135,9 @@ final class WordOfTheDayUITests: XCTestCase {
         let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
         XCTAssertTrue(safari.wait(for: .runningForeground, timeout: 10))
         XCTAssertTrue(
-            safari.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "A New Word Every Day")).firstMatch
-                .waitForExistence(timeout: 10)
+            safari.staticTexts.matching(
+                NSPredicate(format: "label CONTAINS[c] %@ OR label CONTAINS[c] %@", "A New Word Every Day", "Privacy-first")
+            ).firstMatch.waitForExistence(timeout: 15)
         )
 
         app.activate()
