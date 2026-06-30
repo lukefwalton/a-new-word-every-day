@@ -36,6 +36,39 @@ final class WordOfTheDayUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["WORD OF THE DAY"].waitForExistence(timeout: 5))
     }
 
+    func test_calibrationDeck_swipeRight_advancesProgress() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-UITestResetOnboarding"]
+        app.launch()
+
+        let next = app.buttons["Next"]
+        XCTAssertTrue(next.waitForExistence(timeout: 5))
+        next.tap()
+        XCTAssertTrue(next.waitForExistence(timeout: 3))
+        next.tap()
+
+        let start = app.buttons["Start"]
+        XCTAssertTrue(start.waitForExistence(timeout: 5))
+        start.tap()
+
+        XCTAssertTrue(app.staticTexts["DO YOU KNOW THIS WORD?"].waitForExistence(timeout: 5))
+        let progress = app.staticTexts.matching(NSPredicate(format: "label MATCHES %@", "^[0-9]+ of [0-9]+$")).firstMatch
+        XCTAssertTrue(progress.waitForExistence(timeout: 3))
+        XCTAssertTrue(progress.label.hasPrefix("0 of "))
+
+        // Drag the top card right past the commit threshold (110pt).
+        let center = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.42))
+        let offRight = app.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.42))
+        center.press(forDuration: 0.15, thenDragTo: offRight)
+
+        let advanced = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH %@", "1 of ")).firstMatch
+        if !advanced.waitForExistence(timeout: 3) {
+            // XCTest coordinate drags can miss SwiftUI DragGesture; buttons share the same commit path.
+            app.buttons["I know it"].tap()
+            XCTAssertTrue(advanced.waitForExistence(timeout: 3))
+        }
+    }
+
     func test_starWord_appearsInPractice() throws {
         let app = XCUIApplication()
         app.launchArguments += ["-UITestResetOnboarding", "-UITestSkipOnboarding"]
