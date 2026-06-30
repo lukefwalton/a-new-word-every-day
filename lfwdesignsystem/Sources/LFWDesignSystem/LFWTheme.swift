@@ -36,9 +36,24 @@ public enum LFWTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
         case .literata:       return "Literata"
         case .newsreader:     return "Newsreader"
         case .sourceSerif4:   return "Source Serif 4 Variable"
-        case .inter:          return "Inter"
+        case .inter:          return "Inter Variable"
         case .sourceSans3:    return "SourceSans3VF"
         case .recursive:      return "Recursive"
+        }
+    }
+
+    /// Basename of the bundled variable-font file in `WordOfTheDay/Resources/Fonts/`.
+    /// Kept in sync with `scripts/fetch_fonts.sh` and `UIAppFonts` via
+    /// `scripts/check_fonts_sync.sh`.
+    public var bundledFileName: String {
+        switch self {
+        case .fraunces:       return "Fraunces.ttf"
+        case .literata:       return "Literata.ttf"
+        case .newsreader:     return "Newsreader.ttf"
+        case .sourceSerif4:   return "SourceSerif4.ttf"
+        case .inter:          return "Inter.ttf"
+        case .sourceSans3:    return "SourceSans3.ttf"
+        case .recursive:      return "Recursive.ttf"
         }
     }
 

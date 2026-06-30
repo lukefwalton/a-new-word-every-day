@@ -8,12 +8,14 @@ struct WordOfTheDayApp: App {
 
     init() {
         #if DEBUG
-        // One-time diagnostic: confirm the bundled variable font's real family
-        // name + axes. An empty result means the .ttf isn't bundled yet (run
-        // scripts/fetch_fonts.sh) and the UI is using the system fallback.
-        let family = LFWThemeConfig.default.typeface.family
-        let axes = LFWVariableFont.axes(of: family)
-        print("[WordOfTheDay] \(family) registered=\(LFWVariableFont.isRegistered(family)) axes=\(axes.keys.sorted())")
+        // One-time diagnostic: confirm each bundled variable font's real family
+        // name + axes. An empty axes map means the .ttf isn't bundled yet (run
+        // scripts/fetch_fonts.sh) or LFWTypeface.family doesn't match Core Text.
+        for face in LFWTypeface.allCases {
+            let family = face.family
+            let axes = LFWVariableFont.axes(of: family)
+            print("[WordOfTheDay] \(face.displayName) family=\(family) registered=\(LFWVariableFont.isRegistered(family)) axes=\(axes.keys.sorted())")
+        }
         #endif
     }
 

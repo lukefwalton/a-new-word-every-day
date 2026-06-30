@@ -37,6 +37,7 @@ final class LFWThemeAndFontTests: XCTestCase {
 
     func test_allTypefacesAndPalettesEnumerated() {
         XCTAssertEqual(LFWTypeface.allCases.count, 7)
+        XCTAssertEqual(LFWTypeface.allCases.map(\.bundledFileName).count, 7)
         XCTAssertEqual(LFWPalette.allCases.count, 5)
         // Every palette resolves to a colors struct without trapping.
         for palette in LFWPalette.allCases {
