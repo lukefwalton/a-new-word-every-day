@@ -89,7 +89,10 @@ targets:
         UIAppFonts:
           - Fraunces.ttf
           - Literata.ttf
+          - Newsreader.ttf
+          - SourceSerif4.ttf
           - Inter.ttf
+          - SourceSans3.ttf
           - Recursive.ttf
     dependencies:
       - sdk: WidgetKit.framework

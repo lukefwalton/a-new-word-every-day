@@ -4,7 +4,7 @@
 #
 # The fonts are NOT committed (kept out of git via .gitignore) to keep the repo
 # light and avoid vendoring binaries; this script downloads the variable .ttf
-# masters straight from each typeface's source repo. All four are SIL Open Font
+# masters straight from each typeface's source repo. All seven are SIL Open Font
 # License 1.1 — free to embed in an app binary; we ship OFL.txt + an in-app
 # Acknowledgements credit. The app runs without them too: the typography layer
 # falls back to a system serif/sans (see LFWTypography), so onboarding and tests
@@ -21,7 +21,10 @@ mkdir -p "$DEST"
 FONTS=(
   "Fraunces.ttf|https://github.com/undercasetype/Fraunces/raw/master/fonts/variable/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf"
   "Literata.ttf|https://github.com/googlefonts/literata/raw/main/fonts/variable/Literata%5Bopsz%2Cwght%5D.ttf"
+  "Newsreader.ttf|https://github.com/productiontype/Newsreader/raw/master/fonts/variable/ttf/Newsreader%5Bopsz%2Cwght%5D.ttf"
+  "SourceSerif4.ttf|https://github.com/adobe-fonts/source-serif/raw/release/VAR/SourceSerif4Variable-Roman.ttf"
   "Inter.ttf|https://github.com/rsms/inter/raw/master/docs/font-files/InterVariable.ttf"
+  "SourceSans3.ttf|https://github.com/adobe-fonts/source-sans/raw/release/VF/SourceSans3VF-Upright.ttf"
   "Recursive.ttf|https://github.com/arrowtype/recursive/raw/main/fonts/ArrowType-Recursive-1.085/Recursive_Desktop/Recursive_VF_1.085.ttf"
 )
 

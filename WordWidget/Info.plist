@@ -31,7 +31,10 @@
 	<array>
 		<string>Fraunces.ttf</string>
 		<string>Literata.ttf</string>
+		<string>Newsreader.ttf</string>
+		<string>SourceSerif4.ttf</string>
 		<string>Inter.ttf</string>
+		<string>SourceSans3.ttf</string>
 		<string>Recursive.ttf</string>
 	</array>
 </dict>

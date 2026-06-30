@@ -14,7 +14,7 @@ import CoreText
 /// (a map of *integer* axis tags → values), then bridge to SwiftUI with
 /// `Font(uiFont)`.
 ///
-/// All fonts shipped here are SIL OFL 1.1 (Fraunces/Inter/Recursive/Literata).
+/// All fonts shipped here are SIL OFL 1.1 (see LFWTypeface for the full set).
 public enum LFWVariableFont {
 
     /// Pack a four-character axis code ("wght") into its Core Text integer tag.

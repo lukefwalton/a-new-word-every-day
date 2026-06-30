@@ -7,17 +7,23 @@ import SwiftUI
 public enum LFWTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
     case fraunces
     case literata
+    case newsreader
+    case sourceSerif4
     case inter
+    case sourceSans3
     case recursive
 
     public var id: String { rawValue }
 
     public var displayName: String {
         switch self {
-        case .fraunces:  return "Fraunces"
-        case .literata:  return "Literata"
-        case .inter:     return "Inter"
-        case .recursive: return "Recursive"
+        case .fraunces:       return "Fraunces"
+        case .literata:       return "Literata"
+        case .newsreader:     return "Newsreader"
+        case .sourceSerif4:   return "Source Serif 4"
+        case .inter:          return "Inter"
+        case .sourceSans3:    return "Source Sans 3"
+        case .recursive:      return "Recursive"
         }
     }
 
@@ -26,10 +32,13 @@ public enum LFWTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
     /// silently falls back to the system font.
     public var family: String {
         switch self {
-        case .fraunces:  return "Fraunces"
-        case .literata:  return "Literata"
-        case .inter:     return "Inter"
-        case .recursive: return "Recursive"
+        case .fraunces:       return "Fraunces"
+        case .literata:       return "Literata"
+        case .newsreader:     return "Newsreader"
+        case .sourceSerif4:   return "Source Serif 4 Variable"
+        case .inter:          return "Inter"
+        case .sourceSans3:    return "SourceSans3VF"
+        case .recursive:      return "Recursive"
         }
     }
 
@@ -37,8 +46,8 @@ public enum LFWTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
 
     public var kind: Kind {
         switch self {
-        case .fraunces, .literata: return .serif
-        case .inter, .recursive:   return .sans
+        case .fraunces, .literata, .newsreader, .sourceSerif4: return .serif
+        case .inter, .sourceSans3, .recursive:                 return .sans
         }
     }
 
@@ -53,8 +62,8 @@ public enum LFWTypeface: String, Codable, CaseIterable, Identifiable, Sendable {
     /// Whether this face exposes the optical-size axis (used for the hero word).
     public var hasOpticalSize: Bool {
         switch self {
-        case .fraunces, .literata, .inter: return true
-        case .recursive: return false
+        case .fraunces, .literata, .newsreader, .sourceSerif4, .inter: return true
+        case .sourceSans3, .recursive: return false
         }
     }
 }
