@@ -3,13 +3,22 @@ import XCTest
 /// End-to-end smoke tests for the onboarding gate and the three-tab shell.
 /// Keeps the suite small and fast — the deterministic core is covered by unit tests.
 final class WordOfTheDayUITests: XCTestCase {
+    private var app: XCUIApplication!
 
     override func setUpWithError() throws {
         continueAfterFailure = false
+        app = XCUIApplication()
+    }
+
+    override func tearDownWithError() throws {
+        // Stop the app between tests so the next test's launch isn't racing to
+        // terminate a still-running instance — that race is what intermittently
+        // surfaced as a "Failed to terminate …" launch failure on CI.
+        app?.terminate()
+        app = nil
     }
 
     func test_skipOnboarding_reachesTodayTab() throws {
-        let app = XCUIApplication()
         app.launchArguments += ["-UITestResetOnboarding"]
         app.launch()
 
@@ -37,7 +46,6 @@ final class WordOfTheDayUITests: XCTestCase {
     }
 
     func test_calibrationDeck_swipeRight_advancesProgress() throws {
-        let app = XCUIApplication()
         app.launchArguments += ["-UITestResetOnboarding"]
         app.launch()
 
@@ -68,7 +76,6 @@ final class WordOfTheDayUITests: XCTestCase {
     }
 
     func test_starWord_appearsInPractice() throws {
-        let app = XCUIApplication()
         app.launchArguments += ["-UITestResetOnboarding", "-UITestSkipOnboarding"]
         app.launch()
 
