@@ -120,13 +120,18 @@ public struct WidgetPreferences: Codable, Equatable, Sendable {
         case detailLevel, backgroundStyle, layoutStyle
     }
 
-    // Tolerant decode: preferences saved before these knobs existed are missing the
-    // new keys, so default them in rather than failing the whole decode (which would
-    // silently reset the user's detail level).
+    // Tolerant decode: default a field that is either MISSING (saved before the knob
+    // existed) or an UNKNOWN raw value (saved by a newer build, opened by an older
+    // one), rather than failing the whole decode and resetting every preference. We
+    // read each as a raw string and map it ourselves so an unrecognized case falls
+    // back instead of throwing.
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        detailLevel = try c.decodeIfPresent(WidgetDetailLevel.self, forKey: .detailLevel) ?? .balanced
-        backgroundStyle = try c.decodeIfPresent(WidgetBackgroundStyle.self, forKey: .backgroundStyle) ?? .blobs
-        layoutStyle = try c.decodeIfPresent(WidgetLayoutStyle.self, forKey: .layoutStyle) ?? .editorial
+        let rawDetail = (try? c.decodeIfPresent(String.self, forKey: .detailLevel)) ?? nil
+        let rawBackground = (try? c.decodeIfPresent(String.self, forKey: .backgroundStyle)) ?? nil
+        let rawLayout = (try? c.decodeIfPresent(String.self, forKey: .layoutStyle)) ?? nil
+        detailLevel = rawDetail.flatMap(WidgetDetailLevel.init(rawValue:)) ?? .balanced
+        backgroundStyle = rawBackground.flatMap(WidgetBackgroundStyle.init(rawValue:)) ?? .blobs
+        layoutStyle = rawLayout.flatMap(WidgetLayoutStyle.init(rawValue:)) ?? .editorial
     }
 }

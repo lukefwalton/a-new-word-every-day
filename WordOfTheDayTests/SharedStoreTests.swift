@@ -103,6 +103,17 @@ final class SharedStoreTests: XCTestCase {
         XCTAssertEqual(decoded.layoutStyle, .editorial)
     }
 
+    func test_widgetPreferences_tolerantDecode_defaultsUnknownValues() throws {
+        // A value written by a newer build (unknown case) must default, not throw.
+        let future = try JSONSerialization.data(withJSONObject: [
+            "detailLevel": "ultra",
+            "backgroundStyle": "hologram",
+            "layoutStyle": "carousel",
+        ])
+        let decoded = try JSONDecoder().decode(WidgetPreferences.self, from: future)
+        XCTAssertEqual(decoded, .default)
+    }
+
     func test_newPalettes_roundTripThroughTheme() {
         let store = Fixtures.volatileStore()
         for palette in [LFWPalette.forest, .dawn, .grape] {
