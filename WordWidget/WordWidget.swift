@@ -1,10 +1,12 @@
 import WidgetKit
 import SwiftUI
+import AppIntents
 import LFWDesignSystem
 
-/// One timeline entry — a day and its word, plus theme, widget prefs, and star
-/// state read from the shared store. The word is computed deterministically, so
-/// the widget always matches the app without any shared write.
+/// One timeline entry — a day and its word, plus the resolved theme, widget prefs,
+/// and star state. The word is computed deterministically, so the widget always
+/// matches the app without any shared write; the look is resolved per widget from
+/// its Edit-Widget configuration (falling back to the in-app defaults).
 struct WordEntry: TimelineEntry {
     let date: Date
     let word: Word?
@@ -13,7 +15,10 @@ struct WordEntry: TimelineEntry {
     let isStarred: Bool
 }
 
-struct WordProvider: TimelineProvider {
+struct WordProvider: AppIntentTimelineProvider {
+    typealias Entry = WordEntry
+    typealias Intent = WordWidgetConfigurationIntent
+
     private let service = DailyWordService(corpus: .load(bundles: [.main]))
 
     func placeholder(in context: Context) -> WordEntry {
@@ -24,27 +29,43 @@ struct WordProvider: TimelineProvider {
                   isStarred: false)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (WordEntry) -> Void) {
-        completion(entry(for: Date()))
+    func snapshot(for configuration: WordWidgetConfigurationIntent, in context: Context) async -> WordEntry {
+        entry(for: Date(), configuration: configuration)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<WordEntry>) -> Void) {
+    func timeline(for configuration: WordWidgetConfigurationIntent, in context: Context) async -> Timeline<WordEntry> {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         let entries = (0..<5).compactMap { offset in
-            calendar.date(byAdding: .day, value: offset, to: today).map(entry(for:))
+            calendar.date(byAdding: .day, value: offset, to: today)
+                .map { entry(for: $0, configuration: configuration) }
         }
         let nextMidnight = calendar.date(byAdding: .day, value: 1, to: today) ?? today
-        completion(Timeline(entries: entries, policy: .after(nextMidnight)))
+        return Timeline(entries: entries, policy: .after(nextMidnight))
     }
 
-    private func entry(for date: Date) -> WordEntry {
+    /// Resolve this widget's configuration against the in-app defaults (App Group).
+    /// Any option left as "App Default" (`resolved == nil`) falls back to the Settings
+    /// value, so an unconfigured widget looks exactly as it did before.
+    private func entry(for date: Date, configuration: WordWidgetConfigurationIntent) -> WordEntry {
         let store = SharedStore.shared
         let word = service.todaysWord(store: store, now: date)
+        let baseTheme = store.theme
+        let basePrefs = store.widgetPreferences
+
+        let theme = LFWThemeConfig(
+            typeface: configuration.typeface.resolved ?? baseTheme.typeface,
+            palette: configuration.palette.resolved ?? baseTheme.palette,
+            accentHueShift: baseTheme.accentHueShift)
+        let prefs = WidgetPreferences(
+            detailLevel: configuration.detail.resolved ?? basePrefs.detailLevel,
+            backgroundStyle: configuration.background.resolved ?? basePrefs.backgroundStyle,
+            layoutStyle: configuration.layout.resolved ?? basePrefs.layoutStyle)
+
         return WordEntry(date: date,
                          word: word,
-                         theme: store.theme,
-                         widgetPreferences: store.widgetPreferences,
+                         theme: theme,
+                         widgetPreferences: prefs,
                          isStarred: word.map { store.isStarred($0.id) } ?? false)
     }
 }
@@ -53,7 +74,9 @@ struct WordWidget: Widget {
     let kind = "WordWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: WordProvider()) { entry in
+        AppIntentConfiguration(kind: kind,
+                               intent: WordWidgetConfigurationIntent.self,
+                               provider: WordProvider()) { entry in
             WordWidgetView(entry: entry)
                 .containerBackground(for: .widget) {
                     WidgetBackground(theme: entry.theme,
@@ -61,7 +84,7 @@ struct WordWidget: Widget {
                 }
         }
         .configurationDisplayName("Word of the Day")
-        .description("Your daily word — typeface, colors, and layout you choose in Settings.")
+        .description("Your daily word — set this widget's look here, or keep your in-app defaults.")
         .supportedFamilies(supportedFamilies)
     }
 
