@@ -61,12 +61,10 @@ final class WordOfTheDayUITests: XCTestCase {
         let offRight = app.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.42))
         center.press(forDuration: 0.15, thenDragTo: offRight)
 
-        let advanced = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH %@", "1 of ")).firstMatch
-        if !advanced.waitForExistence(timeout: 3) {
-            // XCTest coordinate drags can miss SwiftUI DragGesture; buttons share the same commit path.
-            app.buttons["I know it"].tap()
-            XCTAssertTrue(advanced.waitForExistence(timeout: 3))
-        }
+        XCTAssertTrue(
+            app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH %@", "1 of ")).firstMatch
+                .waitForExistence(timeout: 4)
+        )
     }
 
     func test_starWord_appearsInPractice() throws {
