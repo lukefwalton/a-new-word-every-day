@@ -33,6 +33,11 @@ final class AppModel: ObservableObject {
         self.service = service
         self.store = store
         self.engine = engine
+        #if DEBUG
+        if Set(ProcessInfo.processInfo.arguments).contains("-ScreenshotDemo") {
+            ScreenshotDemoSeeder.seed(store: store, service: service)
+        }
+        #endif
         self.theme = store.theme
         self.band = store.band
         self.onboardingComplete = store.onboardingComplete
@@ -40,6 +45,9 @@ final class AppModel: ObservableObject {
         self.today = service.todaysWord(store: store)
         self.widgetPreferences = store.widgetPreferences
         recomputeDue()
+        #if DEBUG
+        applyLaunchTabSelection()
+        #endif
     }
 
     var corpusIsEmpty: Bool { service.corpus.words.isEmpty }
@@ -208,6 +216,12 @@ final class AppModel: ObservableObject {
             store.onboardingComplete = true
             store.band = 2
         }
+    }
+
+    private func applyLaunchTabSelection() {
+        let args = Set(ProcessInfo.processInfo.arguments)
+        if args.contains("-OpenTabSettings") { selectedTab = .settings }
+        else if args.contains("-OpenTabPractice") { selectedTab = .practice }
     }
     #endif
 }

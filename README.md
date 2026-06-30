@@ -76,6 +76,10 @@ In App Store Connect:
 | **Export compliance** | No (ITSAppUsesNonExemptEncryption is false) |
 | **Screenshots** | Include the Home Screen widget — it's the product |
 
+```bash
+bash scripts/capture_app_store_screenshots.sh   # 6.5" simulator captures → build/app-store-screenshots/
+```
+
 Review notes: no login, no network, widget star works without opening the app.
 Register App Group on both app and widget App IDs in the Developer portal.
 
