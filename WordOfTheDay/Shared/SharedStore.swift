@@ -25,6 +25,7 @@ final class SharedStore {
         static let theme = "themeConfig"
         static let marks = "difficultyMarks"
         static let reviewStates = "reviewStates"
+        static let widgetPreferences = "widgetPreferences"
     }
 
     // MARK: Stars (the Practice list)
@@ -37,12 +38,14 @@ final class SharedStore {
     func isStarred(_ id: Int) -> Bool { starredIDs.contains(id) }
 
     /// Toggle a star. Returns the new state. Newest stars sort first.
+    /// When unstarring, drops any saved review schedule for that word.
     @discardableResult
     func toggleStar(_ id: Int) -> Bool {
         var ids = starredIDs
         if let idx = ids.firstIndex(of: id) {
             ids.remove(at: idx)
             starredIDs = ids
+            removeReviewStates([id])
             return false
         } else {
             starredIDs = [id] + ids
@@ -117,6 +120,22 @@ final class SharedStore {
         set {
             if let data = try? JSONEncoder().encode(newValue) {
                 defaults.set(data, forKey: Key.theme)
+            }
+        }
+    }
+
+    // MARK: Widget display
+
+    var widgetPreferences: WidgetPreferences {
+        get {
+            guard let data = defaults.data(forKey: Key.widgetPreferences),
+                  let prefs = try? JSONDecoder().decode(WidgetPreferences.self, from: data)
+            else { return .default }
+            return prefs
+        }
+        set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                defaults.set(data, forKey: Key.widgetPreferences)
             }
         }
     }

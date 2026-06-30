@@ -13,6 +13,7 @@ struct SettingsView: View {
         ThemedScreen(theme: model.theme) {
             NavigationStack {
                 Form {
+                    widgetSection
                     typefaceSection
                     colorSection
                     difficultySection
@@ -22,6 +23,46 @@ struct SettingsView: View {
                 .foregroundStyle(palette.primaryText)
                 .navigationTitle("Settings")
             }
+        }
+    }
+
+    // MARK: Widget
+
+    private var widgetSection: some View {
+        Section {
+            if let word = model.today {
+                WidgetPreviewCard(word: word,
+                                  theme: model.theme,
+                                  widgetPreferences: model.widgetPreferences)
+                    .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+                    .listRowBackground(Color.clear)
+            }
+
+            ForEach(WidgetDetailLevel.allCases) { level in
+                Button {
+                    model.setWidgetPreferences(WidgetPreferences(detailLevel: level))
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(level.displayName)
+                                .foregroundStyle(palette.primaryText)
+                            Text(level.subtitle)
+                                .font(.caption)
+                                .foregroundStyle(palette.secondaryText)
+                        }
+                        Spacer()
+                        if model.widgetPreferences.detailLevel == level {
+                            Image(systemName: "checkmark").foregroundStyle(palette.accent)
+                        }
+                    }
+                }
+                .tint(palette.accent)
+            }
+        } header: {
+            Text("Home Screen widget")
+        } footer: {
+            Text("The widget is the product — it uses your typeface, palette, and accent hue from below. Add it from the Home Screen, then customize here.")
+                .foregroundStyle(palette.secondaryText)
         }
     }
 

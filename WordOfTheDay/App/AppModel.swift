@@ -22,6 +22,7 @@ final class AppModel: ObservableObject {
     /// Number of starred words due to study now — drives the Practice tab's
     /// (secondary, opt-in) Study affordance.
     @Published private(set) var dueCount: Int = 0
+    @Published private(set) var widgetPreferences: WidgetPreferences = .default
     /// Set when a deep link (or the widget) asks to focus a specific word.
     @Published var focusedWordID: Int?
 
@@ -37,6 +38,7 @@ final class AppModel: ObservableObject {
         self.onboardingComplete = store.onboardingComplete
         self.starredIDs = store.starredIDs
         self.today = service.todaysWord(store: store)
+        self.widgetPreferences = store.widgetPreferences
         recomputeDue()
     }
 
@@ -47,6 +49,7 @@ final class AppModel: ObservableObject {
         onboardingComplete = store.onboardingComplete
         starredIDs = store.starredIDs
         band = store.band
+        widgetPreferences = store.widgetPreferences
         today = service.todaysWord(store: store)
         recomputeDue()
     }
@@ -65,6 +68,12 @@ final class AppModel: ObservableObject {
     /// Force a widget refresh for the current theme (used when a debounced
     /// interaction, like the accent slider, finishes).
     func reloadWidget() {
+        WidgetReloader.reload()
+    }
+
+    func setWidgetPreferences(_ preferences: WidgetPreferences) {
+        widgetPreferences = preferences
+        store.widgetPreferences = preferences
         WidgetReloader.reload()
     }
 
@@ -101,9 +110,6 @@ final class AppModel: ObservableObject {
 
     func toggleStar(_ id: Int) {
         store.toggleStar(id)
-        // Leaving the deck (unstarring) drops the word's review schedule so it
-        // doesn't linger or silently resurrect if the word is starred again later.
-        if !store.isStarred(id) { store.removeReviewStates([id]) }
         starredIDs = store.starredIDs
         recomputeDue()
         WidgetReloader.reload()

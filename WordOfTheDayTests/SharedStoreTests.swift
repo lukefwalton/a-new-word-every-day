@@ -73,6 +73,26 @@ final class SharedStoreTests: XCTestCase {
         XCTAssertEqual(store.reviewStates, [42: state])
     }
 
+    func test_toggleStar_clearsReviewStateOnUnstar() {
+        let store = Fixtures.volatileStore()
+        store.reviewStates = [10: ReviewState()]
+        XCTAssertTrue(store.toggleStar(10))
+        XCTAssertNotNil(store.reviewStates[10])
+        XCTAssertFalse(store.toggleStar(10))
+        XCTAssertNil(store.reviewStates[10])
+    }
+
+    func test_widgetPreferences_defaultsToBalanced() {
+        XCTAssertEqual(Fixtures.volatileStore().widgetPreferences, .default)
+    }
+
+    func test_widgetPreferences_roundTrips() {
+        let store = Fixtures.volatileStore()
+        let prefs = WidgetPreferences(detailLevel: .rich)
+        store.widgetPreferences = prefs
+        XCTAssertEqual(store.widgetPreferences, prefs)
+    }
+
     func test_removeReviewStates_dropsOnlyGivenIds() {
         let store = Fixtures.volatileStore()
         store.reviewStates = [1: ReviewState(), 2: ReviewState(), 3: ReviewState()]
