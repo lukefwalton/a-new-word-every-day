@@ -13,6 +13,7 @@ nothing ever leaves your phone.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Corpus: CC0](https://img.shields.io/badge/Corpus-CC0-1f8a4c.svg)](NOTICE)
 ![Platform: iOS 17+](https://img.shields.io/badge/Platform-iOS%2017%2B-lightgrey.svg)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lukefwalton/a-new-word-every-day)
 
 </div>
 
