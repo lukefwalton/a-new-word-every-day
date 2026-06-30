@@ -70,8 +70,8 @@ In App Store Connect:
 | Field | Value |
 |-------|--------|
 | **Price** | Free |
-| **Support URL** | https://lukefwalton.com/word-of-the-day/ |
-| **Privacy Policy** | https://lukefwalton.com/word-of-the-day/privacy/ |
+| **Support URL** | https://lukefwalton.com/a-new-word-every-day/ |
+| **Privacy Policy** | https://lukefwalton.com/a-new-word-every-day/privacy/ |
 | **App Privacy** | Data Not Collected |
 | **Export compliance** | No (ITSAppUsesNonExemptEncryption is false) |
 | **Screenshots** | Include the Home Screen widget — it's the product |

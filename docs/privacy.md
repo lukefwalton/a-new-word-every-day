@@ -1,13 +1,13 @@
-# Privacy Policy — Word of the Day
+# Privacy Policy — A New Word Every Day
 
-**Canonical policy:** https://lukefwalton.com/word-of-the-day/privacy/
+**Canonical policy:** https://lukefwalton.com/a-new-word-every-day/privacy/
 
 This file is a mirror for GitHub readers. The App Store and in-app links use the
 canonical URL on lukefwalton.com.
 
 **Last updated:** June 2026
 
-Word of the Day is a free iPhone app. It does not collect, store, or transmit
+A New Word Every Day is a free iPhone app. It does not collect, store, or transmit
 personal data to us or any third party.
 
 ## What stays on your device

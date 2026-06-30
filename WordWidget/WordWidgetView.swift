@@ -37,7 +37,7 @@ struct WordWidgetView: View {
                 }
             }
         } else {
-            Text("Open Word of the Day")
+            Text("Open A New Word Every Day")
                 .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
                 .foregroundStyle(palette.secondaryText)
         }

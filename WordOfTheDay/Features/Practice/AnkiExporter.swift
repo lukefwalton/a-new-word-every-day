@@ -6,7 +6,7 @@ import Foundation
 /// `#notetype`, and `#tags` directives make the import one click.
 enum AnkiExporter {
     static func tsv(for words: [Word],
-                    deck: String = "Word of the Day",
+                    deck: String = "A New Word Every Day",
                     tags: [String] = ["wordoftheday", "starred"]) -> String {
         var lines: [String] = [
             "#separator:tab",

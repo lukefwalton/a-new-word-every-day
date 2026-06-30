@@ -83,7 +83,7 @@ struct WordWidget: Widget {
                                      style: entry.widgetPreferences.backgroundStyle)
                 }
         }
-        .configurationDisplayName("Word of the Day")
+        .configurationDisplayName("A New Word Every Day")
         .description("Your daily word — set this widget's look here, or keep your in-app defaults.")
         .supportedFamilies(supportedFamilies)
     }

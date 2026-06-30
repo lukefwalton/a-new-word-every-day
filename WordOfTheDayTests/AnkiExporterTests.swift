@@ -7,7 +7,7 @@ final class AnkiExporterTests: XCTestCase {
         let tsv = AnkiExporter.tsv(for: [Fixtures.word(1, band: 1)])
         XCTAssertTrue(tsv.contains("#separator:tab"))
         XCTAssertTrue(tsv.contains("#notetype:Basic"))
-        XCTAssertTrue(tsv.contains("#deck:Word of the Day"))
+        XCTAssertTrue(tsv.contains("#deck:A New Word Every Day"))
         XCTAssertTrue(tsv.contains("#tags:wordoftheday starred"))
         XCTAssertTrue(tsv.contains("#columns:Front\tBack"))
     }

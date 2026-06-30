@@ -7,7 +7,7 @@ import LFWDesignSystem
 /// exactly as it did before this existed. Each placed widget can override any of
 /// these independently.
 struct WordWidgetConfigurationIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Word of the Day"
+    static var title: LocalizedStringResource = "A New Word Every Day"
     static var description = IntentDescription("Pick this widget's look, or keep your in-app defaults.")
 
     @Parameter(title: "Typeface", default: .appDefault)

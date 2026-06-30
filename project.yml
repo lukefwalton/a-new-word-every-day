@@ -80,7 +80,7 @@ targets:
     info:
       path: WordWidget/Info.plist
       properties:
-        CFBundleDisplayName: Word of the Day
+        CFBundleDisplayName: A New Word Every Day
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
