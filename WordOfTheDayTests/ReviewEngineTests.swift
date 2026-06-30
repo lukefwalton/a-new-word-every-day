@@ -97,4 +97,36 @@ final class ReviewEngineTests: XCTestCase {
         XCTAssertGreaterThan(again, good)
         XCTAssertGreaterThan(good, easy)
     }
+
+    // MARK: Preview — the intervals shown under the study buttons
+
+    func test_preview_coversEveryGrade() {
+        let preview = engine.preview(nil, now: now)
+        XCTAssertEqual(Set(preview.keys), Set(ReviewGrade.allCases))
+    }
+
+    func test_preview_matchesWhatGradeSchedules_whenFuzzOff() {
+        // The badge under each button must equal what committing that grade actually
+        // schedules — otherwise the preview lies. With fuzz off they're identical.
+        let preview = engine.preview(nil, now: now)
+        for grade in ReviewGrade.allCases {
+            XCTAssertEqual(preview[grade], Int(engine.grade(nil, grade, now: now).scheduledDays),
+                           "preview for \(grade) must match grade()'s scheduledDays")
+        }
+    }
+
+    func test_preview_ordersAgainSoonestEasyLatest() {
+        let preview = engine.preview(nil, now: now)
+        XCTAssertLessThanOrEqual(preview[.again]!, preview[.good]!)
+        XCTAssertLessThanOrEqual(preview[.good]!, preview[.easy]!)
+    }
+
+    func test_preview_reflectsTheCardsCurrentState() {
+        // A card with review history previews from that history, not as a fresh card,
+        // so a matured word shows longer intervals than a brand-new one.
+        let matured = engine.grade(nil, .good, now: now)
+        let due = now.addingTimeInterval(matured.scheduledDays * 86_400)
+        XCTAssertGreaterThan(engine.preview(matured, now: due)[.good]!,
+                             engine.preview(nil, now: now)[.good]!)
+    }
 }

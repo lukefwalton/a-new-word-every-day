@@ -144,6 +144,13 @@ final class AppModel: ObservableObject {
             }
     }
 
+    /// The next-review interval (in whole days) each grade would schedule for a word,
+    /// from its current saved state — so the study session can show "Good · 3d" under
+    /// the buttons before the user commits. Fuzz-free, so it matches what's promised.
+    func reviewPreview(_ word: Word, now: Date = Date()) -> [ReviewGrade: Int] {
+        engine.preview(store.reviewStates[word.id], now: now)
+    }
+
     /// Record a recall grade for a word and persist its new FSRS schedule.
     func grade(_ word: Word, _ grade: ReviewGrade, now: Date = Date()) {
         var states = store.reviewStates
