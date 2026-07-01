@@ -38,14 +38,15 @@ SYNC_ITEMS=(Sources Tests Package.swift VERSION)
 # cannot invoke a shell function).
 if command -v sha256sum >/dev/null 2>&1; then SHA_BIN="sha256sum"; else SHA_BIN="shasum -a 256"; fi
 
-# Copy the synced items from canonical → dest, replacing each wholesale so
-# deletions propagate. cp handles both files and directories; no rsync needed.
+# Copy the synced items from canonical → dest, replacing each wholesale. The
+# destination item is removed first and only copied back if canonical still has
+# it, so a removal in canonical genuinely propagates. cp handles both files and
+# directories; no rsync needed.
 mirror() {
   local src="$1" dest="$2" item
   for item in "${SYNC_ITEMS[@]}"; do
-    [ -e "$src/$item" ] || continue
     rm -rf "$dest/$item"
-    cp -R "$src/$item" "$dest/$item"
+    if [ -e "$src/$item" ]; then cp -R "$src/$item" "$dest/$item"; fi
   done
 }
 
