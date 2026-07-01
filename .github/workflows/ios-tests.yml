@@ -27,11 +27,16 @@ jobs:
       - name: Install XcodeGen
         run: brew install xcodegen
 
-      - name: Generate Xcode project
-        run: xcodegen generate
-
+      # Fonts must be fetched BEFORE `xcodegen generate`: the Resources group is
+      # an enumerated group (not a folder reference), so XcodeGen only bundles the
+      # font files that exist on disk at generation time. The .ttf files are
+      # gitignored (fetched, not committed), so generating first would leave them
+      # out of the app/widget bundles and break DesignSystemBridgeTests.
       - name: Fetch bundled OFL variable fonts
         run: bash scripts/fetch_fonts.sh
+
+      - name: Generate Xcode project
+        run: xcodegen generate
 
       - name: Build for testing
         run: |
