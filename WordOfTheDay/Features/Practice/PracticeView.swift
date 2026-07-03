@@ -120,13 +120,14 @@ struct PracticeView: View {
     }
 
     private var empty: some View {
-        ContentUnavailableView {
-            Label("No saved words", systemImage: "star")
-                .foregroundStyle(palette.primaryText)
-        } description: {
-            Text("Tap the star on a word to save it here for practice.")
-                .foregroundStyle(palette.secondaryText)
-        }
+        // Shared family empty state instead of a system ContentUnavailableView stub;
+        // the glyph takes the active palette's accent so it still themes.
+        LFWEmptyState(
+            symbol: "star",
+            title: "No saved words",
+            message: "Tap the star on a word to save it here for practice.",
+            accent: palette.accent
+        )
     }
 
     private func makeExport() -> ExportFile? {
