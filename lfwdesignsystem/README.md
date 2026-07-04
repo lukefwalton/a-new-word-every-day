@@ -5,10 +5,19 @@ across Luke F. Walton's iOS apps so onboarding and chrome feel like a family.
 
 It ships:
 
-- **Palette** — `LFWColors.{ocean, deepSea, gold, paper, ink, traveler, nebula, kelp, steel}`
+- **Palette** — `LFWColors.{ocean, deepSea, gold, paper, ink, traveler, nebula, kelp, steel}`,
+  plus semantic status tokens `LFWColors.{success, warning, danger}` — reach for
+  these instead of system `.green`/`.orange`/`.red` so status reads on-brand.
 - **Metrics** — `LFWRadius.{chip, card, surface}`
 - **Onboarding kit** — `LFWOnboardingScaffold`, `LFWHeroIcon`,
   `LFWOnboardingMessage`, `LFWFeatureRow`, `LFWPageDots`
+- **Empty states** — `LFWEmptyState` (glyph + optional gold `eyebrow` + title +
+  message + action slot; `prominent:` for the hero-scale first-run variant). The
+  shared alternative to a bare `Text` / `ContentUnavailableView` or a hand-rolled hero.
+- **Cards** — `.lfwCard()` — the family rounded surface (one corner radius on
+  `LFWRadius.surface` + a soft `deepSea` shadow) so cards stop drifting per app.
+- **Setup steps** — `LFWStepRow` — a numbered gold badge + title/detail row for
+  "how to enable this" / permission / multi-step setup screens.
 - **Background** — `LFWOnboardingBackground` (the shared moving-blob layer)
 - **Buttons** — `LFWCTAButtonStyle` / `.buttonStyle(.lfwCTA)`
 - **Variable fonts** — `Font.lfwVariable(_:size:axes:)` + `LFWVariableFont` axis

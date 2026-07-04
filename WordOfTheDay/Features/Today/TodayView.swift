@@ -99,12 +99,13 @@ struct TodayView: View {
     }
 
     private var emptyState: some View {
-        ContentUnavailableView {
-            Label("No words yet", systemImage: "character.book.closed")
-                .foregroundStyle(palette.primaryText)
-        } description: {
-            Text("The word list couldn't be loaded. Reopen the app to try again.")
-                .foregroundStyle(palette.secondaryText)
-        }
+        // Shared family empty state instead of a system ContentUnavailableView stub;
+        // the glyph takes the active palette's accent so it still themes.
+        LFWEmptyState(
+            symbol: "character.book.closed",
+            title: "No words yet",
+            message: "The word list couldn't be loaded. Reopen the app to try again.",
+            accent: palette.accent
+        )
     }
 }
