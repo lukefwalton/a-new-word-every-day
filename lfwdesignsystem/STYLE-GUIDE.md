@@ -23,16 +23,22 @@ page is a framework default.
 
 ## Brand colors, in priority order
 
+The whole palette is grounded in **traditional Japanese colors** — the woodblock
+blues (*bero-ai*, *ai*), the pigment greens (*rokushō*), and the *yamabuki* /
+*bengara* / *fuji* accents — so every color has a real name and lineage rather than
+a framework default.
+
 ### 1 · Green — identity
 
 The signature. Luke's favorite color, carried from the homepage hero. If one color
-says "this is his," it's this green.
+says "this is his," it's this green — and it sits in the traditional deep-green
+(*fukamidori* 深緑 / *matsuba* 松葉) family.
 
 | Role | Token (Swift / CSS) | Hex | Use |
 | --- | --- | --- | --- |
-| **Flagship** | `forest` / `--forest` | `#1F332B` | Hero fills, the deepest surface, the identity moment. Too dark for text-on-dark or small tint. |
-| **Interactive** | `verdigris` / *(app)* | `#3E8E6E` | The green that *does* things — app-wide tint, accents, active states. After *rokushō* (緑青), the ukiyo-e verdigris pigment. |
-| Supporting | `--pine` | `#2F453A` | Secondary green (web). |
+| **Flagship** | `forest` / `--forest` | `#1F332B` | Hero fills, the deepest surface, the identity moment. A deep *fukamidori* green. Too dark for text-on-dark or small tint. |
+| **Interactive** | `verdigris` / *(app)* | `#3E8E6E` | The green that *does* things — app-wide tint, accents, active states. *Rokushō* (緑青), the ukiyo-e verdigris pigment. |
+| Supporting | `--pine` | `#2F453A` | Secondary green, *matsuba* 松葉 family (web). |
 | Supporting | `--olive` / `--muted-text` | `#4C5242` / `#4A5249` | Utility green, olive body text (web). |
 
 The apps' **default theme is Forest**: a deep `forest → emerald` gradient with a
@@ -64,12 +70,14 @@ explicitly at the woodblock source.
 
 ### 3 · Restraint & warmth (supporting accents)
 
-| Role | Token (Swift / CSS) | Hex | Use |
-| --- | --- | --- | --- |
-| Kicker / CTA | `gold` / `--brass` | `#FFCD34` / `#B89058` | The premium accent, used sparingly. Warm gold in-app, muted brass on the web. Same *role*, tuned per medium. |
-| Rare warmth | `--rust` | `#9F5C4A` | Web only. Not a primary; a little heat. |
-| Rarest accent | `--jacaranda` | `#6E6597` | Web only. San Diego in bloom — use it once, somewhere personal. Never a link, gradient, or primary, or it tips into SaaS purple. |
-| Decorative | `traveler` / `nebula` / `kelp` | `#6B5AA6` / `#92278F` / `#60C3A3` | In-app gradient blobs and secondary highlights. |
+Grounded in traditional Japanese colors, same as the greens and blues.
+
+| Role | Token (Swift / CSS) | Hex | Traditional | Use |
+| --- | --- | --- | --- | --- |
+| Kicker / CTA | `gold` / `--brass` | `#F8B500` / `#B89058` | 山吹 *yamabuki* / 金茶 *kincha* | The premium accent, used sparingly. Golden *yamabuki* in-app, muted *kincha* brass on the web. Same *role*, tuned per medium. |
+| Rare warmth | `--rust` | `#9E4B3A` | 弁柄 *bengara* | Web only. The red iron-oxide pigment of prints and torii. A little heat, never a primary. |
+| Rarest accent | `--jacaranda` | `#6E6597` | 藤 *fuji* / 楝 *ouchi* | Web only. Wisteria/chinaberry violet — use it once, somewhere personal. Never a link, gradient, or primary, or it tips into SaaS purple. |
+| Decorative | `traveler` / `nebula` / `kelp` | `#6B5AA6` / `#92278F` / `#60C3A3` | 藤 *fuji* / 二藍 *futaai* / 青竹 *aotake* | In-app gradient blobs and secondary highlights. |
 
 ### Surfaces & ink — intentionally different by medium
 
