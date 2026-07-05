@@ -15,7 +15,7 @@ final class DesignSystemBridgeTests: XCTestCase {
 
     func test_themeConfigDefault() {
         XCTAssertEqual(LFWThemeConfig.default.typeface, .fraunces)
-        XCTAssertEqual(LFWThemeConfig.default.palette, .deepSea)
+        XCTAssertEqual(LFWThemeConfig.default.palette, .forest)
     }
 
     func test_themeConfigCodableRoundTrip() throws {
