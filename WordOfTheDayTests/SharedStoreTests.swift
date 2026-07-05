@@ -130,7 +130,7 @@ final class SharedStoreTests: XCTestCase {
         ])
         let decoded = try JSONDecoder().decode(LFWThemeConfig.self, from: future)
         XCTAssertEqual(decoded.typeface, .fraunces)
-        XCTAssertEqual(decoded.palette, .deepSea)
+        XCTAssertEqual(decoded.palette, .forest)
         XCTAssertEqual(decoded.accentHueShift, 12.0)
     }
 
