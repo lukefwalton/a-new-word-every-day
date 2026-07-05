@@ -35,8 +35,10 @@ says "this is his," it's this green.
 | Supporting | `--pine` | `#2F453A` | Secondary green (web). |
 | Supporting | `--olive` / `--muted-text` | `#4C5242` / `#4A5249` | Utility green, olive body text (web). |
 
-The apps' **default theme is Forest**: a `forest → verdigris` gradient with a gold
-accent. Green primary, everywhere.
+The apps' **default theme is Forest**: a deep `forest → emerald` gradient with a
+gold accent (the bottom stops at a deep emerald rather than the brighter
+`verdigris` tint, so `paper` text stays legible directly over the gradient).
+Green primary, everywhere.
 
 ### 2 · Blue — the ukiyo-e lineage
 
