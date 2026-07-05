@@ -5,9 +5,13 @@ across Luke F. Walton's iOS apps so onboarding and chrome feel like a family.
 
 It ships:
 
-- **Palette** — `LFWColors.{ocean, deepSea, gold, paper, ink, traveler, nebula, kelp, steel}`,
-  plus semantic status tokens `LFWColors.{success, warning, danger}` — reach for
-  these instead of system `.green`/`.orange`/`.red` so status reads on-brand.
+- **Palette** — green leads the brand (`LFWColors.{forest, verdigris}`), then the
+  ukiyo-e blue lineage (`ocean, deepSea, ukiyoBlue, mist`), then supporting
+  `{gold, paper, ink, traveler, nebula, kelp, steel}`, plus semantic status tokens
+  `LFWColors.{success, warning, danger}` — reach for these instead of system
+  `.green`/`.orange`/`.red` so status reads on-brand. See
+  [`STYLE-GUIDE.md`](STYLE-GUIDE.md) for the full spec (colors in priority order,
+  fonts by purpose).
 - **Metrics** — `LFWRadius.{chip, card, surface}`
 - **Onboarding kit** — `LFWOnboardingScaffold`, `LFWHeroIcon`,
   `LFWOnboardingMessage`, `LFWFeatureRow`, `LFWPageDots`
