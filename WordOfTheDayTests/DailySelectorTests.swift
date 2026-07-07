@@ -31,7 +31,16 @@ final class DailySelectorTests: XCTestCase {
         XCTAssertNotEqual(a, b)
     }
 
-    // MARK: Daily advancement + wrap
+    // MARK: Daily advancement + cycles
+
+    /// Words on consecutive days, starting at install. Band 1 over the default
+    /// fixtures gives a pool of `perBand` words, so day k is cycle k/perBand.
+    private func words(days: Range<Int>, salt: UInt64, band: Int = 1, corpus: [Word]) -> [Word] {
+        days.map { offset in
+            let date = Fixtures.utc.date(byAdding: .day, value: offset, to: install)!
+            return selector.word(on: date, installDate: install, salt: salt, band: band, corpus: corpus)!
+        }
+    }
 
     func test_consecutiveDays_giveDifferentWords() {
         let corpus = Fixtures.corpus()
@@ -40,12 +49,60 @@ final class DailySelectorTests: XCTestCase {
         XCTAssertNotEqual(d0, d1)
     }
 
-    func test_cycleWrapsAfterPoolLength() {
-        // Restrict to band 1 → a known pool size of 4, so day 0 and day 4 match.
+    func test_firstCycle_matchesLegacyShuffleOrder() {
+        // Cycle 0 must stay byte-identical to the pre-reshuffle selector, so an
+        // app update never changes the word an existing install shows today.
         let corpus = Fixtures.corpus(perBand: 4)
-        let day0 = selector.word(on: Fixtures.day(2026, 1, 1), installDate: install, salt: 5, band: 1, corpus: corpus)
-        let day4 = selector.word(on: Fixtures.day(2026, 1, 5), installDate: install, salt: 5, band: 1, corpus: corpus)
-        XCTAssertEqual(day0, day4)
+        let pool = corpus.filter { $0.band <= 1 }.sorted { $0.id < $1.id }
+        let legacy = pool.seededShuffled(seed: 5)
+        XCTAssertEqual(words(days: 0..<4, salt: 5, corpus: corpus), legacy)
+    }
+
+    func test_secondCycle_isAPermutationOfThePool() {
+        // Every word still appears exactly once per pass through the pool.
+        let corpus = Fixtures.corpus(perBand: 4)
+        let poolIDs = Set(corpus.filter { $0.band <= 1 }.map(\.id))
+        let cycle1IDs = Set(words(days: 4..<8, salt: 5, corpus: corpus).map(\.id))
+        XCTAssertEqual(cycle1IDs, poolIDs)
+    }
+
+    func test_secondCycle_usesADifferentOrder() {
+        // The point of the fix: the second pass is a fresh shuffle, not a replay.
+        // (Salt 5 is a pinned value where the two orders are known to differ.)
+        let corpus = Fixtures.corpus(perBand: 4)
+        XCTAssertNotEqual(words(days: 0..<4, salt: 5, corpus: corpus),
+                          words(days: 4..<8, salt: 5, corpus: corpus))
+    }
+
+    func test_noAdjacentRepeat_acrossCycleBoundary() {
+        // The last word of one cycle never repeats as the first word of the
+        // next. With a 4-word pool a naive reshuffle collides for ~1 in 4 salts,
+        // so 200 salts exercise the boundary guard many times over.
+        let corpus = Fixtures.corpus(perBand: 4)
+        for salt in 0..<200 {
+            let sequence = words(days: 0..<12, salt: UInt64(salt), corpus: corpus)
+            XCTAssertNotEqual(sequence[3], sequence[4], "salt \(salt): repeat across cycle 0→1")
+            XCTAssertNotEqual(sequence[7], sequence[8], "salt \(salt): repeat across cycle 1→2")
+        }
+    }
+
+    func test_singleWordPool_repeatsWithoutCrashing() {
+        let corpus = [Fixtures.word(1, band: 1)]
+        let sequence = words(days: 0..<3, salt: 5, corpus: corpus)
+        XCTAssertEqual(sequence.map(\.id), [1, 1, 1])
+    }
+
+    func test_twoWordPool_staysAPermutationEachCycle() {
+        // The boundary guard is skipped for pools of 2 (the swap would move the
+        // cycle's last word), but each cycle must still cover both words.
+        let corpus = [Fixtures.word(1, band: 1), Fixtures.word(2, band: 1)]
+        for salt in 0..<20 {
+            let sequence = words(days: 0..<10, salt: UInt64(salt), corpus: corpus)
+            for cycle in 0..<5 {
+                XCTAssertEqual(Set(sequence[cycle * 2..<(cycle * 2 + 2)].map(\.id)), [1, 2],
+                               "salt \(salt), cycle \(cycle) must show both words")
+            }
+        }
     }
 
     func test_dayIndex_clampsBeforeInstall() {

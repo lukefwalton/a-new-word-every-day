@@ -239,7 +239,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("The word list and its definitions were written for this app and are dedicated to the public domain (CC0) — free for anyone to use.")
                     Text("Typefaces — Fraunces, Literata, Newsreader, Source Serif 4, Inter, Source Sans 3, Recursive — are licensed under the SIL Open Font License 1.1.")
-                    Text("Review scheduling uses FSRS-5, implemented on-device (algorithm ported from open-spaced-repetition/swift-fsrs, MIT License).")
+                    Text("Review scheduling uses FSRS-6, implemented on-device (algorithm ported from open-spaced-repetition/py-fsrs, MIT License).")
                     Text("App source code is MIT licensed.")
                 }
                 .font(.footnote)

@@ -1,9 +1,10 @@
 import XCTest
 @testable import WordOfTheDay
 
-/// The hand-rolled FSRS-5 scheduler. Fuzz is disabled for determinism, but the
-/// assertions still only check ordering/direction — never exact day counts — so
-/// they stay robust across parameter tweaks.
+/// The hand-rolled FSRS-6 scheduler. Fuzz is disabled for determinism. Most
+/// assertions only check ordering/direction — never exact day counts — so they
+/// stay robust across parameter tweaks; the golden-vector block at the bottom
+/// pins the ported math to reference values from py-fsrs.
 final class ReviewEngineTests: XCTestCase {
     private let engine = ReviewEngine(enableFuzz: false)
     private let now = Fixtures.day(2026, 6, 28)
@@ -39,7 +40,7 @@ final class ReviewEngineTests: XCTestCase {
 
     func test_firstReviewAgain_isNotALapse() {
         // Failing a never-learned card keeps it in Review with no lapse recorded —
-        // a lapse means forgetting something already learned (matches swift-fsrs).
+        // a lapse means forgetting something already learned (matches the FSRS ports).
         let state = engine.grade(nil, .again, now: now)
         XCTAssertEqual(state.lapses, 0)
         XCTAssertEqual(state.state, 2)
@@ -68,26 +69,67 @@ final class ReviewEngineTests: XCTestCase {
     }
 
     // MARK: Golden vectors
-    // Lock the FSRS-5 defaults so a transcription slip in the ported math (a wrong
+    // Lock the FSRS-6 defaults so a transcription slip in the ported math (a wrong
     // weight, a wrong interval formula) fails a test rather than silently drifting
-    // review cadence. These values follow directly from the default weights with
-    // fuzz off; the multi-step recall/forget paths are covered by the ordering tests
-    // above (no reference oracle is available here to generate exact later-step
-    // outputs).
+    // review cadence. Reference values were generated from py-fsrs v6.3.1 (the
+    // source of the port) with fuzz off.
 
     func test_firstReviewStability_equalsDefaultWeights() {
-        XCTAssertEqual(engine.grade(nil, .again, now: now).stability, 0.4072, accuracy: 0.0001)
-        XCTAssertEqual(engine.grade(nil, .hard,  now: now).stability, 1.1829, accuracy: 0.0001)
-        XCTAssertEqual(engine.grade(nil, .good,  now: now).stability, 3.1262, accuracy: 0.0001)
-        XCTAssertEqual(engine.grade(nil, .easy,  now: now).stability, 15.4722, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .again, now: now).stability, 0.212, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .hard,  now: now).stability, 1.2931, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .good,  now: now).stability, 2.3065, accuracy: 0.0001)
+        XCTAssertEqual(engine.grade(nil, .easy,  now: now).stability, 8.2956, accuracy: 0.0001)
     }
 
     func test_firstReviewIntervals_followStability() {
-        // interval = round(stability · ~1.0), clamped to ≥ 1 day.
+        // At requestRetention 0.9 the interval modifier is exactly 1, so the
+        // interval is round(stability), clamped to ≥ 1 day.
         XCTAssertEqual(engine.grade(nil, .again, now: now).scheduledDays, 1)
         XCTAssertEqual(engine.grade(nil, .hard,  now: now).scheduledDays, 1)
-        XCTAssertEqual(engine.grade(nil, .good,  now: now).scheduledDays, 3)
-        XCTAssertEqual(engine.grade(nil, .easy,  now: now).scheduledDays, 15)
+        XCTAssertEqual(engine.grade(nil, .good,  now: now).scheduledDays, 2)
+        XCTAssertEqual(engine.grade(nil, .easy,  now: now).scheduledDays, 8)
+    }
+
+    func test_secondReviewAtDueDate_matchesReferenceOracle() {
+        // A first-Good card (S 2.3065, due +2d) regraded exactly at its due date
+        // exercises the forgetting curve (R ≈ 0.909493), the damped difficulty
+        // update, and all four stability paths.
+        let first = engine.grade(nil, .good, now: now)
+        let due = now.addingTimeInterval(first.scheduledDays * 86_400)
+
+        let again = engine.grade(first, .again, now: due)
+        XCTAssertEqual(again.stability, 0.607580, accuracy: 0.0001)
+        XCTAssertEqual(again.scheduledDays, 1)
+
+        let hard = engine.grade(first, .hard, now: due)
+        XCTAssertEqual(hard.stability, 7.513320, accuracy: 0.0001)
+        XCTAssertEqual(hard.scheduledDays, 8)
+
+        let good = engine.grade(first, .good, now: due)
+        XCTAssertEqual(good.stability, 10.964332, accuracy: 0.0001)
+        XCTAssertEqual(good.scheduledDays, 11)
+        XCTAssertEqual(good.difficulty, 2.111214, accuracy: 0.0001)
+
+        let easy = engine.grade(first, .easy, now: due)
+        XCTAssertEqual(easy.stability, 18.521754, accuracy: 0.0001)
+        XCTAssertEqual(easy.scheduledDays, 19)
+    }
+
+    func test_sameDayRegrade_usesShortTermFormula() {
+        // Regrading within the same day (the in-session Again requeue) takes
+        // FSRS-6's short-term path: Again shrinks stability, but a successful
+        // grade never shrinks it (the increase factor clamps at 1).
+        let first = engine.grade(nil, .good, now: now)
+        let later = now.addingTimeInterval(600)
+
+        let again = engine.grade(first, .again, now: later)
+        XCTAssertEqual(again.stability, 0.775084, accuracy: 0.0001)
+        XCTAssertEqual(again.scheduledDays, 1)
+
+        let good = engine.grade(first, .good, now: later)
+        XCTAssertEqual(good.stability, 2.3065, accuracy: 0.0001,
+                       "a same-day Good must not shrink stability")
+        XCTAssertEqual(good.scheduledDays, 2)
     }
 
     func test_firstReviewDifficulty_decreasesForEasierGrades() {

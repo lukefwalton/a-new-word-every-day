@@ -98,16 +98,21 @@ So selection is a pure function of `(date, installSalt, band, corpus)`:
 
 ```
 eligiblePool = corpus.filter { $0.band <= userBand }      // at or below your level
-order        = seededPermutation(eligiblePool, seed: installSalt)
-dayIndex     = daysSsince(installDate)                      // integer day counter
+dayIndex     = daysSince(installDate)                       // integer day counter
+cycle        = dayIndex / eligiblePool.count                // full passes completed
+order        = seededPermutation(eligiblePool, seed: installSalt + cycle)
 todaysWord   = order[dayIndex % order.count]
 ```
 
-- `seededPermutation` is a stable Fisher–Yates keyed on `installSalt` (a small
+- `seededPermutation` is a stable Fisher–Yates keyed on the seed (a small
   SplitMix64-style PRNG, **not** `Math.random`-style nondeterminism) so app and
   widget compute byte-identical results.
-- Re-running through the list after `order.count` days is acceptable for v1
-  (a 1,500-word eligible pool ≈ 4 years before any repeat).
+- Exhausting the pool (`order.count` days) starts a fresh pass seeded with
+  `installSalt + cycle` — a new permutation per cycle, still a pure function of
+  the same inputs. Cycle 0's seed is `installSalt` itself, so the first pass is
+  byte-identical to the original v1 behavior. A boundary guard swaps a cycle's
+  first two slots when its opening word would repeat the previous cycle's
+  closing word (pools of 3+ only, where the swap can't move a cycle's last word).
 - Changing `band` reshuffles the eligible pool; we keep yesterday/today stable
   by mixing `band` into neither the salt nor the day index (band only filters).
   Edge cases (band shrank below today's word) are handled by clamping.
@@ -344,8 +349,10 @@ adding it later is a swap, not a migration:
   **no AGPL exposure**; we emit `#deck`, `#notetype`, `#tags`, `#columns`
   header directives so import is one click. This satisfies "export starred words
   to Anki" today behind a small `Exporter` protocol.
-- **Later, in-app practice → `open-spaced-repetition/swift-fsrs`** (MIT, native
-  Swift, dependency-free). Anki itself is **AGPL** and we never link it; the
+- **Later, in-app practice → the FSRS algorithm.** Shipped: an FSRS-6 port from
+  MIT-licensed `open-spaced-repetition/py-fsrs`, hand-implemented in
+  `ReviewEngine.swift` (native Swift, dependency-free; originally planned as
+  `open-spaced-repetition/swift-fsrs`). Anki itself is **AGPL** and we never link it; the
   FSRS *algorithm* org ships separately under MIT. The `.apkg` format is
   documented enough to generate permissively if we ever need media/scheduling
   round-trip, but CSV covers the 90% case for a fraction of the work.
@@ -385,8 +392,10 @@ word-of-the-day/
 
 ## 12. Open questions / nice-to-haves
 
-- **Repeat handling** past `order.count` days — reshuffle with a new salt, or
-  start surfacing harder bands? (v1: simple wrap.)
+- **Repeat handling** past `order.count` days — resolved: each pass reshuffles
+  with seed `installSalt + cycle` (§3.3). The first pass is unchanged, so
+  existing installs keep their history; harder-band escalation was rejected as
+  a product-behavior change.
 - **Notifications** — a gentle "today's word" push? (Local only; off by default.)
 - **iPad / macCatalyst** — out of scope for v1 (iPhone only, like the siblings).
 - **Crowd-grounded difficulty** — deliberately excluded to honor the no-server

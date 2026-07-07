@@ -21,11 +21,17 @@ The product rule "the widget shows the same word as the app" is solved by making
 selection a **pure function**, not shared mutable state:
 
 ```
-word(date) = seededShuffle(eligiblePool, salt)[ daysSinceInstall(date) % pool.count ]
+day        = daysSinceInstall(date)
+cycle      = day / pool.count                       // full passes through the pool
+word(date) = seededShuffle(eligiblePool, salt + cycle)[ day % pool.count ]
 ```
 
 - `SeededRandom` (SplitMix64) + `Array.seededShuffled(seed:)` — same seed ⇒ same
   order on every device/process.
+- Each pass through the pool reshuffles with a fresh seed (`salt + cycle`), so
+  exhausting the pool never replays the same order; cycle 0 is `salt` itself. A
+  small deterministic guard stops a new cycle from opening with the word the
+  previous one closed with.
 - `DailySelector` sorts the eligible pool by id first, so the result is
   independent of how the corpus array was loaded.
 - `eligiblePool` = words with `band <= user band`; the band comes from the

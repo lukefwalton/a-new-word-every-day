@@ -126,7 +126,7 @@ available permissively.
 | Need | Choice | License |
 |---|---|---|
 | Export starred words to Anki **now** | Plain **CSV/TSV** with `#deck`/`#notetype`/`#tags`/`#columns` headers (Anki imports natively, no add-on) | n/a — our own writer |
-| In-app scheduling **later** | `open-spaced-repetition/swift-fsrs` (FSRS-6, native, dependency-free) | **MIT** |
+| In-app scheduling (shipped) | FSRS-6, hand-ported into `ReviewEngine.swift` from `open-spaced-repetition/py-fsrs` (no runtime dependency) | **MIT** |
 | Alt SR ports | `4rays/swift-fsrs`, `bootuz/SwiftFSRS` | **MIT** |
 | Classic algorithm | SM-2 — published algorithm, free to implement; add `Algorithm SM-2, (C) Copyright SuperMemo World, 1991` attribution | n/a (algorithm, not code) |
 | `.apkg` export (only if we need media/scheduling round-trip) | Format is a ZIP-of-SQLite, documented enough to generate without Anki code | format not copyrightable |
@@ -165,6 +165,7 @@ adopting `swift-fsrs` later is a swap, not a migration. No AGPL enters the app.
 
 **Spaced repetition / Anki**
 - open-spaced-repetition org: https://github.com/open-spaced-repetition
+- py-fsrs (MIT, the FSRS-6 reference the in-app port follows): https://github.com/open-spaced-repetition/py-fsrs
 - swift-fsrs (MIT): https://github.com/open-spaced-repetition/swift-fsrs · https://github.com/4rays/swift-fsrs · https://github.com/bootuz/SwiftFSRS
 - SM-2 license: https://supermemopedia.com/wiki/Licensing_SuperMemo_Algorithm · https://www.supermemo.guru/wiki/Algorithm_SM-2
 - Anki CSV import: https://docs.ankiweb.net/importing/text-files.html

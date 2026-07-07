@@ -1,7 +1,7 @@
 import Foundation
 
 /// Per-word review schedule — a neutral, `Codable` mirror of the FSRS `Card`
-/// (open-spaced-repetition/swift-fsrs, pinned at v5.0.0). Keeping our own copy of
+/// (as in open-spaced-repetition's FSRS ports; unchanged FSRS-5 → FSRS-6). Keeping our own copy of
 /// the fields means the *persisted* shape never imports the scheduler package: the
 /// app and the widget both compile this type, but only `ReviewEngine` (app target)
 /// ever touches `FSRS`. Swapping schedulers later stays a one-file change there —
