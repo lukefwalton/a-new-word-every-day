@@ -1,29 +1,32 @@
 import Foundation
 
-/// The in-app spaced-repetition scheduler — a self-contained port of the FSRS-5
-/// algorithm (long-term variant). It's re-implemented here rather than taken as a
-/// dependency: `open-spaced-repetition/swift-fsrs` exposes its types `public` but
-/// its initializers and methods `internal`, so it can't be called from another
-/// module. Porting the math keeps the repo dependency-free (and on Xcode 15 /
-/// Swift 5) while staying faithful to FSRS.
+/// The in-app spaced-repetition scheduler — a self-contained port of the FSRS-6
+/// algorithm. It's re-implemented here rather than taken as a dependency so the
+/// repo stays dependency-free (and on Xcode 15 / Swift 5) while staying faithful
+/// to FSRS.
 ///
 /// This is the single scheduling boundary: the persisted model (`ReviewState`),
 /// the store, and the UI never reach past the small surface below — so swapping
 /// the algorithm again would touch only this file.
 ///
-/// Algorithm: FSRS-5, ported from open-spaced-repetition/swift-fsrs (MIT License).
-/// Runs entirely on-device; no review data leaves the phone.
+/// Algorithm: FSRS-6, ported from open-spaced-repetition/py-fsrs v6.3.1
+/// (MIT License). Intervals are whole days (no sub-day learning steps); a
+/// same-day regrade uses FSRS-6's short-term stability formula. Runs entirely
+/// on-device; no review data leaves the phone.
 struct ReviewEngine {
-    /// FSRS-5 default weights (19), verbatim from swift-fsrs `FSRSDefaults.defaultW`.
+    /// FSRS-6 default parameters (21), verbatim from py-fsrs `DEFAULT_PARAMETERS`.
     private static let w: [Double] = [
-        0.4072, 1.1829, 3.1262, 15.4722, 7.2102, 0.5316, 1.0651, 0.0234, 1.616,
-        0.1544, 1.0824, 1.9813, 0.0953, 0.2975, 2.2042, 0.2407, 2.9466, 0.5034, 0.6567,
+        0.212, 1.2931, 2.3065, 8.2956, 6.4133, 0.8334, 3.0194, 0.001, 1.8722,
+        0.1666, 0.796, 1.4835, 0.0614, 0.2629, 1.6483, 0.6014, 1.8729, 0.5425,
+        0.0912, 0.0658, 0.1542,
     ]
-    private static let decay = -0.5
-    private static let factor = 19.0 / 81.0          // 0.9^(1/decay) - 1
+    /// FSRS-6 makes the forgetting-curve decay a fitted parameter (−w[20])
+    /// rather than the fixed −0.5 of FSRS-4/5.
+    private static let decay = -w[20]
+    private static let factor = pow(0.9, 1 / decay) - 1
     private static let requestRetention = 0.9
     private static let maximumInterval = 36_500.0
-    private static let minimumStability = 0.1
+    private static let minimumStability = 0.001
 
     /// FSRS spreads long intervals by a small random band so a day's reviews don't
     /// all fall due together. Tests pass `false` for deterministic intervals.
@@ -82,12 +85,20 @@ struct ReviewEngine {
         if let last = state, let lastReview = last.lastReview {
             // Subsequent review: update difficulty/stability from recall performance.
             let elapsed = max(0, Self.days(from: lastReview, to: now))
-            let r = Self.forgettingCurve(elapsed: elapsed, stability: last.stability)
             next.elapsedDays = elapsed
             next.difficulty = Self.nextDifficulty(last.difficulty, g)
-            next.stability = grade == .again
-                ? Self.nextForgetStability(d: last.difficulty, s: last.stability, r: r)
-                : Self.nextRecallStability(d: last.difficulty, s: last.stability, r: r, grade: grade)
+            if elapsed < 1 {
+                // Any sub-day re-review (FSRS-6's short-term path): stability
+                // updates from the grade alone, with no retrievability input.
+                // The in-session Again requeue is the common trigger, but this
+                // covers any second grade within 24h.
+                next.stability = Self.shortTermStability(s: last.stability, g: g)
+            } else {
+                let r = Self.forgettingCurve(elapsed: elapsed, stability: last.stability)
+                next.stability = grade == .again
+                    ? Self.nextForgetStability(d: last.difficulty, s: last.stability, r: r)
+                    : Self.nextRecallStability(d: last.difficulty, s: last.stability, r: r, grade: grade)
+            }
             // A lapse is forgetting an already-learned card, so it counts only on a
             // *subsequent* Again — never on a first review of a brand-new card.
             if grade == .again { next.lapses += 1 }
@@ -102,20 +113,26 @@ struct ReviewEngine {
         next.stability = max(Self.minimumStability, next.stability)
         next.reps += 1
         // The long-term scheduler has no learning steps, so cards are always in the
-        // Review state (matches swift-fsrs's LongTermScheduler).
+        // Review state.
         next.state = 2
         next.lastReview = now
         return next
     }
 
-    // MARK: - FSRS-5 math (ported from swift-fsrs, MIT)
+    // MARK: - FSRS-6 math (ported from py-fsrs, MIT)
 
     private static func initStability(_ grade: ReviewGrade) -> Double {
         max(w[grade.rawValue - 1], minimumStability)
     }
 
+    /// D0(g) without the [1, 10] clamp — the mean-reversion target uses the raw
+    /// value (D0(4) ≈ −4.77 with default weights), per py-fsrs.
+    private static func rawInitDifficulty(_ g: Double) -> Double {
+        w[4] - exp((g - 1) * w[5]) + 1
+    }
+
     private static func initDifficulty(_ g: Double) -> Double {
-        constrainDifficulty(w[4] - exp((g - 1) * w[5]) + 1)
+        constrainDifficulty(rawInitDifficulty(g))
     }
 
     private static func constrainDifficulty(_ d: Double) -> Double { min(max(d, 1), 10) }
@@ -124,14 +141,18 @@ struct ReviewEngine {
         pow(1 + factor * elapsed / stability, decay)
     }
 
-    /// Pull `current` toward `initValue` (mean reversion), weighted by w[7].
+    /// Pull `current` toward the raw Easy initial difficulty (mean reversion),
+    /// weighted by w[7].
     private static func meanReversion(_ initValue: Double, _ current: Double) -> Double {
         w[7] * initValue + (1 - w[7]) * current
     }
 
     private static func nextDifficulty(_ d: Double, _ g: Double) -> Double {
-        let nextD = d - w[6] * (g - 3)
-        return constrainDifficulty(meanReversion(initDifficulty(4), nextD))
+        // FSRS-6 damps the difficulty delta linearly as D approaches 10, so
+        // difficulty saturates instead of pinning at the clamp.
+        let deltaD = -w[6] * (g - 3)
+        let damped = d + deltaD * (10 - d) / 9
+        return constrainDifficulty(meanReversion(rawInitDifficulty(4), damped))
     }
 
     private static func nextRecallStability(d: Double, s: Double, r: Double, grade: ReviewGrade) -> Double {
@@ -142,13 +163,24 @@ struct ReviewEngine {
     }
 
     private static func nextForgetStability(d: Double, s: Double, r: Double) -> Double {
-        w[11] * pow(d, -w[12]) * (pow(s + 1, w[13]) - 1) * exp((1 - r) * w[14])
+        // FSRS-6 caps post-lapse stability so a forget can never *raise* S past
+        // what a same-day Again would leave (s / e^(w17·w18)).
+        min(w[11] * pow(d, -w[12]) * (pow(s + 1, w[13]) - 1) * exp((1 - r) * w[14]),
+            s / exp(w[17] * w[18]))
     }
 
-    /// FSRS-5 interval from stability, in **whole days** — this is the long-term
+    /// FSRS-6 short-term stability, used when the previous review was less than a
+    /// day ago. Successful grades (Good/Easy) never shrink stability.
+    private static func shortTermStability(s: Double, g: Double) -> Double {
+        var sInc = exp(w[17] * (g - 3 + w[18])) * pow(s, -w[19])
+        if g >= 3 { sInc = max(sInc, 1) }
+        return s * sInc
+    }
+
+    /// FSRS-6 interval from stability, in **whole days** — this is the long-term
     /// variant, intentionally with no sub-day learning steps. Same-session
     /// relearning of a failed card is handled by `ReviewQueue` (it re-shows the
-    /// card), not by minute-level scheduler steps; that's the deliberate
+    /// card) plus the short-term stability formula above; that's the deliberate
     /// "lightweight" behaviour for this app.
     private func nextInterval(stability: Double, fuzz: Bool) -> Int {
         let modifier = (pow(Self.requestRetention, 1 / Self.decay) - 1) / Self.factor
