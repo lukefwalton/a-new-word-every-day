@@ -43,7 +43,7 @@ struct WordProvider: AppIntentTimelineProvider {
         let store = SharedStore.shared
         // "App Default" follows the user's primary (first-enabled) language, so a
         // widget placed before multilanguage existed keeps showing English.
-        let language = configuration.language.resolved ?? store.enabledLanguages.first ?? .english
+        let language = configuration.language.resolved ?? store.primaryLanguage
         let word = service.todaysWord(store: store, language: language, now: date)
         let baseTheme = store.theme
         let basePrefs = store.widgetPreferences

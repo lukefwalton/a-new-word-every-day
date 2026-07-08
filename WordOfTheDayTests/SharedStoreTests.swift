@@ -47,6 +47,20 @@ final class SharedStoreTests: XCTestCase {
         XCTAssertEqual(store.enabledLanguages, [.english])
     }
 
+    func test_enabledLanguages_normalizedToRegistryOrderAndDeduped() {
+        let store = Fixtures.volatileStore()
+        store.enabledLanguages = [.japanese, .english, .japanese]
+        XCTAssertEqual(store.enabledLanguages, [.english, .japanese],
+                       "the store boundary enforces Language.allCases order and dedupes")
+    }
+
+    func test_primaryLanguage_isFirstEnabled() {
+        let store = Fixtures.volatileStore()
+        XCTAssertEqual(store.primaryLanguage, .english, "default installs are English-primary")
+        store.enabledLanguages = [.japanese]
+        XCTAssertEqual(store.primaryLanguage, .japanese)
+    }
+
     func test_toggleStar_addsNewestFirstAndRemoves() {
         let store = Fixtures.volatileStore()
         XCTAssertTrue(store.toggleStar(10))

@@ -99,11 +99,13 @@ def build(lang: str, source: Path, out: Path) -> list[dict]:
     for r in rows:
         entry = {"id": stable_id(r["word"], lang), "word": r["word"], "pos": r["pos"],
                  "definition": r["definition"], "band": r["band"]}
-        if cfg["reading"]:
+        if cfg["reading"] and r["reading"] != r["word"]:
             # Omit readings that just repeat the headword (kana-only words) —
             # Word.displayReading would hide them anyway, so don't ship the bytes.
-            if r["reading"] != r["word"]:
-                entry["reading"] = r["reading"]
+            entry["reading"] = r["reading"]
+        if lang != "en":
+            # Every non-English entry carries its language tag (independent of
+            # readings) — Word.language falls back to English when it's absent.
             entry["lang"] = lang
         out_rows.append(entry)
     ids = [r["id"] for r in out_rows]

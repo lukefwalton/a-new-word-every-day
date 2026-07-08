@@ -1,11 +1,13 @@
 import SwiftUI
 import LFWDesignSystem
 
-/// Four phases: a short explainer pager (family `LFWOnboardingScaffold` look), a
-/// language multi-select, then per chosen language either the swipe deck that
-/// calibrates the difficulty band or a self-assessment level picker ("Skip — I
-/// know my level"). Kept in one dark themed surface. The pager and the deck are
-/// separated so horizontal paging never fights the deck's horizontal drag.
+/// Three phases: a short explainer pager (family `LFWOnboardingScaffold` look), a
+/// language multi-select, then per chosen language the swipe deck that calibrates
+/// the difficulty band. A self-assessment level picker ("Skip — I know my level")
+/// presents *over* the deck as a full-screen cover, so peeking at it and coming
+/// back never discards swipe progress. Kept in one dark themed surface. The pager
+/// and the deck are separated so horizontal paging never fights the deck's
+/// horizontal drag.
 struct OnboardingView: View {
     @EnvironmentObject private var model: AppModel
     @State private var phase: Phase = .intro
@@ -17,6 +19,8 @@ struct OnboardingView: View {
     @State private var pending: [Language] = []
     /// Each completed language's starting band.
     @State private var bands: [Language: Int] = [:]
+    /// Non-nil while the self-assessment picker covers the deck.
+    @State private var assessing: Language?
     /// The self-assessment picker's current choice.
     @State private var pickedLevel = 2
 
@@ -24,7 +28,6 @@ struct OnboardingView: View {
         case intro
         case languages
         case calibrate(Language)
-        case selfAssess(Language)
     }
 
     private var typeface: LFWTypeface { model.theme.typeface }
@@ -34,13 +37,15 @@ struct OnboardingView: View {
         ZStack {
             LFWThemedBackground(config: model.theme)
             switch phase {
-            case .intro:                    intro
-            case .languages:                languagePicker
-            case .calibrate(let language):  calibrate(language)
-            case .selfAssess(let language): selfAssess(language)
+            case .intro:                   intro
+            case .languages:               languagePicker
+            case .calibrate(let language): calibrate(language)
             }
         }
         .preferredColorScheme(.dark)
+        .fullScreenCover(item: $assessing) { language in
+            selfAssess(language)
+        }
     }
 
     // MARK: Intro pager
@@ -98,7 +103,18 @@ struct OnboardingView: View {
                               title: "Pick your\nlanguages.") {
             VStack(spacing: 12) {
                 ForEach(Language.allCases) { language in
-                    languageRow(language)
+                    selectionCard(
+                        title: language.displayName,
+                        subtitle: language.nativeName != language.displayName ? language.nativeName : nil,
+                        isOn: selected.contains(language),
+                        showsCircle: true
+                    ) {
+                        if selected.contains(language) {
+                            selected.remove(language)
+                        } else {
+                            selected.insert(language)
+                        }
+                    }
                 }
                 Text("You can add or remove languages any time in Settings.")
                     .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
@@ -111,42 +127,6 @@ struct OnboardingView: View {
                 .disabled(selected.isEmpty)
                 .opacity(selected.isEmpty ? 0.5 : 1)
         }
-    }
-
-    private func languageRow(_ language: Language) -> some View {
-        let isOn = selected.contains(language)
-        return Button {
-            if isOn { selected.remove(language) } else { selected.insert(language) }
-        } label: {
-            HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(language.displayName)
-                        .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 19))
-                        .foregroundStyle(palette.primaryText)
-                    if language.nativeName != language.displayName {
-                        Text(language.nativeName)
-                            .font(LFWTypography.font(.uiBody, typeface: typeface, size: 14))
-                            .foregroundStyle(palette.secondaryText)
-                    }
-                }
-                Spacer()
-                Image(systemName: isOn ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 24, weight: .medium))
-                    .foregroundStyle(isOn ? palette.accent : palette.secondaryText)
-            }
-            .padding(.horizontal, 18)
-            .padding(.vertical, 14)
-            .background(
-                RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
-                    .fill(palette.surface)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
-                    .strokeBorder(isOn ? palette.accent.opacity(0.7) : palette.primaryText.opacity(0.12),
-                                  lineWidth: isOn ? 1.5 : 1)
-            )
-        }
-        .accessibilityLabel("\(language.displayName)\(isOn ? ", selected" : "")")
     }
 
     // MARK: Calibrate (per language)
@@ -178,8 +158,8 @@ struct OnboardingView: View {
             Spacer(minLength: 12)
 
             Button("Skip — I know my level") {
-                pickedLevel = 2
-                withAnimation(.easeInOut(duration: 0.35)) { phase = .selfAssess(language) }
+                pickedLevel = model.defaultBand
+                assessing = language
             }
             .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
             .foregroundStyle(palette.secondaryText)
@@ -190,50 +170,70 @@ struct OnboardingView: View {
     // MARK: Self-assessment (per language)
 
     private func selfAssess(_ language: Language) -> some View {
-        LFWOnboardingScaffold(symbol: "slider.horizontal.3",
-                              eyebrow: language.displayName,
-                              title: "Where would you\nplace yourself?") {
-            VStack(spacing: 10) {
-                ForEach(1...5, id: \.self) { band in
-                    levelRow(language, band: band)
+        ZStack {
+            LFWThemedBackground(config: model.theme)
+            LFWOnboardingScaffold(symbol: "slider.horizontal.3",
+                                  eyebrow: language.displayName,
+                                  title: "Where would you\nplace yourself?") {
+                VStack(spacing: 10) {
+                    ForEach(1...5, id: \.self) { band in
+                        selectionCard(
+                            title: language.levelName(forBand: band),
+                            subtitle: language.levelDescriptions[band - 1],
+                            isOn: pickedLevel == band,
+                            showsCircle: false
+                        ) {
+                            pickedLevel = band
+                        }
+                    }
                 }
-            }
-        } footer: {
-            VStack(spacing: 14) {
-                Button("Continue") { finishLanguage(language, band: pickedLevel) }
+            } footer: {
+                VStack(spacing: 14) {
+                    Button("Continue") {
+                        assessing = nil
+                        finishLanguage(language, band: pickedLevel)
+                    }
                     .buttonStyle(.lfwCTA)
-                Button("Back to swiping") {
-                    withAnimation(.easeInOut(duration: 0.35)) { phase = .calibrate(language) }
+                    Button("Back to swiping") {
+                        assessing = nil   // the deck underneath kept its progress
+                    }
+                    .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
+                    .foregroundStyle(palette.secondaryText)
                 }
-                .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
-                .foregroundStyle(palette.secondaryText)
             }
         }
+        .preferredColorScheme(.dark)
     }
 
-    private func levelRow(_ language: Language, band: Int) -> some View {
-        let isOn = pickedLevel == band
-        return Button {
-            pickedLevel = band
-        } label: {
+    /// The shared selectable row card (title + optional subtitle + trailing
+    /// mark) used by both the language picker and the level picker.
+    private func selectionCard(title: String, subtitle: String?, isOn: Bool,
+                               showsCircle: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(language.levelName(forBand: band))
-                        .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 17))
+                    Text(title)
+                        .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 18))
                         .foregroundStyle(palette.primaryText)
-                    Text(language.levelDescriptions[band - 1])
-                        .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
-                        .foregroundStyle(palette.secondaryText)
+                    if let subtitle {
+                        Text(subtitle)
+                            .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
+                            .foregroundStyle(palette.secondaryText)
+                    }
                 }
                 Spacer()
-                if isOn {
+                if showsCircle {
+                    Image(systemName: isOn ? "checkmark.circle.fill" : "circle")
+                        .font(.system(size: 24, weight: .medium))
+                        .foregroundStyle(isOn ? palette.accent : palette.secondaryText)
+                } else if isOn {
                     Image(systemName: "checkmark")
                         .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(palette.accent)
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 10)
+            .padding(.vertical, 12)
             .background(
                 RoundedRectangle(cornerRadius: LFWRadius.surface, style: .continuous)
                     .fill(palette.surface)
@@ -244,7 +244,7 @@ struct OnboardingView: View {
                                   lineWidth: isOn ? 1.5 : 1)
             )
         }
-        .accessibilityLabel("\(language.levelName(forBand: band)) — \(language.levelDescriptions[band - 1])")
+        .accessibilityLabel("\(title)\(subtitle.map { " — \($0)" } ?? "")\(isOn ? ", selected" : "")")
     }
 
     // MARK: Navigation
@@ -271,8 +271,8 @@ struct OnboardingView: View {
         }
         deck = model.calibrationDeck(for: language)
         guard !deck.isEmpty else {
-            // No corpus to calibrate on — fall back to a gentle middle start.
-            finishLanguage(language, band: 2)
+            // No corpus to calibrate on — fall back to the gentle middle start.
+            finishLanguage(language, band: model.defaultBand)
             return
         }
         withAnimation(.easeInOut(duration: 0.35)) { phase = .calibrate(language) }

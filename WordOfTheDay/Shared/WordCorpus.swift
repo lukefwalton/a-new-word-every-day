@@ -35,34 +35,51 @@ struct WordCorpus {
     }
 }
 
-/// Every bundled corpus, one per supported language. The app and widget load
-/// this once; per-language features index into it, and cross-language lookups
-/// (starred words, deep links) search all corpora by id.
-struct CorpusLibrary {
-    let corpora: [Language: WordCorpus]
+/// Every bundled corpus, one per supported language. Corpora decode lazily on
+/// first access and are cached: the widget extension (which lives under a tight
+/// memory ceiling and renders exactly one language per widget) never pays for
+/// languages it doesn't show. Cross-language lookups (starred words, deep
+/// links) search all corpora by id.
+final class CorpusLibrary {
+    private let bundles: [Bundle]
+    private var cache: [Language: WordCorpus]
+    private let lock = NSLock()
 
+    /// Lazy-loading library over the given bundles (the production path).
+    init(bundles: [Bundle] = [.main]) {
+        self.bundles = bundles
+        self.cache = [:]
+    }
+
+    /// Fully preloaded library — for tests and fixtures. Languages absent from
+    /// `corpora` stay empty rather than hitting any bundle.
     init(corpora: [Language: WordCorpus]) {
-        self.corpora = corpora
+        self.bundles = []
+        self.cache = corpora
+        for language in Language.allCases where corpora[language] == nil {
+            cache[language] = WordCorpus(words: [])
+        }
     }
 
     func corpus(for language: Language) -> WordCorpus {
-        corpora[language] ?? WordCorpus(words: [])
+        lock.lock()
+        defer { lock.unlock() }
+        if let cached = cache[language] { return cached }
+        let corpus = WordCorpus.load(language: language, bundles: bundles)
+        cache[language] = corpus
+        return corpus
     }
 
     /// Look up a word by id across all languages. Ids are hash-derived and
     /// salted per language at build time, so they never collide in practice.
     func word(id: Int) -> Word? {
         for language in Language.allCases {
-            if let word = corpora[language]?.byID[id] { return word }
+            if let word = corpus(for: language).byID[id] { return word }
         }
         return nil
     }
 
-    var isEmpty: Bool { corpora.values.allSatisfy { $0.words.isEmpty } }
-
     static func load(bundles: [Bundle] = [.main]) -> CorpusLibrary {
-        CorpusLibrary(corpora: Dictionary(uniqueKeysWithValues: Language.allCases.map {
-            ($0, WordCorpus.load(language: $0, bundles: bundles))
-        }))
+        CorpusLibrary(bundles: bundles)
     }
 }

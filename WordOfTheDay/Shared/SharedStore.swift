@@ -56,19 +56,27 @@ final class SharedStore {
 
     // MARK: Languages
 
-    /// The languages the user is learning, in display order. Defaults to
-    /// English, which is also what every pre-multilanguage install "has".
+    /// The languages the user is learning. Defaults to English, which is also
+    /// what every pre-multilanguage install "has". Normalized here at the
+    /// boundary — deduped and in `Language.allCases` order — so no caller can
+    /// persist a malformed set.
     var enabledLanguages: [Language] {
         get {
-            let stored = (defaults.array(forKey: Key.languages) as? [String])?
-                .compactMap(Language.init(rawValue:)) ?? []
-            return stored.isEmpty ? [.english] : stored
+            let stored = Set((defaults.array(forKey: Key.languages) as? [String])?
+                .compactMap(Language.init(rawValue:)) ?? [])
+            let ordered = Language.allCases.filter(stored.contains)
+            return ordered.isEmpty ? [.english] : ordered
         }
         set {
-            let languages = newValue.isEmpty ? [.english] : newValue
-            defaults.set(languages.map(\.rawValue), forKey: Key.languages)
+            let chosen = Set(newValue)
+            let ordered = Language.allCases.filter(chosen.contains)
+            defaults.set((ordered.isEmpty ? [.english] : ordered).map(\.rawValue),
+                         forKey: Key.languages)
         }
     }
+
+    /// The language an unconfigured ("App Default") widget shows.
+    var primaryLanguage: Language { enabledLanguages.first ?? .english }
 
     // MARK: Difficulty
 

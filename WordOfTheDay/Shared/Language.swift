@@ -32,10 +32,6 @@ enum Language: String, Codable, CaseIterable, Identifiable, Hashable {
         self == .english ? "words" : "words_\(rawValue)"
     }
 
-    /// Whether entries carry a phonetic reading (kana for Japanese) rendered
-    /// with the headword.
-    var hasReading: Bool { self == .japanese }
-
     /// Display names for difficulty bands 1…5, index 0 = band 1. Japanese bands
     /// map one-to-one onto JLPT levels, which learners already know themselves by.
     var levelNames: [String] {

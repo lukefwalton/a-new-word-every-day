@@ -58,6 +58,40 @@ final class WordOfTheDayUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["WORD OF THE DAY"].waitForExistence(timeout: 5))
     }
 
+    func test_bilingualOnboarding_selfAssessBoth_pagesTodayPerLanguage() throws {
+        app.launchArguments += ["-UITestResetOnboarding"]
+        app.launch()
+
+        let next = app.buttons["Next"]
+        XCTAssertTrue(next.waitForExistence(timeout: 5))
+        next.tap()
+        XCTAssertTrue(next.waitForExistence(timeout: 3))
+        next.tap()
+
+        let choose = app.buttons["Choose languages"]
+        XCTAssertTrue(choose.waitForExistence(timeout: 5))
+        choose.tap()
+
+        // English is pre-selected; add Japanese, then continue.
+        let japanese = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Japanese")).firstMatch
+        XCTAssertTrue(japanese.waitForExistence(timeout: 5))
+        japanese.tap()
+        app.buttons["Continue"].tap()
+
+        // Each language: skip the deck and keep the default self-assessed level.
+        for language in ["ENGLISH", "JAPANESE"] {
+            XCTAssertTrue(app.staticTexts["DO YOU KNOW THIS \(language) WORD?"].waitForExistence(timeout: 5))
+            app.buttons["Skip — I know my level"].tap()
+            let cont = app.buttons["Continue"]
+            XCTAssertTrue(cont.waitForExistence(timeout: 5))
+            cont.tap()
+        }
+
+        // Today shows the per-language pager, English page first.
+        XCTAssertTrue(app.tabBars.buttons["Today"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["WORD OF THE DAY · ENGLISH"].waitForExistence(timeout: 5))
+    }
+
     func test_calibrationDeck_swipeRight_advancesProgress() throws {
         app.launchArguments += ["-UITestResetOnboarding"]
         app.launch()

@@ -6,6 +6,9 @@ import LFWDesignSystem
 /// quiet "did you know it?" mark that nudges that language's difficulty band.
 struct TodayView: View {
     @EnvironmentObject private var model: AppModel
+    /// The language page in view. Keyed by language (not word id) so a mark that
+    /// swaps the day's word re-renders in place instead of resetting the pager.
+    @State private var pagedLanguage: Language = .english
 
     private var typeface: LFWTypeface { model.theme.typeface }
     private var palette: LFWPaletteColors { model.theme.colors }
@@ -26,9 +29,10 @@ struct TodayView: View {
                 content(model.todaysWords[0])
             } else {
                 // One page per language; the dots double as the "there's more" cue.
-                TabView {
-                    ForEach(model.todaysWords) { word in
+                TabView(selection: $pagedLanguage) {
+                    ForEach(model.todaysWords, id: \.language) { word in
                         content(word)
+                            .tag(word.language)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))

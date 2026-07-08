@@ -89,16 +89,18 @@ struct SettingsView: View {
         }
     }
 
-    /// A selectable preference row (title + subtitle + checkmark) shared by the
-    /// detail / background / layout pickers.
+    /// A selectable preference row (title + optional subtitle + checkmark) shared
+    /// by the detail / background / layout pickers and the language toggles.
     @ViewBuilder
-    private func styleRow(title: String, subtitle: String, selected: Bool,
+    private func styleRow(title: String, subtitle: String?, selected: Bool,
                           _ action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(title).foregroundStyle(palette.primaryText)
-                    Text(subtitle).font(.caption).foregroundStyle(palette.secondaryText)
+                    if let subtitle {
+                        Text(subtitle).font(.caption).foregroundStyle(palette.secondaryText)
+                    }
                 }
                 Spacer()
                 if selected {
@@ -199,25 +201,11 @@ struct SettingsView: View {
         Section {
             ForEach(Language.allCases) { language in
                 let isOn = model.enabledLanguages.contains(language)
-                Button {
+                styleRow(title: language.displayName,
+                         subtitle: language.nativeName != language.displayName ? language.nativeName : nil,
+                         selected: isOn) {
                     toggleLanguage(language)
-                } label: {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(language.displayName).foregroundStyle(palette.primaryText)
-                            if language.nativeName != language.displayName {
-                                Text(language.nativeName)
-                                    .font(.caption)
-                                    .foregroundStyle(palette.secondaryText)
-                            }
-                        }
-                        Spacer()
-                        if isOn {
-                            Image(systemName: "checkmark").foregroundStyle(palette.accent)
-                        }
-                    }
                 }
-                .tint(palette.accent)
                 // The last language can't be turned off — there'd be no daily word.
                 .disabled(isOn && model.enabledLanguages.count == 1)
             }
@@ -235,8 +223,7 @@ struct SettingsView: View {
             guard languages.count > 1 else { return }
             languages.remove(at: idx)
         } else {
-            languages.append(language)
-            languages = Language.allCases.filter(languages.contains)   // stable display order
+            languages.append(language)   // the store normalizes order + dedupes
         }
         model.setLanguages(languages)
     }
