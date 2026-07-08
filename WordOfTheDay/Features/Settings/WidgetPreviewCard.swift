@@ -14,14 +14,17 @@ struct WidgetPreviewCard: View {
     private var detail: WidgetDetailLevel { widgetPreferences.detailLevel }
     private var layout: WidgetLayoutStyle { widgetPreferences.layoutStyle }
 
+    /// Matches `systemMedium` widget height on iPhone (~169 pt).
+    private static let previewHeight: CGFloat = 169
+
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             WidgetBackground(theme: theme, style: widgetPreferences.backgroundStyle)
             content
                 .padding(layout == .minimal ? 0 : 10)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 158)
+        .frame(height: Self.previewHeight)
         .clipShape(RoundedRectangle(cornerRadius: LFWRadius.card, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: LFWRadius.card, style: .continuous)
@@ -57,7 +60,8 @@ struct WidgetPreviewCard: View {
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(palette.secondaryText)
             }
-            Spacer(minLength: 0)
+            // No Spacer here — in this fixed-height preview, a flexible spacer pushes
+            // the hero toward the bottom and clips it when Rich detail overflows.
             WidgetHeroText(word: word.word, typeface: typeface,
                            color: palette.primaryText, glow: palette.accent, size: 34)
                 .frame(maxWidth: .infinity, alignment: elementAlignment)
