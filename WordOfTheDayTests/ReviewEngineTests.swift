@@ -68,6 +68,28 @@ final class ReviewEngineTests: XCTestCase {
         XCTAssertEqual(state, decoded)
     }
 
+    func test_preUpgradeFSRS5State_schedulesWithoutMigration() throws {
+        // A card as the *previous* FSRS-5 engine would have persisted it (Good
+        // init stability 3.1262, its init difficulty ≈ 5.31). Decoding it from
+        // stored JSON and grading it under FSRS-6 must produce a sane schedule
+        // with no migration step — the "ReviewState is engine-agnostic" claim.
+        let reviewedAt = now.addingTimeInterval(-3 * 86_400)
+        let legacy = ReviewState(due: now, stability: 3.1262, difficulty: 5.3146,
+                                 elapsedDays: 3, scheduledDays: 3, reps: 1,
+                                 lapses: 0, state: 2, lastReview: reviewedAt)
+        let persisted = try JSONDecoder().decode(
+            ReviewState.self, from: JSONEncoder().encode(legacy))
+
+        let next = engine.grade(persisted, .good, now: now)
+        XCTAssertGreaterThan(next.stability, legacy.stability,
+                             "recalling a matured legacy card should grow stability")
+        XCTAssertTrue(next.stability.isFinite)
+        XCTAssertGreaterThanOrEqual(next.difficulty, 1)
+        XCTAssertLessThanOrEqual(next.difficulty, 10)
+        XCTAssertGreaterThan(next.due, now, "a passing grade schedules into the future")
+        XCTAssertEqual(next.reps, 2)
+    }
+
     // MARK: Golden vectors
     // Lock the FSRS-6 defaults so a transcription slip in the ported math (a wrong
     // weight, a wrong interval formula) fails a test rather than silently drifting
