@@ -2,8 +2,8 @@
 # Build, seed demo state, and capture App Store screenshots in the simulator.
 #
 # Output: build/app-store-screenshots/
-#   iphone/   6.5" (1284×2778) — required for iPhone
-#   ipad/     13"  (2064×2752) — required even for iPhone-only apps on iPad
+#   iphone/en/  iphone/ja/   6.5" (1284×2778)
+#   ipad/en/    ipad/ja/     13"  (2064×2752)
 #
 # Requires: Xcode, iOS Simulator, fonts (scripts/fetch_fonts.sh).
 set -euo pipefail
@@ -55,6 +55,8 @@ flatten_png() {
 
 capture_set() {
   local sim_id="$1" out_dir="$2" w="$3" h="$4" label="$5"
+  shift 5
+  local extra_args=("$@")
   mkdir -p "$out_dir"
 
   echo ""
@@ -80,7 +82,7 @@ capture_set() {
     echo "→ $slug"
     xcrun simctl terminate "$sim_id" "$BUNDLE" 2>/dev/null || true
     sleep 0.4
-    xcrun simctl launch "$sim_id" "$BUNDLE" -- "${BASE_ARGS[@]}" "$@"
+    xcrun simctl launch "$sim_id" "$BUNDLE" -- "${BASE_ARGS[@]}" ${extra_args+"${extra_args[@]}"} "$@"
     sleep 3.5
     local raw="/tmp/anwed-${label}-${slug}-raw.png"
     xcrun simctl io "$sim_id" screenshot "$raw"
@@ -97,11 +99,15 @@ capture_set() {
 IPHONE_SIM="${IPHONE_SIM:-$(pick_sim "iPhone 15 Pro Max" "iPhone 14 Plus" "iPhone 15 Plus" "iPhone 16 Plus")}"
 IPAD_SIM="${IPAD_SIM:-$(pick_sim "iPad Pro 13-inch (M5)" "iPad Pro 13-inch (M4)" "iPad Pro 12.9-inch (6th generation)")}"
 
-capture_set "$IPHONE_SIM" "build/app-store-screenshots/iphone" 1284 2778 "iPhone 6.5\""
-capture_set "$IPAD_SIM"   "build/app-store-screenshots/ipad"   2064 2752 "iPad 13\""
+capture_set "$IPHONE_SIM" "build/app-store-screenshots/iphone/en" 1284 2778 "iPhone 6.5\" EN"
+capture_set "$IPHONE_SIM" "build/app-store-screenshots/iphone/ja" 1284 2778 "iPhone 6.5\" JA" -ScreenshotDemoJapanese
+capture_set "$IPAD_SIM"   "build/app-store-screenshots/ipad/en"   2064 2752 "iPad 13\" EN"
+capture_set "$IPAD_SIM"   "build/app-store-screenshots/ipad/ja"   2064 2752 "iPad 13\" JA" -ScreenshotDemoJapanese
 
 echo ""
 echo "Done."
-echo "  iPhone → build/app-store-screenshots/iphone/"
-echo "  iPad   → build/app-store-screenshots/ipad/"
+echo "  iPhone EN → build/app-store-screenshots/iphone/en/"
+echo "  iPhone JA → build/app-store-screenshots/iphone/ja/"
+echo "  iPad EN   → build/app-store-screenshots/ipad/en/"
+echo "  iPad JA   → build/app-store-screenshots/ipad/ja/"
 open build/app-store-screenshots

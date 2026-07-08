@@ -111,6 +111,6 @@ You still need to do in App Store Connect + Xcode:
 1. **Metadata** — Subtitle → `English & Japanese vocabulary`. Remove "Free" from promotional text and description (see above). Support/Privacy URLs in their dedicated fields only.
 2. **Upload** — Xcode → Organizer → Distribute App → App Store Connect.
 3. **Version** — Attach build **1.0 (5)** to the existing 1.0 submission.
-4. **Screenshots** — Re-upload iPhone 6.5" and iPad 13" sets (UI changed: languages, green theme).
+4. **Screenshots** — Re-upload iPhone 6.5" and iPad 13" sets from `build/app-store-screenshots/{iphone,ipad}/{en,ja}/`. App Store allows 10 per size — a good order: EN Today, JA Today, EN Settings, JA Settings, Practice (either language).
 5. **What's New** — Paste the block above.
 6. **Reply** — Optional note to App Review (paste block above), then **Add for Review**.
