@@ -5,7 +5,7 @@
 This file is a mirror for GitHub readers. The App Store and in-app links use the
 canonical URL on lukefwalton.com.
 
-**Last updated:** June 2026
+**Last updated:** July 2026
 
 A New Word Every Day is a free iPhone app. It does not collect, store, or transmit
 personal data to us or any third party.
@@ -15,12 +15,16 @@ personal data to us or any third party.
 All app data lives locally on your phone, including:
 
 - Your starred (practice) words
-- Difficulty level and onboarding calibration
-- Theme and font preferences
+- Enabled languages (English and/or Japanese) and per-language difficulty level
+- Onboarding calibration
+- Theme, font, and widget preferences
 - Spaced-repetition review schedules (FSRS)
 
 The app and its Home Screen widget share this data through an Apple App Group on
 your device only. Nothing is synced to a server because there is no server.
+
+Word lists (English and Japanese) are bundled in the app — they are not downloaded
+at runtime.
 
 ## What we do not do
 
