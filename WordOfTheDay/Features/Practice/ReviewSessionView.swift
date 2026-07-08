@@ -86,6 +86,13 @@ struct ReviewSessionView: View {
                 .id(word.id)
 
             if revealed {
+                // The reading is part of the answer for Japanese recognition
+                // cards, so it stays hidden until reveal.
+                if let reading = word.displayReading {
+                    Text(reading)
+                        .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 20))
+                        .foregroundStyle(palette.secondaryText)
+                }
                 Text(word.partOfSpeechLabel)
                     .font(LFWTypography.font(.partOfSpeech, typeface: typeface))
                     .foregroundStyle(palette.accent)

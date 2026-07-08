@@ -7,7 +7,17 @@ final class AppModelTests: XCTestCase {
 
     private func makeModel() -> (AppModel, SharedStore) {
         let store = Fixtures.volatileStore()
-        let service = DailyWordService(corpus: WordCorpus(words: Fixtures.corpus()),
+        return (AppModel(service: Fixtures.service(), store: store), store)
+    }
+
+    /// A model over an English + Japanese library, for multilanguage tests.
+    private func makeBilingualModel() -> (AppModel, SharedStore) {
+        let store = Fixtures.volatileStore()
+        let library = CorpusLibrary(corpora: [
+            .english: WordCorpus(words: Fixtures.corpus()),
+            .japanese: WordCorpus(words: Fixtures.corpus(startID: 100, lang: "ja")),
+        ])
+        let service = DailyWordService(library: library,
                                        selector: DailySelector(calendar: Fixtures.utc))
         return (AppModel(service: service, store: store), store)
     }
@@ -19,20 +29,32 @@ final class AppModelTests: XCTestCase {
         let answers = (1...5).flatMap { b in
             [DifficultyModel.Answer(band: b, known: b <= 3)] // knows up to band 3
         }
-        model.completeOnboarding(answers: answers)
+        model.completeOnboarding(languages: [.english],
+                                 bands: [.english: model.calibratedBand(from: answers)])
 
         XCTAssertTrue(model.onboardingComplete)
         XCTAssertTrue(store.onboardingComplete)
-        XCTAssertEqual(model.band, 3)
-        XCTAssertEqual(store.band, 3)
-        XCTAssertNotNil(model.today)
+        XCTAssertEqual(model.band(for: .english), 3)
+        XCTAssertEqual(store.band(for: .english), 3)
+        XCTAssertNotNil(model.todaysWords.first)
     }
 
     func test_skipOnboarding_usesDefaultBand() {
         let (model, _) = makeModel()
-        model.completeOnboarding(answers: [])
+        model.completeOnboarding(languages: [.english], bands: [:])
         XCTAssertTrue(model.onboardingComplete)
-        XCTAssertEqual(model.band, 2)
+        XCTAssertEqual(model.band(for: .english), 2)
+    }
+
+    func test_completeOnboarding_bilingual_setsIndependentBands() {
+        let (model, store) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 4, .japanese: 1])
+        XCTAssertEqual(store.enabledLanguages, [.english, .japanese])
+        XCTAssertEqual(model.band(for: .english), 4)
+        XCTAssertEqual(model.band(for: .japanese), 1)
+        XCTAssertEqual(model.todaysWords.count, 2, "one daily word per enabled language")
+        XCTAssertEqual(model.todaysWords.map(\.language), [.english, .japanese])
     }
 
     func test_toggleStar_updatesPublishedAndStore() {
@@ -55,38 +77,57 @@ final class AppModelTests: XCTestCase {
 
     func test_setBand_refreshesTodaysWord() {
         let (model, _) = makeModel()
-        model.setBand(5)
-        XCTAssertEqual(model.band, 5)
-        XCTAssertNotNil(model.today)
+        model.setBand(5, for: .english)
+        XCTAssertEqual(model.band(for: .english), 5)
+        XCTAssertNotNil(model.todaysWords.first)
     }
 
     func test_markKnownAtCeiling_raisesBand() {
         let (model, store) = makeModel()
-        model.setBand(2)
+        model.setBand(2, for: .english)
         let bandTwoWord = Fixtures.word(99, band: 2)
         model.mark(bandTwoWord, known: true)
-        XCTAssertEqual(model.band, 3)
+        XCTAssertEqual(model.band(for: .english), 3)
         XCTAssertEqual(store.difficultyMarks[99], true)
+    }
+
+    func test_mark_japaneseWord_nudgesOnlyJapaneseBand() {
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 3, .japanese: 2])
+        let jaWord = Fixtures.word(150, band: 2, lang: "ja")
+        model.mark(jaWord, known: true)
+        XCTAssertEqual(model.band(for: .japanese), 3, "knowing a ceiling word raises the ja band")
+        XCTAssertEqual(model.band(for: .english), 3, "the English band must not move")
     }
 
     func test_mark_isIdempotent_repeatedSameTapDoesNotRatchetBand() {
         let (model, _) = makeModel()
-        model.setBand(2)
+        model.setBand(2, for: .english)
         let word = Fixtures.word(99, band: 2)
         model.mark(word, known: true)   // 2 → 3
         model.mark(word, known: true)   // no-op (same mark)
         model.mark(word, known: true)   // no-op
-        XCTAssertEqual(model.band, 3, "repeated identical marks must not keep moving the band")
+        XCTAssertEqual(model.band(for: .english), 3, "repeated identical marks must not keep moving the band")
     }
 
     func test_mark_changedAnswer_stillNudges() {
         let (model, _) = makeModel()
-        model.setBand(3)
+        model.setBand(3, for: .english)
         let word = Fixtures.word(99, band: 3)
         model.mark(word, known: true)    // first mark: 3 → 4
         model.mark(word, known: false)   // a *changed* answer still takes effect
         // The changed mark is persisted (not dropped by the idempotence guard).
         XCTAssertEqual(model.store.difficultyMarks[99], false)
+    }
+
+    func test_setLanguages_addsDailyWord_andSurvivesEmptyGuard() {
+        let (model, store) = makeBilingualModel()
+        model.setLanguages([.english, .japanese])
+        XCTAssertEqual(model.todaysWords.count, 2)
+        model.setLanguages([])
+        XCTAssertEqual(store.enabledLanguages, [.english], "the store must never go languageless")
+        XCTAssertEqual(model.todaysWords.count, 1)
     }
 
     func test_refreshFromStore_picksUpExternalStarChange() {

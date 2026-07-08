@@ -20,7 +20,13 @@ struct HeroWordView: View {
 
     var body: some View {
         Group {
-            if LFWVariableFont.isRegistered(typeface.family) {
+            if word.containsCJK {
+                // The bundled variable fonts are Latin-only; CJK headwords render
+                // in the system face (which cascades to Hiragino) at a matching
+                // weight, skipping the weight-axis animation.
+                Text(word)
+                    .font(.system(size: size, weight: .semibold))
+            } else if LFWVariableFont.isRegistered(typeface.family) {
                 Text(word)
                     .lfwVariableAxis(weightAxis, name: typeface.family, size: size,
                                      tag: LFWVariableFont.weight, staticAxes: opticalAxes)

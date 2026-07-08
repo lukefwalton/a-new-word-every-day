@@ -10,6 +10,9 @@ struct WordWidgetConfigurationIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "A New Word Every Day"
     static var description = IntentDescription("Pick this widget's look, or keep your in-app defaults.")
 
+    @Parameter(title: "Language", default: .appDefault)
+    var language: WidgetLanguageOption
+
     @Parameter(title: "Typeface", default: .appDefault)
     var typeface: WidgetTypefaceOption
 
@@ -29,6 +32,25 @@ struct WordWidgetConfigurationIntent: WidgetConfigurationIntent {
 // MARK: - Options
 // Each option mirrors a design-system / WidgetPreferences value, plus an
 // `appDefault` passthrough whose `resolved` is `nil` (→ use the Settings value).
+
+enum WidgetLanguageOption: String, AppEnum {
+    case appDefault, english, japanese
+
+    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Language")
+    static var caseDisplayRepresentations: [WidgetLanguageOption: DisplayRepresentation] = [
+        .appDefault: "App Default",
+        .english: "English",
+        .japanese: "Japanese · 日本語",
+    ]
+
+    var resolved: Language? {
+        switch self {
+        case .appDefault: return nil
+        case .english:    return .english
+        case .japanese:   return .japanese
+        }
+    }
+}
 
 enum WidgetTypefaceOption: String, AppEnum {
     case appDefault, fraunces, literata, inter, recursive

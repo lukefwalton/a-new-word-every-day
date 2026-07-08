@@ -43,13 +43,25 @@ nothing ever leaves your phone.
   semantic typography (`LFWTypography`), and user theming (`LFWThemeConfig`).
 - **Widget** — `WidgetKit` timeline that reloads at midnight; reads the shared
   store; never links any write path beyond the interactive star intent.
-- **Corpus** — a hand-authored list of elevated/advanced words
+- **Languages** — English and Japanese, individually or together, each with its
+  own daily word, its own difficulty level, and its own widget (per-widget
+  language via long-press → Edit Widget). The registry lives in
+  `WordOfTheDay/Shared/Language.swift`; adding a language is one new case plus a
+  bundled corpus.
+- **English corpus** — a hand-authored list of elevated/advanced words
   (`WordOfTheDay/Resources/words.json`): each entry is a word, an original
   one-line definition, and a difficulty band (1–5). It's written for this app
   with **no external data** (no frequency list, no licensed dictionary, no
   scraped text) and dedicated to the **public domain (CC0)** — free for anyone
   to reuse. Edit `scripts/corpus_source.json` and run `scripts/build_corpus.py`
   to regenerate. See [docs/prior-art-and-licensing.md](docs/prior-art-and-licensing.md).
+- **Japanese corpus** — JLPT vocabulary (`WordOfTheDay/Resources/words_ja.json`),
+  bands 1–5 = JLPT N5–N1, each entry with a kana reading and an original
+  one-line English definition written for this app. Headwords, readings, and
+  levels derive from Jonathan Waller's JLPT resources (tanos.co.uk, CC BY) via
+  [jamsinclair/open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks)
+  (MIT) — see [NOTICE](NOTICE). Edit `scripts/corpus_source_ja.json` and run
+  `scripts/build_corpus.py --lang ja` to regenerate.
 
 ## Documentation
 
@@ -122,6 +134,10 @@ most useful contribution. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflo
 
 ## License
 
-Code: MIT, see [LICENSE](LICENSE). Bundled fonts are SIL OFL 1.1. The word list
-(`WordOfTheDay/Resources/words.json`) is original work dedicated to the **public
-domain (CC0)** — no copyleft, no attribution required. See [NOTICE](NOTICE).
+Code: MIT, see [LICENSE](LICENSE). Bundled fonts are SIL OFL 1.1. The English
+word list (`WordOfTheDay/Resources/words.json`) is original work dedicated to
+the **public domain (CC0)** — no copyleft, no attribution required. The Japanese
+word list (`WordOfTheDay/Resources/words_ja.json`) derives its headwords,
+readings, and JLPT levels from Jonathan Waller's tanos.co.uk (**CC BY**) via
+jamsinclair/open-anki-jlpt-decks (MIT); its definitions are original to this
+app. See [NOTICE](NOTICE).

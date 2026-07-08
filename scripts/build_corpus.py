@@ -1,26 +1,31 @@
 #!/usr/bin/env python3
-"""Assemble WordOfTheDay/Resources/words.json from the hand-authored corpus.
+"""Assemble the bundled corpora (words.json, words_ja.json, …) from source lists.
 
-Purpose:           Validate scripts/corpus_source.json and (re)generate words.json.
-When to use:       After editing the corpus source (add, remove, or reword entries).
-Safe to run in prod?  Yes — deterministic; only rewrites the generated words.json.
+Purpose:           Validate scripts/corpus_source*.json and (re)generate the
+                   bundled per-language corpus JSON.
+When to use:       After editing a corpus source (add, remove, or reword entries).
+Safe to run in prod?  Yes — deterministic; only rewrites the generated output.
 Owner:             Luke F. Walton
 
-The corpus is original work: every word, definition, and difficulty band in
-scripts/corpus_source.json was written for this app and is dedicated to the
-public domain (CC0). There is **no** external data dependency — no frequency
-list, no third-party dictionary, no scraped text — so the shipped word list is
-free for anyone to use without attribution or share-alike obligations.
+The English corpus is original work: every word, definition, and difficulty band
+in scripts/corpus_source.json was written for this app and is dedicated to the
+public domain (CC0). The Japanese corpus's word list, kana readings, and
+JLPT-level bands derive from Jonathan Waller's JLPT resources (tanos.co.uk,
+CC-BY) via jamsinclair/open-anki-jlpt-decks (MIT); its definitions were written
+for this app. Keep the in-app Acknowledgements in sync with this.
 
 This script validates the source and assigns each word a **stable id derived
 from the word itself** (a hash), not from its position. That matters because
 persisted user state — starred words, difficulty marks — keys off `Word.id`, so
 ids must never be reassigned when the list grows or is reordered. Adding,
 removing, or re-sorting words leaves every other word's id untouched.
+Non-English ids are salted with the language code ("ja:食べる") so the same
+surface form in two languages can never collide; English ids stay unsalted,
+byte-identical to every id ever shipped.
 
 Usage:
-    python scripts/build_corpus.py
-    python scripts/build_corpus.py --out WordOfTheDay/Resources/words.json
+    python scripts/build_corpus.py                # English
+    python scripts/build_corpus.py --lang ja      # Japanese
 """
 
 import argparse
@@ -29,26 +34,39 @@ import json
 from collections import Counter
 from pathlib import Path
 
-VALID_POS = {"n", "v", "adj", "adv"}
+# Per-language config: source file, output file, allowed POS, whether entries
+# carry a phonetic reading. Adding a language = one row here + a Language case
+# in WordOfTheDay/Shared/Language.swift.
+LANGUAGES = {
+    "en": {
+        "source": "corpus_source.json",
+        "out": Path("WordOfTheDay/Resources/words.json"),
+        "pos": {"n", "v", "adj", "adv"},
+        "reading": False,
+    },
+    "ja": {
+        "source": "corpus_source_ja.json",
+        "out": Path("WordOfTheDay/Resources/words_ja.json"),
+        "pos": {"n", "v", "adj", "adv", "expr"},
+        "reading": True,
+    },
+}
 
 
-def stable_id(word: str) -> int:
-    """A deterministic positive id that depends only on the word, so it never
-    changes as the corpus is edited. 52 bits keeps it well inside Swift's Int."""
-    return int(hashlib.sha1(word.encode("utf-8")).hexdigest()[:13], 16)
+def stable_id(word: str, lang: str) -> int:
+    """A deterministic positive id that depends only on (language, word), so it
+    never changes as a corpus is edited. English stays unsalted for backward
+    compatibility with shipped user state. 52 bits keeps it well inside
+    Swift's Int."""
+    key = word if lang == "en" else f"{lang}:{word}"
+    return int(hashlib.sha1(key.encode("utf-8")).hexdigest()[:13], 16)
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--source", type=Path,
-                    default=Path(__file__).with_name("corpus_source.json"))
-    ap.add_argument("--out", type=Path,
-                    default=Path("WordOfTheDay/Resources/words.json"))
-    args = ap.parse_args()
-
-    rows = json.loads(args.source.read_text())
+def build(lang: str, source: Path, out: Path) -> list[dict]:
+    cfg = LANGUAGES[lang]
+    rows = json.loads(source.read_text())
     if not isinstance(rows, list) or not all(isinstance(r, dict) for r in rows):
-        raise SystemExit(f"FAILED — {args.source.name} must be a JSON array of objects")
+        raise SystemExit(f"FAILED — {source.name} must be a JSON array of objects")
     errors = []
     seen = set()
     for i, r in enumerate(rows):
@@ -59,11 +77,14 @@ def main():
             errors.append(f"{tag}: word must be a non-empty string")
         if not isinstance(r.get("definition"), str) or not r["definition"].strip():
             errors.append(f"{tag}: definition must be a non-empty string")
-        if r.get("pos") not in VALID_POS:
+        if r.get("pos") not in cfg["pos"]:
             errors.append(f"{tag}: bad pos {r.get('pos')!r}")
         if not isinstance(r.get("band"), int) or isinstance(r.get("band"), bool) \
                 or r.get("band") not in (1, 2, 3, 4, 5):
             errors.append(f"{tag}: band must be an integer 1..5")
+        if cfg["reading"]:
+            if not isinstance(r.get("reading"), str) or not r["reading"].strip():
+                errors.append(f"{tag}: reading must be a non-empty string")
         if r.get("word") in seen:
             errors.append(f"{tag}: duplicate word")
         seen.add(r.get("word"))
@@ -71,22 +92,58 @@ def main():
     if bands != {1, 2, 3, 4, 5}:
         errors.append(f"every band 1..5 must be represented; got {sorted(bands)}")
     if errors:
-        raise SystemExit("FAILED — fix corpus_source.json:\n" + "\n".join(errors))
+        raise SystemExit(f"FAILED — fix {source.name}:\n" + "\n".join(errors))
 
     rows.sort(key=lambda r: (r["band"], r["word"]))
-    out = [{"id": stable_id(r["word"]), "word": r["word"], "pos": r["pos"],
-            "definition": r["definition"], "band": r["band"]}
-           for r in rows]
-    ids = [r["id"] for r in out]
+    out_rows = []
+    for r in rows:
+        entry = {"id": stable_id(r["word"], lang), "word": r["word"], "pos": r["pos"],
+                 "definition": r["definition"], "band": r["band"]}
+        if cfg["reading"]:
+            # Omit readings that just repeat the headword (kana-only words) —
+            # Word.displayReading would hide them anyway, so don't ship the bytes.
+            if r["reading"] != r["word"]:
+                entry["reading"] = r["reading"]
+            entry["lang"] = lang
+        out_rows.append(entry)
+    ids = [r["id"] for r in out_rows]
     if len(set(ids)) != len(ids):
-        dup = [w["word"] for w in out if ids.count(w["id"]) > 1]
+        dup = [w["word"] for w in out_rows if ids.count(w["id"]) > 1]
         raise SystemExit(f"FAILED — id hash collision between: {dup}")
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(out_rows, indent=2, ensure_ascii=False) + "\n")
 
-    print(f"Wrote {len(out)} words to {args.out}")
-    print("Bands:", dict(sorted(Counter(r['band'] for r in out).items())))
-    print("POS:", dict(Counter(r['pos'] for r in out)))
+    print(f"Wrote {len(out_rows)} words to {out}")
+    print("Bands:", dict(sorted(Counter(r['band'] for r in out_rows).items())))
+    print("POS:", dict(Counter(r['pos'] for r in out_rows)))
+    return out_rows
+
+
+def check_cross_language_collisions(lang: str, built_ids: set[int]):
+    """Ids must be unique across every bundled corpus — starred/review state is
+    one global id-keyed map. The per-language salt makes a collision all but
+    impossible; this proves it for the actual data."""
+    for other, cfg in LANGUAGES.items():
+        if other == lang or not cfg["out"].exists():
+            continue
+        other_ids = {r["id"] for r in json.loads(cfg["out"].read_text())}
+        clash = built_ids & other_ids
+        if clash:
+            raise SystemExit(f"FAILED — id collision with {cfg['out'].name}: {sorted(clash)}")
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--lang", choices=sorted(LANGUAGES), default="en")
+    ap.add_argument("--source", type=Path, default=None)
+    ap.add_argument("--out", type=Path, default=None)
+    args = ap.parse_args()
+
+    cfg = LANGUAGES[args.lang]
+    source = args.source or Path(__file__).with_name(cfg["source"])
+    out = args.out or cfg["out"]
+    rows = build(args.lang, source, out)
+    check_cross_language_collisions(args.lang, {r["id"] for r in rows})
 
 
 if __name__ == "__main__":

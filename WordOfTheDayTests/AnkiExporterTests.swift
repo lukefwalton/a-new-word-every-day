@@ -25,6 +25,19 @@ final class AnkiExporterTests: XCTestCase {
         XCTAssertTrue(cols[1].contains("using very few words"))
     }
 
+    func test_japaneseRow_putsReadingOnBack() {
+        let word = Word(id: 1, word: "会う", pos: "v",
+                        definition: "to meet or see someone", band: 1,
+                        reading: "あう", lang: "ja")
+        let tsv = AnkiExporter.tsv(for: [word])
+        let row = tsv.split(separator: "\n").first { $0.hasPrefix("会う") }
+        XCTAssertNotNil(row)
+        let cols = row!.split(separator: "\t")
+        XCTAssertEqual(cols[0], "会う", "the front stays kanji-only — reading is part of the answer")
+        XCTAssertTrue(cols[1].hasPrefix("あう — "))
+        XCTAssertTrue(cols[1].contains("(verb)"))
+    }
+
     func test_lineCount_isHeadersPlusWords() {
         let words = (1...5).map { Fixtures.word($0, band: 1) }
         let lines = AnkiExporter.tsv(for: words).split(separator: "\n")

@@ -2,15 +2,28 @@ A New Word Every Day
 Copyright Luke F. Walton.
 
 --------------------------------------------------------------------------------
-Word list (WordOfTheDay/Resources/words.json)
+English word list (WordOfTheDay/Resources/words.json)
 --------------------------------------------------------------------------------
-The word list — every headword, definition, and difficulty band — was written
-for this app and is dedicated to the PUBLIC DOMAIN under Creative Commons CC0 1.0.
-There is no third-party data in it: no frequency list, no licensed dictionary,
-no scraped text. Use it, fork it, redistribute it freely, no attribution
-required. Source of record: scripts/corpus_source.json (assembled by
-scripts/build_corpus.py).
+The English word list — every headword, definition, and difficulty band — was
+written for this app and is dedicated to the PUBLIC DOMAIN under Creative
+Commons CC0 1.0. There is no third-party data in it: no frequency list, no
+licensed dictionary, no scraped text. Use it, fork it, redistribute it freely,
+no attribution required. Source of record: scripts/corpus_source.json
+(assembled by scripts/build_corpus.py).
   https://creativecommons.org/publicdomain/zero/1.0/
+
+--------------------------------------------------------------------------------
+Japanese word list (WordOfTheDay/Resources/words_ja.json)
+--------------------------------------------------------------------------------
+The Japanese headwords, kana readings, and JLPT-level difficulty bands
+(bands 1–5 = JLPT N5–N1) derive from Jonathan Waller's JLPT resources
+(tanos.co.uk, Creative Commons CC BY), via the community-maintained
+jamsinclair/open-anki-jlpt-decks (MIT License). The English definitions shown
+for Japanese words were written for this app. Source of record:
+scripts/corpus_source_ja.json (assembled by scripts/build_corpus.py --lang ja).
+  https://www.tanos.co.uk/jlpt/
+  https://github.com/jamsinclair/open-anki-jlpt-decks
+  https://creativecommons.org/licenses/by/4.0/
 
 --------------------------------------------------------------------------------
 Typefaces (bundled variable fonts, fetched by scripts/fetch_fonts.sh)

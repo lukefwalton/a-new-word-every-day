@@ -30,7 +30,12 @@ struct WidgetHeroText: View {
 
     var body: some View {
         Group {
-            if LFWVariableFont.isRegistered(typeface.family) {
+            if word.containsCJK {
+                // Latin-only variable fonts can't set CJK; match the hero weight
+                // with the system face (which cascades to Hiragino).
+                Text(word)
+                    .font(.system(size: size, weight: .semibold))
+            } else if LFWVariableFont.isRegistered(typeface.family) {
                 Text(word)
                     .font(.lfwVariable(typeface.family, size: size, axes: axes))
             } else {

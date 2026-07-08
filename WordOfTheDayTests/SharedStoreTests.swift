@@ -5,13 +5,46 @@ import LFWDesignSystem
 final class SharedStoreTests: XCTestCase {
 
     func test_band_defaultsToTwo() {
-        XCTAssertEqual(Fixtures.volatileStore().band, 2)
+        let store = Fixtures.volatileStore()
+        for language in Language.allCases {
+            XCTAssertEqual(store.band(for: language), 2)
+        }
     }
 
-    func test_band_persists() {
+    func test_band_persists_perLanguage() {
         let store = Fixtures.volatileStore()
-        store.band = 4
-        XCTAssertEqual(store.band, 4)
+        store.setBand(4, for: .english)
+        store.setBand(1, for: .japanese)
+        XCTAssertEqual(store.band(for: .english), 4)
+        XCTAssertEqual(store.band(for: .japanese), 1)
+    }
+
+    func test_englishBand_readsLegacyBareKey() {
+        // Installs from before multilanguage wrote "difficultyBand" with no
+        // language suffix — English must keep reading (and writing) that key.
+        let suite = "test.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        defaults.set(4, forKey: "difficultyBand")
+        let store = SharedStore(defaults: defaults)
+        XCTAssertEqual(store.band(for: .english), 4)
+        XCTAssertEqual(store.band(for: .japanese), 2, "the legacy key is English's alone")
+    }
+
+    func test_enabledLanguages_defaultsToEnglish() {
+        XCTAssertEqual(Fixtures.volatileStore().enabledLanguages, [.english])
+    }
+
+    func test_enabledLanguages_roundTrips() {
+        let store = Fixtures.volatileStore()
+        store.enabledLanguages = [.english, .japanese]
+        XCTAssertEqual(store.enabledLanguages, [.english, .japanese])
+    }
+
+    func test_enabledLanguages_emptyWriteFallsBackToEnglish() {
+        let store = Fixtures.volatileStore()
+        store.enabledLanguages = []
+        XCTAssertEqual(store.enabledLanguages, [.english])
     }
 
     func test_toggleStar_addsNewestFirstAndRemoves() {

@@ -6,20 +6,49 @@ import Foundation
 struct Word: Codable, Identifiable, Equatable, Hashable {
     let id: Int
     let word: String
-    /// "n" | "v" | "adj" | "adv".
+    /// "n" | "v" | "adj" | "adv" | "expr".
     let pos: String
     let definition: String
     /// Difficulty band, 1 (most accessible) … 5 (rarest/hardest).
+    /// For Japanese, bands 1…5 are JLPT N5…N1.
     let band: Int
+    /// Phonetic reading (kana for Japanese). Absent for Latin-script corpora,
+    /// and omitted when it would just repeat the headword (kana-only words).
+    let reading: String?
+    /// Language code ("en", "ja"). Absent in the original English corpus, so
+    /// `language` treats nil as English.
+    let lang: String?
+
+    init(id: Int, word: String, pos: String, definition: String, band: Int,
+         reading: String? = nil, lang: String? = nil) {
+        self.id = id
+        self.word = word
+        self.pos = pos
+        self.definition = definition
+        self.band = band
+        self.reading = reading
+        self.lang = lang
+    }
+
+    var language: Language {
+        lang.flatMap(Language.init(rawValue:)) ?? .english
+    }
+
+    /// The reading to display under the headword, if it adds information.
+    var displayReading: String? {
+        guard let reading, !reading.isEmpty, reading != word else { return nil }
+        return reading
+    }
 
     /// Human-readable part of speech for display and export.
     var partOfSpeechLabel: String {
         switch pos {
-        case "n":   return "noun"
-        case "v":   return "verb"
-        case "adj": return "adjective"
-        case "adv": return "adverb"
-        default:    return pos
+        case "n":    return "noun"
+        case "v":    return "verb"
+        case "adj":  return "adjective"
+        case "adv":  return "adverb"
+        case "expr": return "expression"
+        default:     return pos
         }
     }
 }

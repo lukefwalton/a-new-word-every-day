@@ -18,25 +18,38 @@ final class WordOfTheDayUITests: XCTestCase {
         app = nil
     }
 
-    func test_skipOnboarding_reachesTodayTab() throws {
-        app.launchArguments += ["-UITestResetOnboarding"]
-        app.launch()
-
-        // Walk the three intro pages (Next → Next → Start).
+    /// Walk the three intro pages and the language picker (English pre-selected)
+    /// up to the first calibration deck.
+    private func advanceToCalibration() {
         let next = app.buttons["Next"]
         XCTAssertTrue(next.waitForExistence(timeout: 5))
         next.tap()
         XCTAssertTrue(next.waitForExistence(timeout: 3))
         next.tap()
 
-        let start = app.buttons["Start"]
-        XCTAssertTrue(start.waitForExistence(timeout: 5))
-        start.tap()
+        let choose = app.buttons["Choose languages"]
+        XCTAssertTrue(choose.waitForExistence(timeout: 5))
+        choose.tap()
 
-        // Skip straight to the app at the default band.
-        let skip = app.buttons["Skip — start in the middle"]
+        let cont = app.buttons["Continue"]
+        XCTAssertTrue(cont.waitForExistence(timeout: 5))
+        cont.tap()
+    }
+
+    func test_skipOnboarding_reachesTodayTab() throws {
+        app.launchArguments += ["-UITestResetOnboarding"]
+        app.launch()
+
+        advanceToCalibration()
+
+        // Skip the deck into the self-assessment picker, keep the default level.
+        let skip = app.buttons["Skip — I know my level"]
         XCTAssertTrue(skip.waitForExistence(timeout: 5))
         skip.tap()
+
+        let cont = app.buttons["Continue"]
+        XCTAssertTrue(cont.waitForExistence(timeout: 5))
+        cont.tap()
 
         // Today tab should show the daily word chrome.
         let todayTab = app.tabBars.buttons["Today"]
@@ -49,15 +62,7 @@ final class WordOfTheDayUITests: XCTestCase {
         app.launchArguments += ["-UITestResetOnboarding"]
         app.launch()
 
-        let next = app.buttons["Next"]
-        XCTAssertTrue(next.waitForExistence(timeout: 5))
-        next.tap()
-        XCTAssertTrue(next.waitForExistence(timeout: 3))
-        next.tap()
-
-        let start = app.buttons["Start"]
-        XCTAssertTrue(start.waitForExistence(timeout: 5))
-        start.tap()
+        advanceToCalibration()
 
         XCTAssertTrue(app.staticTexts["DO YOU KNOW THIS WORD?"].waitForExistence(timeout: 5))
         let progress = app.staticTexts.matching(NSPredicate(format: "label MATCHES %@", "^[0-9]+ of [0-9]+$")).firstMatch

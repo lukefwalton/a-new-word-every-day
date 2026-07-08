@@ -87,6 +87,11 @@ struct SwipeDeck: View {
                 .foregroundStyle(palette.accent)
             HeroWordView(word: word.word, typeface: typeface, color: palette.primaryText,
                          size: 40, animateOnAppear: false)
+            if let reading = word.displayReading {
+                Text(reading)
+                    .font(LFWTypography.font(.uiBody, typeface: typeface, size: 16))
+                    .foregroundStyle(palette.secondaryText)
+            }
             Text(word.definition)
                 .font(LFWTypography.font(.definition, typeface: typeface, size: 17))
                 .foregroundStyle(palette.secondaryText)

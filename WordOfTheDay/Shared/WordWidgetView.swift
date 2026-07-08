@@ -85,6 +85,14 @@ struct WordWidgetView: View {
             WidgetHeroText(word: word.word, typeface: typeface,
                            color: palette.primaryText, glow: palette.accent, size: heroSize)
                 .frame(maxWidth: .infinity, alignment: elementAlignment)
+            if let reading = word.displayReading {
+                Text(reading)
+                    .font(LFWTypography.font(.uiBody, typeface: typeface, size: size == .small ? 11 : 13))
+                    .foregroundStyle(palette.secondaryText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .frame(maxWidth: .infinity, alignment: elementAlignment)
+            }
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 13))
                 .foregroundStyle(palette.accent)
@@ -121,6 +129,14 @@ struct WordWidgetView: View {
                            color: palette.primaryText, glow: palette.accent,
                            size: heroSize(size, minimal: true))
                 .frame(maxWidth: .infinity, alignment: .center)
+            if let reading = word.displayReading {
+                Text(reading)
+                    .font(LFWTypography.font(.uiBody, typeface: typeface, size: size == .small ? 11 : 13))
+                    .foregroundStyle(palette.secondaryText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .multilineTextAlignment(.center)
+            }
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 14))
                 .foregroundStyle(palette.accent)
@@ -193,16 +209,18 @@ struct WordWidgetView: View {
     // MARK: Lock screen
 
     private func accessoryInline(_ word: Word) -> some View {
-        Text("\(word.word) · \(word.partOfSpeechLabel)")
+        // For reading-bearing words the kana earns the one line more than the POS.
+        Text("\(word.word) · \(word.displayReading ?? word.partOfSpeechLabel)")
             .font(LFWTypography.font(.uiBody, typeface: typeface, size: 12))
             .widgetURL(deepLink(word))
     }
 
     private func accessoryRectangular(_ word: Word) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(word.word)
+            Text(word.displayReading.map { "\(word.word)  \($0)" } ?? word.word)
                 .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 15))
                 .lineLimit(1)
+                .minimumScaleFactor(0.7)
             Text(word.definition)
                 .font(LFWTypography.font(.definition, typeface: typeface, size: 11))
                 .lineLimit(2)

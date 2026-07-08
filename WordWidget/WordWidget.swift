@@ -11,11 +11,11 @@ struct WordProvider: AppIntentTimelineProvider {
     typealias Entry = WordEntry
     typealias Intent = WordWidgetConfigurationIntent
 
-    private let service = DailyWordService(corpus: .load(bundles: [.main]))
+    private let service = DailyWordService(library: .load(bundles: [.main]))
 
     func placeholder(in context: Context) -> WordEntry {
         WordEntry(date: Date(),
-                  word: service.corpus.words.first,
+                  word: service.library.corpus(for: .english).words.first,
                   theme: .default,
                   widgetPreferences: .default,
                   isStarred: false)
@@ -41,7 +41,10 @@ struct WordProvider: AppIntentTimelineProvider {
     /// value, so an unconfigured widget looks exactly as it did before.
     private func entry(for date: Date, configuration: WordWidgetConfigurationIntent) -> WordEntry {
         let store = SharedStore.shared
-        let word = service.todaysWord(store: store, now: date)
+        // "App Default" follows the user's primary (first-enabled) language, so a
+        // widget placed before multilanguage existed keeps showing English.
+        let language = configuration.language.resolved ?? store.enabledLanguages.first ?? .english
+        let word = service.todaysWord(store: store, language: language, now: date)
         let baseTheme = store.theme
         let basePrefs = store.widgetPreferences
 
