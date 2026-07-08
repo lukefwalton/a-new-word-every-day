@@ -130,6 +130,21 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.todaysWords.count, 1)
     }
 
+    func test_disablingLanguage_keepsItsStarredAndDueWords() {
+        // Product rule: disabling a language stops its daily word, not the
+        // user's saved study progress — stars and due counts stay intact.
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 2, .japanese: 2])
+        model.toggleStar(103)   // a Japanese word (fixture ids 100+)
+        XCTAssertEqual(model.dueCount, 1)
+
+        model.setLanguages([.english])
+        XCTAssertEqual(model.todaysWords.map(\.language), [.english], "no Japanese daily word")
+        XCTAssertEqual(model.starredWords.map(\.id), [103], "saved words survive disabling")
+        XCTAssertEqual(model.dueCount, 1, "review queue keeps disabled-language cards")
+    }
+
     func test_refreshFromStore_picksUpExternalStarChange() {
         let (model, store) = makeModel()
         store.toggleStar(8)   // simulate a widget-side star while the app is warm

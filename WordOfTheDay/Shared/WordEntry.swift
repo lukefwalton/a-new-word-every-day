@@ -1,4 +1,5 @@
 import WidgetKit
+import LFWDesignSystem
 
 /// One timeline entry — a day and its word, plus the resolved theme, widget prefs,
 /// and star state. Shared by the widget extension and the in-app Settings preview.
