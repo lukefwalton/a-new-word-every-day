@@ -12,6 +12,10 @@ import LFWDesignSystem
 struct WordWidgetView: View {
     @Environment(\.widgetFamily) private var family
     let entry: WordEntry
+    /// When set (Settings preview), render as this Home Screen size regardless of environment.
+    var forcedFamily: WidgetLayoutSize? = nil
+    /// Settings preview shows a static star; the widget uses an interactive intent button.
+    var interactiveStar: Bool = true
 
     private var typeface: LFWTypeface { entry.theme.typeface }
     private var palette: LFWPaletteColors { entry.theme.colors }
@@ -20,20 +24,24 @@ struct WordWidgetView: View {
 
     var body: some View {
         if let word = entry.word {
-            switch family {
-            case .accessoryInline:
-                accessoryInline(word)
-            case .accessoryRectangular:
-                accessoryRectangular(word)
-            case .systemSmall:
-                homeScreen(word, size: .small)
-            case .systemLarge:
-                homeScreen(word, size: .large)
-            default:
-                if #available(iOSApplicationExtension 17.0, *), family == .systemExtraLarge {
-                    homeScreen(word, size: .extraLarge)
-                } else {
-                    homeScreen(word, size: .medium)
+            if let forcedFamily {
+                homeScreen(word, size: forcedFamily)
+            } else {
+                switch family {
+                case .accessoryInline:
+                    accessoryInline(word)
+                case .accessoryRectangular:
+                    accessoryRectangular(word)
+                case .systemSmall:
+                    homeScreen(word, size: .small)
+                case .systemLarge:
+                    homeScreen(word, size: .large)
+                default:
+                    if #available(iOSApplicationExtension 17.0, *), family == .systemExtraLarge {
+                        homeScreen(word, size: .extraLarge)
+                    } else {
+                        homeScreen(word, size: .medium)
+                    }
                 }
             }
         } else {
@@ -65,10 +73,15 @@ struct WordWidgetView: View {
         let defLines = detail.definitionLines(family: size)
         let padding: CGFloat = size == .small ? 14 : 16
         let elementAlignment: Alignment = centered ? .center : .leading
+        // Only large widgets have room for the editorial spacer; on medium/small it
+        // shoves the hero into the clip zone when Rich detail adds definition lines.
+        let usesEditorialSpacer = size == .large || size == .extraLarge
 
         return VStack(alignment: centered ? .center : .leading, spacing: size == .small ? 6 : 8) {
             header(word, compact: size == .small, starSize: size == .small ? 14 : 16)
-            Spacer(minLength: 0)
+            if usesEditorialSpacer {
+                Spacer(minLength: 0)
+            }
             WidgetHeroText(word: word.word, typeface: typeface,
                            color: palette.primaryText, glow: palette.accent, size: heroSize)
                 .frame(maxWidth: .infinity, alignment: elementAlignment)
@@ -104,7 +117,6 @@ struct WordWidgetView: View {
     /// the top-trailing corner.
     private func minimalBody(_ word: Word, size: WidgetLayoutSize) -> some View {
         VStack(spacing: 8) {
-            Spacer(minLength: 0)
             WidgetHeroText(word: word.word, typeface: typeface,
                            color: palette.primaryText, glow: palette.accent,
                            size: heroSize(size, minimal: true))
@@ -113,10 +125,9 @@ struct WordWidgetView: View {
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 14))
                 .foregroundStyle(palette.accent)
                 .multilineTextAlignment(.center)
-            Spacer(minLength: 0)
         }
         .padding(size == .small ? 14 : 16)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .overlay(alignment: .topTrailing) {
             starButton(word, size: size == .small ? 14 : 16)
         }
@@ -149,7 +160,6 @@ struct WordWidgetView: View {
                     .foregroundStyle(palette.accent)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
-                // Decorative accent rule under the eyebrow.
                 Capsule().fill(palette.accent).frame(width: 20, height: 2.5)
             }
             Spacer(minLength: 4)
@@ -159,16 +169,24 @@ struct WordWidgetView: View {
 
     @ViewBuilder
     private func starButton(_ word: Word, size: CGFloat) -> some View {
-        if #available(iOS 17.0, *) {
+        let symbol = entry.isStarred ? "star.fill" : "star"
+        let color = entry.isStarred ? palette.accent : palette.secondaryText
+        if interactiveStar, #available(iOS 17.0, *) {
             Button(intent: ToggleStarIntent(wordID: word.id)) {
-                Image(systemName: entry.isStarred ? "star.fill" : "star")
+                Image(systemName: symbol)
                     .font(.system(size: size, weight: .semibold))
-                    .foregroundStyle(entry.isStarred ? palette.accent : palette.secondaryText)
+                    .foregroundStyle(color)
                     .frame(width: max(size + 12, 32), height: max(size + 12, 32))
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .accessibilityLabel(entry.isStarred ? "Remove from practice list" : "Save to practice list")
+        } else {
+            Image(systemName: symbol)
+                .font(.system(size: size, weight: .semibold))
+                .foregroundStyle(color)
+                .frame(width: max(size + 12, 32), height: max(size + 12, 32))
+                .accessibilityHidden(true)
         }
     }
 

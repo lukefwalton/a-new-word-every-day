@@ -16,8 +16,6 @@ struct ToggleStarIntent: AppIntent {
 
     func perform() async throws -> some IntentResult {
         SharedStore.shared.toggleStar(wordID)
-        // WidgetKit reloads after an interactive intent, but request it explicitly
-        // so the star glyph (read from the timeline entry) can't render stale.
         WidgetCenter.shared.reloadAllTimelines()
         return .result()
     }

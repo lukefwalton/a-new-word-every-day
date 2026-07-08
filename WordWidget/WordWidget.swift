@@ -7,14 +7,6 @@ import LFWDesignSystem
 /// and star state. The word is computed deterministically, so the widget always
 /// matches the app without any shared write; the look is resolved per widget from
 /// its Edit-Widget configuration (falling back to the in-app defaults).
-struct WordEntry: TimelineEntry {
-    let date: Date
-    let word: Word?
-    let theme: LFWThemeConfig
-    let widgetPreferences: WidgetPreferences
-    let isStarred: Bool
-}
-
 struct WordProvider: AppIntentTimelineProvider {
     typealias Entry = WordEntry
     typealias Intent = WordWidgetConfigurationIntent

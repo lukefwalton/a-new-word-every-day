@@ -74,7 +74,7 @@ The subtitle is now "Private. No account." Thank you for the review.
 Local prep (done on this machine):
 
 - [x] Tests pass (`bash scripts/run_tests.sh`)
-- [x] Release archive **1.0 (2)** → `build/WordOfTheDay.xcarchive`
+- [x] Release archive **1.0 (3)** → `build/WordOfTheDay.xcarchive`
 - [x] Screenshots refreshed → `build/app-store-screenshots/{iphone,ipad}/`
 
 You still need to do in App Store Connect + Xcode:
@@ -82,7 +82,7 @@ You still need to do in App Store Connect + Xcode:
 1. **Metadata** — Subtitle → `Private. No account.` Remove "Free" from promotional text and description headers (see above).
 2. **Distribution cert** — Keychain only has Apple Development. In Xcode → Settings → Accounts → Manage Certificates, add **Apple Distribution**, then re-archive if Organizer rejects the upload.
 3. **Upload** — Xcode → Organizer → `WordOfTheDay.xcarchive` → Distribute App → App Store Connect.
-4. **Version** — Attach build **1.0 (2)** to the existing 1.0 submission (or create new version if needed).
+4. **Version** — Attach build **1.0 (3)** to the existing 1.0 submission (or create new version if needed).
 5. **Screenshots** — Upload iPhone 6.5" and iPad 13" sets from `build/app-store-screenshots/` if the listing still shows old UI.
 6. **What's New** — Paste the block above.
 7. **Reply** — Optional note to App Review (paste block above), then **Add for Review**.

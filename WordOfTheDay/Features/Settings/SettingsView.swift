@@ -21,6 +21,7 @@ struct SettingsView: View {
                     difficultySection
                     aboutSection
                 }
+                .environment(\.defaultMinListRowHeight, 1)
                 .modifier(ThemedFormChrome(palette: palette))
                 .foregroundStyle(palette.primaryText)
                 .navigationTitle("Settings")
@@ -36,8 +37,10 @@ struct SettingsView: View {
                 WidgetPreviewCard(word: word,
                                   theme: model.theme,
                                   widgetPreferences: model.widgetPreferences)
+                    .frame(height: WidgetPreviewCard.previewHeight)
                     .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
                     .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
             }
 
             ForEach(WidgetDetailLevel.allCases) { level in
