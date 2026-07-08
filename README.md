@@ -4,28 +4,32 @@
 
 # A New Word Every Day
 
-A free, local-first iOS app + Home Screen / Lock Screen **widget** that teaches
-one elevated English word a day — beautiful variable type, your colors, no login,
-nothing ever leaves your phone.
+A local-first iOS app + Home Screen / Lock Screen **widget** that teaches
+one rare word a day — **English, Japanese, or both** — with beautiful variable
+type, your colors, no login, nothing ever leaves your phone.
 
 [![iOS Tests](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/ios-tests.yml/badge.svg)](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/ios-tests.yml)
 [![Checks](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/checks.yml/badge.svg)](https://github.com/lukefwalton/a-new-word-every-day/actions/workflows/checks.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Corpus: CC0](https://img.shields.io/badge/Corpus-CC0-1f8a4c.svg)](NOTICE)
+[![English corpus: CC0](https://img.shields.io/badge/English%20corpus-CC0-1f8a4c.svg)](NOTICE)
+[![Japanese corpus: CC BY](https://img.shields.io/badge/Japanese%20corpus-CC%20BY-2563eb.svg)](NOTICE)
 ![Platform: iOS 17+](https://img.shields.io/badge/Platform-iOS%2017%2B-lightgrey.svg)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/lukefwalton/a-new-word-every-day)
 
 </div>
 
 > **No account. No servers. No tracking. No analytics.** Everything — your stars,
-> your difficulty level, your theme — lives on device in an App Group store the
-> app and widget share. The app makes zero network calls at runtime.
+> per-language difficulty, enabled languages, your theme — lives on device in an
+> App Group store the app and widget share. The app makes zero network calls at runtime.
 
 ## What it does
 
-- **A new word every day** on the widget (small / medium / large + lock screen),
-  rendered in a configurable [variable font](docs/prior-art-and-licensing.md)
-  (Fraunces by default) and color theme.
+- **A new word every day** per enabled language on the widget (small / medium /
+  large + lock screen), rendered in a configurable
+  [variable font](docs/prior-art-and-licensing.md) (Fraunces by default) and color
+  theme. Set widget language per widget via Edit Widget.
+- **English and Japanese** — enable either or both in Settings; each language has
+  its own daily word, difficulty band, and onboarding calibration.
 - **Star** a word — from the app *or* straight from the widget (iOS 17
   interactive button) — to save it to a **Practice** list.
 - **Tinder-style swipe onboarding** that calibrates your difficulty level on

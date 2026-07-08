@@ -1,9 +1,9 @@
 # Word of the Day — Spec
 
-A beautiful, local-first iOS app + Home Screen widget that teaches an elevated
-English word each day. The widget is the product; the app is the place you
-configure it, practice starred words, and (on first run) calibrate your level
-with a Tinder-style swipe deck.
+A beautiful, local-first iOS app + Home Screen widget that teaches rare words
+each day — English, Japanese, or both. The widget is the product; the app is the
+place you configure it, practice starred words, and (on first run) calibrate your
+level with a Tinder-style swipe deck.
 
 This document captured the original design. The app is now **implemented** — see
 [Status & scope](#status--scope) — and SPEC is kept as the rationale behind the
@@ -13,8 +13,11 @@ shipped architecture.
 
 ## 1. Product at a glance
 
-- **One word a day**, shown beautifully in a configurable **variable font** and
-  color theme, primarily on the **Home Screen / Lock Screen widget**.
+- **One word a day per enabled language**, shown beautifully in a configurable
+  **variable font** and color theme, primarily on the **Home Screen / Lock Screen
+  widget**.
+- **English and Japanese** — individually or together; per-language difficulty;
+  per-widget language via Edit Widget.
 - **Star** a word to drop it into a **Practice** list. (Anki export is a
   someday; the seam is designed in now — see §10.)
 - **Swipe onboarding** (Tinder-style, two-way: *Know* / *Don't know*) calibrates
@@ -308,32 +311,37 @@ Mirrors `WorkoutWidget`'s `TimelineProvider` pattern.
 
 ---
 
-## 9. Word corpus
+## 9. Word corpora
 
-The corpus is **hand-authored, original, and public-domain**. Each entry is just
-a word, a one-line definition, and a difficulty band (1–5) — no example
-sentences. Every field is written for this app: there is **no external data**
-(no frequency list, no licensed dictionary, no scraped text), so the word list
-is dedicated to the **public domain (CC0)** and free for anyone to reuse without
-attribution or share-alike obligations. The app source code stays MIT.
+Two bundled corpora; neither is fetched at runtime.
 
-Pipeline: edit `scripts/corpus_source.json` (a flat array of
-`{word, pos, definition, band}`); `scripts/build_corpus.py` validates it, sorts
-by `(band, word)`, and gives each word a **stable id derived from the word
-itself** (a hash) into `words.json`. The id is deliberately *not* positional:
-persisted user state — starred words, difficulty marks — keys off `Word.id`, so
-editing or growing the corpus must never renumber existing words onto someone
-else's saved state. No dependencies beyond the Python standard library. The app
-**never** fetches anything at runtime.
+### English (`words.json`) — CC0
 
-Difficulty bands are an editorial judgment of how rare/hard a word is — band 1
-is the most accessible advanced vocabulary, band 5 the rarest and most literary.
-Bands need not be equal-sized; only that all five are represented.
+Hand-authored, original, **public domain (CC0)**. Each entry is a word, a
+one-line definition, and a difficulty band (1–5). No external data — no frequency
+list, no licensed dictionary, no scraped text — so no attribution or share-alike
+obligations.
 
-This returns to the repo's original "permissive only" stance (see
-[`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md)), taken to
-its conclusion: rather than re-source from any third-party corpus, the word data
-is simply ours.
+Pipeline: edit `scripts/corpus_source.json` (`{word, pos, definition, band}`);
+`scripts/build_corpus.py` validates, sorts by `(band, word)`, and assigns a
+**stable hash-derived id** into `words.json`. Persisted user state keys off
+`Word.id`, so corpus edits must never renumber existing words.
+
+### Japanese (`words_ja.json`) — CC BY lineage
+
+JLPT vocabulary (~7,900 words). **Headwords, kana readings, and JLPT bands**
+(1 = N5 … 5 = N1) derive from Jonathan Waller's tanos.co.uk (**CC BY**) via
+[jamsinclair/open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks)
+(MIT repo; upstream list lineage remains CC BY). **English definitions** shown for
+Japanese words are original to this app. Attribution requirements are in
+[NOTICE](../NOTICE).
+
+Pipeline: edit `scripts/corpus_source_ja.json`; `scripts/build_corpus.py --lang ja`
+validates and writes `words_ja.json` with the same stable-id discipline and
+**global id namespace** as English (ids must not collide across languages).
+
+App source code stays MIT. Full licensing history:
+[`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md).
 
 Output schema per word:
 ```json

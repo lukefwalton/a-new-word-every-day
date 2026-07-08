@@ -1,8 +1,8 @@
 # Contributing
 
-Thanks for your interest in **A New Word Every Day** — a free, local-first iOS
-word-of-the-day app and widget. Contributions are welcome, whether that's a new
-word for the corpus, a bug fix, or a docs improvement.
+Thanks for your interest in **A New Word Every Day** — a local-first iOS
+word-of-the-day app and widget (English and Japanese). Contributions are welcome,
+whether that's a new word for either corpus, a bug fix, or a docs improvement.
 
 By participating you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -30,16 +30,30 @@ open WordOfTheDay.xcodeproj
 
 ## Editing the word corpus
 
-The corpus is **hand-authored and public-domain (CC0)**. Don't edit
+### English (`words.json`)
+
+The English corpus is **hand-authored and public-domain (CC0)**. Don't edit
 `WordOfTheDay/Resources/words.json` directly — it's generated. Instead:
 
 1. Edit [`scripts/corpus_source.json`](scripts/corpus_source.json). Each entry is
    `{ "word", "pos", "definition", "band" }`, where `pos` is one of
    `n` / `v` / `adj` / `adv` and `band` is a difficulty from 1 (most accessible)
    to 5 (rarest). Definitions must be **original** — no copied dictionary text.
-2. Regenerate: `bash scripts/build_corpus.sh`
+2. Regenerate: `python3 scripts/build_corpus.py`
 3. Commit both files. CI re-runs the build and fails if `words.json` is out of
    date with its source.
+
+### Japanese (`words_ja.json`)
+
+The Japanese corpus derives JLPT headwords and readings from Tanos (CC BY) via
+[`scripts/corpus_source_ja.json`](scripts/corpus_source_ja.json). Definitions are
+original to this app. Regenerate with:
+
+```bash
+python3 scripts/build_corpus.py --lang ja
+```
+
+See [NOTICE](NOTICE) for attribution requirements on Japanese headword data.
 
 ## Tests
 
@@ -63,9 +77,10 @@ keep the suite green and add tests for new logic.
 ## Licensing of contributions
 
 By contributing you agree that your contributions are licensed under this repo's
-terms: **code under [MIT](LICENSE)**, and **word-list entries dedicated to the
-public domain under [CC0](NOTICE)**. Don't submit content you don't have the
-right to release this way.
+terms: **code under [MIT](LICENSE)**; **English word-list entries dedicated to the
+public domain under [CC0](NOTICE)**; **Japanese headword/readings/levels** carry
+Tanos CC BY lineage (see NOTICE) with **original English definitions** written
+for this app. Don't submit content you don't have the right to contribute.
 
 ## Security
 

@@ -57,7 +57,7 @@ struct OnboardingView: View {
                     symbol: "character.book.closed.fill",
                     eyebrow: "One word a day",
                     title: "Grow a sharper\nvocabulary, daily.",
-                    message: "Each day, one elevated word — on your Home Screen and here. Beautiful type, your colors.",
+                    message: "Each day, a new word — English, Japanese, or both — on your Home Screen and here. Beautiful type, your colors.",
                     cta: "Next", action: { advance(to: 1) }
                 ).tag(0)
 

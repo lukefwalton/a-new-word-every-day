@@ -63,10 +63,14 @@ fonts and theming, added as generic modules so the siblings could adopt them:
 
 ## Licensing posture
 
-App code is MIT; OFL fonts. The `words.json` corpus is **hand-authored and
-public-domain (CC0)** — every headword, definition, and difficulty band written
-for this app, no external data. `scripts/corpus_source.json` is the source;
-`scripts/build_corpus.py` validates it and assigns each word a stable
-hash-derived id (so persisted state keyed on `Word.id` survives corpus edits; no deps beyond
-the stdlib). The full history of sources evaluated is in
-`docs/prior-art-and-licensing.md`.
+App code is MIT; OFL fonts.
+
+- **English** (`words.json`) — hand-authored, **public domain (CC0)**; no external
+  data; no attribution required. Source: `scripts/corpus_source.json`.
+- **Japanese** (`words_ja.json`) — headwords, kana readings, and JLPT bands from
+  Jonathan Waller's tanos.co.uk (**CC BY**) via jamsinclair/open-anki-jlpt-decks
+  (MIT); English definitions original to this app. Source:
+  `scripts/corpus_source_ja.json`. See [NOTICE](../NOTICE).
+
+`scripts/build_corpus.py` validates each corpus and assigns stable hash-derived ids.
+The full history of sources evaluated is in `docs/prior-art-and-licensing.md`.
