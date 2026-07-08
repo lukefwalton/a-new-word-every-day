@@ -17,7 +17,10 @@ enum AnkiExporter {
             "#columns:Front\tBack",
         ]
         for word in words {
-            let back = "(\(word.partOfSpeechLabel)) \(word.definition)"
+            // Reading-bearing words (Japanese) put the kana on the back — it's
+            // part of the answer for a recognition card.
+            let reading = word.displayReading.map { "\($0) — " } ?? ""
+            let back = "\(reading)(\(word.partOfSpeechLabel)) \(word.definition)"
             lines.append("\(field(word.word))\t\(field(back))")
         }
         return lines.joined(separator: "\n") + "\n"

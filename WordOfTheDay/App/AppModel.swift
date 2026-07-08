@@ -15,10 +15,12 @@ final class AppModel: ObservableObject {
 
     @Published var theme: LFWThemeConfig
     @Published var selectedTab: Tab = .today
-    @Published private(set) var band: Int
+    @Published private(set) var enabledLanguages: [Language]
+    @Published private(set) var bands: [Language: Int]
     @Published private(set) var onboardingComplete: Bool
     @Published private(set) var starredIDs: [Int]
-    @Published private(set) var today: Word?
+    /// Today's word per enabled language, in the user's language order.
+    @Published private(set) var todaysWords: [Word]
     /// Number of starred words due to study now — drives the Practice tab's
     /// (secondary, opt-in) Study affordance.
     @Published private(set) var dueCount: Int = 0
@@ -39,10 +41,12 @@ final class AppModel: ObservableObject {
         }
         #endif
         self.theme = store.theme
-        self.band = store.band
+        let languages = store.enabledLanguages
+        self.enabledLanguages = languages
+        self.bands = Self.bandsSnapshot(store: store, languages: languages)
         self.onboardingComplete = store.onboardingComplete
         self.starredIDs = store.starredIDs
-        self.today = service.todaysWord(store: store)
+        self.todaysWords = service.todaysWords(store: store)
         self.widgetPreferences = store.widgetPreferences
         recomputeDue()
         #if DEBUG
@@ -50,16 +54,29 @@ final class AppModel: ObservableObject {
         #endif
     }
 
-    var corpusIsEmpty: Bool { service.corpus.words.isEmpty }
+    var corpusIsEmpty: Bool {
+        enabledLanguages.allSatisfy { service.library.corpus(for: $0).words.isEmpty }
+    }
 
     func refreshFromStore() {
         theme = store.theme
         onboardingComplete = store.onboardingComplete
         starredIDs = store.starredIDs
-        band = store.band
+        syncLanguageState()
         widgetPreferences = store.widgetPreferences
-        today = service.todaysWord(store: store)
         recomputeDue()
+    }
+
+    /// Re-snapshot the per-language published state (enabled set, bands, daily
+    /// words) from the store — the one incantation every language mutation ends in.
+    private func syncLanguageState() {
+        enabledLanguages = store.enabledLanguages
+        bands = Self.bandsSnapshot(store: store, languages: enabledLanguages)
+        todaysWords = service.todaysWords(store: store)
+    }
+
+    private static func bandsSnapshot(store: SharedStore, languages: [Language]) -> [Language: Int] {
+        Dictionary(uniqueKeysWithValues: languages.map { ($0, store.band(for: $0)) })
     }
 
     // MARK: Theme
@@ -85,31 +102,64 @@ final class AppModel: ObservableObject {
         WidgetReloader.reload()
     }
 
+    // MARK: Languages
+
+    /// Update the set of languages being learned (Settings). The store
+    /// normalizes to `Language.allCases` order and guards against an empty set.
+    func setLanguages(_ languages: [Language]) {
+        store.enabledLanguages = languages
+        syncLanguageState()
+        WidgetReloader.reload()
+    }
+
     // MARK: Difficulty
 
-    func setBand(_ value: Int) {
+    func band(for language: Language) -> Int {
+        bands[language] ?? store.band(for: language)
+    }
+
+    func setBand(_ value: Int, for language: Language) {
         let clamped = min(max(value, 1), difficulty.maxBand)
-        band = clamped
-        store.band = clamped
-        today = service.todaysWord(store: store)
+        bands[language] = clamped
+        store.setBand(clamped, for: language)
+        // Only this language's daily word can change — don't re-shuffle the rest.
+        if let idx = todaysWords.firstIndex(where: { $0.language == language }),
+           let word = service.todaysWord(store: store, language: language) {
+            todaysWords[idx] = word
+        } else {
+            todaysWords = service.todaysWords(store: store)
+        }
         WidgetReloader.reload()
     }
 
     // MARK: Onboarding
 
-    func completeOnboarding(answers: [DifficultyModel.Answer]) {
-        let calibrated = difficulty.calibratedBand(from: answers)
-        store.band = calibrated
+    /// The calibrated starting band a set of swipe answers implies — exposed so
+    /// onboarding can turn each language's deck into a level as it completes.
+    func calibratedBand(from answers: [DifficultyModel.Answer]) -> Int {
+        difficulty.calibratedBand(from: answers)
+    }
+
+    /// The gentle-middle starting band, for self-assessment defaults and
+    /// empty-corpus fallbacks (single source of truth: `DifficultyModel`).
+    var defaultBand: Int { difficulty.defaultBand }
+
+    /// Finish onboarding with the chosen languages and each one's starting band
+    /// (from the swipe calibration or the self-assessment picker).
+    func completeOnboarding(languages: [Language], bands chosen: [Language: Int]) {
+        store.enabledLanguages = languages
+        for (language, band) in chosen {
+            store.setBand(min(max(band, 1), difficulty.maxBand), for: language)
+        }
         store.onboardingComplete = true
-        band = calibrated
         onboardingComplete = true
-        today = service.todaysWord(store: store)
+        syncLanguageState()
         WidgetReloader.reload()
     }
 
-    /// The deck of words the swipe step calibrates on.
-    func calibrationDeck() -> [Word] {
-        service.calibrationSample(salt: store.installSalt)
+    /// The deck of words the swipe step calibrates on for one language.
+    func calibrationDeck(for language: Language) -> [Word] {
+        service.calibrationSample(language: language, salt: store.installSalt)
     }
 
     // MARK: Stars
@@ -182,7 +232,9 @@ final class AppModel: ObservableObject {
         guard marks[word.id] != known else { return }
         marks[word.id] = known
         store.difficultyMarks = marks
-        setBand(difficulty.adjusted(band: band, markedKnown: known, wordBand: word.band))
+        let language = word.language
+        setBand(difficulty.adjusted(band: band(for: language), markedKnown: known, wordBand: word.band),
+                for: language)
     }
 
     // MARK: Deep links
@@ -214,7 +266,7 @@ final class AppModel: ObservableObject {
         UserDefaults(suiteName: suite)?.removePersistentDomain(forName: suite)
         if args.contains("-UITestSkipOnboarding") {
             store.onboardingComplete = true
-            store.band = 2
+            store.setBand(2, for: .english)
         }
     }
 

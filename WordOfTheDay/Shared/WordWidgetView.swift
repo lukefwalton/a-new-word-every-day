@@ -85,6 +85,8 @@ struct WordWidgetView: View {
             WidgetHeroText(word: word.word, typeface: typeface,
                            color: palette.primaryText, glow: palette.accent, size: heroSize)
                 .frame(maxWidth: .infinity, alignment: elementAlignment)
+            readingLine(word, size: size)
+                .frame(maxWidth: .infinity, alignment: elementAlignment)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 13))
                 .foregroundStyle(palette.accent)
@@ -121,6 +123,7 @@ struct WordWidgetView: View {
                            color: palette.primaryText, glow: palette.accent,
                            size: heroSize(size, minimal: true))
                 .frame(maxWidth: .infinity, alignment: .center)
+            readingLine(word, size: size)
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface, size: size == .small ? 11 : 14))
                 .foregroundStyle(palette.accent)
@@ -130,6 +133,19 @@ struct WordWidgetView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         .overlay(alignment: .topTrailing) {
             starButton(word, size: size == .small ? 14 : 16)
+        }
+    }
+
+    /// The kana reading under the hero, when the word carries one (empty
+    /// otherwise). Shared by the framed and minimal layouts.
+    @ViewBuilder
+    private func readingLine(_ word: Word, size: WidgetLayoutSize) -> some View {
+        if let reading = word.displayReading {
+            Text(reading)
+                .font(LFWTypography.font(.uiBody, typeface: typeface, size: size == .small ? 11 : 13))
+                .foregroundStyle(palette.secondaryText)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
         }
     }
 
@@ -193,16 +209,18 @@ struct WordWidgetView: View {
     // MARK: Lock screen
 
     private func accessoryInline(_ word: Word) -> some View {
-        Text("\(word.word) · \(word.partOfSpeechLabel)")
+        // For reading-bearing words the kana earns the one line more than the POS.
+        Text("\(word.word) · \(word.displayReading ?? word.partOfSpeechLabel)")
             .font(LFWTypography.font(.uiBody, typeface: typeface, size: 12))
             .widgetURL(deepLink(word))
     }
 
     private func accessoryRectangular(_ word: Word) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(word.word)
+            Text(word.displayReading.map { "\(word.word)  \($0)" } ?? word.word)
                 .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 15))
                 .lineLimit(1)
+                .minimumScaleFactor(0.7)
             Text(word.definition)
                 .font(LFWTypography.font(.definition, typeface: typeface, size: 11))
                 .lineLimit(2)

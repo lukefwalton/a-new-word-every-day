@@ -26,38 +26,59 @@ jobs:
         run: bash scripts/check_appgroup_sync.sh
       - name: Bundled typeface list sync (Swift ↔ plists ↔ fetch script)
         run: bash scripts/check_fonts_sync.sh
-      - name: Corpus regenerates deterministically
+      - name: Corpora regenerate deterministically
         run: |
           python3 scripts/build_corpus.py
-          git diff --exit-code WordOfTheDay/Resources/words.json \
-            || (echo "::error::words.json is out of date — run scripts/build_corpus.py and commit." && exit 1)
-      - name: Corpus is well-formed (words.json)
+          python3 scripts/build_corpus.py --lang ja
+          # git status --porcelain (unlike git diff) also catches a generated
+          # corpus that was never committed — untracked output must fail too.
+          CHANGED=$(git status --porcelain WordOfTheDay/Resources/words.json WordOfTheDay/Resources/words_ja.json)
+          if [ -n "$CHANGED" ]; then
+            echo "$CHANGED"
+            echo "::error::a bundled corpus is out of date or untracked — run scripts/build_corpus.py (and --lang ja) and commit the output."
+            exit 1
+          fi
+      - name: Corpora are well-formed (words.json, words_ja.json)
         run: |
           python3 - <<'PY'
           import json, sys
-          words = json.load(open("WordOfTheDay/Resources/words.json"))
           errors = []
-          if not isinstance(words, list) or len(words) < 1000:
-              sys.exit(f"::error::words.json looks too small ({len(words) if isinstance(words, list) else 'n/a'}) — expected the full ~1000+ corpus; accidental content drop?")
-          ids = [w["id"] for w in words]
-          if not all(isinstance(i, int) and i > 0 for i in ids):
-              errors.append("ids must be positive integers")
-          if len(set(ids)) != len(ids):
-              errors.append("duplicate ids")
-          valid_pos = {"n", "v", "adj", "adv"}
-          names = set()
-          for w in words:
-              tag = f"id={w.get('id')}"
-              if not str(w.get("word", "")).strip(): errors.append(f"{tag}: blank word")
-              if not str(w.get("definition", "")).strip(): errors.append(f"{tag}: blank definition")
-              if w.get("pos") not in valid_pos: errors.append(f"{tag}: bad pos {w.get('pos')!r}")
-              if w.get("band") not in (1, 2, 3, 4, 5): errors.append(f"{tag}: band out of range")
-              names.add(w.get("word"))
-          if len(names) != len(words):
-              errors.append("duplicate headwords")
-          if {w["band"] for w in words} != {1, 2, 3, 4, 5}:
-              errors.append("every difficulty band (1..5) must be represented")
+          all_ids = []
+
+          def check(path, valid_pos, min_len, reading, lang):
+              words = json.load(open(path, encoding="utf-8"))
+              if not isinstance(words, list) or len(words) < min_len:
+                  sys.exit(f"::error::{path} looks too small ({len(words) if isinstance(words, list) else 'n/a'}) — accidental content drop?")
+              ids = [w["id"] for w in words]
+              all_ids.extend(ids)
+              if not all(isinstance(i, int) and i > 0 for i in ids):
+                  errors.append(f"{path}: ids must be positive integers")
+              if len(set(ids)) != len(ids):
+                  errors.append(f"{path}: duplicate ids")
+              names = set()
+              for w in words:
+                  tag = f"{path} id={w.get('id')}"
+                  if not str(w.get("word", "")).strip(): errors.append(f"{tag}: blank word")
+                  if not str(w.get("definition", "")).strip(): errors.append(f"{tag}: blank definition")
+                  if w.get("pos") not in valid_pos: errors.append(f"{tag}: bad pos {w.get('pos')!r}")
+                  if w.get("band") not in (1, 2, 3, 4, 5): errors.append(f"{tag}: band out of range")
+                  if reading and "reading" in w and w["reading"] == w["word"]:
+                      errors.append(f"{tag}: redundant reading should be omitted")
+                  if w.get("lang") != lang:
+                      errors.append(f"{tag}: lang must be {lang!r}, got {w.get('lang')!r}")
+                  names.add(w.get("word"))
+              if len(names) != len(words):
+                  errors.append(f"{path}: duplicate headwords")
+              if {w["band"] for w in words} != {1, 2, 3, 4, 5}:
+                  errors.append(f"{path}: every difficulty band (1..5) must be represented")
+              print(f"{path} OK — {len(words)} entries, bands 1..5 present")
+
+          # English omits the lang key (pre-multilanguage compatibility); every
+          # other corpus must tag each entry so Word.language resolves correctly.
+          check("WordOfTheDay/Resources/words.json", {"n", "v", "adj", "adv"}, 1000, reading=False, lang=None)
+          check("WordOfTheDay/Resources/words_ja.json", {"n", "v", "adj", "adv", "expr"}, 5000, reading=True, lang="ja")
+          if len(set(all_ids)) != len(all_ids):
+              errors.append("ids collide across languages — starred/review state is one global id-keyed map")
           if errors:
-              sys.exit("::error::words.json invalid:\n" + "\n".join(errors[:50]))
-          print(f"words.json OK — {len(words)} entries, bands 1..5 present")
+              sys.exit("::error::corpus invalid:\n" + "\n".join(errors[:50]))
           PY

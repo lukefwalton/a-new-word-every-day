@@ -19,6 +19,7 @@ final class SharedStore {
     private enum Key {
         static let starred = "starredIDs"
         static let band = "difficultyBand"
+        static let languages = "enabledLanguages"
         static let onboarding = "onboardingComplete"
         static let salt = "installSalt"
         static let installDate = "installDate"
@@ -53,14 +54,46 @@ final class SharedStore {
         }
     }
 
+    // MARK: Languages
+
+    /// The languages the user is learning. Defaults to English, which is also
+    /// what every pre-multilanguage install "has". Normalized here at the
+    /// boundary — deduped and in `Language.allCases` order — so no caller can
+    /// persist a malformed set.
+    var enabledLanguages: [Language] {
+        get {
+            let stored = Set((defaults.array(forKey: Key.languages) as? [String])?
+                .compactMap(Language.init(rawValue:)) ?? [])
+            let ordered = Language.allCases.filter(stored.contains)
+            return ordered.isEmpty ? [.english] : ordered
+        }
+        set {
+            let chosen = Set(newValue)
+            let ordered = Language.allCases.filter(chosen.contains)
+            defaults.set((ordered.isEmpty ? [.english] : ordered).map(\.rawValue),
+                         forKey: Key.languages)
+        }
+    }
+
+    /// The language an unconfigured ("App Default") widget shows.
+    var primaryLanguage: Language { enabledLanguages.first ?? .english }
+
     // MARK: Difficulty
 
-    var band: Int {
-        get {
-            guard defaults.object(forKey: Key.band) != nil else { return 2 }
-            return defaults.integer(forKey: Key.band)
-        }
-        set { defaults.set(newValue, forKey: Key.band) }
+    /// English keeps the pre-multilanguage bare key so existing installs read
+    /// their calibrated band unchanged; other languages get a suffixed key.
+    private func bandKey(for language: Language) -> String {
+        language == .english ? Key.band : "\(Key.band).\(language.rawValue)"
+    }
+
+    func band(for language: Language) -> Int {
+        let key = bandKey(for: language)
+        guard defaults.object(forKey: key) != nil else { return 2 }
+        return defaults.integer(forKey: key)
+    }
+
+    func setBand(_ value: Int, for language: Language) {
+        defaults.set(value, forKey: bandKey(for: language))
     }
 
     /// In-app per-word marks (wordID → known). Feeds band nudges; local only.

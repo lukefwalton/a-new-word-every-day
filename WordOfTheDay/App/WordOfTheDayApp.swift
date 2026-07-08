@@ -3,7 +3,7 @@ import LFWDesignSystem
 
 @main
 struct WordOfTheDayApp: App {
-    @StateObject private var model = AppModel(service: DailyWordService(corpus: .load()))
+    @StateObject private var model = AppModel(service: DailyWordService(library: .load()))
     @Environment(\.scenePhase) private var scenePhase
 
     init() {

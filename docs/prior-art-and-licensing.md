@@ -15,6 +15,18 @@ choice. The guiding rule for **application code** is **permissive only**
 > The source of record is `scripts/corpus_source.json`. The matrix below is kept
 > as a record of the sources evaluated along the way.
 
+> **Update (2026) — Japanese corpus.** The Japanese word list is a different
+> trade-off, made deliberately: there is no official JLPT vocabulary list (the
+> JLPT stopped publishing test specifications), so every usable list descends
+> from Jonathan Waller's community lists at tanos.co.uk (**CC BY**). We ingest
+> them via the community-corrected
+> [jamsinclair/open-anki-jlpt-decks](https://github.com/jamsinclair/open-anki-jlpt-decks)
+> (repo MIT; underlying list lineage still Tanos CC BY — a downstream MIT label
+> can't relicense upstream CC-BY data, so we attribute the lineage). Headwords,
+> kana readings, and N-level bands carry that attribution (see NOTICE); the
+> one-line English definitions were written for this app, so the prose is
+> original. Source of record: `scripts/corpus_source_ja.json`.
+
 License verifications below were done by reading the actual LICENSE files /
 canonical license pages (mid-2026), not from memory. Re-verify before vendoring.
 

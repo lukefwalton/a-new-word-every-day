@@ -18,25 +18,38 @@ final class WordOfTheDayUITests: XCTestCase {
         app = nil
     }
 
-    func test_skipOnboarding_reachesTodayTab() throws {
-        app.launchArguments += ["-UITestResetOnboarding"]
-        app.launch()
-
-        // Walk the three intro pages (Next → Next → Start).
+    /// Walk the three intro pages and the language picker (English pre-selected)
+    /// up to the first calibration deck.
+    private func advanceToCalibration() {
         let next = app.buttons["Next"]
         XCTAssertTrue(next.waitForExistence(timeout: 5))
         next.tap()
         XCTAssertTrue(next.waitForExistence(timeout: 3))
         next.tap()
 
-        let start = app.buttons["Start"]
-        XCTAssertTrue(start.waitForExistence(timeout: 5))
-        start.tap()
+        let choose = app.buttons["Choose languages"]
+        XCTAssertTrue(choose.waitForExistence(timeout: 5))
+        choose.tap()
 
-        // Skip straight to the app at the default band.
-        let skip = app.buttons["Skip — start in the middle"]
+        let cont = app.buttons["Continue"]
+        XCTAssertTrue(cont.waitForExistence(timeout: 5))
+        cont.tap()
+    }
+
+    func test_skipOnboarding_reachesTodayTab() throws {
+        app.launchArguments += ["-UITestResetOnboarding"]
+        app.launch()
+
+        advanceToCalibration()
+
+        // Skip the deck into the self-assessment picker, keep the default level.
+        let skip = app.buttons["Skip — I know my level"]
         XCTAssertTrue(skip.waitForExistence(timeout: 5))
         skip.tap()
+
+        let cont = app.buttons["Continue"]
+        XCTAssertTrue(cont.waitForExistence(timeout: 5))
+        cont.tap()
 
         // Today tab should show the daily word chrome.
         let todayTab = app.tabBars.buttons["Today"]
@@ -45,7 +58,7 @@ final class WordOfTheDayUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["WORD OF THE DAY"].waitForExistence(timeout: 5))
     }
 
-    func test_calibrationDeck_swipeRight_advancesProgress() throws {
+    func test_bilingualOnboarding_selfAssessBoth_pagesTodayPerLanguage() throws {
         app.launchArguments += ["-UITestResetOnboarding"]
         app.launch()
 
@@ -55,9 +68,39 @@ final class WordOfTheDayUITests: XCTestCase {
         XCTAssertTrue(next.waitForExistence(timeout: 3))
         next.tap()
 
-        let start = app.buttons["Start"]
-        XCTAssertTrue(start.waitForExistence(timeout: 5))
-        start.tap()
+        let choose = app.buttons["Choose languages"]
+        XCTAssertTrue(choose.waitForExistence(timeout: 5))
+        choose.tap()
+
+        // English is pre-selected; add Japanese, then continue.
+        let japanese = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Japanese")).firstMatch
+        XCTAssertTrue(japanese.waitForExistence(timeout: 5))
+        japanese.tap()
+        app.buttons["Continue"].tap()
+
+        // Each language: skip the deck and keep the default self-assessed level.
+        for language in ["ENGLISH", "JAPANESE"] {
+            XCTAssertTrue(app.staticTexts["DO YOU KNOW THIS \(language) WORD?"].waitForExistence(timeout: 5))
+            app.buttons["Skip — I know my level"].tap()
+            let cont = app.buttons["Continue"]
+            XCTAssertTrue(cont.waitForExistence(timeout: 5))
+            cont.tap()
+        }
+
+        // Today shows the per-language pager, English page first…
+        XCTAssertTrue(app.tabBars.buttons["Today"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["WORD OF THE DAY · ENGLISH"].waitForExistence(timeout: 5))
+
+        // …and paging left renders the Japanese word page.
+        app.swipeLeft()
+        XCTAssertTrue(app.staticTexts["WORD OF THE DAY · JAPANESE"].waitForExistence(timeout: 5))
+    }
+
+    func test_calibrationDeck_swipeRight_advancesProgress() throws {
+        app.launchArguments += ["-UITestResetOnboarding"]
+        app.launch()
+
+        advanceToCalibration()
 
         XCTAssertTrue(app.staticTexts["DO YOU KNOW THIS WORD?"].waitForExistence(timeout: 5))
         let progress = app.staticTexts.matching(NSPredicate(format: "label MATCHES %@", "^[0-9]+ of [0-9]+$")).firstMatch

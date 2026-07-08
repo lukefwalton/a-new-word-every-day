@@ -18,6 +18,7 @@ struct SettingsView: View {
                     widgetLayoutSection
                     typefaceSection
                     colorSection
+                    languagesSection
                     difficultySection
                     aboutSection
                 }
@@ -33,7 +34,10 @@ struct SettingsView: View {
 
     private var widgetSection: some View {
         Section {
-            if let word = model.today {
+            // The preview deliberately shows the primary (first-enabled)
+            // language — the same word an unconfigured "App Default" widget
+            // shows. Per-widget languages are previewed on the widget itself.
+            if let word = model.todaysWords.first {
                 WidgetPreviewCard(word: word,
                                   theme: model.theme,
                                   widgetPreferences: model.widgetPreferences)
@@ -88,16 +92,18 @@ struct SettingsView: View {
         }
     }
 
-    /// A selectable preference row (title + subtitle + checkmark) shared by the
-    /// detail / background / layout pickers.
+    /// A selectable preference row (title + optional subtitle + checkmark) shared
+    /// by the detail / background / layout pickers and the language toggles.
     @ViewBuilder
-    private func styleRow(title: String, subtitle: String, selected: Bool,
+    private func styleRow(title: String, subtitle: String?, selected: Bool,
                           _ action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(title).foregroundStyle(palette.primaryText)
-                    Text(subtitle).font(.caption).foregroundStyle(palette.secondaryText)
+                    if let subtitle {
+                        Text(subtitle).font(.caption).foregroundStyle(palette.secondaryText)
+                    }
                 }
                 Spacer()
                 if selected {
@@ -192,26 +198,61 @@ struct SettingsView: View {
                 .strokeBorder(.black.opacity(0.1)))
     }
 
-    // MARK: Difficulty
+    // MARK: Languages
 
-    private var difficultySection: some View {
+    private var languagesSection: some View {
         Section {
-            Stepper(value: Binding(get: { model.band }, set: { model.setBand($0) }), in: 1...5) {
-                HStack {
-                    Text("Difficulty")
-                    Spacer()
-                    Text(bandLabel(model.band)).foregroundStyle(palette.secondaryText)
+            ForEach(Language.allCases) { language in
+                let isOn = model.enabledLanguages.contains(language)
+                styleRow(title: language.displayName,
+                         subtitle: language.nativeName != language.displayName ? language.nativeName : nil,
+                         selected: isOn) {
+                    toggleLanguage(language)
                 }
+                // The last language can't be turned off — there'd be no daily word.
+                .disabled(isOn && model.enabledLanguages.count == 1)
             }
-            .tint(palette.accent)
+        } header: {
+            Text("Languages")
         } footer: {
-            Text("Higher levels surface rarer words. Marking words as known or still-learning nudges this automatically.")
+            Text("Each language gets its own daily word and its own level. Add a widget per language from the Home Screen (long-press → Edit Widget).")
                 .foregroundStyle(palette.secondaryText)
         }
     }
 
-    private func bandLabel(_ band: Int) -> String {
-        ["", "Gentle", "Easy", "Medium", "Hard", "Rare"][min(max(band, 0), 5)]
+    private func toggleLanguage(_ language: Language) {
+        var languages = model.enabledLanguages
+        if let idx = languages.firstIndex(of: language) {
+            guard languages.count > 1 else { return }
+            languages.remove(at: idx)
+        } else {
+            languages.append(language)   // the store normalizes order + dedupes
+        }
+        model.setLanguages(languages)
+    }
+
+    // MARK: Difficulty
+
+    private var difficultySection: some View {
+        Section {
+            ForEach(model.enabledLanguages) { language in
+                Stepper(value: Binding(get: { model.band(for: language) },
+                                       set: { model.setBand($0, for: language) }), in: 1...5) {
+                    HStack {
+                        Text(model.enabledLanguages.count > 1 ? language.displayName : "Difficulty")
+                        Spacer()
+                        Text(language.levelName(forBand: model.band(for: language)))
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                }
+                .tint(palette.accent)
+            }
+        } header: {
+            if model.enabledLanguages.count > 1 { Text("Difficulty") }
+        } footer: {
+            Text("Higher levels surface rarer words. Marking words as known or still-learning nudges this automatically.")
+                .foregroundStyle(palette.secondaryText)
+        }
     }
 
     // MARK: About
@@ -240,7 +281,8 @@ struct SettingsView: View {
             }
             DisclosureGroup("Acknowledgements") {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("The word list and its definitions were written for this app and are dedicated to the public domain (CC0) — free for anyone to use.")
+                    Text("The English word list and its definitions were written for this app and are dedicated to the public domain (CC0) — free for anyone to use.")
+                    Text("The Japanese word list, kana readings, and JLPT-level difficulty bands derive from Jonathan Waller's JLPT resources (tanos.co.uk, CC BY), via the community-maintained jamsinclair/open-anki-jlpt-decks (MIT). The English definitions shown for Japanese words were written for this app.")
                     Text("Typefaces — Fraunces, Literata, Newsreader, Source Serif 4, Inter, Source Sans 3, Recursive — are licensed under the SIL Open Font License 1.1.")
                     Text("Review scheduling uses FSRS-6, implemented on-device (algorithm ported from open-spaced-repetition/py-fsrs, MIT License).")
                     Text("App source code is MIT licensed.")

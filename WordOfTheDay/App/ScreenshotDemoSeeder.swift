@@ -12,12 +12,12 @@ enum ScreenshotDemoSeeder {
             backgroundStyle: .blobs,
             layoutStyle: .editorial
         )
-        store.band = 3
+        store.setBand(3, for: .english)
 
-        if let today = service.todaysWord(store: store), !store.isStarred(today.id) {
+        if let today = service.todaysWord(store: store, language: .english), !store.isStarred(today.id) {
             store.toggleStar(today.id)
         }
-        for word in service.calibrationSample(salt: store.installSalt).prefix(2) {
+        for word in service.calibrationSample(language: .english, salt: store.installSalt).prefix(2) {
             if !store.isStarred(word.id) { store.toggleStar(word.id) }
         }
     }

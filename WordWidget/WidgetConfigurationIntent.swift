@@ -10,6 +10,9 @@ struct WordWidgetConfigurationIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "A New Word Every Day"
     static var description = IntentDescription("Pick this widget's look, or keep your in-app defaults.")
 
+    @Parameter(title: "Language", default: .appDefault)
+    var language: WidgetLanguageOption
+
     @Parameter(title: "Typeface", default: .appDefault)
     var typeface: WidgetTypefaceOption
 

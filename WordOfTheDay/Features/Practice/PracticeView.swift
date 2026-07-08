@@ -102,7 +102,8 @@ struct PracticeView: View {
                         Text(word.word)
                             .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 20))
                             .foregroundStyle(palette.primaryText)
-                        Text("\(word.partOfSpeechLabel) · \(word.definition)")
+                        Text([word.displayReading, word.partOfSpeechLabel, word.definition]
+                            .compactMap { $0 }.joined(separator: " · "))
                             .font(LFWTypography.font(.uiBody, typeface: typeface, size: 14))
                             .foregroundStyle(palette.secondaryText)
                             .lineLimit(2)
