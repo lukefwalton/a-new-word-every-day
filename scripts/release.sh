@@ -45,5 +45,6 @@ echo "  2. App Store Connect: Support URL → https://lukefwalton.com/a-new-word
 echo "  3. Privacy Policy URL → https://lukefwalton.com/a-new-word-every-day/privacy/"
 echo "  4. App Privacy: Data Not Collected"
 echo "  5. Screenshots: include Home Screen widget"
-echo "  6. App name: A New Word Every Day (subtitle: Free. Private. No account.)"
-echo "  7. Review notes: local-only app, no login, widget star works without opening app"
+echo "  6. Subtitle: Private. No account. (never put Free/price in subtitle — Guideline 2.3.7)"
+echo "  7. See docs/app-store-metadata.md for compliant copy"
+echo "  8. Review notes: local-only app, no login, widget star works without opening app"
