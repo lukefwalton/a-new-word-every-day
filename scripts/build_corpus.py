@@ -64,7 +64,7 @@ def stable_id(word: str, lang: str) -> int:
 
 def build(lang: str, source: Path, out: Path) -> list[dict]:
     cfg = LANGUAGES[lang]
-    rows = json.loads(source.read_text())
+    rows = json.loads(source.read_text(encoding="utf-8"))
     if not isinstance(rows, list) or not all(isinstance(r, dict) for r in rows):
         raise SystemExit(f"FAILED — {source.name} must be a JSON array of objects")
     errors = []
@@ -113,7 +113,7 @@ def build(lang: str, source: Path, out: Path) -> list[dict]:
         dup = [w["word"] for w in out_rows if ids.count(w["id"]) > 1]
         raise SystemExit(f"FAILED — id hash collision between: {dup}")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(out_rows, indent=2, ensure_ascii=False) + "\n")
+    out.write_text(json.dumps(out_rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(f"Wrote {len(out_rows)} words to {out}")
     print("Bands:", dict(sorted(Counter(r['band'] for r in out_rows).items())))
@@ -128,7 +128,7 @@ def check_cross_language_collisions(lang: str, built_ids: set[int]):
     for other, cfg in LANGUAGES.items():
         if other == lang or not cfg["out"].exists():
             continue
-        other_ids = {r["id"] for r in json.loads(cfg["out"].read_text())}
+        other_ids = {r["id"] for r in json.loads(cfg["out"].read_text(encoding="utf-8"))}
         clash = built_ids & other_ids
         if clash:
             raise SystemExit(f"FAILED — id collision with {cfg['out'].name}: {sorted(clash)}")
