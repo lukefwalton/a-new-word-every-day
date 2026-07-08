@@ -21,10 +21,20 @@ struct WidgetPreviewCard: View {
                   isStarred: false)
     }
 
+    /// Logical medium-widget canvas (matches `systemMedium` on iPhone).
+    private static let designSize = CGSize(width: 364, height: 169)
+
     var body: some View {
-        ZStack(alignment: .top) {
-            WidgetBackground(theme: theme, style: widgetPreferences.backgroundStyle)
-            WordWidgetView(entry: entry, forcedFamily: .medium, interactiveStar: false)
+        GeometryReader { geo in
+            let scale = min(geo.size.width / Self.designSize.width,
+                            geo.size.height / Self.designSize.height)
+            ZStack(alignment: .topLeading) {
+                WidgetBackground(theme: theme, style: widgetPreferences.backgroundStyle)
+                WordWidgetView(entry: entry, forcedFamily: .medium, interactiveStar: false)
+            }
+            .frame(width: Self.designSize.width, height: Self.designSize.height, alignment: .topLeading)
+            .scaleEffect(scale, anchor: .topLeading)
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .topLeading)
         }
         .frame(maxWidth: .infinity)
         .frame(height: Self.previewHeight)

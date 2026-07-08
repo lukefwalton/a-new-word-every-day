@@ -76,6 +76,14 @@ struct WordWidgetView: View {
         // Only large widgets have room for the editorial spacer; on medium/small it
         // shoves the hero into the clip zone when Rich detail adds definition lines.
         let usesEditorialSpacer = size == .large || size == .extraLarge
+        let mediumFitScale: CGFloat = {
+            guard size == .medium, defLines > 0 else { return 1 }
+            switch defLines {
+            case 1: return 0.96
+            case 2: return 0.91
+            default: return 0.86
+            }
+        }()
 
         return VStack(alignment: centered ? .center : .leading, spacing: size == .small ? 6 : 8) {
             header(word, compact: size == .small, starSize: size == .small ? 14 : 16)
@@ -109,6 +117,7 @@ struct WordWidgetView: View {
                     .frame(maxWidth: .infinity, alignment: elementAlignment)
             }
         }
+        .scaleEffect(mediumFitScale, anchor: .topLeading)
         .padding(padding)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: centered ? .top : .topLeading)
         .background(cardChrome)

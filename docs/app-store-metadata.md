@@ -6,12 +6,12 @@ language in the subtitle, name, or promotional text** — Apple Guideline 2.3.7
 
 ## Subtitle (≤30 chars)
 
-**Use:** `Private. No account.`
+**Use:** `English & Japanese vocabulary`
 
 Alternates:
+- `Private. No account.`
 - `Nothing leaves your phone.`
 - `Local-only. No account.`
-- `One word. On your phone.`
 
 **Rejected:** `Free. Private. No account.`
 
@@ -21,42 +21,40 @@ Alternates:
 One rare word a day on your Home Screen — English, Japanese, or both. Beautiful type, your colors. Private, no account. Nothing leaves your phone.
 ```
 
-## Description section headers
-
-Replace `FREE. PRIVATE. NO ACCOUNT.` with:
-
-```
-PRIVATE. NO ACCOUNT.
-```
-
-Keep pricing in prose if needed: "No subscription or in-app purchases" is fine
-in the description body; avoid leading with "Free" as a headline.
-
 ## Description (full body — paste into App Store Connect)
 
+No URLs in the description — Support and Privacy URLs go in their own fields.
+
 ```
+A New Word Every Day surfaces one rare, useful word each day — English, Japanese, or both — with an original one-line definition and beautiful variable typography.
+
+A BEAUTIFUL WIDGET
+Add a small, medium, large, or extra-large widget (or a Lock Screen accessory). Pick your typeface, palette, accent hue, layout, and how much definition to show. Set widget language per widget. The word updates daily without opening the app.
+
 PRIVATE. NO ACCOUNT.
+No subscription. No ads. No analytics. No login. Stars, per-language difficulty, theme, and optional study schedules stay on your iPhone in a local App Group shared only with the widget.
 
-One rare word a day on your Home Screen — English, Japanese, or both. Beautiful variable typefaces, your colors, your widget layout. Nothing leaves your phone.
+LEARN YOUR WAY
+• Enable English, Japanese, or both — each with its own daily word and difficulty level
+• Swipe onboarding calibrates your level per language
+• Star words from the app or directly from the widget (iOS 17+)
+• Optional FSRS spaced-repetition study for starred words
+• Export starred words to Anki as CSV
 
-• Home Screen & Lock Screen widgets (small, medium, large)
-• English vocabulary (1,100+ elevated words) and Japanese JLPT vocabulary (7,800+ words)
-• Enable either language or both; set widget language per widget
-• Star words from the app or straight from the widget (iOS 17+)
-• Optional spaced-repetition study for starred words (FSRS-6)
-• Seven OFL variable fonts and customizable palettes
-• Export starred words to Anki
+Built for people who want one good word a day, not another feed, account, or cloud sync.
 
-No account. No ads. No analytics. No network requests at runtime. No subscription or in-app purchases.
+For advanced English vocabulary, JLPT study, or both.
 
-Support: https://lukefwalton.com/a-new-word-every-day/
-Privacy: https://lukefwalton.com/a-new-word-every-day/privacy/
+Open source (MIT). English word list: public domain (CC0). Japanese headwords and readings: Tanos (CC BY); definitions original to this app.
 ```
 
-## Keywords (optional, ≤100 chars)
+## Keywords (≤100 chars, comma-separated, no spaces after commas)
 
+Apple already indexes your **name** and **subtitle** — don't waste chars on `word`, `day`, or `english` if subtitle is `English & Japanese vocabulary`.
+
+**Use (99 chars):**
 ```
-vocabulary,japanese,jlpt,english,widget,dictionary,words,learn,anki,language
+japanese,jlpt,vocabulary,widget,offline,privacy,anki,gre,sat,daily,education,kanji,study,fsrs,n5,n4
 ```
 
 ## Review notes (paste into App Review)
@@ -82,14 +80,14 @@ No IAP, no ads, no analytics. All data stays on-device.
 | Support | https://lukefwalton.com/a-new-word-every-day/ |
 | Privacy | https://lukefwalton.com/a-new-word-every-day/privacy/ |
 
-## What's New (build 4 — paste for this resubmission)
+## What's New (build 5 — paste for this resubmission)
 
 ```
 • Japanese vocabulary — 7,800+ JLPT words alongside English
 • Enable English, Japanese, or both in Settings
 • Per-widget language via Edit Widget
 • Smarter study scheduling (FSRS-6) and fresh word pools each cycle
-• Widget preview and layout fixes
+• Widget preview and medium-widget layout fixes (Rich detail no longer clips)
 • Bug fixes and stability improvements
 ```
 
@@ -97,7 +95,7 @@ No IAP, no ads, no analytics. All data stays on-device.
 
 ```
 We removed all price references from the app subtitle and promotional text.
-The subtitle is now "Private. No account." Thank you for the review.
+The subtitle is now "English & Japanese vocabulary." Thank you for the review.
 ```
 
 ## Resubmission checklist (July 2026)
@@ -105,14 +103,14 @@ The subtitle is now "Private. No account." Thank you for the review.
 Local prep (done on this machine):
 
 - [x] Tests pass (`bash scripts/run_tests.sh`)
-- [x] Release archive **1.0 (4)** → `build/WordOfTheDay.xcarchive`
-- [x] Screenshots refreshed → `build/app-store-screenshots/{iphone,ipad}/`
+- [x] Release archive **1.0 (5)** → `build/WordOfTheDay.xcarchive`
+- [x] Screenshots refreshed → `build/app-store-screenshots/{iphone,ipad}/` (Jul 8, after preview fix)
 
 You still need to do in App Store Connect + Xcode:
 
-1. **Metadata** — Subtitle → `Private. No account.` Remove "Free" from promotional text and description headers (see above).
+1. **Metadata** — Subtitle → `English & Japanese vocabulary`. Remove "Free" from promotional text and description (see above). Support/Privacy URLs in their dedicated fields only.
 2. **Upload** — Xcode → Organizer → Distribute App → App Store Connect.
-3. **Version** — Attach build **1.0 (4)** to the existing 1.0 submission.
+3. **Version** — Attach build **1.0 (5)** to the existing 1.0 submission.
 4. **Screenshots** — Re-upload iPhone 6.5" and iPad 13" sets (UI changed: languages, green theme).
 5. **What's New** — Paste the block above.
 6. **Reply** — Optional note to App Review (paste block above), then **Add for Review**.
