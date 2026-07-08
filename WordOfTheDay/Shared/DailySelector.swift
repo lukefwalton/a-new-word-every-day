@@ -59,6 +59,12 @@ struct DailySelector {
     /// Seed for one full pass through the pool. SplitMix64 fully mixes
     /// sequential seeds, so `salt`, `salt + 1`, … give independent orders;
     /// cycle 0 is `salt` itself, preserving the original first-pass order.
+    ///
+    /// `cycle` derives from `pool.count`, which depends on `band`, so past the
+    /// first pass a band change can move the cycle (and thus this seed). That's
+    /// not new instability — a band change already reshuffles the whole pool
+    /// (different membership/size ⇒ different order); `band` is still not an
+    /// explicit seed input, and cycle 0 is unaffected. (SPEC §3.3.)
     private static func cycleSeed(salt: UInt64, cycle: Int) -> UInt64 {
         salt &+ UInt64(cycle)
     }

@@ -125,6 +125,37 @@ final class DailySelectorTests: XCTestCase {
         }
     }
 
+    func test_bandChange_pastAFullCycle_isDeterministicPerBand() {
+        // §3.3 nuance: the per-cycle seed is salt + (day / pool.count), and
+        // pool.count depends on band, so on a day past the lower band's first
+        // full pass a band change can move the cycle. That's fine — selection
+        // stays a pure function of (date, install, salt, band, corpus): a given
+        // band always yields the same word, and the filter is always respected.
+        // (A band change already reshuffled the pool in v1; this only pins that
+        // the post-exhaustion path is still deterministic and band-scoped.)
+        let corpus = Fixtures.corpus(perBand: 4)   // band 1 → 4 words, band 2 → 8
+        let day = Fixtures.day(2026, 1, 6)         // day index 5: cycle 1 for band 1
+        func word(band: Int) -> Word {
+            selector.word(on: day, installDate: install, salt: 9, band: band, corpus: corpus)!
+        }
+        XCTAssertEqual(word(band: 1), word(band: 1), "band 1 must be deterministic")
+        XCTAssertEqual(word(band: 2), word(band: 2), "band 2 must be deterministic")
+        XCTAssertLessThanOrEqual(word(band: 1).band, 1)
+        XCTAssertLessThanOrEqual(word(band: 2).band, 2)
+
+        // Cycle 0 for *each* band still matches that band's legacy shuffle, so
+        // the backward-compat guarantee is per-band, not only for band 1.
+        for band in 1...2 {
+            let pool = corpus.filter { $0.band <= band }.sorted { $0.id < $1.id }
+            let legacy = pool.seededShuffled(seed: 9)
+            let firstPass = (0..<pool.count).map { offset -> Word in
+                let d = Fixtures.utc.date(byAdding: .day, value: offset, to: install)!
+                return selector.word(on: d, installDate: install, salt: 9, band: band, corpus: corpus)!
+            }
+            XCTAssertEqual(firstPass, legacy, "band \(band) cycle 0 must match its legacy shuffle")
+        }
+    }
+
     func test_dayIndex_clampsBeforeInstall() {
         // A date before install shouldn't produce a negative index/crash.
         XCTAssertEqual(selector.dayIndex(installDate: install, on: Fixtures.day(2025, 12, 1)), 0)

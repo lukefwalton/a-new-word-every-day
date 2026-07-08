@@ -113,9 +113,15 @@ todaysWord   = order[dayIndex % order.count]
   byte-identical to the original v1 behavior. A boundary guard swaps a cycle's
   first two slots when its opening word would repeat the previous cycle's
   closing word (pools of 3+ only, where the swap can't move a cycle's last word).
-- Changing `band` reshuffles the eligible pool; we keep yesterday/today stable
-  by mixing `band` into neither the salt nor the day index (band only filters).
-  Edge cases (band shrank below today's word) are handled by clamping.
+- Changing `band` reshuffles the eligible pool; `band` is mixed into neither
+  `installSalt` nor the day index (band only filters). Note that the *effective*
+  per-pass seed is `installSalt + cycle`, and `cycle = dayIndex / pool.count`
+  depends on the pool size — so once a user is past their first full pass, a band
+  change (which changes `pool.count`) can also move the cycle. This is not new
+  instability: changing `band` already reshuffles the whole pool (different
+  membership and size ⇒ a different permutation), exactly as in v1, and cycle 0
+  (every install's first pass) is unaffected. Edge cases (band shrank below
+  today's word) are handled by clamping.
 
 ### 3.4 Difficulty model (grounded by the swipe deck)
 - Onboarding shows ~24 words sampled across the corpus's frequency bands.
