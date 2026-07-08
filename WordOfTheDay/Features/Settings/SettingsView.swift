@@ -34,6 +34,9 @@ struct SettingsView: View {
 
     private var widgetSection: some View {
         Section {
+            // The preview deliberately shows the primary (first-enabled)
+            // language — the same word an unconfigured "App Default" widget
+            // shows. Per-widget languages are previewed on the widget itself.
             if let word = model.todaysWords.first {
                 WidgetPreviewCard(word: word,
                                   theme: model.theme,
