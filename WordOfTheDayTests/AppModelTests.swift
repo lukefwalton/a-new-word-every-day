@@ -130,6 +130,17 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.todaysWords.count, 1)
     }
 
+    func test_japaneseOnlyOnboarding_makesJapanesePrimary() {
+        // Deselecting English entirely is valid — Japanese becomes the only
+        // (and therefore primary) language for Today, widgets, and Settings.
+        let (model, store) = makeBilingualModel()
+        model.completeOnboarding(languages: [.japanese], bands: [.japanese: 3])
+        XCTAssertEqual(store.enabledLanguages, [.japanese])
+        XCTAssertEqual(store.primaryLanguage, .japanese)
+        XCTAssertEqual(model.todaysWords.map(\.language), [.japanese])
+        XCTAssertEqual(model.band(for: .japanese), 3)
+    }
+
     func test_disablingLanguage_keepsItsStarredAndDueWords() {
         // Product rule: disabling a language stops its daily word, not the
         // user's saved study progress — stars and due counts stay intact.
