@@ -88,8 +88,10 @@ struct ReviewEngine {
             next.elapsedDays = elapsed
             next.difficulty = Self.nextDifficulty(last.difficulty, g)
             if elapsed < 1 {
-                // Same-day regrade (the in-session Again requeue lands here):
-                // FSRS-6's short-term stability formula, no retrievability input.
+                // Any sub-day re-review (FSRS-6's short-term path): stability
+                // updates from the grade alone, with no retrievability input.
+                // The in-session Again requeue is the common trigger, but this
+                // covers any second grade within 24h.
                 next.stability = Self.shortTermStability(s: last.stability, g: g)
             } else {
                 let r = Self.forgettingCurve(elapsed: elapsed, stability: last.stability)

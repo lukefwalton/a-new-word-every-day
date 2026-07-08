@@ -86,6 +86,26 @@ final class DailySelectorTests: XCTestCase {
         }
     }
 
+    func test_threeWordPool_noAdjacentRepeat_acrossCycleBoundary() {
+        // Three words is the smallest pool where the boundary guard is active
+        // (pool.count > 2) — the sharpest edge of "the swap never disturbs a
+        // cycle's last word". Over 300 salts the guard fires for ~a third of
+        // them, so this is a real workout, not a happy path.
+        let corpus = [Fixtures.word(1, band: 1), Fixtures.word(2, band: 1),
+                      Fixtures.word(3, band: 1)]
+        for salt in 0..<300 {
+            let sequence = words(days: 0..<12, salt: UInt64(salt), corpus: corpus)
+            for day in 0..<(sequence.count - 1) {
+                XCTAssertNotEqual(sequence[day], sequence[day + 1],
+                                  "salt \(salt): adjacent repeat at day \(day)")
+            }
+            for cycle in 0..<4 {
+                XCTAssertEqual(Set(sequence[cycle * 3..<(cycle * 3 + 3)].map(\.id)), [1, 2, 3],
+                               "salt \(salt), cycle \(cycle) must be a full permutation")
+            }
+        }
+    }
+
     func test_singleWordPool_repeatsWithoutCrashing() {
         let corpus = [Fixtures.word(1, band: 1)]
         let sequence = words(days: 0..<3, salt: 5, corpus: corpus)

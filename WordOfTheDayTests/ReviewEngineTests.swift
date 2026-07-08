@@ -148,6 +148,13 @@ final class ReviewEngineTests: XCTestCase {
         XCTAssertEqual(again.stability, 0.775084, accuracy: 0.0001)
         XCTAssertEqual(again.scheduledDays, 1)
 
+        // Hard (grade 2 < 3) takes the short-term path too, but without the
+        // "never shrink" clamp that protects Good/Easy — so it reduces stability.
+        let hard = engine.grade(first, .hard, now: later)
+        XCTAssertEqual(hard.stability, 1.333379, accuracy: 0.0001)
+        XCTAssertLessThan(hard.stability, first.stability, "same-day Hard shrinks stability")
+        XCTAssertEqual(hard.scheduledDays, 1)
+
         let good = engine.grade(first, .good, now: later)
         XCTAssertEqual(good.stability, 2.3065, accuracy: 0.0001,
                        "a same-day Good must not shrink stability")
