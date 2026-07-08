@@ -87,9 +87,13 @@ final class WordOfTheDayUITests: XCTestCase {
             cont.tap()
         }
 
-        // Today shows the per-language pager, English page first.
+        // Today shows the per-language pager, English page first…
         XCTAssertTrue(app.tabBars.buttons["Today"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["WORD OF THE DAY · ENGLISH"].waitForExistence(timeout: 5))
+
+        // …and paging left renders the Japanese word page.
+        app.swipeLeft()
+        XCTAssertTrue(app.staticTexts["WORD OF THE DAY · JAPANESE"].waitForExistence(timeout: 5))
     }
 
     func test_calibrationDeck_swipeRight_advancesProgress() throws {

@@ -87,6 +87,10 @@ struct SwipeDeck: View {
                 .foregroundStyle(palette.accent)
             HeroWordView(word: word.word, typeface: typeface, color: palette.primaryText,
                          size: 40, animateOnAppear: false)
+            // Calibration is a familiarity self-report, not a recall test — the
+            // card already shows the definition, so the reading shows too.
+            // (Review is the opposite: ReviewSessionView hides the kana until
+            // reveal, because there it *is* part of the answer.)
             if let reading = word.displayReading {
                 Text(reading)
                     .font(LFWTypography.font(.uiBody, typeface: typeface, size: 16))
