@@ -19,6 +19,11 @@ final class AppModel: ObservableObject {
     @Published private(set) var bands: [Language: Int]
     @Published private(set) var onboardingComplete: Bool
     @Published private(set) var starredIDs: [Int]
+    /// Per-word in-app assessments (wordID → known). Published so the Today
+    /// screen can reflect an answer the instant it's recorded — a mark that
+    /// doesn't move the band (and so doesn't swap the day's word) still needs
+    /// visible acknowledgement.
+    @Published private(set) var difficultyMarks: [Int: Bool]
     /// Today's word per enabled language, in the user's language order.
     @Published private(set) var todaysWords: [Word]
     /// Number of starred words due to study now — drives the Practice tab's
@@ -46,6 +51,7 @@ final class AppModel: ObservableObject {
         self.bands = Self.bandsSnapshot(store: store, languages: languages)
         self.onboardingComplete = store.onboardingComplete
         self.starredIDs = store.starredIDs
+        self.difficultyMarks = store.difficultyMarks
         self.todaysWords = service.todaysWords(store: store)
         self.widgetPreferences = store.widgetPreferences
         recomputeDue()
@@ -62,6 +68,7 @@ final class AppModel: ObservableObject {
         theme = store.theme
         onboardingComplete = store.onboardingComplete
         starredIDs = store.starredIDs
+        difficultyMarks = store.difficultyMarks
         syncLanguageState()
         widgetPreferences = store.widgetPreferences
         recomputeDue()
@@ -232,10 +239,17 @@ final class AppModel: ObservableObject {
         guard marks[word.id] != known else { return }
         marks[word.id] = known
         store.difficultyMarks = marks
+        difficultyMarks = marks
         let language = word.language
         setBand(difficulty.adjusted(band: band(for: language), markedKnown: known, wordBand: word.band),
                 for: language)
     }
+
+    /// The in-app assessment recorded for a word: `true` = known, `false` = still
+    /// learning, `nil` = not yet marked. Drives the Today screen's answered state
+    /// so a tap is acknowledged even when it doesn't move the band (and so the
+    /// day's word doesn't visibly change).
+    func markState(for id: Int) -> Bool? { difficultyMarks[id] }
 
     // MARK: Deep links
 

@@ -111,6 +111,37 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.band(for: .english), 3, "repeated identical marks must not keep moving the band")
     }
 
+    func test_markState_reflectsRecordedMark() {
+        let (model, _) = makeModel()
+        model.setBand(2, for: .english)
+        let word = Fixtures.word(99, band: 2)
+        XCTAssertNil(model.markState(for: 99), "an unmarked word reports no answer")
+        model.mark(word, known: true)
+        XCTAssertEqual(model.markState(for: 99), true, "a known mark is reflected immediately")
+        model.mark(word, known: false)  // a changed answer
+        XCTAssertEqual(model.markState(for: 99), false, "a changed answer updates the reported mark")
+    }
+
+    func test_markState_survivesBandUnchangedMark() {
+        // A word below the current band leaves the band (and today's word) put;
+        // the mark must still be recorded so the UI can acknowledge the tap.
+        let (model, _) = makeModel()
+        model.setBand(4, for: .english)
+        let easyWord = Fixtures.word(99, band: 1)
+        model.mark(easyWord, known: true)
+        XCTAssertEqual(model.band(for: .english), 4, "a below-band word doesn't move the band")
+        XCTAssertEqual(model.markState(for: 99), true, "but the mark is still recorded")
+    }
+
+    func test_refreshFromStore_republishesMarkState() {
+        let (model, store) = makeModel()
+        var marks = store.difficultyMarks
+        marks[42] = true
+        store.difficultyMarks = marks
+        model.refreshFromStore()
+        XCTAssertEqual(model.markState(for: 42), true)
+    }
+
     func test_mark_changedAnswer_stillNudges() {
         let (model, _) = makeModel()
         model.setBand(3, for: .english)

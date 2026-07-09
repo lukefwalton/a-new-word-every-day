@@ -9,6 +9,9 @@ struct TodayView: View {
     /// The language page in view. Keyed by language (not word id) so a mark that
     /// swaps the day's word re-renders in place instead of resetting the pager.
     @State private var pagedLanguage: Language = .english
+    /// Bumped on each mark tap to fire selection haptics — tactile confirmation
+    /// the tap registered even when the day's word doesn't change.
+    @State private var markFeedback = 0
 
     private var typeface: LFWTypeface { model.theme.typeface }
     private var palette: LFWPaletteColors { model.theme.colors }
@@ -108,22 +111,57 @@ struct TodayView: View {
     }
 
     private func knowControls(_ word: Word) -> some View {
-        HStack(spacing: 12) {
-            Button {
-                model.mark(word, known: false)
-            } label: {
-                Label("Still learning", systemImage: "arrow.down")
-            }
-            .buttonStyle(.themedCTA(palette: palette, filled: false))
+        // The mark buttons nudge the difficulty band; when the band actually
+        // moves, today's word swaps. But a mark on a word below your band (or at
+        // the top band) leaves the band — and the word — unchanged, so without an
+        // explicit answered state the tap looks like it did nothing. Reflect the
+        // recorded mark here so every tap is acknowledged either way.
+        let mark = model.markState(for: word.id)
+        return VStack(spacing: 12) {
+            HStack(spacing: 12) {
+                Button {
+                    markFeedback += 1
+                    model.mark(word, known: false)
+                } label: {
+                    markLabel("Still learning", systemImage: "arrow.down", selected: mark == false)
+                }
+                .buttonStyle(.themedCTA(palette: palette, filled: mark == false))
 
-            Button {
-                model.mark(word, known: true)
-            } label: {
-                Label("I know this", systemImage: "checkmark")
+                Button {
+                    markFeedback += 1
+                    model.mark(word, known: true)
+                } label: {
+                    markLabel("I know this", systemImage: "checkmark", selected: mark == true)
+                }
+                // Primary emphasis defaults to "I know this" until a choice is
+                // made, then follows the chosen answer.
+                .buttonStyle(.themedCTA(palette: palette, filled: mark != false))
             }
-            .buttonStyle(.themedCTA(palette: palette, filled: true))
+
+            // Always present (fixed height, no layout jump) so a mark that
+            // doesn't change the word is still visibly acknowledged.
+            Text(confirmation(for: mark))
+                .font(LFWTypography.font(.uiBody, typeface: typeface, size: 12))
+                .foregroundStyle(mark == nil ? palette.secondaryText : palette.accent)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .animation(.easeInOut(duration: 0.2), value: mark)
         }
         .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
+        .sensoryFeedback(.selection, trigger: markFeedback)
+    }
+
+    private func markLabel(_ title: String, systemImage: String, selected: Bool) -> some View {
+        // A filled check-circle marks the chosen answer; combined with the caption
+        // it reads as "this is what you picked" without hiding the other option.
+        Label(title, systemImage: selected ? "checkmark.circle.fill" : systemImage)
+    }
+
+    private func confirmation(for mark: Bool?) -> String {
+        switch mark {
+        case .some(true):  return "Marked as known — we'll surface rarer words."
+        case .some(false): return "Marked as still learning — we'll keep it in reach."
+        case .none:        return "Did you already know this word?"
+        }
     }
 
     private var emptyState: some View {
