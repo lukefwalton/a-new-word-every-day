@@ -44,7 +44,11 @@ for entry in "${FONTS[@]}"; do
   name="${entry%%|*}"
   url="${entry#*|}"
   echo "↓ $name"
-  if curl -fsSL "$url" -o "$DEST/$name"; then
+  # Retry transient failures (GitHub's raw host rate-limits with HTTP 429 under
+  # load, which would otherwise fail the whole job before anything builds).
+  # --retry-all-errors covers 429; curl backs off exponentially and honours any
+  # Retry-After header.
+  if curl -fsSL --retry 5 --retry-delay 2 --retry-all-errors "$url" -o "$DEST/$name"; then
     echo "  ✓ $DEST/$name"
   else
     echo "  ✗ failed — update the URL in scripts/fetch_fonts.sh (source repos move files)" >&2
