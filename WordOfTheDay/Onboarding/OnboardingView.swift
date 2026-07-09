@@ -157,12 +157,16 @@ struct OnboardingView: View {
 
             Spacer(minLength: 12)
 
-            Button("Skip — I know my level") {
+            // An explicit, clearly-tappable alternative to swiping — the old faint
+            // gray text was easy to miss.
+            Button {
                 pickedLevel = model.defaultBand
                 assessing = language
+            } label: {
+                Label("Skip swiping — set my level", systemImage: "slider.horizontal.3")
             }
-            .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
-            .foregroundStyle(palette.secondaryText)
+            .buttonStyle(.themedCTA(palette: palette, filled: false))
+            .padding(.horizontal, 24)
             .padding(.bottom, 28)
         }
     }

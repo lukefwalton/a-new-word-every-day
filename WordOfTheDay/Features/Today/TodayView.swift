@@ -98,6 +98,13 @@ struct TodayView: View {
                     .foregroundStyle(palette.secondaryText)
             }
 
+            // Rōmaji so learners who don't read kana can still say the word.
+            if let romaji = word.romaji {
+                Text(romaji)
+                    .font(LFWTypography.font(.uiBody, typeface: typeface, size: 16))
+                    .foregroundStyle(palette.secondaryText.opacity(0.85))
+            }
+
             Text(word.partOfSpeechLabel)
                 .font(LFWTypography.font(.partOfSpeech, typeface: typeface))
                 .foregroundStyle(palette.accent)
@@ -141,7 +148,7 @@ struct TodayView: View {
                 Button {
                     recordAssessment(word, known: false, advances: advances)
                 } label: {
-                    markLabel("Still learning", systemImage: "arrow.down", selected: mark == false)
+                    markLabel("New to me", systemImage: "arrow.down", selected: mark == false)
                 }
                 .buttonStyle(.themedCTA(palette: palette, filled: mark == false))
 
@@ -190,7 +197,7 @@ struct TodayView: View {
         }
         switch mark {
         case .some(true):  return "Marked as known — we'll surface rarer words."
-        case .some(false): return "Marked as still learning — we'll keep it in reach."
+        case .some(false): return "New one for you — we'll keep it in reach."
         case .none:
             return advances
                 ? "Know it or not — either way we'll show you another."

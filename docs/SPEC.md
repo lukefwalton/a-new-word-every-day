@@ -351,6 +351,12 @@ Pipeline: edit `scripts/corpus_source_ja.json`; `scripts/build_corpus.py --lang 
 validates and writes `words_ja.json` with the same stable-id discipline and
 **global id namespace** as English (ids must not collide across languages).
 
+**Rōmaji** is derived on-device at display time (`KanaRomaji`, a table-driven
+Hepburn transliterator over the kana reading), not stored in the corpus — so
+learners who don't yet read kana can still pronounce each word. Shown under the
+word on Today and the swipe deck, and folded into the widget's reading line
+("かいしゃ · kaisha").
+
 App source code stays MIT. Full licensing history:
 [`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md).
 

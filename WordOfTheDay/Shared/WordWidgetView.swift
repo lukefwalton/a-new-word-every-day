@@ -145,16 +145,29 @@ struct WordWidgetView: View {
         }
     }
 
-    /// The kana reading under the hero, when the word carries one (empty
-    /// otherwise). Shared by the framed and minimal layouts.
+    /// The kana reading + rōmaji under the hero, when the word carries them (empty
+    /// otherwise). Kept to a single line ("かいしゃ · kaisha") so learners who don't
+    /// read kana still get a pronunciation without costing the layout extra height.
+    /// Shared by the framed and minimal layouts.
     @ViewBuilder
     private func readingLine(_ word: Word, size: WidgetLayoutSize) -> some View {
-        if let reading = word.displayReading {
-            Text(reading)
+        if let text = readingText(word) {
+            Text(text)
                 .font(LFWTypography.font(.uiBody, typeface: typeface, size: size == .small ? 11 : 13))
                 .foregroundStyle(palette.secondaryText)
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
+        }
+    }
+
+    /// Kana and rōmaji combined for the reading line: both when present, otherwise
+    /// whichever exists. Nil for words with neither (e.g. English).
+    private func readingText(_ word: Word) -> String? {
+        switch (word.displayReading, word.romaji) {
+        case let (kana?, romaji?): return "\(kana) · \(romaji)"
+        case let (kana?, nil):     return kana
+        case let (nil, romaji?):   return romaji
+        case (nil, nil):           return nil
         }
     }
 
@@ -218,15 +231,16 @@ struct WordWidgetView: View {
     // MARK: Lock screen
 
     private func accessoryInline(_ word: Word) -> some View {
-        // For reading-bearing words the kana earns the one line more than the POS.
-        Text("\(word.word) · \(word.displayReading ?? word.partOfSpeechLabel)")
+        // Rōmaji earns the one line when present (readable without kana), else the
+        // kana reading, else the part of speech.
+        Text("\(word.word) · \(word.romaji ?? word.displayReading ?? word.partOfSpeechLabel)")
             .font(LFWTypography.font(.uiBody, typeface: typeface, size: 12))
             .widgetURL(deepLink(word))
     }
 
     private func accessoryRectangular(_ word: Word) -> some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(word.displayReading.map { "\(word.word)  \($0)" } ?? word.word)
+            Text(readingText(word).map { "\(word.word)  \($0)" } ?? word.word)
                 .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 15))
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)

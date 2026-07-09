@@ -40,6 +40,15 @@ struct Word: Codable, Identifiable, Equatable, Hashable {
         return reading
     }
 
+    /// Hepburn rōmaji for Japanese words, so learners who can't read kana can still
+    /// pronounce the word. Derived from the kana `reading` (or the headword itself
+    /// when it's already kana). Nil for non-Japanese words or when the source has
+    /// no romanizable kana.
+    var romaji: String? {
+        guard language == .japanese else { return nil }
+        return KanaRomaji.romaji(from: reading ?? word)
+    }
+
     /// Human-readable part of speech for display and export.
     var partOfSpeechLabel: String {
         switch pos {

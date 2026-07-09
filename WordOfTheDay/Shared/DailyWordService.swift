@@ -62,8 +62,9 @@ struct DailyWordService {
 
     /// A sample of one language's words spread across difficulty bands — the deck
     /// the onboarding swipe step calibrates on. Deterministic per salt so a
-    /// restart is stable.
-    func calibrationSample(language: Language, perBand: Int = 5, salt: UInt64) -> [Word] {
+    /// restart is stable. `perBand` × band-count is the deck size (3 × 5 = 15) —
+    /// enough per band for a stable known-rate without a long swipe chore.
+    func calibrationSample(language: Language, perBand: Int = 3, salt: UInt64) -> [Word] {
         var picked: [Word] = []
         let byBand = Dictionary(grouping: library.corpus(for: language).words, by: { $0.band })
         for band in byBand.keys.sorted() {
