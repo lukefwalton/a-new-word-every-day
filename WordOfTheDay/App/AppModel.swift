@@ -32,6 +32,16 @@ final class AppModel: ObservableObject {
     @Published private(set) var widgetPreferences: WidgetPreferences = .default
     /// Set when a deep link (or the widget) asks to focus a specific word.
     @Published var focusedWordID: Int?
+    /// The in-app "keep going" word per language: once you assess the day's word,
+    /// Today advances to a fresh word from your band so a word you already know is
+    /// never a dead end. In-app only — the widget keeps showing the canonical word
+    /// of the day. Empty means Today is showing that canonical word.
+    @Published private(set) var explorationWords: [Language: Word] = [:]
+    /// Languages whose band has no more fresh words to explore this sitting.
+    @Published private(set) var caughtUpLanguages: Set<Language> = []
+    /// Words shown on Today this session per language (canonical + explored), so
+    /// advancing never serves the same word twice in a sitting.
+    private var seenThisSession: [Language: Set<Int>] = [:]
 
     init(service: DailyWordService, store: SharedStore = .shared, engine: ReviewEngine = ReviewEngine()) {
         #if DEBUG
@@ -250,6 +260,68 @@ final class AppModel: ObservableObject {
     /// so a tap is acknowledged even when it doesn't move the band (and so the
     /// day's word doesn't visibly change).
     func markState(for id: Int) -> Bool? { difficultyMarks[id] }
+
+    // MARK: Today's "keep going" flow (in-app; widget shows the canonical word)
+
+    /// The word Today should show for a language: the in-app exploration word once
+    /// the user has advanced, otherwise the canonical word of the day.
+    func displayWord(for language: Language) -> Word? {
+        explorationWords[language] ?? todaysWords.first { $0.language == language }
+    }
+
+    /// The words Today shows across enabled languages, in order — the exploration
+    /// word where the user has advanced, the canonical daily word otherwise. When
+    /// nobody has advanced, this equals `todaysWords`.
+    var displayWords: [Word] {
+        enabledLanguages.compactMap { displayWord(for: $0) }
+    }
+
+    /// True once the user has advanced past this language's canonical daily word.
+    func isExploring(_ language: Language) -> Bool { explorationWords[language] != nil }
+
+    /// True when this language's band has no more fresh words to serve right now.
+    func isCaughtUp(_ language: Language) -> Bool { caughtUpLanguages.contains(language) }
+
+    /// Record an assessment for the word currently shown on Today and advance to a
+    /// fresh word from the band. The band nudge + widget refresh happen in `mark`;
+    /// the advance is in-app only, so the widget keeps showing the canonical word.
+    func assess(_ word: Word, known: Bool) {
+        mark(word, known: known)
+        advanceExploration(from: word)
+    }
+
+    /// Return a language's Today view to its canonical word of the day.
+    func backToToday(_ language: Language) {
+        explorationWords[language] = nil
+        caughtUpLanguages.remove(language)
+        // Keep `seenThisSession` so resuming the sweep doesn't re-serve words
+        // already seen this sitting.
+    }
+
+    /// Pick the next fresh word for a language, skipping everything shown this
+    /// session and every word the user has ever marked "known" (so we surface
+    /// words worth learning). Flags the language caught-up when the pool is dry.
+    private func advanceExploration(from word: Word) {
+        let language = word.language
+        var seen = seenThisSession[language] ?? []
+        if let daily = todaysWords.first(where: { $0.language == language }) {
+            seen.insert(daily.id)   // never advance straight back to today's word
+        }
+        seen.insert(word.id)
+        seenThisSession[language] = seen
+
+        let skip = seen.union(knownMarkedIDs())
+        if let next = service.explorationWord(store: store, language: language, seen: skip) {
+            explorationWords[language] = next
+            caughtUpLanguages.remove(language)
+        } else {
+            caughtUpLanguages.insert(language)   // stay on the current word
+        }
+    }
+
+    private func knownMarkedIDs() -> Set<Int> {
+        Set(difficultyMarks.compactMap { $0.value ? $0.key : nil })
+    }
 
     // MARK: Deep links
 

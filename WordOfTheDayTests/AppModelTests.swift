@@ -142,6 +142,74 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.markState(for: 42), true)
     }
 
+    // MARK: Today's "keep going" flow
+
+    func test_assess_advancesToAFreshWord() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        let daily = model.displayWord(for: .english)!
+        XCTAssertFalse(model.isExploring(.english), "starts on the canonical daily word")
+
+        model.assess(daily, known: true)
+
+        XCTAssertTrue(model.isExploring(.english), "assessing advances into the keep-going flow")
+        let next = model.displayWord(for: .english)!
+        XCTAssertNotEqual(next.id, daily.id, "a fresh word replaces the one just assessed")
+    }
+
+    func test_assess_neverServesAWordMarkedKnown() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 5]) // whole corpus eligible
+        var shown = Set<Int>()
+        var current = model.displayWord(for: .english)!
+        // Sweep several words; each shown word gets marked known as we pass it.
+        for _ in 0..<6 {
+            shown.insert(current.id)
+            model.assess(current, known: true)
+            guard !model.isCaughtUp(.english) else { break }
+            current = model.displayWord(for: .english)!
+            XCTAssertFalse(shown.contains(current.id), "a known word is never served again")
+        }
+    }
+
+    func test_backToToday_restoresCanonicalWord() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        let daily = model.displayWord(for: .english)!
+        model.assess(daily, known: true)
+        XCTAssertTrue(model.isExploring(.english))
+
+        model.backToToday(.english)
+
+        XCTAssertFalse(model.isExploring(.english))
+        XCTAssertEqual(model.displayWord(for: .english)?.id, model.todaysWords.first?.id,
+                       "back-to-today shows the canonical word of the day again")
+    }
+
+    func test_assess_reportsCaughtUp_whenBandExhausted() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 1]) // band 1 = 4 words
+        var current = model.displayWord(for: .english)!
+        // "Still learning" holds the band at 1 (marking known would raise it and
+        // grow the pool), so this small band actually runs dry.
+        for _ in 0..<10 {
+            model.assess(current, known: false)
+            if model.isCaughtUp(.english) { break }
+            current = model.displayWord(for: .english)!
+        }
+        XCTAssertTrue(model.isCaughtUp(.english), "sweeping a tiny band dry reports caught-up")
+    }
+
+    func test_assess_onlyAdvancesTheAssessedLanguage() {
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 3, .japanese: 3])
+        let english = model.displayWord(for: .english)!
+        model.assess(english, known: true)
+        XCTAssertTrue(model.isExploring(.english))
+        XCTAssertFalse(model.isExploring(.japanese), "the other language stays on its daily word")
+    }
+
     func test_mark_changedAnswer_stillNudges() {
         let (model, _) = makeModel()
         model.setBand(3, for: .english)

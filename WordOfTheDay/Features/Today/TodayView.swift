@@ -3,7 +3,10 @@ import LFWDesignSystem
 
 /// The in-app mirror of the widget: today's word — one page per enabled
 /// language — large, in the chosen variable font and palette, with star + a
-/// quiet "did you know it?" mark that nudges that language's difficulty band.
+/// "did you know it?" mark that nudges that language's difficulty band and
+/// advances to a fresh word from your level (so a word you already know is never
+/// a dead end). The widget keeps showing the canonical word of the day; this
+/// "keep going" flow is in-app only.
 struct TodayView: View {
     @EnvironmentObject private var model: AppModel
     /// The language page in view. Keyed by language (not word id) so a mark that
@@ -26,14 +29,14 @@ struct TodayView: View {
             LFWThemedBackground(config: model.theme)
             if let focused = focusedWord {
                 content(focused)
-            } else if model.todaysWords.isEmpty {
+            } else if model.displayWords.isEmpty {
                 emptyState
-            } else if model.todaysWords.count == 1 {
-                content(model.todaysWords[0])
+            } else if model.displayWords.count == 1 {
+                content(model.displayWords[0])
             } else {
                 // One page per language; the dots double as the "there's more" cue.
                 TabView(selection: $pagedLanguage) {
-                    ForEach(model.todaysWords, id: \.language) { word in
+                    ForEach(model.displayWords, id: \.language) { word in
                         content(word)
                             .tag(word.language)
                     }
@@ -46,8 +49,29 @@ struct TodayView: View {
 
     private func eyebrow(_ word: Word) -> String {
         if model.focusedWordID != nil { return "SAVED WORD" }
-        guard model.enabledLanguages.count > 1 else { return "WORD OF THE DAY" }
-        return "WORD OF THE DAY · \(word.language.displayName.uppercased())"
+        let stem = model.isExploring(word.language) ? "ANOTHER WORD" : "WORD OF THE DAY"
+        guard model.enabledLanguages.count > 1 else { return stem }
+        return "\(stem) · \(word.language.displayName.uppercased())"
+    }
+
+    /// Shown when Today isn't on the canonical daily word: a deep-linked saved
+    /// word, or a word reached via the in-app "keep going" flow. Both return to
+    /// today's word.
+    @ViewBuilder
+    private func backToTodayButton(_ word: Word) -> some View {
+        if model.focusedWordID != nil {
+            todayButton { model.focusedWordID = nil }
+        } else if model.isExploring(word.language) {
+            todayButton { model.backToToday(word.language) }
+        }
+    }
+
+    private func todayButton(_ action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Label("Today", systemImage: "arrow.uturn.backward")
+                .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
+        }
+        .tint(palette.accent)
     }
 
     private func content(_ word: Word) -> some View {
@@ -60,17 +84,9 @@ struct TodayView: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
                 Spacer()
-                // Viewing a saved word is transient: offer an explicit way back to
-                // the actual daily word rather than persisting the override.
-                if model.focusedWordID != nil {
-                    Button {
-                        model.focusedWordID = nil
-                    } label: {
-                        Label("Today", systemImage: "arrow.uturn.backward")
-                            .font(LFWTypography.font(.uiBody, typeface: typeface, size: 13))
-                    }
-                    .tint(palette.accent)
-                }
+                // Viewing a saved or "keep going" word is transient: offer an
+                // explicit way back to the actual daily word.
+                backToTodayButton(word)
                 starButton(word)
             }
 
@@ -93,7 +109,9 @@ struct TodayView: View {
 
             Spacer()
 
-            knowControls(word)
+            // The daily / "keep going" flow advances to a fresh word on each
+            // assessment; the deep-linked saved-word view just records the mark.
+            knowControls(word, advances: model.focusedWordID == nil)
         }
         .padding(28)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -110,26 +128,25 @@ struct TodayView: View {
         .accessibilityLabel(model.isStarred(word.id) ? "Remove from practice list" : "Save to practice list")
     }
 
-    private func knowControls(_ word: Word) -> some View {
-        // The mark buttons nudge the difficulty band; when the band actually
-        // moves, today's word swaps. But a mark on a word below your band (or at
-        // the top band) leaves the band — and the word — unchanged, so without an
-        // explicit answered state the tap looks like it did nothing. Reflect the
-        // recorded mark here so every tap is acknowledged either way.
+    private func knowControls(_ word: Word, advances: Bool) -> some View {
+        // In the daily / "keep going" flow, assessing advances to a fresh word from
+        // your band, so a word you already know is never a dead end. The recorded
+        // mark also drives an answered state, which is what shows through at the
+        // edges: the caught-up case, the saved-word view, or returning to an
+        // already-marked daily word — where the word doesn't advance.
         let mark = model.markState(for: word.id)
+        let caughtUp = advances && model.isCaughtUp(word.language)
         return VStack(spacing: 12) {
             HStack(spacing: 12) {
                 Button {
-                    markFeedback += 1
-                    model.mark(word, known: false)
+                    recordAssessment(word, known: false, advances: advances)
                 } label: {
                     markLabel("Still learning", systemImage: "arrow.down", selected: mark == false)
                 }
                 .buttonStyle(.themedCTA(palette: palette, filled: mark == false))
 
                 Button {
-                    markFeedback += 1
-                    model.mark(word, known: true)
+                    recordAssessment(word, known: true, advances: advances)
                 } label: {
                     markLabel("I know this", systemImage: "checkmark", selected: mark == true)
                 }
@@ -138,16 +155,27 @@ struct TodayView: View {
                 .buttonStyle(.themedCTA(palette: palette, filled: mark != false))
             }
 
-            // Always present (fixed height, no layout jump) so a mark that
-            // doesn't change the word is still visibly acknowledged.
-            Text(confirmation(for: mark))
+            // Always present (fixed height, no layout jump) so every tap is
+            // acknowledged — the next word, or a note when the band is exhausted.
+            Text(caption(mark: mark, caughtUp: caughtUp, advances: advances))
                 .font(LFWTypography.font(.uiBody, typeface: typeface, size: 12))
-                .foregroundStyle(mark == nil ? palette.secondaryText : palette.accent)
+                .foregroundStyle(caughtUp || mark != nil ? palette.accent : palette.secondaryText)
                 .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
                 .animation(.easeInOut(duration: 0.2), value: mark)
+                .animation(.easeInOut(duration: 0.2), value: caughtUp)
         }
         .font(LFWTypography.font(.uiBody, typeface: typeface, size: 15))
         .sensoryFeedback(.selection, trigger: markFeedback)
+    }
+
+    private func recordAssessment(_ word: Word, known: Bool, advances: Bool) {
+        markFeedback += 1
+        if advances {
+            model.assess(word, known: known)
+        } else {
+            model.mark(word, known: known)
+        }
     }
 
     private func markLabel(_ title: String, systemImage: String, selected: Bool) -> some View {
@@ -156,11 +184,17 @@ struct TodayView: View {
         Label(title, systemImage: selected ? "checkmark.circle.fill" : systemImage)
     }
 
-    private func confirmation(for mark: Bool?) -> String {
+    private func caption(mark: Bool?, caughtUp: Bool, advances: Bool) -> String {
+        if caughtUp {
+            return "That's every word at your level for now — check back tomorrow, or raise your level in Settings."
+        }
         switch mark {
         case .some(true):  return "Marked as known — we'll surface rarer words."
         case .some(false): return "Marked as still learning — we'll keep it in reach."
-        case .none:        return "Did you already know this word?"
+        case .none:
+            return advances
+                ? "Know it or not — either way we'll show you another."
+                : "Did you already know this word?"
         }
     }
 

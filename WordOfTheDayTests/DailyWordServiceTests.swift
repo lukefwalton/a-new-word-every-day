@@ -36,6 +36,48 @@ final class DailyWordServiceTests: XCTestCase {
         XCTAssertEqual(words[1].band, 1, "the Japanese word must respect the Japanese band")
     }
 
+    // MARK: Exploration ("keep going") picks
+
+    func test_explorationWord_staysWithinBandAndSkipsSeen() {
+        let svc = Fixtures.service()          // 20 words, 4 per band across bands 1…5
+        let store = Fixtures.volatileStore()
+        store.setBand(2, for: .english)       // eligible pool = bands 1 & 2 (8 words)
+
+        let first = svc.explorationWord(store: store, language: .english, seen: [])
+        XCTAssertNotNil(first)
+        XCTAssertLessThanOrEqual(first!.band, 2, "exploration respects the band ceiling")
+
+        // Feeding the first pick back as seen yields a different word.
+        let second = svc.explorationWord(store: store, language: .english, seen: [first!.id])
+        XCTAssertNotNil(second)
+        XCTAssertNotEqual(second!.id, first!.id, "a seen word is never served again")
+    }
+
+    func test_explorationWord_isDeterministic() {
+        let svc = Fixtures.service()
+        let store = Fixtures.volatileStore()
+        store.setBand(3, for: .english)
+        let a = svc.explorationWord(store: store, language: .english, seen: [1, 2])
+        let b = svc.explorationWord(store: store, language: .english, seen: [1, 2])
+        XCTAssertEqual(a, b, "same install + band + seen ⇒ same next word")
+    }
+
+    func test_explorationWord_walksTheWholeBandThenRunsDry() {
+        let svc = Fixtures.service()
+        let store = Fixtures.volatileStore()
+        store.setBand(1, for: .english)       // band 1 only = 4 words (ids 1…4)
+
+        var seen: Set<Int> = []
+        var collected: Set<Int> = []
+        while let w = svc.explorationWord(store: store, language: .english, seen: seen) {
+            collected.insert(w.id)
+            seen.insert(w.id)
+        }
+        XCTAssertEqual(collected, [1, 2, 3, 4], "exploration covers the whole eligible pool")
+        XCTAssertNil(svc.explorationWord(store: store, language: .english, seen: seen),
+                     "an exhausted pool returns nil")
+    }
+
     func test_wordByID_searchesAllLanguages() {
         let svc = bilingualService()
         XCTAssertEqual(svc.word(id: 3)?.language, .english)

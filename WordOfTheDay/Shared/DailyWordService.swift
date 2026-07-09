@@ -30,6 +30,29 @@ struct DailyWordService {
         store.enabledLanguages.compactMap { todaysWord(store: store, language: $0, now: now) }
     }
 
+    /// The next word to explore in-app from a language's band — the "keep going"
+    /// word behind Today's mark buttons — given every id the session has already
+    /// shown (`seen`). A stable shuffle of the eligible pool, so the progression is
+    /// deterministic per install and never repeats within the pool. Returns nil
+    /// once the band is exhausted.
+    ///
+    /// Seeded in a namespace disjoint from the daily selector's, so exploring
+    /// neither consumes nor collides with the canonical word-of-the-day sequence
+    /// the widget shows — the two stay independent.
+    func explorationWord(store: SharedStore, language: Language, seen: Set<Int>) -> Word? {
+        let band = store.band(for: language)
+        let pool = selector.eligible(in: library.corpus(for: language).words, band: band)
+            .sorted { $0.id < $1.id }
+            .seededShuffled(seed: Self.explorationSeed(salt: store.installSalt, band: band))
+        return pool.first { !seen.contains($0.id) }
+    }
+
+    /// Exploration order seed. XOR-folds a fixed constant into the install salt so
+    /// this ordering can never coincide with a daily cycle seed (`salt &+ cycle`).
+    private static func explorationSeed(salt: UInt64, band: Int) -> UInt64 {
+        (salt ^ 0xA5A5_5A5A_C3C3_3C3C) &+ UInt64(band)
+    }
+
     func word(id: Int) -> Word? { library.word(id: id) }
 
     /// Starred words, newest first, skipping any ids no longer in the corpora.
