@@ -33,8 +33,13 @@ final class AppModel: ObservableObject {
     /// (secondary, opt-in) Study affordance.
     @Published private(set) var dueCount: Int = 0
     @Published private(set) var widgetPreferences: WidgetPreferences = .default
-    /// Set when a deep link (or the widget) asks to focus a specific word.
+    /// Set when Practice asks to focus a specific saved word — a single-word
+    /// takeover on Today. Widget taps deliberately do *not* set this (see
+    /// `openDailyWord`); they land on the normal multi-language pager instead.
     @Published var focusedWordID: Int?
+    /// The language fronted on the Today pager. Bound to the pager's selection and
+    /// steered by widget taps so tapping a language's widget opens that language.
+    @Published var todayLanguage: Language = .english
     /// The in-app "keep going" word per language: once you assess the day's word,
     /// Today advances to a fresh word from your band so a word you already know is
     /// never a dead end. In-app only — the widget keeps showing the canonical word
@@ -353,18 +358,35 @@ final class AppModel: ObservableObject {
 
     // MARK: Deep links
 
-    /// Open a saved word on the Today tab. Sets the tab explicitly (not just the
-    /// focused id) so reselecting the *same* word still navigates — a value-only
-    /// `onChange` would miss an unchanged id.
+    /// Open a saved word (from Practice) as a single-word takeover on Today. Sets
+    /// the tab explicitly (not just the focused id) so reselecting the *same* word
+    /// still navigates — a value-only `onChange` would miss an unchanged id.
     func openWord(_ id: Int) {
         focusedWordID = id
         selectedTab = .today
     }
 
+    /// A widget tap. Rather than the forked single-word takeover, open the main
+    /// app on Today and front the tapped word's language on the normal pager,
+    /// showing that language's canonical daily word (what the widget shows). Falls
+    /// back to a focused view only if the word's language is no longer enabled, so
+    /// the tap is never silently dropped.
+    func openDailyWord(id: Int) {
+        selectedTab = .today
+        guard let language = service.word(id: id)?.language else { return }
+        if enabledLanguages.contains(language) {
+            focusedWordID = nil
+            backToToday(language)     // show today's word, not an in-app exploration
+            todayLanguage = language
+        } else {
+            focusedWordID = id
+        }
+    }
+
     func handle(url: URL) {
         guard url.scheme == "wordoftheday" else { return }
         if url.host == "word", let id = Int(url.lastPathComponent) {
-            openWord(id)
+            openDailyWord(id: id)
         }
     }
 

@@ -289,10 +289,46 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.selectedTab, .today, "same id must still route to Today")
     }
 
-    func test_deepLink_focusesWord() {
+    func test_deepLink_opensTodayOnPager_notFocused() {
+        // A widget tap should land on the normal Today pager (not the forked
+        // single-word takeover), fronting the tapped word's language.
         let (model, _) = makeModel()
+        model.selectedTab = .practice
         model.handle(url: URL(string: "wordoftheday://word/4")!)
-        XCTAssertEqual(model.focusedWordID, 4)
+        XCTAssertEqual(model.selectedTab, .today)
+        XCTAssertNil(model.focusedWordID, "widget taps must not fork into a focused view")
+        XCTAssertEqual(model.todayLanguage, .english)
+    }
+
+    func test_deepLink_frontsTappedLanguage() {
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 3, .japanese: 3])
+        model.todayLanguage = .english
+        // id 100+ are the Japanese fixture corpus.
+        model.handle(url: URL(string: "wordoftheday://word/104")!)
+        XCTAssertEqual(model.todayLanguage, .japanese, "tapping the JA widget fronts Japanese")
+        XCTAssertNil(model.focusedWordID)
+    }
+
+    func test_deepLink_clearsExplorationForTappedLanguage() {
+        // Tapping the widget shows that language's canonical daily word, not an
+        // in-app "keep going" word the user had advanced to.
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        model.assess(model.displayWord(for: .english)!, known: true)
+        XCTAssertTrue(model.isExploring(.english))
+        model.handle(url: URL(string: "wordoftheday://word/4")!)
+        XCTAssertFalse(model.isExploring(.english), "widget tap returns to today's word")
+    }
+
+    func test_deepLink_disabledLanguage_fallsBackToFocused() {
+        // The word exists but its language isn't enabled — still show it (focused)
+        // rather than dropping the tap.
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        model.handle(url: URL(string: "wordoftheday://word/104")!)  // a Japanese word
+        XCTAssertEqual(model.focusedWordID, 104)
         XCTAssertEqual(model.selectedTab, .today)
     }
 

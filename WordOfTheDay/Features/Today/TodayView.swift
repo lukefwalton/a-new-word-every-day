@@ -9,9 +9,6 @@ import LFWDesignSystem
 /// "keep going" flow is in-app only.
 struct TodayView: View {
     @EnvironmentObject private var model: AppModel
-    /// The language page in view. Keyed by language (not word id) so a mark that
-    /// swaps the day's word re-renders in place instead of resetting the pager.
-    @State private var pagedLanguage: Language = .english
     /// Bumped on each mark tap to fire selection haptics — tactile confirmation
     /// the tap registered even when the day's word doesn't change.
     @State private var markFeedback = 0
@@ -35,7 +32,9 @@ struct TodayView: View {
                 content(model.displayWords[0])
             } else {
                 // One page per language; the dots double as the "there's more" cue.
-                TabView(selection: $pagedLanguage) {
+                // Selection lives on the model so a widget tap can front the tapped
+                // language (and manual swipes keep it in sync).
+                TabView(selection: $model.todayLanguage) {
                     ForEach(model.displayWords, id: \.language) { word in
                         content(word)
                             .tag(word.language)
