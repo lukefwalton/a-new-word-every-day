@@ -68,6 +68,7 @@ struct TodayView: View {
                     }
                     .tint(palette.accent)
                 }
+                speakButton(word)
                 starButton(word)
             }
 
@@ -94,6 +95,18 @@ struct TodayView: View {
         }
         .padding(28)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+
+    private func speakButton(_ word: Word) -> some View {
+        let speaking = model.speakingWordID == word.id
+        return Button {
+            model.speak(word)
+        } label: {
+            Image(systemName: speaking ? "speaker.wave.2.fill" : "speaker.wave.2")
+                .font(.system(size: 22, weight: .semibold))
+                .foregroundStyle(speaking ? palette.accent : palette.secondaryText)
+        }
+        .accessibilityLabel(speaking ? "Stop pronunciation" : "Pronounce \(word.word)")
     }
 
     private func starButton(_ word: Word) -> some View {

@@ -10,6 +10,9 @@ final class AppModel: ObservableObject {
     let store: SharedStore
     private let difficulty = DifficultyModel()
     private let engine: ReviewEngine
+    /// On-device pronunciation. Held strongly here (the synthesizer must outlive its
+    /// utterance) for the app's whole lifetime.
+    private let speech = SpeechService()
 
     enum Tab: Hashable { case today, practice, settings }
 
@@ -27,6 +30,9 @@ final class AppModel: ObservableObject {
     @Published private(set) var widgetPreferences: WidgetPreferences = .default
     /// Set when a deep link (or the widget) asks to focus a specific word.
     @Published var focusedWordID: Int?
+    /// The word currently being pronounced, or nil. Drives the speak button's
+    /// active state; cleared when speech actually ends (not just when it starts).
+    @Published private(set) var speakingWordID: Int?
 
     init(service: DailyWordService, store: SharedStore = .shared, engine: ReviewEngine = ReviewEngine()) {
         #if DEBUG
@@ -181,6 +187,28 @@ final class AppModel: ObservableObject {
         starredIDs = store.starredIDs
         recomputeDue()
         WidgetReloader.reload()
+    }
+
+    // MARK: Pronunciation (on-device TTS)
+
+    /// Speak a word aloud, or stop if it's already the one speaking (tap-to-toggle).
+    /// `speakingWordID` is set optimistically and cleared by the completion when
+    /// audio truly ends, so the button reflects real playback.
+    func speak(_ word: Word) {
+        if speakingWordID == word.id {
+            speech.stop()
+            return
+        }
+        speakingWordID = word.id
+        speech.speak(SpeechPlan.make(for: word)) { [weak self] in
+            // Only clear if this word is still the one showing as speaking; a newer
+            // tap may already have taken over.
+            if self?.speakingWordID == word.id { self?.speakingWordID = nil }
+        }
+    }
+
+    func stopSpeaking() {
+        speech.stop()
     }
 
     // MARK: Review (in-app study — the lightweight Anki behind the widget)
