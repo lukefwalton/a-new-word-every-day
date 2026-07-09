@@ -41,6 +41,7 @@ struct ReviewSessionView: View {
             .padding(24)
         }
         .onAppear { if queue.words.isEmpty { queue = ReviewQueue(model.dueWords()) } }
+        .onDisappear { model.stopSpeaking() }   // don't keep speaking after the session closes
         // Subtle, opt-in haptics: a soft tap on reveal, and a per-grade tap on commit
         // (a touch firmer for a missed card) so grading feels physical without noise.
         .sensoryFeedback(trigger: revealed) { _, isRevealed in isRevealed ? .selection : nil }
@@ -87,11 +88,15 @@ struct ReviewSessionView: View {
 
             if revealed {
                 // The reading is part of the answer for Japanese recognition
-                // cards, so it stays hidden until reveal.
-                if let reading = word.displayReading {
-                    Text(reading)
-                        .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 20))
-                        .foregroundStyle(palette.secondaryText)
+                // cards, so it — and pronunciation, which voices the same answer —
+                // stay hidden until reveal.
+                HStack(spacing: 12) {
+                    if let reading = word.displayReading {
+                        Text(reading)
+                            .font(LFWTypography.font(.uiTitle, typeface: typeface, size: 20))
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                    speakButton(word)
                 }
                 Text(word.partOfSpeechLabel)
                     .font(LFWTypography.font(.partOfSpeech, typeface: typeface))
@@ -121,6 +126,18 @@ struct ReviewSessionView: View {
         .contentShape(Rectangle())
         .onTapGesture { if !revealed { reveal() } }
         .animation(.easeInOut(duration: 0.2), value: revealed)
+    }
+
+    private func speakButton(_ word: Word) -> some View {
+        let speaking = model.speakingWordID == word.id
+        return Button {
+            model.speak(word)
+        } label: {
+            Image(systemName: speaking ? "speaker.wave.2.fill" : "speaker.wave.2")
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundStyle(speaking ? palette.accent : palette.secondaryText)
+        }
+        .accessibilityLabel(speaking ? "Stop pronunciation" : "Pronounce \(word.word)")
     }
 
     private func gradeButtons(_ word: Word) -> some View {
@@ -179,6 +196,7 @@ struct ReviewSessionView: View {
     }
 
     private func commit(_ grade: ReviewGrade, for word: Word) {
+        model.stopSpeaking()   // don't let one card's audio bleed into the next
         lastGrade = grade
         gradeTick += 1
         model.grade(word, grade, now: reviewNow)
