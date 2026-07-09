@@ -10,7 +10,12 @@ struct SwipeDeck: View {
     let words: [Word]
     let typeface: LFWTypeface
     let palette: LFWPaletteColors
-    /// Called once the deck is empty, with one answer per card in swipe order.
+    /// Stop early once this many words in a row are marked "new to me": a clear
+    /// sign the deck is over the user's head, so we place them at the easy end
+    /// rather than making them swipe through the rest. 0 disables early exit.
+    let earlyExitStreak: Int
+    /// Called when the deck is exhausted *or* the early-exit streak trips, with
+    /// one answer per card swiped so far, in order.
     let onComplete: ([Answer]) -> Void
 
     struct Answer: Equatable {
@@ -25,14 +30,18 @@ struct SwipeDeck: View {
     /// True while the top card is flying off — input is locked so a fast second
     /// tap/swipe can't record a duplicate answer for the same word.
     @State private var isCommitting = false
+    /// Latched once `onComplete` has fired so an early exit can't double-report.
+    @State private var didComplete = false
 
     private let threshold: CGFloat = 110
 
     init(words: [Word], typeface: LFWTypeface, palette: LFWPaletteColors,
+         earlyExitStreak: Int = 6,
          onComplete: @escaping ([Answer]) -> Void) {
         self.words = words
         self.typeface = typeface
         self.palette = palette
+        self.earlyExitStreak = earlyExitStreak
         self.onComplete = onComplete
         _remaining = State(initialValue: words.reversed())
     }
@@ -95,6 +104,11 @@ struct SwipeDeck: View {
                 Text(reading)
                     .font(LFWTypography.font(.uiBody, typeface: typeface, size: 16))
                     .foregroundStyle(palette.secondaryText)
+            }
+            if let romaji = word.romaji {
+                Text(romaji)
+                    .font(LFWTypography.font(.uiBody, typeface: typeface, size: 14))
+                    .foregroundStyle(palette.secondaryText.opacity(0.85))
             }
             Text(word.definition)
                 .font(LFWTypography.font(.definition, typeface: typeface, size: 17))
@@ -163,8 +177,26 @@ struct SwipeDeck: View {
             answers.append(Answer(word: word, known: known))
             drag = .zero
             isCommitting = false
-            if remaining.isEmpty { onComplete(answers) }
+            if !didComplete && (remaining.isEmpty || earlyExitTripped) {
+                didComplete = true
+                onComplete(answers)
+            }
         }
+    }
+
+    /// The number of "new to me" answers at the tail of the deck. Computed from
+    /// `answers` (not a running counter) so undo naturally shortens the streak.
+    private var trailingUnknownStreak: Int {
+        var n = 0
+        for answer in answers.reversed() {
+            if answer.known { break }
+            n += 1
+        }
+        return n
+    }
+
+    private var earlyExitTripped: Bool {
+        earlyExitStreak > 0 && trailingUnknownStreak >= earlyExitStreak
     }
 
     private func undo() {

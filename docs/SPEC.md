@@ -249,7 +249,18 @@ like the siblings. Flow:
 ### 6.2 Today (in-app mirror of the widget)
 The day's word large in the hero variable font, part of speech, definition,
 example sentence; a **Star** toggle; a subtle weight-axis reveal animation.
-Swipe/tap to peek yesterday or a "surprise me" from your band.
+
+**Keep-going flow.** The two assessment buttons ("I know this" / "Still
+learning") both nudge the band *and* advance Today to a fresh word from your
+level, so a word-of-the-day you already know is never a dead end — you can sweep
+as many as you like in one sitting. This is an **in-app** exploration: the word
+selection is a deterministic shuffle of your eligible pool seeded in a namespace
+disjoint from the daily selector (`DailyWordService.explorationWord`), so it
+neither consumes nor collides with the canonical word-of-the-day sequence — the
+**widget keeps showing the canonical daily word** (app↔widget lockstep at a
+glance is preserved). A "Today" affordance returns to the canonical word; words
+already marked *known* are skipped so exploration surfaces genuinely new words,
+and the band runs "caught up" gracefully once its pool is exhausted.
 
 ### 6.3 Practice
 List of starred words (the Practice list). Tap → detail. Per-row Know/Don't-know
@@ -339,6 +350,12 @@ Japanese words are original to this app. Attribution requirements are in
 Pipeline: edit `scripts/corpus_source_ja.json`; `scripts/build_corpus.py --lang ja`
 validates and writes `words_ja.json` with the same stable-id discipline and
 **global id namespace** as English (ids must not collide across languages).
+
+**Rōmaji** is derived on-device at display time (`KanaRomaji`, a table-driven
+Hepburn transliterator over the kana reading), not stored in the corpus — so
+learners who don't yet read kana can still pronounce each word. Shown under the
+word on Today and the swipe deck, and folded into the widget's reading line
+("かいしゃ · kaisha").
 
 App source code stays MIT. Full licensing history:
 [`docs/prior-art-and-licensing.md`](docs/prior-art-and-licensing.md).

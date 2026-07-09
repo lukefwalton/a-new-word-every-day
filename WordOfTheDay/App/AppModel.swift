@@ -22,14 +22,34 @@ final class AppModel: ObservableObject {
     @Published private(set) var bands: [Language: Int]
     @Published private(set) var onboardingComplete: Bool
     @Published private(set) var starredIDs: [Int]
+    /// Per-word in-app assessments (wordID → known). Published so the Today
+    /// screen can reflect an answer the instant it's recorded — a mark that
+    /// doesn't move the band (and so doesn't swap the day's word) still needs
+    /// visible acknowledgement.
+    @Published private(set) var difficultyMarks: [Int: Bool]
     /// Today's word per enabled language, in the user's language order.
     @Published private(set) var todaysWords: [Word]
     /// Number of starred words due to study now — drives the Practice tab's
     /// (secondary, opt-in) Study affordance.
     @Published private(set) var dueCount: Int = 0
     @Published private(set) var widgetPreferences: WidgetPreferences = .default
-    /// Set when a deep link (or the widget) asks to focus a specific word.
+    /// Set when Practice asks to focus a specific saved word — a single-word
+    /// takeover on Today. Widget taps deliberately do *not* set this (see
+    /// `openDailyWord`); they land on the normal multi-language pager instead.
     @Published var focusedWordID: Int?
+    /// The language fronted on the Today pager. Bound to the pager's selection and
+    /// steered by widget taps so tapping a language's widget opens that language.
+    @Published var todayLanguage: Language = .english
+    /// The in-app "keep going" word per language: once you assess the day's word,
+    /// Today advances to a fresh word from your band so a word you already know is
+    /// never a dead end. In-app only — the widget keeps showing the canonical word
+    /// of the day. Empty means Today is showing that canonical word.
+    @Published private(set) var explorationWords: [Language: Word] = [:]
+    /// Languages whose band has no more fresh words to explore this sitting.
+    @Published private(set) var caughtUpLanguages: Set<Language> = []
+    /// Words shown on Today this session per language (canonical + explored), so
+    /// advancing never serves the same word twice in a sitting.
+    private var seenThisSession: [Language: Set<Int>] = [:]
     /// The word currently being pronounced, or nil. Drives the speak button's
     /// active state; cleared when speech actually ends (not just when it starts).
     @Published private(set) var speakingWordID: Int?
@@ -52,6 +72,7 @@ final class AppModel: ObservableObject {
         self.bands = Self.bandsSnapshot(store: store, languages: languages)
         self.onboardingComplete = store.onboardingComplete
         self.starredIDs = store.starredIDs
+        self.difficultyMarks = store.difficultyMarks
         self.todaysWords = service.todaysWords(store: store)
         self.widgetPreferences = store.widgetPreferences
         recomputeDue()
@@ -68,6 +89,7 @@ final class AppModel: ObservableObject {
         theme = store.theme
         onboardingComplete = store.onboardingComplete
         starredIDs = store.starredIDs
+        difficultyMarks = store.difficultyMarks
         syncLanguageState()
         widgetPreferences = store.widgetPreferences
         recomputeDue()
@@ -260,25 +282,111 @@ final class AppModel: ObservableObject {
         guard marks[word.id] != known else { return }
         marks[word.id] = known
         store.difficultyMarks = marks
+        difficultyMarks = marks
         let language = word.language
         setBand(difficulty.adjusted(band: band(for: language), markedKnown: known, wordBand: word.band),
                 for: language)
     }
 
+    /// The in-app assessment recorded for a word: `true` = known, `false` = still
+    /// learning, `nil` = not yet marked. Drives the Today screen's answered state
+    /// so a tap is acknowledged even when it doesn't move the band (and so the
+    /// day's word doesn't visibly change).
+    func markState(for id: Int) -> Bool? { difficultyMarks[id] }
+
+    // MARK: Today's "keep going" flow (in-app; widget shows the canonical word)
+
+    /// The word Today should show for a language: the in-app exploration word once
+    /// the user has advanced, otherwise the canonical word of the day.
+    func displayWord(for language: Language) -> Word? {
+        explorationWords[language] ?? todaysWords.first { $0.language == language }
+    }
+
+    /// The words Today shows across enabled languages, in order — the exploration
+    /// word where the user has advanced, the canonical daily word otherwise. When
+    /// nobody has advanced, this equals `todaysWords`.
+    var displayWords: [Word] {
+        enabledLanguages.compactMap { displayWord(for: $0) }
+    }
+
+    /// True once the user has advanced past this language's canonical daily word.
+    func isExploring(_ language: Language) -> Bool { explorationWords[language] != nil }
+
+    /// True when this language's band has no more fresh words to serve right now.
+    func isCaughtUp(_ language: Language) -> Bool { caughtUpLanguages.contains(language) }
+
+    /// Record an assessment for the word currently shown on Today and advance to a
+    /// fresh word from the band. The band nudge + widget refresh happen in `mark`;
+    /// the advance is in-app only, so the widget keeps showing the canonical word.
+    func assess(_ word: Word, known: Bool) {
+        mark(word, known: known)
+        advanceExploration(from: word)
+    }
+
+    /// Return a language's Today view to its canonical word of the day.
+    func backToToday(_ language: Language) {
+        explorationWords[language] = nil
+        caughtUpLanguages.remove(language)
+        // Keep `seenThisSession` so resuming the sweep doesn't re-serve words
+        // already seen this sitting.
+    }
+
+    /// Pick the next fresh word for a language, skipping everything shown this
+    /// session and every word the user has ever marked "known" (so we surface
+    /// words worth learning). Flags the language caught-up when the pool is dry.
+    private func advanceExploration(from word: Word) {
+        let language = word.language
+        var seen = seenThisSession[language] ?? []
+        if let daily = todaysWords.first(where: { $0.language == language }) {
+            seen.insert(daily.id)   // never advance straight back to today's word
+        }
+        seen.insert(word.id)
+        seenThisSession[language] = seen
+
+        let skip = seen.union(knownMarkedIDs())
+        if let next = service.explorationWord(store: store, language: language, seen: skip) {
+            explorationWords[language] = next
+            caughtUpLanguages.remove(language)
+        } else {
+            caughtUpLanguages.insert(language)   // stay on the current word
+        }
+    }
+
+    private func knownMarkedIDs() -> Set<Int> {
+        Set(difficultyMarks.compactMap { $0.value ? $0.key : nil })
+    }
+
     // MARK: Deep links
 
-    /// Open a saved word on the Today tab. Sets the tab explicitly (not just the
-    /// focused id) so reselecting the *same* word still navigates — a value-only
-    /// `onChange` would miss an unchanged id.
+    /// Open a saved word (from Practice) as a single-word takeover on Today. Sets
+    /// the tab explicitly (not just the focused id) so reselecting the *same* word
+    /// still navigates — a value-only `onChange` would miss an unchanged id.
     func openWord(_ id: Int) {
         focusedWordID = id
         selectedTab = .today
     }
 
+    /// A widget tap. Rather than the forked single-word takeover, open the main
+    /// app on Today and front the tapped word's language on the normal pager,
+    /// showing that language's canonical daily word (what the widget shows). Falls
+    /// back to a focused view only if the word's language is no longer enabled, so
+    /// the tap is never silently dropped.
+    func openDailyWord(id: Int) {
+        selectedTab = .today
+        guard let language = service.word(id: id)?.language else { return }
+        if enabledLanguages.contains(language) {
+            focusedWordID = nil
+            backToToday(language)     // show today's word, not an in-app exploration
+            todayLanguage = language
+        } else {
+            focusedWordID = id
+        }
+    }
+
     func handle(url: URL) {
         guard url.scheme == "wordoftheday" else { return }
         if url.host == "word", let id = Int(url.lastPathComponent) {
-            openWord(id)
+            openDailyWord(id: id)
         }
     }
 

@@ -43,7 +43,7 @@ final class WordOfTheDayUITests: XCTestCase {
         advanceToCalibration()
 
         // Skip the deck into the self-assessment picker, keep the default level.
-        let skip = app.buttons["Skip — I know my level"]
+        let skip = app.buttons["Skip swiping — set my level"]
         XCTAssertTrue(skip.waitForExistence(timeout: 5))
         skip.tap()
 
@@ -81,7 +81,7 @@ final class WordOfTheDayUITests: XCTestCase {
         // Each language: skip the deck and keep the default self-assessed level.
         for language in ["ENGLISH", "JAPANESE"] {
             XCTAssertTrue(app.staticTexts["DO YOU KNOW THIS \(language) WORD?"].waitForExistence(timeout: 5))
-            app.buttons["Skip — I know my level"].tap()
+            app.buttons["Skip swiping — set my level"].tap()
             let cont = app.buttons["Continue"]
             XCTAssertTrue(cont.waitForExistence(timeout: 5))
             cont.tap()

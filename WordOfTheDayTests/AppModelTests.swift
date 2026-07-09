@@ -111,6 +111,105 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.band(for: .english), 3, "repeated identical marks must not keep moving the band")
     }
 
+    func test_markState_reflectsRecordedMark() {
+        let (model, _) = makeModel()
+        model.setBand(2, for: .english)
+        let word = Fixtures.word(99, band: 2)
+        XCTAssertNil(model.markState(for: 99), "an unmarked word reports no answer")
+        model.mark(word, known: true)
+        XCTAssertEqual(model.markState(for: 99), true, "a known mark is reflected immediately")
+        model.mark(word, known: false)  // a changed answer
+        XCTAssertEqual(model.markState(for: 99), false, "a changed answer updates the reported mark")
+    }
+
+    func test_markState_survivesBandUnchangedMark() {
+        // A word below the current band leaves the band (and today's word) put;
+        // the mark must still be recorded so the UI can acknowledge the tap.
+        let (model, _) = makeModel()
+        model.setBand(4, for: .english)
+        let easyWord = Fixtures.word(99, band: 1)
+        model.mark(easyWord, known: true)
+        XCTAssertEqual(model.band(for: .english), 4, "a below-band word doesn't move the band")
+        XCTAssertEqual(model.markState(for: 99), true, "but the mark is still recorded")
+    }
+
+    func test_refreshFromStore_republishesMarkState() {
+        let (model, store) = makeModel()
+        var marks = store.difficultyMarks
+        marks[42] = true
+        store.difficultyMarks = marks
+        model.refreshFromStore()
+        XCTAssertEqual(model.markState(for: 42), true)
+    }
+
+    // MARK: Today's "keep going" flow
+
+    func test_assess_advancesToAFreshWord() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        let daily = model.displayWord(for: .english)!
+        XCTAssertFalse(model.isExploring(.english), "starts on the canonical daily word")
+
+        model.assess(daily, known: true)
+
+        XCTAssertTrue(model.isExploring(.english), "assessing advances into the keep-going flow")
+        let next = model.displayWord(for: .english)!
+        XCTAssertNotEqual(next.id, daily.id, "a fresh word replaces the one just assessed")
+    }
+
+    func test_assess_neverServesAWordMarkedKnown() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 5]) // whole corpus eligible
+        var shown = Set<Int>()
+        var current = model.displayWord(for: .english)!
+        // Sweep several words; each shown word gets marked known as we pass it.
+        for _ in 0..<6 {
+            shown.insert(current.id)
+            model.assess(current, known: true)
+            guard !model.isCaughtUp(.english) else { break }
+            current = model.displayWord(for: .english)!
+            XCTAssertFalse(shown.contains(current.id), "a known word is never served again")
+        }
+    }
+
+    func test_backToToday_restoresCanonicalWord() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        let daily = model.displayWord(for: .english)!
+        model.assess(daily, known: true)
+        XCTAssertTrue(model.isExploring(.english))
+
+        model.backToToday(.english)
+
+        XCTAssertFalse(model.isExploring(.english))
+        XCTAssertEqual(model.displayWord(for: .english)?.id, model.todaysWords.first?.id,
+                       "back-to-today shows the canonical word of the day again")
+    }
+
+    func test_assess_reportsCaughtUp_whenBandExhausted() {
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 1]) // band 1 = 4 words
+        var current = model.displayWord(for: .english)!
+        // "Still learning" holds the band at 1 (marking known would raise it and
+        // grow the pool), so this small band actually runs dry.
+        for _ in 0..<10 {
+            model.assess(current, known: false)
+            if model.isCaughtUp(.english) { break }
+            current = model.displayWord(for: .english)!
+        }
+        XCTAssertTrue(model.isCaughtUp(.english), "sweeping a tiny band dry reports caught-up")
+    }
+
+    func test_assess_onlyAdvancesTheAssessedLanguage() {
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 3, .japanese: 3])
+        let english = model.displayWord(for: .english)!
+        model.assess(english, known: true)
+        XCTAssertTrue(model.isExploring(.english))
+        XCTAssertFalse(model.isExploring(.japanese), "the other language stays on its daily word")
+    }
+
     func test_mark_changedAnswer_stillNudges() {
         let (model, _) = makeModel()
         model.setBand(3, for: .english)
@@ -190,10 +289,46 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.selectedTab, .today, "same id must still route to Today")
     }
 
-    func test_deepLink_focusesWord() {
+    func test_deepLink_opensTodayOnPager_notFocused() {
+        // A widget tap should land on the normal Today pager (not the forked
+        // single-word takeover), fronting the tapped word's language.
         let (model, _) = makeModel()
+        model.selectedTab = .practice
         model.handle(url: URL(string: "wordoftheday://word/4")!)
-        XCTAssertEqual(model.focusedWordID, 4)
+        XCTAssertEqual(model.selectedTab, .today)
+        XCTAssertNil(model.focusedWordID, "widget taps must not fork into a focused view")
+        XCTAssertEqual(model.todayLanguage, .english)
+    }
+
+    func test_deepLink_frontsTappedLanguage() {
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 3, .japanese: 3])
+        model.todayLanguage = .english
+        // id 100+ are the Japanese fixture corpus.
+        model.handle(url: URL(string: "wordoftheday://word/104")!)
+        XCTAssertEqual(model.todayLanguage, .japanese, "tapping the JA widget fronts Japanese")
+        XCTAssertNil(model.focusedWordID)
+    }
+
+    func test_deepLink_clearsExplorationForTappedLanguage() {
+        // Tapping the widget shows that language's canonical daily word, not an
+        // in-app "keep going" word the user had advanced to.
+        let (model, _) = makeModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        model.assess(model.displayWord(for: .english)!, known: true)
+        XCTAssertTrue(model.isExploring(.english))
+        model.handle(url: URL(string: "wordoftheday://word/4")!)
+        XCTAssertFalse(model.isExploring(.english), "widget tap returns to today's word")
+    }
+
+    func test_deepLink_disabledLanguage_fallsBackToFocused() {
+        // The word exists but its language isn't enabled — still show it (focused)
+        // rather than dropping the tap.
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english], bands: [.english: 3])
+        model.handle(url: URL(string: "wordoftheday://word/104")!)  // a Japanese word
+        XCTAssertEqual(model.focusedWordID, 104)
         XCTAssertEqual(model.selectedTab, .today)
     }
 
