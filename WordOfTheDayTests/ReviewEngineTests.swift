@@ -137,10 +137,11 @@ final class ReviewEngineTests: XCTestCase {
         XCTAssertEqual(easy.scheduledDays, 19)
     }
 
-    func test_sameDayRegrade_usesShortTermFormula() {
-        // Regrading within the same day (the in-session Again requeue) takes
-        // FSRS-6's short-term path: Again shrinks stability, but a successful
-        // grade never shrinks it (the increase factor clamps at 1).
+    func test_subDayRegrade_usesShortTermFormula() {
+        // Regrading less than 24 hours after the last review (the in-session
+        // Again requeue is the common trigger) takes FSRS-6's short-term path:
+        // Again shrinks stability, but a successful grade never shrinks it
+        // (the increase factor clamps at 1).
         let first = engine.grade(nil, .good, now: now)
         let later = now.addingTimeInterval(600)
 
@@ -152,13 +153,55 @@ final class ReviewEngineTests: XCTestCase {
         // "never shrink" clamp that protects Good/Easy — so it reduces stability.
         let hard = engine.grade(first, .hard, now: later)
         XCTAssertEqual(hard.stability, 1.333379, accuracy: 0.0001)
-        XCTAssertLessThan(hard.stability, first.stability, "same-day Hard shrinks stability")
+        XCTAssertLessThan(hard.stability, first.stability, "sub-day Hard shrinks stability")
         XCTAssertEqual(hard.scheduledDays, 1)
 
         let good = engine.grade(first, .good, now: later)
         XCTAssertEqual(good.stability, 2.3065, accuracy: 0.0001,
-                       "a same-day Good must not shrink stability")
+                       "a sub-day Good must not shrink stability")
         XCTAssertEqual(good.scheduledDays, 2)
+    }
+
+    // MARK: The 24-hour boundary
+    // The short-term path is *sub-day*, not "same calendar day": it applies to any
+    // regrade strictly less than 24 hours after the last review, and hands over to
+    // the long-term (forgetting-curve) path at exactly 24 hours. These two tests
+    // pin each side of that boundary so a drive-by "fix" (e.g. `<=`, or a
+    // calendar-day comparison) fails loudly instead of silently shifting schedules.
+
+    func test_justUnder24Hours_takesShortTermPath() {
+        // One second shy of 24h is still the short-term formula, which depends
+        // only on stability and grade — so the values match the 600-second case
+        // above exactly, even 23h59m59s later.
+        let first = engine.grade(nil, .good, now: now)
+        let justUnder = now.addingTimeInterval(86_400 - 1)
+
+        let again = engine.grade(first, .again, now: justUnder)
+        XCTAssertEqual(again.stability, 0.775084, accuracy: 0.0001,
+                       "1s under 24h is still the short-term path")
+        XCTAssertEqual(again.scheduledDays, 1)
+
+        let good = engine.grade(first, .good, now: justUnder)
+        XCTAssertEqual(good.stability, 2.3065, accuracy: 0.0001,
+                       "a sub-day Good never shrinks stability, right up to the boundary")
+        XCTAssertEqual(good.scheduledDays, 2)
+    }
+
+    func test_exactly24Hours_takesLongTermPath() {
+        // At exactly 24h (elapsed == 1.0 day) the forgetting curve applies
+        // (R ≈ 0.946847 for S = 2.3065). Reference values from py-fsrs v6.3.1.
+        let first = engine.grade(nil, .good, now: now)
+        let boundary = now.addingTimeInterval(86_400)
+
+        let again = engine.grade(first, .again, now: boundary)
+        XCTAssertEqual(again.stability, 0.571299, accuracy: 0.0001,
+                       "exactly 24h uses the long-term forget formula, not short-term's 0.775")
+        XCTAssertEqual(again.scheduledDays, 1)
+
+        let good = engine.grade(first, .good, now: boundary)
+        XCTAssertEqual(good.stability, 7.315301, accuracy: 0.0001,
+                       "exactly 24h uses the long-term recall formula, not short-term's 2.3065")
+        XCTAssertEqual(good.scheduledDays, 7)
     }
 
     func test_firstReviewDifficulty_decreasesForEasierGrades() {

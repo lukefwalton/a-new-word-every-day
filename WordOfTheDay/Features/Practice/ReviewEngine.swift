@@ -11,7 +11,9 @@ import Foundation
 ///
 /// Algorithm: FSRS-6, ported from open-spaced-repetition/py-fsrs v6.3.1
 /// (MIT License). Intervals are whole days (no sub-day learning steps); a
-/// same-day regrade uses FSRS-6's short-term stability formula. Runs entirely
+/// sub-day regrade — any second grade less than 24 hours after the last, not
+/// merely the same calendar day — uses FSRS-6's short-term stability formula;
+/// at exactly 24 hours the long-term formula takes over. Runs entirely
 /// on-device; no review data leaves the phone.
 struct ReviewEngine {
     /// FSRS-6 default parameters (21), verbatim from py-fsrs `DEFAULT_PARAMETERS`.
@@ -164,7 +166,7 @@ struct ReviewEngine {
 
     private static func nextForgetStability(d: Double, s: Double, r: Double) -> Double {
         // FSRS-6 caps post-lapse stability so a forget can never *raise* S past
-        // what a same-day Again would leave (s / e^(w17·w18)).
+        // what a sub-day Again would leave (s / e^(w17·w18)).
         min(w[11] * pow(d, -w[12]) * (pow(s + 1, w[13]) - 1) * exp((1 - r) * w[14]),
             s / exp(w[17] * w[18]))
     }

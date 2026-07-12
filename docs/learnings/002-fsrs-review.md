@@ -53,11 +53,14 @@ vector; parametric decay `DECAY = −w[20]` with `FACTOR = 0.9^(1/DECAY) − 1`;
 forgetting curve `R = (1 + FACTOR·t/S)^DECAY`; initial stability/difficulty per
 grade; difficulty updates with linear damping (`ΔD·(10−D)/9`) then mean reversion
 toward the raw (unclamped) Easy initial difficulty; recall-vs-forget stability with
-FSRS-6's post-lapse ceiling `S/e^(w17·w18)`; a same-day short-term path
+FSRS-6's post-lapse ceiling `S/e^(w17·w18)`; a sub-day short-term path
 (`S · e^(w17·(g−3+w18)) · S^(−w19)`, never shrinking on success) used when the
-previous review was < 1 day ago — which is what the in-session Again requeue hits;
+previous review was strictly < 24 hours ago (not "same calendar day" — the
+long-term path takes over at exactly 24 h; both sides of the boundary are
+pinned by tests) — which is what the in-session Again requeue hits;
 and `interval = round(S · ((0.9^(1/DECAY) − 1)/FACTOR))` clamped to `[1, 36500]`
 with optional fuzz (at retention 0.9 the modifier is exactly 1, so interval =
 round(S)). Behavioral tests assert ordering/direction (fuzz off); golden-vector
-tests pin first/second-review and same-day values against py-fsrs. Persisted
+tests pin first/second-review, sub-day, and 24-hour-boundary values against
+py-fsrs. Persisted
 FSRS-5 states need no migration — stability/difficulty carry over as valid inputs.
