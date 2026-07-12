@@ -181,10 +181,20 @@ final class ReviewEngineTests: XCTestCase {
                        "1s under 24h is still the short-term path")
         XCTAssertEqual(again.scheduledDays, 1)
 
+        let hard = engine.grade(first, .hard, now: justUnder)
+        XCTAssertEqual(hard.stability, 1.333379, accuracy: 0.0001,
+                       "sub-day Hard still shrinks stability at 23h59m59s")
+        XCTAssertEqual(hard.scheduledDays, 1)
+
         let good = engine.grade(first, .good, now: justUnder)
         XCTAssertEqual(good.stability, 2.3065, accuracy: 0.0001,
                        "a sub-day Good never shrinks stability, right up to the boundary")
         XCTAssertEqual(good.scheduledDays, 2)
+
+        let easy = engine.grade(first, .easy, now: justUnder)
+        XCTAssertEqual(easy.stability, 3.946054, accuracy: 0.0001,
+                       "1s under 24h, Easy uses the short-term increase")
+        XCTAssertEqual(easy.scheduledDays, 4)
     }
 
     func test_exactly24Hours_takesLongTermPath() {
@@ -198,10 +208,20 @@ final class ReviewEngineTests: XCTestCase {
                        "exactly 24h uses the long-term forget formula, not short-term's 0.775")
         XCTAssertEqual(again.scheduledDays, 1)
 
+        let hard = engine.grade(first, .hard, now: boundary)
+        XCTAssertEqual(hard.stability, 5.318793, accuracy: 0.0001,
+                       "exactly 24h, Hard grows stability via the recall formula (w15 penalty)")
+        XCTAssertEqual(hard.scheduledDays, 5)
+
         let good = engine.grade(first, .good, now: boundary)
         XCTAssertEqual(good.stability, 7.315301, accuracy: 0.0001,
                        "exactly 24h uses the long-term recall formula, not short-term's 2.3065")
         XCTAssertEqual(good.scheduledDays, 7)
+
+        let easy = engine.grade(first, .easy, now: boundary)
+        XCTAssertEqual(easy.stability, 11.687483, accuracy: 0.0001,
+                       "exactly 24h, Easy gets the recall formula's w16 bonus")
+        XCTAssertEqual(easy.scheduledDays, 12)
     }
 
     func test_firstReviewDifficulty_decreasesForEasierGrades() {
