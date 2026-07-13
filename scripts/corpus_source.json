@@ -6952,5 +6952,257 @@
     "pos": "n",
     "definition": "fanatical devotion",
     "band": 5
+  },
+  {
+    "word": "elucidate",
+    "pos": "v",
+    "definition": "to make clear by explanation",
+    "band": 3
+  },
+  {
+    "word": "etymology",
+    "pos": "n",
+    "definition": "the origin and history of a word",
+    "band": 3
+  },
+  {
+    "word": "pedagogy",
+    "pos": "n",
+    "definition": "the theory and practice of teaching",
+    "band": 3
+  },
+  {
+    "word": "trope",
+    "pos": "n",
+    "definition": "a recurring theme or figurative device",
+    "band": 3
+  },
+  {
+    "word": "vernacular",
+    "pos": "n",
+    "definition": "the everyday language of ordinary people",
+    "band": 3
+  },
+  {
+    "word": "dialectic",
+    "pos": "n",
+    "definition": "reasoning that advances through the clash of opposing arguments",
+    "band": 4
+  },
+  {
+    "word": "empiricism",
+    "pos": "n",
+    "definition": "the doctrine that all knowledge comes from sensory experience",
+    "band": 4
+  },
+  {
+    "word": "epigraph",
+    "pos": "n",
+    "definition": "a short quotation placed at the start of a book or chapter",
+    "band": 4
+  },
+  {
+    "word": "epistemology",
+    "pos": "n",
+    "definition": "the branch of philosophy concerned with the nature of knowledge",
+    "band": 4
+  },
+  {
+    "word": "explicate",
+    "pos": "v",
+    "definition": "to analyze and explain in detail",
+    "band": 4
+  },
+  {
+    "word": "hermeneutics",
+    "pos": "n",
+    "definition": "the theory and methodology of interpretation, especially of texts",
+    "band": 4
+  },
+  {
+    "word": "heuristic",
+    "pos": "adj",
+    "definition": "guiding discovery by trial and error rather than fixed rules",
+    "band": 4
+  },
+  {
+    "word": "lacuna",
+    "pos": "n",
+    "definition": "a gap or missing portion, especially in a text",
+    "band": 4
+  },
+  {
+    "word": "malapropism",
+    "pos": "n",
+    "definition": "the comic misuse of a word for one that sounds like it",
+    "band": 4
+  },
+  {
+    "word": "neologism",
+    "pos": "n",
+    "definition": "a newly coined word or expression",
+    "band": 4
+  },
+  {
+    "word": "ontology",
+    "pos": "n",
+    "definition": "the branch of philosophy concerned with the nature of being",
+    "band": 4
+  },
+  {
+    "word": "portmanteau",
+    "pos": "n",
+    "definition": "a word blending the sounds and meanings of two others",
+    "band": 4
+  },
+  {
+    "word": "semiotics",
+    "pos": "n",
+    "definition": "the study of signs and symbols and how they carry meaning",
+    "band": 4
+  },
+  {
+    "word": "sophistry",
+    "pos": "n",
+    "definition": "clever but deliberately misleading argument",
+    "band": 4
+  },
+  {
+    "word": "syllogism",
+    "pos": "n",
+    "definition": "a logical argument that draws a conclusion from two premises",
+    "band": 4
+  },
+  {
+    "word": "tautology",
+    "pos": "n",
+    "definition": "a statement that repeats its own meaning in different words",
+    "band": 4
+  },
+  {
+    "word": "anaphora",
+    "pos": "n",
+    "definition": "repetition of a word at the start of successive clauses",
+    "band": 5
+  },
+  {
+    "word": "apologia",
+    "pos": "n",
+    "definition": "a formal written defense of one's opinions or conduct",
+    "band": 5
+  },
+  {
+    "word": "aporia",
+    "pos": "n",
+    "definition": "an irresolvable puzzle or impasse in reasoning",
+    "band": 5
+  },
+  {
+    "word": "chiasmus",
+    "pos": "n",
+    "definition": "a rhetorical figure in which the second phrase mirrors the first in reverse",
+    "band": 5
+  },
+  {
+    "word": "eschatology",
+    "pos": "n",
+    "definition": "the study of last things, such as death and the end of the world",
+    "band": 5
+  },
+  {
+    "word": "exegesis",
+    "pos": "n",
+    "definition": "a critical interpretation of a text, especially scripture",
+    "band": 5
+  },
+  {
+    "word": "historiography",
+    "pos": "n",
+    "definition": "the study of how history is written",
+    "band": 5
+  },
+  {
+    "word": "litotes",
+    "pos": "n",
+    "definition": "understatement that affirms by negating its opposite",
+    "band": 5
+  },
+  {
+    "word": "marginalia",
+    "pos": "n",
+    "definition": "notes written in the margins of a book",
+    "band": 5
+  },
+  {
+    "word": "metonymy",
+    "pos": "n",
+    "definition": "naming something by an attribute closely associated with it",
+    "band": 5
+  },
+  {
+    "word": "palimpsest",
+    "pos": "n",
+    "definition": "a manuscript reused after its earlier writing was scraped away",
+    "band": 5
+  },
+  {
+    "word": "peroration",
+    "pos": "n",
+    "definition": "the rousing final section of a speech",
+    "band": 5
+  },
+  {
+    "word": "phenomenology",
+    "pos": "n",
+    "definition": "the philosophical study of experience as it is lived",
+    "band": 5
+  },
+  {
+    "word": "philology",
+    "pos": "n",
+    "definition": "the study of language in historical written sources",
+    "band": 5
+  },
+  {
+    "word": "praxis",
+    "pos": "n",
+    "definition": "the practical application of a theory",
+    "band": 5
+  },
+  {
+    "word": "prolegomenon",
+    "pos": "n",
+    "definition": "a critical introduction to a longer work",
+    "band": 5
+  },
+  {
+    "word": "qualia",
+    "pos": "n",
+    "definition": "the subjective felt qualities of conscious experience",
+    "band": 5
+  },
+  {
+    "word": "solecism",
+    "pos": "n",
+    "definition": "a breach of grammar, usage, or etiquette",
+    "band": 5
+  },
+  {
+    "word": "solipsism",
+    "pos": "n",
+    "definition": "the view that only one's own mind is certain to exist",
+    "band": 5
+  },
+  {
+    "word": "synecdoche",
+    "pos": "n",
+    "definition": "a figure of speech in which a part stands for the whole",
+    "band": 5
+  },
+  {
+    "word": "teleology",
+    "pos": "n",
+    "definition": "the explanation of things by their purpose rather than their cause",
+    "band": 5
   }
 ]
