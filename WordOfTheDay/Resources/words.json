@@ -3549,6 +3549,13 @@
     "band": 3
   },
   {
+    "id": 3412384418282528,
+    "word": "elucidate",
+    "pos": "v",
+    "definition": "to make clear by explanation",
+    "band": 3
+  },
+  {
     "id": 2462557487640712,
     "word": "emaciated",
     "pos": "adj",
@@ -3623,6 +3630,13 @@
     "word": "ethereal",
     "pos": "adj",
     "definition": "delicate and light; heavenly",
+    "band": 3
+  },
+  {
+    "id": 1188191738036471,
+    "word": "etymology",
+    "pos": "n",
+    "definition": "the origin and history of a word",
     "band": 3
   },
   {
@@ -4249,6 +4263,13 @@
     "band": 3
   },
   {
+    "id": 2393945124594659,
+    "word": "pedagogy",
+    "pos": "n",
+    "definition": "the theory and practice of teaching",
+    "band": 3
+  },
+  {
     "id": 496429358219250,
     "word": "penury",
     "pos": "n",
@@ -4683,6 +4704,13 @@
     "band": 3
   },
   {
+    "id": 1922177169505676,
+    "word": "trope",
+    "pos": "n",
+    "definition": "a recurring theme or figurative device",
+    "band": 3
+  },
+  {
     "id": 4194384313366830,
     "word": "turbulent",
     "pos": "adj",
@@ -4757,6 +4785,13 @@
     "word": "verbose",
     "pos": "adj",
     "definition": "using more words than needed",
+    "band": 3
+  },
+  {
+    "id": 1016054513261634,
+    "word": "vernacular",
+    "pos": "n",
+    "definition": "the everyday language of ordinary people",
     "band": 3
   },
   {
@@ -5250,6 +5285,13 @@
     "band": 4
   },
   {
+    "id": 1505981033586715,
+    "word": "dialectic",
+    "pos": "n",
+    "definition": "reasoning that advances through the clash of opposing arguments",
+    "band": 4
+  },
+  {
     "id": 2780575612386024,
     "word": "diaphanous",
     "pos": "adj",
@@ -5341,6 +5383,13 @@
     "band": 4
   },
   {
+    "id": 1677425343089412,
+    "word": "empiricism",
+    "pos": "n",
+    "definition": "the doctrine that all knowledge comes from sensory experience",
+    "band": 4
+  },
+  {
     "id": 446337486220369,
     "word": "endemic",
     "pos": "adj",
@@ -5373,6 +5422,20 @@
     "word": "epicure",
     "pos": "n",
     "definition": "one devoted to refined pleasures of the table",
+    "band": 4
+  },
+  {
+    "id": 627088451382558,
+    "word": "epigraph",
+    "pos": "n",
+    "definition": "a short quotation placed at the start of a book or chapter",
+    "band": 4
+  },
+  {
+    "id": 2180201848553850,
+    "word": "epistemology",
+    "pos": "n",
+    "definition": "the branch of philosophy concerned with the nature of knowledge",
     "band": 4
   },
   {
@@ -5464,6 +5527,13 @@
     "word": "expiate",
     "pos": "v",
     "definition": "to atone for",
+    "band": 4
+  },
+  {
+    "id": 2412622159382139,
+    "word": "explicate",
+    "pos": "v",
+    "definition": "to analyze and explain in detail",
     "band": 4
   },
   {
@@ -5618,6 +5688,20 @@
     "word": "hegemony",
     "pos": "n",
     "definition": "dominance of one group over others",
+    "band": 4
+  },
+  {
+    "id": 2603445417441846,
+    "word": "hermeneutics",
+    "pos": "n",
+    "definition": "the theory and methodology of interpretation, especially of texts",
+    "band": 4
+  },
+  {
+    "id": 3303506389041885,
+    "word": "heuristic",
+    "pos": "adj",
+    "definition": "guiding discovery by trial and error rather than fixed rules",
     "band": 4
   },
   {
@@ -5852,6 +5936,13 @@
     "band": 4
   },
   {
+    "id": 1924585644541641,
+    "word": "lacuna",
+    "pos": "n",
+    "definition": "a gap or missing portion, especially in a text",
+    "band": 4
+  },
+  {
     "id": 1798919565541406,
     "word": "lambent",
     "pos": "adj",
@@ -5905,6 +5996,13 @@
     "word": "loquacious",
     "pos": "adj",
     "definition": "very talkative",
+    "band": 4
+  },
+  {
+    "id": 8879474856976,
+    "word": "malapropism",
+    "pos": "n",
+    "definition": "the comic misuse of a word for one that sounds like it",
     "band": 4
   },
   {
@@ -5985,6 +6083,13 @@
     "band": 4
   },
   {
+    "id": 4357674273005602,
+    "word": "neologism",
+    "pos": "n",
+    "definition": "a newly coined word or expression",
+    "band": 4
+  },
+  {
     "id": 464581045044856,
     "word": "obdurate",
     "pos": "adj",
@@ -6038,6 +6143,13 @@
     "word": "obviate",
     "pos": "v",
     "definition": "to remove a need or difficulty",
+    "band": 4
+  },
+  {
+    "id": 2882718794260596,
+    "word": "ontology",
+    "pos": "n",
+    "definition": "the branch of philosophy concerned with the nature of being",
     "band": 4
   },
   {
@@ -6178,6 +6290,13 @@
     "word": "portentous",
     "pos": "adj",
     "definition": "ominously significant",
+    "band": 4
+  },
+  {
+    "id": 427674309302139,
+    "word": "portmanteau",
+    "pos": "n",
+    "definition": "a word blending the sounds and meanings of two others",
     "band": 4
   },
   {
@@ -6475,6 +6594,13 @@
     "band": 4
   },
   {
+    "id": 4444990579999238,
+    "word": "semiotics",
+    "pos": "n",
+    "definition": "the study of signs and symbols and how they carry meaning",
+    "band": 4
+  },
+  {
     "id": 512124419708926,
     "word": "sinecure",
     "pos": "n",
@@ -6500,6 +6626,13 @@
     "word": "somnolent",
     "pos": "adj",
     "definition": "sleepy or drowsy",
+    "band": 4
+  },
+  {
+    "id": 3564318960443715,
+    "word": "sophistry",
+    "pos": "n",
+    "definition": "clever but deliberately misleading argument",
     "band": 4
   },
   {
@@ -6580,10 +6713,24 @@
     "band": 4
   },
   {
+    "id": 3482548372886284,
+    "word": "syllogism",
+    "pos": "n",
+    "definition": "a logical argument that draws a conclusion from two premises",
+    "band": 4
+  },
+  {
     "id": 4158297572477157,
     "word": "taciturn",
     "pos": "adj",
     "definition": "reserved and saying little",
+    "band": 4
+  },
+  {
+    "id": 1717065337784617,
+    "word": "tautology",
+    "pos": "n",
+    "definition": "a statement that repeats its own meaning in different words",
     "band": 4
   },
   {
@@ -6790,6 +6937,13 @@
     "band": 5
   },
   {
+    "id": 3226659671928505,
+    "word": "anaphora",
+    "pos": "n",
+    "definition": "repetition of a word at the start of successive clauses",
+    "band": 5
+  },
+  {
     "id": 4321473703221746,
     "word": "anfractuous",
     "pos": "adj",
@@ -6808,6 +6962,20 @@
     "word": "antediluvian",
     "pos": "adj",
     "definition": "extremely old or outdated",
+    "band": 5
+  },
+  {
+    "id": 2251025694415080,
+    "word": "apologia",
+    "pos": "n",
+    "definition": "a formal written defense of one's opinions or conduct",
+    "band": 5
+  },
+  {
+    "id": 264327117886350,
+    "word": "aporia",
+    "pos": "n",
+    "definition": "an irresolvable puzzle or impasse in reasoning",
     "band": 5
   },
   {
@@ -6920,6 +7088,13 @@
     "word": "cavil",
     "pos": "v",
     "definition": "to raise petty objections",
+    "band": 5
+  },
+  {
+    "id": 253520400197726,
+    "word": "chiasmus",
+    "pos": "n",
+    "definition": "a rhetorical figure in which the second phrase mirrors the first in reverse",
     "band": 5
   },
   {
@@ -7091,6 +7266,13 @@
     "band": 5
   },
   {
+    "id": 2652960572811936,
+    "word": "eschatology",
+    "pos": "n",
+    "definition": "the study of last things, such as death and the end of the world",
+    "band": 5
+  },
+  {
     "id": 1980317451878674,
     "word": "estivate",
     "pos": "v",
@@ -7109,6 +7291,13 @@
     "word": "execrate",
     "pos": "v",
     "definition": "to feel or express great loathing for",
+    "band": 5
+  },
+  {
+    "id": 480432116171951,
+    "word": "exegesis",
+    "pos": "n",
+    "definition": "a critical interpretation of a text, especially scripture",
     "band": 5
   },
   {
@@ -7294,6 +7483,13 @@
     "band": 5
   },
   {
+    "id": 4329124141432307,
+    "word": "historiography",
+    "pos": "n",
+    "definition": "the study of how history is written",
+    "band": 5
+  },
+  {
     "id": 2216934059848873,
     "word": "hortatory",
     "pos": "adj",
@@ -7427,6 +7623,13 @@
     "band": 5
   },
   {
+    "id": 3576982307475615,
+    "word": "litotes",
+    "pos": "n",
+    "definition": "understatement that affirms by negating its opposite",
+    "band": 5
+  },
+  {
     "id": 1925851564406802,
     "word": "logorrhea",
     "pos": "n",
@@ -7462,6 +7665,13 @@
     "band": 5
   },
   {
+    "id": 4472671024669864,
+    "word": "marginalia",
+    "pos": "n",
+    "definition": "notes written in the margins of a book",
+    "band": 5
+  },
+  {
     "id": 4089084445354412,
     "word": "maudlin",
     "pos": "adj",
@@ -7494,6 +7704,13 @@
     "word": "meretricious",
     "pos": "adj",
     "definition": "showily attractive but cheap or insincere",
+    "band": 5
+  },
+  {
+    "id": 3289129086382439,
+    "word": "metonymy",
+    "pos": "n",
+    "definition": "naming something by an attribute closely associated with it",
     "band": 5
   },
   {
@@ -7567,6 +7784,13 @@
     "band": 5
   },
   {
+    "id": 3801388322641861,
+    "word": "palimpsest",
+    "pos": "n",
+    "definition": "a manuscript reused after its earlier writing was scraped away",
+    "band": 5
+  },
+  {
     "id": 2581747809128764,
     "word": "palliate",
     "pos": "v",
@@ -7616,6 +7840,13 @@
     "band": 5
   },
   {
+    "id": 1731422024895075,
+    "word": "peroration",
+    "pos": "n",
+    "definition": "the rousing final section of a speech",
+    "band": 5
+  },
+  {
     "id": 3889928184694972,
     "word": "perspicacious",
     "pos": "adj",
@@ -7634,6 +7865,20 @@
     "word": "perspicuous",
     "pos": "adj",
     "definition": "clearly expressed and understood",
+    "band": 5
+  },
+  {
+    "id": 3150521555049958,
+    "word": "phenomenology",
+    "pos": "n",
+    "definition": "the philosophical study of experience as it is lived",
+    "band": 5
+  },
+  {
+    "id": 2113089382377407,
+    "word": "philology",
+    "pos": "n",
+    "definition": "the study of language in historical written sources",
     "band": 5
   },
   {
@@ -7665,6 +7910,13 @@
     "band": 5
   },
   {
+    "id": 1595607096680700,
+    "word": "praxis",
+    "pos": "n",
+    "definition": "the practical application of a theory",
+    "band": 5
+  },
+  {
     "id": 3196194175731925,
     "word": "preternatural",
     "pos": "adj",
@@ -7683,6 +7935,13 @@
     "word": "probity",
     "pos": "n",
     "definition": "strong moral integrity",
+    "band": 5
+  },
+  {
+    "id": 1602655954320922,
+    "word": "prolegomenon",
+    "pos": "n",
+    "definition": "a critical introduction to a longer work",
     "band": 5
   },
   {
@@ -7725,6 +7984,13 @@
     "word": "pusillanimous",
     "pos": "adj",
     "definition": "timid and cowardly",
+    "band": 5
+  },
+  {
+    "id": 4256466596684841,
+    "word": "qualia",
+    "pos": "n",
+    "definition": "the subjective felt qualities of conscious experience",
     "band": 5
   },
   {
@@ -7882,6 +8148,20 @@
     "band": 5
   },
   {
+    "id": 1243638375126831,
+    "word": "solecism",
+    "pos": "n",
+    "definition": "a breach of grammar, usage, or etiquette",
+    "band": 5
+  },
+  {
+    "id": 1054567751660202,
+    "word": "solipsism",
+    "pos": "n",
+    "definition": "the view that only one's own mind is certain to exist",
+    "band": 5
+  },
+  {
     "id": 3512355688874132,
     "word": "supercilious",
     "pos": "adj",
@@ -7903,10 +8183,24 @@
     "band": 5
   },
   {
+    "id": 1940566764772777,
+    "word": "synecdoche",
+    "pos": "n",
+    "definition": "a figure of speech in which a part stands for the whole",
+    "band": 5
+  },
+  {
     "id": 2147839284798016,
     "word": "tatterdemalion",
     "pos": "adj",
     "definition": "ragged and tattered",
+    "band": 5
+  },
+  {
+    "id": 3761191149254069,
+    "word": "teleology",
+    "pos": "n",
+    "definition": "the explanation of things by their purpose rather than their cause",
     "band": 5
   },
   {
