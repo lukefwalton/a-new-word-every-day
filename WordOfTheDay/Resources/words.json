@@ -6909,6 +6909,13 @@
     "band": 5
   },
   {
+    "id": 2491691233973854,
+    "word": "acedia",
+    "pos": "n",
+    "definition": "spiritual listlessness and apathy",
+    "band": 5
+  },
+  {
     "id": 861807455138184,
     "word": "acerbate",
     "pos": "v",
@@ -6934,6 +6941,13 @@
     "word": "amaranthine",
     "pos": "adj",
     "definition": "undying; eternally beautiful",
+    "band": 5
+  },
+  {
+    "id": 2608500730769111,
+    "word": "anagnorisis",
+    "pos": "n",
+    "definition": "the moment of decisive recognition in a drama",
     "band": 5
   },
   {
@@ -6965,10 +6979,24 @@
     "band": 5
   },
   {
+    "id": 3009543469279401,
+    "word": "apodictic",
+    "pos": "adj",
+    "definition": "clearly established beyond dispute",
+    "band": 5
+  },
+  {
     "id": 2251025694415080,
     "word": "apologia",
     "pos": "n",
     "definition": "a formal written defense of one's opinions or conduct",
+    "band": 5
+  },
+  {
+    "id": 3430433888216992,
+    "word": "apophatic",
+    "pos": "adj",
+    "definition": "defining something by stating what it is not",
     "band": 5
   },
   {
@@ -7035,6 +7063,13 @@
     "band": 5
   },
   {
+    "id": 4060955360627795,
+    "word": "bathos",
+    "pos": "n",
+    "definition": "a deflating descent from the lofty to the trivial",
+    "band": 5
+  },
+  {
     "id": 3225727589864191,
     "word": "benighted",
     "pos": "adj",
@@ -7063,6 +7098,13 @@
     "band": 5
   },
   {
+    "id": 810156555016790,
+    "word": "borborygmus",
+    "pos": "n",
+    "definition": "the rumbling sound of gas moving through the intestines",
+    "band": 5
+  },
+  {
     "id": 753631320282922,
     "word": "bowdlerize",
     "pos": "v",
@@ -7081,6 +7123,13 @@
     "word": "cadaverous",
     "pos": "adj",
     "definition": "gaunt and corpse-like",
+    "band": 5
+  },
+  {
+    "id": 519583448383610,
+    "word": "caliginous",
+    "pos": "adj",
+    "definition": "misty, dim, and obscure",
     "band": 5
   },
   {
@@ -7133,6 +7182,20 @@
     "band": 5
   },
   {
+    "id": 2335780131207686,
+    "word": "chthonic",
+    "pos": "adj",
+    "definition": "relating to the underworld or its dark depths",
+    "band": 5
+  },
+  {
+    "id": 3320886885431609,
+    "word": "cimmerian",
+    "pos": "adj",
+    "definition": "intensely dark or gloomy",
+    "band": 5
+  },
+  {
     "id": 3367475479841203,
     "word": "circumlocutory",
     "pos": "adj",
@@ -7151,6 +7214,13 @@
     "word": "comestible",
     "pos": "n",
     "definition": "an item of food",
+    "band": 5
+  },
+  {
+    "id": 2302781449355542,
+    "word": "concinnity",
+    "pos": "n",
+    "definition": "elegant harmony of style or arrangement",
     "band": 5
   },
   {
@@ -7189,6 +7259,13 @@
     "band": 5
   },
   {
+    "id": 1775551265891175,
+    "word": "crepitate",
+    "pos": "v",
+    "definition": "to make a crackling or rattling sound",
+    "band": 5
+  },
+  {
     "id": 2777599637647608,
     "word": "crepuscular",
     "pos": "adj",
@@ -7210,10 +7287,24 @@
     "band": 5
   },
   {
+    "id": 1596378377794788,
+    "word": "defenestration",
+    "pos": "n",
+    "definition": "the act of throwing someone or something out of a window",
+    "band": 5
+  },
+  {
     "id": 2472997394978739,
     "word": "deliquesce",
     "pos": "v",
     "definition": "to melt away or dissolve",
+    "band": 5
+  },
+  {
+    "id": 2802816421223654,
+    "word": "deracinate",
+    "pos": "v",
+    "definition": "to uproot from a native place or culture",
     "band": 5
   },
   {
@@ -7525,6 +7616,13 @@
     "band": 5
   },
   {
+    "id": 2098804836657229,
+    "word": "gloaming",
+    "pos": "n",
+    "definition": "the fading twilight after sunset",
+    "band": 5
+  },
+  {
     "id": 2613935502296793,
     "word": "grandiloquent",
     "pos": "adj",
@@ -7557,6 +7655,13 @@
     "word": "historiography",
     "pos": "n",
     "definition": "the study of how history is written",
+    "band": 5
+  },
+  {
+    "id": 2827576059440291,
+    "word": "horripilation",
+    "pos": "n",
+    "definition": "the bristling of hair from cold or fear; goosebumps",
     "band": 5
   },
   {
@@ -7700,6 +7805,13 @@
     "band": 5
   },
   {
+    "id": 4441747153266323,
+    "word": "liminal",
+    "pos": "adj",
+    "definition": "occupying a threshold between two states",
+    "band": 5
+  },
+  {
     "id": 1897492984521315,
     "word": "limpid",
     "pos": "adj",
@@ -7725,6 +7837,13 @@
     "word": "lucubration",
     "pos": "n",
     "definition": "laborious study, especially at night",
+    "band": 5
+  },
+  {
+    "id": 822533943735792,
+    "word": "ludic",
+    "pos": "adj",
+    "definition": "playful and spontaneously fun",
     "band": 5
   },
   {
@@ -7819,6 +7938,13 @@
     "band": 5
   },
   {
+    "id": 3280145865259904,
+    "word": "mumpsimus",
+    "pos": "n",
+    "definition": "stubborn adherence to a habit or notion shown to be wrong",
+    "band": 5
+  },
+  {
     "id": 571796798000361,
     "word": "nescience",
     "pos": "n",
@@ -7847,6 +7973,13 @@
     "band": 5
   },
   {
+    "id": 3725676074364556,
+    "word": "numinous",
+    "pos": "adj",
+    "definition": "filled with a mysterious sense of the divine",
+    "band": 5
+  },
+  {
     "id": 4029547920138166,
     "word": "objurgate",
     "pos": "v",
@@ -7865,6 +7998,13 @@
     "word": "obtund",
     "pos": "v",
     "definition": "to dull or blunt",
+    "band": 5
+  },
+  {
+    "id": 1782201094834208,
+    "word": "oneiric",
+    "pos": "adj",
+    "definition": "of or resembling a dream",
     "band": 5
   },
   {
@@ -7998,6 +8138,13 @@
     "word": "pertinacious",
     "pos": "adj",
     "definition": "stubbornly persistent and unyielding",
+    "band": 5
+  },
+  {
+    "id": 2757157559116380,
+    "word": "petrichor",
+    "pos": "n",
+    "definition": "the earthy scent of rain falling on dry ground",
     "band": 5
   },
   {
@@ -8351,6 +8498,20 @@
     "band": 5
   },
   {
+    "id": 3199937799192594,
+    "word": "sprezzatura",
+    "pos": "n",
+    "definition": "studied nonchalance that conceals all effort",
+    "band": 5
+  },
+  {
+    "id": 3024784090786119,
+    "word": "stygian",
+    "pos": "adj",
+    "definition": "intensely dark, gloomy, or forbidding",
+    "band": 5
+  },
+  {
     "id": 1499101938850832,
     "word": "suave",
     "pos": "adj",
@@ -8418,6 +8579,13 @@
     "word": "temulent",
     "pos": "adj",
     "definition": "drunken",
+    "band": 5
+  },
+  {
+    "id": 3303765810615527,
+    "word": "tenebrous",
+    "pos": "adj",
+    "definition": "dark, shadowy, and gloomy",
     "band": 5
   },
   {
@@ -8617,10 +8785,24 @@
     "band": 5
   },
   {
+    "id": 1196125723664111,
+    "word": "weltschmerz",
+    "pos": "n",
+    "definition": "a world-weary sadness at the world's imperfection",
+    "band": 5
+  },
+  {
     "id": 4061315011809256,
     "word": "wend",
     "pos": "v",
     "definition": "to travel slowly along a course",
+    "band": 5
+  },
+  {
+    "id": 687368948365449,
+    "word": "widdershins",
+    "pos": "adv",
+    "definition": "in a direction opposite the sun's course; counterclockwise",
     "band": 5
   },
   {
