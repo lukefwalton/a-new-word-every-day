@@ -6930,10 +6930,31 @@
     "band": 5
   },
   {
+    "id": 1188273403239508,
+    "word": "aesthete",
+    "pos": "n",
+    "definition": "one who prizes beauty above all else",
+    "band": 5
+  },
+  {
+    "id": 371603577123311,
+    "word": "ague",
+    "pos": "n",
+    "definition": "a malarial fever of chills and shivering",
+    "band": 5
+  },
+  {
     "id": 202985928118744,
     "word": "aleatory",
     "pos": "adj",
     "definition": "depending on chance",
+    "band": 5
+  },
+  {
+    "id": 3016315931673329,
+    "word": "amanuensis",
+    "pos": "n",
+    "definition": "an assistant who takes dictation or copies manuscripts",
     "band": 5
   },
   {
@@ -6972,10 +6993,24 @@
     "band": 5
   },
   {
+    "id": 3098059907246079,
+    "word": "anomie",
+    "pos": "n",
+    "definition": "rootless instability from the collapse of shared norms",
+    "band": 5
+  },
+  {
     "id": 1750833014084356,
     "word": "antediluvian",
     "pos": "adj",
     "definition": "extremely old or outdated",
+    "band": 5
+  },
+  {
+    "id": 361147162854107,
+    "word": "aperçu",
+    "pos": "n",
+    "definition": "a glancing insight that illuminates much",
     "band": 5
   },
   {
@@ -7028,6 +7063,20 @@
     "band": 5
   },
   {
+    "id": 396786646694925,
+    "word": "apotropaic",
+    "pos": "adj",
+    "definition": "made to ward off evil",
+    "band": 5
+  },
+  {
+    "id": 1350897711872894,
+    "word": "aquiline",
+    "pos": "adj",
+    "definition": "curved like an eagle's beak",
+    "band": 5
+  },
+  {
     "id": 3935166234336838,
     "word": "arrant",
     "pos": "adj",
@@ -7049,6 +7098,27 @@
     "band": 5
   },
   {
+    "id": 4419444370500162,
+    "word": "asseverate",
+    "pos": "v",
+    "definition": "to declare earnestly and solemnly",
+    "band": 5
+  },
+  {
+    "id": 344000687015784,
+    "word": "atrabilious",
+    "pos": "adj",
+    "definition": "melancholy and acrimonious in temperament",
+    "band": 5
+  },
+  {
+    "id": 4351669792240771,
+    "word": "aubade",
+    "pos": "n",
+    "definition": "a dawn song, often of lovers parting",
+    "band": 5
+  },
+  {
     "id": 4274921177041082,
     "word": "autochthonous",
     "pos": "adj",
@@ -7063,10 +7133,31 @@
     "band": 5
   },
   {
+    "id": 2804991463503944,
+    "word": "badinage",
+    "pos": "n",
+    "definition": "light, playful banter",
+    "band": 5
+  },
+  {
     "id": 4060955360627795,
     "word": "bathos",
     "pos": "n",
     "definition": "a deflating descent from the lofty to the trivial",
+    "band": 5
+  },
+  {
+    "id": 2210289644481561,
+    "word": "bedizen",
+    "pos": "v",
+    "definition": "to deck out in gaudy finery",
+    "band": 5
+  },
+  {
+    "id": 474823419122652,
+    "word": "belletrist",
+    "pos": "n",
+    "definition": "a writer of elegant literature for its own sake",
     "band": 5
   },
   {
@@ -7077,6 +7168,13 @@
     "band": 5
   },
   {
+    "id": 2649698304663532,
+    "word": "bestiary",
+    "pos": "n",
+    "definition": "a medieval catalogue of beasts and their moral meanings",
+    "band": 5
+  },
+  {
     "id": 2390159186966126,
     "word": "bibulous",
     "pos": "adj",
@@ -7084,10 +7182,31 @@
     "band": 5
   },
   {
+    "id": 1171099900673581,
+    "word": "bildungsroman",
+    "pos": "n",
+    "definition": "a novel tracing its hero's formative growth",
+    "band": 5
+  },
+  {
     "id": 3782334931707525,
     "word": "bilious",
     "pos": "adj",
     "definition": "spiteful and bad-tempered",
+    "band": 5
+  },
+  {
+    "id": 277274473472391,
+    "word": "blackguard",
+    "pos": "n",
+    "definition": "an unprincipled scoundrel",
+    "band": 5
+  },
+  {
+    "id": 2966990299629869,
+    "word": "bloviate",
+    "pos": "v",
+    "definition": "to orate windily and self-importantly",
     "band": 5
   },
   {
@@ -7105,10 +7224,38 @@
     "band": 5
   },
   {
+    "id": 3442094521894109,
+    "word": "bosky",
+    "pos": "adj",
+    "definition": "thick with trees and underbrush",
+    "band": 5
+  },
+  {
     "id": 753631320282922,
     "word": "bowdlerize",
     "pos": "v",
     "definition": "to remove material deemed improper from a text",
+    "band": 5
+  },
+  {
+    "id": 3214003699432726,
+    "word": "bruit",
+    "pos": "v",
+    "definition": "to spread a rumour or report about",
+    "band": 5
+  },
+  {
+    "id": 290944919305037,
+    "word": "bucolic",
+    "pos": "adj",
+    "definition": "of a rosily idealized countryside",
+    "band": 5
+  },
+  {
+    "id": 3663685914329588,
+    "word": "cabal",
+    "pos": "n",
+    "definition": "a small group plotting in secret",
     "band": 5
   },
   {
@@ -7161,6 +7308,13 @@
     "band": 5
   },
   {
+    "id": 4022854300150261,
+    "word": "carouse",
+    "pos": "v",
+    "definition": "to revel long and drunkenly",
+    "band": 5
+  },
+  {
     "id": 430783644017548,
     "word": "casuistry",
     "pos": "n",
@@ -7175,10 +7329,38 @@
     "band": 5
   },
   {
+    "id": 3404425308550639,
+    "word": "cavort",
+    "pos": "v",
+    "definition": "to prance about in high spirits",
+    "band": 5
+  },
+  {
+    "id": 3121874576723073,
+    "word": "changeling",
+    "pos": "n",
+    "definition": "a child secretly swapped for another in infancy",
+    "band": 5
+  },
+  {
+    "id": 2463830515831215,
+    "word": "chiaroscuro",
+    "pos": "n",
+    "definition": "the dramatic interplay of light and shadow",
+    "band": 5
+  },
+  {
     "id": 253520400197726,
     "word": "chiasmus",
     "pos": "n",
     "definition": "a rhetorical figure in which the second phrase mirrors the first in reverse",
+    "band": 5
+  },
+  {
+    "id": 2119580315955909,
+    "word": "choleric",
+    "pos": "adj",
+    "definition": "quick to flare into anger",
     "band": 5
   },
   {
@@ -7231,6 +7413,20 @@
     "band": 5
   },
   {
+    "id": 1524509881707021,
+    "word": "confabulate",
+    "pos": "v",
+    "definition": "to chat together; to fill memory's gaps with invention",
+    "band": 5
+  },
+  {
+    "id": 2121068295705419,
+    "word": "consumptive",
+    "pos": "adj",
+    "definition": "wasting away, as with tuberculosis",
+    "band": 5
+  },
+  {
     "id": 4063856336928334,
     "word": "contumacious",
     "pos": "adj",
@@ -7245,10 +7441,45 @@
     "band": 5
   },
   {
+    "id": 1926654264403843,
+    "word": "cosset",
+    "pos": "v",
+    "definition": "to pamper and shield from every hardship",
+    "band": 5
+  },
+  {
+    "id": 1228756855560490,
+    "word": "costive",
+    "pos": "adj",
+    "definition": "cramped and grudging in expression; constipated",
+    "band": 5
+  },
+  {
+    "id": 1812092714078125,
+    "word": "coterie",
+    "pos": "n",
+    "definition": "an exclusive circle of like-minded intimates",
+    "band": 5
+  },
+  {
     "id": 4043518032890499,
     "word": "covetous",
     "pos": "adj",
     "definition": "enviously eager to possess what belongs to another",
+    "band": 5
+  },
+  {
+    "id": 3104087763722461,
+    "word": "coxcomb",
+    "pos": "n",
+    "definition": "a vain, strutting dandy",
+    "band": 5
+  },
+  {
+    "id": 187340069694291,
+    "word": "cozen",
+    "pos": "v",
+    "definition": "to deceive with artful coaxing",
     "band": 5
   },
   {
@@ -7273,10 +7504,24 @@
     "band": 5
   },
   {
+    "id": 1452726515312664,
+    "word": "crotchet",
+    "pos": "n",
+    "definition": "a stubborn, whimsical notion",
+    "band": 5
+  },
+  {
     "id": 1969241308929561,
     "word": "curmudgeonly",
     "pos": "adj",
     "definition": "bad-tempered, surly, and miserly",
+    "band": 5
+  },
+  {
+    "id": 274221713629046,
+    "word": "cynosure",
+    "pos": "n",
+    "definition": "the focal point of all eyes and admiration",
     "band": 5
   },
   {
@@ -7298,6 +7543,13 @@
     "word": "deliquesce",
     "pos": "v",
     "definition": "to melt away or dissolve",
+    "band": 5
+  },
+  {
+    "id": 2331508034632399,
+    "word": "demotic",
+    "pos": "adj",
+    "definition": "of the everyday language of ordinary people",
     "band": 5
   },
   {
@@ -7343,10 +7595,24 @@
     "band": 5
   },
   {
+    "id": 3692095808494798,
+    "word": "discomfit",
+    "pos": "v",
+    "definition": "to unsettle someone into confusion or embarrassment",
+    "band": 5
+  },
+  {
     "id": 3398913027817654,
     "word": "disquisition",
     "pos": "n",
     "definition": "a long, formal discourse",
+    "band": 5
+  },
+  {
+    "id": 3015521307521869,
+    "word": "doggerel",
+    "pos": "n",
+    "definition": "clumsy, trivial verse",
     "band": 5
   },
   {
@@ -7357,10 +7623,38 @@
     "band": 5
   },
   {
+    "id": 1820769392430295,
+    "word": "dragoon",
+    "pos": "v",
+    "definition": "to strong-arm someone into doing something",
+    "band": 5
+  },
+  {
     "id": 1712289737255796,
     "word": "droll",
     "pos": "adj",
     "definition": "amusing in an odd or whimsical way",
+    "band": 5
+  },
+  {
+    "id": 352760228427711,
+    "word": "duende",
+    "pos": "n",
+    "definition": "the dark, earthy spirit that fires a passionate performance",
+    "band": 5
+  },
+  {
+    "id": 2703281187652027,
+    "word": "dulcet",
+    "pos": "adj",
+    "definition": "sweetly soothing to the ear",
+    "band": 5
+  },
+  {
+    "id": 3826168795455388,
+    "word": "dyspeptic",
+    "pos": "adj",
+    "definition": "soured in mood, as by bad digestion",
     "band": 5
   },
   {
@@ -7375,6 +7669,13 @@
     "word": "effulgent",
     "pos": "adj",
     "definition": "shining brilliantly",
+    "band": 5
+  },
+  {
+    "id": 1021522884700220,
+    "word": "ekphrasis",
+    "pos": "n",
+    "definition": "a vivid literary description of a work of art",
     "band": 5
   },
   {
@@ -7396,6 +7697,13 @@
     "word": "emolument",
     "pos": "n",
     "definition": "payment for work or office",
+    "band": 5
+  },
+  {
+    "id": 1196408357488198,
+    "word": "empyrean",
+    "pos": "n",
+    "definition": "the highest heaven of fire and light",
     "band": 5
   },
   {
@@ -7434,6 +7742,20 @@
     "band": 5
   },
   {
+    "id": 3802856277246105,
+    "word": "etiolated",
+    "pos": "adj",
+    "definition": "pale and feeble from growing without light",
+    "band": 5
+  },
+  {
+    "id": 2839927120699550,
+    "word": "eventide",
+    "pos": "n",
+    "definition": "the close of day; evening",
+    "band": 5
+  },
+  {
     "id": 2955339932711231,
     "word": "excrescence",
     "pos": "n",
@@ -7459,6 +7781,20 @@
     "word": "exiguous",
     "pos": "adj",
     "definition": "very small in amount",
+    "band": 5
+  },
+  {
+    "id": 777608871090684,
+    "word": "expatiate",
+    "pos": "v",
+    "definition": "to hold forth at generous length",
+    "band": 5
+  },
+  {
+    "id": 2641418609800946,
+    "word": "factotum",
+    "pos": "n",
+    "definition": "a servant employed to do every kind of work",
     "band": 5
   },
   {
@@ -7494,6 +7830,27 @@
     "word": "fecundity",
     "pos": "n",
     "definition": "fertility or productiveness",
+    "band": 5
+  },
+  {
+    "id": 3107314508134304,
+    "word": "fen",
+    "pos": "n",
+    "definition": "low, marshy, waterlogged land",
+    "band": 5
+  },
+  {
+    "id": 1695762915771042,
+    "word": "festoon",
+    "pos": "v",
+    "definition": "to drape with decorative chains or garlands",
+    "band": 5
+  },
+  {
+    "id": 3890775654279297,
+    "word": "fey",
+    "pos": "adj",
+    "definition": "touched with otherworldly strangeness",
     "band": 5
   },
   {
@@ -7539,6 +7896,13 @@
     "band": 5
   },
   {
+    "id": 2354578037823665,
+    "word": "frisson",
+    "pos": "n",
+    "definition": "a sudden shiver of excitement or dread",
+    "band": 5
+  },
+  {
     "id": 3618523663551009,
     "word": "froward",
     "pos": "adj",
@@ -7574,6 +7938,13 @@
     "band": 5
   },
   {
+    "id": 4001639478774979,
+    "word": "funereal",
+    "pos": "adj",
+    "definition": "solemn and mournful as a burial",
+    "band": 5
+  },
+  {
     "id": 3066561446545207,
     "word": "fustian",
     "pos": "n",
@@ -7592,6 +7963,13 @@
     "word": "gallimaufry",
     "pos": "n",
     "definition": "a jumble or hodgepodge",
+    "band": 5
+  },
+  {
+    "id": 3035419799378399,
+    "word": "gallivant",
+    "pos": "v",
+    "definition": "to rove about in pursuit of pleasure",
     "band": 5
   },
   {
@@ -7616,10 +7994,38 @@
     "band": 5
   },
   {
+    "id": 4091741270752821,
+    "word": "gewgaw",
+    "pos": "n",
+    "definition": "a showy trinket of little worth",
+    "band": 5
+  },
+  {
+    "id": 2612534531741564,
+    "word": "gimcrack",
+    "pos": "adj",
+    "definition": "showy but flimsily made",
+    "band": 5
+  },
+  {
     "id": 2098804836657229,
     "word": "gloaming",
     "pos": "n",
     "definition": "the fading twilight after sunset",
+    "band": 5
+  },
+  {
+    "id": 1342281569424333,
+    "word": "gnomic",
+    "pos": "adj",
+    "definition": "compressed into cryptic aphorisms",
+    "band": 5
+  },
+  {
+    "id": 724026491329114,
+    "word": "gormandize",
+    "pos": "v",
+    "definition": "to devour food greedily",
     "band": 5
   },
   {
@@ -7637,6 +8043,13 @@
     "band": 5
   },
   {
+    "id": 7844197410167,
+    "word": "hamartia",
+    "pos": "n",
+    "definition": "the flaw that fells a tragic hero",
+    "band": 5
+  },
+  {
     "id": 2690635124868921,
     "word": "hebetude",
     "pos": "n",
@@ -7651,10 +8064,24 @@
     "band": 5
   },
   {
+    "id": 225497836921009,
+    "word": "hieratic",
+    "pos": "adj",
+    "definition": "stiffly ceremonial and priestlike",
+    "band": 5
+  },
+  {
     "id": 4329124141432307,
     "word": "historiography",
     "pos": "n",
     "definition": "the study of how history is written",
+    "band": 5
+  },
+  {
+    "id": 1783081254701911,
+    "word": "homunculus",
+    "pos": "n",
+    "definition": "a miniature human, especially one made by alchemy",
     "band": 5
   },
   {
@@ -7777,6 +8204,13 @@
     "band": 5
   },
   {
+    "id": 4007693862445648,
+    "word": "juvenilia",
+    "pos": "n",
+    "definition": "works produced in an artist's youth",
+    "band": 5
+  },
+  {
     "id": 1343529753824600,
     "word": "kakistocracy",
     "pos": "n",
@@ -7798,6 +8232,55 @@
     "band": 5
   },
   {
+    "id": 370354259982581,
+    "word": "lapidary",
+    "pos": "adj",
+    "definition": "polished and exact, as if cut in stone",
+    "band": 5
+  },
+  {
+    "id": 4375694908280400,
+    "word": "laudanum",
+    "pos": "n",
+    "definition": "a tincture of opium once dosed for every ailment",
+    "band": 5
+  },
+  {
+    "id": 1307446382597059,
+    "word": "legerdemain",
+    "pos": "n",
+    "definition": "sleight of hand; artful trickery",
+    "band": 5
+  },
+  {
+    "id": 3802867613198868,
+    "word": "leonine",
+    "pos": "adj",
+    "definition": "like a lion in bearing or appearance",
+    "band": 5
+  },
+  {
+    "id": 1682956501406518,
+    "word": "libation",
+    "pos": "n",
+    "definition": "a drink poured out in offering; a celebratory drink",
+    "band": 5
+  },
+  {
+    "id": 2855792653583319,
+    "word": "libertine",
+    "pos": "n",
+    "definition": "one who lives free of moral restraint",
+    "band": 5
+  },
+  {
+    "id": 3292832141730510,
+    "word": "lickspittle",
+    "pos": "n",
+    "definition": "a fawning, servile flatterer",
+    "band": 5
+  },
+  {
     "id": 771303737610019,
     "word": "limerence",
     "pos": "n",
@@ -7812,10 +8295,24 @@
     "band": 5
   },
   {
+    "id": 4058243614531767,
+    "word": "limn",
+    "pos": "v",
+    "definition": "to depict or describe with delicate precision",
+    "band": 5
+  },
+  {
     "id": 1897492984521315,
     "word": "limpid",
     "pos": "adj",
     "definition": "clear and transparent",
+    "band": 5
+  },
+  {
+    "id": 2281815285202446,
+    "word": "lionize",
+    "pos": "v",
+    "definition": "to celebrate someone as a figure of great importance",
     "band": 5
   },
   {
@@ -7830,6 +8327,20 @@
     "word": "logorrhea",
     "pos": "n",
     "definition": "excessive, incoherent talkativeness",
+    "band": 5
+  },
+  {
+    "id": 2390041123276548,
+    "word": "longueur",
+    "pos": "n",
+    "definition": "a tedious stretch in a book or performance",
+    "band": 5
+  },
+  {
+    "id": 1213639757055541,
+    "word": "lucre",
+    "pos": "n",
+    "definition": "money, regarded with contempt as sordid gain",
     "band": 5
   },
   {
@@ -7882,6 +8393,13 @@
     "band": 5
   },
   {
+    "id": 2359204982415413,
+    "word": "maunder",
+    "pos": "v",
+    "definition": "to ramble aimlessly in speech or movement",
+    "band": 5
+  },
+  {
     "id": 1640519060627169,
     "word": "mellifluous",
     "pos": "adj",
@@ -7903,6 +8421,13 @@
     "band": 5
   },
   {
+    "id": 2655807585908863,
+    "word": "mephitic",
+    "pos": "adj",
+    "definition": "reeking with poisonous vapours",
+    "band": 5
+  },
+  {
     "id": 3240850837613229,
     "word": "meretricious",
     "pos": "adj",
@@ -7914,6 +8439,27 @@
     "word": "metonymy",
     "pos": "n",
     "definition": "naming something by an attribute closely associated with it",
+    "band": 5
+  },
+  {
+    "id": 2777846416822812,
+    "word": "miasma",
+    "pos": "n",
+    "definition": "a poisonous atmosphere, literal or moral",
+    "band": 5
+  },
+  {
+    "id": 4458227648232491,
+    "word": "mien",
+    "pos": "n",
+    "definition": "a person's bearing and expression",
+    "band": 5
+  },
+  {
+    "id": 4112631552932553,
+    "word": "mimesis",
+    "pos": "n",
+    "definition": "art's imitation of life",
     "band": 5
   },
   {
@@ -7938,10 +8484,45 @@
     "band": 5
   },
   {
+    "id": 2078684058167376,
+    "word": "mordant",
+    "pos": "adj",
+    "definition": "sharply sarcastic; biting in wit",
+    "band": 5
+  },
+  {
+    "id": 2522697106453366,
+    "word": "mountebank",
+    "pos": "n",
+    "definition": "a swindler who hawks false remedies and promises",
+    "band": 5
+  },
+  {
     "id": 3280145865259904,
     "word": "mumpsimus",
     "pos": "n",
     "definition": "stubborn adherence to a habit or notion shown to be wrong",
+    "band": 5
+  },
+  {
+    "id": 3349844728408901,
+    "word": "myrmidon",
+    "pos": "n",
+    "definition": "a follower who executes orders without scruple",
+    "band": 5
+  },
+  {
+    "id": 354439380506245,
+    "word": "nacreous",
+    "pos": "adj",
+    "definition": "shimmering like mother-of-pearl",
+    "band": 5
+  },
+  {
+    "id": 2612929535492890,
+    "word": "nepenthe",
+    "pos": "n",
+    "definition": "a draught that banishes grief from memory",
     "band": 5
   },
   {
@@ -7966,6 +8547,13 @@
     "band": 5
   },
   {
+    "id": 1474087552222016,
+    "word": "noisome",
+    "pos": "adj",
+    "definition": "foul-smelling and offensive; noxious",
+    "band": 5
+  },
+  {
     "id": 705287606740706,
     "word": "nugatory",
     "pos": "adj",
@@ -7984,6 +8572,13 @@
     "word": "objurgate",
     "pos": "v",
     "definition": "to rebuke severely",
+    "band": 5
+  },
+  {
+    "id": 1082154501072949,
+    "word": "obsequies",
+    "pos": "n",
+    "definition": "funeral rites and ceremonies",
     "band": 5
   },
   {
@@ -8015,6 +8610,13 @@
     "band": 5
   },
   {
+    "id": 1664590439208139,
+    "word": "opsimath",
+    "pos": "n",
+    "definition": "one who begins learning late in life",
+    "band": 5
+  },
+  {
     "id": 1683957770991961,
     "word": "orotund",
     "pos": "adj",
@@ -8043,10 +8645,24 @@
     "band": 5
   },
   {
+    "id": 453721168635181,
+    "word": "panache",
+    "pos": "n",
+    "definition": "dashing flamboyance of style",
+    "band": 5
+  },
+  {
     "id": 3105583502072002,
     "word": "panegyric",
     "pos": "n",
     "definition": "a speech of elaborate praise",
+    "band": 5
+  },
+  {
+    "id": 4178955904348109,
+    "word": "panjandrum",
+    "pos": "n",
+    "definition": "a self-important personage of exaggerated authority",
     "band": 5
   },
   {
@@ -8071,6 +8687,13 @@
     "band": 5
   },
   {
+    "id": 1509694728608964,
+    "word": "pastiche",
+    "pos": "n",
+    "definition": "a work imitating another's style; a stylistic medley",
+    "band": 5
+  },
+  {
     "id": 834999681303390,
     "word": "peevish",
     "pos": "adj",
@@ -8078,10 +8701,24 @@
     "band": 5
   },
   {
+    "id": 292024810842704,
+    "word": "pentimento",
+    "pos": "n",
+    "definition": "an earlier image showing through a repainted canvas",
+    "band": 5
+  },
+  {
     "id": 3114987000553715,
     "word": "penurious",
     "pos": "adj",
     "definition": "extremely poor or miserly",
+    "band": 5
+  },
+  {
+    "id": 644169670865038,
+    "word": "perambulate",
+    "pos": "v",
+    "definition": "to stroll through at an unhurried pace",
     "band": 5
   },
   {
@@ -8103,6 +8740,13 @@
     "word": "peripatetic",
     "pos": "adj",
     "definition": "traveling from place to place",
+    "band": 5
+  },
+  {
+    "id": 2739995675431862,
+    "word": "peripeteia",
+    "pos": "n",
+    "definition": "a story's sudden reversal of fortune",
     "band": 5
   },
   {
@@ -8155,10 +8799,24 @@
     "band": 5
   },
   {
+    "id": 2676625910744913,
+    "word": "phantasmagoria",
+    "pos": "n",
+    "definition": "a shifting procession of dreamlike images",
+    "band": 5
+  },
+  {
     "id": 3150521555049958,
     "word": "phenomenology",
     "pos": "n",
     "definition": "the philosophical study of experience as it is lived",
+    "band": 5
+  },
+  {
+    "id": 2585358658874447,
+    "word": "philippic",
+    "pos": "n",
+    "definition": "a speech of fiery denunciation",
     "band": 5
   },
   {
@@ -8183,6 +8841,20 @@
     "band": 5
   },
   {
+    "id": 1880934853001786,
+    "word": "physiognomy",
+    "pos": "n",
+    "definition": "the face as an index of character; the art of reading it",
+    "band": 5
+  },
+  {
+    "id": 3677482120865439,
+    "word": "picaresque",
+    "pos": "adj",
+    "definition": "roving through the episodic adventures of a rogue",
+    "band": 5
+  },
+  {
     "id": 155166347922237,
     "word": "plangent",
     "pos": "adj",
@@ -8197,6 +8869,13 @@
     "band": 5
   },
   {
+    "id": 3101582215950739,
+    "word": "poetaster",
+    "pos": "n",
+    "definition": "a writer of contemptibly bad verse",
+    "band": 5
+  },
+  {
     "id": 2420333223855492,
     "word": "poltroon",
     "pos": "n",
@@ -8208,6 +8887,13 @@
     "word": "postprandial",
     "pos": "adj",
     "definition": "occurring after a meal",
+    "band": 5
+  },
+  {
+    "id": 2125147706771907,
+    "word": "prate",
+    "pos": "v",
+    "definition": "to chatter emptily and at length",
     "band": 5
   },
   {
@@ -8274,6 +8960,13 @@
     "band": 5
   },
   {
+    "id": 83436452883982,
+    "word": "psychopomp",
+    "pos": "n",
+    "definition": "a guide who conducts souls to the afterlife",
+    "band": 5
+  },
+  {
     "id": 1882478348716296,
     "word": "pugilist",
     "pos": "n",
@@ -8288,10 +8981,24 @@
     "band": 5
   },
   {
+    "id": 2635652165232950,
+    "word": "purloin",
+    "pos": "v",
+    "definition": "to make off with slyly; to steal",
+    "band": 5
+  },
+  {
     "id": 1999559293551902,
     "word": "pusillanimous",
     "pos": "adj",
     "definition": "timid and cowardly",
+    "band": 5
+  },
+  {
+    "id": 1157215131004286,
+    "word": "quaff",
+    "pos": "v",
+    "definition": "to drink deep and with gusto",
     "band": 5
   },
   {
@@ -8316,6 +9023,13 @@
     "band": 5
   },
   {
+    "id": 421938430941263,
+    "word": "quondam",
+    "pos": "adj",
+    "definition": "former; that once was",
+    "band": 5
+  },
+  {
     "id": 789321063758946,
     "word": "quotidian",
     "pos": "adj",
@@ -8327,6 +9041,13 @@
     "word": "raffish",
     "pos": "adj",
     "definition": "unconventional and slightly disreputable in a charming way",
+    "band": 5
+  },
+  {
+    "id": 1835170769329902,
+    "word": "raiment",
+    "pos": "n",
+    "definition": "clothing; attire",
     "band": 5
   },
   {
@@ -8379,10 +9100,38 @@
     "band": 5
   },
   {
+    "id": 290230964898536,
+    "word": "reliquary",
+    "pos": "n",
+    "definition": "a container for sacred relics",
+    "band": 5
+  },
+  {
     "id": 1462529725905299,
     "word": "remonstrance",
     "pos": "n",
     "definition": "a forceful protest",
+    "band": 5
+  },
+  {
+    "id": 4159644069290885,
+    "word": "revenant",
+    "pos": "n",
+    "definition": "one who returns from the dead or from long exile",
+    "band": 5
+  },
+  {
+    "id": 1056709333290444,
+    "word": "rill",
+    "pos": "n",
+    "definition": "a small, quick-running stream",
+    "band": 5
+  },
+  {
+    "id": 30559694931743,
+    "word": "rime",
+    "pos": "n",
+    "definition": "a feathery crust of frost",
     "band": 5
   },
   {
@@ -8397,6 +9146,34 @@
     "word": "rodomontade",
     "pos": "n",
     "definition": "boastful, blustering talk",
+    "band": 5
+  },
+  {
+    "id": 894213656084736,
+    "word": "roister",
+    "pos": "v",
+    "definition": "to swagger and celebrate noisily",
+    "band": 5
+  },
+  {
+    "id": 2370316807460659,
+    "word": "roué",
+    "pos": "n",
+    "definition": "an ageing man given over to dissolute pleasures",
+    "band": 5
+  },
+  {
+    "id": 2491901792756642,
+    "word": "rubicund",
+    "pos": "adj",
+    "definition": "glowing red-faced and hearty",
+    "band": 5
+  },
+  {
+    "id": 2542533610881619,
+    "word": "sallow",
+    "pos": "adj",
+    "definition": "of an unhealthy yellowish complexion",
     "band": 5
   },
   {
@@ -8428,6 +9205,13 @@
     "band": 5
   },
   {
+    "id": 1677138234014773,
+    "word": "saudade",
+    "pos": "n",
+    "definition": "a tender longing for something absent and perhaps lost forever",
+    "band": 5
+  },
+  {
     "id": 2942947610974741,
     "word": "scapegrace",
     "pos": "n",
@@ -8439,6 +9223,20 @@
     "word": "sciolism",
     "pos": "n",
     "definition": "superficial pretension to knowledge",
+    "band": 5
+  },
+  {
+    "id": 661907628835307,
+    "word": "screed",
+    "pos": "n",
+    "definition": "a long, vehement piece of writing",
+    "band": 5
+  },
+  {
+    "id": 1262487344351287,
+    "word": "scrivener",
+    "pos": "n",
+    "definition": "a professional copyist of documents",
     "band": 5
   },
   {
@@ -8463,6 +9261,13 @@
     "band": 5
   },
   {
+    "id": 1919544109771120,
+    "word": "sepulchral",
+    "pos": "adj",
+    "definition": "hollow and gloomy as the grave",
+    "band": 5
+  },
+  {
     "id": 4373073880015509,
     "word": "serried",
     "pos": "adj",
@@ -8474,6 +9279,34 @@
     "word": "sesquipedalian",
     "pos": "adj",
     "definition": "given to using long words",
+    "band": 5
+  },
+  {
+    "id": 2149112053405528,
+    "word": "sibylline",
+    "pos": "adj",
+    "definition": "prophetic in an obscure, riddling way",
+    "band": 5
+  },
+  {
+    "id": 2507133933732444,
+    "word": "sidle",
+    "pos": "v",
+    "definition": "to edge sideways, shyly or slyly",
+    "band": 5
+  },
+  {
+    "id": 3049305654756751,
+    "word": "simulacrum",
+    "pos": "n",
+    "definition": "an image or imitation without the substance of its original",
+    "band": 5
+  },
+  {
+    "id": 2591710423252016,
+    "word": "skulk",
+    "pos": "v",
+    "definition": "to lurk or slink about furtively",
     "band": 5
   },
   {
@@ -8491,6 +9324,27 @@
     "band": 5
   },
   {
+    "id": 2575749568617503,
+    "word": "sonorous",
+    "pos": "adj",
+    "definition": "deep, full, and resonant in sound",
+    "band": 5
+  },
+  {
+    "id": 3939704998358520,
+    "word": "sough",
+    "pos": "v",
+    "definition": "to sigh or moan softly, as wind through trees",
+    "band": 5
+  },
+  {
+    "id": 466299981803346,
+    "word": "spindrift",
+    "pos": "n",
+    "definition": "sea spray whipped from wave crests by wind",
+    "band": 5
+  },
+  {
     "id": 2081687680848745,
     "word": "splenetic",
     "pos": "adj",
@@ -8505,6 +9359,20 @@
     "band": 5
   },
   {
+    "id": 2346121297827603,
+    "word": "spume",
+    "pos": "n",
+    "definition": "froth churned up on an agitated sea",
+    "band": 5
+  },
+  {
+    "id": 2944741599275548,
+    "word": "stertorous",
+    "pos": "adj",
+    "definition": "heavy and rasping, as laboured breathing in sleep",
+    "band": 5
+  },
+  {
     "id": 3024784090786119,
     "word": "stygian",
     "pos": "adj",
@@ -8516,6 +9384,13 @@
     "word": "suave",
     "pos": "adj",
     "definition": "smoothly charming and self-assured",
+    "band": 5
+  },
+  {
+    "id": 1085896252478970,
+    "word": "suborn",
+    "pos": "v",
+    "definition": "to induce someone secretly to do wrong",
     "band": 5
   },
   {
@@ -8547,6 +9422,13 @@
     "band": 5
   },
   {
+    "id": 622262199042865,
+    "word": "sward",
+    "pos": "n",
+    "definition": "an expanse of short grassy turf",
+    "band": 5
+  },
+  {
     "id": 2234475988378673,
     "word": "sybaritic",
     "pos": "adj",
@@ -8554,10 +9436,24 @@
     "band": 5
   },
   {
+    "id": 4404542782249602,
+    "word": "sylvan",
+    "pos": "adj",
+    "definition": "of woods and their leafy shade",
+    "band": 5
+  },
+  {
     "id": 1940566764772777,
     "word": "synecdoche",
     "pos": "n",
     "definition": "a figure of speech in which a part stands for the whole",
+    "band": 5
+  },
+  {
+    "id": 1139909450035213,
+    "word": "tarn",
+    "pos": "n",
+    "definition": "a small mountain lake in a glacial hollow",
     "band": 5
   },
   {
@@ -8624,6 +9520,13 @@
     "band": 5
   },
   {
+    "id": 2988065680099494,
+    "word": "transmogrify",
+    "pos": "v",
+    "definition": "to transform into something strange or grotesque",
+    "band": 5
+  },
+  {
     "id": 4401221959654559,
     "word": "truckle",
     "pos": "v",
@@ -8656,6 +9559,13 @@
     "word": "turpitude",
     "pos": "n",
     "definition": "depravity or wickedness",
+    "band": 5
+  },
+  {
+    "id": 758691261854181,
+    "word": "tutelary",
+    "pos": "adj",
+    "definition": "watching over as a guardian spirit",
     "band": 5
   },
   {
@@ -8736,10 +9646,24 @@
     "band": 5
   },
   {
+    "id": 418411120676164,
+    "word": "vespertine",
+    "pos": "adj",
+    "definition": "of or awakening in the evening",
+    "band": 5
+  },
+  {
     "id": 2690988776755142,
     "word": "vicissitude",
     "pos": "n",
     "definition": "an unwelcome change of circumstances",
+    "band": 5
+  },
+  {
+    "id": 521233602468767,
+    "word": "virago",
+    "pos": "n",
+    "definition": "a fierce, domineering woman; in older use, a warrior",
     "band": 5
   },
   {
@@ -8771,10 +9695,31 @@
     "band": 5
   },
   {
+    "id": 1190058487459340,
+    "word": "vouchsafe",
+    "pos": "v",
+    "definition": "to grant or disclose as though conferring a favour",
+    "band": 5
+  },
+  {
+    "id": 1500575137690392,
+    "word": "vulpine",
+    "pos": "adj",
+    "definition": "sly and foxlike",
+    "band": 5
+  },
+  {
     "id": 1110932960624314,
     "word": "waggish",
     "pos": "adj",
     "definition": "playfully mischievous in humour",
+    "band": 5
+  },
+  {
+    "id": 2977130333006924,
+    "word": "wastrel",
+    "pos": "n",
+    "definition": "an idler who squanders money or talent",
     "band": 5
   },
   {
