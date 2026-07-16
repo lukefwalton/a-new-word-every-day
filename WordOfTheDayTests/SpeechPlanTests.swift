@@ -36,4 +36,27 @@ final class SpeechPlanTests: XCTestCase {
         let plan = SpeechPlan.make(for: word, includeReading: false)
         XCTAssertEqual(plan, SpeechPlan(text: "お兄さん", voiceLanguage: "ja-JP"))
     }
+
+    /// Spelling-trap words carry their pinned IPA; the en-US voice would otherwise
+    /// read "mien" letter-to-sound. Regular words (see the tests above, whose
+    /// full-equality asserts imply `ipa == nil`) stay on the voice's own lexicon.
+    func testEnglishTrapWordCarriesPinnedIPA() {
+        let plan = SpeechPlan.make(for: Fixtures.word(6, band: 5, word: "mien"))
+        XCTAssertEqual(plan, SpeechPlan(text: "mien", voiceLanguage: "en-US", ipa: "min"))
+    }
+
+    /// Every override must point at a shipped English headword, exactly as the
+    /// lowercase lookup expects — so a corpus rename or removal can't silently
+    /// orphan a pronunciation, and a mis-typed key fails here instead of at the
+    /// speak button.
+    func testIPAOverridesTargetShippedHeadwords() {
+        let corpus = WordCorpus.load(bundles: [Bundle(for: SpeechPlanTests.self)])
+        XCTAssertFalse(corpus.words.isEmpty, "words.json should be bundled with the test target")
+        let headwords = Set(corpus.words.map { $0.word.lowercased() })
+        for (key, ipa) in SpeechPlan.ipaOverrides {
+            XCTAssertEqual(key, key.lowercased(), "override key '\(key)' must be lowercase")
+            XCTAssertTrue(headwords.contains(key), "override key '\(key)' is not a shipped headword")
+            XCTAssertFalse(ipa.isEmpty, "override for '\(key)' has an empty pronunciation")
+        }
+    }
 }
