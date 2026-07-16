@@ -7028,10 +7028,38 @@
     "band": 5
   },
   {
+    "id": 1239221120384849,
+    "word": "avaricious",
+    "pos": "adj",
+    "definition": "greedy for wealth or gain",
+    "band": 5
+  },
+  {
+    "id": 3225727589864191,
+    "word": "benighted",
+    "pos": "adj",
+    "definition": "intellectually or morally unenlightened",
+    "band": 5
+  },
+  {
+    "id": 2390159186966126,
+    "word": "bibulous",
+    "pos": "adj",
+    "definition": "excessively fond of drinking alcohol",
+    "band": 5
+  },
+  {
     "id": 3782334931707525,
     "word": "bilious",
     "pos": "adj",
     "definition": "spiteful and bad-tempered",
+    "band": 5
+  },
+  {
+    "id": 327210216075718,
+    "word": "boorish",
+    "pos": "adj",
+    "definition": "rude and ill-mannered",
     "band": 5
   },
   {
@@ -7053,6 +7081,13 @@
     "word": "cadaverous",
     "pos": "adj",
     "definition": "gaunt and corpse-like",
+    "band": 5
+  },
+  {
+    "id": 306363534243032,
+    "word": "callow",
+    "pos": "adj",
+    "definition": "young, inexperienced, and immature",
     "band": 5
   },
   {
@@ -7140,6 +7175,13 @@
     "band": 5
   },
   {
+    "id": 4043518032890499,
+    "word": "covetous",
+    "pos": "adj",
+    "definition": "enviously eager to possess what belongs to another",
+    "band": 5
+  },
+  {
     "id": 4366259254308598,
     "word": "crapulous",
     "pos": "adj",
@@ -7151,6 +7193,13 @@
     "word": "crepuscular",
     "pos": "adj",
     "definition": "relating to twilight",
+    "band": 5
+  },
+  {
+    "id": 1969241308929561,
+    "word": "curmudgeonly",
+    "pos": "adj",
+    "definition": "bad-tempered, surly, and miserly",
     "band": 5
   },
   {
@@ -7207,6 +7256,20 @@
     "word": "disquisition",
     "pos": "n",
     "definition": "a long, formal discourse",
+    "band": 5
+  },
+  {
+    "id": 2171891774787653,
+    "word": "doughty",
+    "pos": "adj",
+    "definition": "brave, resolute, and persevering",
+    "band": 5
+  },
+  {
+    "id": 1712289737255796,
+    "word": "droll",
+    "pos": "adj",
+    "definition": "amusing in an odd or whimsical way",
     "band": 5
   },
   {
@@ -7455,6 +7518,13 @@
     "band": 5
   },
   {
+    "id": 57273420807544,
+    "word": "genteel",
+    "pos": "adj",
+    "definition": "affectedly refined or respectable",
+    "band": 5
+  },
+  {
     "id": 2613935502296793,
     "word": "grandiloquent",
     "pos": "adj",
@@ -7564,6 +7634,20 @@
     "word": "inveigle",
     "pos": "v",
     "definition": "to win over by deception",
+    "band": 5
+  },
+  {
+    "id": 1208012148471883,
+    "word": "invidious",
+    "pos": "adj",
+    "definition": "likely to arouse resentment or envy",
+    "band": 5
+  },
+  {
+    "id": 995215470480801,
+    "word": "irascible",
+    "pos": "adj",
+    "definition": "easily provoked to anger",
     "band": 5
   },
   {
@@ -7721,6 +7805,13 @@
     "band": 5
   },
   {
+    "id": 3183901548580846,
+    "word": "misanthropic",
+    "pos": "adj",
+    "definition": "disliking and distrusting humankind",
+    "band": 5
+  },
+  {
     "id": 2265117722536297,
     "word": "missive",
     "pos": "n",
@@ -7739,6 +7830,13 @@
     "word": "nidor",
     "pos": "n",
     "definition": "a strong cooking smell",
+    "band": 5
+  },
+  {
+    "id": 4195806015044702,
+    "word": "niggardly",
+    "pos": "adj",
+    "definition": "meanly ungenerous; stingy",
     "band": 5
   },
   {
@@ -7784,6 +7882,13 @@
     "band": 5
   },
   {
+    "id": 2393547185948285,
+    "word": "otiose",
+    "pos": "adj",
+    "definition": "serving no useful purpose; superfluous",
+    "band": 5
+  },
+  {
     "id": 3801388322641861,
     "word": "palimpsest",
     "pos": "n",
@@ -7809,6 +7914,27 @@
     "word": "parlous",
     "pos": "adj",
     "definition": "full of danger or uncertainty",
+    "band": 5
+  },
+  {
+    "id": 385648540902265,
+    "word": "parochial",
+    "pos": "adj",
+    "definition": "narrow or limited in outlook",
+    "band": 5
+  },
+  {
+    "id": 705664869321276,
+    "word": "parvenu",
+    "pos": "n",
+    "definition": "a social upstart newly risen in wealth or rank",
+    "band": 5
+  },
+  {
+    "id": 834999681303390,
+    "word": "peevish",
+    "pos": "adj",
+    "definition": "irritable and querulous",
     "band": 5
   },
   {
@@ -7868,10 +7994,31 @@
     "band": 5
   },
   {
+    "id": 1368159292601819,
+    "word": "pertinacious",
+    "pos": "adj",
+    "definition": "stubbornly persistent and unyielding",
+    "band": 5
+  },
+  {
+    "id": 176913857629362,
+    "word": "pettifog",
+    "pos": "v",
+    "definition": "to quibble or fuss over trivial details",
+    "band": 5
+  },
+  {
     "id": 3150521555049958,
     "word": "phenomenology",
     "pos": "n",
     "definition": "the philosophical study of experience as it is lived",
+    "band": 5
+  },
+  {
+    "id": 4389166548645262,
+    "word": "philistine",
+    "pos": "n",
+    "definition": "a person indifferent or hostile to culture and the arts",
     "band": 5
   },
   {
@@ -7903,6 +8050,13 @@
     "band": 5
   },
   {
+    "id": 2420333223855492,
+    "word": "poltroon",
+    "pos": "n",
+    "definition": "an utter coward",
+    "band": 5
+  },
+  {
     "id": 870453537771090,
     "word": "postprandial",
     "pos": "adj",
@@ -7928,6 +8082,13 @@
     "word": "prevaricate",
     "pos": "v",
     "definition": "to speak evasively to mislead",
+    "band": 5
+  },
+  {
+    "id": 4244736362883051,
+    "word": "priggish",
+    "pos": "adj",
+    "definition": "self-righteously moralistic and prim",
     "band": 5
   },
   {
@@ -8012,6 +8173,27 @@
     "word": "quotidian",
     "pos": "adj",
     "definition": "occurring daily; ordinary",
+    "band": 5
+  },
+  {
+    "id": 3097192752413816,
+    "word": "raffish",
+    "pos": "adj",
+    "definition": "unconventional and slightly disreputable in a charming way",
+    "band": 5
+  },
+  {
+    "id": 2628508695692734,
+    "word": "rakish",
+    "pos": "adj",
+    "definition": "dashingly and carelessly unconventional",
+    "band": 5
+  },
+  {
+    "id": 1441357521687801,
+    "word": "rapacious",
+    "pos": "adj",
+    "definition": "aggressively greedy or grasping",
     "band": 5
   },
   {
@@ -8162,6 +8344,20 @@
     "band": 5
   },
   {
+    "id": 2081687680848745,
+    "word": "splenetic",
+    "pos": "adj",
+    "definition": "bad-tempered and spiteful",
+    "band": 5
+  },
+  {
+    "id": 1499101938850832,
+    "word": "suave",
+    "pos": "adj",
+    "definition": "smoothly charming and self-assured",
+    "band": 5
+  },
+  {
     "id": 3512355688874132,
     "word": "supercilious",
     "pos": "adj",
@@ -8176,10 +8372,24 @@
     "band": 5
   },
   {
+    "id": 2195033954027414,
+    "word": "supine",
+    "pos": "adj",
+    "definition": "failing to act through weakness or indolence",
+    "band": 5
+  },
+  {
     "id": 4114834743685495,
     "word": "susurrus",
     "pos": "n",
     "definition": "a soft murmuring or rustling",
+    "band": 5
+  },
+  {
+    "id": 2234475988378673,
+    "word": "sybaritic",
+    "pos": "adj",
+    "definition": "devoted to luxury and sensual pleasure",
     "band": 5
   },
   {
@@ -8225,6 +8435,13 @@
     "band": 5
   },
   {
+    "id": 1996385565117590,
+    "word": "toady",
+    "pos": "n",
+    "definition": "a servile flatterer; a sycophant",
+    "band": 5
+  },
+  {
     "id": 2414015359081029,
     "word": "tortuous",
     "pos": "adj",
@@ -8236,6 +8453,13 @@
     "word": "traduce",
     "pos": "v",
     "definition": "to speak badly of so as to damage a reputation",
+    "band": 5
+  },
+  {
+    "id": 4401221959654559,
+    "word": "truckle",
+    "pos": "v",
+    "definition": "to submit obsequiously; to be servile",
     "band": 5
   },
   {
@@ -8274,6 +8498,13 @@
     "band": 5
   },
   {
+    "id": 2770119499456764,
+    "word": "unctuous",
+    "pos": "adj",
+    "definition": "excessively smooth, suave, or ingratiating",
+    "band": 5
+  },
+  {
     "id": 2366258558973044,
     "word": "usufruct",
     "pos": "n",
@@ -8285,6 +8516,13 @@
     "word": "vainglorious",
     "pos": "adj",
     "definition": "boastfully and excessively vain",
+    "band": 5
+  },
+  {
+    "id": 4093925967595671,
+    "word": "valetudinarian",
+    "pos": "n",
+    "definition": "a person unduly anxious about their own health",
     "band": 5
   },
   {
@@ -8362,6 +8600,13 @@
     "word": "voluble",
     "pos": "adj",
     "definition": "speaking fluently and at length",
+    "band": 5
+  },
+  {
+    "id": 1110932960624314,
+    "word": "waggish",
+    "pos": "adj",
+    "definition": "playfully mischievous in humour",
     "band": 5
   },
   {

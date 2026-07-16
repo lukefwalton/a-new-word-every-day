@@ -7204,5 +7204,215 @@
     "pos": "n",
     "definition": "the explanation of things by their purpose rather than their cause",
     "band": 5
+  },
+  {
+    "word": "unctuous",
+    "pos": "adj",
+    "definition": "excessively smooth, suave, or ingratiating",
+    "band": 5
+  },
+  {
+    "word": "avaricious",
+    "pos": "adj",
+    "definition": "greedy for wealth or gain",
+    "band": 5
+  },
+  {
+    "word": "rapacious",
+    "pos": "adj",
+    "definition": "aggressively greedy or grasping",
+    "band": 5
+  },
+  {
+    "word": "covetous",
+    "pos": "adj",
+    "definition": "enviously eager to possess what belongs to another",
+    "band": 5
+  },
+  {
+    "word": "niggardly",
+    "pos": "adj",
+    "definition": "meanly ungenerous; stingy",
+    "band": 5
+  },
+  {
+    "word": "pertinacious",
+    "pos": "adj",
+    "definition": "stubbornly persistent and unyielding",
+    "band": 5
+  },
+  {
+    "word": "irascible",
+    "pos": "adj",
+    "definition": "easily provoked to anger",
+    "band": 5
+  },
+  {
+    "word": "splenetic",
+    "pos": "adj",
+    "definition": "bad-tempered and spiteful",
+    "band": 5
+  },
+  {
+    "word": "misanthropic",
+    "pos": "adj",
+    "definition": "disliking and distrusting humankind",
+    "band": 5
+  },
+  {
+    "word": "invidious",
+    "pos": "adj",
+    "definition": "likely to arouse resentment or envy",
+    "band": 5
+  },
+  {
+    "word": "waggish",
+    "pos": "adj",
+    "definition": "playfully mischievous in humour",
+    "band": 5
+  },
+  {
+    "word": "droll",
+    "pos": "adj",
+    "definition": "amusing in an odd or whimsical way",
+    "band": 5
+  },
+  {
+    "word": "raffish",
+    "pos": "adj",
+    "definition": "unconventional and slightly disreputable in a charming way",
+    "band": 5
+  },
+  {
+    "word": "rakish",
+    "pos": "adj",
+    "definition": "dashingly and carelessly unconventional",
+    "band": 5
+  },
+  {
+    "word": "priggish",
+    "pos": "adj",
+    "definition": "self-righteously moralistic and prim",
+    "band": 5
+  },
+  {
+    "word": "genteel",
+    "pos": "adj",
+    "definition": "affectedly refined or respectable",
+    "band": 5
+  },
+  {
+    "word": "boorish",
+    "pos": "adj",
+    "definition": "rude and ill-mannered",
+    "band": 5
+  },
+  {
+    "word": "parochial",
+    "pos": "adj",
+    "definition": "narrow or limited in outlook",
+    "band": 5
+  },
+  {
+    "word": "doughty",
+    "pos": "adj",
+    "definition": "brave, resolute, and persevering",
+    "band": 5
+  },
+  {
+    "word": "suave",
+    "pos": "adj",
+    "definition": "smoothly charming and self-assured",
+    "band": 5
+  },
+  {
+    "word": "otiose",
+    "pos": "adj",
+    "definition": "serving no useful purpose; superfluous",
+    "band": 5
+  },
+  {
+    "word": "sybaritic",
+    "pos": "adj",
+    "definition": "devoted to luxury and sensual pleasure",
+    "band": 5
+  },
+  {
+    "word": "supine",
+    "pos": "adj",
+    "definition": "failing to act through weakness or indolence",
+    "band": 5
+  },
+  {
+    "word": "peevish",
+    "pos": "adj",
+    "definition": "irritable and querulous",
+    "band": 5
+  },
+  {
+    "word": "curmudgeonly",
+    "pos": "adj",
+    "definition": "bad-tempered, surly, and miserly",
+    "band": 5
+  },
+  {
+    "word": "bibulous",
+    "pos": "adj",
+    "definition": "excessively fond of drinking alcohol",
+    "band": 5
+  },
+  {
+    "word": "callow",
+    "pos": "adj",
+    "definition": "young, inexperienced, and immature",
+    "band": 5
+  },
+  {
+    "word": "benighted",
+    "pos": "adj",
+    "definition": "intellectually or morally unenlightened",
+    "band": 5
+  },
+  {
+    "word": "poltroon",
+    "pos": "n",
+    "definition": "an utter coward",
+    "band": 5
+  },
+  {
+    "word": "parvenu",
+    "pos": "n",
+    "definition": "a social upstart newly risen in wealth or rank",
+    "band": 5
+  },
+  {
+    "word": "philistine",
+    "pos": "n",
+    "definition": "a person indifferent or hostile to culture and the arts",
+    "band": 5
+  },
+  {
+    "word": "toady",
+    "pos": "n",
+    "definition": "a servile flatterer; a sycophant",
+    "band": 5
+  },
+  {
+    "word": "valetudinarian",
+    "pos": "n",
+    "definition": "a person unduly anxious about their own health",
+    "band": 5
+  },
+  {
+    "word": "truckle",
+    "pos": "v",
+    "definition": "to submit obsequiously; to be servile",
+    "band": 5
+  },
+  {
+    "word": "pettifog",
+    "pos": "v",
+    "definition": "to quibble or fuss over trivial details",
+    "band": 5
   }
 ]
