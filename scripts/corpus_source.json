@@ -7570,5 +7570,815 @@
     "pos": "n",
     "definition": "stubborn adherence to a habit or notion shown to be wrong",
     "band": 5
+  },
+  {
+    "word": "limn",
+    "pos": "v",
+    "definition": "to depict or describe with delicate precision",
+    "band": 5
+  },
+  {
+    "word": "vouchsafe",
+    "pos": "v",
+    "definition": "to grant or disclose as though conferring a favour",
+    "band": 5
+  },
+  {
+    "word": "bruit",
+    "pos": "v",
+    "definition": "to spread a rumour or report about",
+    "band": 5
+  },
+  {
+    "word": "purloin",
+    "pos": "v",
+    "definition": "to make off with slyly; to steal",
+    "band": 5
+  },
+  {
+    "word": "cozen",
+    "pos": "v",
+    "definition": "to deceive with artful coaxing",
+    "band": 5
+  },
+  {
+    "word": "suborn",
+    "pos": "v",
+    "definition": "to induce someone secretly to do wrong",
+    "band": 5
+  },
+  {
+    "word": "dragoon",
+    "pos": "v",
+    "definition": "to strong-arm someone into doing something",
+    "band": 5
+  },
+  {
+    "word": "discomfit",
+    "pos": "v",
+    "definition": "to unsettle someone into confusion or embarrassment",
+    "band": 5
+  },
+  {
+    "word": "lionize",
+    "pos": "v",
+    "definition": "to celebrate someone as a figure of great importance",
+    "band": 5
+  },
+  {
+    "word": "festoon",
+    "pos": "v",
+    "definition": "to drape with decorative chains or garlands",
+    "band": 5
+  },
+  {
+    "word": "bedizen",
+    "pos": "v",
+    "definition": "to deck out in gaudy finery",
+    "band": 5
+  },
+  {
+    "word": "cosset",
+    "pos": "v",
+    "definition": "to pamper and shield from every hardship",
+    "band": 5
+  },
+  {
+    "word": "transmogrify",
+    "pos": "v",
+    "definition": "to transform into something strange or grotesque",
+    "band": 5
+  },
+  {
+    "word": "sough",
+    "pos": "v",
+    "definition": "to sigh or moan softly, as wind through trees",
+    "band": 5
+  },
+  {
+    "word": "expatiate",
+    "pos": "v",
+    "definition": "to hold forth at generous length",
+    "band": 5
+  },
+  {
+    "word": "asseverate",
+    "pos": "v",
+    "definition": "to declare earnestly and solemnly",
+    "band": 5
+  },
+  {
+    "word": "bloviate",
+    "pos": "v",
+    "definition": "to orate windily and self-importantly",
+    "band": 5
+  },
+  {
+    "word": "prate",
+    "pos": "v",
+    "definition": "to chatter emptily and at length",
+    "band": 5
+  },
+  {
+    "word": "maunder",
+    "pos": "v",
+    "definition": "to ramble aimlessly in speech or movement",
+    "band": 5
+  },
+  {
+    "word": "confabulate",
+    "pos": "v",
+    "definition": "to chat together; to fill memory's gaps with invention",
+    "band": 5
+  },
+  {
+    "word": "gallivant",
+    "pos": "v",
+    "definition": "to rove about in pursuit of pleasure",
+    "band": 5
+  },
+  {
+    "word": "perambulate",
+    "pos": "v",
+    "definition": "to stroll through at an unhurried pace",
+    "band": 5
+  },
+  {
+    "word": "skulk",
+    "pos": "v",
+    "definition": "to lurk or slink about furtively",
+    "band": 5
+  },
+  {
+    "word": "sidle",
+    "pos": "v",
+    "definition": "to edge sideways, shyly or slyly",
+    "band": 5
+  },
+  {
+    "word": "cavort",
+    "pos": "v",
+    "definition": "to prance about in high spirits",
+    "band": 5
+  },
+  {
+    "word": "quaff",
+    "pos": "v",
+    "definition": "to drink deep and with gusto",
+    "band": 5
+  },
+  {
+    "word": "carouse",
+    "pos": "v",
+    "definition": "to revel long and drunkenly",
+    "band": 5
+  },
+  {
+    "word": "roister",
+    "pos": "v",
+    "definition": "to swagger and celebrate noisily",
+    "band": 5
+  },
+  {
+    "word": "gormandize",
+    "pos": "v",
+    "definition": "to devour food greedily",
+    "band": 5
+  },
+  {
+    "word": "mordant",
+    "pos": "adj",
+    "definition": "sharply sarcastic; biting in wit",
+    "band": 5
+  },
+  {
+    "word": "gnomic",
+    "pos": "adj",
+    "definition": "compressed into cryptic aphorisms",
+    "band": 5
+  },
+  {
+    "word": "sibylline",
+    "pos": "adj",
+    "definition": "prophetic in an obscure, riddling way",
+    "band": 5
+  },
+  {
+    "word": "lapidary",
+    "pos": "adj",
+    "definition": "polished and exact, as if cut in stone",
+    "band": 5
+  },
+  {
+    "word": "demotic",
+    "pos": "adj",
+    "definition": "of the everyday language of ordinary people",
+    "band": 5
+  },
+  {
+    "word": "hieratic",
+    "pos": "adj",
+    "definition": "stiffly ceremonial and priestlike",
+    "band": 5
+  },
+  {
+    "word": "costive",
+    "pos": "adj",
+    "definition": "cramped and grudging in expression; constipated",
+    "band": 5
+  },
+  {
+    "word": "atrabilious",
+    "pos": "adj",
+    "definition": "melancholy and acrimonious in temperament",
+    "band": 5
+  },
+  {
+    "word": "choleric",
+    "pos": "adj",
+    "definition": "quick to flare into anger",
+    "band": 5
+  },
+  {
+    "word": "dyspeptic",
+    "pos": "adj",
+    "definition": "soured in mood, as by bad digestion",
+    "band": 5
+  },
+  {
+    "word": "sallow",
+    "pos": "adj",
+    "definition": "of an unhealthy yellowish complexion",
+    "band": 5
+  },
+  {
+    "word": "etiolated",
+    "pos": "adj",
+    "definition": "pale and feeble from growing without light",
+    "band": 5
+  },
+  {
+    "word": "rubicund",
+    "pos": "adj",
+    "definition": "glowing red-faced and hearty",
+    "band": 5
+  },
+  {
+    "word": "consumptive",
+    "pos": "adj",
+    "definition": "wasting away, as with tuberculosis",
+    "band": 5
+  },
+  {
+    "word": "stertorous",
+    "pos": "adj",
+    "definition": "heavy and rasping, as laboured breathing in sleep",
+    "band": 5
+  },
+  {
+    "word": "aquiline",
+    "pos": "adj",
+    "definition": "curved like an eagle's beak",
+    "band": 5
+  },
+  {
+    "word": "leonine",
+    "pos": "adj",
+    "definition": "like a lion in bearing or appearance",
+    "band": 5
+  },
+  {
+    "word": "vulpine",
+    "pos": "adj",
+    "definition": "sly and foxlike",
+    "band": 5
+  },
+  {
+    "word": "sepulchral",
+    "pos": "adj",
+    "definition": "hollow and gloomy as the grave",
+    "band": 5
+  },
+  {
+    "word": "funereal",
+    "pos": "adj",
+    "definition": "solemn and mournful as a burial",
+    "band": 5
+  },
+  {
+    "word": "noisome",
+    "pos": "adj",
+    "definition": "foul-smelling and offensive; noxious",
+    "band": 5
+  },
+  {
+    "word": "mephitic",
+    "pos": "adj",
+    "definition": "reeking with poisonous vapours",
+    "band": 5
+  },
+  {
+    "word": "dulcet",
+    "pos": "adj",
+    "definition": "sweetly soothing to the ear",
+    "band": 5
+  },
+  {
+    "word": "sonorous",
+    "pos": "adj",
+    "definition": "deep, full, and resonant in sound",
+    "band": 5
+  },
+  {
+    "word": "fey",
+    "pos": "adj",
+    "definition": "touched with otherworldly strangeness",
+    "band": 5
+  },
+  {
+    "word": "tutelary",
+    "pos": "adj",
+    "definition": "watching over as a guardian spirit",
+    "band": 5
+  },
+  {
+    "word": "apotropaic",
+    "pos": "adj",
+    "definition": "made to ward off evil",
+    "band": 5
+  },
+  {
+    "word": "vespertine",
+    "pos": "adj",
+    "definition": "of or awakening in the evening",
+    "band": 5
+  },
+  {
+    "word": "sylvan",
+    "pos": "adj",
+    "definition": "of woods and their leafy shade",
+    "band": 5
+  },
+  {
+    "word": "bosky",
+    "pos": "adj",
+    "definition": "thick with trees and underbrush",
+    "band": 5
+  },
+  {
+    "word": "bucolic",
+    "pos": "adj",
+    "definition": "of a rosily idealized countryside",
+    "band": 5
+  },
+  {
+    "word": "quondam",
+    "pos": "adj",
+    "definition": "former; that once was",
+    "band": 5
+  },
+  {
+    "word": "picaresque",
+    "pos": "adj",
+    "definition": "roving through the episodic adventures of a rogue",
+    "band": 5
+  },
+  {
+    "word": "gimcrack",
+    "pos": "adj",
+    "definition": "showy but flimsily made",
+    "band": 5
+  },
+  {
+    "word": "nacreous",
+    "pos": "adj",
+    "definition": "shimmering like mother-of-pearl",
+    "band": 5
+  },
+  {
+    "word": "mountebank",
+    "pos": "n",
+    "definition": "a swindler who hawks false remedies and promises",
+    "band": 5
+  },
+  {
+    "word": "coxcomb",
+    "pos": "n",
+    "definition": "a vain, strutting dandy",
+    "band": 5
+  },
+  {
+    "word": "blackguard",
+    "pos": "n",
+    "definition": "an unprincipled scoundrel",
+    "band": 5
+  },
+  {
+    "word": "roué",
+    "pos": "n",
+    "definition": "an ageing man given over to dissolute pleasures",
+    "band": 5
+  },
+  {
+    "word": "libertine",
+    "pos": "n",
+    "definition": "one who lives free of moral restraint",
+    "band": 5
+  },
+  {
+    "word": "wastrel",
+    "pos": "n",
+    "definition": "an idler who squanders money or talent",
+    "band": 5
+  },
+  {
+    "word": "lickspittle",
+    "pos": "n",
+    "definition": "a fawning, servile flatterer",
+    "band": 5
+  },
+  {
+    "word": "myrmidon",
+    "pos": "n",
+    "definition": "a follower who executes orders without scruple",
+    "band": 5
+  },
+  {
+    "word": "factotum",
+    "pos": "n",
+    "definition": "a servant employed to do every kind of work",
+    "band": 5
+  },
+  {
+    "word": "amanuensis",
+    "pos": "n",
+    "definition": "an assistant who takes dictation or copies manuscripts",
+    "band": 5
+  },
+  {
+    "word": "scrivener",
+    "pos": "n",
+    "definition": "a professional copyist of documents",
+    "band": 5
+  },
+  {
+    "word": "virago",
+    "pos": "n",
+    "definition": "a fierce, domineering woman; in older use, a warrior",
+    "band": 5
+  },
+  {
+    "word": "changeling",
+    "pos": "n",
+    "definition": "a child secretly swapped for another in infancy",
+    "band": 5
+  },
+  {
+    "word": "aesthete",
+    "pos": "n",
+    "definition": "one who prizes beauty above all else",
+    "band": 5
+  },
+  {
+    "word": "poetaster",
+    "pos": "n",
+    "definition": "a writer of contemptibly bad verse",
+    "band": 5
+  },
+  {
+    "word": "opsimath",
+    "pos": "n",
+    "definition": "one who begins learning late in life",
+    "band": 5
+  },
+  {
+    "word": "belletrist",
+    "pos": "n",
+    "definition": "a writer of elegant literature for its own sake",
+    "band": 5
+  },
+  {
+    "word": "panjandrum",
+    "pos": "n",
+    "definition": "a self-important personage of exaggerated authority",
+    "band": 5
+  },
+  {
+    "word": "aperçu",
+    "pos": "n",
+    "definition": "a glancing insight that illuminates much",
+    "band": 5
+  },
+  {
+    "word": "longueur",
+    "pos": "n",
+    "definition": "a tedious stretch in a book or performance",
+    "band": 5
+  },
+  {
+    "word": "frisson",
+    "pos": "n",
+    "definition": "a sudden shiver of excitement or dread",
+    "band": 5
+  },
+  {
+    "word": "screed",
+    "pos": "n",
+    "definition": "a long, vehement piece of writing",
+    "band": 5
+  },
+  {
+    "word": "philippic",
+    "pos": "n",
+    "definition": "a speech of fiery denunciation",
+    "band": 5
+  },
+  {
+    "word": "doggerel",
+    "pos": "n",
+    "definition": "clumsy, trivial verse",
+    "band": 5
+  },
+  {
+    "word": "pastiche",
+    "pos": "n",
+    "definition": "a work imitating another's style; a stylistic medley",
+    "band": 5
+  },
+  {
+    "word": "bildungsroman",
+    "pos": "n",
+    "definition": "a novel tracing its hero's formative growth",
+    "band": 5
+  },
+  {
+    "word": "mimesis",
+    "pos": "n",
+    "definition": "art's imitation of life",
+    "band": 5
+  },
+  {
+    "word": "peripeteia",
+    "pos": "n",
+    "definition": "a story's sudden reversal of fortune",
+    "band": 5
+  },
+  {
+    "word": "hamartia",
+    "pos": "n",
+    "definition": "the flaw that fells a tragic hero",
+    "band": 5
+  },
+  {
+    "word": "ekphrasis",
+    "pos": "n",
+    "definition": "a vivid literary description of a work of art",
+    "band": 5
+  },
+  {
+    "word": "juvenilia",
+    "pos": "n",
+    "definition": "works produced in an artist's youth",
+    "band": 5
+  },
+  {
+    "word": "pentimento",
+    "pos": "n",
+    "definition": "an earlier image showing through a repainted canvas",
+    "band": 5
+  },
+  {
+    "word": "chiaroscuro",
+    "pos": "n",
+    "definition": "the dramatic interplay of light and shadow",
+    "band": 5
+  },
+  {
+    "word": "aubade",
+    "pos": "n",
+    "definition": "a dawn song, often of lovers parting",
+    "band": 5
+  },
+  {
+    "word": "badinage",
+    "pos": "n",
+    "definition": "light, playful banter",
+    "band": 5
+  },
+  {
+    "word": "panache",
+    "pos": "n",
+    "definition": "dashing flamboyance of style",
+    "band": 5
+  },
+  {
+    "word": "obsequies",
+    "pos": "n",
+    "definition": "funeral rites and ceremonies",
+    "band": 5
+  },
+  {
+    "word": "reliquary",
+    "pos": "n",
+    "definition": "a container for sacred relics",
+    "band": 5
+  },
+  {
+    "word": "psychopomp",
+    "pos": "n",
+    "definition": "a guide who conducts souls to the afterlife",
+    "band": 5
+  },
+  {
+    "word": "revenant",
+    "pos": "n",
+    "definition": "one who returns from the dead or from long exile",
+    "band": 5
+  },
+  {
+    "word": "phantasmagoria",
+    "pos": "n",
+    "definition": "a shifting procession of dreamlike images",
+    "band": 5
+  },
+  {
+    "word": "simulacrum",
+    "pos": "n",
+    "definition": "an image or imitation without the substance of its original",
+    "band": 5
+  },
+  {
+    "word": "homunculus",
+    "pos": "n",
+    "definition": "a miniature human, especially one made by alchemy",
+    "band": 5
+  },
+  {
+    "word": "bestiary",
+    "pos": "n",
+    "definition": "a medieval catalogue of beasts and their moral meanings",
+    "band": 5
+  },
+  {
+    "word": "miasma",
+    "pos": "n",
+    "definition": "a poisonous atmosphere, literal or moral",
+    "band": 5
+  },
+  {
+    "word": "nepenthe",
+    "pos": "n",
+    "definition": "a draught that banishes grief from memory",
+    "band": 5
+  },
+  {
+    "word": "laudanum",
+    "pos": "n",
+    "definition": "a tincture of opium once dosed for every ailment",
+    "band": 5
+  },
+  {
+    "word": "empyrean",
+    "pos": "n",
+    "definition": "the highest heaven of fire and light",
+    "band": 5
+  },
+  {
+    "word": "spindrift",
+    "pos": "n",
+    "definition": "sea spray whipped from wave crests by wind",
+    "band": 5
+  },
+  {
+    "word": "spume",
+    "pos": "n",
+    "definition": "froth churned up on an agitated sea",
+    "band": 5
+  },
+  {
+    "word": "rime",
+    "pos": "n",
+    "definition": "a feathery crust of frost",
+    "band": 5
+  },
+  {
+    "word": "tarn",
+    "pos": "n",
+    "definition": "a small mountain lake in a glacial hollow",
+    "band": 5
+  },
+  {
+    "word": "fen",
+    "pos": "n",
+    "definition": "low, marshy, waterlogged land",
+    "band": 5
+  },
+  {
+    "word": "rill",
+    "pos": "n",
+    "definition": "a small, quick-running stream",
+    "band": 5
+  },
+  {
+    "word": "sward",
+    "pos": "n",
+    "definition": "an expanse of short grassy turf",
+    "band": 5
+  },
+  {
+    "word": "eventide",
+    "pos": "n",
+    "definition": "the close of day; evening",
+    "band": 5
+  },
+  {
+    "word": "gewgaw",
+    "pos": "n",
+    "definition": "a showy trinket of little worth",
+    "band": 5
+  },
+  {
+    "word": "raiment",
+    "pos": "n",
+    "definition": "clothing; attire",
+    "band": 5
+  },
+  {
+    "word": "libation",
+    "pos": "n",
+    "definition": "a drink poured out in offering; a celebratory drink",
+    "band": 5
+  },
+  {
+    "word": "lucre",
+    "pos": "n",
+    "definition": "money, regarded with contempt as sordid gain",
+    "band": 5
+  },
+  {
+    "word": "mien",
+    "pos": "n",
+    "definition": "a person's bearing and expression",
+    "band": 5
+  },
+  {
+    "word": "physiognomy",
+    "pos": "n",
+    "definition": "the face as an index of character; the art of reading it",
+    "band": 5
+  },
+  {
+    "word": "ague",
+    "pos": "n",
+    "definition": "a malarial fever of chills and shivering",
+    "band": 5
+  },
+  {
+    "word": "crotchet",
+    "pos": "n",
+    "definition": "a stubborn, whimsical notion",
+    "band": 5
+  },
+  {
+    "word": "legerdemain",
+    "pos": "n",
+    "definition": "sleight of hand; artful trickery",
+    "band": 5
+  },
+  {
+    "word": "cabal",
+    "pos": "n",
+    "definition": "a small group plotting in secret",
+    "band": 5
+  },
+  {
+    "word": "coterie",
+    "pos": "n",
+    "definition": "an exclusive circle of like-minded intimates",
+    "band": 5
+  },
+  {
+    "word": "anomie",
+    "pos": "n",
+    "definition": "rootless instability from the collapse of shared norms",
+    "band": 5
+  },
+  {
+    "word": "saudade",
+    "pos": "n",
+    "definition": "a tender longing for something absent and perhaps lost forever",
+    "band": 5
+  },
+  {
+    "word": "duende",
+    "pos": "n",
+    "definition": "the dark, earthy spirit that fires a passionate performance",
+    "band": 5
+  },
+  {
+    "word": "cynosure",
+    "pos": "n",
+    "definition": "the focal point of all eyes and admiration",
+    "band": 5
   }
 ]
