@@ -5124,6 +5124,13 @@
     "band": 4
   },
   {
+    "id": 3464370393971030,
+    "word": "caprice",
+    "pos": "n",
+    "definition": "a sudden, impulsive change of mind",
+    "band": 4
+  },
+  {
     "id": 4334653784157846,
     "word": "castigate",
     "pos": "v",
@@ -5170,6 +5177,13 @@
     "word": "coalesce",
     "pos": "v",
     "definition": "to come together into one",
+    "band": 4
+  },
+  {
+    "id": 2222695611922346,
+    "word": "communiqué",
+    "pos": "n",
+    "definition": "an official announcement or bulletin",
     "band": 4
   },
   {
@@ -5247,6 +5261,13 @@
     "word": "debilitate",
     "pos": "v",
     "definition": "to weaken",
+    "band": 4
+  },
+  {
+    "id": 3865464452392264,
+    "word": "debonair",
+    "pos": "adj",
+    "definition": "suave, charming, and carefree",
     "band": 4
   },
   {
@@ -5436,6 +5457,13 @@
     "word": "epistemology",
     "pos": "n",
     "definition": "the branch of philosophy concerned with the nature of knowledge",
+    "band": 4
+  },
+  {
+    "id": 4472482597883525,
+    "word": "epithet",
+    "pos": "n",
+    "definition": "a descriptive term used with or in place of a name",
     "band": 4
   },
   {
@@ -5632,6 +5660,13 @@
     "word": "fulsome",
     "pos": "adj",
     "definition": "excessive and insincere",
+    "band": 4
+  },
+  {
+    "id": 4297929726022991,
+    "word": "gaffe",
+    "pos": "n",
+    "definition": "an embarrassing social blunder",
     "band": 4
   },
   {
@@ -5985,6 +6020,13 @@
     "band": 4
   },
   {
+    "id": 1860841756927129,
+    "word": "liaison",
+    "pos": "n",
+    "definition": "a close communication link or illicit affair",
+    "band": 4
+  },
+  {
     "id": 927790244833737,
     "word": "licentious",
     "pos": "adj",
@@ -6041,10 +6083,24 @@
     "band": 4
   },
   {
+    "id": 1233773138308996,
+    "word": "milieu",
+    "pos": "n",
+    "definition": "one's social or cultural surroundings",
+    "band": 4
+  },
+  {
     "id": 601098780710708,
     "word": "modicum",
     "pos": "n",
     "definition": "a small amount",
+    "band": 4
+  },
+  {
+    "id": 1194417137255872,
+    "word": "moniker",
+    "pos": "n",
+    "definition": "an informal name or nickname",
     "band": 4
   },
   {
@@ -6066,6 +6122,13 @@
     "word": "munificent",
     "pos": "adj",
     "definition": "extremely generous",
+    "band": 4
+  },
+  {
+    "id": 1800078632377588,
+    "word": "mélange",
+    "pos": "n",
+    "definition": "a varied mixture or medley",
     "band": 4
   },
   {
@@ -6272,6 +6335,13 @@
     "band": 4
   },
   {
+    "id": 3497446575220537,
+    "word": "pique",
+    "pos": "n",
+    "definition": "resentment arising from wounded pride",
+    "band": 4
+  },
+  {
     "id": 3023664181655006,
     "word": "plaintive",
     "pos": "adj",
@@ -6381,6 +6451,20 @@
     "word": "protean",
     "pos": "adj",
     "definition": "readily taking on different forms",
+    "band": 4
+  },
+  {
+    "id": 2264126192899538,
+    "word": "protégé",
+    "pos": "n",
+    "definition": "a person guided by an influential mentor",
+    "band": 4
+  },
+  {
+    "id": 758709284275846,
+    "word": "provenance",
+    "pos": "n",
+    "definition": "the origin or documented history of something",
     "band": 4
   },
   {
@@ -6542,6 +6626,13 @@
     "word": "retinue",
     "pos": "n",
     "definition": "a group of attendants",
+    "band": 4
+  },
+  {
+    "id": 1946105672367013,
+    "word": "risqué",
+    "pos": "adj",
+    "definition": "bordering on the indecent; suggestive",
     "band": 4
   },
   {
@@ -6762,6 +6853,13 @@
     "band": 4
   },
   {
+    "id": 1777127994825110,
+    "word": "tranche",
+    "pos": "n",
+    "definition": "a portion or installment of something larger",
+    "band": 4
+  },
+  {
     "id": 805526061232460,
     "word": "transgress",
     "pos": "v",
@@ -6850,6 +6948,20 @@
     "word": "verbiage",
     "pos": "n",
     "definition": "excessive or meaningless words",
+    "band": 4
+  },
+  {
+    "id": 1997459869481311,
+    "word": "verve",
+    "pos": "n",
+    "definition": "energy and spirit, especially in expression",
+    "band": 4
+  },
+  {
+    "id": 2641006294732461,
+    "word": "vignette",
+    "pos": "n",
+    "definition": "a brief, evocative description or scene",
     "band": 4
   },
   {
@@ -7070,6 +7182,13 @@
     "band": 5
   },
   {
+    "id": 3418500594452770,
+    "word": "appellation",
+    "pos": "n",
+    "definition": "a name, title, or designation",
+    "band": 5
+  },
+  {
     "id": 1350897711872894,
     "word": "aquiline",
     "pos": "adj",
@@ -7077,10 +7196,24 @@
     "band": 5
   },
   {
+    "id": 2008272488325550,
+    "word": "argot",
+    "pos": "n",
+    "definition": "the specialized slang of a particular group",
+    "band": 5
+  },
+  {
     "id": 3935166234336838,
     "word": "arrant",
     "pos": "adj",
     "definition": "complete and utter",
+    "band": 5
+  },
+  {
+    "id": 3446780893202081,
+    "word": "arriviste",
+    "pos": "n",
+    "definition": "a ruthlessly ambitious social climber",
     "band": 5
   },
   {
@@ -7238,6 +7371,13 @@
     "band": 5
   },
   {
+    "id": 4239641685686154,
+    "word": "bricolage",
+    "pos": "n",
+    "definition": "something made from a diverse range of available things",
+    "band": 5
+  },
+  {
     "id": 3214003699432726,
     "word": "bruit",
     "pos": "v",
@@ -7256,6 +7396,13 @@
     "word": "cabal",
     "pos": "n",
     "definition": "a small group plotting in secret",
+    "band": 5
+  },
+  {
+    "id": 3678710449607737,
+    "word": "cachet",
+    "pos": "n",
+    "definition": "prestige or a mark of distinction",
     "band": 5
   },
   {
@@ -7392,6 +7539,13 @@
     "band": 5
   },
   {
+    "id": 3521046392834419,
+    "word": "cognomen",
+    "pos": "n",
+    "definition": "a nickname or inherited family name",
+    "band": 5
+  },
+  {
     "id": 1250515595312035,
     "word": "comestible",
     "pos": "n",
@@ -7427,6 +7581,13 @@
     "band": 5
   },
   {
+    "id": 530267681717012,
+    "word": "contretemps",
+    "pos": "n",
+    "definition": "an awkward or unfortunate mishap",
+    "band": 5
+  },
+  {
     "id": 4063856336928334,
     "word": "contumacious",
     "pos": "adj",
@@ -7438,6 +7599,13 @@
     "word": "contumely",
     "pos": "n",
     "definition": "insolent and contemptuous treatment",
+    "band": 5
+  },
+  {
+    "id": 1854987437316008,
+    "word": "coquette",
+    "pos": "n",
+    "definition": "a woman who flirts to attract attention",
     "band": 5
   },
   {
@@ -7546,10 +7714,24 @@
     "band": 5
   },
   {
+    "id": 890093938238294,
+    "word": "demimonde",
+    "pos": "n",
+    "definition": "people living on the fringes of respectable society",
+    "band": 5
+  },
+  {
     "id": 2331508034632399,
     "word": "demotic",
     "pos": "adj",
     "definition": "of the everyday language of ordinary people",
+    "band": 5
+  },
+  {
+    "id": 3492845843133922,
+    "word": "denouement",
+    "pos": "n",
+    "definition": "the final unraveling of a plot or situation",
     "band": 5
   },
   {
@@ -7609,6 +7791,13 @@
     "band": 5
   },
   {
+    "id": 1268198903351226,
+    "word": "distrait",
+    "pos": "adj",
+    "definition": "inattentive through distraction",
+    "band": 5
+  },
+  {
     "id": 3015521307521869,
     "word": "doggerel",
     "pos": "n",
@@ -7620,6 +7809,13 @@
     "word": "doughty",
     "pos": "adj",
     "definition": "brave, resolute, and persevering",
+    "band": 5
+  },
+  {
+    "id": 1486726678181163,
+    "word": "doyen",
+    "pos": "n",
+    "definition": "the senior, most respected member of a group",
     "band": 5
   },
   {
@@ -7721,6 +7917,13 @@
     "band": 5
   },
   {
+    "id": 1923850165662809,
+    "word": "eponym",
+    "pos": "n",
+    "definition": "a person whose name becomes the name of something",
+    "band": 5
+  },
+  {
     "id": 4287652572532440,
     "word": "eructation",
     "pos": "n",
@@ -7805,6 +8008,13 @@
     "band": 5
   },
   {
+    "id": 2132020200949982,
+    "word": "farouche",
+    "pos": "adj",
+    "definition": "sullenly shy or unsociable",
+    "band": 5
+  },
+  {
     "id": 3886482841295118,
     "word": "farrago",
     "pos": "n",
@@ -7879,6 +8089,13 @@
     "word": "floccinaucinihilipilification",
     "pos": "n",
     "definition": "the act of judging something worthless",
+    "band": 5
+  },
+  {
+    "id": 3907672363676039,
+    "word": "flâneur",
+    "pos": "n",
+    "definition": "an idle stroller who observes city life",
     "band": 5
   },
   {
@@ -8134,6 +8351,13 @@
     "band": 5
   },
   {
+    "id": 3963564171688787,
+    "word": "insouciant",
+    "pos": "adj",
+    "definition": "cheerfully unconcerned; carefree",
+    "band": 5
+  },
+  {
     "id": 1692935235323870,
     "word": "inspissate",
     "pos": "v",
@@ -8334,6 +8558,13 @@
     "word": "longueur",
     "pos": "n",
     "definition": "a tedious stretch in a book or performance",
+    "band": 5
+  },
+  {
+    "id": 3955166334414149,
+    "word": "louche",
+    "pos": "adj",
+    "definition": "disreputable yet somehow alluring",
     "band": 5
   },
   {
@@ -8631,6 +8862,13 @@
     "band": 5
   },
   {
+    "id": 913248799327324,
+    "word": "outré",
+    "pos": "adj",
+    "definition": "unconventional to the point of being shocking",
+    "band": 5
+  },
+  {
     "id": 3801388322641861,
     "word": "palimpsest",
     "pos": "n",
@@ -8694,6 +8932,13 @@
     "band": 5
   },
   {
+    "id": 3566312007899349,
+    "word": "patois",
+    "pos": "n",
+    "definition": "a regional dialect or nonstandard speech",
+    "band": 5
+  },
+  {
     "id": 834999681303390,
     "word": "peevish",
     "pos": "adj",
@@ -8754,6 +8999,13 @@
     "word": "peroration",
     "pos": "n",
     "definition": "the rousing final section of a speech",
+    "band": 5
+  },
+  {
+    "id": 84348225281718,
+    "word": "persiflage",
+    "pos": "n",
+    "definition": "light, teasing banter",
     "band": 5
   },
   {
@@ -9037,6 +9289,13 @@
     "band": 5
   },
   {
+    "id": 1222253074427752,
+    "word": "raconteur",
+    "pos": "n",
+    "definition": "a skilled and engaging teller of stories",
+    "band": 5
+  },
+  {
     "id": 3097192752413816,
     "word": "raffish",
     "pos": "adj",
@@ -9065,6 +9324,13 @@
     "band": 5
   },
   {
+    "id": 902433259378723,
+    "word": "rapprochement",
+    "pos": "n",
+    "definition": "a renewal of cordial relations",
+    "band": 5
+  },
+  {
     "id": 884065610987931,
     "word": "ratiocination",
     "pos": "n",
@@ -9076,6 +9342,13 @@
     "word": "rebarbative",
     "pos": "adj",
     "definition": "repellent or irritating",
+    "band": 5
+  },
+  {
+    "id": 2955538471791971,
+    "word": "recherché",
+    "pos": "adj",
+    "definition": "rare, refined, or studiedly obscure",
     "band": 5
   },
   {
@@ -9111,6 +9384,13 @@
     "word": "remonstrance",
     "pos": "n",
     "definition": "a forceful protest",
+    "band": 5
+  },
+  {
+    "id": 4046259714250275,
+    "word": "repartee",
+    "pos": "n",
+    "definition": "quick, witty reply or exchange",
     "band": 5
   },
   {
@@ -9307,6 +9587,27 @@
     "word": "skulk",
     "pos": "v",
     "definition": "to lurk or slink about furtively",
+    "band": 5
+  },
+  {
+    "id": 2231698631422980,
+    "word": "sobriquet",
+    "pos": "n",
+    "definition": "an affectionate or humorous nickname",
+    "band": 5
+  },
+  {
+    "id": 278969626465647,
+    "word": "soigné",
+    "pos": "adj",
+    "definition": "elegantly well-groomed and refined",
+    "band": 5
+  },
+  {
+    "id": 2334764543240742,
+    "word": "soirée",
+    "pos": "n",
+    "definition": "an elegant evening social gathering",
     "band": 5
   },
   {
@@ -9776,6 +10077,13 @@
     "word": "zephyr",
     "pos": "n",
     "definition": "a soft, gentle breeze",
+    "band": 5
+  },
+  {
+    "id": 4230194340050673,
+    "word": "élan",
+    "pos": "n",
+    "definition": "vigorous, stylish enthusiasm",
     "band": 5
   }
 ]

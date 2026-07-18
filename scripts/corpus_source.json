@@ -8380,5 +8380,269 @@
     "pos": "n",
     "definition": "the focal point of all eyes and admiration",
     "band": 5
+  },
+  {
+    "word": "sobriquet",
+    "pos": "n",
+    "definition": "an affectionate or humorous nickname",
+    "band": 5
+  },
+  {
+    "word": "moniker",
+    "pos": "n",
+    "definition": "an informal name or nickname",
+    "band": 4
+  },
+  {
+    "word": "epithet",
+    "pos": "n",
+    "definition": "a descriptive term used with or in place of a name",
+    "band": 4
+  },
+  {
+    "word": "appellation",
+    "pos": "n",
+    "definition": "a name, title, or designation",
+    "band": 5
+  },
+  {
+    "word": "cognomen",
+    "pos": "n",
+    "definition": "a nickname or inherited family name",
+    "band": 5
+  },
+  {
+    "word": "eponym",
+    "pos": "n",
+    "definition": "a person whose name becomes the name of something",
+    "band": 5
+  },
+  {
+    "word": "raconteur",
+    "pos": "n",
+    "definition": "a skilled and engaging teller of stories",
+    "band": 5
+  },
+  {
+    "word": "provenance",
+    "pos": "n",
+    "definition": "the origin or documented history of something",
+    "band": 4
+  },
+  {
+    "word": "denouement",
+    "pos": "n",
+    "definition": "the final unraveling of a plot or situation",
+    "band": 5
+  },
+  {
+    "word": "rapprochement",
+    "pos": "n",
+    "definition": "a renewal of cordial relations",
+    "band": 5
+  },
+  {
+    "word": "repartee",
+    "pos": "n",
+    "definition": "quick, witty reply or exchange",
+    "band": 5
+  },
+  {
+    "word": "persiflage",
+    "pos": "n",
+    "definition": "light, teasing banter",
+    "band": 5
+  },
+  {
+    "word": "caprice",
+    "pos": "n",
+    "definition": "a sudden, impulsive change of mind",
+    "band": 4
+  },
+  {
+    "word": "milieu",
+    "pos": "n",
+    "definition": "one's social or cultural surroundings",
+    "band": 4
+  },
+  {
+    "word": "cachet",
+    "pos": "n",
+    "definition": "prestige or a mark of distinction",
+    "band": 5
+  },
+  {
+    "word": "élan",
+    "pos": "n",
+    "definition": "vigorous, stylish enthusiasm",
+    "band": 5
+  },
+  {
+    "word": "verve",
+    "pos": "n",
+    "definition": "energy and spirit, especially in expression",
+    "band": 4
+  },
+  {
+    "word": "doyen",
+    "pos": "n",
+    "definition": "the senior, most respected member of a group",
+    "band": 5
+  },
+  {
+    "word": "protégé",
+    "pos": "n",
+    "definition": "a person guided by an influential mentor",
+    "band": 4
+  },
+  {
+    "word": "liaison",
+    "pos": "n",
+    "definition": "a close communication link or illicit affair",
+    "band": 4
+  },
+  {
+    "word": "contretemps",
+    "pos": "n",
+    "definition": "an awkward or unfortunate mishap",
+    "band": 5
+  },
+  {
+    "word": "gaffe",
+    "pos": "n",
+    "definition": "an embarrassing social blunder",
+    "band": 4
+  },
+  {
+    "word": "arriviste",
+    "pos": "n",
+    "definition": "a ruthlessly ambitious social climber",
+    "band": 5
+  },
+  {
+    "word": "pique",
+    "pos": "n",
+    "definition": "resentment arising from wounded pride",
+    "band": 4
+  },
+  {
+    "word": "argot",
+    "pos": "n",
+    "definition": "the specialized slang of a particular group",
+    "band": 5
+  },
+  {
+    "word": "patois",
+    "pos": "n",
+    "definition": "a regional dialect or nonstandard speech",
+    "band": 5
+  },
+  {
+    "word": "soirée",
+    "pos": "n",
+    "definition": "an elegant evening social gathering",
+    "band": 5
+  },
+  {
+    "word": "flâneur",
+    "pos": "n",
+    "definition": "an idle stroller who observes city life",
+    "band": 5
+  },
+  {
+    "word": "demimonde",
+    "pos": "n",
+    "definition": "people living on the fringes of respectable society",
+    "band": 5
+  },
+  {
+    "word": "coquette",
+    "pos": "n",
+    "definition": "a woman who flirts to attract attention",
+    "band": 5
+  },
+  {
+    "word": "bricolage",
+    "pos": "n",
+    "definition": "something made from a diverse range of available things",
+    "band": 5
+  },
+  {
+    "word": "mélange",
+    "pos": "n",
+    "definition": "a varied mixture or medley",
+    "band": 4
+  },
+  {
+    "word": "communiqué",
+    "pos": "n",
+    "definition": "an official announcement or bulletin",
+    "band": 4
+  },
+  {
+    "word": "tranche",
+    "pos": "n",
+    "definition": "a portion or installment of something larger",
+    "band": 4
+  },
+  {
+    "word": "vignette",
+    "pos": "n",
+    "definition": "a brief, evocative description or scene",
+    "band": 4
+  },
+  {
+    "word": "louche",
+    "pos": "adj",
+    "definition": "disreputable yet somehow alluring",
+    "band": 5
+  },
+  {
+    "word": "insouciant",
+    "pos": "adj",
+    "definition": "cheerfully unconcerned; carefree",
+    "band": 5
+  },
+  {
+    "word": "recherché",
+    "pos": "adj",
+    "definition": "rare, refined, or studiedly obscure",
+    "band": 5
+  },
+  {
+    "word": "outré",
+    "pos": "adj",
+    "definition": "unconventional to the point of being shocking",
+    "band": 5
+  },
+  {
+    "word": "soigné",
+    "pos": "adj",
+    "definition": "elegantly well-groomed and refined",
+    "band": 5
+  },
+  {
+    "word": "distrait",
+    "pos": "adj",
+    "definition": "inattentive through distraction",
+    "band": 5
+  },
+  {
+    "word": "debonair",
+    "pos": "adj",
+    "definition": "suave, charming, and carefree",
+    "band": 4
+  },
+  {
+    "word": "farouche",
+    "pos": "adj",
+    "definition": "sullenly shy or unsociable",
+    "band": 5
+  },
+  {
+    "word": "risqué",
+    "pos": "adj",
+    "definition": "bordering on the indecent; suggestive",
+    "band": 4
   }
 ]
