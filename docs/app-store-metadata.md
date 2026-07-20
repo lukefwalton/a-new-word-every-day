@@ -80,37 +80,32 @@ No IAP, no ads, no analytics. All data stays on-device.
 | Support | https://lukefwalton.com/a-new-word-every-day/ |
 | Privacy | https://lukefwalton.com/a-new-word-every-day/privacy/ |
 
-## What's New (build 5 — paste for this resubmission)
+## What's New (1.1 / build 7 — paste for this update)
 
 ```
-• Japanese vocabulary — 7,800+ JLPT words alongside English
-• Enable English, Japanese, or both in Settings
-• Per-widget language via Edit Widget
-• Smarter study scheduling (FSRS-6) and fresh word pools each cycle
-• Widget preview and medium-widget layout fixes (Rich detail no longer clips)
-• Bug fixes and stability improvements
+• On-device pronunciation for each word
+• Rōmaji readings for Japanese
+• Keep going on Today — assess a word and get a fresh one
+• Expanded literary and scholarly English word pools
+• Widget long-word layout and tap-to-Today fixes
+• Cleaner app icon
 ```
 
-## Reply to App Review (metadata fix)
+## 1.1 update checklist (July 2026)
 
-```
-We removed all price references from the app subtitle and promotional text.
-The subtitle is now "English & Japanese vocabulary." Thank you for the review.
-```
+Local prep:
 
-## Resubmission checklist (July 2026)
-
-Local prep (done on this machine):
-
-- [x] Tests pass (`bash scripts/run_tests.sh`)
-- [x] Release archive **1.0 (5)** → `build/WordOfTheDay.xcarchive`
-- [x] Screenshots refreshed → `build/app-store-screenshots/{iphone,ipad}/` (Jul 8, after preview fix)
+- [x] Tests pass + Release archive **1.1 (7)** → `bash scripts/release.sh` → `build/WordOfTheDay.xcarchive`
+- [x] App Icon — fixed `Contents.json` so the 1024 App Store marketing slot compiles (build 6 dropped it)
+- [x] Screenshots — reuse existing sets in `build/app-store-screenshots/{iphone,ipad}/`
 
 You still need to do in App Store Connect + Xcode:
 
-1. **Metadata** — Subtitle → `English & Japanese vocabulary`. Remove "Free" from promotional text and description (see above). Support/Privacy URLs in their dedicated fields only.
-2. **Upload** — Xcode → Organizer → Distribute App → App Store Connect.
-3. **Version** — Attach build **1.0 (5)** to the existing 1.0 submission.
-4. **Screenshots** — Re-upload iPhone 6.5" and iPad 13" sets from `build/app-store-screenshots/{iphone,ipad}/{en,ja}/`. App Store allows 10 per size — a good order: EN Today, JA Today, EN Settings, JA Settings, Practice (either language).
-5. **What's New** — Paste the block above.
-6. **Reply** — Optional note to App Review (paste block above), then **Add for Review**.
+1. **Version** — Create **1.1** (or open the draft if it already exists).
+2. **What's New** — Paste the block above.
+3. **Upload** — Xcode → Organizer → Distribute App → App Store Connect (build **7**). Do not use build 6.
+4. **Build** — Attach **1.1 (7)** once processing finishes.
+5. **Review notes** — Reuse the offline / no-login block above.
+6. **Submit** — **Add for Review**.
+
+Subtitle stays `English & Japanese vocabulary` (never put Free/price in name, subtitle, or promo text — Guideline 2.3.7). No full metadata rewrite required for this update unless you want to mention TTS/rōmaji in the description.
