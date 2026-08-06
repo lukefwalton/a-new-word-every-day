@@ -62,8 +62,11 @@ struct DailyWordService {
 
     /// A sample of one language's words spread across difficulty bands — the deck
     /// the onboarding swipe step calibrates on. Deterministic per salt so a
-    /// restart is stable. `perBand` × band-count is the deck size (3 × 5 = 15) —
-    /// enough per band for a stable known-rate without a long swipe chore.
+    /// restart is stable. `perBand` × band-count is the deck size — enough per
+    /// band for a stable known-rate without a long swipe chore. The band count
+    /// comes from the corpus itself, so English's Arcane tier is sampled (3 × 6
+    /// = 18 cards) and Japanese stays at its five JLPT levels (15) with no
+    /// change here.
     func calibrationSample(language: Language, perBand: Int = 3, salt: UInt64) -> [Word] {
         var picked: [Word] = []
         let byBand = Dictionary(grouping: library.corpus(for: language).words, by: { $0.band })

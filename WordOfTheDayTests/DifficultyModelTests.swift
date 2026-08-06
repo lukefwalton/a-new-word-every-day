@@ -70,4 +70,26 @@ final class DifficultyModelTests: XCTestCase {
         XCTAssertEqual(model.adjusted(band: 5, markedKnown: true, wordBand: 5), 5)
         XCTAssertEqual(model.adjusted(band: 1, markedKnown: false, wordBand: 1), 1)
     }
+
+    // MARK: Per-language ceiling
+
+    /// English runs to band 6 ("Arcane"), so a reader who knows the Rare words
+    /// can be nudged past the old ceiling.
+    func test_englishCeiling_reachesArcane() {
+        let english = DifficultyModel(maxBand: Language.english.maxBand)
+        XCTAssertEqual(english.adjusted(band: 5, markedKnown: true, wordBand: 5), 6)
+        XCTAssertEqual(english.adjusted(band: 6, markedKnown: true, wordBand: 6), 6, "6 is the top")
+        XCTAssertEqual(english.calibratedBand(from: answers((1...6).flatMap { b in
+            [(b, true), (b, true)]
+        })), 6)
+    }
+
+    /// Japanese must stay pinned at 5 — its bands *are* JLPT N5…N1.
+    func test_japaneseCeiling_staysAtN1() {
+        let japanese = DifficultyModel(maxBand: Language.japanese.maxBand)
+        XCTAssertEqual(japanese.adjusted(band: 5, markedKnown: true, wordBand: 5), 5)
+        XCTAssertEqual(japanese.calibratedBand(from: answers((1...5).flatMap { b in
+            [(b, true), (b, true)]
+        })), 5)
+    }
 }

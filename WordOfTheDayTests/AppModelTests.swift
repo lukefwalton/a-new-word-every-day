@@ -15,7 +15,7 @@ final class AppModelTests: XCTestCase {
         let store = Fixtures.volatileStore()
         let library = CorpusLibrary(corpora: [
             .english: WordCorpus(words: Fixtures.corpus()),
-            .japanese: WordCorpus(words: Fixtures.corpus(startID: 100, lang: "ja")),
+            .japanese: WordCorpus(words: Fixtures.corpus(bands: Language.japanese.maxBand, startID: 100, lang: "ja")),
         ])
         let service = DailyWordService(library: library,
                                        selector: DailySelector(calendar: Fixtures.utc))
@@ -30,7 +30,7 @@ final class AppModelTests: XCTestCase {
             [DifficultyModel.Answer(band: b, known: b <= 3)] // knows up to band 3
         }
         model.completeOnboarding(languages: [.english],
-                                 bands: [.english: model.calibratedBand(from: answers)])
+                                 bands: [.english: model.calibratedBand(from: answers, for: .english)])
 
         XCTAssertTrue(model.onboardingComplete)
         XCTAssertTrue(store.onboardingComplete)
@@ -89,6 +89,30 @@ final class AppModelTests: XCTestCase {
         model.mark(bandTwoWord, known: true)
         XCTAssertEqual(model.band(for: .english), 3)
         XCTAssertEqual(store.difficultyMarks[99], true)
+    }
+
+    /// The ceiling is per-language: English can be nudged into band 6 ("Arcane"),
+    /// Japanese stops at 5 because its bands are JLPT N5…N1.
+    func test_markKnown_respectsEachLanguagesCeiling() {
+        let (model, _) = makeBilingualModel()
+        model.completeOnboarding(languages: [.english, .japanese],
+                                 bands: [.english: 5, .japanese: 5])
+
+        model.mark(Fixtures.word(98, band: 5), known: true)
+        XCTAssertEqual(model.band(for: .english), 6, "English should reach Arcane")
+        model.mark(Fixtures.word(97, band: 6), known: true)
+        XCTAssertEqual(model.band(for: .english), 6, "band 6 is English's ceiling")
+
+        model.mark(Fixtures.word(151, band: 5, lang: "ja"), known: true)
+        XCTAssertEqual(model.band(for: .japanese), 5, "Japanese must not go past N1")
+    }
+
+    func test_setBand_clampsToTheLanguagesCeiling() {
+        let (model, _) = makeBilingualModel()
+        model.setBand(9, for: .english)
+        XCTAssertEqual(model.band(for: .english), 6)
+        model.setBand(9, for: .japanese)
+        XCTAssertEqual(model.band(for: .japanese), 5)
     }
 
     func test_mark_japaneseWord_nudgesOnlyJapaneseBand() {
@@ -159,7 +183,7 @@ final class AppModelTests: XCTestCase {
 
     func test_assess_neverServesAWordMarkedKnown() {
         let (model, _) = makeModel()
-        model.completeOnboarding(languages: [.english], bands: [.english: 5]) // whole corpus eligible
+        model.completeOnboarding(languages: [.english], bands: [.english: 5])
         var shown = Set<Int>()
         var current = model.displayWord(for: .english)!
         // Sweep several words; each shown word gets marked known as we pass it.

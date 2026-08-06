@@ -32,14 +32,20 @@ enum Language: String, Codable, CaseIterable, Identifiable, Hashable {
         self == .english ? "words" : "words_\(rawValue)"
     }
 
-    /// Display names for difficulty bands 1…5, index 0 = band 1. Japanese bands
-    /// map one-to-one onto JLPT levels, which learners already know themselves by.
+    /// Display names for this language's difficulty bands, index 0 = band 1.
+    /// Japanese bands map one-to-one onto JLPT levels, which learners already
+    /// know themselves by — so Japanese stops at five and English does not.
     var levelNames: [String] {
         switch self {
-        case .english:  return ["Gentle", "Easy", "Medium", "Hard", "Rare"]
+        case .english:  return ["Gentle", "Easy", "Medium", "Hard", "Rare", "Arcane"]
         case .japanese: return ["N5", "N4", "N3", "N2", "N1"]
         }
     }
+
+    /// The hardest band this language has words for. Derived from `levelNames`
+    /// so the two can never drift; everything that clamps a band (settings
+    /// stepper, onboarding picker, `DifficultyModel`) keys off this.
+    var maxBand: Int { levelNames.count }
 
     /// One-line descriptions for the self-assessment picker, same order as
     /// `levelNames`.
@@ -51,6 +57,7 @@ enum Language: String, Codable, CaseIterable, Identifiable, Hashable {
             "Words strong readers reach for",
             "Rarer, precise vocabulary",
             "The rare and the literary",
+            "Beyond rare — the esoteric",
         ]
         case .japanese: return [
             "Beginner — everyday basics",

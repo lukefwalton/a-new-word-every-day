@@ -22,8 +22,12 @@ enum Fixtures {
              definition: "definition \(id)", band: band, reading: reading, lang: lang)
     }
 
-    /// `perBand` words in each of `bands` bands, ids from `startID` up.
-    static func corpus(perBand: Int = 4, bands: Int = 5, startID: Int = 1, lang: String? = nil) -> [Word] {
+    /// `perBand` words in each of `bands` bands, ids from `startID` up. Defaults
+    /// to English's full band range so a test that pushes to the ceiling gets a
+    /// real pool rather than silently tripping `DailySelector`'s empty-band
+    /// fallback — pass `bands: Language.japanese.maxBand` for a JLPT corpus.
+    static func corpus(perBand: Int = 4, bands: Int = Language.english.maxBand,
+                       startID: Int = 1, lang: String? = nil) -> [Word] {
         var out: [Word] = []
         var id = startID
         for band in 1...bands {

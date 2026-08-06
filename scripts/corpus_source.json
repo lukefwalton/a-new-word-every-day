@@ -1047,13 +1047,13 @@
     "word": "rebarbative",
     "pos": "adj",
     "definition": "repellent or irritating",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sesquipedalian",
     "pos": "adj",
     "definition": "given to using long words",
-    "band": 5
+    "band": 6
   },
   {
     "word": "peripatetic",
@@ -1065,7 +1065,7 @@
     "word": "fuliginous",
     "pos": "adj",
     "definition": "sooty or dusky",
-    "band": 5
+    "band": 6
   },
   {
     "word": "perspicacious",
@@ -1107,13 +1107,13 @@
     "word": "minatory",
     "pos": "adj",
     "definition": "threatening or menacing",
-    "band": 5
+    "band": 6
   },
   {
     "word": "captious",
     "pos": "adj",
     "definition": "inclined to find trivial faults",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fatuous",
@@ -1149,7 +1149,7 @@
     "word": "nugatory",
     "pos": "adj",
     "definition": "of little or no value",
-    "band": 5
+    "band": 6
   },
   {
     "word": "phlegmatic",
@@ -1185,7 +1185,7 @@
     "word": "calumnious",
     "pos": "adj",
     "definition": "slanderous",
-    "band": 5
+    "band": 6
   },
   {
     "word": "cavil",
@@ -1197,13 +1197,13 @@
     "word": "descry",
     "pos": "v",
     "definition": "to catch sight of something distant",
-    "band": 5
+    "band": 6
   },
   {
     "word": "execrate",
     "pos": "v",
     "definition": "to feel or express great loathing for",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gainsay",
@@ -1221,7 +1221,7 @@
     "word": "objurgate",
     "pos": "v",
     "definition": "to rebuke severely",
-    "band": 5
+    "band": 6
   },
   {
     "word": "traduce",
@@ -1251,7 +1251,7 @@
     "word": "concupiscence",
     "pos": "n",
     "definition": "strong sensual desire",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fecundity",
@@ -1269,7 +1269,7 @@
     "word": "pulchritude",
     "pos": "n",
     "definition": "physical beauty",
-    "band": 5
+    "band": 6
   },
   {
     "word": "turpitude",
@@ -2097,13 +2097,13 @@
     "word": "contumacious",
     "pos": "adj",
     "definition": "stubbornly disobedient to authority",
-    "band": 5
+    "band": 6
   },
   {
     "word": "crapulous",
     "pos": "adj",
     "definition": "sick from excessive eating or drinking",
-    "band": 5
+    "band": 6
   },
   {
     "word": "effulgent",
@@ -2115,25 +2115,25 @@
     "word": "eleemosynary",
     "pos": "adj",
     "definition": "relating to charity",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fissiparous",
     "pos": "adj",
     "definition": "inclined to split into factions",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fulgent",
     "pos": "adj",
     "definition": "dazzlingly bright",
-    "band": 5
+    "band": 6
   },
   {
     "word": "inanition",
     "pos": "n",
     "definition": "exhaustion from lack of nourishment",
-    "band": 5
+    "band": 6
   },
   {
     "word": "internecine",
@@ -2169,7 +2169,7 @@
     "word": "perspicuity",
     "pos": "n",
     "definition": "clearness of expression",
-    "band": 5
+    "band": 6
   },
   {
     "word": "prevaricate",
@@ -2205,13 +2205,13 @@
     "word": "tatterdemalion",
     "pos": "adj",
     "definition": "ragged and tattered",
-    "band": 5
+    "band": 6
   },
   {
     "word": "tergiversate",
     "pos": "v",
     "definition": "to make conflicting statements; equivocate",
-    "band": 5
+    "band": 6
   },
   {
     "word": "truculence",
@@ -3579,25 +3579,25 @@
     "word": "flagitious",
     "pos": "adj",
     "definition": "shamefully wicked",
-    "band": 5
+    "band": 6
   },
   {
     "word": "froward",
     "pos": "adj",
     "definition": "stubbornly contrary and difficult",
-    "band": 5
+    "band": 6
   },
   {
     "word": "opprobrious",
     "pos": "adj",
     "definition": "expressing scornful reproach",
-    "band": 5
+    "band": 6
   },
   {
     "word": "parlous",
     "pos": "adj",
     "definition": "full of danger or uncertainty",
-    "band": 5
+    "band": 6
   },
   {
     "word": "penurious",
@@ -3609,7 +3609,7 @@
     "word": "plangent",
     "pos": "adj",
     "definition": "loud, resonant, and mournful",
-    "band": 5
+    "band": 6
   },
   {
     "word": "preternatural",
@@ -3633,7 +3633,7 @@
     "word": "supererogatory",
     "pos": "adj",
     "definition": "beyond what is required",
-    "band": 5
+    "band": 6
   },
   {
     "word": "turbid",
@@ -3657,7 +3657,7 @@
     "word": "asperse",
     "pos": "v",
     "definition": "to spread damaging false charges against",
-    "band": 5
+    "band": 6
   },
   {
     "word": "inveigle",
@@ -3669,7 +3669,7 @@
     "word": "animadversion",
     "pos": "n",
     "definition": "harsh criticism",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apostasy",
@@ -3681,19 +3681,19 @@
     "word": "casuistry",
     "pos": "n",
     "definition": "clever but unsound reasoning",
-    "band": 5
+    "band": 6
   },
   {
     "word": "contumely",
     "pos": "n",
     "definition": "insolent and contemptuous treatment",
-    "band": 5
+    "band": 6
   },
   {
     "word": "desuetude",
     "pos": "n",
     "definition": "a state of disuse",
-    "band": 5
+    "band": 6
   },
   {
     "word": "dilettante",
@@ -3705,25 +3705,25 @@
     "word": "encomium",
     "pos": "n",
     "definition": "a formal expression of high praise",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fulmination",
     "pos": "n",
     "definition": "a vehement denunciation",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gasconade",
     "pos": "n",
     "definition": "extravagant boasting",
-    "band": 5
+    "band": 6
   },
   {
     "word": "hebetude",
     "pos": "n",
     "definition": "dullness of mind",
-    "band": 5
+    "band": 6
   },
   {
     "word": "ignominy",
@@ -3753,7 +3753,7 @@
     "word": "nescience",
     "pos": "n",
     "definition": "lack of knowledge",
-    "band": 5
+    "band": 6
   },
   {
     "word": "probity",
@@ -3771,13 +3771,13 @@
     "word": "ratiocination",
     "pos": "n",
     "definition": "methodical, logical reasoning",
-    "band": 5
+    "band": 6
   },
   {
     "word": "recrudescence",
     "pos": "n",
     "definition": "a renewed outbreak after a lull",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sangfroid",
@@ -6423,37 +6423,37 @@
     "word": "acerbate",
     "pos": "v",
     "definition": "to embitter or exasperate",
-    "band": 5
+    "band": 6
   },
   {
     "word": "adventitious",
     "pos": "adj",
     "definition": "arising from an external, accidental cause",
-    "band": 5
+    "band": 6
   },
   {
     "word": "aleatory",
     "pos": "adj",
     "definition": "depending on chance",
-    "band": 5
+    "band": 6
   },
   {
     "word": "amaranthine",
     "pos": "adj",
     "definition": "undying; eternally beautiful",
-    "band": 5
+    "band": 6
   },
   {
     "word": "anfractuous",
     "pos": "adj",
     "definition": "full of twists and turns",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apothegm",
     "pos": "n",
     "definition": "a short, instructive saying",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apotheosis",
@@ -6471,7 +6471,7 @@
     "word": "autochthonous",
     "pos": "adj",
     "definition": "native to the place where found",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bowdlerize",
@@ -6483,13 +6483,13 @@
     "word": "cachinnate",
     "pos": "v",
     "definition": "to laugh loudly",
-    "band": 5
+    "band": 6
   },
   {
     "word": "circumlocutory",
     "pos": "adj",
     "definition": "using needlessly many words",
-    "band": 5
+    "band": 6
   },
   {
     "word": "comestible",
@@ -6507,37 +6507,37 @@
     "word": "defalcate",
     "pos": "v",
     "definition": "to misuse funds entrusted to one",
-    "band": 5
+    "band": 6
   },
   {
     "word": "deliquesce",
     "pos": "v",
     "definition": "to melt away or dissolve",
-    "band": 5
+    "band": 6
   },
   {
     "word": "descant",
     "pos": "v",
     "definition": "to discourse at length",
-    "band": 5
+    "band": 6
   },
   {
     "word": "diaphoresis",
     "pos": "n",
     "definition": "profuse sweating",
-    "band": 5
+    "band": 6
   },
   {
     "word": "disquisition",
     "pos": "n",
     "definition": "a long, formal discourse",
-    "band": 5
+    "band": 6
   },
   {
     "word": "ebullition",
     "pos": "n",
     "definition": "a sudden outburst",
-    "band": 5
+    "band": 6
   },
   {
     "word": "eldritch",
@@ -6555,61 +6555,61 @@
     "word": "epigone",
     "pos": "n",
     "definition": "an undistinguished imitator",
-    "band": 5
+    "band": 6
   },
   {
     "word": "eructation",
     "pos": "n",
     "definition": "the act of belching",
-    "band": 5
+    "band": 6
   },
   {
     "word": "estivate",
     "pos": "v",
     "definition": "to spend the summer in dormancy",
-    "band": 5
+    "band": 6
   },
   {
     "word": "excrescence",
     "pos": "n",
     "definition": "an abnormal outgrowth",
-    "band": 5
+    "band": 6
   },
   {
     "word": "exiguous",
     "pos": "adj",
     "definition": "very small in amount",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fainéant",
     "pos": "adj",
     "definition": "idle and ineffective",
-    "band": 5
+    "band": 6
   },
   {
     "word": "farrago",
     "pos": "n",
     "definition": "a confused mixture",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fissile",
     "pos": "adj",
     "definition": "tending to split",
-    "band": 5
+    "band": 6
   },
   {
     "word": "floccinaucinihilipilification",
     "pos": "n",
     "definition": "the act of judging something worthless",
-    "band": 5
+    "band": 6
   },
   {
     "word": "formication",
     "pos": "n",
     "definition": "a sensation of insects crawling on the skin",
-    "band": 5
+    "band": 6
   },
   {
     "word": "frangible",
@@ -6621,19 +6621,19 @@
     "word": "fugacious",
     "pos": "adj",
     "definition": "fleeting; quickly fading",
-    "band": 5
+    "band": 6
   },
   {
     "word": "fustian",
     "pos": "n",
     "definition": "pompous, pretentious language",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gallimaufry",
     "pos": "n",
     "definition": "a jumble or hodgepodge",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gelid",
@@ -6651,7 +6651,7 @@
     "word": "hortatory",
     "pos": "adj",
     "definition": "urging to some course of action",
-    "band": 5
+    "band": 6
   },
   {
     "word": "immure",
@@ -6663,13 +6663,13 @@
     "word": "incarnadine",
     "pos": "adj",
     "definition": "blood-red",
-    "band": 5
+    "band": 6
   },
   {
     "word": "inspissate",
     "pos": "v",
     "definition": "to thicken or congeal",
-    "band": 5
+    "band": 6
   },
   {
     "word": "insuperable",
@@ -6681,13 +6681,13 @@
     "word": "jactitation",
     "pos": "n",
     "definition": "restless tossing; boastful claims",
-    "band": 5
+    "band": 6
   },
   {
     "word": "kakistocracy",
     "pos": "n",
     "definition": "government by the worst people",
-    "band": 5
+    "band": 6
   },
   {
     "word": "labile",
@@ -6699,13 +6699,13 @@
     "word": "logorrhea",
     "pos": "n",
     "definition": "excessive, incoherent talkativeness",
-    "band": 5
+    "band": 6
   },
   {
     "word": "lucubration",
     "pos": "n",
     "definition": "laborious study, especially at night",
-    "band": 5
+    "band": 6
   },
   {
     "word": "maleficent",
@@ -6729,19 +6729,19 @@
     "word": "nidor",
     "pos": "n",
     "definition": "a strong cooking smell",
-    "band": 5
+    "band": 6
   },
   {
     "word": "obtund",
     "pos": "v",
     "definition": "to dull or blunt",
-    "band": 5
+    "band": 6
   },
   {
     "word": "orotund",
     "pos": "adj",
     "definition": "resonant and pompous in speech",
-    "band": 5
+    "band": 6
   },
   {
     "word": "panegyric",
@@ -6759,19 +6759,19 @@
     "word": "perfervid",
     "pos": "adj",
     "definition": "intensely fervent",
-    "band": 5
+    "band": 6
   },
   {
     "word": "perspicuous",
     "pos": "adj",
     "definition": "clearly expressed and understood",
-    "band": 5
+    "band": 6
   },
   {
     "word": "pleonasm",
     "pos": "n",
     "definition": "the use of redundant words",
-    "band": 5
+    "band": 6
   },
   {
     "word": "postprandial",
@@ -6807,7 +6807,7 @@
     "word": "refulgent",
     "pos": "adj",
     "definition": "shining brightly",
-    "band": 5
+    "band": 6
   },
   {
     "word": "remonstrance",
@@ -6819,7 +6819,7 @@
     "word": "rodomontade",
     "pos": "n",
     "definition": "boastful, blustering talk",
-    "band": 5
+    "band": 6
   },
   {
     "word": "saturnalia",
@@ -6831,19 +6831,19 @@
     "word": "scapegrace",
     "pos": "n",
     "definition": "a mischievous, incorrigible person",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sciolism",
     "pos": "n",
     "definition": "superficial pretension to knowledge",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sempiternal",
     "pos": "adj",
     "definition": "everlasting",
-    "band": 5
+    "band": 6
   },
   {
     "word": "serried",
@@ -6855,13 +6855,13 @@
     "word": "susurrus",
     "pos": "n",
     "definition": "a soft murmuring or rustling",
-    "band": 5
+    "band": 6
   },
   {
     "word": "temulent",
     "pos": "adj",
     "definition": "drunken",
-    "band": 5
+    "band": 6
   },
   {
     "word": "threnody",
@@ -6879,7 +6879,7 @@
     "word": "tumid",
     "pos": "adj",
     "definition": "swollen; pompous",
-    "band": 5
+    "band": 6
   },
   {
     "word": "ululate",
@@ -6891,19 +6891,19 @@
     "word": "usufruct",
     "pos": "n",
     "definition": "the right to use another's property",
-    "band": 5
+    "band": 6
   },
   {
     "word": "vatic",
     "pos": "adj",
     "definition": "prophetic",
-    "band": 5
+    "band": 6
   },
   {
     "word": "velleity",
     "pos": "n",
     "definition": "a wish too weak to lead to action",
-    "band": 5
+    "band": 6
   },
   {
     "word": "vendetta",
@@ -7083,7 +7083,7 @@
     "word": "anaphora",
     "pos": "n",
     "definition": "repetition of a word at the start of successive clauses",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apologia",
@@ -7095,13 +7095,13 @@
     "word": "aporia",
     "pos": "n",
     "definition": "an irresolvable puzzle or impasse in reasoning",
-    "band": 5
+    "band": 6
   },
   {
     "word": "chiasmus",
     "pos": "n",
     "definition": "a rhetorical figure in which the second phrase mirrors the first in reverse",
-    "band": 5
+    "band": 6
   },
   {
     "word": "eschatology",
@@ -7125,7 +7125,7 @@
     "word": "litotes",
     "pos": "n",
     "definition": "understatement that affirms by negating its opposite",
-    "band": 5
+    "band": 6
   },
   {
     "word": "marginalia",
@@ -7173,7 +7173,7 @@
     "word": "prolegomenon",
     "pos": "n",
     "definition": "a critical introduction to a longer work",
-    "band": 5
+    "band": 6
   },
   {
     "word": "qualia",
@@ -7185,7 +7185,7 @@
     "word": "solecism",
     "pos": "n",
     "definition": "a breach of grammar, usage, or etiquette",
-    "band": 5
+    "band": 6
   },
   {
     "word": "solipsism",
@@ -7329,7 +7329,7 @@
     "word": "otiose",
     "pos": "adj",
     "definition": "serving no useful purpose; superfluous",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sybaritic",
@@ -7359,7 +7359,7 @@
     "word": "bibulous",
     "pos": "adj",
     "definition": "excessively fond of drinking alcohol",
-    "band": 5
+    "band": 6
   },
   {
     "word": "callow",
@@ -7377,7 +7377,7 @@
     "word": "poltroon",
     "pos": "n",
     "definition": "an utter coward",
-    "band": 5
+    "band": 6
   },
   {
     "word": "parvenu",
@@ -7401,19 +7401,19 @@
     "word": "valetudinarian",
     "pos": "n",
     "definition": "a person unduly anxious about their own health",
-    "band": 5
+    "band": 6
   },
   {
     "word": "truckle",
     "pos": "v",
     "definition": "to submit obsequiously; to be servile",
-    "band": 5
+    "band": 6
   },
   {
     "word": "pettifog",
     "pos": "v",
     "definition": "to quibble or fuss over trivial details",
-    "band": 5
+    "band": 6
   },
   {
     "word": "petrichor",
@@ -7443,7 +7443,7 @@
     "word": "chthonic",
     "pos": "adj",
     "definition": "relating to the underworld or its dark depths",
-    "band": 5
+    "band": 6
   },
   {
     "word": "liminal",
@@ -7455,19 +7455,19 @@
     "word": "oneiric",
     "pos": "adj",
     "definition": "of or resembling a dream",
-    "band": 5
+    "band": 6
   },
   {
     "word": "acedia",
     "pos": "n",
     "definition": "spiritual listlessness and apathy",
-    "band": 5
+    "band": 6
   },
   {
     "word": "deracinate",
     "pos": "v",
     "definition": "to uproot from a native place or culture",
-    "band": 5
+    "band": 6
   },
   {
     "word": "ludic",
@@ -7485,31 +7485,31 @@
     "word": "concinnity",
     "pos": "n",
     "definition": "elegant harmony of style or arrangement",
-    "band": 5
+    "band": 6
   },
   {
     "word": "horripilation",
     "pos": "n",
     "definition": "the bristling of hair from cold or fear; goosebumps",
-    "band": 5
+    "band": 6
   },
   {
     "word": "borborygmus",
     "pos": "n",
     "definition": "the rumbling sound of gas moving through the intestines",
-    "band": 5
+    "band": 6
   },
   {
     "word": "caliginous",
     "pos": "adj",
     "definition": "misty, dim, and obscure",
-    "band": 5
+    "band": 6
   },
   {
     "word": "cimmerian",
     "pos": "adj",
     "definition": "intensely dark or gloomy",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gloaming",
@@ -7521,7 +7521,7 @@
     "word": "widdershins",
     "pos": "adv",
     "definition": "in a direction opposite the sun's course; counterclockwise",
-    "band": 5
+    "band": 6
   },
   {
     "word": "defenestration",
@@ -7539,43 +7539,43 @@
     "word": "anagnorisis",
     "pos": "n",
     "definition": "the moment of decisive recognition in a drama",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bathos",
     "pos": "n",
     "definition": "a deflating descent from the lofty to the trivial",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apophatic",
     "pos": "adj",
     "definition": "defining something by stating what it is not",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apodictic",
     "pos": "adj",
     "definition": "clearly established beyond dispute",
-    "band": 5
+    "band": 6
   },
   {
     "word": "crepitate",
     "pos": "v",
     "definition": "to make a crackling or rattling sound",
-    "band": 5
+    "band": 6
   },
   {
     "word": "mumpsimus",
     "pos": "n",
     "definition": "stubborn adherence to a habit or notion shown to be wrong",
-    "band": 5
+    "band": 6
   },
   {
     "word": "limn",
     "pos": "v",
     "definition": "to depict or describe with delicate precision",
-    "band": 5
+    "band": 6
   },
   {
     "word": "vouchsafe",
@@ -7587,7 +7587,7 @@
     "word": "bruit",
     "pos": "v",
     "definition": "to spread a rumour or report about",
-    "band": 5
+    "band": 6
   },
   {
     "word": "purloin",
@@ -7599,7 +7599,7 @@
     "word": "cozen",
     "pos": "v",
     "definition": "to deceive with artful coaxing",
-    "band": 5
+    "band": 6
   },
   {
     "word": "suborn",
@@ -7635,7 +7635,7 @@
     "word": "bedizen",
     "pos": "v",
     "definition": "to deck out in gaudy finery",
-    "band": 5
+    "band": 6
   },
   {
     "word": "cosset",
@@ -7653,19 +7653,19 @@
     "word": "sough",
     "pos": "v",
     "definition": "to sigh or moan softly, as wind through trees",
-    "band": 5
+    "band": 6
   },
   {
     "word": "expatiate",
     "pos": "v",
     "definition": "to hold forth at generous length",
-    "band": 5
+    "band": 6
   },
   {
     "word": "asseverate",
     "pos": "v",
     "definition": "to declare earnestly and solemnly",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bloviate",
@@ -7683,13 +7683,13 @@
     "word": "maunder",
     "pos": "v",
     "definition": "to ramble aimlessly in speech or movement",
-    "band": 5
+    "band": 6
   },
   {
     "word": "confabulate",
     "pos": "v",
     "definition": "to chat together; to fill memory's gaps with invention",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gallivant",
@@ -7743,7 +7743,7 @@
     "word": "gormandize",
     "pos": "v",
     "definition": "to devour food greedily",
-    "band": 5
+    "band": 6
   },
   {
     "word": "mordant",
@@ -7755,13 +7755,13 @@
     "word": "gnomic",
     "pos": "adj",
     "definition": "compressed into cryptic aphorisms",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sibylline",
     "pos": "adj",
     "definition": "prophetic in an obscure, riddling way",
-    "band": 5
+    "band": 6
   },
   {
     "word": "lapidary",
@@ -7773,25 +7773,25 @@
     "word": "demotic",
     "pos": "adj",
     "definition": "of the everyday language of ordinary people",
-    "band": 5
+    "band": 6
   },
   {
     "word": "hieratic",
     "pos": "adj",
     "definition": "stiffly ceremonial and priestlike",
-    "band": 5
+    "band": 6
   },
   {
     "word": "costive",
     "pos": "adj",
     "definition": "cramped and grudging in expression; constipated",
-    "band": 5
+    "band": 6
   },
   {
     "word": "atrabilious",
     "pos": "adj",
     "definition": "melancholy and acrimonious in temperament",
-    "band": 5
+    "band": 6
   },
   {
     "word": "choleric",
@@ -7815,7 +7815,7 @@
     "word": "etiolated",
     "pos": "adj",
     "definition": "pale and feeble from growing without light",
-    "band": 5
+    "band": 6
   },
   {
     "word": "rubicund",
@@ -7833,7 +7833,7 @@
     "word": "stertorous",
     "pos": "adj",
     "definition": "heavy and rasping, as laboured breathing in sleep",
-    "band": 5
+    "band": 6
   },
   {
     "word": "aquiline",
@@ -7875,7 +7875,7 @@
     "word": "mephitic",
     "pos": "adj",
     "definition": "reeking with poisonous vapours",
-    "band": 5
+    "band": 6
   },
   {
     "word": "dulcet",
@@ -7899,19 +7899,19 @@
     "word": "tutelary",
     "pos": "adj",
     "definition": "watching over as a guardian spirit",
-    "band": 5
+    "band": 6
   },
   {
     "word": "apotropaic",
     "pos": "adj",
     "definition": "made to ward off evil",
-    "band": 5
+    "band": 6
   },
   {
     "word": "vespertine",
     "pos": "adj",
     "definition": "of or awakening in the evening",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sylvan",
@@ -7923,7 +7923,7 @@
     "word": "bosky",
     "pos": "adj",
     "definition": "thick with trees and underbrush",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bucolic",
@@ -7935,7 +7935,7 @@
     "word": "quondam",
     "pos": "adj",
     "definition": "former; that once was",
-    "band": 5
+    "band": 6
   },
   {
     "word": "picaresque",
@@ -7947,13 +7947,13 @@
     "word": "gimcrack",
     "pos": "adj",
     "definition": "showy but flimsily made",
-    "band": 5
+    "band": 6
   },
   {
     "word": "nacreous",
     "pos": "adj",
     "definition": "shimmering like mother-of-pearl",
-    "band": 5
+    "band": 6
   },
   {
     "word": "mountebank",
@@ -7965,7 +7965,7 @@
     "word": "coxcomb",
     "pos": "n",
     "definition": "a vain, strutting dandy",
-    "band": 5
+    "band": 6
   },
   {
     "word": "blackguard",
@@ -7995,25 +7995,25 @@
     "word": "lickspittle",
     "pos": "n",
     "definition": "a fawning, servile flatterer",
-    "band": 5
+    "band": 6
   },
   {
     "word": "myrmidon",
     "pos": "n",
     "definition": "a follower who executes orders without scruple",
-    "band": 5
+    "band": 6
   },
   {
     "word": "factotum",
     "pos": "n",
     "definition": "a servant employed to do every kind of work",
-    "band": 5
+    "band": 6
   },
   {
     "word": "amanuensis",
     "pos": "n",
     "definition": "an assistant who takes dictation or copies manuscripts",
-    "band": 5
+    "band": 6
   },
   {
     "word": "scrivener",
@@ -8043,25 +8043,25 @@
     "word": "poetaster",
     "pos": "n",
     "definition": "a writer of contemptibly bad verse",
-    "band": 5
+    "band": 6
   },
   {
     "word": "opsimath",
     "pos": "n",
     "definition": "one who begins learning late in life",
-    "band": 5
+    "band": 6
   },
   {
     "word": "belletrist",
     "pos": "n",
     "definition": "a writer of elegant literature for its own sake",
-    "band": 5
+    "band": 6
   },
   {
     "word": "panjandrum",
     "pos": "n",
     "definition": "a self-important personage of exaggerated authority",
-    "band": 5
+    "band": 6
   },
   {
     "word": "aperçu",
@@ -8073,7 +8073,7 @@
     "word": "longueur",
     "pos": "n",
     "definition": "a tedious stretch in a book or performance",
-    "band": 5
+    "band": 6
   },
   {
     "word": "frisson",
@@ -8091,13 +8091,13 @@
     "word": "philippic",
     "pos": "n",
     "definition": "a speech of fiery denunciation",
-    "band": 5
+    "band": 6
   },
   {
     "word": "doggerel",
     "pos": "n",
     "definition": "clumsy, trivial verse",
-    "band": 5
+    "band": 6
   },
   {
     "word": "pastiche",
@@ -8121,7 +8121,7 @@
     "word": "peripeteia",
     "pos": "n",
     "definition": "a story's sudden reversal of fortune",
-    "band": 5
+    "band": 6
   },
   {
     "word": "hamartia",
@@ -8133,7 +8133,7 @@
     "word": "ekphrasis",
     "pos": "n",
     "definition": "a vivid literary description of a work of art",
-    "band": 5
+    "band": 6
   },
   {
     "word": "juvenilia",
@@ -8145,7 +8145,7 @@
     "word": "pentimento",
     "pos": "n",
     "definition": "an earlier image showing through a repainted canvas",
-    "band": 5
+    "band": 6
   },
   {
     "word": "chiaroscuro",
@@ -8157,13 +8157,13 @@
     "word": "aubade",
     "pos": "n",
     "definition": "a dawn song, often of lovers parting",
-    "band": 5
+    "band": 6
   },
   {
     "word": "badinage",
     "pos": "n",
     "definition": "light, playful banter",
-    "band": 5
+    "band": 6
   },
   {
     "word": "panache",
@@ -8175,7 +8175,7 @@
     "word": "obsequies",
     "pos": "n",
     "definition": "funeral rites and ceremonies",
-    "band": 5
+    "band": 6
   },
   {
     "word": "reliquary",
@@ -8187,7 +8187,7 @@
     "word": "psychopomp",
     "pos": "n",
     "definition": "a guide who conducts souls to the afterlife",
-    "band": 5
+    "band": 6
   },
   {
     "word": "revenant",
@@ -8211,13 +8211,13 @@
     "word": "homunculus",
     "pos": "n",
     "definition": "a miniature human, especially one made by alchemy",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bestiary",
     "pos": "n",
     "definition": "a medieval catalogue of beasts and their moral meanings",
-    "band": 5
+    "band": 6
   },
   {
     "word": "miasma",
@@ -8229,25 +8229,25 @@
     "word": "nepenthe",
     "pos": "n",
     "definition": "a draught that banishes grief from memory",
-    "band": 5
+    "band": 6
   },
   {
     "word": "laudanum",
     "pos": "n",
     "definition": "a tincture of opium once dosed for every ailment",
-    "band": 5
+    "band": 6
   },
   {
     "word": "empyrean",
     "pos": "n",
     "definition": "the highest heaven of fire and light",
-    "band": 5
+    "band": 6
   },
   {
     "word": "spindrift",
     "pos": "n",
     "definition": "sea spray whipped from wave crests by wind",
-    "band": 5
+    "band": 6
   },
   {
     "word": "spume",
@@ -8283,7 +8283,7 @@
     "word": "sward",
     "pos": "n",
     "definition": "an expanse of short grassy turf",
-    "band": 5
+    "band": 6
   },
   {
     "word": "eventide",
@@ -8295,7 +8295,7 @@
     "word": "gewgaw",
     "pos": "n",
     "definition": "a showy trinket of little worth",
-    "band": 5
+    "band": 6
   },
   {
     "word": "raiment",
@@ -8331,19 +8331,19 @@
     "word": "ague",
     "pos": "n",
     "definition": "a malarial fever of chills and shivering",
-    "band": 5
+    "band": 6
   },
   {
     "word": "crotchet",
     "pos": "n",
     "definition": "a stubborn, whimsical notion",
-    "band": 5
+    "band": 6
   },
   {
     "word": "legerdemain",
     "pos": "n",
     "definition": "sleight of hand; artful trickery",
-    "band": 5
+    "band": 6
   },
   {
     "word": "cabal",
@@ -8373,13 +8373,13 @@
     "word": "duende",
     "pos": "n",
     "definition": "the dark, earthy spirit that fires a passionate performance",
-    "band": 5
+    "band": 6
   },
   {
     "word": "cynosure",
     "pos": "n",
     "definition": "the focal point of all eyes and admiration",
-    "band": 5
+    "band": 6
   },
   {
     "word": "sobriquet",
@@ -8409,7 +8409,7 @@
     "word": "cognomen",
     "pos": "n",
     "definition": "a nickname or inherited family name",
-    "band": 5
+    "band": 6
   },
   {
     "word": "eponym",
@@ -8451,7 +8451,7 @@
     "word": "persiflage",
     "pos": "n",
     "definition": "light, teasing banter",
-    "band": 5
+    "band": 6
   },
   {
     "word": "caprice",
@@ -8517,7 +8517,7 @@
     "word": "arriviste",
     "pos": "n",
     "definition": "a ruthlessly ambitious social climber",
-    "band": 5
+    "band": 6
   },
   {
     "word": "pique",
@@ -8553,7 +8553,7 @@
     "word": "demimonde",
     "pos": "n",
     "definition": "people living on the fringes of respectable society",
-    "band": 5
+    "band": 6
   },
   {
     "word": "coquette",
@@ -8565,7 +8565,7 @@
     "word": "bricolage",
     "pos": "n",
     "definition": "something made from a diverse range of available things",
-    "band": 5
+    "band": 6
   },
   {
     "word": "mélange",
@@ -8625,7 +8625,7 @@
     "word": "distrait",
     "pos": "adj",
     "definition": "inattentive through distraction",
-    "band": 5
+    "band": 6
   },
   {
     "word": "debonair",
@@ -8637,7 +8637,7 @@
     "word": "farouche",
     "pos": "adj",
     "definition": "sullenly shy or unsociable",
-    "band": 5
+    "band": 6
   },
   {
     "word": "risqué",

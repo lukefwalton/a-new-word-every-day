@@ -8,7 +8,11 @@ import LFWDesignSystem
 final class AppModel: ObservableObject {
     let service: DailyWordService
     let store: SharedStore
-    private let difficulty = DifficultyModel()
+    /// Difficulty is per-language because the ceiling is: English runs to band 6
+    /// ("Arcane"), Japanese stops at 5 because its bands *are* JLPT N5…N1.
+    private func difficulty(for language: Language) -> DifficultyModel {
+        DifficultyModel(maxBand: language.maxBand)
+    }
     private let engine: ReviewEngine
     /// On-device pronunciation. Held strongly here (the synthesizer must outlive its
     /// utterance) for the app's whole lifetime.
@@ -147,7 +151,7 @@ final class AppModel: ObservableObject {
     }
 
     func setBand(_ value: Int, for language: Language) {
-        let clamped = min(max(value, 1), difficulty.maxBand)
+        let clamped = min(max(value, 1), language.maxBand)
         bands[language] = clamped
         store.setBand(clamped, for: language)
         // Only this language's daily word can change — don't re-shuffle the rest.
@@ -164,20 +168,21 @@ final class AppModel: ObservableObject {
 
     /// The calibrated starting band a set of swipe answers implies — exposed so
     /// onboarding can turn each language's deck into a level as it completes.
-    func calibratedBand(from answers: [DifficultyModel.Answer]) -> Int {
-        difficulty.calibratedBand(from: answers)
+    /// Takes the language because the ceiling differs (English 6, Japanese 5).
+    func calibratedBand(from answers: [DifficultyModel.Answer], for language: Language) -> Int {
+        difficulty(for: language).calibratedBand(from: answers)
     }
 
     /// The gentle-middle starting band, for self-assessment defaults and
     /// empty-corpus fallbacks (single source of truth: `DifficultyModel`).
-    var defaultBand: Int { difficulty.defaultBand }
+    var defaultBand: Int { DifficultyModel().defaultBand }
 
     /// Finish onboarding with the chosen languages and each one's starting band
     /// (from the swipe calibration or the self-assessment picker).
     func completeOnboarding(languages: [Language], bands chosen: [Language: Int]) {
         store.enabledLanguages = languages
         for (language, band) in chosen {
-            store.setBand(min(max(band, 1), difficulty.maxBand), for: language)
+            store.setBand(min(max(band, 1), language.maxBand), for: language)
         }
         store.onboardingComplete = true
         onboardingComplete = true
@@ -284,7 +289,9 @@ final class AppModel: ObservableObject {
         store.difficultyMarks = marks
         difficultyMarks = marks
         let language = word.language
-        setBand(difficulty.adjusted(band: band(for: language), markedKnown: known, wordBand: word.band),
+        setBand(difficulty(for: language).adjusted(band: band(for: language),
+                                                   markedKnown: known,
+                                                   wordBand: word.band),
                 for: language)
     }
 

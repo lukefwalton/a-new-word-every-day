@@ -5,7 +5,7 @@ final class DailyWordServiceTests: XCTestCase {
     private func bilingualService() -> DailyWordService {
         let library = CorpusLibrary(corpora: [
             .english: WordCorpus(words: Fixtures.corpus()),
-            .japanese: WordCorpus(words: Fixtures.corpus(startID: 100, lang: "ja")),
+            .japanese: WordCorpus(words: Fixtures.corpus(bands: Language.japanese.maxBand, startID: 100, lang: "ja")),
         ])
         return DailyWordService(library: library, selector: DailySelector(calendar: Fixtures.utc))
     }
@@ -39,13 +39,13 @@ final class DailyWordServiceTests: XCTestCase {
     // MARK: Exploration ("keep going") picks
 
     func test_explorationWord_staysWithinBandAndSkipsSeen() {
-        let svc = Fixtures.service()          // 20 words, 4 per band across bands 1…5
+        let svc = Fixtures.service()          // 4 words per band across English's 6 bands
         let store = Fixtures.volatileStore()
-        store.setBand(2, for: .english)       // eligible pool = bands 1 & 2 (8 words)
+        store.setBand(2, for: .english)       // eligible pool = band 2 only (4 words)
 
         let first = svc.explorationWord(store: store, language: .english, seen: [])
         XCTAssertNotNil(first)
-        XCTAssertLessThanOrEqual(first!.band, 2, "exploration respects the band ceiling")
+        XCTAssertEqual(first?.band, 2, "exploration draws from exactly the user's band")
 
         // Feeding the first pick back as seen yields a different word.
         let second = svc.explorationWord(store: store, language: .english, seen: [first!.id])
@@ -100,8 +100,11 @@ final class DailyWordServiceTests: XCTestCase {
         let a = svc.calibrationSample(language: .english, perBand: 3, salt: 555)
         let b = svc.calibrationSample(language: .english, perBand: 3, salt: 555)
         XCTAssertEqual(a, b, "same salt → same deck")
-        XCTAssertEqual(Set(a.map(\.band)), [1, 2, 3, 4, 5], "deck should sample every band")
-        XCTAssertEqual(a.count, 15)
+        // The deck sizes itself to the corpus's bands, so English's Arcane tier
+        // is sampled and a reader can test straight into it.
+        XCTAssertEqual(Set(a.map(\.band)), Set(1...Language.english.maxBand),
+                       "deck should sample every band")
+        XCTAssertEqual(a.count, 3 * Language.english.maxBand)
     }
 
     func test_calibrationSample_differsBySalt() {

@@ -42,10 +42,11 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, sys
+          from collections import Counter
           errors = []
           all_ids = []
 
-          def check(path, valid_pos, min_len, reading, lang):
+          def check(path, valid_pos, min_len, reading, lang, bands):
               words = json.load(open(path, encoding="utf-8"))
               if not isinstance(words, list) or len(words) < min_len:
                   sys.exit(f"::error::{path} looks too small ({len(words) if isinstance(words, list) else 'n/a'}) — accidental content drop?")
@@ -61,7 +62,7 @@ jobs:
                   if not str(w.get("word", "")).strip(): errors.append(f"{tag}: blank word")
                   if not str(w.get("definition", "")).strip(): errors.append(f"{tag}: blank definition")
                   if w.get("pos") not in valid_pos: errors.append(f"{tag}: bad pos {w.get('pos')!r}")
-                  if w.get("band") not in (1, 2, 3, 4, 5): errors.append(f"{tag}: band out of range")
+                  if w.get("band") not in bands: errors.append(f"{tag}: band out of range")
                   if reading and "reading" in w and w["reading"] == w["word"]:
                       errors.append(f"{tag}: redundant reading should be omitted")
                   if w.get("lang") != lang:
@@ -69,14 +70,26 @@ jobs:
                   names.add(w.get("word"))
               if len(names) != len(words):
                   errors.append(f"{path}: duplicate headwords")
-              if {w["band"] for w in words} != {1, 2, 3, 4, 5}:
-                  errors.append(f"{path}: every difficulty band (1..5) must be represented")
-              print(f"{path} OK — {len(words)} entries, bands 1..5 present")
+              lo, hi = min(bands), max(bands)
+              counts = Counter(w["band"] for w in words)
+              if set(counts) != bands:
+                  errors.append(f"{path}: every difficulty band ({lo}..{hi}) must be represented")
+              # Selection is exact-band (DailySelector.eligible), so each band is
+              # a pool on its own — a thin one repeats fast, an empty one trips
+              # the defensive whole-corpus fallback.
+              thin = {b: n for b, n in counts.items() if b in bands and n < 150}
+              if thin:
+                  errors.append(f"{path}: bands too thin for their own pool: {dict(sorted(thin.items()))}")
+              print(f"{path} OK — {len(words)} entries, bands {lo}..{hi} present")
 
           # English omits the lang key (pre-multilanguage compatibility); every
           # other corpus must tag each entry so Word.language resolves correctly.
-          check("WordOfTheDay/Resources/words.json", {"n", "v", "adj", "adv"}, 1000, reading=False, lang=None)
-          check("WordOfTheDay/Resources/words_ja.json", {"n", "v", "adj", "adv", "expr"}, 5000, reading=True, lang="ja")
+          # English runs to band 6 ("Arcane"); Japanese stops at 5 — its bands
+          # *are* JLPT N5…N1.
+          check("WordOfTheDay/Resources/words.json", {"n", "v", "adj", "adv"}, 1000, reading=False, lang=None,
+                bands={1, 2, 3, 4, 5, 6})
+          check("WordOfTheDay/Resources/words_ja.json", {"n", "v", "adj", "adv", "expr"}, 5000, reading=True, lang="ja",
+                bands={1, 2, 3, 4, 5})
           if len(set(all_ids)) != len(all_ids):
               errors.append("ids collide across languages — starred/review state is one global id-keyed map")
           if errors:

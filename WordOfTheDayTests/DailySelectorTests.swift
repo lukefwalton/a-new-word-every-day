@@ -24,7 +24,10 @@ final class DailySelectorTests: XCTestCase {
     }
 
     func test_differentSalts_canGiveDifferentWords() {
-        let corpus = Fixtures.corpus()
+        // A realistically sized band: the pool is now exactly one band, and with
+        // only a handful of words two salts can land on the same day's word by
+        // coincidence. The real corpus never has a band this small.
+        let corpus = Fixtures.corpus(perBand: 20)
         let date = Fixtures.day(2026, 3, 15)
         let a = selector.word(on: date, installDate: install, salt: 1, band: 5, corpus: corpus)
         let b = selector.word(on: date, installDate: install, salt: 2, band: 5, corpus: corpus)
@@ -49,19 +52,19 @@ final class DailySelectorTests: XCTestCase {
         XCTAssertNotEqual(d0, d1)
     }
 
-    func test_firstCycle_matchesLegacyShuffleOrder() {
-        // Cycle 0 must stay byte-identical to the pre-reshuffle selector, so an
-        // app update never changes the word an existing install shows today.
+    func test_firstCycle_matchesSeededShuffleOrder() {
+        // Cycle 0 is the pool's plain seeded shuffle — the reshuffle-per-cycle
+        // logic must not perturb the first pass.
         let corpus = Fixtures.corpus(perBand: 4)
-        let pool = corpus.filter { $0.band <= 1 }.sorted { $0.id < $1.id }
-        let legacy = pool.seededShuffled(seed: 5)
-        XCTAssertEqual(words(days: 0..<4, salt: 5, corpus: corpus), legacy)
+        let pool = corpus.filter { $0.band == 1 }.sorted { $0.id < $1.id }
+        let expected = pool.seededShuffled(seed: 5)
+        XCTAssertEqual(words(days: 0..<4, salt: 5, corpus: corpus), expected)
     }
 
     func test_secondCycle_isAPermutationOfThePool() {
         // Every word still appears exactly once per pass through the pool.
         let corpus = Fixtures.corpus(perBand: 4)
-        let poolIDs = Set(corpus.filter { $0.band <= 1 }.map(\.id))
+        let poolIDs = Set(corpus.filter { $0.band == 1 }.map(\.id))
         let cycle1IDs = Set(words(days: 4..<8, salt: 5, corpus: corpus).map(\.id))
         XCTAssertEqual(cycle1IDs, poolIDs)
     }
@@ -131,28 +134,27 @@ final class DailySelectorTests: XCTestCase {
         // full pass a band change can move the cycle. That's fine — selection
         // stays a pure function of (date, install, salt, band, corpus): a given
         // band always yields the same word, and the filter is always respected.
-        // (A band change already reshuffled the pool in v1; this only pins that
-        // the post-exhaustion path is still deterministic and band-scoped.)
-        let corpus = Fixtures.corpus(perBand: 4)   // band 1 → 4 words, band 2 → 8
-        let day = Fixtures.day(2026, 1, 6)         // day index 5: cycle 1 for band 1
+        // (A band change already reshuffled the pool; this only pins that the
+        // post-exhaustion path is still deterministic and band-scoped.)
+        let corpus = Fixtures.corpus(perBand: 4)   // 4 words in every band
+        let day = Fixtures.day(2026, 1, 6)         // day index 5: cycle 1 for a 4-word pool
         func word(band: Int) -> Word {
             selector.word(on: day, installDate: install, salt: 9, band: band, corpus: corpus)!
         }
         XCTAssertEqual(word(band: 1), word(band: 1), "band 1 must be deterministic")
         XCTAssertEqual(word(band: 2), word(band: 2), "band 2 must be deterministic")
-        XCTAssertLessThanOrEqual(word(band: 1).band, 1)
-        XCTAssertLessThanOrEqual(word(band: 2).band, 2)
+        XCTAssertEqual(word(band: 1).band, 1)
+        XCTAssertEqual(word(band: 2).band, 2)
 
-        // Cycle 0 for *each* band still matches that band's legacy shuffle, so
-        // the backward-compat guarantee is per-band, not only for band 1.
+        // Cycle 0 for *each* band is that band's own seeded shuffle.
         for band in 1...2 {
-            let pool = corpus.filter { $0.band <= band }.sorted { $0.id < $1.id }
-            let legacy = pool.seededShuffled(seed: 9)
+            let pool = corpus.filter { $0.band == band }.sorted { $0.id < $1.id }
+            let expected = pool.seededShuffled(seed: 9)
             let firstPass = (0..<pool.count).map { offset -> Word in
                 let d = Fixtures.utc.date(byAdding: .day, value: offset, to: install)!
                 return selector.word(on: d, installDate: install, salt: 9, band: band, corpus: corpus)!
             }
-            XCTAssertEqual(firstPass, legacy, "band \(band) cycle 0 must match its legacy shuffle")
+            XCTAssertEqual(firstPass, expected, "band \(band) cycle 0 must match its seeded shuffle")
         }
     }
 
@@ -163,18 +165,40 @@ final class DailySelectorTests: XCTestCase {
 
     // MARK: Band filtering
 
+    func test_eligible_isExactlyTheBand_notEverythingBelowIt() {
+        let corpus = Fixtures.corpus()
+        for band in 1...Language.english.maxBand {
+            let pool = selector.eligible(in: corpus, band: band)
+            XCTAssertEqual(Set(pool.map(\.band)), [band],
+                           "band \(band) must draw only from band \(band)")
+        }
+    }
+
+    /// The reported bug: a reader at the hardest level was served `lax`, a
+    /// band-2 word, because the pool was `band <= userBand` and so contained the
+    /// entire corpus. The hardest setting must be the *most* selective one.
+    func test_topBand_neverServesAnEasierWord() {
+        let corpus = Fixtures.corpus(perBand: 4)
+        for offset in 0..<60 {
+            let date = Fixtures.utc.date(byAdding: .day, value: offset, to: install)!
+            let word = selector.word(on: date, installDate: install, salt: 11, band: 6, corpus: corpus)
+            XCTAssertEqual(word?.band, 6, "day \(offset): an Arcane reader must never draw a lower band")
+        }
+    }
+
     func test_band_limitsPool() {
         let corpus = Fixtures.corpus()
         for offset in 0..<30 {
             let date = Fixtures.utc.date(byAdding: .day, value: offset, to: install)!
             let word = selector.word(on: date, installDate: install, salt: 11, band: 2, corpus: corpus)
             XCTAssertNotNil(word)
-            XCTAssertLessThanOrEqual(word!.band, 2, "band-2 user should never see a band-3+ word")
+            XCTAssertEqual(word?.band, 2, "a band-2 user should see only band-2 words")
         }
     }
 
     func test_emptyBandFallsBackToWholeCorpus() {
-        // Band 0 matches nothing; selector falls back to the full corpus.
+        // Band 0 matches nothing; selector falls back to the full corpus. Only a
+        // defensive guard — build_corpus.py enforces a floor on every real band.
         let corpus = Fixtures.corpus()
         let word = selector.word(on: install, installDate: install, salt: 1, band: 0, corpus: corpus)
         XCTAssertNotNil(word)
