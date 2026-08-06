@@ -34,23 +34,36 @@ import json
 from collections import Counter
 from pathlib import Path
 
-# Per-language config: source file, output file, allowed POS, whether entries
-# carry a phonetic reading. Adding a language = one row here + a Language case
-# in WordOfTheDay/Shared/Language.swift.
+# Per-language config: source file, output file, allowed POS, allowed difficulty
+# bands, whether entries carry a phonetic reading. Adding a language = one row
+# here + a Language case in WordOfTheDay/Shared/Language.swift.
+#
+# `bands` must match that Language case's `levelNames` count. English runs 1..6
+# (band 6, "Arcane", holds the words that are genuinely out of general
+# circulation); Japanese stops at 5 because its bands *are* JLPT N5…N1 and there
+# is no sixth JLPT level to name.
 LANGUAGES = {
     "en": {
         "source": "corpus_source.json",
         "out": Path("WordOfTheDay/Resources/words.json"),
         "pos": {"n", "v", "adj", "adv"},
+        "bands": {1, 2, 3, 4, 5, 6},
         "reading": False,
     },
     "ja": {
         "source": "corpus_source_ja.json",
         "out": Path("WordOfTheDay/Resources/words_ja.json"),
         "pos": {"n", "v", "adj", "adv", "expr"},
+        "bands": {1, 2, 3, 4, 5},
         "reading": True,
     },
 }
+
+
+# Smallest band we'll ship. At one word a day a band this size still takes half
+# a year to exhaust, and the reshuffle-per-cycle logic keeps the second pass from
+# replaying the first.
+MIN_BAND_SIZE = 150
 
 
 def stable_id(word: str, lang: str) -> int:
@@ -80,17 +93,27 @@ def build(lang: str, source: Path, out: Path) -> list[dict]:
         if r.get("pos") not in cfg["pos"]:
             errors.append(f"{tag}: bad pos {r.get('pos')!r}")
         if not isinstance(r.get("band"), int) or isinstance(r.get("band"), bool) \
-                or r.get("band") not in (1, 2, 3, 4, 5):
-            errors.append(f"{tag}: band must be an integer 1..5")
+                or r.get("band") not in cfg["bands"]:
+            errors.append(f"{tag}: band must be an integer 1..{max(cfg['bands'])}")
         if cfg["reading"]:
             if not isinstance(r.get("reading"), str) or not r["reading"].strip():
                 errors.append(f"{tag}: reading must be a non-empty string")
         if r.get("word") in seen:
             errors.append(f"{tag}: duplicate word")
         seen.add(r.get("word"))
-    bands = {r.get("band") for r in rows}
-    if bands != {1, 2, 3, 4, 5}:
-        errors.append(f"every band 1..5 must be represented; got {sorted(bands)}")
+    # Selection is exact-band (DailySelector.eligible), so every band is a pool a
+    # user can live in for months. A thin band would mean a fast repeat cycle,
+    # and an empty one would trip the defensive whole-corpus fallback — which is
+    # exactly the "hardest level serves easy words" bug this replaced.
+    counts = Counter(r.get("band") for r in rows)
+    missing = cfg["bands"] - set(counts)
+    if missing:
+        errors.append(f"every band {min(cfg['bands'])}..{max(cfg['bands'])} must be "
+                      f"represented; missing {sorted(missing)}")
+    thin = {b: n for b, n in counts.items() if b in cfg["bands"] and n < MIN_BAND_SIZE}
+    if thin:
+        errors.append(f"every band needs ≥{MIN_BAND_SIZE} words for a healthy "
+                      f"selection pool; too thin: {dict(sorted(thin.items()))}")
     if errors:
         raise SystemExit(f"FAILED — fix {source.name}:\n" + "\n".join(errors))
 

@@ -100,7 +100,7 @@ The widget must show the **same** word the app shows **without** a shared write.
 So selection is a pure function of `(date, installSalt, band, corpus)`:
 
 ```
-eligiblePool = corpus.filter { $0.band <= userBand }      // at or below your level
+eligiblePool = corpus.filter { $0.band == userBand }      // exactly your level
 dayIndex     = daysSince(installDate)                       // integer day counter
 cycle        = dayIndex / eligiblePool.count                // full passes completed
 order        = seededPermutation(eligiblePool, seed: installSalt + cycle)
@@ -116,6 +116,14 @@ todaysWord   = order[dayIndex % order.count]
   byte-identical to the original v1 behavior. A boundary guard swaps a cycle's
   first two slots when its opening word would repeat the previous cycle's
   closing word (pools of 3+ only, where the swap can't move a cycle's last word).
+- **The pool is exactly your band, not everything at or below it.** Calibration is
+  meant to *move* you to a level, not widen a net around it. The original
+  `band <= userBand` rule made the hardest setting the least selective one in the
+  app — a band-5 reader still drew `lax` out of band 2 — and blunted the in-app
+  Know/Don't-know nudges, since moving 4 → 5 only ever added words. Every band is
+  sized to stand alone as a pool (`MIN_BAND_SIZE` in `scripts/build_corpus.py`
+  enforces ≥150); the whole-corpus fallback in `DailySelector.eligible` remains
+  only as a defensive guard against an empty band.
 - Changing `band` reshuffles the eligible pool; `band` is mixed into neither
   `installSalt` nor the day index (band only filters). Note that the *effective*
   per-pass seed is `installSalt + cycle`, and `cycle = dayIndex / pool.count`
@@ -127,7 +135,15 @@ todaysWord   = order[dayIndex % order.count]
   today's word) are handled by clamping.
 
 ### 3.4 Difficulty model (grounded by the swipe deck)
-- Onboarding shows ~24 words sampled across the corpus's frequency bands.
+- **Bands are per-language** (`Language.maxBand`, derived from `levelNames`):
+  English runs 1–6 — Gentle, Easy, Medium, Hard, Rare, **Arcane** — while Japanese
+  stops at 5 because its bands *are* JLPT N5…N1 and there is no sixth level to
+  name. Band 6 holds the words genuinely out of general circulation
+  (`borborygmus`, `tergiversate`, `floccinaucinihilipilification`), so "Rare" no
+  longer has to carry both those and `suave`.
+- Onboarding samples 3 words per band, so the deck sizes itself to the language
+  (English 18 cards across 6 bands, Japanese 15 across 5) and a reader can test
+  straight into Arcane.
 - **Right = Know (easy), Left = Don't know (hard).** We find the boundary band:
   the lowest-frequency (hardest) band where you still mostly "Know" words
   becomes your starting `band`. Concretely: per band, compute the Know-rate;
@@ -329,14 +345,17 @@ Two bundled corpora; neither is fetched at runtime.
 ### English (`words.json`) — CC0
 
 Hand-authored, original, **public domain (CC0)**. Each entry is a word, a
-one-line definition, and a difficulty band (1–5). No external data — no frequency
+one-line definition, and a difficulty band (1–6). No external data — no frequency
 list, no licensed dictionary, no scraped text — so no attribution or share-alike
 obligations.
 
 Pipeline: edit `scripts/corpus_source.json` (`{word, pos, definition, band}`);
 `scripts/build_corpus.py` validates, sorts by `(band, word)`, and assigns a
 **stable hash-derived id** into `words.json`. Persisted user state keys off
-`Word.id`, so corpus edits must never renumber existing words.
+`Word.id`, so corpus edits must never renumber existing words. Because the id is
+a hash of the word itself, *re-banding* a word is free — stars and review history
+follow it. The build also enforces `MIN_BAND_SIZE` (≥150 words per band), since
+exact-band selection makes each band a pool a user lives in for months.
 
 ### Japanese (`words_ja.json`) — CC BY lineage
 

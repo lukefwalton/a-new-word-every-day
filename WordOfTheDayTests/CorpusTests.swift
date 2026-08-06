@@ -35,13 +35,58 @@ final class CorpusTests: XCTestCase {
             XCTAssertFalse(word.word.trimmingCharacters(in: .whitespaces).isEmpty, "blank headword id=\(word.id)")
             XCTAssertFalse(word.definition.trimmingCharacters(in: .whitespaces).isEmpty, "blank definition id=\(word.id)")
             XCTAssertTrue(validPOS.contains(word.pos), "bad pos '\(word.pos)' id=\(word.id)")  // n|v|adj|adv
-            XCTAssertTrue((1...5).contains(word.band), "band out of range id=\(word.id)")
+            XCTAssertTrue((1...Language.english.maxBand).contains(word.band),
+                          "band out of range id=\(word.id)")
         }
     }
 
     func test_allBandsRepresented() {
         let bands = Set(corpus.words.map(\.band))
-        XCTAssertEqual(bands, [1, 2, 3, 4, 5], "every difficulty band should have words for calibration to work")
+        XCTAssertEqual(bands, Set(1...Language.english.maxBand),
+                       "every difficulty band should have words for calibration to work")
+    }
+
+    /// Selection is exact-band (`DailySelector.eligible`), so a band is a pool a
+    /// user lives in for months — a thin one would repeat fast, and an empty one
+    /// would trip the whole-corpus fallback. Mirrors `MIN_BAND_SIZE` in
+    /// `scripts/build_corpus.py`.
+    func test_everyBand_isBigEnoughToStandAlone() {
+        let counts = Dictionary(grouping: corpus.words, by: \.band).mapValues(\.count)
+        for band in 1...Language.english.maxBand {
+            XCTAssertGreaterThanOrEqual(counts[band] ?? 0, 150,
+                                        "band \(band) is too thin to be its own daily pool")
+        }
+    }
+
+    /// Band 6 ("Arcane") exists to hold the words that are genuinely out of
+    /// general circulation, so "Rare" no longer has to carry both those and the
+    /// merely uncommon.
+    func test_arcaneBand_holdsTheHardestWords() {
+        let arcane = Set(corpus.words.filter { $0.band == 6 }.map(\.word))
+        for word in ["borborygmus", "tergiversate", "floccinaucinihilipilification",
+                     "palimpsest", "emolument", "jejune"] {
+            XCTAssertTrue(arcane.contains(word), "\(word) belongs in Arcane")
+        }
+        for word in ["suave", "verdant", "vendetta"] {
+            XCTAssertFalse(arcane.contains(word), "\(word) still circulates; it isn't Arcane")
+        }
+    }
+
+    /// Unassimilated loanwords — the ones that still read as foreign, accents and
+    /// all — fail the "guessable from a common English root" test outright, so
+    /// they belong in Arcane rather than Rare.
+    func test_unassimilatedLoanwords_areArcane() {
+        let arcane = Set(corpus.words.filter { $0.band == 6 }.map(\.word))
+        for word in ["aperçu", "flâneur", "outré", "recherché", "roué", "soigné",
+                     "élan", "sangfroid", "contretemps", "weltschmerz", "saudade"] {
+            XCTAssertTrue(arcane.contains(word), "\(word) is still a foreign loan; it belongs in Arcane")
+        }
+    }
+
+    /// The reported bug in corpus terms: `lax` is a band-2 word and must stay
+    /// one, so no level above Easy can ever serve it.
+    func test_laxStaysAnEasyWord() {
+        XCTAssertEqual(corpus.words.first { $0.word == "lax" }?.band, 2)
     }
 
     func test_missingFile_yieldsEmptyCorpusNotCrash() {
@@ -62,7 +107,8 @@ final class CorpusTests: XCTestCase {
             XCTAssertFalse(word.word.trimmingCharacters(in: .whitespaces).isEmpty, "blank headword id=\(word.id)")
             XCTAssertFalse(word.definition.trimmingCharacters(in: .whitespaces).isEmpty, "blank definition id=\(word.id)")
             XCTAssertTrue(validPOS.contains(word.pos), "bad pos '\(word.pos)' id=\(word.id)")
-            XCTAssertTrue((1...5).contains(word.band), "band out of range id=\(word.id)")
+            XCTAssertTrue((1...Language.japanese.maxBand).contains(word.band),
+                          "band out of range id=\(word.id)")
             XCTAssertEqual(word.language, .japanese, "lang tag missing id=\(word.id)")
             if let reading = word.reading {
                 XCTAssertFalse(reading.isEmpty, "empty reading id=\(word.id)")
@@ -74,6 +120,13 @@ final class CorpusTests: XCTestCase {
     func test_japaneseBandsAllRepresented() {
         XCTAssertEqual(Set(japanese.words.map(\.band)), [1, 2, 3, 4, 5],
                        "bands 1…5 are JLPT N5…N1; every level should have words")
+    }
+
+    /// English gained a 6th band; Japanese must not, because its bands *are*
+    /// JLPT N5…N1 and there is no sixth level to name.
+    func test_japanese_hasNoSixthBand() {
+        XCTAssertEqual(Language.japanese.maxBand, 5)
+        XCTAssertFalse(japanese.words.contains { $0.band > 5 })
     }
 
     // MARK: Library

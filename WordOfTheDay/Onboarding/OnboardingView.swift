@@ -150,7 +150,7 @@ struct OnboardingView: View {
 
             SwipeDeck(words: deck, typeface: typeface, palette: palette) { answers in
                 let mapped = answers.map { DifficultyModel.Answer(band: $0.word.band, known: $0.known) }
-                finishLanguage(language, band: model.calibratedBand(from: mapped))
+                finishLanguage(language, band: model.calibratedBand(from: mapped, for: language))
             }
             // Rebuild the deck view per language so a second language starts fresh.
             .id(language)
@@ -180,7 +180,7 @@ struct OnboardingView: View {
                                   eyebrow: language.displayName,
                                   title: "Where would you\nplace yourself?") {
                 VStack(spacing: 10) {
-                    ForEach(1...5, id: \.self) { band in
+                    ForEach(1...language.maxBand, id: \.self) { band in
                         selectionCard(
                             title: language.levelName(forBand: band),
                             subtitle: language.levelDescriptions[band - 1],

@@ -9,8 +9,9 @@ struct Word: Codable, Identifiable, Equatable, Hashable {
     /// "n" | "v" | "adj" | "adv" | "expr".
     let pos: String
     let definition: String
-    /// Difficulty band, 1 (most accessible) … 5 (rarest/hardest).
-    /// For Japanese, bands 1…5 are JLPT N5…N1.
+    /// Difficulty band, 1 (most accessible) … `Language.maxBand` (rarest/hardest).
+    /// English runs 1…6 (6 = "Arcane"); for Japanese, bands 1…5 are JLPT N5…N1.
+    /// The per-language ceiling lives on `Language.maxBand`.
     let band: Int
     /// Phonetic reading (kana for Japanese). Absent for Latin-script corpora,
     /// and omitted when it would just repeat the headword (kana-only words).

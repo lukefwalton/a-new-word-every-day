@@ -10,10 +10,13 @@ struct DailySelector {
         self.calendar = calendar
     }
 
-    /// Words the user is eligible to see: at or below their band. Falls back to
-    /// the whole corpus if a band filter would leave nothing (defensive).
+    /// Words the user is eligible to see: exactly their band. Calibration is
+    /// meant to *move* you to a level, not widen a net around it — a cumulative
+    /// `band <= userBand` pool made the hardest setting the least selective one
+    /// in the app, so a band-5 reader still drew "lax" out of band 2. Falls back
+    /// to the whole corpus if a band filter would leave nothing (defensive).
     func eligible(in corpus: [Word], band: Int) -> [Word] {
-        let pool = corpus.filter { $0.band <= band }
+        let pool = corpus.filter { $0.band == band }
         return pool.isEmpty ? corpus : pool
     }
 
@@ -47,7 +50,7 @@ struct DailySelector {
         // the whole cycle (every day recomputes it identically), and it never
         // touches the last slot when the pool has 3+ words, so the previous
         // cycle's raw shuffle order is authoritative for its own last word.
-        // Pools of 1–2 are degenerate (the real corpus has 219+ per band).
+        // Pools of 1–2 are degenerate (the real corpus has 180+ per band).
         if cycle > 0, pool.count > 2,
            let prevLast = pool.seededShuffled(seed: Self.cycleSeed(salt: salt, cycle: cycle - 1)).last,
            order[0].id == prevLast.id {

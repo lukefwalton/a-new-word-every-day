@@ -237,7 +237,8 @@ struct SettingsView: View {
         Section {
             ForEach(model.enabledLanguages) { language in
                 Stepper(value: Binding(get: { model.band(for: language) },
-                                       set: { model.setBand($0, for: language) }), in: 1...5) {
+                                       set: { model.setBand($0, for: language) }),
+                        in: 1...language.maxBand) {
                     HStack {
                         Text(model.enabledLanguages.count > 1 ? language.displayName : "Difficulty")
                         Spacer()
@@ -250,7 +251,7 @@ struct SettingsView: View {
         } header: {
             if model.enabledLanguages.count > 1 { Text("Difficulty") }
         } footer: {
-            Text("Higher levels surface rarer words. Marking words as known or still-learning nudges this automatically.")
+            Text("Each level draws only from its own words, so moving up trades the easier ones away rather than adding to them. Marking words as known or still-learning nudges this automatically.")
                 .foregroundStyle(palette.secondaryText)
         }
     }

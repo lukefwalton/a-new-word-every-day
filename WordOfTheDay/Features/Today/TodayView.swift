@@ -208,7 +208,7 @@ struct TodayView: View {
             return "That's every word at your level for now — check back tomorrow, or raise your level in Settings."
         }
         switch mark {
-        case .some(true):  return "Marked as known — we'll surface rarer words."
+        case .some(true):  return "Marked as known — we'll move you toward rarer words."
         case .some(false): return "New one for you — we'll keep it in reach."
         case .none:
             return advances

@@ -34,8 +34,12 @@ word(date) = seededShuffle(eligiblePool, salt + cycle)[ day % pool.count ]
   previous one closed with.
 - `DailySelector` sorts the eligible pool by id first, so the result is
   independent of how the corpus array was loaded.
-- `eligiblePool` = words with `band <= user band`; the band comes from the
-  onboarding swipes via `DifficultyModel`.
+- `eligiblePool` = words whose band **equals** the user's band; the band comes
+  from the onboarding swipes via `DifficultyModel`. This was originally
+  `band <= user band`, which quietly defeated calibration: the top level's pool
+  was the whole corpus, so the hardest setting was the least selective one in
+  the app and served band-2 words like `lax`. Testing into a level has to
+  *replace* the pool, not widen it.
 
 Because it's pure, the widget's `TimelineProvider` just calls the same code for
 each day — no midnight write, no drift. This is the most-tested part of the app

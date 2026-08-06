@@ -54,7 +54,7 @@ type, your colors, no login, nothing ever leaves your phone.
   bundled corpus.
 - **English corpus** — a hand-authored list of elevated/advanced words
   (`WordOfTheDay/Resources/words.json`): each entry is a word, an original
-  one-line definition, and a difficulty band (1–5). It's written for this app
+  one-line definition, and a difficulty band (1–6, Gentle → Arcane). It's written for this app
   with **no external data** (no frequency list, no licensed dictionary, no
   scraped text) and dedicated to the **public domain (CC0)** — free for anyone
   to reuse. Edit `scripts/corpus_source.json` and run `scripts/build_corpus.py`
