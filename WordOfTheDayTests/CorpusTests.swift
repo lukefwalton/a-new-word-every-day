@@ -63,11 +63,23 @@ final class CorpusTests: XCTestCase {
     /// merely uncommon.
     func test_arcaneBand_holdsTheHardestWords() {
         let arcane = Set(corpus.words.filter { $0.band == 6 }.map(\.word))
-        for word in ["borborygmus", "tergiversate", "floccinaucinihilipilification"] {
+        for word in ["borborygmus", "tergiversate", "floccinaucinihilipilification",
+                     "palimpsest", "emolument", "jejune"] {
             XCTAssertTrue(arcane.contains(word), "\(word) belongs in Arcane")
         }
         for word in ["suave", "verdant", "vendetta"] {
             XCTAssertFalse(arcane.contains(word), "\(word) still circulates; it isn't Arcane")
+        }
+    }
+
+    /// Unassimilated loanwords — the ones that still read as foreign, accents and
+    /// all — fail the "guessable from a common English root" test outright, so
+    /// they belong in Arcane rather than Rare.
+    func test_unassimilatedLoanwords_areArcane() {
+        let arcane = Set(corpus.words.filter { $0.band == 6 }.map(\.word))
+        for word in ["aperçu", "flâneur", "outré", "recherché", "roué", "soigné",
+                     "élan", "sangfroid", "contretemps", "weltschmerz", "saudade"] {
+            XCTAssertTrue(arcane.contains(word), "\(word) is still a foreign loan; it belongs in Arcane")
         }
     }
 

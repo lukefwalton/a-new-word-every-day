@@ -7042,13 +7042,6 @@
     "band": 5
   },
   {
-    "id": 361147162854107,
-    "word": "aperçu",
-    "pos": "n",
-    "definition": "a glancing insight that illuminates much",
-    "band": 5
-  },
-  {
     "id": 2251025694415080,
     "word": "apologia",
     "pos": "n",
@@ -7084,13 +7077,6 @@
     "band": 5
   },
   {
-    "id": 2008272488325550,
-    "word": "argot",
-    "pos": "n",
-    "definition": "the specialized slang of a particular group",
-    "band": 5
-  },
-  {
     "id": 3935166234336838,
     "word": "arrant",
     "pos": "adj",
@@ -7116,13 +7102,6 @@
     "word": "benighted",
     "pos": "adj",
     "definition": "intellectually or morally unenlightened",
-    "band": 5
-  },
-  {
-    "id": 1171099900673581,
-    "word": "bildungsroman",
-    "pos": "n",
-    "definition": "a novel tracing its hero's formative growth",
     "band": 5
   },
   {
@@ -7172,13 +7151,6 @@
     "word": "cabal",
     "pos": "n",
     "definition": "a small group plotting in secret",
-    "band": 5
-  },
-  {
-    "id": 3678710449607737,
-    "word": "cachet",
-    "pos": "n",
-    "definition": "prestige or a mark of distinction",
     "band": 5
   },
   {
@@ -7266,31 +7238,10 @@
     "band": 5
   },
   {
-    "id": 530267681717012,
-    "word": "contretemps",
-    "pos": "n",
-    "definition": "an awkward or unfortunate mishap",
-    "band": 5
-  },
-  {
-    "id": 1854987437316008,
-    "word": "coquette",
-    "pos": "n",
-    "definition": "a woman who flirts to attract attention",
-    "band": 5
-  },
-  {
     "id": 1926654264403843,
     "word": "cosset",
     "pos": "v",
     "definition": "to pamper and shield from every hardship",
-    "band": 5
-  },
-  {
-    "id": 1812092714078125,
-    "word": "coterie",
-    "pos": "n",
-    "definition": "an exclusive circle of like-minded intimates",
     "band": 5
   },
   {
@@ -7322,13 +7273,6 @@
     "band": 5
   },
   {
-    "id": 3492845843133922,
-    "word": "denouement",
-    "pos": "n",
-    "definition": "the final unraveling of a plot or situation",
-    "band": 5
-  },
-  {
     "id": 3337163567816614,
     "word": "dilettante",
     "pos": "n",
@@ -7347,13 +7291,6 @@
     "word": "doughty",
     "pos": "adj",
     "definition": "brave, resolute, and persevering",
-    "band": 5
-  },
-  {
-    "id": 1486726678181163,
-    "word": "doyen",
-    "pos": "n",
-    "definition": "the senior, most respected member of a group",
     "band": 5
   },
   {
@@ -7396,13 +7333,6 @@
     "word": "eldritch",
     "pos": "adj",
     "definition": "weird and sinister",
-    "band": 5
-  },
-  {
-    "id": 543717584005377,
-    "word": "emolument",
-    "pos": "n",
-    "definition": "payment for work or office",
     "band": 5
   },
   {
@@ -7476,24 +7406,10 @@
     "band": 5
   },
   {
-    "id": 3907672363676039,
-    "word": "flâneur",
-    "pos": "n",
-    "definition": "an idle stroller who observes city life",
-    "band": 5
-  },
-  {
     "id": 1909055085992354,
     "word": "frangible",
     "pos": "adj",
     "definition": "easily broken",
-    "band": 5
-  },
-  {
-    "id": 2354578037823665,
-    "word": "frisson",
-    "pos": "n",
-    "definition": "a sudden shiver of excitement or dread",
     "band": 5
   },
   {
@@ -7644,13 +7560,6 @@
     "band": 5
   },
   {
-    "id": 2315115920930582,
-    "word": "jejune",
-    "pos": "adj",
-    "definition": "naive, simplistic, or insubstantial",
-    "band": 5
-  },
-  {
     "id": 4452383602177685,
     "word": "jeremiad",
     "pos": "n",
@@ -7732,13 +7641,6 @@
     "word": "lionize",
     "pos": "v",
     "definition": "to celebrate someone as a figure of great importance",
-    "band": 5
-  },
-  {
-    "id": 3955166334414149,
-    "word": "louche",
-    "pos": "adj",
-    "definition": "disreputable yet somehow alluring",
     "band": 5
   },
   {
@@ -7903,20 +7805,6 @@
     "band": 5
   },
   {
-    "id": 913248799327324,
-    "word": "outré",
-    "pos": "adj",
-    "definition": "unconventional to the point of being shocking",
-    "band": 5
-  },
-  {
-    "id": 3801388322641861,
-    "word": "palimpsest",
-    "pos": "n",
-    "definition": "a manuscript reused after its earlier writing was scraped away",
-    "band": 5
-  },
-  {
     "id": 2581747809128764,
     "word": "palliate",
     "pos": "v",
@@ -7942,27 +7830,6 @@
     "word": "parochial",
     "pos": "adj",
     "definition": "narrow or limited in outlook",
-    "band": 5
-  },
-  {
-    "id": 705664869321276,
-    "word": "parvenu",
-    "pos": "n",
-    "definition": "a social upstart newly risen in wealth or rank",
-    "band": 5
-  },
-  {
-    "id": 1509694728608964,
-    "word": "pastiche",
-    "pos": "n",
-    "definition": "a work imitating another's style; a stylistic medley",
-    "band": 5
-  },
-  {
-    "id": 3566312007899349,
-    "word": "patois",
-    "pos": "n",
-    "definition": "a regional dialect or nonstandard speech",
     "band": 5
   },
   {
@@ -8204,13 +8071,6 @@
     "band": 5
   },
   {
-    "id": 1222253074427752,
-    "word": "raconteur",
-    "pos": "n",
-    "definition": "a skilled and engaging teller of stories",
-    "band": 5
-  },
-  {
     "id": 3097192752413816,
     "word": "raffish",
     "pos": "adj",
@@ -8239,20 +8099,6 @@
     "band": 5
   },
   {
-    "id": 902433259378723,
-    "word": "rapprochement",
-    "pos": "n",
-    "definition": "a renewal of cordial relations",
-    "band": 5
-  },
-  {
-    "id": 2955538471791971,
-    "word": "recherché",
-    "pos": "adj",
-    "definition": "rare, refined, or studiedly obscure",
-    "band": 5
-  },
-  {
     "id": 2024181290761103,
     "word": "recondite",
     "pos": "adj",
@@ -8271,13 +8117,6 @@
     "word": "remonstrance",
     "pos": "n",
     "definition": "a forceful protest",
-    "band": 5
-  },
-  {
-    "id": 4046259714250275,
-    "word": "repartee",
-    "pos": "n",
-    "definition": "quick, witty reply or exchange",
     "band": 5
   },
   {
@@ -8316,13 +8155,6 @@
     "band": 5
   },
   {
-    "id": 2370316807460659,
-    "word": "roué",
-    "pos": "n",
-    "definition": "an ageing man given over to dissolute pleasures",
-    "band": 5
-  },
-  {
     "id": 2491901792756642,
     "word": "rubicund",
     "pos": "adj",
@@ -8334,13 +8166,6 @@
     "word": "sallow",
     "pos": "adj",
     "definition": "of an unhealthy yellowish complexion",
-    "band": 5
-  },
-  {
-    "id": 3325100894261569,
-    "word": "sangfroid",
-    "pos": "n",
-    "definition": "composure under strain",
     "band": 5
   },
   {
@@ -8362,13 +8187,6 @@
     "word": "saturnine",
     "pos": "adj",
     "definition": "gloomy and sardonic in temperament",
-    "band": 5
-  },
-  {
-    "id": 1677138234014773,
-    "word": "saudade",
-    "pos": "n",
-    "definition": "a tender longing for something absent and perhaps lost forever",
     "band": 5
   },
   {
@@ -8442,20 +8260,6 @@
     "band": 5
   },
   {
-    "id": 278969626465647,
-    "word": "soigné",
-    "pos": "adj",
-    "definition": "elegantly well-groomed and refined",
-    "band": 5
-  },
-  {
-    "id": 2334764543240742,
-    "word": "soirée",
-    "pos": "n",
-    "definition": "an elegant evening social gathering",
-    "band": 5
-  },
-  {
     "id": 1054567751660202,
     "word": "solipsism",
     "pos": "n",
@@ -8474,13 +8278,6 @@
     "word": "splenetic",
     "pos": "adj",
     "definition": "bad-tempered and spiteful",
-    "band": 5
-  },
-  {
-    "id": 3199937799192594,
-    "word": "sprezzatura",
-    "pos": "n",
-    "definition": "studied nonchalance that conceals all effort",
     "band": 5
   },
   {
@@ -8750,13 +8547,6 @@
     "band": 5
   },
   {
-    "id": 1196125723664111,
-    "word": "weltschmerz",
-    "pos": "n",
-    "definition": "a world-weary sadness at the world's imperfection",
-    "band": 5
-  },
-  {
     "id": 4061315011809256,
     "word": "wend",
     "pos": "v",
@@ -8789,13 +8579,6 @@
     "word": "zephyr",
     "pos": "n",
     "definition": "a soft, gentle breeze",
-    "band": 5
-  },
-  {
-    "id": 4230194340050673,
-    "word": "élan",
-    "pos": "n",
-    "definition": "vigorous, stylish enthusiasm",
     "band": 5
   },
   {
@@ -8876,6 +8659,13 @@
     "band": 6
   },
   {
+    "id": 361147162854107,
+    "word": "aperçu",
+    "pos": "n",
+    "definition": "a glancing insight that illuminates much",
+    "band": 6
+  },
+  {
     "id": 3009543469279401,
     "word": "apodictic",
     "pos": "adj",
@@ -8908,6 +8698,13 @@
     "word": "apotropaic",
     "pos": "adj",
     "definition": "made to ward off evil",
+    "band": 6
+  },
+  {
+    "id": 2008272488325550,
+    "word": "argot",
+    "pos": "n",
+    "definition": "the specialized slang of a particular group",
     "band": 6
   },
   {
@@ -8995,6 +8792,13 @@
     "band": 6
   },
   {
+    "id": 1171099900673581,
+    "word": "bildungsroman",
+    "pos": "n",
+    "definition": "a novel tracing its hero's formative growth",
+    "band": 6
+  },
+  {
     "id": 810156555016790,
     "word": "borborygmus",
     "pos": "n",
@@ -9020,6 +8824,13 @@
     "word": "bruit",
     "pos": "v",
     "definition": "to spread a rumour or report about",
+    "band": 6
+  },
+  {
+    "id": 3678710449607737,
+    "word": "cachet",
+    "pos": "n",
+    "definition": "prestige or a mark of distinction",
     "band": 6
   },
   {
@@ -9114,6 +8925,13 @@
     "band": 6
   },
   {
+    "id": 530267681717012,
+    "word": "contretemps",
+    "pos": "n",
+    "definition": "an awkward or unfortunate mishap",
+    "band": 6
+  },
+  {
     "id": 4063856336928334,
     "word": "contumacious",
     "pos": "adj",
@@ -9128,10 +8946,24 @@
     "band": 6
   },
   {
+    "id": 1854987437316008,
+    "word": "coquette",
+    "pos": "n",
+    "definition": "a woman who flirts to attract attention",
+    "band": 6
+  },
+  {
     "id": 1228756855560490,
     "word": "costive",
     "pos": "adj",
     "definition": "cramped and grudging in expression; constipated",
+    "band": 6
+  },
+  {
+    "id": 1812092714078125,
+    "word": "coterie",
+    "pos": "n",
+    "definition": "an exclusive circle of like-minded intimates",
     "band": 6
   },
   {
@@ -9205,6 +9037,13 @@
     "band": 6
   },
   {
+    "id": 3492845843133922,
+    "word": "denouement",
+    "pos": "n",
+    "definition": "the final unraveling of a plot or situation",
+    "band": 6
+  },
+  {
     "id": 2802816421223654,
     "word": "deracinate",
     "pos": "v",
@@ -9261,6 +9100,13 @@
     "band": 6
   },
   {
+    "id": 1486726678181163,
+    "word": "doyen",
+    "pos": "n",
+    "definition": "the senior, most respected member of a group",
+    "band": 6
+  },
+  {
     "id": 352760228427711,
     "word": "duende",
     "pos": "n",
@@ -9286,6 +9132,13 @@
     "word": "eleemosynary",
     "pos": "adj",
     "definition": "relating to charity",
+    "band": 6
+  },
+  {
+    "id": 543717584005377,
+    "word": "emolument",
+    "pos": "n",
+    "definition": "payment for work or office",
     "band": 6
   },
   {
@@ -9415,10 +9268,24 @@
     "band": 6
   },
   {
+    "id": 3907672363676039,
+    "word": "flâneur",
+    "pos": "n",
+    "definition": "an idle stroller who observes city life",
+    "band": 6
+  },
+  {
     "id": 548169137565724,
     "word": "formication",
     "pos": "n",
     "definition": "a sensation of insects crawling on the skin",
+    "band": 6
+  },
+  {
+    "id": 2354578037823665,
+    "word": "frisson",
+    "pos": "n",
+    "definition": "a sudden shiver of excitement or dread",
     "band": 6
   },
   {
@@ -9569,6 +9436,13 @@
     "band": 6
   },
   {
+    "id": 2315115920930582,
+    "word": "jejune",
+    "pos": "adj",
+    "definition": "naive, simplistic, or insubstantial",
+    "band": 6
+  },
+  {
     "id": 1343529753824600,
     "word": "kakistocracy",
     "pos": "n",
@@ -9622,6 +9496,13 @@
     "word": "longueur",
     "pos": "n",
     "definition": "a tedious stretch in a book or performance",
+    "band": 6
+  },
+  {
+    "id": 3955166334414149,
+    "word": "louche",
+    "pos": "adj",
+    "definition": "disreputable yet somehow alluring",
     "band": 6
   },
   {
@@ -9758,6 +9639,20 @@
     "band": 6
   },
   {
+    "id": 913248799327324,
+    "word": "outré",
+    "pos": "adj",
+    "definition": "unconventional to the point of being shocking",
+    "band": 6
+  },
+  {
+    "id": 3801388322641861,
+    "word": "palimpsest",
+    "pos": "n",
+    "definition": "a manuscript reused after its earlier writing was scraped away",
+    "band": 6
+  },
+  {
     "id": 4178955904348109,
     "word": "panjandrum",
     "pos": "n",
@@ -9769,6 +9664,27 @@
     "word": "parlous",
     "pos": "adj",
     "definition": "full of danger or uncertainty",
+    "band": 6
+  },
+  {
+    "id": 705664869321276,
+    "word": "parvenu",
+    "pos": "n",
+    "definition": "a social upstart newly risen in wealth or rank",
+    "band": 6
+  },
+  {
+    "id": 1509694728608964,
+    "word": "pastiche",
+    "pos": "n",
+    "definition": "a work imitating another's style; a stylistic medley",
+    "band": 6
+  },
+  {
+    "id": 3566312007899349,
+    "word": "patois",
+    "pos": "n",
+    "definition": "a regional dialect or nonstandard speech",
     "band": 6
   },
   {
@@ -9884,6 +9800,20 @@
     "band": 6
   },
   {
+    "id": 1222253074427752,
+    "word": "raconteur",
+    "pos": "n",
+    "definition": "a skilled and engaging teller of stories",
+    "band": 6
+  },
+  {
+    "id": 902433259378723,
+    "word": "rapprochement",
+    "pos": "n",
+    "definition": "a renewal of cordial relations",
+    "band": 6
+  },
+  {
     "id": 884065610987931,
     "word": "ratiocination",
     "pos": "n",
@@ -9895,6 +9825,13 @@
     "word": "rebarbative",
     "pos": "adj",
     "definition": "repellent or irritating",
+    "band": 6
+  },
+  {
+    "id": 2955538471791971,
+    "word": "recherché",
+    "pos": "adj",
+    "definition": "rare, refined, or studiedly obscure",
     "band": 6
   },
   {
@@ -9912,10 +9849,38 @@
     "band": 6
   },
   {
+    "id": 4046259714250275,
+    "word": "repartee",
+    "pos": "n",
+    "definition": "quick, witty reply or exchange",
+    "band": 6
+  },
+  {
     "id": 533048699087546,
     "word": "rodomontade",
     "pos": "n",
     "definition": "boastful, blustering talk",
+    "band": 6
+  },
+  {
+    "id": 2370316807460659,
+    "word": "roué",
+    "pos": "n",
+    "definition": "an ageing man given over to dissolute pleasures",
+    "band": 6
+  },
+  {
+    "id": 3325100894261569,
+    "word": "sangfroid",
+    "pos": "n",
+    "definition": "composure under strain",
+    "band": 6
+  },
+  {
+    "id": 1677138234014773,
+    "word": "saudade",
+    "pos": "n",
+    "definition": "a tender longing for something absent and perhaps lost forever",
     "band": 6
   },
   {
@@ -9954,6 +9919,20 @@
     "band": 6
   },
   {
+    "id": 278969626465647,
+    "word": "soigné",
+    "pos": "adj",
+    "definition": "elegantly well-groomed and refined",
+    "band": 6
+  },
+  {
+    "id": 2334764543240742,
+    "word": "soirée",
+    "pos": "n",
+    "definition": "an elegant evening social gathering",
+    "band": 6
+  },
+  {
     "id": 1243638375126831,
     "word": "solecism",
     "pos": "n",
@@ -9972,6 +9951,13 @@
     "word": "spindrift",
     "pos": "n",
     "definition": "sea spray whipped from wave crests by wind",
+    "band": 6
+  },
+  {
+    "id": 3199937799192594,
+    "word": "sprezzatura",
+    "pos": "n",
+    "definition": "studied nonchalance that conceals all effort",
     "band": 6
   },
   {
@@ -10080,10 +10066,24 @@
     "band": 6
   },
   {
+    "id": 1196125723664111,
+    "word": "weltschmerz",
+    "pos": "n",
+    "definition": "a world-weary sadness at the world's imperfection",
+    "band": 6
+  },
+  {
     "id": 687368948365449,
     "word": "widdershins",
     "pos": "adv",
     "definition": "in a direction opposite the sun's course; counterclockwise",
+    "band": 6
+  },
+  {
+    "id": 4230194340050673,
+    "word": "élan",
+    "pos": "n",
+    "definition": "vigorous, stylish enthusiasm",
     "band": 6
   }
 ]

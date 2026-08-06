@@ -1131,7 +1131,7 @@
     "word": "jejune",
     "pos": "adj",
     "definition": "naive, simplistic, or insubstantial",
-    "band": 5
+    "band": 6
   },
   {
     "word": "limpid",
@@ -3783,7 +3783,7 @@
     "word": "sangfroid",
     "pos": "n",
     "definition": "composure under strain",
-    "band": 5
+    "band": 6
   },
   {
     "word": "amend",
@@ -6549,7 +6549,7 @@
     "word": "emolument",
     "pos": "n",
     "definition": "payment for work or office",
-    "band": 5
+    "band": 6
   },
   {
     "word": "epigone",
@@ -7143,7 +7143,7 @@
     "word": "palimpsest",
     "pos": "n",
     "definition": "a manuscript reused after its earlier writing was scraped away",
-    "band": 5
+    "band": 6
   },
   {
     "word": "peroration",
@@ -7383,7 +7383,7 @@
     "word": "parvenu",
     "pos": "n",
     "definition": "a social upstart newly risen in wealth or rank",
-    "band": 5
+    "band": 6
   },
   {
     "word": "philistine",
@@ -7479,7 +7479,7 @@
     "word": "sprezzatura",
     "pos": "n",
     "definition": "studied nonchalance that conceals all effort",
-    "band": 5
+    "band": 6
   },
   {
     "word": "concinnity",
@@ -7533,7 +7533,7 @@
     "word": "weltschmerz",
     "pos": "n",
     "definition": "a world-weary sadness at the world's imperfection",
-    "band": 5
+    "band": 6
   },
   {
     "word": "anagnorisis",
@@ -7977,7 +7977,7 @@
     "word": "roué",
     "pos": "n",
     "definition": "an ageing man given over to dissolute pleasures",
-    "band": 5
+    "band": 6
   },
   {
     "word": "libertine",
@@ -8067,7 +8067,7 @@
     "word": "aperçu",
     "pos": "n",
     "definition": "a glancing insight that illuminates much",
-    "band": 5
+    "band": 6
   },
   {
     "word": "longueur",
@@ -8079,7 +8079,7 @@
     "word": "frisson",
     "pos": "n",
     "definition": "a sudden shiver of excitement or dread",
-    "band": 5
+    "band": 6
   },
   {
     "word": "screed",
@@ -8103,13 +8103,13 @@
     "word": "pastiche",
     "pos": "n",
     "definition": "a work imitating another's style; a stylistic medley",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bildungsroman",
     "pos": "n",
     "definition": "a novel tracing its hero's formative growth",
-    "band": 5
+    "band": 6
   },
   {
     "word": "mimesis",
@@ -8355,7 +8355,7 @@
     "word": "coterie",
     "pos": "n",
     "definition": "an exclusive circle of like-minded intimates",
-    "band": 5
+    "band": 6
   },
   {
     "word": "anomie",
@@ -8367,7 +8367,7 @@
     "word": "saudade",
     "pos": "n",
     "definition": "a tender longing for something absent and perhaps lost forever",
-    "band": 5
+    "band": 6
   },
   {
     "word": "duende",
@@ -8421,7 +8421,7 @@
     "word": "raconteur",
     "pos": "n",
     "definition": "a skilled and engaging teller of stories",
-    "band": 5
+    "band": 6
   },
   {
     "word": "provenance",
@@ -8433,19 +8433,19 @@
     "word": "denouement",
     "pos": "n",
     "definition": "the final unraveling of a plot or situation",
-    "band": 5
+    "band": 6
   },
   {
     "word": "rapprochement",
     "pos": "n",
     "definition": "a renewal of cordial relations",
-    "band": 5
+    "band": 6
   },
   {
     "word": "repartee",
     "pos": "n",
     "definition": "quick, witty reply or exchange",
-    "band": 5
+    "band": 6
   },
   {
     "word": "persiflage",
@@ -8469,13 +8469,13 @@
     "word": "cachet",
     "pos": "n",
     "definition": "prestige or a mark of distinction",
-    "band": 5
+    "band": 6
   },
   {
     "word": "élan",
     "pos": "n",
     "definition": "vigorous, stylish enthusiasm",
-    "band": 5
+    "band": 6
   },
   {
     "word": "verve",
@@ -8487,7 +8487,7 @@
     "word": "doyen",
     "pos": "n",
     "definition": "the senior, most respected member of a group",
-    "band": 5
+    "band": 6
   },
   {
     "word": "protégé",
@@ -8505,7 +8505,7 @@
     "word": "contretemps",
     "pos": "n",
     "definition": "an awkward or unfortunate mishap",
-    "band": 5
+    "band": 6
   },
   {
     "word": "gaffe",
@@ -8529,25 +8529,25 @@
     "word": "argot",
     "pos": "n",
     "definition": "the specialized slang of a particular group",
-    "band": 5
+    "band": 6
   },
   {
     "word": "patois",
     "pos": "n",
     "definition": "a regional dialect or nonstandard speech",
-    "band": 5
+    "band": 6
   },
   {
     "word": "soirée",
     "pos": "n",
     "definition": "an elegant evening social gathering",
-    "band": 5
+    "band": 6
   },
   {
     "word": "flâneur",
     "pos": "n",
     "definition": "an idle stroller who observes city life",
-    "band": 5
+    "band": 6
   },
   {
     "word": "demimonde",
@@ -8559,7 +8559,7 @@
     "word": "coquette",
     "pos": "n",
     "definition": "a woman who flirts to attract attention",
-    "band": 5
+    "band": 6
   },
   {
     "word": "bricolage",
@@ -8595,7 +8595,7 @@
     "word": "louche",
     "pos": "adj",
     "definition": "disreputable yet somehow alluring",
-    "band": 5
+    "band": 6
   },
   {
     "word": "insouciant",
@@ -8607,19 +8607,19 @@
     "word": "recherché",
     "pos": "adj",
     "definition": "rare, refined, or studiedly obscure",
-    "band": 5
+    "band": 6
   },
   {
     "word": "outré",
     "pos": "adj",
     "definition": "unconventional to the point of being shocking",
-    "band": 5
+    "band": 6
   },
   {
     "word": "soigné",
     "pos": "adj",
     "definition": "elegantly well-groomed and refined",
-    "band": 5
+    "band": 6
   },
   {
     "word": "distrait",
