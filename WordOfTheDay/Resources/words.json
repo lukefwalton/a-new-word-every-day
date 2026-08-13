@@ -2975,6 +2975,13 @@
     "band": 3
   },
   {
+    "id": 1672278115313729,
+    "word": "agnosticism",
+    "pos": "n",
+    "definition": "the view that the existence of God cannot be known",
+    "band": 3
+  },
+  {
     "id": 341833809337798,
     "word": "allay",
     "pos": "v",
@@ -3318,6 +3325,13 @@
     "band": 3
   },
   {
+    "id": 14869189015941,
+    "word": "cynicism",
+    "pos": "n",
+    "definition": "distrust of the motives and sincerity of others",
+    "band": 3
+  },
+  {
     "id": 1728027597117374,
     "word": "dearth",
     "pos": "n",
@@ -3591,6 +3605,13 @@
     "band": 3
   },
   {
+    "id": 54571950374537,
+    "word": "empirical",
+    "pos": "adj",
+    "definition": "based on observation and experience rather than theory",
+    "band": 3
+  },
+  {
     "id": 496901028628493,
     "word": "enervate",
     "pos": "v",
@@ -3651,6 +3672,13 @@
     "word": "ethereal",
     "pos": "adj",
     "definition": "delicate and light; heavenly",
+    "band": 3
+  },
+  {
+    "id": 512282302599046,
+    "word": "ethos",
+    "pos": "n",
+    "definition": "the characteristic spirit of a culture or community",
     "band": 3
   },
   {
@@ -4137,6 +4165,13 @@
     "band": 3
   },
   {
+    "id": 565999700994225,
+    "word": "maxim",
+    "pos": "n",
+    "definition": "a concise rule of conduct or general truth",
+    "band": 3
+  },
+  {
     "id": 2967529797493718,
     "word": "meander",
     "pos": "v",
@@ -4305,6 +4340,13 @@
     "band": 3
   },
   {
+    "id": 2870043064622357,
+    "word": "pedantic",
+    "pos": "adj",
+    "definition": "overly concerned with minor rules and book learning",
+    "band": 3
+  },
+  {
     "id": 496429358219250,
     "word": "penury",
     "pos": "n",
@@ -4333,6 +4375,13 @@
     "band": 3
   },
   {
+    "id": 1962982020261988,
+    "word": "platonic",
+    "pos": "adj",
+    "definition": "affectionate yet wholly nonsexual; of the realm of ideal forms",
+    "band": 3
+  },
+  {
     "id": 2106817789435726,
     "word": "plethora",
     "pos": "n",
@@ -4358,6 +4407,13 @@
     "word": "ponderous",
     "pos": "adj",
     "definition": "slow and clumsy from weight",
+    "band": 3
+  },
+  {
+    "id": 3794170389345995,
+    "word": "pragmatism",
+    "pos": "n",
+    "definition": "an approach that judges ideas by their practical consequences",
     "band": 3
   },
   {
@@ -4599,6 +4655,13 @@
     "band": 3
   },
   {
+    "id": 2491834135687387,
+    "word": "skepticism",
+    "pos": "n",
+    "definition": "a doubting attitude toward accepted claims",
+    "band": 3
+  },
+  {
     "id": 1315499026344749,
     "word": "slothful",
     "pos": "adj",
@@ -4638,6 +4701,13 @@
     "word": "stoic",
     "pos": "adj",
     "definition": "enduring hardship without showing feeling",
+    "band": 3
+  },
+  {
+    "id": 3719728801149646,
+    "word": "stoicism",
+    "pos": "n",
+    "definition": "endurance of hardship without complaint or display of feeling",
     "band": 3
   },
   {
@@ -4928,6 +4998,13 @@
     "band": 4
   },
   {
+    "id": 4062538838153569,
+    "word": "absolutism",
+    "pos": "n",
+    "definition": "the holding of principles as universal and admitting no exception",
+    "band": 4
+  },
+  {
     "id": 4454801290574264,
     "word": "acrid",
     "pos": "adj",
@@ -5079,6 +5156,13 @@
     "word": "ascetic",
     "pos": "adj",
     "definition": "severely self-disciplined and abstinent",
+    "band": 4
+  },
+  {
+    "id": 1729446381557380,
+    "word": "asceticism",
+    "pos": "n",
+    "definition": "severe self-discipline and abstention from all indulgence",
     "band": 4
   },
   {
@@ -5376,6 +5460,13 @@
     "band": 4
   },
   {
+    "id": 4492402511707335,
+    "word": "determinism",
+    "pos": "n",
+    "definition": "the doctrine that every event is fixed by prior causes",
+    "band": 4
+  },
+  {
     "id": 1505981033586715,
     "word": "dialectic",
     "pos": "n",
@@ -5429,6 +5520,13 @@
     "word": "dolorous",
     "pos": "adj",
     "definition": "feeling or expressing great sorrow",
+    "band": 4
+  },
+  {
+    "id": 4153087813960563,
+    "word": "dualism",
+    "pos": "n",
+    "definition": "the view that mind and matter are two distinct substances",
     "band": 4
   },
   {
@@ -5513,6 +5611,13 @@
     "word": "epicure",
     "pos": "n",
     "definition": "one devoted to refined pleasures of the table",
+    "band": 4
+  },
+  {
+    "id": 1746112970987358,
+    "word": "epicurean",
+    "pos": "adj",
+    "definition": "devoted to refined pleasure, especially in food and drink",
     "band": 4
   },
   {
@@ -5621,6 +5726,13 @@
     "band": 4
   },
   {
+    "id": 2857959356102177,
+    "word": "existentialism",
+    "pos": "n",
+    "definition": "the philosophy that individuals create their own meaning through free choice",
+    "band": 4
+  },
+  {
     "id": 3976562087786216,
     "word": "expiate",
     "pos": "v",
@@ -5667,6 +5779,13 @@
     "word": "facile",
     "pos": "adj",
     "definition": "easily achieved; superficial",
+    "band": 4
+  },
+  {
+    "id": 889504504528429,
+    "word": "fatalism",
+    "pos": "n",
+    "definition": "the belief that events are inevitable and resistance is useless",
     "band": 4
   },
   {
@@ -5789,6 +5908,13 @@
     "band": 4
   },
   {
+    "id": 1580196238361625,
+    "word": "hedonism",
+    "pos": "n",
+    "definition": "the pursuit of pleasure as the highest good",
+    "band": 4
+  },
+  {
     "id": 223164134621900,
     "word": "hegemony",
     "pos": "n",
@@ -5810,6 +5936,13 @@
     "band": 4
   },
   {
+    "id": 3228425507107550,
+    "word": "humanism",
+    "pos": "n",
+    "definition": "an outlook centered on human worth and reason rather than the divine",
+    "band": 4
+  },
+  {
     "id": 2970268286557808,
     "word": "iconoclasm",
     "pos": "n",
@@ -5821,6 +5954,13 @@
     "word": "iconoclast",
     "pos": "n",
     "definition": "one who attacks cherished beliefs",
+    "band": 4
+  },
+  {
+    "id": 2580222838003025,
+    "word": "idealism",
+    "pos": "n",
+    "definition": "the doctrine that reality is fundamentally mental; devotion to high ideals",
     "band": 4
   },
   {
@@ -6146,6 +6286,13 @@
     "band": 4
   },
   {
+    "id": 2637343695740864,
+    "word": "materialism",
+    "pos": "n",
+    "definition": "the doctrine that nothing exists except matter",
+    "band": 4
+  },
+  {
     "id": 676247680201310,
     "word": "mendacious",
     "pos": "adj",
@@ -6227,6 +6374,13 @@
     "word": "neologism",
     "pos": "n",
     "definition": "a newly coined word or expression",
+    "band": 4
+  },
+  {
+    "id": 3380294473786779,
+    "word": "nihilism",
+    "pos": "n",
+    "definition": "the rejection of all meaning, value, and belief",
     "band": 4
   },
   {
@@ -6349,6 +6503,13 @@
     "band": 4
   },
   {
+    "id": 4448949546497174,
+    "word": "pathos",
+    "pos": "n",
+    "definition": "a quality that evokes pity or sorrow",
+    "band": 4
+  },
+  {
     "id": 4466081981923037,
     "word": "paucity",
     "pos": "n",
@@ -6440,6 +6601,13 @@
     "band": 4
   },
   {
+    "id": 2279255385962759,
+    "word": "polemic",
+    "pos": "n",
+    "definition": "a forceful attack in writing on an opinion or doctrine",
+    "band": 4
+  },
+  {
     "id": 3618807201036215,
     "word": "portentous",
     "pos": "adj",
@@ -6500,6 +6668,13 @@
     "word": "prescient",
     "pos": "adj",
     "definition": "knowing things before they occur",
+    "band": 4
+  },
+  {
+    "id": 465212068434346,
+    "word": "prescriptive",
+    "pos": "adj",
+    "definition": "laying down rules for how things should be done",
     "band": 4
   },
   {
@@ -6622,6 +6797,13 @@
     "band": 4
   },
   {
+    "id": 1321140606315944,
+    "word": "rationalism",
+    "pos": "n",
+    "definition": "the doctrine that reason rather than experience grounds knowledge",
+    "band": 4
+  },
+  {
     "id": 4169187050012331,
     "word": "recalcitrant",
     "pos": "adj",
@@ -6661,6 +6843,13 @@
     "word": "refractory",
     "pos": "adj",
     "definition": "stubbornly resistant to control",
+    "band": 4
+  },
+  {
+    "id": 1520354572109735,
+    "word": "relativism",
+    "pos": "n",
+    "definition": "the view that truth and morality vary with standpoint or culture",
     "band": 4
   },
   {
@@ -6944,6 +7133,13 @@
     "band": 4
   },
   {
+    "id": 787718026673253,
+    "word": "theism",
+    "pos": "n",
+    "definition": "belief in the existence of a god or gods",
+    "band": 4
+  },
+  {
     "id": 3204751720105408,
     "word": "torpid",
     "pos": "adj",
@@ -6976,6 +7172,13 @@
     "word": "travail",
     "pos": "n",
     "definition": "painful or laborious effort",
+    "band": 4
+  },
+  {
+    "id": 232270935226136,
+    "word": "treatise",
+    "pos": "n",
+    "definition": "a systematic written study of a subject",
     "band": 4
   },
   {
@@ -7109,6 +7312,13 @@
     "word": "wizened",
     "pos": "adj",
     "definition": "shriveled with age",
+    "band": 4
+  },
+  {
+    "id": 2931108463024357,
+    "word": "zeitgeist",
+    "pos": "n",
+    "definition": "the defining spirit or mood of an era",
     "band": 4
   },
   {
@@ -7399,6 +7609,13 @@
     "band": 5
   },
   {
+    "id": 2687115762392908,
+    "word": "deism",
+    "pos": "n",
+    "definition": "belief in a creator who does not intervene in the universe",
+    "band": 5
+  },
+  {
     "id": 3337163567816614,
     "word": "dilettante",
     "pos": "n",
@@ -7595,6 +7812,13 @@
     "band": 5
   },
   {
+    "id": 2949825650510474,
+    "word": "gestalt",
+    "pos": "n",
+    "definition": "a whole perceived as more than the sum of its parts",
+    "band": 5
+  },
+  {
     "id": 2098804836657229,
     "word": "gloaming",
     "pos": "n",
@@ -7627,6 +7851,13 @@
     "word": "hamartia",
     "pos": "n",
     "definition": "the flaw that fells a tragic hero",
+    "band": 5
+  },
+  {
+    "id": 2698696370859297,
+    "word": "hermetic",
+    "pos": "adj",
+    "definition": "completely sealed; esoteric and closed to outsiders",
     "band": 5
   },
   {
@@ -7805,6 +8036,13 @@
     "band": 5
   },
   {
+    "id": 3815980057052233,
+    "word": "logos",
+    "pos": "n",
+    "definition": "reason as the ordering principle of the world",
+    "band": 5
+  },
+  {
     "id": 1213639757055541,
     "word": "lucre",
     "pos": "n",
@@ -7924,6 +8162,13 @@
     "band": 5
   },
   {
+    "id": 2704554986373935,
+    "word": "monism",
+    "pos": "n",
+    "definition": "the doctrine that reality consists of a single kind of substance",
+    "band": 5
+  },
+  {
     "id": 2078684058167376,
     "word": "mordant",
     "pos": "adj",
@@ -7949,6 +8194,13 @@
     "word": "noisome",
     "pos": "adj",
     "definition": "foul-smelling and offensive; noxious",
+    "band": 5
+  },
+  {
+    "id": 389603506448371,
+    "word": "normative",
+    "pos": "adj",
+    "definition": "prescribing how things ought to be rather than describing how they are",
     "band": 5
   },
   {
@@ -7984,6 +8236,13 @@
     "word": "panegyric",
     "pos": "n",
     "definition": "a speech of elaborate praise",
+    "band": 5
+  },
+  {
+    "id": 2094404781861382,
+    "word": "pantheism",
+    "pos": "n",
+    "definition": "the belief that God and the universe are identical",
     "band": 5
   },
   {
@@ -8110,6 +8369,13 @@
     "word": "picaresque",
     "pos": "adj",
     "definition": "roving through the episodic adventures of a rogue",
+    "band": 5
+  },
+  {
+    "id": 2435452922152899,
+    "word": "positivism",
+    "pos": "n",
+    "definition": "the doctrine that only scientifically verifiable claims are meaningful",
     "band": 5
   },
   {
@@ -8505,6 +8771,13 @@
     "band": 5
   },
   {
+    "id": 4360925680816338,
+    "word": "sybarite",
+    "pos": "n",
+    "definition": "a person devoted to luxury and pleasure",
+    "band": 5
+  },
+  {
     "id": 2234475988378673,
     "word": "sybaritic",
     "pos": "adj",
@@ -8516,6 +8789,13 @@
     "word": "sylvan",
     "pos": "adj",
     "definition": "of woods and their leafy shade",
+    "band": 5
+  },
+  {
+    "id": 1498394209137440,
+    "word": "syncretism",
+    "pos": "n",
+    "definition": "the blending of different beliefs or schools into one",
     "band": 5
   },
   {
@@ -8537,6 +8817,13 @@
     "word": "teleology",
     "pos": "n",
     "definition": "the explanation of things by their purpose rather than their cause",
+    "band": 5
+  },
+  {
+    "id": 3566273109034306,
+    "word": "telos",
+    "pos": "n",
+    "definition": "an ultimate end or purpose",
     "band": 5
   },
   {
@@ -8614,6 +8901,13 @@
     "word": "unctuous",
     "pos": "adj",
     "definition": "excessively smooth, suave, or ingratiating",
+    "band": 5
+  },
+  {
+    "id": 1209166822387241,
+    "word": "utilitarianism",
+    "pos": "n",
+    "definition": "the doctrine that the right act yields the greatest good for the greatest number",
     "band": 5
   },
   {
@@ -8792,6 +9086,13 @@
     "band": 6
   },
   {
+    "id": 2232753141109945,
+    "word": "akrasia",
+    "pos": "n",
+    "definition": "weakness of will; acting against one's better judgment",
+    "band": 6
+  },
+  {
     "id": 202985928118744,
     "word": "aleatory",
     "pos": "adj",
@@ -8827,6 +9128,13 @@
     "band": 6
   },
   {
+    "id": 3297879999303569,
+    "word": "anchorite",
+    "pos": "n",
+    "definition": "a person withdrawn from the world for religious reasons",
+    "band": 6
+  },
+  {
     "id": 4321473703221746,
     "word": "anfractuous",
     "pos": "adj",
@@ -8838,6 +9146,13 @@
     "word": "animadversion",
     "pos": "n",
     "definition": "harsh criticism",
+    "band": 6
+  },
+  {
+    "id": 4173671689335398,
+    "word": "antinomian",
+    "pos": "adj",
+    "definition": "rejecting the authority of moral law",
     "band": 6
   },
   {
@@ -8883,6 +9198,13 @@
     "band": 6
   },
   {
+    "id": 3777345449043392,
+    "word": "arete",
+    "pos": "n",
+    "definition": "excellence of character; virtue as fulfilled potential",
+    "band": 6
+  },
+  {
     "id": 2008272488325550,
     "word": "argot",
     "pos": "n",
@@ -8911,6 +9233,13 @@
     "band": 6
   },
   {
+    "id": 1092307783142172,
+    "word": "ataraxia",
+    "pos": "n",
+    "definition": "serene calm untroubled by anxiety or disturbance",
+    "band": 6
+  },
+  {
     "id": 344000687015784,
     "word": "atrabilious",
     "pos": "adj",
@@ -8929,6 +9258,13 @@
     "word": "autochthonous",
     "pos": "adj",
     "definition": "native to the place where found",
+    "band": 6
+  },
+  {
+    "id": 3300867352192740,
+    "word": "axiology",
+    "pos": "n",
+    "definition": "the philosophical study of value",
     "band": 6
   },
   {
@@ -9107,6 +9443,13 @@
     "band": 6
   },
   {
+    "id": 151493153782849,
+    "word": "consequentialism",
+    "pos": "n",
+    "definition": "the doctrine that outcomes alone determine right and wrong",
+    "band": 6
+  },
+  {
     "id": 530267681717012,
     "word": "contretemps",
     "pos": "n",
@@ -9212,6 +9555,13 @@
     "band": 6
   },
   {
+    "id": 4063903469021939,
+    "word": "demiurge",
+    "pos": "n",
+    "definition": "a subordinate deity who fashions the material world",
+    "band": 6
+  },
+  {
     "id": 2331508034632399,
     "word": "demotic",
     "pos": "adj",
@@ -9223,6 +9573,20 @@
     "word": "denouement",
     "pos": "n",
     "definition": "the final unraveling of a plot or situation",
+    "band": 6
+  },
+  {
+    "id": 1016413610174914,
+    "word": "deontic",
+    "pos": "adj",
+    "definition": "relating to duty, obligation, and permission",
+    "band": 6
+  },
+  {
+    "id": 883201354572151,
+    "word": "deontology",
+    "pos": "n",
+    "definition": "the ethics of duty and rules rather than consequences",
     "band": 6
   },
   {
@@ -9370,6 +9734,13 @@
     "word": "etiolated",
     "pos": "adj",
     "definition": "pale and feeble from growing without light",
+    "band": 6
+  },
+  {
+    "id": 3129586743227501,
+    "word": "eudaimonia",
+    "pos": "n",
+    "definition": "flourishing; the good life of virtue and well-being",
     "band": 6
   },
   {
@@ -9639,6 +10010,13 @@
     "band": 6
   },
   {
+    "id": 2757185853737420,
+    "word": "kairos",
+    "pos": "n",
+    "definition": "the opportune moment for action",
+    "band": 6
+  },
+  {
     "id": 1343529753824600,
     "word": "kakistocracy",
     "pos": "n",
@@ -9776,6 +10154,13 @@
     "word": "noetic",
     "pos": "adj",
     "definition": "of or relating to the intellect or pure thought",
+    "band": 6
+  },
+  {
+    "id": 1442547971666592,
+    "word": "nominalism",
+    "pos": "n",
+    "definition": "the doctrine that universals are mere names, not realities",
     "band": 6
   },
   {
@@ -9954,6 +10339,13 @@
     "band": 6
   },
   {
+    "id": 382429391701943,
+    "word": "phronesis",
+    "pos": "n",
+    "definition": "practical wisdom in choosing how to act",
+    "band": 6
+  },
+  {
     "id": 155166347922237,
     "word": "plangent",
     "pos": "adj",
@@ -10000,6 +10392,13 @@
     "word": "pulchritude",
     "pos": "n",
     "definition": "physical beauty",
+    "band": 6
+  },
+  {
+    "id": 1620415360559982,
+    "word": "quietism",
+    "pos": "n",
+    "definition": "calm acceptance of things as they are, without resistance",
     "band": 6
   },
   {
@@ -10287,6 +10686,13 @@
     "word": "vespertine",
     "pos": "adj",
     "definition": "of or awakening in the evening",
+    "band": 6
+  },
+  {
+    "id": 4065176602008739,
+    "word": "weltanschauung",
+    "pos": "n",
+    "definition": "a comprehensive conception of the world and life",
     "band": 6
   },
   {

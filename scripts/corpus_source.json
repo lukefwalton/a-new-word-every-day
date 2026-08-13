@@ -8836,5 +8836,353 @@
     "pos": "adj",
     "definition": "opining confidently beyond one's knowledge",
     "band": 6
+  },
+  {
+    "word": "normative",
+    "pos": "adj",
+    "definition": "prescribing how things ought to be rather than describing how they are",
+    "band": 5
+  },
+  {
+    "word": "deontic",
+    "pos": "adj",
+    "definition": "relating to duty, obligation, and permission",
+    "band": 6
+  },
+  {
+    "word": "prescriptive",
+    "pos": "adj",
+    "definition": "laying down rules for how things should be done",
+    "band": 4
+  },
+  {
+    "word": "empirical",
+    "pos": "adj",
+    "definition": "based on observation and experience rather than theory",
+    "band": 3
+  },
+  {
+    "word": "axiology",
+    "pos": "n",
+    "definition": "the philosophical study of value",
+    "band": 6
+  },
+  {
+    "word": "maxim",
+    "pos": "n",
+    "definition": "a concise rule of conduct or general truth",
+    "band": 3
+  },
+  {
+    "word": "polemic",
+    "pos": "n",
+    "definition": "a forceful attack in writing on an opinion or doctrine",
+    "band": 4
+  },
+  {
+    "word": "treatise",
+    "pos": "n",
+    "definition": "a systematic written study of a subject",
+    "band": 4
+  },
+  {
+    "word": "pedantic",
+    "pos": "adj",
+    "definition": "overly concerned with minor rules and book learning",
+    "band": 3
+  },
+  {
+    "word": "stoicism",
+    "pos": "n",
+    "definition": "endurance of hardship without complaint or display of feeling",
+    "band": 3
+  },
+  {
+    "word": "epicurean",
+    "pos": "adj",
+    "definition": "devoted to refined pleasure, especially in food and drink",
+    "band": 4
+  },
+  {
+    "word": "hedonism",
+    "pos": "n",
+    "definition": "the pursuit of pleasure as the highest good",
+    "band": 4
+  },
+  {
+    "word": "nihilism",
+    "pos": "n",
+    "definition": "the rejection of all meaning, value, and belief",
+    "band": 4
+  },
+  {
+    "word": "existentialism",
+    "pos": "n",
+    "definition": "the philosophy that individuals create their own meaning through free choice",
+    "band": 4
+  },
+  {
+    "word": "utilitarianism",
+    "pos": "n",
+    "definition": "the doctrine that the right act yields the greatest good for the greatest number",
+    "band": 5
+  },
+  {
+    "word": "pragmatism",
+    "pos": "n",
+    "definition": "an approach that judges ideas by their practical consequences",
+    "band": 3
+  },
+  {
+    "word": "determinism",
+    "pos": "n",
+    "definition": "the doctrine that every event is fixed by prior causes",
+    "band": 4
+  },
+  {
+    "word": "fatalism",
+    "pos": "n",
+    "definition": "the belief that events are inevitable and resistance is useless",
+    "band": 4
+  },
+  {
+    "word": "materialism",
+    "pos": "n",
+    "definition": "the doctrine that nothing exists except matter",
+    "band": 4
+  },
+  {
+    "word": "idealism",
+    "pos": "n",
+    "definition": "the doctrine that reality is fundamentally mental; devotion to high ideals",
+    "band": 4
+  },
+  {
+    "word": "rationalism",
+    "pos": "n",
+    "definition": "the doctrine that reason rather than experience grounds knowledge",
+    "band": 4
+  },
+  {
+    "word": "positivism",
+    "pos": "n",
+    "definition": "the doctrine that only scientifically verifiable claims are meaningful",
+    "band": 5
+  },
+  {
+    "word": "relativism",
+    "pos": "n",
+    "definition": "the view that truth and morality vary with standpoint or culture",
+    "band": 4
+  },
+  {
+    "word": "absolutism",
+    "pos": "n",
+    "definition": "the holding of principles as universal and admitting no exception",
+    "band": 4
+  },
+  {
+    "word": "monism",
+    "pos": "n",
+    "definition": "the doctrine that reality consists of a single kind of substance",
+    "band": 5
+  },
+  {
+    "word": "dualism",
+    "pos": "n",
+    "definition": "the view that mind and matter are two distinct substances",
+    "band": 4
+  },
+  {
+    "word": "pantheism",
+    "pos": "n",
+    "definition": "the belief that God and the universe are identical",
+    "band": 5
+  },
+  {
+    "word": "deism",
+    "pos": "n",
+    "definition": "belief in a creator who does not intervene in the universe",
+    "band": 5
+  },
+  {
+    "word": "theism",
+    "pos": "n",
+    "definition": "belief in the existence of a god or gods",
+    "band": 4
+  },
+  {
+    "word": "agnosticism",
+    "pos": "n",
+    "definition": "the view that the existence of God cannot be known",
+    "band": 3
+  },
+  {
+    "word": "asceticism",
+    "pos": "n",
+    "definition": "severe self-discipline and abstention from all indulgence",
+    "band": 4
+  },
+  {
+    "word": "cynicism",
+    "pos": "n",
+    "definition": "distrust of the motives and sincerity of others",
+    "band": 3
+  },
+  {
+    "word": "skepticism",
+    "pos": "n",
+    "definition": "a doubting attitude toward accepted claims",
+    "band": 3
+  },
+  {
+    "word": "quietism",
+    "pos": "n",
+    "definition": "calm acceptance of things as they are, without resistance",
+    "band": 6
+  },
+  {
+    "word": "deontology",
+    "pos": "n",
+    "definition": "the ethics of duty and rules rather than consequences",
+    "band": 6
+  },
+  {
+    "word": "consequentialism",
+    "pos": "n",
+    "definition": "the doctrine that outcomes alone determine right and wrong",
+    "band": 6
+  },
+  {
+    "word": "humanism",
+    "pos": "n",
+    "definition": "an outlook centered on human worth and reason rather than the divine",
+    "band": 4
+  },
+  {
+    "word": "nominalism",
+    "pos": "n",
+    "definition": "the doctrine that universals are mere names, not realities",
+    "band": 6
+  },
+  {
+    "word": "syncretism",
+    "pos": "n",
+    "definition": "the blending of different beliefs or schools into one",
+    "band": 5
+  },
+  {
+    "word": "eudaimonia",
+    "pos": "n",
+    "definition": "flourishing; the good life of virtue and well-being",
+    "band": 6
+  },
+  {
+    "word": "ataraxia",
+    "pos": "n",
+    "definition": "serene calm untroubled by anxiety or disturbance",
+    "band": 6
+  },
+  {
+    "word": "akrasia",
+    "pos": "n",
+    "definition": "weakness of will; acting against one's better judgment",
+    "band": 6
+  },
+  {
+    "word": "telos",
+    "pos": "n",
+    "definition": "an ultimate end or purpose",
+    "band": 5
+  },
+  {
+    "word": "logos",
+    "pos": "n",
+    "definition": "reason as the ordering principle of the world",
+    "band": 5
+  },
+  {
+    "word": "ethos",
+    "pos": "n",
+    "definition": "the characteristic spirit of a culture or community",
+    "band": 3
+  },
+  {
+    "word": "pathos",
+    "pos": "n",
+    "definition": "a quality that evokes pity or sorrow",
+    "band": 4
+  },
+  {
+    "word": "arete",
+    "pos": "n",
+    "definition": "excellence of character; virtue as fulfilled potential",
+    "band": 6
+  },
+  {
+    "word": "phronesis",
+    "pos": "n",
+    "definition": "practical wisdom in choosing how to act",
+    "band": 6
+  },
+  {
+    "word": "kairos",
+    "pos": "n",
+    "definition": "the opportune moment for action",
+    "band": 6
+  },
+  {
+    "word": "platonic",
+    "pos": "adj",
+    "definition": "affectionate yet wholly nonsexual; of the realm of ideal forms",
+    "band": 3
+  },
+  {
+    "word": "sybarite",
+    "pos": "n",
+    "definition": "a person devoted to luxury and pleasure",
+    "band": 5
+  },
+  {
+    "word": "anchorite",
+    "pos": "n",
+    "definition": "a person withdrawn from the world for religious reasons",
+    "band": 6
+  },
+  {
+    "word": "hermetic",
+    "pos": "adj",
+    "definition": "completely sealed; esoteric and closed to outsiders",
+    "band": 5
+  },
+  {
+    "word": "antinomian",
+    "pos": "adj",
+    "definition": "rejecting the authority of moral law",
+    "band": 6
+  },
+  {
+    "word": "demiurge",
+    "pos": "n",
+    "definition": "a subordinate deity who fashions the material world",
+    "band": 6
+  },
+  {
+    "word": "zeitgeist",
+    "pos": "n",
+    "definition": "the defining spirit or mood of an era",
+    "band": 4
+  },
+  {
+    "word": "gestalt",
+    "pos": "n",
+    "definition": "a whole perceived as more than the sum of its parts",
+    "band": 5
+  },
+  {
+    "word": "weltanschauung",
+    "pos": "n",
+    "definition": "a comprehensive conception of the world and life",
+    "band": 6
   }
 ]
