@@ -3122,6 +3122,13 @@
     "band": 3
   },
   {
+    "id": 3243229838176109,
+    "word": "axiom",
+    "pos": "n",
+    "definition": "a self-evident principle accepted without proof",
+    "band": 3
+  },
+  {
     "id": 1522791370172349,
     "word": "banal",
     "pos": "adj",
@@ -3287,6 +3294,13 @@
     "word": "copious",
     "pos": "adj",
     "definition": "abundant in quantity",
+    "band": 3
+  },
+  {
+    "id": 2244179682071119,
+    "word": "credence",
+    "pos": "n",
+    "definition": "acceptance of something as true",
     "band": 3
   },
   {
@@ -3490,6 +3504,13 @@
     "word": "dissonance",
     "pos": "n",
     "definition": "lack of harmony",
+    "band": 3
+  },
+  {
+    "id": 70232158843030,
+    "word": "dogma",
+    "pos": "n",
+    "definition": "a belief laid down by authority as unquestionably true",
     "band": 3
   },
   {
@@ -3819,6 +3840,13 @@
     "word": "heinous",
     "pos": "adj",
     "definition": "utterly wicked",
+    "band": 3
+  },
+  {
+    "id": 530136114757904,
+    "word": "heresy",
+    "pos": "n",
+    "definition": "a belief that contradicts established doctrine",
     "band": 3
   },
   {
@@ -4211,6 +4239,13 @@
     "word": "opaque",
     "pos": "adj",
     "definition": "not transparent; hard to understand",
+    "band": 3
+  },
+  {
+    "id": 4265432298473670,
+    "word": "orthodoxy",
+    "pos": "n",
+    "definition": "the body of beliefs accepted as authoritative or conventional",
     "band": 3
   },
   {
@@ -4648,6 +4683,13 @@
     "band": 3
   },
   {
+    "id": 1357693449602763,
+    "word": "supposition",
+    "pos": "n",
+    "definition": "an assumption taken as the starting point of an argument",
+    "band": 3
+  },
+  {
     "id": 3468142112872415,
     "word": "surfeit",
     "pos": "n",
@@ -4673,6 +4715,13 @@
     "word": "temerity",
     "pos": "n",
     "definition": "reckless boldness",
+    "band": 3
+  },
+  {
+    "id": 3588453936692082,
+    "word": "tenet",
+    "pos": "n",
+    "definition": "a principle or belief held as true by a group",
     "band": 3
   },
   {
@@ -5061,6 +5110,13 @@
     "band": 4
   },
   {
+    "id": 1787893851496685,
+    "word": "axiomatic",
+    "pos": "adj",
+    "definition": "self-evident; taken as unquestionably true",
+    "band": 4
+  },
+  {
     "id": 457543957169539,
     "word": "baroque",
     "pos": "adj",
@@ -5142,6 +5198,13 @@
     "word": "celerity",
     "pos": "n",
     "definition": "swiftness",
+    "band": 4
+  },
+  {
+    "id": 1514047450980139,
+    "word": "certitude",
+    "pos": "n",
+    "definition": "complete assurance or conviction",
     "band": 4
   },
   {
@@ -5240,6 +5303,13 @@
     "word": "craven",
     "pos": "adj",
     "definition": "contemptibly cowardly",
+    "band": 4
+  },
+  {
+    "id": 3519876863375774,
+    "word": "credo",
+    "pos": "n",
+    "definition": "a statement of one's guiding beliefs",
     "band": 4
   },
   {
@@ -5852,6 +5922,13 @@
     "band": 4
   },
   {
+    "id": 954538789398456,
+    "word": "incredulity",
+    "pos": "n",
+    "definition": "unwillingness or inability to believe",
+    "band": 4
+  },
+  {
     "id": 4426791924447640,
     "word": "indefatigable",
     "pos": "adj",
@@ -6216,6 +6293,13 @@
     "band": 4
   },
   {
+    "id": 4148891406184731,
+    "word": "opine",
+    "pos": "v",
+    "definition": "to state as one's opinion",
+    "band": 4
+  },
+  {
     "id": 784427491482877,
     "word": "opprobrium",
     "pos": "n",
@@ -6367,6 +6451,20 @@
     "word": "portmanteau",
     "pos": "n",
     "definition": "a word blending the sounds and meanings of two others",
+    "band": 4
+  },
+  {
+    "id": 1365586451345412,
+    "word": "posit",
+    "pos": "v",
+    "definition": "to put forward as a fact or basis for argument",
+    "band": 4
+  },
+  {
+    "id": 3666035113973893,
+    "word": "postulate",
+    "pos": "v",
+    "definition": "to assume as true as a basis for reasoning",
     "band": 4
   },
   {
@@ -6776,6 +6874,13 @@
     "band": 4
   },
   {
+    "id": 246181868241357,
+    "word": "surmise",
+    "pos": "v",
+    "definition": "to infer without certain evidence",
+    "band": 4
+  },
+  {
     "id": 4127722554478633,
     "word": "surreptitious",
     "pos": "adj",
@@ -6951,6 +7056,13 @@
     "band": 4
   },
   {
+    "id": 3219442921905444,
+    "word": "verity",
+    "pos": "n",
+    "definition": "a fundamental and enduring truth",
+    "band": 4
+  },
+  {
     "id": 1997459869481311,
     "word": "verve",
     "pos": "n",
@@ -7098,6 +7210,13 @@
     "band": 5
   },
   {
+    "id": 980751895549042,
+    "word": "aver",
+    "pos": "v",
+    "definition": "to assert confidently to be true",
+    "band": 5
+  },
+  {
     "id": 3225727589864191,
     "word": "benighted",
     "pos": "adj",
@@ -7179,6 +7298,13 @@
     "word": "carouse",
     "pos": "v",
     "definition": "to revel long and drunkenly",
+    "band": 5
+  },
+  {
+    "id": 1113779675015860,
+    "word": "catechism",
+    "pos": "n",
+    "definition": "a summary of doctrine taught in question-and-answer form",
     "band": 5
   },
   {
@@ -7287,10 +7413,24 @@
     "band": 5
   },
   {
+    "id": 1148857386435928,
+    "word": "doctrinaire",
+    "pos": "adj",
+    "definition": "rigidly applying doctrine without regard for practicality",
+    "band": 5
+  },
+  {
     "id": 2171891774787653,
     "word": "doughty",
     "pos": "adj",
     "definition": "brave, resolute, and persevering",
+    "band": 5
+  },
+  {
+    "id": 3768747298280514,
+    "word": "doxology",
+    "pos": "n",
+    "definition": "a short hymn of praise to God",
     "band": 5
   },
   {
@@ -7333,6 +7473,13 @@
     "word": "eldritch",
     "pos": "adj",
     "definition": "weird and sinister",
+    "band": 5
+  },
+  {
+    "id": 322820609295583,
+    "word": "epistemic",
+    "pos": "adj",
+    "definition": "relating to knowledge or the degree to which it is justified",
     "band": 5
   },
   {
@@ -7455,6 +7602,13 @@
     "band": 5
   },
   {
+    "id": 1984476713920953,
+    "word": "gnosis",
+    "pos": "n",
+    "definition": "esoteric knowledge of spiritual truths",
+    "band": 5
+  },
+  {
     "id": 2613935502296793,
     "word": "grandiloquent",
     "pos": "adj",
@@ -7473,6 +7627,13 @@
     "word": "hamartia",
     "pos": "n",
     "definition": "the flaw that fells a tragic hero",
+    "band": 5
+  },
+  {
+    "id": 32568440586884,
+    "word": "heterodox",
+    "pos": "adj",
+    "definition": "departing from accepted beliefs or standards",
     "band": 5
   },
   {
@@ -7882,6 +8043,13 @@
     "band": 5
   },
   {
+    "id": 1917318290812972,
+    "word": "perspicacity",
+    "pos": "n",
+    "definition": "keenness of insight and judgment",
+    "band": 5
+  },
+  {
     "id": 1368159292601819,
     "word": "pertinacious",
     "pos": "adj",
@@ -8232,6 +8400,13 @@
     "band": 5
   },
   {
+    "id": 141788844044225,
+    "word": "shibboleth",
+    "pos": "n",
+    "definition": "a belief or custom that marks the members of a group",
+    "band": 5
+  },
+  {
     "id": 2507133933732444,
     "word": "sidle",
     "pos": "v",
@@ -8271,6 +8446,13 @@
     "word": "sonorous",
     "pos": "adj",
     "definition": "deep, full, and resonant in sound",
+    "band": 5
+  },
+  {
+    "id": 3497771836016683,
+    "word": "sophism",
+    "pos": "n",
+    "definition": "a plausible but deliberately fallacious argument",
     "band": 5
   },
   {
@@ -9100,6 +9282,13 @@
     "band": 6
   },
   {
+    "id": 64042105757744,
+    "word": "doxastic",
+    "pos": "adj",
+    "definition": "of or relating to belief",
+    "band": 6
+  },
+  {
     "id": 1486726678181163,
     "word": "doyen",
     "pos": "n",
@@ -9237,6 +9426,13 @@
     "word": "farrago",
     "pos": "n",
     "definition": "a confused mixture",
+    "band": 6
+  },
+  {
+    "id": 1943915892304684,
+    "word": "fideism",
+    "pos": "n",
+    "definition": "the doctrine that belief rests on faith rather than reason",
     "band": 6
   },
   {
@@ -9573,6 +9769,20 @@
     "word": "nidor",
     "pos": "n",
     "definition": "a strong cooking smell",
+    "band": 6
+  },
+  {
+    "id": 1423209912654701,
+    "word": "noetic",
+    "pos": "adj",
+    "definition": "of or relating to the intellect or pure thought",
+    "band": 6
+  },
+  {
+    "id": 3185341527423109,
+    "word": "noumenon",
+    "pos": "n",
+    "definition": "a thing as it is in itself, apart from how it is perceived",
     "band": 6
   },
   {
@@ -10031,6 +10241,13 @@
     "band": 6
   },
   {
+    "id": 1158636619681568,
+    "word": "ultracrepidarian",
+    "pos": "adj",
+    "definition": "opining confidently beyond one's knowledge",
+    "band": 6
+  },
+  {
     "id": 2366258558973044,
     "word": "usufruct",
     "pos": "n",
@@ -10056,6 +10273,13 @@
     "word": "velleity",
     "pos": "n",
     "definition": "a wish too weak to lead to action",
+    "band": 6
+  },
+  {
+    "id": 1424875137699701,
+    "word": "veridical",
+    "pos": "adj",
+    "definition": "coinciding with reality; genuinely true",
     "band": 6
   },
   {

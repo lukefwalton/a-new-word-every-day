@@ -8644,5 +8644,197 @@
     "pos": "adj",
     "definition": "bordering on the indecent; suggestive",
     "band": 4
+  },
+  {
+    "word": "doxastic",
+    "pos": "adj",
+    "definition": "of or relating to belief",
+    "band": 6
+  },
+  {
+    "word": "doxology",
+    "pos": "n",
+    "definition": "a short hymn of praise to God",
+    "band": 5
+  },
+  {
+    "word": "heterodox",
+    "pos": "adj",
+    "definition": "departing from accepted beliefs or standards",
+    "band": 5
+  },
+  {
+    "word": "orthodoxy",
+    "pos": "n",
+    "definition": "the body of beliefs accepted as authoritative or conventional",
+    "band": 3
+  },
+  {
+    "word": "epistemic",
+    "pos": "adj",
+    "definition": "relating to knowledge or the degree to which it is justified",
+    "band": 5
+  },
+  {
+    "word": "noetic",
+    "pos": "adj",
+    "definition": "of or relating to the intellect or pure thought",
+    "band": 6
+  },
+  {
+    "word": "veridical",
+    "pos": "adj",
+    "definition": "coinciding with reality; genuinely true",
+    "band": 6
+  },
+  {
+    "word": "noumenon",
+    "pos": "n",
+    "definition": "a thing as it is in itself, apart from how it is perceived",
+    "band": 6
+  },
+  {
+    "word": "gnosis",
+    "pos": "n",
+    "definition": "esoteric knowledge of spiritual truths",
+    "band": 5
+  },
+  {
+    "word": "fideism",
+    "pos": "n",
+    "definition": "the doctrine that belief rests on faith rather than reason",
+    "band": 6
+  },
+  {
+    "word": "credence",
+    "pos": "n",
+    "definition": "acceptance of something as true",
+    "band": 3
+  },
+  {
+    "word": "credo",
+    "pos": "n",
+    "definition": "a statement of one's guiding beliefs",
+    "band": 4
+  },
+  {
+    "word": "dogma",
+    "pos": "n",
+    "definition": "a belief laid down by authority as unquestionably true",
+    "band": 3
+  },
+  {
+    "word": "tenet",
+    "pos": "n",
+    "definition": "a principle or belief held as true by a group",
+    "band": 3
+  },
+  {
+    "word": "heresy",
+    "pos": "n",
+    "definition": "a belief that contradicts established doctrine",
+    "band": 3
+  },
+  {
+    "word": "catechism",
+    "pos": "n",
+    "definition": "a summary of doctrine taught in question-and-answer form",
+    "band": 5
+  },
+  {
+    "word": "shibboleth",
+    "pos": "n",
+    "definition": "a belief or custom that marks the members of a group",
+    "band": 5
+  },
+  {
+    "word": "certitude",
+    "pos": "n",
+    "definition": "complete assurance or conviction",
+    "band": 4
+  },
+  {
+    "word": "incredulity",
+    "pos": "n",
+    "definition": "unwillingness or inability to believe",
+    "band": 4
+  },
+  {
+    "word": "axiom",
+    "pos": "n",
+    "definition": "a self-evident principle accepted without proof",
+    "band": 3
+  },
+  {
+    "word": "axiomatic",
+    "pos": "adj",
+    "definition": "self-evident; taken as unquestionably true",
+    "band": 4
+  },
+  {
+    "word": "postulate",
+    "pos": "v",
+    "definition": "to assume as true as a basis for reasoning",
+    "band": 4
+  },
+  {
+    "word": "posit",
+    "pos": "v",
+    "definition": "to put forward as a fact or basis for argument",
+    "band": 4
+  },
+  {
+    "word": "surmise",
+    "pos": "v",
+    "definition": "to infer without certain evidence",
+    "band": 4
+  },
+  {
+    "word": "supposition",
+    "pos": "n",
+    "definition": "an assumption taken as the starting point of an argument",
+    "band": 3
+  },
+  {
+    "word": "opine",
+    "pos": "v",
+    "definition": "to state as one's opinion",
+    "band": 4
+  },
+  {
+    "word": "aver",
+    "pos": "v",
+    "definition": "to assert confidently to be true",
+    "band": 5
+  },
+  {
+    "word": "verity",
+    "pos": "n",
+    "definition": "a fundamental and enduring truth",
+    "band": 4
+  },
+  {
+    "word": "sophism",
+    "pos": "n",
+    "definition": "a plausible but deliberately fallacious argument",
+    "band": 5
+  },
+  {
+    "word": "perspicacity",
+    "pos": "n",
+    "definition": "keenness of insight and judgment",
+    "band": 5
+  },
+  {
+    "word": "doctrinaire",
+    "pos": "adj",
+    "definition": "rigidly applying doctrine without regard for practicality",
+    "band": 5
+  },
+  {
+    "word": "ultracrepidarian",
+    "pos": "adj",
+    "definition": "opining confidently beyond one's knowledge",
+    "band": 6
   }
 ]
