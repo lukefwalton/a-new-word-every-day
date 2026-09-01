@@ -96,6 +96,14 @@ final class CorpusTests: XCTestCase {
         for word in ["gruesome", "carcass", "gore", "grisly", "carrion", "macabre"] {
             XCTAssertLessThanOrEqual(band[word] ?? .max, 3, "\(word) still circulates; it isn't rare")
         }
+        // The middle is the part most liable to drift, since a grim word reads as
+        // rarer than it is — so pin it as a range: these stay off both ends,
+        // neither demoted to everyday nor swept into Arcane with the deep cuts.
+        for word in ["offal", "viscera", "eviscerate", "putrefy", "necropolis",
+                     "ossuary", "tallow", "immolate", "effluvium", "gibbet"] {
+            XCTAssertTrue((4...5).contains(band[word] ?? 0),
+                          "\(word) belongs in the middle of the register, not at either end")
+        }
         for word in ["knacker", "fellmonger", "battue", "charnel", "gralloch", "haruspex",
                      "hecatomb", "carnifex", "excarnation", "necrophagous", "ichor"] {
             XCTAssertEqual(band[word], 6, "\(word) is genuinely out of general circulation")
