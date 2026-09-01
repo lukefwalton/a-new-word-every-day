@@ -83,6 +83,25 @@ final class CorpusTests: XCTestCase {
         }
     }
 
+    /// The slaughterhouse register: `abattoir` and the vocabulary of flesh,
+    /// blood, and decay around it. Spread across bands on purpose — a word this
+    /// grim is no rarer for it, and burying the whole vein in Arcane would keep
+    /// it from the readers most likely to want it.
+    func test_slaughterRegister_isBandedByRarityNotByMood() {
+        let band = Dictionary(corpus.words.map { ($0.word, $0.band) },
+                              uniquingKeysWith: { first, _ in first })
+        XCTAssertEqual(band["abattoir"], 5, "abattoir is rare and literary, not out of circulation")
+        // `?? .max` so a word dropped from the corpus fails here rather than
+        // sliding under the bound as a missing zero.
+        for word in ["gruesome", "carcass", "gore", "grisly", "carrion", "macabre"] {
+            XCTAssertLessThanOrEqual(band[word] ?? .max, 3, "\(word) still circulates; it isn't rare")
+        }
+        for word in ["knacker", "fellmonger", "battue", "charnel", "gralloch", "haruspex",
+                     "hecatomb", "carnifex", "excarnation", "necrophagous", "ichor"] {
+            XCTAssertEqual(band[word], 6, "\(word) is genuinely out of general circulation")
+        }
+    }
+
     /// The reported bug in corpus terms: `lax` is a band-2 word and must stay
     /// one, so no level above Easy can ever serve it.
     func test_laxStaysAnEasyWord() {

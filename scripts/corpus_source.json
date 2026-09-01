@@ -9184,5 +9184,509 @@
     "pos": "n",
     "definition": "a comprehensive conception of the world and life",
     "band": 6
+  },
+  {
+    "word": "gruesome",
+    "pos": "adj",
+    "definition": "inspiring horror and revulsion",
+    "band": 1
+  },
+  {
+    "word": "carcass",
+    "pos": "n",
+    "definition": "the dead body of an animal",
+    "band": 2
+  },
+  {
+    "word": "gore",
+    "pos": "n",
+    "definition": "thick clotted blood from a wound",
+    "band": 2
+  },
+  {
+    "word": "grisly",
+    "pos": "adj",
+    "definition": "causing a shudder of horror",
+    "band": 2
+  },
+  {
+    "word": "rancid",
+    "pos": "adj",
+    "definition": "stale and sour, as fat that has turned",
+    "band": 2
+  },
+  {
+    "word": "morbid",
+    "pos": "adj",
+    "definition": "unwholesomely drawn to death and disease",
+    "band": 2
+  },
+  {
+    "word": "shambles",
+    "pos": "n",
+    "definition": "a slaughterhouse; hence a scene of carnage or ruin",
+    "band": 3
+  },
+  {
+    "word": "catacomb",
+    "pos": "n",
+    "definition": "an underground gallery lined with tombs",
+    "band": 3
+  },
+  {
+    "word": "tannery",
+    "pos": "n",
+    "definition": "a place where hides are cured into leather",
+    "band": 3
+  },
+  {
+    "word": "sarcophagus",
+    "pos": "n",
+    "definition": "a stone coffin, often carved and inscribed",
+    "band": 3
+  },
+  {
+    "word": "carrion",
+    "pos": "n",
+    "definition": "the rotting flesh of dead animals",
+    "band": 3
+  },
+  {
+    "word": "entrails",
+    "pos": "n",
+    "definition": "the intestines of an animal or a person",
+    "band": 3
+  },
+  {
+    "word": "gristle",
+    "pos": "n",
+    "definition": "the tough cartilage that resists the knife in meat",
+    "band": 3
+  },
+  {
+    "word": "sinewy",
+    "pos": "adj",
+    "definition": "lean, stringy, and tough",
+    "band": 3
+  },
+  {
+    "word": "tripe",
+    "pos": "n",
+    "definition": "the stomach lining of cattle eaten as food; hence nonsense",
+    "band": 3
+  },
+  {
+    "word": "cadaver",
+    "pos": "n",
+    "definition": "a corpse, especially one used for dissection",
+    "band": 3
+  },
+  {
+    "word": "disembowel",
+    "pos": "v",
+    "definition": "to cut out the entrails of",
+    "band": 3
+  },
+  {
+    "word": "flay",
+    "pos": "v",
+    "definition": "to strip the skin from; to criticize savagely",
+    "band": 3
+  },
+  {
+    "word": "cull",
+    "pos": "v",
+    "definition": "to thin a herd by killing off part of it; to pick out from a group",
+    "band": 3
+  },
+  {
+    "word": "butchery",
+    "pos": "n",
+    "definition": "the trade of a butcher; wanton slaughter",
+    "band": 3
+  },
+  {
+    "word": "rend",
+    "pos": "v",
+    "definition": "to tear apart with violence",
+    "band": 3
+  },
+  {
+    "word": "decimate",
+    "pos": "v",
+    "definition": "to destroy a large part of; strictly, to kill one in ten",
+    "band": 3
+  },
+  {
+    "word": "putrid",
+    "pos": "adj",
+    "definition": "rotten and rank",
+    "band": 3
+  },
+  {
+    "word": "carnage",
+    "pos": "n",
+    "definition": "the slaughter of a great many",
+    "band": 3
+  },
+  {
+    "word": "carnal",
+    "pos": "adj",
+    "definition": "of the flesh and its appetites",
+    "band": 3
+  },
+  {
+    "word": "macabre",
+    "pos": "adj",
+    "definition": "grimly preoccupied with death",
+    "band": 3
+  },
+  {
+    "word": "lurid",
+    "pos": "adj",
+    "definition": "shockingly vivid; sensational in a gruesome way",
+    "band": 3
+  },
+  {
+    "word": "bovine",
+    "pos": "adj",
+    "definition": "of cattle; dull and placidly slow",
+    "band": 3
+  },
+  {
+    "word": "necropolis",
+    "pos": "n",
+    "definition": "a large and elaborate cemetery of an ancient city",
+    "band": 4
+  },
+  {
+    "word": "pyre",
+    "pos": "n",
+    "definition": "a heap of wood built for burning a body",
+    "band": 4
+  },
+  {
+    "word": "offal",
+    "pos": "n",
+    "definition": "the entrails and organs of a butchered animal; refuse",
+    "band": 4
+  },
+  {
+    "word": "viscera",
+    "pos": "n",
+    "definition": "the internal organs of the body",
+    "band": 4
+  },
+  {
+    "word": "eviscerate",
+    "pos": "v",
+    "definition": "to disembowel; to strip of force or substance",
+    "band": 4
+  },
+  {
+    "word": "vivisection",
+    "pos": "n",
+    "definition": "surgery performed on a living animal for research",
+    "band": 4
+  },
+  {
+    "word": "putrefy",
+    "pos": "v",
+    "definition": "to rot and give off a foul smell",
+    "band": 4
+  },
+  {
+    "word": "porcine",
+    "pos": "adj",
+    "definition": "of or resembling pigs",
+    "band": 4
+  },
+  {
+    "word": "abattoir",
+    "pos": "n",
+    "definition": "a building where livestock is slaughtered for meat",
+    "band": 5
+  },
+  {
+    "word": "ossuary",
+    "pos": "n",
+    "definition": "a vault or chest for the bones of the dead",
+    "band": 5
+  },
+  {
+    "word": "gibbet",
+    "pos": "n",
+    "definition": "a gallows on which bodies were hung for public display",
+    "band": 5
+  },
+  {
+    "word": "bier",
+    "pos": "n",
+    "definition": "the stand on which a coffin or a corpse is laid",
+    "band": 5
+  },
+  {
+    "word": "drover",
+    "pos": "n",
+    "definition": "one who drives livestock to market on foot",
+    "band": 5
+  },
+  {
+    "word": "provender",
+    "pos": "n",
+    "definition": "dry food for livestock; provisions in general",
+    "band": 5
+  },
+  {
+    "word": "tallow",
+    "pos": "n",
+    "definition": "rendered animal fat used for candles and soap",
+    "band": 5
+  },
+  {
+    "word": "suet",
+    "pos": "n",
+    "definition": "the hard fat from around an animal's kidneys, used in cooking",
+    "band": 5
+  },
+  {
+    "word": "sweetbread",
+    "pos": "n",
+    "definition": "the thymus or pancreas of a young animal, eaten as food",
+    "band": 5
+  },
+  {
+    "word": "ordure",
+    "pos": "n",
+    "definition": "excrement; filth of any kind",
+    "band": 5
+  },
+  {
+    "word": "midden",
+    "pos": "n",
+    "definition": "a dunghill or heap of refuse, especially an ancient one",
+    "band": 5
+  },
+  {
+    "word": "immolate",
+    "pos": "v",
+    "definition": "to kill as a sacrifice, especially by fire",
+    "band": 5
+  },
+  {
+    "word": "phlebotomy",
+    "pos": "n",
+    "definition": "the drawing of blood from a vein",
+    "band": 5
+  },
+  {
+    "word": "putrescent",
+    "pos": "adj",
+    "definition": "in the act of rotting",
+    "band": 5
+  },
+  {
+    "word": "effluvium",
+    "pos": "n",
+    "definition": "a foul vapor given off by decay",
+    "band": 5
+  },
+  {
+    "word": "necrosis",
+    "pos": "n",
+    "definition": "the death of tissue in a living body",
+    "band": 5
+  },
+  {
+    "word": "oblation",
+    "pos": "n",
+    "definition": "an offering made to a god",
+    "band": 5
+  },
+  {
+    "word": "ovine",
+    "pos": "adj",
+    "definition": "of or resembling sheep",
+    "band": 5
+  },
+  {
+    "word": "knacker",
+    "pos": "n",
+    "definition": "a buyer of worn-out livestock for slaughter",
+    "band": 6
+  },
+  {
+    "word": "fellmonger",
+    "pos": "n",
+    "definition": "a dealer in animal hides and skins",
+    "band": 6
+  },
+  {
+    "word": "currier",
+    "pos": "n",
+    "definition": "one who dresses and finishes tanned leather",
+    "band": 6
+  },
+  {
+    "word": "abatis",
+    "pos": "n",
+    "definition": "a barricade of felled trees with the branches turned outward",
+    "band": 6
+  },
+  {
+    "word": "battue",
+    "pos": "n",
+    "definition": "a hunt in which game is driven toward the guns; wholesale slaughter",
+    "band": 6
+  },
+  {
+    "word": "charnel",
+    "pos": "adj",
+    "definition": "of or fit for a vault of corpses; deathly",
+    "band": 6
+  },
+  {
+    "word": "columbarium",
+    "pos": "n",
+    "definition": "a vault lined with niches for funeral urns",
+    "band": 6
+  },
+  {
+    "word": "catafalque",
+    "pos": "n",
+    "definition": "the raised platform on which a coffin lies in state",
+    "band": 6
+  },
+  {
+    "word": "cerement",
+    "pos": "n",
+    "definition": "a waxed cloth in which a corpse is wrapped",
+    "band": 6
+  },
+  {
+    "word": "tumbrel",
+    "pos": "n",
+    "definition": "the open cart that carried the condemned to the scaffold",
+    "band": 6
+  },
+  {
+    "word": "byre",
+    "pos": "n",
+    "definition": "a shed in which cattle are housed",
+    "band": 6
+  },
+  {
+    "word": "chine",
+    "pos": "n",
+    "definition": "an animal's backbone, or a cut of meat containing it",
+    "band": 6
+  },
+  {
+    "word": "ichor",
+    "pos": "n",
+    "definition": "the fluid that flows in the veins of gods; a thin watery discharge",
+    "band": 6
+  },
+  {
+    "word": "draff",
+    "pos": "n",
+    "definition": "the dregs left after brewing, fed to swine",
+    "band": 6
+  },
+  {
+    "word": "exsanguinate",
+    "pos": "v",
+    "definition": "to drain entirely of blood",
+    "band": 6
+  },
+  {
+    "word": "flense",
+    "pos": "v",
+    "definition": "to strip the blubber or hide from a carcass",
+    "band": 6
+  },
+  {
+    "word": "gralloch",
+    "pos": "v",
+    "definition": "to disembowel a deer after the kill",
+    "band": 6
+  },
+  {
+    "word": "quietus",
+    "pos": "n",
+    "definition": "a final discharge from life; death as a release",
+    "band": 6
+  },
+  {
+    "word": "sanguineous",
+    "pos": "adj",
+    "definition": "of or full of blood; bloodthirsty",
+    "band": 6
+  },
+  {
+    "word": "ensanguined",
+    "pos": "adj",
+    "definition": "stained or covered with blood",
+    "band": 6
+  },
+  {
+    "word": "fetor",
+    "pos": "n",
+    "definition": "a strong and sickening stench",
+    "band": 6
+  },
+  {
+    "word": "necrophagous",
+    "pos": "adj",
+    "definition": "feeding on carrion",
+    "band": 6
+  },
+  {
+    "word": "carnifex",
+    "pos": "n",
+    "definition": "the public executioner of ancient Rome",
+    "band": 6
+  },
+  {
+    "word": "carnassial",
+    "pos": "adj",
+    "definition": "of a carnivore's shearing teeth, shaped for cutting flesh",
+    "band": 6
+  },
+  {
+    "word": "excarnation",
+    "pos": "n",
+    "definition": "the stripping of flesh from the bones of the dead",
+    "band": 6
+  },
+  {
+    "word": "hecatomb",
+    "pos": "n",
+    "definition": "a sacrifice of many beasts at once; an immense slaughter",
+    "band": 6
+  },
+  {
+    "word": "haruspex",
+    "pos": "n",
+    "definition": "a Roman diviner who read the entrails of sacrificed animals",
+    "band": 6
+  },
+  {
+    "word": "lustration",
+    "pos": "n",
+    "definition": "a ceremonial purification by sacrifice or washing",
+    "band": 6
+  },
+  {
+    "word": "caprine",
+    "pos": "adj",
+    "definition": "of or resembling goats",
+    "band": 6
+  },
+  {
+    "word": "taurine",
+    "pos": "adj",
+    "definition": "of or resembling a bull",
+    "band": 6
   }
 ]
