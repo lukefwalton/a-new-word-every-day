@@ -18,8 +18,9 @@ shipped architecture.
   widget**.
 - **English and Japanese** — individually or together; per-language difficulty;
   per-widget language via Edit Widget.
-- **Star** a word to drop it into a **Practice** list. (Anki export is a
-  someday; the seam is designed in now — see §10.)
+- **Star** a word to drop it into a **Practice** list; marking a word *New to me*
+  on Today stars it automatically. (Anki export is a someday; the seam is
+  designed in now — see §10.)
 - **Swipe onboarding** (Tinder-style, two-way: *Know* / *Don't know*) calibrates
   your difficulty band so day-one words land at the right level. Difficulty
   grounding is **100% on-device** — no accounts, no servers, no tracking.

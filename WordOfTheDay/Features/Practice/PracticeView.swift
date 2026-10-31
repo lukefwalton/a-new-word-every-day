@@ -126,7 +126,7 @@ struct PracticeView: View {
         LFWEmptyState(
             symbol: "star",
             title: "No saved words",
-            message: "Tap the star on a word to save it here for practice.",
+            message: "Mark a word “New to me” or tap its star to save it here for practice.",
             accent: palette.accent
         )
     }

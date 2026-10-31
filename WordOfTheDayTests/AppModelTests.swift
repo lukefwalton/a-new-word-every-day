@@ -135,6 +135,37 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.band(for: .english), 3, "repeated identical marks must not keep moving the band")
     }
 
+    func test_markNewToMe_starsTheWord() {
+        let (model, store) = makeModel()
+        model.setBand(2, for: .english)
+        let word = Fixtures.word(99, band: 2)
+        model.mark(word, known: false)
+        XCTAssertTrue(model.isStarred(99), "a word you didn't know is saved for practice")
+        XCTAssertEqual(store.starredIDs, [99])
+    }
+
+    func test_markKnown_doesNotTouchStar() {
+        let (model, _) = makeModel()
+        model.setBand(2, for: .english)
+        let word = Fixtures.word(99, band: 2)
+        model.mark(word, known: true)
+        XCTAssertFalse(model.isStarred(99), "knowing a word never auto-saves it")
+        model.toggleStar(99)
+        model.mark(word, known: true)
+        XCTAssertTrue(model.isStarred(99), "and never removes a deliberate star")
+    }
+
+    func test_markNewToMe_afterUnstar_savesAgain() {
+        let (model, _) = makeModel()
+        model.setBand(2, for: .english)
+        let word = Fixtures.word(99, band: 2)
+        model.mark(word, known: false)
+        model.unstar([99])
+        XCTAssertFalse(model.isStarred(99))
+        model.mark(word, known: false)   // same answer; band guard is a no-op
+        XCTAssertTrue(model.isStarred(99), "re-answering New to me re-saves even when the mark is unchanged")
+    }
+
     func test_markState_reflectsRecordedMark() {
         let (model, _) = makeModel()
         model.setBand(2, for: .english)

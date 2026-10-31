@@ -281,6 +281,16 @@ final class AppModel: ObservableObject {
     // MARK: In-app word marking (nudges the band)
 
     func mark(_ word: Word, known: Bool) {
+        // "New to me" is also a save: a word you didn't know goes straight onto
+        // the Practice list so it isn't lost when Today advances. Runs before the
+        // idempotency guard so re-answering a word you've since unstarred saves
+        // it again. "I know this" never unstars — a deliberate star stays.
+        if !known, !store.isStarred(word.id) {
+            store.toggleStar(word.id)
+            starredIDs = store.starredIDs
+            recomputeDue()
+            WidgetReloader.reload()   // the widget's star must flip even if the band guard below returns early
+        }
         var marks = store.difficultyMarks
         // Idempotent: only the *first* (or a changed) mark for a word nudges the
         // band. Tapping the same answer repeatedly must not ratchet difficulty.
