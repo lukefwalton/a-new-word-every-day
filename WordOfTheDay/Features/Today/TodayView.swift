@@ -76,13 +76,16 @@ struct TodayView: View {
     private func content(_ word: Word) -> some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack(spacing: 12) {
+                // The longest eyebrow ("ANOTHER WORD · JAPANESE") plus the Today
+                // button and two icons can't share one line on a compact phone;
+                // wrap rather than truncate so the language never reads "ENGLI…".
                 Text(eyebrow(word))
                     .font(LFWTypography.font(.eyebrow, typeface: typeface))
                     .kerning(2)
                     .foregroundStyle(palette.accent)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                Spacer()
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 12)
                 // Viewing a saved or "keep going" word is transient: offer an
                 // explicit way back to the actual daily word.
                 backToTodayButton(word)
