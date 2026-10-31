@@ -80,32 +80,27 @@ No IAP, no ads, no analytics. All data stays on-device.
 | Support | https://lukefwalton.com/a-new-word-every-day/ |
 | Privacy | https://lukefwalton.com/a-new-word-every-day/privacy/ |
 
-## What's New (1.1 / build 7 — paste for this update)
+## What's New (1.3 / build 9 — paste for this update)
 
 ```
-• On-device pronunciation for each word
-• Rōmaji readings for Japanese
-• Keep going on Today — assess a word and get a fresh one
-• Expanded literary and scholarly English word pools
-• Widget long-word layout and tap-to-Today fixes
-• Cleaner app icon
+• Marking a word "New to me" saves it to Practice
+• Today’s language label wraps instead of cutting off
 ```
 
-## 1.1 update checklist (July 2026)
+## 1.3 update checklist (October 2026)
 
 Local prep:
 
-- [x] Tests pass + Release archive **1.1 (7)** → `bash scripts/release.sh` → `build/WordOfTheDay.xcarchive`
-- [x] App Icon — fixed `Contents.json` so the 1024 App Store marketing slot compiles (build 6 dropped it)
-- [x] Screenshots — reuse existing sets in `build/app-store-screenshots/{iphone,ipad}/`
+- [x] Tests pass + Release archive **1.3 (9)** → `bash scripts/release.sh` → `build/WordOfTheDay.xcarchive`
+- [ ] Upload build **9** from Xcode Organizer (CLI has no App Store Connect session)
+- [x] Screenshots — reuse existing sets
 
-You still need to do in App Store Connect + Xcode:
+You still need to do in App Store Connect:
 
-1. **Version** — Create **1.1** (or open the draft if it already exists).
+1. **Version** — Create **1.3** (do not attach this build to the 1.2 version).
 2. **What's New** — Paste the block above.
-3. **Upload** — Xcode → Organizer → Distribute App → App Store Connect (build **7**). Do not use build 6.
-4. **Build** — Attach **1.1 (7)** once processing finishes.
-5. **Review notes** — Reuse the offline / no-login block above.
-6. **Submit** — **Add for Review**.
+3. **Build** — It will not appear on the version page until TestFlight finishes processing. Then use **+** in the Build section and pick **1.3 (9)**.
+4. **Review notes** — Reuse the offline / no-login block above.
+5. **Submit** — **Add for Review**.
 
-Subtitle stays `English & Japanese vocabulary` (never put Free/price in name, subtitle, or promo text — Guideline 2.3.7). No full metadata rewrite required for this update unless you want to mention TTS/rōmaji in the description.
+Subtitle stays `English & Japanese vocabulary` (never put Free/price in name, subtitle, or promo text — Guideline 2.3.7). No full metadata rewrite required for this update.
