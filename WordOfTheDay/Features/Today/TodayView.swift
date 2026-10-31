@@ -212,7 +212,7 @@ struct TodayView: View {
         }
         switch mark {
         case .some(true):  return "Marked as known — we'll move you toward rarer words."
-        case .some(false): return "New one for you — we'll keep it in reach."
+        case .some(false): return "New one for you — saved to Practice."
         case .none:
             return advances
                 ? "Know it or not — either way we'll show you another."

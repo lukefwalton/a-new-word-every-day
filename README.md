@@ -31,7 +31,8 @@ type, your colors, no login, nothing ever leaves your phone.
 - **English and Japanese** — enable either or both in Settings; each language has
   its own daily word, difficulty band, and onboarding calibration.
 - **Star** a word — from the app *or* straight from the widget (iOS 17
-  interactive button) — to save it to a **Practice** list.
+  interactive button) — to save it to a **Practice** list. Marking a word
+  "New to me" saves it there too.
 - **Tinder-style swipe onboarding** that calibrates your difficulty level on
   first launch (swipe right = "I know it", left = "new to me"), entirely
   on-device.
